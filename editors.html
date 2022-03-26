@@ -20,8 +20,7 @@
   <script src="icp.bundle.js"></script>
 </head>
 
-<body class="h-screen full-page-demo reveal-viewport" data-page="icp"
-  style="transition: transform 0.8s ease 0s; --slide-width:960px; --slide-height:700px;">
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
 
   <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
     data-background-transition="fade">
@@ -36,20 +35,23 @@
       </section>
       <section class="center-slide">
         <h3 class="title">Introduction</h3>
-        <p class="subtitle">Some components are exposed by the library</p>
-        <p class="paragraph">In details we have the following <span class="emph">tags available</span:< /p>
-            <ul style="padding-bottom: 30px;">
-              <li>language-editor</li>
-              <li>language-editor-dark</li>
-              <li>language-editor-v</li>
-              <li>language-editor-v-dark</li>
-              <li>language-editor-tabs-dark</li>
-            </ul>
-            <p class="paragraph">The <span class="emph">languages</span> currently available are: Javascript,
-              Typescript, Java, C++</p>
+        <p class="paragraph">The following <span class="emph">web components</span> are exposed by the library</p>
+        <ul style="padding-bottom: 30px;">
+          <li>&lt;{language}-editor /&gt;</li>
+          <li>&lt;{language}-editor-input /&gt;</li>
+          <li>&lt;{language}-editor-dark /&gt;</li>
+          <li>&lt;{language}-editor-input-dark /&gt;</li>
+          <li>&lt;{language}-editor-v /&gt;</li>
+          <li>&lt;{language}-editor-v-input /&gt;</li>
+          <li>&lt;{language}-editor-v-dark /&gt;</li>
+          <li>&lt;{language}-editor-v-input-dark /&gt;</li>
+          <li>&lt;{language}-editor-tabs-dark /&gt;</li>
+        </ul>
+        <p class="paragraph">The <span class="emph">languages</span> currently available are: Javascript,
+          Typescript, Java, C++</p>
       </section>
       <section class="center-slide">
-        <h3 class="title">Horizontal base editor, dark mode</h3>
+        <h3 class="title">&lt;{language}-editor-dark /&gt;</h3>
         <p class="subtitle">Language: Typescript</p>
         <div style="width: 60vw; height: 60vh">
           <typescript-editor-dark contenteditable="true" id='test' value="class Greeter {
@@ -69,16 +71,39 @@ greeter.greet();" />
         </div>
       </section>
       <section class="center-slide">
-        <h3 class="title">Horizontal base editor, light mode</h3>
+        <h3 class="title">&lt;{language}-editor-input-dark /&gt;</h3>
+        <p class="subtitle">Language: C++</p>
+        <div style="width: 60vw; height: 60vh">
+          <cpp-editor-input-dark contenteditable="true" id='test' value="#include <iostream>
+using namespace std;
+
+int main() {
+  cout << 'Hello World!' << endl;
+  return 0;
+}" />
+        </div>
+      </section>
+      <section class="center-slide">
+        <h3 class="title">&lt;{language}-editor /&gt;</h3>
         <p class="subtitle">Language: Javascript</p>
         <div style="width: 60vw; height: 60vh">
           <javascript-editor contenteditable="true" id='test' value="console.log('Hello World!')" />
         </div>
-
+      </section>
+      <section class="center-slide">
+        <h3 class="title">&lt;{language}-editor-input /&gt;</h3>
+        <p class="subtitle">Language: Java</p>
+        <div style="width: 60vw; height: 60vh">
+          <java-editor-input contenteditable="true" id='test' value="class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println('Hello, World!'); 
+  }
+}" />
+        </div>
       </section>
       <section class="center-slide">
 
-        <h3 class="title">Vertical base editor, dark mode</h3>
+        <h3 class="title">&lt;{language}-editor-v-dark /&gt;</h3>
         <p class="subtitle">Language: Java</p>
         <div style="width: 60vw; height: 60vh">
           <java-editor-v-dark contenteditable="true" id='test' value="class HelloWorld {
@@ -89,7 +114,15 @@ greeter.greet();" />
         </div>
       </section>
       <section class="center-slide">
-        <h3 class="title">Vertical base editor, light mode</h3>
+
+        <h3 class="title">&lt;{language}-editor-v-input-dark /&gt;</h3>
+        <p class="subtitle">Language: Java</p>
+        <div style="width: 60vw; height: 60vh">
+          <javascript-editor-v-input-dark contenteditable="true" id='test' value="console.log('Hello World!');" />
+        </div>
+      </section>
+      <section class="center-slide">
+        <h3 class="title">&lt;{language}-editor-v /&gt;</h3>
         <p class="subtitle">Language: C++</p>
         <div style="width: 60vw; height: 60vh">
           <cpp-editor-v contenteditable="true" id='test' value="#include <iostream>
@@ -103,24 +136,30 @@ int main() {
         </div>
       </section>
       <section class="center-slide">
-        <h3 class="title">Tabs editor, dark mode</h3>
+        <h3 class="title">&lt;{language}-editor-v-input /&gt;</h3>
+        <p class="subtitle">Language: C++</p>
+        <div style="width: 60vw; height: 60vh">
+          <javascript-editor-v-input contenteditable="true" id='test' value="console.log('Hello World!')" />
+        </div>
+      </section>
+      <section class="center-slide">
+        <h3 class="title">&lt;{language}-editor-tabs-dark /&gt;</h3>
         <p class="subtitle">Language: Typescript</p>
         <div style="width: 60vw; height: 60vh">
-          <typescript-editor-tabs-dark contenteditable="true" id='test' value="
-  class Greeter {
-    greeting: string;
-    
-    constructor(message: string) {
-      this.greeting = message;
-    }
-    
-    greet() {
-      return 'Hello ' + this.greeting;
-    }
+          <typescript-editor-tabs-dark contenteditable="true" id='test' value="class Greeter {
+  greeting: string;
+  
+  constructor(message: string) {
+    this.greeting = message;
   }
-      
-  let greeter = new Greeter('World!');
-  greeter.greet();" />
+  
+  greet() {
+    return 'Hello ' + this.greeting;
+  }
+}
+    
+let greeter = new Greeter('World!');
+greeter.greet();" />
         </div>
       </section>
     </div>

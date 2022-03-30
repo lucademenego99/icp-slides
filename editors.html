@@ -72,13 +72,13 @@ greeter.greet();" />
       </section>
       <section class="center-slide">
         <h3 class="title">&lt;{language}-editor-input-dark /&gt;</h3>
-        <p class="subtitle">Language: C++</p>
+        <p class="subtitle">Language: C++. Only a part of the editor is editable</p>
         <div style="width: 60vw; height: 60vh">
           <cpp-editor-input-dark contenteditable="true" id='test' value="#include <iostream>
 using namespace std;
 
 int main() {
-  cout << 'Hello World!' << endl;
+  cout << '<EDITABLE>Hello World!</EDITABLE>' << endl;
   return 0;
 }" />
         </div>
@@ -116,7 +116,7 @@ int main() {
       <section class="center-slide">
 
         <h3 class="title">&lt;{language}-editor-v-input-dark /&gt;</h3>
-        <p class="subtitle">Language: Java</p>
+        <p class="subtitle">Language: Javascript</p>
         <div style="width: 60vw; height: 60vh">
           <javascript-editor-v-input-dark contenteditable="true" id='test' value="console.log('Hello World!');" />
         </div>
@@ -137,14 +137,14 @@ int main() {
       </section>
       <section class="center-slide">
         <h3 class="title">&lt;{language}-editor-v-input /&gt;</h3>
-        <p class="subtitle">Language: C++</p>
+        <p class="subtitle">Language: Javascript</p>
         <div style="width: 60vw; height: 60vh">
           <javascript-editor-v-input contenteditable="true" id='test' value="console.log('Hello World!')" />
         </div>
       </section>
       <section class="center-slide">
         <h3 class="title">&lt;{language}-editor-tabs-dark /&gt;</h3>
-        <p class="subtitle">Language: Typescript</p>
+        <p class="subtitle">Language: Typescript. Only some parts are editable</p>
         <div style="width: 60vw; height: 60vh">
           <typescript-editor-tabs-dark contenteditable="true" id='test' value="class Greeter {
   greeting: string;
@@ -154,11 +154,11 @@ int main() {
   }
   
   greet() {
-    return 'Hello ' + this.greeting;
+    return '<EDITABLE>Hello</EDITABLE>' + this.greeting;
   }
 }
     
-let greeter = new Greeter('World!');
+let greeter = new Greeter('<EDITABLE>World!</EDITABLE>');
 greeter.greet();" />
         </div>
       </section>

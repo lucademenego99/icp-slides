@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Code Playgrounds</title>
+
+    <!-- Main Reveal Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+    <!-- Blood Reveal Theme Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/blood.css" id="theme">
+
+    <!-- Highlight.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai.min.css">
+
+    <!-- Custom stylesheet to make reveal work with our playgrounds -->
+    <link rel="stylesheet" href="custom-style.css">
+
+    <!-- Bundle containing the code playground web components -->
+    <script src="icp.bundle.js"></script>
+
+</head>
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+
+    <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+        data-background-transition="fade">
+        <div class="slides">
+            <section>
+                <h3 class="title">Interactive Code Playgrounds</h3>
+                <p class="subtitle"><span class="emph">Current Progress</span></p>
+                <div>
+                    <p class="bottom-text"><small>
+                            <em>Luca De Menego</em>
+                        </small></p>
+                </div>
+            </section>
+            <section>
+                <h3 class="title">The project</h3>
+                <p class="subtitle"><span class="emph">What is it?</span> The idea is to provide HTML Slides with
+                    runnable code</p>
+
+                <div class="row">
+                    <div class="fragment fade-in col">
+                        <p><strong>Help Students</strong> Learning Programming Languages</p>
+                        <div style="width: 100%; height: 40vh; margin: 0 auto;">
+                            <typescript-editor-dark contenteditable="true" id='test' value="class Greeter {
+    greeting: string;
+
+    constructor(message: string) {
+        this.greeting = message;
+    }
+
+    greet() {
+        return 'Hello ' + this.greeting;
+    }
+}
+
+let greeter = new Greeter('World!');
+greeter.greet();" />
+                        </div>
+                    </div>
+                    <div class="fragment fade-in col">
+                        <p>Support People with <strong>Vision Impairments</strong></p>
+                        <ul>
+                            <li>ARIA Attributes</li>
+                            <li>Semantic tags</li>
+                            <li>Images' alt</li>
+                            <li>Clear DOM Structure</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3 class="title">Used Technologies</h3>
+                <ul style="padding: 3vh 0">
+                    <li><span class="emph">Reveal.js</span> for the HTML slides generation</li>
+                    <li><span class="emph">CodeMirror</span> as embedded code editor</li>
+                    <li><span class="emph">WebAssembly</span> to compile and run code without external servers (when
+                        possible...)</li>
+                    <li><span class="emph">External API</span> for other programming languages that can't be directly
+                        compiled in the browser</li>
+                </ul>
+                <p>PUT HERE AN IMAGE OF THE ARCHITECTURE</p>
+            </section>
+            <section>
+                <h3 class="title">ICP-bundle</h3>
+                <p class="subtitle"><span class="emph">The current solution</span></p>
+                <div style="width: 70%">
+                    <p style="padding-bottom: 2vh;">Some completely customized components have been created and exported
+                        via a <span class="emph">single JS script</span></p>
+                    <p style="padding-bottom: 2vh;">Exported <span class="emph">web components and functions</span> can
+                        be embedded in any web page
+                        by simply importing this
+                        script
+                    </p>
+                    <code class="big" style="color: gray;">&lt;script src='icp.bundle.js'&gt;&lt;/script&gt;</code>
+                </div>
+                <p class="bottom-text"><small>
+                        <a
+                            href='https://github.com/lucademenego99/icp-bundle'>https://github.com/lucademenego99/icp-bundle</a>
+                    </small></p>
+            </section>
+            <section>
+                <h3 class="title">Web Components</h3>
+                <p>The currently exposed <span class="emph">web components</span> are:
+                </p>
+                <ul style="padding-bottom: 30px;">
+                    <li>&lt;{language}-editor /&gt;</li>
+                    <li>&lt;{language}-editor-input /&gt;</li>
+                    <li>&lt;{language}-editor-dark /&gt;</li>
+                    <li>&lt;{language}-editor-input-dark /&gt;</li>
+                    <li>&lt;{language}-editor-v /&gt;</li>
+                    <li>&lt;{language}-editor-v-input /&gt;</li>
+                    <li>&lt;{language}-editor-v-dark /&gt;</li>
+                    <li>&lt;{language}-editor-v-input-dark /&gt;</li>
+                    <li>&lt;{language}-editor-tabs-dark /&gt;</li>
+                </ul>
+            </section>
+            <section>
+                <h3 class="title">An example</h3>
+                <p class="subtitle"><code>&lt;javascript-editor-v /&gt;</code></p>
+                <div style="width: 60vw; height: 60vh">
+                    <javascript-editor-v contenteditable="true" id='test' value="console.log('Hello World!')" />
+                </div>
+            </section>
+            <section>
+                <h3 class="title">Languages</h3>
+                <p>The currently available <span class="emph">programming languages</span> are:
+                </p>
+                <img src="assets/av_languages.png" alt="Currently available programming langauges">
+            </section>
+        </div>
+    </div>
+
+    <!-- Import the main reveal script -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+
+    <!-- Initialize reveal -->
+    <script>
+        Reveal.initialize({
+            plugins: [RevealHighlight],
+            // Display controls in the bottom right corner
+            controls: true,
+            // Display a presentation progress bar
+            progress: true,
+            // Push each slide change to the browser history
+            history: true,
+            // Enable keyboard shortcuts for navigation
+            keyboard: true,
+            // Enable the slide overview mode
+            overview: false,
+            // Vertical centering of slides
+            center: true,
+            // Loop the presentation
+            loop: false,
+            // Enables touch navigation on devices with touch input
+            touch: true,
+            // Apply a 3D roll to links on hover
+            rollingLinks: true,
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+            // Select a theme
+            theme: 'blood',
+            // Select the type of slides transition
+            transition: 'slide',
+            // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+            disableLayout: true
+        });
+    </script>
+</body>
+
+</html>

@@ -28,7 +28,7 @@
   <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
     data-background-transition="fade">
     <div class="slides">
-      <section class="center-slide">
+      <section>
         <h3 class="title">Programming in the Small</h3>
         <p class="subtitle"><span class="emph">Basic Concepts</span></p>
         <p style="padding-top: 10vh;">
@@ -38,14 +38,14 @@
           <a href='mailto:maurizio.marchese@unitn.it'>maurizio.marchese@unitn.it</a>
         </p>
         <div>
-          <p class="bottom-text"><small>
-              <em>Adapted from theaching material shared by prof. Gian Pietro Picco & prof. Marco Ronchetti</em>
-            </small></p>
+          <p class="bottom-text">
+            <em>Adapted from theaching material shared by prof. Gian Pietro Picco & prof. Marco Ronchetti</em>
+          </p>
         </div>
       </section>
-      <section class="center-slide">
+      <section>
         <h3 class="title">Modular programming: functions</h3>
-        <ul style="padding-top: 30px; margin-bottom: 5vh;">
+        <ul style="padding-top: 1vh; margin-bottom: 5vh;">
           <li>The functions represent the main modularization tool, as they allow:
             <ul style="padding-top: 2vh;">
               <li><span class="emph">to reuse</span> code (rather than duplicate it)</li>
@@ -53,7 +53,7 @@
             </ul>
           </li>
         </ul>
-        <div style="width: 60vw; height: 30vw">
+        <div style="width: 60vw; height: 50vh">
           <typescript-editor contenteditable="true" value="// A function implementing the summation of two numbers
 function sum(a: number, b: number): number {
     let res: number;
@@ -78,15 +78,15 @@ let res: number = product(a,b);
 console.log(a + ' * ' + b + ' = ' + res);"></typescript-editor>
         </div>
       </section>
-      <section class="center-slide">
+      <section>
         <h3 class="title">The Memory Model</h3>
-        <img src="assets/memory-model.png" alt="Memory Model" style="height: 60vh;">
+        <img src="assets/memory-model.png" alt="Memory Model">
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
-            <pre style="height: 60vh"><code data-line-numbers="15-16">function sum(a: number, b: number): number {
+            <pre style="height: 60vh"><code style="height: 100%;" data-line-numbers="15-16">function sum(a: number, b: number): number {
     let res: number;
     res = a+b;
     return res;
@@ -106,12 +106,12 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-1.png" alt="Stack example - 1" style="height: 40vh;">
+          <img src="assets/stack-ex-1.png" alt="Stack example - 1">
         </div>
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
             <pre style="height: 60vh;"><code data-line-numbers="7-9,15-17">function sum(a: number, b: number): number {
     let res: number;
@@ -133,12 +133,12 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-2.png" alt="Stack example - 2" style="height: 40vh;">
+          <img src="assets/stack-ex-2.png" alt="Stack example - 2">
         </div>
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
             <pre style="height: 60vh;"><code data-line-numbers="1,7-10,15-17">function sum(a: number, b: number): number {
     let res: number;
@@ -160,12 +160,12 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-3.png" alt="Stack example - 3" style="height: 40vh;">
+          <img src="assets/stack-ex-3.png" alt="Stack example - 3">
         </div>
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
             <pre style="height: 60vh;"><code data-line-numbers="1-4,7-10,15-17">function sum(a: number, b: number): number {
     let res: number;
@@ -187,12 +187,12 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-4.png" alt="Stack example - 4" style="height: 40vh;">
+          <img src="assets/stack-ex-4.png" alt="Stack example - 4">
         </div>
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
             <pre style="height: 60vh;"><code data-line-numbers="7-9,15-17">function sum(a: number, b: number): number {
     let res: number;
@@ -214,12 +214,12 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-5.png" alt="Stack example - 5" style="height: 40vh;">
+          <img src="assets/stack-ex-5.png" alt="Stack example - 5">
         </div>
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
             <pre style="height: 60vh;"><code data-line-numbers="1,7-10,15-17">function sum(a: number, b: number): number {
     let res: number;
@@ -241,12 +241,12 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-6.png" alt="Stack example - 6" style="height: 40vh;">
+          <img src="assets/stack-ex-6.png" alt="Stack example - 6">
         </div>
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
             <pre style="height: 60vh;"><code data-line-numbers="1-3,7-10,15-17">function sum(a: number, b: number): number {
     let res: number;
@@ -268,12 +268,12 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-7.png" alt="Stack example - 7" style="height: 40vh;">
+          <img src="assets/stack-ex-7.png" alt="Stack example - 7">
         </div>
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
             <pre style="height: 60vh;"><code data-line-numbers="1-4,7-10,15-17">function sum(a: number, b: number): number {
     let res: number;
@@ -295,12 +295,12 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-8.png" alt="Stack example - 8" style="height: 40vh;">
+          <img src="assets/stack-ex-8.png" alt="Stack example - 8">
         </div>
       </section>
-      <section class="center-slide" data-auto-animate>
+      <section data-auto-animate>
         <h3 class="title">Let's see it step by step</h3>
-        <div style="display: flex; align-items: center;">
+        <div class="row">
           <div style="width: 60vw; float: left;">
             <pre style="height: 60vh;"><code data-line-numbers="1-4,7-12,15-17">function sum(a: number, b: number): number {
     let res: number;
@@ -322,13 +322,13 @@ let res: number = product(a,b);
 
 console.log(a + ' * ' + b + ' = ' + res);</code></pre>
           </div>
-          <img src="assets/stack-ex-9.png" alt="Stack example - 9" style="height: 40vh;">
+          <img src="assets/stack-ex-9.png" alt="Stack example - 9">
         </div>
       </section>
-      <section class="center-slide">
+      <section>
         <h3 class="title">Recursive Functions</h3>
         <p class="subtitle">A function can call itself!</p>
-        <div style="width: 60vw; height: 40vw;">
+        <div style="width: 60vw; height: 60vh;">
           <typescript-editor contenteditable="true" value="function fact(n: number): number {
     let res: number;
     if (n == 0) res = 1;
@@ -341,15 +341,15 @@ console.log('The factorial of ' + n + ' is ' + fact(n));"></typescript-editor>
         </div>
         <p>But what happens <span class="emph">in the stack?</span></p>
       </section>
-      <section class="center-slide">
+      <section>
         <h3 class="title">Recall the Memory Model</h3>
-        <img src="assets/memory-model-2.png" alt="Memory Model" style="height: 60vh;">
+        <img src="assets/memory-model-2.png" alt="Memory Model">
       </section>
-      <section class="center-slide">
+      <section>
         <h3 class="title">Visibility scope: global variables</h3>
         <p>In the following example <strong>a</strong> is a <span class="emph">global variable</span></p>
         <p>Its value is <span class="emph">visible to all functions</span></p>
-        <div style="width: 60vw; height: 30vw">
+        <div style="width: 60vw; height: 50vh">
           <typescript-editor contenteditable="true" value="let a: number = 5;
 
 function f(): void {
@@ -369,11 +369,11 @@ main();"></typescript-editor>
         <p><span class="emph"><strong>Attention!</strong></span> Global variables <span class="emph">should be
             avoided</span> due to <em>side effects</em></p>
       </section>
-      <section class="center-slide">
+      <section>
         <h3 class="title">Scope of visibility: automatic variables</h3>
         <p>In the following example <strong>a</strong> is an <span class="emph">automatic variable</span> for the
           function <strong>f</strong>:<br> its value is <span class="emph">local</span> to <strong>f</strong></p>
-        <div style="width: 60vw; height: 30vw">
+        <div style="width: 60vw; height: 50vh">
           <typescript-editor contenteditable="true" value="let a: number = 5;
 
 function f(): void {

@@ -77,7 +77,9 @@ print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))" />
                     <li><span class="emph">External API</span> for other programming languages that can't be directly
                         compiled in the browser</li>
                 </ul>
-                <p>PUT HERE AN IMAGE OF THE ARCHITECTURE</p>
+            </section>
+            <section>
+                <img src="assets/proj_architecture.png" alt="Project Architecture">
             </section>
             <section>
                 <h3 class="title">ICP-bundle</h3>
@@ -98,24 +100,8 @@ print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))" />
                     </small></p>
             </section>
             <section>
-                <h3 class="title">Web Components</h3>
-                <p>The currently exposed <span class="emph">web components</span> are:
-                </p>
-                <ul style="padding-bottom: 30px;">
-                    <li>&lt;{language}-editor /&gt;</li>
-                    <li>&lt;{language}-editor-input /&gt;</li>
-                    <li>&lt;{language}-editor-dark /&gt;</li>
-                    <li>&lt;{language}-editor-input-dark /&gt;</li>
-                    <li>&lt;{language}-editor-v /&gt;</li>
-                    <li>&lt;{language}-editor-v-input /&gt;</li>
-                    <li>&lt;{language}-editor-v-dark /&gt;</li>
-                    <li>&lt;{language}-editor-v-input-dark /&gt;</li>
-                    <li>&lt;{language}-editor-tabs-dark /&gt;</li>
-                </ul>
-            </section>
-            <section>
-                <h3 class="title">An example</h3>
-                <p class="subtitle"><code>&lt;typescript-editor-v /&gt;</code></p>
+                <h3 class="title">Exposed Web Components</h3>
+                <p class="subtitle"><span class="emph">An example:</span></p>
                 <div style="width: 60vw; height: 60vh">
                     <typescript-editor-v contenteditable="true" id='test' value="class Greeter {
     greeting: string;

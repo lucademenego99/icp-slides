@@ -47,20 +47,13 @@
                     <div class="fragment fade-in col">
                         <p><strong>Help Students</strong> Learning Programming Languages</p>
                         <div style="width: 100%; height: 40vh; margin: 0 auto;">
-                            <typescript-editor-dark contenteditable="true" id='test' value="class Greeter {
-    greeting: string;
+                            <python-editor-dark contenteditable="true" id='test' value="# This program adds two numbers
+num1 = 1.5
+num2 = 6.3
 
-    constructor(message: string) {
-        this.greeting = message;
-    }
+sum = num1 + num2
 
-    greet() {
-        return 'Hello ' + this.greeting;
-    }
-}
-
-let greeter = new Greeter('World!');
-greeter.greet();" />
+print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))" />
                         </div>
                     </div>
                     <div class="fragment fade-in col">
@@ -122,9 +115,22 @@ greeter.greet();" />
             </section>
             <section>
                 <h3 class="title">An example</h3>
-                <p class="subtitle"><code>&lt;javascript-editor-v /&gt;</code></p>
+                <p class="subtitle"><code>&lt;typescript-editor-v /&gt;</code></p>
                 <div style="width: 60vw; height: 60vh">
-                    <javascript-editor-v contenteditable="true" id='test' value="console.log('Hello World!')" />
+                    <typescript-editor-v contenteditable="true" id='test' value="class Greeter {
+    greeting: string;
+
+    constructor(message: string) {
+        this.greeting = message;
+    }
+
+    greet() {
+        return 'Hello ' + this.greeting;
+    }
+}
+
+let greeter = new Greeter('World!');
+greeter.greet();" />
                 </div>
             </section>
             <section>

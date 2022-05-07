@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html language="en">
 
 <head>
   <meta charset="UTF-8">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="custom-style.css">
 
   <!-- Bundle containing the code playground web components -->
-  <script src="icp.bundle.js"></script>
+  <script src="icp-bundle.umd.js"></script>
 </head>
 
 <body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
@@ -54,7 +54,7 @@
           </li>
         </ul>
         <div style="width: 60vw; height: 50vh">
-          <typescript-editor contenteditable="true" value="// A function implementing the summation of two numbers
+          <base-editor language="typescript" theme="dark" contenteditable="true" code="// A function implementing the summation of two numbers
 function sum(a: number, b: number): number {
     let res: number;
     res = a+b;
@@ -75,7 +75,7 @@ let a: number = 2;
 let b: number = 3;
 let res: number = product(a,b);
 
-console.log(a + ' * ' + b + ' = ' + res);"></typescript-editor>
+console.log(a + ' * ' + b + ' = ' + res);" />
         </div>
       </section>
       <section>
@@ -329,7 +329,7 @@ console.log(a + ' * ' + b + ' = ' + res);</code></pre>
         <h3 class="title">Recursive Functions</h3>
         <p class="subtitle">A function can call itself!</p>
         <div style="width: 60vw; height: 60vh;">
-          <typescript-editor contenteditable="true" value="function fact(n: number): number {
+          <base-editor language="typescript" theme="dark" contenteditable="true" code="function fact(n: number): number {
     let res: number;
     if (n == 0) res = 1;
     else res = n * fact(n-1);
@@ -337,7 +337,7 @@ console.log(a + ' * ' + b + ' = ' + res);</code></pre>
 }
 
 let n: number = 6;
-console.log('The factorial of ' + n + ' is ' + fact(n));"></typescript-editor>
+console.log('The factorial of ' + n + ' is ' + fact(n));" />
         </div>
         <p>But what happens <span class="emph">in the stack?</span></p>
       </section>
@@ -350,7 +350,7 @@ console.log('The factorial of ' + n + ' is ' + fact(n));"></typescript-editor>
         <p>In the following example <strong>a</strong> is a <span class="emph">global variable</span></p>
         <p>Its value is <span class="emph">visible to all functions</span></p>
         <div style="width: 60vw; height: 50vh">
-          <typescript-editor contenteditable="true" value="let a: number = 5;
+          <base-editor language="typescript" theme="dark" contenteditable="true" code="let a: number = 5;
 
 function f(): void {
     a = a+1;
@@ -364,7 +364,7 @@ function main(): void {
     console.log('a in main: ' + a);
 }
 
-main();"></typescript-editor>
+main();" />
         </div>
         <p><span class="emph"><strong>Attention!</strong></span> Global variables <span class="emph">should be
             avoided</span> due to <em>side effects</em></p>
@@ -374,7 +374,7 @@ main();"></typescript-editor>
         <p>In the following example <strong>a</strong> is an <span class="emph">automatic variable</span> for the
           function <strong>f</strong>:<br> its value is <span class="emph">local</span> to <strong>f</strong></p>
         <div style="width: 60vw; height: 50vh">
-          <typescript-editor contenteditable="true" value="let a: number = 5;
+          <base-editor language="typescript" theme="dark" contenteditable="true" code="let a: number = 5;
 
 function f(): void {
     let a: number = 2, b: number = 4;
@@ -389,7 +389,7 @@ function main(): void {
     console.log('(a,b) in main: (' + a + ',' + b + ')');
 }
 
-main();"></typescript-editor>
+main();" />
         </div>
         <p><span class="emph"><strong>Attention!</strong></span> Automatic variables <span class="emph">shield</span>
           global variables <br>(and they shield each other according to the scope of visibility)</p>

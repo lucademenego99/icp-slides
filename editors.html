@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="custom-style.css">
 
   <!-- Bundle containing the code playground web components -->
-  <script src="icp.bundle.js"></script>
+  <script src="icp-bundle.umd.js"></script>
 </head>
 
 <body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
@@ -37,24 +37,36 @@
         <h3 class="title">Introduction</h3>
         <p>The following <span class="emph">web components</span> are exposed by the library</p>
         <ul style="padding-bottom: 30px;">
-          <li>&lt;{language}-editor /&gt;</li>
-          <li>&lt;{language}-editor-input /&gt;</li>
-          <li>&lt;{language}-editor-dark /&gt;</li>
-          <li>&lt;{language}-editor-input-dark /&gt;</li>
-          <li>&lt;{language}-editor-v /&gt;</li>
-          <li>&lt;{language}-editor-v-input /&gt;</li>
-          <li>&lt;{language}-editor-v-dark /&gt;</li>
-          <li>&lt;{language}-editor-v-input-dark /&gt;</li>
-          <li>&lt;{language}-editor-tabs-dark /&gt;</li>
+          <li>&lt;base-editor /&gt;</li>
+          <li>&lt;sql-editor /&gt;</li>
         </ul>
-        <p>The <span class="emph">languages</span> currently available are: Javascript,
-          Typescript, Java, C++</p>
+        <p>The base editor can be initialized with the following <span class="emph">languages</span>: Javascript,
+          Typescript, Java, Python</p>
       </section>
       <section class="center-slide">
-        <h3 class="title">&lt;{language}-editor-dark /&gt;</h3>
-        <p class="subtitle">Language: Typescript</p>
+        <p class="subtitle">&lt;base-editor <span class="emph">language</span>="javascript" /&gt;</p>
         <div style="width: 60vw; height: 60vh">
-          <typescript-editor-dark contenteditable="true" id='test' value="class Greeter {
+          <base-editor contenteditable="true" language="javascript" id='test' code="console.log('Hello World!')" />
+        </div>
+      </section>
+      <section class="center-slide">
+        <p class="subtitle">&lt;base-editor <span class="emph">language</span>="python" <span
+            class="emph">theme</span>="dark" /&gt;</p>
+        <div style="width: 60vw; height: 60vh">
+          <base-editor contenteditable="true" language="python" theme="dark" id='test' code="# This program adds two numbers
+num1 = 1.5
+num2 = 6.3
+
+sum = num1 + num2
+
+print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))" />
+        </div>
+      </section>
+      <section class="center-slide">
+        <p class="subtitle">&lt;base-editor <span class="emph">language</span>="typescript" <span
+            class="emph">type</span>="vertical" /&gt;</p>
+        <div style="width: 60vw; height: 60vh">
+          <base-editor contenteditable="true" language="typescript" type="vertical" id='test' code="class Greeter {
   greeting: string;
     
   constructor(message: string) {
@@ -65,111 +77,51 @@
     return 'Hello ' + this.greeting;
   }
 }
-      
+    
 let greeter = new Greeter('World!');
 greeter.greet();" />
         </div>
       </section>
       <section class="center-slide">
-        <h3 class="title">&lt;{language}-editor-input-dark /&gt;</h3>
-        <p class="subtitle">Language: C++. Only a part of the editor is editable</p>
+        <p class="subtitle">&lt;base-editor <span class="emph">language</span>="java" <span
+            class="emph">type</span>="vertical" <span class="emph">theme</span>="dark" /&gt;</p>
         <div style="width: 60vw; height: 60vh">
-          <cpp-editor-input-dark contenteditable="true" id='test' value="#include <iostream>
-using namespace std;
-
-int main() {
-  cout << '<EDITABLE>Hello World!</EDITABLE>' << endl;
-  return 0;
-}" />
-        </div>
-      </section>
-      <section class="center-slide">
-        <h3 class="title">&lt;{language}-editor /&gt;</h3>
-        <p class="subtitle">Language: Javascript</p>
-        <div style="width: 60vw; height: 60vh">
-          <javascript-editor contenteditable="true" id='test' value="console.log('Hello World!')" />
-        </div>
-      </section>
-      <section class="center-slide">
-        <h3 class="title">&lt;{language}-editor-input /&gt;</h3>
-        <p class="subtitle">Language: Java</p>
-        <div style="width: 60vw; height: 60vh">
-          <java-editor-input contenteditable="true" id='test' value="class HelloWorld {
+          <base-editor contenteditable="true" language="java" type="vertical" theme="dark" id='test' code='public class HelloWorld {
   public static void main(String[] args) {
-    System.out.println('<EDITABLE>Hello, World</EDITABLE>!'); 
+    System.out.println("<EDITABLE>Hello, World</EDITABLE>!"); 
   }
-}" />
+}' />
         </div>
       </section>
       <section class="center-slide">
-
-        <h3 class="title">&lt;{language}-editor-v-dark /&gt;</h3>
-        <p class="subtitle">Language: Java</p>
+        <p class="subtitle">&lt;sql-editor <span class="emph">theme</span>="dark" /&gt;</p>
         <div style="width: 60vw; height: 60vh">
-          <java-editor-v-dark contenteditable="true" id='test' value="class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println('Hello, World!'); 
-  }
-}" />
-        </div>
-      </section>
-      <section class="center-slide">
+          <sql-editor contenteditable="true" theme="dark" id='test' code="DROP TABLE IF EXISTS employees;
+-- Create the table
+CREATE TABLE employees( id          integer,  name    text,
+                          designation text,     manager integer,
+                          hired_on    date,     salary  integer,
+                          commission  float,    dept    integer);
 
-        <h3 class="title">&lt;{language}-editor-v-input-dark /&gt;</h3>
-        <p class="subtitle">Language: Python</p>
-        <div style="width: 60vw; height: 60vh">
-          <python-editor-v-input-dark contenteditable="true" id='test' value="def factorial(x):
-    #This is a recursive function
-    #to find the factorial of an integer
+-- Insert some data
+INSERT INTO employees VALUES (1,'JOHNSON','ADMIN',6,'1990-12-17',18000,NULL,4);
+INSERT INTO employees VALUES (2,'HARDING','MANAGER',9,'1998-02-02',52000,300,3);
+INSERT INTO employees VALUES (3,'TAFT','SALES I',2,'1996-01-02',25000,500,3);
+INSERT INTO employees VALUES (4,'HOOVER','SALES I',2,'1990-04-02',27000,NULL,3);
+INSERT INTO employees VALUES (5,'LINCOLN','TECH',6,'1994-06-23',22500,1400,4);
+INSERT INTO employees VALUES (6,'GARFIELD','MANAGER',9,'1993-05-01',54000,NULL,4);
+INSERT INTO employees VALUES (7,'POLK','TECH',6,'1997-09-22',25000,NULL,4);
+INSERT INTO employees VALUES (8,'GRANT','ENGINEER',10,'1997-03-30',32000,NULL,2);
+INSERT INTO employees VALUES (9,'JACKSON','CEO',NULL,'1990-01-01',75000,NULL,4);
+INSERT INTO employees VALUES (10,'FILLMORE','MANAGER',9,'1994-08-09',56000,NULL,2);
+INSERT INTO employees VALUES (11,'ADAMS','ENGINEER',10,'1996-03-15',34000,NULL,2);
+INSERT INTO employees VALUES (12,'WASHINGTON','ADMIN',6,'1998-04-16',18000,NULL,4);
+INSERT INTO employees VALUES (13,'MONROE','ENGINEER',10,'2000-12-03',30000,NULL,2);
+INSERT INTO employees VALUES (14,'ROOSEVELT','CPA',9,'1995-10-12',35000,NULL,1);
 
-    if x == 1:
-        return 1
-    else:
-        return (x * factorial(x-1))
-
-num = 16
-print('The factorial of', num, 'is', factorial(num))" />
-        </div>
-      </section>
-      <section class="center-slide">
-        <h3 class="title">&lt;{language}-editor-v /&gt;</h3>
-        <p class="subtitle">Language: C++</p>
-        <div style="width: 60vw; height: 60vh">
-          <cpp-editor-v contenteditable="true" id='test' value="#include <iostream>
-  
-using namespace std;
-
-int main() {
-  cout << 'Hello World!' << endl;
-  return 0;
-}" />
-        </div>
-      </section>
-      <section class="center-slide">
-        <h3 class="title">&lt;{language}-editor-v-input /&gt;</h3>
-        <p class="subtitle">Language: Javascript</p>
-        <div style="width: 60vw; height: 60vh">
-          <javascript-editor-v-input contenteditable="true" id='test' value="console.log('Hello World!')" />
-        </div>
-      </section>
-      <section class="center-slide">
-        <h3 class="title">&lt;{language}-editor-tabs-dark /&gt;</h3>
-        <p class="subtitle">Language: Typescript. Only some parts are editable</p>
-        <div style="width: 60vw; height: 60vh">
-          <typescript-editor-tabs-dark contenteditable="true" id='test' value="class Greeter {
-  greeting: string;
-  
-  constructor(message: string) {
-    this.greeting = message;
-  }
-  
-  greet() {
-    return '<EDITABLE>Hello</EDITABLE>' + this.greeting;
-  }
-}
-    
-let greeter = new Greeter('<EDITABLE>World!</EDITABLE>');
-greeter.greet();" />
+-- Select
+SELECT designation,COUNT(*) AS nbr, (AVG(salary)) AS avg_salary FROM employees GROUP BY designation ORDER BY avg_salary DESC;
+SELECT name,hired_on FROM employees ORDER BY hired_on;" />
         </div>
       </section>
     </div>

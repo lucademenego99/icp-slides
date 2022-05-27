@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Code Playgrounds</title>
+
+    <!-- Main Reveal Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+    <!-- Blood Reveal Theme Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/blood.css" id="theme">
+
+    <!-- Custom stylesheet to make reveal work with our playgrounds -->
+    <link rel="stylesheet" href="https://unpkg.com/icp-bundle@0.0.6/dist/base/custom-style.css">
+
+    <!-- Bundle containing the code playground web components -->
+    <script src="https://unpkg.com/icp-bundle@0.0.6/dist/base/icp-bundle.umd.js"></script>
+
+    <style>
+        li {
+            padding-bottom: 2vmin;
+        }
+    </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+    <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+        data-background-transition="fade">
+        <div class="slides">
+
+            <!-- Each <section> is a slide -->
+            <section>
+                <!-- title class: custom style for titles -->
+                <h3 class="title">Interactive Code Playgrounds</h3>
+
+                <!-- subtitle class: custom style for subtitles -->
+                <p class="subtitle">Rethinking slides in programming classes<br/>Building platform-agnostic, transparent technologies</p>
+                <div>
+                    <p class="bottom-text">Lorenzo Angeli and Luca De Menego<br/>
+                    University of Trento<br/>
+                    Berlin, June 1st 2022, OpenU WP3 Peer Learning Meeting</p>
+                </div>
+            </section>
+
+            <section> 
+                <h5>The typical programming lab slide</h5>
+                <div class="row" style="width: 90%">
+                    <div class="col" style="text-align: left;">
+                        <ul class="fragment fade-out" style="list-style-type: none;">
+                            <li>Code embedded in slides as images/plain text</li>
+                            <li>Hard (or impossible) to copy/paste</li>
+                            <li>As teacher, changes are hard to make</li>
+                            <li>Not accessible for e.g., screen readers</li>
+                        </ul>
+                        <h6 class="fragment">Most importantly: checking code results isn't easy!</h6>
+                    </div>
+                    <div class="col" style="height: 60vh; margin: 2vh">
+                        <img style="width: 100vmin;" src="assets/codeSample.png"
+                        alt="Typical image of a piece of code provided in a slide deck">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="r-stack">
+                    <div class="fragment fade-out">
+                        <img style="margin-bottom: 1em;" src="assets/int.png"
+                            alt="Image of an interpreter">
+                        <img src="assets/comp.png" alt="Image of a compiler">
+                    </div>
+                    <div>
+                        <img class="fragment fade-in" src="assets/netbeans.jpg"
+                        alt="Image of an IDE" style="height: 80vh">
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h5>Interactive Code Playgrounds</h5>
+                <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
+                <div class="row" style="width: 90%">
+                    <!-- col class: first column of the row defined before -->
+                    <div class="col" style="text-align: left;">
+                        <ul style="list-style-type: none;">
+                            <li>Run code directly on slide</li>
+                            <li>Easy to modify/fix mistakes</li>
+                            <li>No need to install anything</li>
+                        </ul>
+                    </div>
+                    <!-- col class: second column of the row defined before -->
+                    <!-- Note: the editor takes the size of the parent, so it must be specified -->
+                    <!--    in this case the parent is 100% width, 60vh height -->
+                    <div class="col" style="height: 60vh; margin: 2vh">
+                        <!-- Normal editor, set the language and the code inside it -->
+                        <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
+                        <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
+                        <!-- Note: for reveal.js to work we need to set content editable to true -->
+                        <base-editor contenteditable="true" language="python" theme="dark" type="vertical"
+                            code="print('Hello, world!')" />
+                    </div>
+            </section>
+
+            <!-- Start another slide -->
+            <section>
+                <div class="row" style="width: 100%">
+                    <div class="col">
+                        <p>Other features in<span class="emph">Interactive Code Playgrounds</span></p>
+                    </div>
+                    <div class="r-stack col" style="height: 60vh; margin: 2vh">
+                        <div class="fragment fade-in-then-out" style="height: 60vh; margin: 2vh">
+                            <base-editor data-fragment-index="0" contenteditable="true" language="typescript" code="class UserAccount {
+    name: string;
+    id: <EDITABLE> number </EDITABLE>;
+
+    constructor(name: string, id: <EDITABLE> number </EDITABLE>) {
+        this.name = name;
+        this.id = id;
+    }
+}
+const user: UserAccount = new UserAccount('Murphy', <EDITABLE> 1 </EDITABLE>);
+console.log('Type of ID: ' + typeof(user.id))" />
+                        </div>
+                        <div class="fragment fade-in" style="height: 60vh; margin: 2vh">
+                            <sql-editor data-fragment-index="1" contenteditable="true" theme="dark" code="DROP TABLE IF EXISTS employees;
+-- Create the table
+CREATE TABLE employees( id          integer,  name    text,
+                            designation text,     manager integer,
+                            hired_on    date,     salary  integer,
+                            commission  float,    dept    integer);
+
+-- Insert some data
+INSERT INTO employees VALUES (1,'JOHNSON','ADMIN',6,'1990-12-17',18000,NULL,4);
+INSERT INTO employees VALUES (2,'HARDING','MANAGER',9,'1998-02-02',52000,300,3);
+INSERT INTO employees VALUES (3,'TAFT','SALES I',2,'1996-01-02',25000,500,3);
+INSERT INTO employees VALUES (4,'HOOVER','SALES I',2,'1990-04-02',27000,NULL,3);
+INSERT INTO employees VALUES (5,'LINCOLN','TECH',6,'1994-06-23',22500,1400,4);
+INSERT INTO employees VALUES (6,'GARFIELD','MANAGER',9,'1993-05-01',54000,NULL,4);
+INSERT INTO employees VALUES (7,'POLK','TECH',6,'1997-09-22',25000,NULL,4);
+INSERT INTO employees VALUES (8,'GRANT','ENGINEER',10,'1997-03-30',32000,NULL,2);
+INSERT INTO employees VALUES (9,'JACKSON','CEO',NULL,'1990-01-01',75000,NULL,4);
+INSERT INTO employees VALUES (10,'FILLMORE','MANAGER',9,'1994-08-09',56000,NULL,2);
+INSERT INTO employees VALUES (11,'ADAMS','ENGINEER',10,'1996-03-15',34000,NULL,2);
+INSERT INTO employees VALUES (12,'WASHINGTON','ADMIN',6,'1998-04-16',18000,NULL,4);
+INSERT INTO employees VALUES (13,'MONROE','ENGINEER',10,'2000-12-03',30000,NULL,2);
+INSERT INTO employees VALUES (14,'ROOSEVELT','CPA',9,'1995-10-12',35000,NULL,1);
+
+-- Select
+SELECT designation,COUNT(*) AS nbr, (AVG(salary)) AS avg_salary FROM employees GROUP BY designation ORDER BY avg_salary DESC;
+SELECT name,hired_on FROM employees ORDER BY hired_on;
+" />
+                        </div>
+                    </div>
+            </section>
+
+            <section>
+                The nerdy bits (todo)
+            </section>
+
+            <section>
+                <img src="assets/arch.webp" alt="Project's Architecture">
+            </section>
+
+            <section>
+                <h4>Pedagogical implications</h4>
+                <p class="fragment">Reduced learning curve for beginners (especially non-specialists)</p>
+                <p class="fragment">Enable scaffolded learning</p>
+                <p class="fragment">Smooth transition from traditional slides</p>
+            </section>
+
+            <section>
+                <h4>Policy implications</h4>
+                <p class="fragment">Platform independence</p>
+                <p class="fragment">Easy integration (not "yet another tool")</p>
+                <p class="fragment">Promotes innovative learning (learning-by-tinkering)</p>
+                <p class="fragment">More accessible (esp. for screen reader users)</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- Import the main reveal script -->
+    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js">
+    </script>
+
+    <!-- Initialize reveal -->
+    <script>
+        Reveal.initialize({
+            // Display controls in the bottom right corner
+            controls: true,
+            // Display a presentation progress bar
+            progress: true,
+            // Push each slide change to the browser history
+            history: true,
+            // Enable keyboard shortcuts for navigation
+            keyboard: true,
+            // Enable the slide overview mode
+            overview: false,
+            // Vertical centering of slides
+            center: true,
+            // Loop the presentation
+            loop: false,
+            // Enables touch navigation on devices with touch input
+            touch: true,
+            // Apply a 3D roll to links on hover
+            rollingLinks: true,
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+            // Select a theme
+            theme: 'blood',
+            // Select the type of slides transition
+            transition: 'slide',
+            // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+            disableLayout: true
+        });
+    </script>
+</body>
+
+</html>

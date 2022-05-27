@@ -39,52 +39,63 @@
                 <h3 class="title">Interactive Code Playgrounds</h3>
 
                 <!-- subtitle class: custom style for subtitles -->
-                <p class="subtitle">Rethinking the user experience of slideshows in programming classes</p>
+                <p class="subtitle">Rethinking slides in programming classes<br/>Building platform-agnostic, transparent technologies</p>
                 <div>
-                    <p class="bottom-text"><small>An interactive demo of the <a
-                                href="https://github.com/lucademenego99/icp-bundle" target="_blank">Interactive Code
-                                Playgrounds</a> project</small></p>
+                    <p class="bottom-text">Lorenzo Angeli and Luca De Menego<br/>
+                    University of Trento<br/>
+                    Berlin, June 1st 2022, OpenU WP3 Peer Learning Meeting</p>
                 </div>
             </section>
 
-            <section>
-                <div class="r-stack">
-                    <p class="fragment fade-out" data-fragment-index="0">The typical *complex*
-                        environment setup
-                    </p>
-                    <img class="fragment fade-in-then-out" data-fragment-index="0" src="assets/netbeans.jpg"
-                        alt="Image of an IDE">
-                    <div class="fragment fade-in-then-out">
-                        <img style="margin-bottom: 1em;" data-fragment-index="1" src="assets/int.png"
-                            alt="Image of an interpreter">
-                        <img data-fragment-index="1" src="assets/comp.png" alt="Image of a compiler">
+            <section> 
+                <h5>The typical programming lab slide</h5>
+                <div class="row" style="width: 90%">
+                    <div class="col" style="text-align: left;">
+                        <ul class="fragment fade-out" style="list-style-type: none;">
+                            <li>Code embedded in slides as images/plain text</li>
+                            <li>Hard (or impossible) to copy/paste</li>
+                            <li>As teacher, changes are hard to make</li>
+                            <li>Not accessible for e.g., screen readers</li>
+                        </ul>
+                        <h6 class="fragment">Most importantly: checking code results isn't easy!</h6>
+                    </div>
+                    <div class="col" style="height: 60vh; margin: 2vh">
+                        <img style="width: 100vmin;" src="assets/codeSample.png"
+                        alt="Typical image of a piece of code provided in a slide deck">
                     </div>
                 </div>
             </section>
 
             <section>
                 <div class="r-stack">
-                    <p class="fade-out">The typical *humble* slide deck</p>
-                    <img class="fragment current-visible fade-out" style="width: 100vmin;" src="assets/codeSample.png"
-                        alt="Typical image of a piece of code provided in a slide deck">
+                    <div class="fragment fade-out">
+                        <img style="margin-bottom: 1em;" src="assets/int.png"
+                            alt="Image of an interpreter">
+                        <img src="assets/comp.png" alt="Image of a compiler">
+                    </div>
+                    <div>
+                        <img class="fragment fade-in" src="assets/netbeans.jpg"
+                        alt="Image of an IDE" style="height: 80vh">
+                    </div>
                 </div>
             </section>
-
+            
             <section>
+                <h5>Interactive Code Playgrounds</h5>
                 <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
                 <div class="row" style="width: 90%">
                     <!-- col class: first column of the row defined before -->
                     <div class="col" style="text-align: left;">
-                        <div class="fragment semi-fade-out" data-fragment-index="1">What if code on slides could look
-                            like...</div>
-                        <div class="fragment" data-fragment-index="2">
-                            <h4>this?</h4>
-                        </div>
+                        <ul style="list-style-type: none;">
+                            <li>Run code directly on slide</li>
+                            <li>Easy to modify/fix mistakes</li>
+                            <li>No need to install anything</li>
+                        </ul>
                     </div>
                     <!-- col class: second column of the row defined before -->
                     <!-- Note: the editor takes the size of the parent, so it must be specified -->
                     <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col fragment" data-fragment-index="2" style="height: 60vh; margin: 2vh">
+                    <div class="col" style="height: 60vh; margin: 2vh">
                         <!-- Normal editor, set the language and the code inside it -->
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
@@ -98,7 +109,7 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p>There's more <span class="emph">Interactive Code Playgrounds</span> can do</p>
+                        <p>Other features in<span class="emph">Interactive Code Playgrounds</span></p>
                     </div>
                     <div class="r-stack col" style="height: 60vh; margin: 2vh">
                         <div class="fragment fade-in-then-out" style="height: 60vh; margin: 2vh">
@@ -147,23 +158,26 @@ SELECT name,hired_on FROM employees ORDER BY hired_on;
             </section>
 
             <section>
+                The nerdy bits (todo)
+            </section>
+
+            <section>
                 <img src="assets/arch.webp" alt="Project's Architecture">
             </section>
 
             <section>
-                Pedagogical implications
+                <h4>Pedagogical implications</h4>
+                <p class="fragment">Reduced learning curve for beginners (especially non-specialists)</p>
+                <p class="fragment">Enable scaffolded learning</p>
+                <p class="fragment">Smooth transition from traditional slides</p>
             </section>
 
             <section>
-                Accessibility implications
-            </section>
-
-            <section>
-                (Edtech) policy implications
-            </section>
-
-            <section>
-                Who are we?
+                <h4>Policy implications</h4>
+                <p class="fragment">Platform independence</p>
+                <p class="fragment">Easy integration (not "yet another tool")</p>
+                <p class="fragment">Promotes innovative learning (learning-by-tinkering)</p>
+                <p class="fragment">More accessible (esp. for screen reader users)</p>
             </section>
         </div>
     </div>

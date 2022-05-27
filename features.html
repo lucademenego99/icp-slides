@@ -39,83 +39,70 @@
                 <h3 class="title">Interactive Code Playgrounds</h3>
 
                 <!-- subtitle class: custom style for subtitles -->
-                <p class="subtitle">Main Features</p>
+                <p class="subtitle">Rethinking the user experience of slideshows in programming classes</p>
                 <div>
-                    <p class="bottom-text"><small>Showcase of the <a href="https://github.com/lucademenego99/icp-bundle"
-                                target="_blank">Interactive Code Playgrounds</a> project</small></p>
+                    <p class="bottom-text"><small>An interactive demo of the <a
+                                href="https://github.com/lucademenego99/icp-bundle" target="_blank">Interactive Code
+                                Playgrounds</a> project</small></p>
                 </div>
+            </section>
+
+            <section>
+                <div class="r-stack">
+                    <p class="fragment fade-out" data-fragment-index="0">The typical *complex*
+                        environment setup
+                    </p>
+                    <img class="fragment fade-in-then-out" data-fragment-index="0" src="assets/netbeans.jpg"
+                        alt="Image of an IDE">
+                    <div class="fragment fade-in-then-out">
+                        <img style="margin-bottom: 1em;" data-fragment-index="1" src="assets/int.png"
+                            alt="Image of an interpreter">
+                        <img data-fragment-index="1" src="assets/comp.png" alt="Image of a compiler">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="r-stack">
+                    <p class="fade-out">The typical *humble* slide deck</p>
+                    <img class="fragment current-visible fade-out" style="width: 100vmin;" src="assets/codeSample.png"
+                        alt="Typical image of a piece of code provided in a slide deck">
+                </div>
+            </section>
+
+            <section>
+                <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
+                <div class="row" style="width: 90%">
+                    <!-- col class: first column of the row defined before -->
+                    <div class="col" style="text-align: left;">
+                        <div class="fragment semi-fade-out" data-fragment-index="1">What if code on slides could look
+                            like...</div>
+                        <div class="fragment" data-fragment-index="2">
+                            <h4>this?</h4>
+                        </div>
+                    </div>
+                    <!-- col class: second column of the row defined before -->
+                    <!-- Note: the editor takes the size of the parent, so it must be specified -->
+                    <!--    in this case the parent is 100% width, 60vh height -->
+                    <div class="col fragment" data-fragment-index="2" style="height: 60vh; margin: 2vh">
+                        <!-- Normal editor, set the language and the code inside it -->
+                        <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
+                        <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
+                        <!-- Note: for reveal.js to work we need to set content editable to true -->
+                        <base-editor contenteditable="true" language="python" theme="dark" type="vertical"
+                            code="print('Hello, world!')" />
+                    </div>
             </section>
 
             <!-- Start another slide -->
             <section>
-                <h3 class="title">Javascript / Typescript languages</h3>
-
-                <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
-                <div class="row" style="width: 100%;">
-                    <!-- col class: first column of the row defined before -->
-                    <div class="col" style="margin: 4vmin;">
-                        <ul>
-                            <!-- emph class: custom class to highlight a part of a text -->
-                            <li>Javascript and Typescript languages are available with <span class="emph">syntax
-                                    checking and auto
-                                    completion</span></li>
-                            <li>You can run the code directly in the browser, or copy it with the <span
-                                    class="emph">copy button</span></li>
-                            <li>Tabs handling is not enabled by default to support people with <span class="emph">vision
-                                    impairments</span> -
-                                enable it with the other button!</li>
-                        </ul>
+                <div class="row" style="width: 100%">
+                    <div class="col">
+                        <p>There's more <span class="emph">Interactive Code Playgrounds</span> can do</p>
                     </div>
-
-                    <!-- col class: second column of the row defined before -->
-                    <!-- Note: the editor takes the size of the parent, so it must be specified -->
-                    <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col" style="height: 60vh; margin: 4vmin;">
-
-                        <!-- Normal editor, set the language and the code inside it -->
-                        <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
-                        <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
-                        <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <base-editor contenteditable="true" language="typescript" code="class UserAccount {
-    name: string;
-    id: number;
-
-    constructor(name: string, id: number) {
-        this.name = name;
-        this.id = id;
-    }
-}
-const user: UserAccount = new UserAccount('Murphy', 1);
-console.log('Hi ' + user.name)" />
-                    </div>
-            </section>
-            <section>
-                <h3 class="title">Editable fields</h3>
-                <p class="subtitle">Try to change the type of the ID variable</p>
-
-                <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
-                <div class="row" style="width: 100%;">
-                    <!-- col class: first column of the row defined before -->
-                    <div class="col" style="margin: 4vmin;">
-                        <ul>
-                            <!-- emph class: custom class to highlight a part of a text -->
-                            <li>You can allow to <span class="emph">only edit some specific parts</span> of the code
-                            </li>
-                            <li>In the following example, the types of the ID field are editable</li>
-                            <li>Even the <span class="emph">dark theme</span> is available!</li>
-                        </ul>
-                    </div>
-
-                    <!-- col class: second column of the row defined before -->
-                    <!-- Note: the editor takes the size of the parent, so it must be specified -->
-                    <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col" style="height: 60vh; margin: 4vmin;">
-
-                        <!-- Normal editor, set the language and the code inside it -->
-                        <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
-                        <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
-                        <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <base-editor contenteditable="true" language="typescript" theme="dark" code="class UserAccount {
+                    <div class="r-stack col" style="height: 60vh; margin: 2vh">
+                        <div class="fragment fade-in-then-out" style="height: 60vh; margin: 2vh">
+                            <base-editor data-fragment-index="0" contenteditable="true" language="typescript" code="class UserAccount {
     name: string;
     id: <EDITABLE> number </EDITABLE>;
 
@@ -126,119 +113,9 @@ console.log('Hi ' + user.name)" />
 }
 const user: UserAccount = new UserAccount('Murphy', <EDITABLE> 1 </EDITABLE>);
 console.log('Type of ID: ' + typeof(user.id))" />
-                    </div>
-            </section>
-
-            <section>
-                <h3 class="title">Python</h3>
-
-                <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
-                <div class="row" style="width: 100%;">
-                    <!-- col class: first column of the row defined before -->
-                    <div class="col" style="margin: 4vmin;">
-                        <ul>
-                            <!-- emph class: custom class to highlight a part of a text -->
-                            <li>You can use Python, <span class="emph">with the most famous
-                                    libraries</span> working out of the box!
-                            </li>
-                            <li>If you would like to use a library that is not already integrated, you can install it
-                                with <span class="emph">micropip</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- col class: second column of the row defined before -->
-                    <!-- Note: the editor takes the size of the parent, so it must be specified -->
-                    <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col" style="height: 60vh; margin: 4vmin;">
-
-                        <!-- Normal editor, set the language and the code inside it -->
-                        <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
-                        <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
-                        <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <base-editor contenteditable="true" language="python" type="vertical" code="import micropip
-
-# Import a package that is not provided by
-# default, like cryptography
-await micropip.install('cryptography')
-from cryptography.fernet import Fernet
-
-# Verify it works: encrypt a string with Fernet
-key = Fernet.generate_key()
-f = Fernet(key)
-token = f.encrypt(b'A really secret message.')
-print(token)
-" />
-                    </div>
-            </section>
-
-            <section>
-                <h3 class="title">Editable fields with Python</h3>
-
-                <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
-                <div class="row" style="width: 100%;">
-                    <!-- col class: first column of the row defined before -->
-                    <div class="col" style="margin: 4vmin;">
-                        <ul>
-                            <!-- emph class: custom class to highlight a part of a text -->
-                            <li>Editable fields are actually available in any language we provide
-                            </li>
-                            <li>I don't know what else to write here, do we really need another slide on editable
-                                fields?
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- col class: second column of the row defined before -->
-                    <!-- Note: the editor takes the size of the parent, so it must be specified -->
-                    <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col" style="height: 60vh; margin: 4vmin;">
-
-                        <!-- Normal editor, set the language and the code inside it -->
-                        <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
-                        <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
-                        <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark" code="# Define a variable num1 containing 3
-num1 = <EDITABLE> 3 </EDITABLE>
-
-# Define another variable num2 containing 5
-num2 = <EDITABLE> 5 </EDITABLE>
-
-# Calculate the sum of the two numbers
-sum = num1+num2
-
-print('The sum of the two variables is', sum)
-" />
-                    </div>
-            </section>
-
-            <section>
-                <h3 class="title">SQL language</h3>
-
-                <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
-                <div class="row" style="width: 100%;">
-                    <!-- col class: first column of the row defined before -->
-                    <div class="col" style="margin: 4vmin;">
-                        <ul>
-                            <!-- emph class: custom class to highlight a part of a text -->
-                            <li>For courses on <span class="emph">databases</span>, having an easy-to-use database to
-                                play with can be life
-                                saving
-                            </li>
-                            <li>The database is <span class="emph">SQLite</span></li>
-                            <li><span class="emph">Resize the output</span> window to see better the results!</li>
-                        </ul>
-                    </div>
-
-                    <!-- col class: second column of the row defined before -->
-                    <!-- Note: the editor takes the size of the parent, so it must be specified -->
-                    <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col" style="height: 60vh; margin: 4vmin;">
-
-                        <!-- Normal editor, set the language and the code inside it -->
-                        <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
-                        <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
-                        <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <sql-editor contenteditable="true" theme="dark" code="DROP TABLE IF EXISTS employees;
+                        </div>
+                        <div class="fragment fade-in" style="height: 60vh; margin: 2vh">
+                            <sql-editor data-fragment-index="1" contenteditable="true" theme="dark" code="DROP TABLE IF EXISTS employees;
 -- Create the table
 CREATE TABLE employees( id          integer,  name    text,
                             designation text,     manager integer,
@@ -265,12 +142,28 @@ INSERT INTO employees VALUES (14,'ROOSEVELT','CPA',9,'1995-10-12',35000,NULL,1);
 SELECT designation,COUNT(*) AS nbr, (AVG(salary)) AS avg_salary FROM employees GROUP BY designation ORDER BY avg_salary DESC;
 SELECT name,hired_on FROM employees ORDER BY hired_on;
 " />
+                        </div>
                     </div>
             </section>
 
             <section>
-                <h3 class="title">Project's complete architecture</h3>
-                <img src="assets/arch2.png" alt="Project's Architecture">
+                <img src="assets/arch.webp" alt="Project's Architecture">
+            </section>
+
+            <section>
+                Pedagogical implications
+            </section>
+
+            <section>
+                Accessibility implications
+            </section>
+
+            <section>
+                (Edtech) policy implications
+            </section>
+
+            <section>
+                Who are we?
             </section>
         </div>
     </div>

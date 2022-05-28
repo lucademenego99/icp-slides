@@ -39,15 +39,16 @@
                 <h3 class="title">Interactive Code Playgrounds</h3>
 
                 <!-- subtitle class: custom style for subtitles -->
-                <p class="subtitle">Rethinking slides in programming classes<br/>Building platform-agnostic, transparent technologies</p>
+                <p class="subtitle">Rethinking slides in programming classes<br />Building platform-agnostic,
+                    transparent technologies</p>
                 <div>
-                    <p class="bottom-text">Lorenzo Angeli and Luca De Menego<br/>
-                    University of Trento<br/>
-                    Berlin, June 1st 2022, OpenU WP3 Peer Learning Meeting</p>
+                    <p class="bottom-text">Lorenzo Angeli and Luca De Menego<br />
+                        University of Trento<br />
+                        Berlin, June 1st 2022, OpenU WP3 Peer Learning Meeting</p>
                 </div>
             </section>
 
-            <section> 
+            <section>
                 <h5>The typical programming lab slide</h5>
                 <div class="row" style="width: 90%">
                     <div class="col" style="text-align: left;">
@@ -61,25 +62,30 @@
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
                         <img style="width: 100vmin;" src="assets/codeSample.png"
-                        alt="Typical image of a piece of code provided in a slide deck">
+                            alt="Typical image of a piece of code provided in a slide deck">
                     </div>
+                </div>
+                <div>
+                    <p class="bottom-text">
+                        Credits to <a
+                            href="https://www.geeksforgeeks.org/python-program-for-bubble-sort/">geeksforgeeks</a>
+                        for the code sample
+                    </p>
                 </div>
             </section>
 
             <section>
                 <div class="r-stack">
                     <div class="fragment fade-out">
-                        <img style="margin-bottom: 1em;" src="assets/int.png"
-                            alt="Image of an interpreter">
+                        <img style="margin-bottom: 1em;" src="assets/int.png" alt="Image of an interpreter">
                         <img src="assets/comp.png" alt="Image of a compiler">
                     </div>
                     <div>
-                        <img class="fragment fade-in" src="assets/netbeans.jpg"
-                        alt="Image of an IDE" style="height: 80vh">
+                        <img class="fragment fade-in" src="assets/ide.png" alt="Image of an IDE" style="height: 80vh">
                     </div>
                 </div>
             </section>
-            
+
             <section>
                 <h5>Interactive Code Playgrounds</h5>
                 <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
@@ -95,13 +101,25 @@
                     <!-- col class: second column of the row defined before -->
                     <!-- Note: the editor takes the size of the parent, so it must be specified -->
                     <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col" style="height: 60vh; margin: 2vh">
+                    <div class="col" style="flex: 2; height: 60vh; margin: 2vh">
                         <!-- Normal editor, set the language and the code inside it -->
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <base-editor contenteditable="true" language="python" theme="dark" type="vertical"
-                            code="print('Hello, world!')" />
+                        <base-editor contenteditable="true" language="python" theme="dark" type="vertical" code="def bubblesort(elements): 
+  # Looping from size of array from last index[-1]
+  # to index [0] 
+  for n in range(len(elements)-1, 0, -1): 
+    for i in range(n): 
+      if elements[i] > elements[i + 1]: 
+        # swapping data if the element is less than next element in the array 
+        elements[i], elements[i + 1] = elements[i + 1], elements[i]
+    
+elements = [39,12,18,85,72,10,2,18] 
+    
+print('Unsorted list is', elements)
+bubblesort(elements)
+print('Sorted list is', elements)" />
                     </div>
             </section>
 
@@ -109,7 +127,7 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p>Other features in<span class="emph">Interactive Code Playgrounds</span></p>
+                        <p>Other features in <span class="emph">Interactive Code Playgrounds</span></p>
                     </div>
                     <div class="r-stack col" style="height: 60vh; margin: 2vh">
                         <div class="fragment fade-in-then-out" style="height: 60vh; margin: 2vh">

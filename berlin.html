@@ -124,10 +124,10 @@ print('\nSorted list is\n', elements)" />
                         <p>Other features in <span class="emph">Interactive Code Playgrounds</span></p>
                     </div>
                     <div class="r-stack col" style="height: 70vh; flex: 3;">
-                        <div class="fragment fade-in-then-out" style="width: 100%">
+                        <div class="fragment fade-out" data-fragment-index="1" style="width: 100%">
                             <p>Restricted Editing</p>
                             <div style="height: 60vh;">
-                                <base-editor data-fragment-index="0" type="vertical" contenteditable="true" theme="dark"
+                                <base-editor type="vertical" contenteditable="true" theme="dark"
                                     language="python" code="elements = [<EDITABLE>39,12,18,85,72,10,2,18</EDITABLE>] 
 
 print('Unsorted list is\n', elements)
@@ -141,10 +141,10 @@ for n in range(len(elements)-1, 0, -1):
 print('\nSorted list is\n', elements)" />
                             </div>
                         </div>
-                        <div class="fragment fade-in-then-out" style="width: 100%">
+                        <div class="fragment fade-in" data-fragment-index="1" style="width: 100%">
                             <p>Light Theme and Different Layouts</p>
                             <div style="height: 60vh;">
-                                <base-editor data-fragment-index="0" contenteditable="true" language="python" code="elements = [39,12,18,85,72,10,2,18] 
+                                <base-editor contenteditable="true" language="python" code="elements = [39,12,18,85,72,10,2,18] 
 
 print('Unsorted list is\n', elements)
 
@@ -167,10 +167,10 @@ print('\nSorted list is\n', elements)" />
                         <p>Other <span class="emph">languages</span></p>
                     </div>
                     <div class="r-stack col" style="height: 70vh; flex: 3;">
-                        <div class="fragment fade-in-then-out" style="width: 100%;">
-                            <p>Typescript</p>
+                        <div class="fragment fade-out" data-fragment-index="1" style="width: 100%;">
+                             <p>Typescript (and Javascript)</p>
                             <div style="height: 60vh;">
-                                <base-editor data-fragment-index="0" contenteditable="true" language="typescript" code="let elements = [39,12,18,85,72,10,2,18];
+                                <base-editor contenteditable="true" language="typescript" code="let elements = [39,12,18,85,72,10,2,18];
 console.log('Unsorted list is\n', elements);
 
 // Sort the list
@@ -187,10 +187,10 @@ for (let n = elements.length-1; n >= 0; n--) {
 console.log('Sorted list is\n', elements);" />
                             </div>
                         </div>
-                        <div class="fragment fade-in-then-out" style="width: 100%;">
+                        <div class="fragment fade-in-then-out" data-fragment-index="1" style="width: 100%;">
                             <p>Java</p>
                             <div style="height: 60vh;">
-                                <base-editor data-fragment-index="0" contenteditable="true" theme="dark" language="java"
+                                <base-editor contenteditable="true" theme="dark" language="java"
                                     code='public class BubbleSort {
     public static void main(String[] args) {
         int[] elements = {39,12,18,85,72,10,2,18};
@@ -222,10 +222,10 @@ console.log('Sorted list is\n', elements);" />
     }' />
                             </div>
                         </div>
-                        <div class="fragment fade-in-then-out" style="width: 100%;">
+                        <div class="fragment fade-in" data-fragment-index="2" style="width: 100%;">
                             <p>SQL</p>
                             <div style="height: 60vh;">
-                                <sql-editor data-fragment-index="0" contenteditable="true" code="DROP TABLE IF EXISTS elements;
+                                <sql-editor  contenteditable="true" code="DROP TABLE IF EXISTS elements;
 -- Create the table
 CREATE TABLE elements(number integer);
 

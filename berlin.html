@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
 
     <!-- Blood Reveal Theme Stylesheet -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/blood.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
 
     <!-- Custom stylesheet to make reveal work with our playgrounds -->
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle@0.0.6/dist/base/custom-style.css">
@@ -72,13 +72,13 @@
                 <div class="r-stack">
                     <div class="fragment fade-out" style="display: flex; flex-direction: column; gap: 3em;"
                         data-fragment-index="1">
-                        <img src="assets/copy-code-diagram.png"
+                        <img src="assets/copy-code-diagram-blackarrows.png"
                             alt="Diagram of the typical case in which you want to copy the code from a slide">
-                        <img src="assets/find-files-diagram.png"
+                        <img src="assets/find-files-diagram-blackarrows.png"
                             alt="Diagram of the typical case in which you want to find a file containing the code explained in a slide">
                     </div>
                     <div>
-                        <img class="fragment fade-in" data-fragment-index="1" src="assets/ide.png"
+                        <img style="height: 80vmin;" class="fragment fade-in" data-fragment-index="1" src="assets/ide.png"
                             alt="Image of an IDE">
                     </div>
                 </div>
@@ -302,7 +302,7 @@ SELECT number from elements ORDER BY number;
             // Transition style for full page slide backgrounds
             backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
             // Select a theme
-            theme: 'blood',
+            theme: 'white',
             // Select the type of slides transition
             transition: 'slide',
             // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly

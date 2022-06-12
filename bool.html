@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Code Playgrounds</title>
+
+    <!-- Main Reveal Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+    <!-- Blood Reveal Theme Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+    <!-- Custom stylesheet to make reveal work with our playgrounds -->
+    <link rel="stylesheet" href="https://unpkg.com/icp-bundle@0.0.9/dist/base/custom-style.css">
+
+    <!-- Bundle containing the code playground web components -->
+    <script src="https://unpkg.com/icp-bundle@0.0.9/dist/base/icp-bundle.umd.js"></script>
+
+    <style>
+        li {
+            padding-bottom: 2vmin;
+        }
+
+        .code {
+            padding: 0 .5rem;
+            background-color: rgb(215, 237, 255);
+            font-family: monospace;
+        }
+
+        table {
+            font-size: 4vmin;
+        }
+    </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+    <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+        data-background-transition="fade">
+        <div class="slides">
+
+            <!-- Each <section> is a slide -->
+            <section>
+                <!-- title class: custom style for titles -->
+                <h3 class="title">Booleans</h3>
+
+                <!-- subtitle class: custom style for subtitles -->
+                <p class="subtitle">In Python</p>
+                <div>
+                    <p class="bottom-text">Luca De Menego<br />
+                        University of Trento<br />
+                        Material taken from <a href="https://it.softpython.org/basics/basics2-bools-sol.html">softpython</a></p>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="title">What are booleans?</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <ul style="list-style-type: none;">
+                            <li>Used in boolean algebra</li>
+                            <li>The type is <span class="code">bool</span></li>
+                            <li>The truth values are either <span class="code">True</span> or <span class="code">False</span></li>
+                            <li class="fragment fade-in">Can you create a new variable that resolves to false?</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: 40vh;">
+                        <base-editor contenteditable="true" language="python" theme="dark" code="x = True
+print('The value of x is:', x)
+print('The type of x is:', type(x))" />
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3 class="title">Remember boolean algebra?</h3>
+                <div style="display: flex; flex-direction:row; width: 90%; margin-top: 10vh;">
+                <table>
+                    <tr>
+                        <th>a</th>
+                        <th>b</th>
+                        <th>a <span class="code">and</span> b</th>
+                    </tr>
+                    <tr>
+                        <td>True</td>
+                        <td>True</td>
+                        <td>True</td>
+                    </tr>
+                    <tr>
+                        <td>True</td>
+                        <td>False</td>
+                        <td>False</td>
+                    </tr>
+                    <tr>
+                        <td>False</td>
+                        <td>True</td>
+                        <td>False</td>
+                    </tr>
+                    <tr>
+                        <td>False</td>
+                        <td>False</td>
+                        <td>False</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>a</th>
+                        <th>b</th>
+                        <th>a <span class="code">or</span> b</th>
+                    </tr>
+                    <tr>
+                        <td>True</td>
+                        <td>True</td>
+                        <td>True</td>
+                    </tr>
+                    <tr>
+                        <td>True</td>
+                        <td>False</td>
+                        <td>True</td>
+                    </tr>
+                    <tr>
+                        <td>False</td>
+                        <td>True</td>
+                        <td>True</td>
+                    </tr>
+                    <tr>
+                        <td>False</td>
+                        <td>False</td>
+                        <td>False</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>a</th>
+                        <th><span class="code">not</span> a</th>
+                    </tr>
+                    <tr>
+                        <td>True</td>
+                        <td>False</td>
+                    </tr>
+                    <tr>
+                        <td>False</td>
+                        <td>True</td>
+                    </tr>
+                </table>
+            </div>  
+            </section>
+            <section>
+                <h3 class="title">The and operator</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <table>
+                            <tr>
+                                <th>a</th>
+                                <th>b</th>
+                                <th>a <span class="code">and</span> b</th>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col" style="height: 40vh;">
+                        <base-editor contenteditable="true" language="python" theme="dark" code="print('True and True:', True and True)
+print('True and False:', True and False)
+print('False and True:', False and True)
+print('False and False:', False and False)" />
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3 class="title">The or operator</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <table>
+                            <tr>
+                                <th>a</th>
+                                <th>b</th>
+                                <th>a <span class="code">or</span> b</th>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col" style="height: 40vh;">
+                        <base-editor contenteditable="true" language="python" theme="dark" code="print('True or True:', True or True)
+print('True or False:', True or False)
+print('False or True:', False or True)
+print('False or False:', False or False)" />
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3 class="title">The not operator</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <table>
+                            <tr>
+                                <th>a</th>
+                                <th><span class="code">not</span> a</th>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col" style="height: 40vh;">
+                        <base-editor contenteditable="true" language="python" theme="dark" code="print('not True:', not True)
+print('not False:', not False)" />
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3 class="title">Your Turn!</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <ul style="list-style-type: none;">
+                            <li>Try to guess the results of the expressions on the right</li>
+                            <li>Insert your guesses into the <span class="code">guess</span> variables</li>
+                            <li>Finally run the code and check your score</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: 70vh;">
+                        <base-editor contenteditable="true" language="python" code="# Put your guesses in the 'guess' variable
+ex_1 = not (True and False)
+guess_ex_1 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_2 = (not True) or (not (True or False))
+guess_ex_2 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_3 = not (not True)
+guess_ex_3 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_4 = not (True and (False or True))
+guess_ex_4 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+
+
+
+
+
+
+
+# Check the score of the student
+
+score = 0
+wrong_answers = []
+if ex_1 == guess_ex_1:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_1: not (True and False) is {}'.format(not (True and False)))
+if ex_2 == guess_ex_2:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_2: (not True) or (not (True or False)) is {}'.format((not True) or (not (True or False))))
+if ex_3 == guess_ex_3:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_3: not (not True) is {}'.format(not (not True)))
+if ex_4 == guess_ex_4:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_4: not (True and (False or True)) is {}'.format(not (True and (False or True))))
+
+print('Your score:', score, '/4')
+
+if score < 4:
+    print('Wrong answers:', ''.join(wrong_answers))" />
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="title">Conversions</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <ul class="fragment fade-out" data-fragment-index="1" style="list-style-type: none;">
+                            <li>We have seen the possible values for booleans are <span class="code">True</span> and <span class="code">False</span></li>
+                            <li>However, booleans can be also converted to integers, and vice versa!</li>
+                            <li>How are the truth values handled when converting integers to booleans? Play with the code on the right, and try to guess!</li>
+                        </ul>
+                        <ul class="fragment fade-in" data-fragment-index="1" style="list-style-type: none;">
+                            <li>Every integer is evaluated as True, except for 0</li>
+                            <li>True behaves like a 1</li>
+                            <li>False behaves like a 0</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: 60vh;">
+                        <base-editor contenteditable="true" language="python" theme="dark" code="# Integer -> Boolean
+print('bool(1):', bool(1))
+print('bool(0):', bool(0))
+print('bool(72):', bool(72))
+print('bool(-5):', bool(-5))
+
+# Boolean -> Integer
+print('int(True):', int(True))
+print('int(False):', int(False))" />
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="title">Your Turn! (again...)</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <ul style="list-style-type: none;">
+                            <li>Try to guess the results of the expressions on the right</li>
+                            <li>Insert your guesses into the <span class="code">guess</span> variables</li>
+                            <li>Finally run the code and check your score</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: 70vh;">
+                        <base-editor contenteditable="true" language="python" code="# Put your guesses in the 'guess' variable
+ex_1 = bool(True)
+guess_ex_1 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_2 = bool(2+4)
+guess_ex_2 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_3 = bool(4-3-1)
+guess_ex_3 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_4 = True + True
+guess_ex_4 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+
+
+
+
+
+
+
+# Check the score of the student
+
+score = 0
+wrong_answers = []
+if ex_1 == guess_ex_1:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_1: bool(True) is {}'.format(bool(True)))
+if ex_2 == guess_ex_2:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_2: bool(2+4) is {}'.format(bool(2+4)))
+if ex_3 == guess_ex_3:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_3: bool(4-3-1) is {}'.format(bool(4-3-1)))
+if ex_4 == guess_ex_4:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_4: True + True is {}'.format(True + True))
+
+print('Your score:', score, '/4')
+
+if score < 4:
+    print('Wrong answers:', ''.join(wrong_answers))" />
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="title">Evaluation order</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <ul style="list-style-type: none;">
+                            <li>If during the evaluation of a boolean expression Python finds out that there can only be one possible result, the next expressions are not even evaluated</li>
+                            <li>For instance, when evaluating <span class="code">False and x</span>, Python doesn't need to check x's value, since the first False allows us to understand the final result of the expression can only be False</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: 40vh; margin: 2vh;">
+                        <base-editor contenteditable="true" language="python" theme="dark" code="print('False and x:', False and x)
+
+# NOTICE: x is not even defined.
+# If you try to put True instead of
+# False you will get an error - try it!" />
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3 class="title">Evaluation order (2)</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <ul style="list-style-type: none;">
+                            <li>Instead, if the evaluation continues, its final result will be the result of the final expression</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: 40vh; margin: 2vh;">
+                        <base-editor contenteditable="true" language="python" theme="dark" code="print('True and 5:', True and 5)
+print('5 and True:', 5 and True)" />
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="title">Evaluation order (3)</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <ul style="list-style-type: none;">
+                            <li>What about the <span class="code">or</span> operator?</li>
+                            <li>The idea is the same - if the first expression already resolves to true, there is no need to continue the evaluation</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: 40vh; margin: 2vh;">
+                        <base-editor contenteditable="true" language="python" theme="dark" code="print('True or x:', True or x)
+
+# NOTICE: x is not defined in this case too.
+# If you try to put False instead of
+# True you will get an error - try it!" />
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="title">Your Turn! (again...)</h3>
+                <div class="row" style="width: 90%; margin-top: 8vh;">
+                    <div class="col" style="text-align: left;">
+                        <ul style="list-style-type: none;">
+                            <li>Try to guess the results of the expressions on the right</li>
+                            <li>Insert your guesses into the <span class="code">guess</span> variables</li>
+                            <li>Finally run the code and check your score</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: 70vh;">
+                        <base-editor contenteditable="true" language="python" code="# Put your guesses in the 'guess' variable
+ex_1 = 0 and True
+guess_ex_1 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_2 = 1 and 0
+guess_ex_2 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_3 = True and -1
+guess_ex_3 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+ex_4 = 0 and False
+guess_ex_4 = <EDITABLE>YOUR_GUESS</EDITABLE>
+
+
+
+
+
+
+
+
+# Check the score of the student
+
+score = 0
+wrong_answers = []
+if ex_1 == guess_ex_1:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_1: 0 and True is {}'.format(0 and True))
+if ex_2 == guess_ex_2:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_2: 1 and 0 is {}'.format(1 and 0))
+if ex_3 == guess_ex_3:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_3: True and -1 is {}'.format(True and -1))
+if ex_4 == guess_ex_4:
+    score = score + 1
+else:
+    wrong_answers.append('\n - ex_4: 0 and False is {}'.format(0 and False))
+
+print('Your score:', score, '/4')
+
+if score < 4:
+    print('Wrong answers:', ''.join(wrong_answers))" />
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Import the main reveal script -->
+    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js">
+    </script>
+
+    <!-- Initialize reveal -->
+    <script>
+        Reveal.initialize({
+            // Display controls in the bottom right corner
+            controls: true,
+            // Display a presentation progress bar
+            progress: true,
+            // Push each slide change to the browser history
+            history: true,
+            // Enable keyboard shortcuts for navigation
+            keyboard: true,
+            // Enable the slide overview mode
+            overview: false,
+            // Vertical centering of slides
+            center: true,
+            // Loop the presentation
+            loop: false,
+            // Enables touch navigation on devices with touch input
+            touch: true,
+            // Apply a 3D roll to links on hover
+            rollingLinks: true,
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+            // Select a theme
+            theme: 'white',
+            // Select the type of slides transition
+            transition: 'slide',
+            // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+            disableLayout: true
+        });
+    </script>
+</body>
+
+</html>

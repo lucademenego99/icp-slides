@@ -14,10 +14,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/blood.css" id="theme">
 
     <!-- Custom stylesheet to make reveal work with our playgrounds -->
-    <link rel="stylesheet" href="https://unpkg.com/icp-bundle@0.0.9/dist/base/custom-style.css">
+    <link rel="stylesheet" href="https://unpkg.com/icp-bundle@0.0.10/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle@0.0.9/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.0.10/dist/base/icp-bundle.umd.js"></script>
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            css.innerHTML = "section { height: auto; }";
+            // Append the css to the head
+            document.head.appendChild(css);
+        }
+    </script>
 
     <style>
         li {
@@ -41,8 +53,9 @@
                 <!-- subtitle class: custom style for subtitles -->
                 <p class="subtitle">Rethinking the user experience of slideshows in programming classes</p>
                 <div>
-                    <p class="bottom-text"><small>An interactive demo of the <a href="https://github.com/lucademenego99/icp-bundle"
-                                target="_blank">Interactive Code Playgrounds</a> project</small></p>
+                    <p><small>An interactive demo of the <a href="https://github.com/lucademenego99/icp-bundle"
+                                target="_blank">Interactive Code
+                                Playgrounds</a> project</small></p>
                 </div>
             </section>
 
@@ -53,9 +66,9 @@
 
             <section>
                 <p>Your university probably teaches programming through a lab course.</p>
-            </section>            
+            </section>
 
-            <section> 
+            <section>
                 <p>One of the first steps in lab courses is to make students install a coding environment.</p>
                 <p class="fragment">Without the coding environment, you can't start coding.</p>
                 <p class="fragment">Often, the installation is quite complex.</p>
@@ -66,8 +79,8 @@
             </section>
 
             <section>
-                <p>We want to propose a solution <br/> 
-                that rethinks one of the staples of programming classes.</p>
+                <p>We want to propose a solution <br />
+                    that rethinks one of the staples of programming classes.</p>
             </section>
 
             <section>
@@ -77,7 +90,7 @@
             <section>
                 <section>
                     <div style="display: flex; justify-content: space-around;">
-                        <div style="display: flex; flex-flow: column; justify-content: center; align-items:center;"> 
+                        <div style="display: flex; flex-flow: column; justify-content: center; align-items:center;">
                             <p>A typical slide in a programming class looks like this.</p>
 
                             <p>Go down to analyse some of the issues this creates, or go right to continue.</p>
@@ -90,17 +103,22 @@
                     <div style="display: flex; justify-content: space-around;">
                         <div style="display: flex; flex-flow: column; justify-content: center; ">
                             <ul style="list-style-type: none;">
-                            <li>The code to your right is an image.</li>
-                            <li class="fragment">You can't select text from it.</li>
-                            <li class="fragment">Even when you can, if it's on a PDF file, it often doesn't select properly.</li>
-                            <li class="fragment">If you try copying and pasting from it, the output might be, frankly, garbage.</li>
-                            <li class="fragment">Also, as a teacher, if you need to change something, you need to re-make the image.</li>
-                            <li class="fragment">To make matters worse, there is also a problem of <span class="emph">accessibility</span>: <br/> 
-                                an image is hardly usable for a screen reader user.</li>
-                            <li class="fragment">And finally, even when you can see them, images often render ugly! Look at those compression artifacts!</li>
+                                <li>The code to your right is an image.</li>
+                                <li class="fragment">You can't select text from it.</li>
+                                <li class="fragment">Even when you can, if it's on a PDF file, it often doesn't select
+                                    properly.</li>
+                                <li class="fragment">If you try copying and pasting from it, the output might be,
+                                    frankly, garbage.</li>
+                                <li class="fragment">Also, as a teacher, if you need to change something, you need to
+                                    re-make the image.</li>
+                                <li class="fragment">To make matters worse, there is also a problem of <span
+                                        class="emph">accessibility</span>: <br />
+                                    an image is hardly usable for a screen reader user.</li>
+                                <li class="fragment">And finally, even when you can see them, images often render ugly!
+                                    Look at those compression artifacts!</li>
                             </ul>
                         </div>
-                    <img src="assets/codeSample.png" style="height: 70vh; margin: 3rem;" />
+                        <img src="assets/codeSample.png" style="height: 70vh; margin: 3rem;" />
                     </div>
                 </section>
             </section>
@@ -112,7 +130,9 @@
                             <li>But the biggest problem is this:</li>
                             <li class="fragment">Are you studying, and curious to know what this bit of code does?</li>
                         </ul>
-                        <div class="fragment"><h4>Tough <span class="fragment">luck.</span></h4></div>
+                        <div class="fragment">
+                            <h4>Tough <span class="fragment">luck.</span></h4>
+                        </div>
                     </div>
 
                     <img src="assets/codeSample.png" style="height: 70vh; margin: 3rem;" />
@@ -121,12 +141,12 @@
 
             <section>
                 <section>
-                    Okay, that was maybe a bit excessive. 
-                    <p>You can actually do that, but it'll take jumping through a few hoops. <br/>
-                    Find out by going down, or just skip ahead to the right.</p>
+                    Okay, that was maybe a bit excessive.
+                    <p>You can actually do that, but it'll take jumping through a few hoops. <br />
+                        Find out by going down, or just skip ahead to the right.</p>
                 </section>
                 <section>
-                    Alright, there was some interesting code on that slide! <br/>
+                    Alright, there was some interesting code on that slide! <br />
                     Let's assume you want to run a bit of Python code...
                 </section>
                 <section>
@@ -142,7 +162,7 @@
                     <div class="fragment">Whew!</div>
                 </section>
                 <section>
-                    Can't we do better? 
+                    Can't we do better?
                 </section>
             </section>
 
@@ -151,13 +171,20 @@
                 <div class="row" style="width: 100%">
                     <!-- col class: first column of the row defined before -->
                     <div class="col" style="text-align: left;">
-                        <div class="fragment semi-fade-out" data-fragment-index="1">What if code on slides could look like...</div>
-                        <div class="fragment" data-fragment-index="2"><h4>this?</h4></div>
-                        <p class="fragment" data-fragment-index="4">Go ahead and try clicking that "Run Code!" button.</p>
+                        <div class="fragment semi-fade-out" data-fragment-index="1">What if code on slides could look
+                            like...</div>
+                        <div class="fragment" data-fragment-index="2">
+                            <h4>this?</h4>
+                        </div>
+                        <p class="fragment" data-fragment-index="4">Go ahead and try clicking that "Run Code!" button.
+                        </p>
                         <p class="fragment" data-fragment-index="5">Did you see what happened in the "Output" box?</p>
-                        <p class="fragment" data-fragment-index="6">The code was run <span class="emph">directly on the slide</span>!</p>
-                        <p class="fragment" data-fragment-index="7">What's more, you can edit the code directly in the text box!</p>
-                        <p class="fragment" data-fragment-index="8">Why don't you make some changes, run the code again, and see what happens?</p>
+                        <p class="fragment" data-fragment-index="6">The code was run <span class="emph">directly on the
+                                slide</span>!</p>
+                        <p class="fragment" data-fragment-index="7">What's more, you can edit the code directly in the
+                            text box!</p>
+                        <p class="fragment" data-fragment-index="8">Why don't you make some changes, run the code again,
+                            and see what happens?</p>
                         <p class="fragment" data-fragment-index="9">Move on when you're done playing.</p>
                     </div>
                     <!-- col class: second column of the row defined before -->
@@ -168,18 +195,14 @@
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <base-editor 
-                            contenteditable="true" 
-                            language="python" 
-                            type="vertical" 
-                            theme="dark" 
-                            code="print('Hello, world!')"
-                        />
+                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark"
+                            code="print('Hello, world!')" />
                     </div>
             </section>
 
             <section>
-                You just saw what we call an <span class="emph">Interactive Code Playground</span> (or ICP for short).<br/>
+                You just saw what we call an <span class="emph">Interactive Code Playground</span> (or ICP for
+                short).<br />
                 And there's more they can do...
             </section>
 
@@ -189,28 +212,20 @@
                         <p>Demo here the feature of the restricted code editing</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <base-editor 
-                            contenteditable="true" 
-                            language="python" 
-                            type="vertical" 
-                            theme="dark" code="print('Hello, <EDITABLE>world</EDITABLE>!')"
-                        />
+                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark"
+                            code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
                     </div>
             </section>
 
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p class="fragment fade-out">Demo here extra features, like tab-handling and the copy button, in vertical arrangement.</p>
+                        <p class="fragment fade-out">Demo here extra features, like tab-handling and the copy button, in
+                            vertical arrangement.</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <base-editor 
-                            contenteditable="true" 
-                            language="python" 
-                            type="vertical" 
-                            theme="dark" 
-                            code="print('Hello, <EDITABLE>world</EDITABLE>!')"
-                        />
+                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark"
+                            code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
                     </div>
             </section>
 
@@ -220,11 +235,7 @@
                         <p class="fragment fade-out">Demo here the various themes and languages.</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <base-editor 
-                            contenteditable="true" 
-                            language="python" 
-                            type="vertical" 
-                            theme="dark" 
+                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark"
                             code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
                     </div>
             </section>
@@ -250,7 +261,8 @@
             <section>
                 And this is all front-end code! Which means this works even if you are offline (encourage to try).
 
-                Or, more realistically, this means you can integrate ICPs in pretty much any LMS or platform without installing complex components.
+                Or, more realistically, this means you can integrate ICPs in pretty much any LMS or platform without
+                installing complex components.
             </section>
 
             <section>
@@ -292,7 +304,11 @@
             // Enable keyboard shortcuts for navigation
             keyboard: true,
             // Enable the slide overview mode
-            overview: false,
+            overview: true,
+            // Set the width of the slides
+            width: "90%",
+            // Set the height of the slides
+            height: "90%",
             // Vertical centering of slides
             center: true,
             // Loop the presentation

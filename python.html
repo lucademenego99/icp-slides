@@ -14,10 +14,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/blood.css" id="theme">
 
     <!-- Custom stylesheet to make reveal work with our playgrounds -->
-    <link rel="stylesheet" href="custom-style.css">
+    <link rel="stylesheet" href="https://unpkg.com/icp-bundle@0.0.10/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.0.10/dist/base/icp-bundle.umd.js"></script>
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            css.innerHTML = "section { height: auto; }";
+            // Append the css to the head
+            document.head.appendChild(css);
+        }
+    </script>
 
     <style>
         li {
@@ -35,7 +47,7 @@
                 <h3 class="title">Programming languages</h3>
                 <p class="subtitle">Python Basics</p>
                 <div>
-                    <p class="bottom-text"><small>Showcase of the <a href="https://github.com/lucademenego99/icp-bundle"
+                    <p><small>Showcase of the <a href="https://github.com/lucademenego99/icp-bundle"
                                 target="_blank">Interactive Code Playgrounds</a> project</small></p>
                 </div>
             </section>
@@ -44,7 +56,8 @@
                 <div class="row">
                     <div style="float: left;">
                         <ul>
-                            <li>Programs work by manipulating <span class="emph">values</span>, kept inside <span class="emph">variables</span> </li>
+                            <li>Programs work by manipulating <span class="emph">values</span>, kept inside <span
+                                    class="emph">variables</span> </li>
                             <li>each value can have different <span class="emph">data types</span></li>
                             <li>try to change the highlighted values and run the program!</li>
                         </ul>
@@ -66,7 +79,8 @@ print('The sum of the two variables is', sum)
             </section>
             <section class="center-slide">
                 <h3 class="title">Functions</h3>
-                <p class="subtitle"><span class="emph">def</span> function_name(function_parameters): <span class="emph">return</span> result</p>
+                <p class="subtitle"><span class="emph">def</span> function_name(function_parameters): <span
+                        class="emph">return</span> result</p>
                 <div class="row">
                     <div style="width: 60vw; height: 60vh; box-sizing: border-box; margin: 10vmin; float: left;">
                         <base-editor contenteditable="true" language="python" code="
@@ -84,22 +98,26 @@ print('The result of the previous function call is', sum)
                     </div>
                     <div>
                         <ul>
-                            <li><span class="emph">Functions</span> allow you to abstract await details about the implementation of certain operations</li>
+                            <li><span class="emph">Functions</span> allow you to abstract await details about the
+                                implementation of certain operations</li>
                             <li>they can have <span class="emph">inputs and outputs</span></li>
-                            <li>in the <span class="emph">example</span> on the left, the function takes as input two integers, outputting their sum</li>
+                            <li>in the <span class="emph">example</span> on the left, the function takes as input two
+                                integers, outputting their sum</li>
                         </ul>
                     </div>
                 </div>
             </section>
             <section class="center-slide">
                 <h3 class="title">Conditional statements</h3>
-                <p class="subtitle"><span class="emph">if (condition):</span> do_something <span class="emph">else:</span> do_something_else</p>
+                <p class="subtitle"><span class="emph">if (condition):</span> do_something <span
+                        class="emph">else:</span> do_something_else</p>
                 <div class="row">
                     <div style="float: left;">
                         <ul>
                             <li>What if you want to do something only if a certain condition applies?</li>
                             <li><span class="emph">conditional statements</span> are the solution!</li>
-                            <li>In the <span class="emph">example</span> on the right, we decide what to print depending on whether 5 is greater than 3 or not</li>
+                            <li>In the <span class="emph">example</span> on the right, we decide what to print depending
+                                on whether 5 is greater than 3 or not</li>
                         </ul>
                     </div>
                     <div style="width: 60vw; height: 60vh; box-sizing: border-box; margin: 10vmin">
@@ -131,7 +149,11 @@ else:
             // Enable keyboard shortcuts for navigation
             keyboard: true,
             // Enable the slide overview mode
-            overview: false,
+            overview: true,
+            // Set the width of the slides
+            width: "90%",
+            // Set the height of the slides
+            height: "90%",
             // Vertical centering of slides
             center: true,
             // Loop the presentation

@@ -14,10 +14,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
 
     <!-- Custom stylesheet to make reveal work with our playgrounds -->
-    <link rel="stylesheet" href="https://unpkg.com/icp-bundle@0.0.9/dist/base/custom-style.css">
+    <link rel="stylesheet" href="https://unpkg.com/icp-bundle@0.0.10/dist/base/custom-style.css">
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            css.innerHTML = "section { height: auto; }";
+            // Append the css to the head
+            document.head.appendChild(css);
+        }
+    </script>
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle@0.0.9/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.0.10/dist/base/icp-bundle.umd.js"></script>
+    <!-- <script src="icp-bundle.umd.js"></script> -->
 
     <style>
         li {
@@ -28,10 +41,6 @@
             padding: 0 .5rem;
             background-color: rgb(215, 237, 255);
             font-family: monospace;
-        }
-
-        table {
-            font-size: 4vmin;
         }
     </style>
 </head>
@@ -51,9 +60,10 @@
                 <!-- subtitle class: custom style for subtitles -->
                 <p class="subtitle">In Python</p>
                 <div>
-                    <p class="bottom-text">Luca De Menego<br />
+                    <p>Luca De Menego<br />
                         University of Trento<br />
-                        Material taken from <a href="https://it.softpython.org/basics/basics2-bools-sol.html">softpython</a></p>
+                        Material taken from <a
+                            href="https://it.softpython.org/basics/basics2-bools-sol.html">softpython</a></p>
                 </div>
             </section>
 
@@ -64,7 +74,8 @@
                         <ul style="list-style-type: none;">
                             <li>Used in boolean algebra</li>
                             <li>The type is <span class="code">bool</span></li>
-                            <li>The truth values are either <span class="code">True</span> or <span class="code">False</span></li>
+                            <li>The truth values are either <span class="code">True</span> or <span
+                                    class="code">False</span></li>
                             <li class="fragment fade-in">Can you create a new variable that resolves to false?</li>
                         </ul>
                     </div>
@@ -78,75 +89,75 @@ print('The type of x is:', type(x))" />
             <section>
                 <h3 class="title">Remember boolean algebra?</h3>
                 <div style="display: flex; flex-direction:row; width: 90%; margin-top: 10vh;">
-                <table>
-                    <tr>
-                        <th>a</th>
-                        <th>b</th>
-                        <th>a <span class="code">and</span> b</th>
-                    </tr>
-                    <tr>
-                        <td>True</td>
-                        <td>True</td>
-                        <td>True</td>
-                    </tr>
-                    <tr>
-                        <td>True</td>
-                        <td>False</td>
-                        <td>False</td>
-                    </tr>
-                    <tr>
-                        <td>False</td>
-                        <td>True</td>
-                        <td>False</td>
-                    </tr>
-                    <tr>
-                        <td>False</td>
-                        <td>False</td>
-                        <td>False</td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th>a</th>
-                        <th>b</th>
-                        <th>a <span class="code">or</span> b</th>
-                    </tr>
-                    <tr>
-                        <td>True</td>
-                        <td>True</td>
-                        <td>True</td>
-                    </tr>
-                    <tr>
-                        <td>True</td>
-                        <td>False</td>
-                        <td>True</td>
-                    </tr>
-                    <tr>
-                        <td>False</td>
-                        <td>True</td>
-                        <td>True</td>
-                    </tr>
-                    <tr>
-                        <td>False</td>
-                        <td>False</td>
-                        <td>False</td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th>a</th>
-                        <th><span class="code">not</span> a</th>
-                    </tr>
-                    <tr>
-                        <td>True</td>
-                        <td>False</td>
-                    </tr>
-                    <tr>
-                        <td>False</td>
-                        <td>True</td>
-                    </tr>
-                </table>
-            </div>  
+                    <table>
+                        <tr>
+                            <th>a</th>
+                            <th>b</th>
+                            <th>a <span class="code">and</span> b</th>
+                        </tr>
+                        <tr>
+                            <td>True</td>
+                            <td>True</td>
+                            <td>True</td>
+                        </tr>
+                        <tr>
+                            <td>True</td>
+                            <td>False</td>
+                            <td>False</td>
+                        </tr>
+                        <tr>
+                            <td>False</td>
+                            <td>True</td>
+                            <td>False</td>
+                        </tr>
+                        <tr>
+                            <td>False</td>
+                            <td>False</td>
+                            <td>False</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th>a</th>
+                            <th>b</th>
+                            <th>a <span class="code">or</span> b</th>
+                        </tr>
+                        <tr>
+                            <td>True</td>
+                            <td>True</td>
+                            <td>True</td>
+                        </tr>
+                        <tr>
+                            <td>True</td>
+                            <td>False</td>
+                            <td>True</td>
+                        </tr>
+                        <tr>
+                            <td>False</td>
+                            <td>True</td>
+                            <td>True</td>
+                        </tr>
+                        <tr>
+                            <td>False</td>
+                            <td>False</td>
+                            <td>False</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th>a</th>
+                            <th><span class="code">not</span> a</th>
+                        </tr>
+                        <tr>
+                            <td>True</td>
+                            <td>False</td>
+                        </tr>
+                        <tr>
+                            <td>False</td>
+                            <td>True</td>
+                        </tr>
+                    </table>
+                </div>
             </section>
             <section>
                 <h3 class="title">The and operator</h3>
@@ -318,9 +329,12 @@ if score < 4:
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
                         <ul class="fragment fade-out" data-fragment-index="1" style="list-style-type: none;">
-                            <li>We have seen the possible values for booleans are <span class="code">True</span> and <span class="code">False</span></li>
+                            <li>We have seen the possible values for booleans are <span class="code">True</span> and
+                                <span class="code">False</span>
+                            </li>
                             <li>However, booleans can be also converted to integers, and vice versa!</li>
-                            <li>How are the truth values handled when converting integers to booleans? Play with the code on the right, and try to guess!</li>
+                            <li>How are the truth values handled when converting integers to booleans? Play with the
+                                code on the right, and try to guess!</li>
                         </ul>
                         <ul class="fragment fade-in" data-fragment-index="1" style="list-style-type: none;">
                             <li>Every integer is evaluated as True, except for 0</li>
@@ -407,8 +421,11 @@ if score < 4:
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
                         <ul style="list-style-type: none;">
-                            <li>If during the evaluation of a boolean expression Python finds out that there can only be one possible result, the next expressions are not even evaluated</li>
-                            <li>For instance, when evaluating <span class="code">False and x</span>, Python doesn't need to check x's value, since the first False allows us to understand the final result of the expression can only be False</li>
+                            <li>If during the evaluation of a boolean expression Python finds out that there can only be
+                                one possible result, the next expressions are not even evaluated</li>
+                            <li>For instance, when evaluating <span class="code">False and x</span>, Python doesn't need
+                                to check x's value, since the first False allows us to understand the final result of
+                                the expression can only be False</li>
                         </ul>
                     </div>
                     <div class="col" style="height: 40vh; margin: 2vh;">
@@ -425,7 +442,8 @@ if score < 4:
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
                         <ul style="list-style-type: none;">
-                            <li>Instead, if the evaluation continues, its final result will be the result of the final expression</li>
+                            <li>Instead, if the evaluation continues, its final result will be the result of the final
+                                expression</li>
                         </ul>
                     </div>
                     <div class="col" style="height: 40vh; margin: 2vh;">
@@ -441,7 +459,8 @@ print('5 and True:', 5 and True)" />
                     <div class="col" style="text-align: left;">
                         <ul style="list-style-type: none;">
                             <li>What about the <span class="code">or</span> operator?</li>
-                            <li>The idea is the same - if the first expression already resolves to true, there is no need to continue the evaluation</li>
+                            <li>The idea is the same - if the first expression already resolves to true, there is no
+                                need to continue the evaluation</li>
                         </ul>
                     </div>
                     <div class="col" style="height: 40vh; margin: 2vh;">
@@ -532,7 +551,11 @@ if score < 4:
             // Enable keyboard shortcuts for navigation
             keyboard: true,
             // Enable the slide overview mode
-            overview: false,
+            overview: true,
+            // Set the width of the slides
+            width: "90%",
+            // Set the height of the slides
+            height: "90%",
             // Vertical centering of slides
             center: true,
             // Loop the presentation
@@ -544,7 +567,7 @@ if score < 4:
             // Transition style for full page slide backgrounds
             backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
             // Select a theme
-            theme: 'white',
+            theme: 'blood',
             // Select the type of slides transition
             transition: 'slide',
             // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly

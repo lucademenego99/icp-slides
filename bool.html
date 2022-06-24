@@ -1173,16 +1173,20 @@ print(x)" />
                 <section>
                     <div class="row" style="gap: 3vw;">
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="x = 3 == 4
+                            <base-editor contenteditable="true" language="python" code="x,y = 9,10
+z = x < y and x == 3**2
+print(z)" />
+                        </div>
+                        <div class="col" style="height: 50vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="a,b = 7,6
+a = b
+x = a >= b + 1
 print(x)" />
                         </div>
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="x = False or True
-print(x)" />
-                        </div>
-                        <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="True or False = x or False
-print(x)" />
+                            <base-editor contenteditable="true" language="python" code="x = 3^2
+y = 9
+print(x == y)" />
                         </div>
                     </div>
                 </section>

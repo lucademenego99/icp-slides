@@ -16,18 +16,6 @@
     <!-- Custom stylesheet to make reveal work with our playgrounds -->
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
-    <!-- If the user asks for the pdf version, set section height to auto -->
-    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
-    <script>
-        if (window.location.href.indexOf('?print-pdf') > -1) {
-            // Create a new css element setting the height of .section to none
-            var css = document.createElement("style");
-            css.innerHTML = "section { height: auto; }";
-            // Append the css to the head
-            document.head.appendChild(css);
-        }
-    </script>
-
     <!-- Bundle containing the code playground web components -->
     <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
     <!-- <script src="icp-bundle.umd.js"></script> -->
@@ -41,6 +29,13 @@
             padding: 0 .5rem;
             background-color: rgb(215, 237, 255);
             font-family: monospace;
+        }
+
+        .slide-context {
+            position: absolute;
+            bottom: 0;
+            left: 3vw;
+            font-size: 2vmin;
         }
     </style>
 </head>
@@ -60,13 +55,14 @@
                 <!-- subtitle class: custom style for subtitles -->
                 <p class="subtitle">In Python</p>
                 <div style="margin-top: 5vh;">
-                    <p>Materiale adattato da <a
+                    <p>Slide adattate da <a
                             href="https://it.softpython.org/basics/basics2-bools-sol.html">softpython</a></p>
-                    <p><a href="?print-pdf">Clicca qui</a> se non ti piacciono le slide</p>
+                    <p id="print-version-text"><a href="?print-pdf">Clicca qui</a> per la versione stampabile</p>
                 </div>
             </section>
 
             <section>
+                <p class="slide-context">Introduzione</p>
                 <h3 class="title">Cosa sono i booleani?</h3>
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
@@ -80,14 +76,15 @@
                         </ul>
                     </div>
                     <div class="col" style="height: 40vh;">
-                        <base-editor contenteditable="true" language="python" theme="dark" code="x = True
-print('The value of x is:', x)
-print('The type of x is:', type(x))" />
+                        <base-editor contenteditable="true" language="python" code="x = True
+print('Il valore di x è:', x)
+print('Il tipo di x è:', type(x))" />
                     </div>
                 </div>
             </section>
             <section>
-                <h3 class="title">Ripasso dell'algebra booleana...</h3>
+                <p class="slide-context">Introduzione</p>
+                <h3 class="title">L'algebra booleana</h3>
                 <div style="display: flex; flex-direction:row; width: 90%; margin-top: 10vh;">
                     <table>
                         <tr>
@@ -160,112 +157,8 @@ print('The type of x is:', type(x))" />
                 </div>
             </section>
             <section>
-                <h3 class="title">L'operatore and</h3>
-                <div class="row" style="width: 90%; margin-top: 8vh;">
-                    <div class="col" style="text-align: left;">
-                        <table>
-                            <tr>
-                                <th>a</th>
-                                <th>b</th>
-                                <th>a <span class="code">and</span> b</th>
-                            </tr>
-                            <tr>
-                                <td>True</td>
-                                <td>True</td>
-                                <td>True</td>
-                            </tr>
-                            <tr>
-                                <td>True</td>
-                                <td>False</td>
-                                <td>False</td>
-                            </tr>
-                            <tr>
-                                <td>False</td>
-                                <td>True</td>
-                                <td>False</td>
-                            </tr>
-                            <tr>
-                                <td>False</td>
-                                <td>False</td>
-                                <td>False</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col" style="height: 40vh;">
-                        <base-editor contenteditable="true" language="python" theme="dark" code="print('True and True:', True and True)
-print('True and False:', True and False)
-print('False and True:', False and True)
-print('False and False:', False and False)" />
-                    </div>
-                </div>
-            </section>
-            <section>
-                <h3 class="title">L'operatore or</h3>
-                <div class="row" style="width: 90%; margin-top: 8vh;">
-                    <div class="col" style="text-align: left;">
-                        <table>
-                            <tr>
-                                <th>a</th>
-                                <th>b</th>
-                                <th>a <span class="code">or</span> b</th>
-                            </tr>
-                            <tr>
-                                <td>True</td>
-                                <td>True</td>
-                                <td>True</td>
-                            </tr>
-                            <tr>
-                                <td>True</td>
-                                <td>False</td>
-                                <td>True</td>
-                            </tr>
-                            <tr>
-                                <td>False</td>
-                                <td>True</td>
-                                <td>True</td>
-                            </tr>
-                            <tr>
-                                <td>False</td>
-                                <td>False</td>
-                                <td>False</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col" style="height: 40vh;">
-                        <base-editor contenteditable="true" language="python" theme="dark" code="print('True or True:', True or True)
-print('True or False:', True or False)
-print('False or True:', False or True)
-print('False or False:', False or False)" />
-                    </div>
-                </div>
-            </section>
-            <section>
-                <h3 class="title">L'operatore not</h3>
-                <div class="row" style="width: 90%; margin-top: 8vh;">
-                    <div class="col" style="text-align: left;">
-                        <table>
-                            <tr>
-                                <th>a</th>
-                                <th><span class="code">not</span> a</th>
-                            </tr>
-                            <tr>
-                                <td>True</td>
-                                <td>False</td>
-                            </tr>
-                            <tr>
-                                <td>False</td>
-                                <td>True</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col" style="height: 40vh;">
-                        <base-editor contenteditable="true" language="python" theme="dark" code="print('not True:', not True)
-print('not False:', not False)" />
-                    </div>
-                </div>
-            </section>
-            <section>
                 <section>
+                    <p class="slide-context">Introduzione</p>
                     <div class="r-stack">
                         <div>
                             <h3 class="title fragment fade-out" data-fragment-index="0">Il tuo turno!</h3>
@@ -274,57 +167,60 @@ print('not False:', not False)" />
                                 <div class="col" style="text-align: left;">
                                     <ul style="list-style-type: none;">
                                         <li>Prova ad indovinare il risultato delle espressioni sulla destra</li>
-                                        <li>Inserisci la tua risposta nella variabile <span class="code">guess</span>
+                                        <li>Inserisci la tua risposta nella variabile <span class="code">risp</span>
                                         </li>
                                         <li>Infine esegui il codice e verifica il tuo punteggio</li>
                                     </ul>
                                 </div>
                                 <div class="col" style="height: 70vh;">
-                                    <base-editor contenteditable="true" language="python" code="# Inserisci le tue risposte nella variabile 'guess'
-ex_1 = not (True and False)
-guess_ex_1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+                                    <base-editor contenteditable="true" language="python" code="# Inserisci le tue risposte nella variabile 'risp'
+espr1 = not (True and False)
+risp1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_2 = (not True) or (not (True or False))
-guess_ex_2 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+espr2 = (not True) or (not (True or False))
+risp2 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_3 = not (not True)
-guess_ex_3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+espr3 = not (not True)
+risp3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_4 = not (True and (False or True))
-guess_ex_4 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-
-
+espr4 = not (True and (False or True))
+risp4 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
 
 
 
 
 
-# Check the score of the student
+
+
+# Controlla le risposte dello studente
 
 score = 0
-wrong_answers = []
-if ex_1 == guess_ex_1:
+answers = []
+if espr1 == risp1:
     score = score + 1
+    answers.append('\n - espr1 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_1: not (True and False) is {}'.format(not (True and False)))
-if ex_2 == guess_ex_2:
+    answers.append('\n - espr1 ERRATA - not (True and False) è {}'.format(not (True and False)))
+if espr2 == risp2:
     score = score + 1
+    answers.append('\n - espr2 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_2: (not True) or (not (True or False)) is {}'.format((not True) or (not (True or False))))
-if ex_3 == guess_ex_3:
+    answers.append('\n - espr2 ERRATA - (not True) or (not (True or False)) è {}'.format((not True) or (not (True or False))))
+if espr3 == risp3:
     score = score + 1
+    answers.append('\n - espr3 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_3: not (not True) is {}'.format(not (not True)))
-if ex_4 == guess_ex_4:
+    answers.append('\n - espr3 ERRATA - not (not True) è {}'.format(not (not True)))
+if espr4 == risp4:
     score = score + 1
+    answers.append('\n - espr4 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_4: not (True and (False or True)) is {}'.format(not (True and (False or True))))
+    answers.append('\n - espr4 ERRATA - not (True and (False or True)) è {}'.format(not (True and (False or True))))
 
 print('Punteggio:', score, '/4')
 
-if score < 4:
-    print('Risposte sbagliate:', ''.join(wrong_answers))" />
+print('Risposte:', ''.join(answers))" />
                                 </div>
                             </div>
                         </div>
@@ -342,18 +238,17 @@ if score < 4:
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Introduzione</p>
                     <div style="height: 70vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python" code="# Inserisci le tue risposte nella variabile 'guess'
-ex_1 = not (not (not False))
-guess_ex_1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+                        <base-editor contenteditable="true" language="python" code="# Inserisci le tue risposte nella variabile 'risp'
+espr1 = not (not (not False))
+risp1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_2 = True and (not (not((not False) and True)))
-guess_ex_2 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+espr2 = True and (not (not((not False) and True)))
+risp2 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_3 = False or (False or ((True and True) and (True and False)))
-guess_ex_3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-
-
+espr3 = False or (False or ((True and True) and (True and False)))
+risp3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
 
 
@@ -361,30 +256,35 @@ guess_ex_3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
 
 
-# Check the score of the student
+
+
+# Controlla le risposte dello studente
 
 score = 0
-wrong_answers = []
-if ex_1 == guess_ex_1:
+answers = []
+if espr1 == risp1:
     score = score + 1
+    answers.append('\n - espr1 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_1: not (not (not False)) is {}'.format(not (not (not False))))
-if ex_2 == guess_ex_2:
+    answers.append('\n - espr1 ERRATA - not (not (not False)) è {}'.format(not (not (not False))))
+if espr2 == risp2:
     score = score + 1
+    answers.append('\n - espr2 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_2: True and (not (not((not False) and True))) is {}'.format(True and (not (not((not False) and True)))))
-if ex_3 == guess_ex_3:
+    answers.append('\n - espr2 ERRATA - True and (not (not((not False) and True))) è {}'.format(True and (not (not((not False) and True)))))
+if espr3 == risp3:
     score = score + 1
+    answers.append('\n - espr3 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_3: False or (False or ((True and True) and (True and False))) is {}'.format(False or (False or ((True and True) and (True and False)))))
+    answers.append('\n - espr3 ERRATA - False or (False or ((True and True) and (True and False))) è {}'.format(False or (False or ((True and True) and (True and False)))))
 
 print('Punteggio:', score, '/3')
 
-if score < 3:
-    print('Risposte sbagliate:', ''.join(wrong_answers))" />
+print('Risposte:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Introduzione</p>
                     <h3 class="title">Domande con variabili</h3>
                     <div class="row" style="width: 90%;">
                         <div class="col" style="text-align: left;">
@@ -399,19 +299,19 @@ if score < 3:
                         </div>
                         <div class="col" style="height: 70vh; margin-left: 1em;">
                             <base-editor contenteditable="true" language="python" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_1 = x or (not x)
+espr1 = x or (not x)
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_2 = (not x) and (not y)
+espr2 = (not x) and (not y)
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_3 = x and (y or y)
+espr3 = x and (y or y)
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_4 = x and (not y)
+espr4 = x and (not y)
 
 
 
@@ -420,51 +320,55 @@ expression_4 = x and (not y)
 
 
 
-# Check the score of the student
+# Controlla le risposte dello studente
 
 score = 0
-wrong_answers = []
-if expression_1:
+answers = []
+if espr1:
     score = score + 1
+    answers.append('\n - espr1 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_1 is not True!')
-if expression_2:
+    answers.append('\n - espr1 ERRATA - non è True!')
+if espr2:
     score = score + 1
+    answers.append('\n - espr2 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_2 is not True!')
-if expression_3:
+    answers.append('\n - ex_2 ERRATA - non è True!')
+if espr3:
     score = score + 1
+    answers.append('\n - espr3 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_3 is not True!')
-if expression_4:
+    answers.append('\n - ex_3 ERRATA - non è True!')
+if espr4:
     score = score + 1
+    answers.append('\n - espr4 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_4 is not True!')
+    answers.append('\n - ex_4 ERRATA - non è True!')
 
 print('Punteggio:', score, '/4')
 
-if score < 4:
-    print('Risposte sbagliate:', ''.join(wrong_answers))" />
+print('Risposte:', ''.join(answers))" />
                         </div>
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Introduzione</p>
                     <h4 class="title">Come prima!</h4>
                     <div style="height: 70vh; width: 50vw;">
                         <base-editor contenteditable="true" language="python" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_1 = (not x) or  y
+espr1 = (not x) or  y
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_2 = y or not (y and x)
+espr2 = y or not (y and x)
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_3 = x and ((not x) or not(y))
+espr3 = x and ((not x) or not(y))
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_4 = x and (x or (not(x) or not(not(x or not (x)))))
+espr4 = x and (x or (not(x) or not(not(x or not (x)))))
 
 
 
@@ -473,34 +377,38 @@ expression_4 = x and (x or (not(x) or not(not(x or not (x)))))
 
 
 
-# Check the score of the student
+# Controlla le risposte dello studente
 
 score = 0
-wrong_answers = []
-if expression_1:
+answers = []
+if espr1:
     score = score + 1
+    answers.append('\n - espr1 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_1 is not True!')
-if expression_2:
+    answers.append('\n - espr1 ERRATA - non è True!')
+if espr2:
     score = score + 1
+    answers.append('\n - espr2 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_2 is not True!')
-if expression_3:
+    answers.append('\n - espr2 ERRATA - non è True!')
+if espr3:
     score = score + 1
+    answers.append('\n - espr3 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_3 is not True!')
-if expression_4:
+    answers.append('\n - espr3 ERRATA - non è True!')
+if espr4:
     score = score + 1
+    answers.append('\n - espr4 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_4 is not True!')
+    answers.append('\n - espr4 ERRATA - non è True!')
 
 print('Punteggio:', score, '/4')
 
-if score < 4:
-    print('Risposte sbagliate:', ''.join(wrong_answers))" />
+print('Risposte sbagliate:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Introduzione</p>
                     <h4 class="title">Al contrario!</h4>
                     <div class="row" style="width: 90%;">
                         <div class="col" style="text-align: left;">
@@ -515,17 +423,17 @@ if score < 4:
                             <base-editor contenteditable="true" language="python" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 z = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_1 = x or ((not y) or z)
+espr1 = x or ((not y) or z)
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 z = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_2 = x or (not y) or (not z)
+espr2 = x or (not y) or (not z)
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 z = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-expression_3 = not (x and (not y) and (x or z))
+espr3 = not (x and (not y) and (x or z))
 
 
 
@@ -534,33 +442,36 @@ expression_3 = not (x and (not y) and (x or z))
 
 
 
-# Check the score of the student
+# Controlla le risposte dello studente
 
 score = 0
-wrong_answers = []
-if expression_1:
+answers = []
+if espr1:
     score = score + 1
+    answers.append('\n - espr1 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_1 is not True!')
-if expression_2:
+    answers.append('\n - espr1 ERRATA - non è True!')
+if espr2:
     score = score + 1
+    answers.append('\n - espr2 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_2 is not True!')
-if expression_3:
+    answers.append('\n - espr2 ERRATA - non è True!')
+if espr3:
     score = score + 1
+    answers.append('\n - espr3 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_3 is not True!')
+    answers.append('\n - espr3 ERRATA - non è True!')
 
 print('Punteggio:', score, '/3')
 
-if score < 3:
-    print('Risposte sbagliate:', ''.join(wrong_answers))" />
+print('Risposte:', ''.join(answers))" />
                         </div>
                     </div>
                 </section>
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">De Morgan</h3>
                 <table style="margin: 2em">
                     <tr>
@@ -581,17 +492,20 @@ if score < 3:
             </section>
 
             <section>
-
+                <p class="slide-context">Dettagli</p>
                 <div>
                     <h3 class="title">Il tuo turno!</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Prova a riscrivere le espressioni sulla destra in una maniera equivalente usando
+                                <li>Prova a riscrivere le espressioni che ti verranno proposte in una maniera
+                                    equivalente usando
                                     le leggi di De Morgan</li>
                                 <li>Prova a semplificare il risultato ove possibile</li>
                                 <li>Infine esegui il codice e verifica il tuo punteggio
                                 </li>
+                                <li class="fragment fade-out" data-fragment-index="0">Alla destra trovi un esempio, vai
+                                    avanti per gli altri esercizi</li>
                             </ul>
                             <table style="font-size: 3vmin; margin-top: 5vh;">
                                 <tr>
@@ -608,68 +522,74 @@ if score < 3:
                                 </tr>
                             </table>
                         </div>
-                        <div class="col" style="height: 70vh;">
-                            <base-editor contenteditable="true" language="python" code="# Esempio:
-esempio_espressione = 'x or y'
-esempio_equivalente = 'not((not x) and (not y))'
+                        <div class="r-stack">
+                            <div class="col fragment fade-out" data-fragment-index="0"
+                                style="height: 70vh; width: 40vw;">
+                                <base-editor contenteditable="true" language="python" code="# ESEMPIO
 
-# Esercizi:
-espressione_1 = '(not x) or y'
-equivalente_1 = '<EDITABLE>LA_TUA_RISPOSTA</EDITABLE>'
+# Verifica che effettivamente funzioni
+# testando le espressioni con tutti i
+# possibili valori di x e y
 
-espressione_2 = '(not x) and (not y)'
-equivalente_2 = '<EDITABLE>LA_TUA_RISPOSTA</EDITABLE>'
+x,y = False, False
+#x,y = False, True
+#x,y = True, False
+#x,y = True, True
 
-espressione_3 = '(not x) and (not (x or y))'
-equivalente_3 = '<EDITABLE>LA_TUA_RISPOSTA</EDITABLE>'
+orig = x or y
+trasf = not((not x) and (not y))
+print('orig=',orig)
+print('trasf=',trasf)" />
+                            </div>
+                            <div class="col fragment fade-in-then-out" data-fragment-index="0"
+                                style="height: 70vh; width: 40vw;">
+                                <base-editor contenteditable="true" language="python" code="# ESERCIZIO 1
 
+<EDITABLE>x,y = False, False</EDITABLE>
+<EDITABLE>#x,y = False, True</EDITABLE>
+<EDITABLE>#x,y = True, False</EDITABLE>
+<EDITABLE>#x,y = True, True</EDITABLE>
 
+orig = (not x) or y
+trasf = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+print('orig=',orig)
+print('trasf=',trasf)" />
+                            </div>
+                            <div class="col fragment fade-in-then-out" data-fragment-index="1"
+                                style="height: 70vh; width: 40vw;">
+                                <base-editor contenteditable="true" language="python" code="# ESERCIZIO 2
 
+<EDITABLE>x,y = False, False</EDITABLE>
+<EDITABLE>#x,y = False, True</EDITABLE>
+<EDITABLE>#x,y = True, False</EDITABLE>
+<EDITABLE>#x,y = True, True</EDITABLE>
 
+orig = (not x) and (not y)
+trasf = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+print('orig=',orig)
+print('trasf=',trasf)" />
+                            </div>
+                            <div class="col fragment fade-in" data-fragment-index="2"
+                                style="height: 70vh; width: 40vw;">
+                                <base-editor contenteditable="true" language="python" code="# ESERCIZIO 3
 
+<EDITABLE>x,y = False, False</EDITABLE>
+<EDITABLE>#x,y = False, True</EDITABLE>
+<EDITABLE>#x,y = True, False</EDITABLE>
+<EDITABLE>#x,y = True, True</EDITABLE>
 
-
-
-
-
-# Check the score of the student
-
-score = 0
-wrong_answers = []
-
-def check_evaluation(original_expression, student_expression):
-    correct = True
-    for x in [True, False]:
-        for y in [True, False]:
-            if eval(original_expression) != eval(student_expression):
-                correct = False
-                break
-    return correct
-
-
-if check_evaluation(espressione_1, equivalente_1):
-    score = score + 1
-else:
-    wrong_answers.append('\n - espressione 1 errata')
-if check_evaluation(espressione_2, equivalente_2):
-    score = score + 1
-else:
-    wrong_answers.append('\n - espressione 2 errata')
-if check_evaluation(espressione_3, equivalente_3):
-    score = score + 1
-else:
-    wrong_answers.append('\n - espressione 3 errata')
-
-print('Punteggio:', score, '/3')
-
-if score < 3:
-    print('Risposte sbagliate:', ''.join(wrong_answers))" />
+orig = (not x) and (not (x or y))
+trasf = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+print('orig=',orig)
+print('trasf=',trasf)" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">Conversioni</h3>
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
@@ -690,101 +610,104 @@ if score < 3:
                         </ul>
                     </div>
                     <div class="col" style="height: 60vh;">
-                        <base-editor contenteditable="true" language="python" theme="dark" code="# Integer -> Boolean
-print('bool(1):', bool(1))
-print('bool(0):', bool(0))
-print('bool(72):', bool(72))
-print('bool(-5):', bool(-5))
-
-# Boolean -> Integer
-print('int(True):', int(True))
-print('int(False):', int(False))" />
+                        <ul style="list-style-type: none">
+                            <li><code>bool(1) -> True</code></li>
+                            <li><code>bool(0) -> False</code></li>
+                            <li><code>bool(72) -> True</code></li>
+                            <li><code>bool(-5) -> True</code></li>
+                            <li></li>
+                            <li><code>int(True) -> 1</code></li>
+                            <li><code>int(False) -> 0</code></li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">Il tuo turno!</h3>
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
                         <ul style="list-style-type: none;">
                             <li>Prova ad indovinare il risultato delle espressioni sulla destra</li>
-                            <li>Inserisci la tua risposta nella variabile <span class="code">guess</span>
+                            <li>Inserisci la tua risposta nella variabile <span class="code">risp</span>
                             </li>
                             <li>Infine esegui il codice e verifica il tuo punteggio</li>
                         </ul>
                     </div>
                     <div class="col" style="height: 70vh;">
-                        <base-editor contenteditable="true" language="python" code="ex_1 = bool(True)
-guess_ex_1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+                        <base-editor contenteditable="true" language="python" code="espr1 = bool(True)
+risp1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_2 = bool(2+4)
-guess_ex_2 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+espr2 = bool(2+4)
+risp2 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_3 = bool(4-3-1)
-guess_ex_3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+espr3 = bool(4-3-1)
+risp3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_4 = True + True
-guess_ex_4 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+espr4 = True + True
+risp4 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_5 = True + False
-guess_ex_5 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-
-
+espr5 = True + False
+risp5 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
 
 
 
 
 
-# Check the score of the student
+
+
+# Controlla le risposte dello studente
 
 score = 0
-wrong_answers = []
-if ex_1 == guess_ex_1:
+answers = []
+if espr1 == risp1:
     score = score + 1
+    answers.append('\n - espr1 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_1: bool(True) is {}'.format(bool(True)))
-if ex_2 == guess_ex_2:
+    answers.append('\n - espr1 ERRATA - bool(True) è {}'.format(bool(True)))
+if espr2 == risp2:
     score = score + 1
+    answers.append('\n - espr2 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_2: bool(2+4) is {}'.format(bool(2+4)))
-if ex_3 == guess_ex_3:
+    answers.append('\n - espr2 ERRATA - bool(2+4) è {}'.format(bool(2+4)))
+if espr3 == risp3:
     score = score + 1
+    answers.append('\n - espr3 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_3: bool(4-3-1) is {}'.format(bool(4-3-1)))
-if ex_4 == guess_ex_4:
+    answers.append('\n - espr3 ERRATA - bool(4-3-1) è {}'.format(bool(4-3-1)))
+if espr4 == risp4:
     score = score + 1
+    answers.append('\n - espr4 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_4: True + True is {}'.format(True + True))
-if ex_5 == guess_ex_5:
+    answers.append('\n - espr4 ERRATA - True + True è {}'.format(True + True))
+if espr5 == risp5:
     score = score + 1
+    answers.append('\n - espr5 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_5: True + False is {}'.format(True + False))
+    answers.append('\n - espr5 ERRATA - True + False è {}'.format(True + False))
 
 print('Punteggio:', score, '/5')
 
-if score < 5:
-    print('Risposte sbagliate:', ''.join(wrong_answers))" />
+print('Risposte:', ''.join(answers))" />
                     </div>
                 </div>
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">Ordine di valutazione</h3>
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
                         <ul style="list-style-type: none;">
-                            <li>Per questioni di efficienza, se durante la valutazione di un’espressione booleana Python
+                            <li>Se durante la valutazione di un’espressione booleana Python
                                 scopre che il risultato possibile può essere solo uno, allora evita di calcolare le
                                 espressioni seguenti.</li>
-                            <li>Per esempio, nell'espressione <span class="code">False and x</span>, leggendo da
-                                sinistra a destra, nel momento in cui incontriamo False sappiamo già che il risultato
-                                della and sarà sempre False indipendentemente dal valore della x (convinciti!).</li>
                         </ul>
                     </div>
                     <div class="col" style="height: 40vh; margin: 2vh;">
-                        <base-editor contenteditable="true" language="python" theme="dark" code="print('False and x:', False and x)
+                        <base-editor contenteditable="true" language="python" code="print('False and x:', False and x)
 
 # NOTA: qui x non è nemmeno definito...
 # Se provi a mettere True al posto di False,
@@ -793,24 +716,20 @@ if score < 5:
                 </div>
             </section>
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">Ordine di valutazione (2)</h3>
-                <div class="row" style="width: 90%; margin-top: 8vh;">
-                    <div class="col" style="text-align: left;">
-                        <ul style="list-style-type: none;">
-                            <li>Se invece leggendo da sinistra a destra Python trova prima <span
-                                    class="code">True</span>, continua la valutazione
-                                delle espressioni seguenti e come risultato dell’intera and restituisce la valutazione
-                                dell’<strong>ultima</strong> espressione</li>
-                        </ul>
-                    </div>
-                    <div class="col" style="height: 40vh; margin: 2vh;">
-                        <base-editor contenteditable="true" language="python" theme="dark" code="print('True and 5:', True and 5)
-print('5 and True:', 5 and True)" />
-                    </div>
-                </div>
+                <ul style="list-style-type: none; margin-top: 4vh;">
+                    <li>Se invece la valutazione continua, il risultato sarà la valutazione
+                        dell’<strong>ultima</strong> espressione</li>
+                </ul>
+                <ul style="list-style-type: none; margin-top: 3vh;">
+                    <li><code>True and 5 -> 5</code></li>
+                    <li><code>5 and True -> True</code></li>
+                </ul>
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">Ordine di valutazione (3)</h3>
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
@@ -821,7 +740,7 @@ print('5 and True:', 5 and True)" />
                         </ul>
                     </div>
                     <div class="col" style="height: 40vh; margin: 2vh;">
-                        <base-editor contenteditable="true" language="python" theme="dark" code="print('True or x:', True or x)
+                        <base-editor contenteditable="true" language="python" code="print('True or x:', True or x)
 
 # NOTA: anche in questo caso x non è nemmeno definito...
 # Se provi a mettere False invece di True, infatti,
@@ -831,66 +750,71 @@ print('5 and True:', 5 and True)" />
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">Il tuo turno!</h3>
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
                         <ul style="list-style-type: none;">
                             <li>Prova ad indovinare il risultato delle espressioni sulla destra</li>
-                            <li>Inserisci la tua risposta nella variabile <span class="code">guess</span>
+                            <li>Inserisci la tua risposta nella variabile <span class="code">risp</span>
                             </li>
                             <li>Infine esegui il codice e verifica il tuo punteggio</li>
                         </ul>
                     </div>
                     <div class="col" style="height: 70vh;">
-                        <base-editor contenteditable="true" language="python" code="ex_1 = 0 and True
-guess_ex_1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+                        <base-editor contenteditable="true" language="python" code="espr1 = 0 and True
+risp1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_2 = 1 and 0
-guess_ex_2 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+espr2 = 1 and 0
+risp2 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_3 = True and -1
-guess_ex_3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
+espr3 = True and -1
+risp3 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
-ex_4 = 0 and False
-guess_ex_4 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
-
-
+espr4 = 0 and False
+risp4 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE>
 
 
 
 
 
 
-# Check the score of the student
+
+
+# Controlla le risposte dello studente
 
 score = 0
-wrong_answers = []
-if ex_1 == guess_ex_1:
+answers = []
+if espr1 == risp1:
     score = score + 1
+    answers.append('\n - espr1 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_1: 0 and True is {}'.format(0 and True))
-if ex_2 == guess_ex_2:
+    answers.append('\n - espr1 ERRATA - 0 and True è {}'.format(0 and True))
+if espr2 == risp2:
     score = score + 1
+    answers.append('\n - espr2 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_2: 1 and 0 is {}'.format(1 and 0))
-if ex_3 == guess_ex_3:
+    answers.append('\n - espr2 ERRATA - 1 and 0 è {}'.format(1 and 0))
+if espr3 == risp3:
     score = score + 1
+    answers.append('\n - espr3 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_3: True and -1 is {}'.format(True and -1))
-if ex_4 == guess_ex_4:
+    answers.append('\n - espr3 ERRATA - True and -1 è {}'.format(True and -1))
+if espr4 == risp4:
     score = score + 1
+    answers.append('\n - espr4 CORRETTA')
 else:
-    wrong_answers.append('\n - ex_4: 0 and False is {}'.format(0 and False))
+    answers.append('\n - espr4 ERRATA - 0 and False è {}'.format(0 and False))
 
 print('Punteggio:', score, '/4')
 
-if score < 4:
-    print('Risposte sbagliate:', ''.join(wrong_answers))" />
+print('Risposte:', ''.join(answers))" />
                     </div>
                 </div>
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">Errori nella valutazione</h3>
                 <div class="row" style="width: 90%; margin-top: 8vh;">
                     <div class="col" style="text-align: left;">
@@ -921,25 +845,17 @@ if score < 4:
                             </ul>
                             <ul style="list-style-type: none;" class="fragment fade-in-then-out"
                                 data-fragment-index="4">
-                                <li>Python produce un risultato <strong>senza lamentarsi</strong>, perché valutando da
-                                    sinistra a
-                                    destra ha incontrato un False e ha quindi concluso in anticipo che il risultato
-                                    dell’espressione debba essere False.
-                                </li>
-                                <li>Molte volte non ti accorgerai di questi
-                                    potenziali problemi ma è bene conoscerli perchè vi sono situazioni in cui puoi
-                                    persino <strong>sfruttare l’ordine di esecuzione</strong> per prevenire errori.</li>
+                                <li>Perché Python ha prodotto un risultato senza lamentarsi?</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col r-stack" style="height: 40vh; margin: 2vh;">
                         <div style="width: 100%; height: 100%;" class="fragment fade-out" data-fragment-index="2">
-                            <base-editor contenteditable="true" language="python" theme="dark" code="print(1/0)
+                            <base-editor contenteditable="true" language="python" code="print(1/0)
 print('dopo...')" />
                         </div>
                         <div style="width: 100%; height: 100%;" class="fragment fade-in" data-fragment-index="3">
-                            <base-editor contenteditable="true" language="python" theme="dark"
-                                code="print(False and 1/0)" />
+                            <base-editor contenteditable="true" language="python" code="print(False and 1/0)" />
                         </div>
                     </div>
                 </div>
@@ -947,6 +863,7 @@ print('dopo...')" />
 
             <section>
                 <section>
+                    <p class="slide-context">Dettagli</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <ul style="list-style-type: none; margin-bottom: 2vh;">
                         <li>Guarda le espressioni seguenti, e per ciascuna cerca di indovinare quale risultato
@@ -967,6 +884,7 @@ print('dopo...')" />
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Dettagli</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div style="margin-right: 20vw;" class="col">
@@ -999,6 +917,7 @@ print('dopo...')" />
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <h3 class="title">Operatori di comparazione</h3>
                 <table style="margin: 2em">
                     <tr>
@@ -1036,35 +955,48 @@ print('dopo...')" />
             </section>
 
             <section>
-                <div style="height: 70vh; width: 60vw;">
-                    <base-editor contenteditable="true" language="python" theme="dark" code="print('3 == 3 is', 3 == 3)
-print('3 == 5 is', 3 == 5)
-
-a,b = 3,5
-print('a == a is', a == a)
-print('a == b is', a == b)
-print('a == b-2 is', a == b-2)
-
-print('3 != 5 is', 3 != 5) # 3 è diverso da 5 ?
-print('3 != 3 is', 3 != 3) # 3 è diverso da 3 ?
-
-print('3 < 5 is', 3 < 5)
-print('5 < 5 is', 5 < 5)
-print('5 <= 5 is', 5 <= 5)" />
+                <p class="slide-context">Dettagli</p>
+                <h3 class="title">Qualche esempio</h3>
+                <div class="row" style="width: 80vw; margin-top: 10vh;">
+                    <div class="col">
+                        <ul style="list-style-type: none">
+                            <li><code><span class="code"> 3 == 5</span> -> True</code></li>
+                            <li></li>
+                            <li><code><span class="code"> 3 != 5</span> -> 1</code></li>
+                            <li><code><span class="code"> 3 != 3</span> -> 0</code></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul style="list-style-type: none">
+                            <li><code><span class="code"> a,b = 3,5</span> </code></li>
+                            <li><code><span class="code"> a == a</span> -> False</code></li>
+                            <li><code><span class="code"> a == b</span> -> True</code></li>
+                            <li><code><span class="code"> a == b-2</span> -> True</code></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul style="list-style-type: none">
+                            <li><code><span class="code"> 3 &lt; 5</span> -> 1</code></li>
+                            <li><code><span class="code"> 5 &lt; 5</span> -> 0</code></li>
+                            <li><code><span class="code"> 5 &lt;= 5</span> -> 0</code></li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
             <section>
+                <p class="slide-context">Dettagli</p>
                 <p>Dato che le comparazioni sono espressioni che producono booleani, possiamo anche assegnare il
                     risultato ad una variabile</p>
                 <div style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                    <base-editor contenteditable="true" language="python" theme="dark" code="x = 5 > 3
+                    <base-editor contenteditable="true" language="python" code="x = 5 > 3
 print(x)" />
                 </div>
             </section>
 
             <section>
                 <section>
+                    <p class="slide-context">Dettagli</p>
                     <h3 class="title">Congiungere operazioni</h3>
                     <div class="r-stack">
                         <div class="fragment fade-out" data-fragment-index="0">
@@ -1113,7 +1045,7 @@ print(<EDITABLE>LA_TUA_ESPRESSIONE</EDITABLE>)" />
                         </div>
                         <div class="fragment fade-in-then-out" data-fragment-index="1"
                             style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                            <base-editor contenteditable="true" language="python" theme="dark" code="x,y = 7, 5
+                            <base-editor contenteditable="true" language="python" code="x,y = 7, 5
 print(x and y > 0)  # ATTENZIONE!
 
 x,y = 7, -6
@@ -1121,18 +1053,20 @@ print(x and y > 0)  # ATTENZIONE!" />
                         </div>
                         <div class="fragment fade-in" data-fragment-index="2"
                             style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                            <base-editor contenteditable="true" language="python" theme="dark" code="x,y = -3, 5
+                            <base-editor contenteditable="true" language="python" code="x,y = -3, 5
 print(x and y > 0)   # ATTENZIONE!" />
                         </div>
                         <div class="fragment fade-in" data-fragment-index="4"
                             style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                            <base-editor contenteditable="true" language="python" theme="dark" code="x,y = -3, 5
+                            <base-editor contenteditable="true" language="python" code="x,y = -3, 5
 print((x and y) > 0)   # ATTENZIONE!" />
                         </div>
                     </div>
                 </section>
 
                 <section>
+                    <p class="slide-context">Dettagli</p>
+                    <h3>Perché <span class="code">(x and y) > 0</span> non funziona</h3>
                     <p>Sia <span class="code">x</span> che <span class="code">y</span> vengono considerate singole
                         espressioni booleane, quindi Python internamente ridurrà l'espressione nei seguenti passi:</p>
                     <ol style="margin-top: 4vh;">
@@ -1148,6 +1082,7 @@ print((x and y) > 0)   # ATTENZIONE!" />
             </section>
             <section>
                 <section>
+                    <p class="slide-context">Dettagli</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <ul style="list-style-type: none; margin-bottom: 2vh;">
                         <li>Prova ad indovinare il risultato delle espressioni in basso (o se producono
@@ -1192,6 +1127,7 @@ print(x == y)" />
                 </section>
             </section>
             <section>
+                <p class="slide-context">Esercizi</p>
                 <h3 class="title">Esercizio - Il tagliaerbe 1</h3>
                 <p>Il dottor Angelo possiede un prato di area quadrata di lato <span class="code">d=100</span> metri che
                     viene accudito ogni settimana da Jobe il giardiniere. Jobe passa sempre meticolosomente il tagliarbe
@@ -1212,9 +1148,12 @@ print(x == y)" />
             </section>
             <section>
                 <section>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span> e <span class="code">y</span>.
+                    <p class="slide-context">Esercizi</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
+                        <span class="code">d</span>.
                         Esegui
-                        il codice per verificare la sua correttezza</p>
+                        il codice per verificare la sua correttezza
+                    </p>
                     <div class="row">
                         <div class="col">
                             <img src="assets/lawnmower-1.png" alt="Image of the exercise">
@@ -1223,74 +1162,18 @@ print(x == y)" />
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="d = 100
 
-soluzione = '<EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>'
+<EDITABLE>x,y = 0,  0      </EDITABLE># False
+<EDITABLE>#x,y = 25, 25    </EDITABLE># False
+<EDITABLE>#x,y = 75, 75    </EDITABLE># False
+<EDITABLE>#x,y = 75, 25    </EDITABLE># False
+<EDITABLE>#x,y = 25, 75    </EDITABLE># True
+<EDITABLE>#x,y = 100, 100  </EDITABLE># False
+<EDITABLE>#x,y = 10, 90    </EDITABLE># True
+<EDITABLE>#x,y = 60, 60    </EDITABLE># False
 
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Check student's code
-import sys
-x, y = 0, 0
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 25
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 75, 75
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 75, 25
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 75
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 100, 100
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 10, 90
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 60, 60
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-print('Soluzione corretta!')
-" />
+print(soluzione)" />
                         </div>
                     </div>
                 </section>
@@ -1301,6 +1184,7 @@ print('Soluzione corretta!')
             </section>
 
             <section>
+                <p class="slide-context">Esercizi</p>
                 <h3 class="title">Esercizio - Il tagliaerbe 2</h3>
                 <p>Il dottor Angelo adesso richiede a Jobe di tagliare più zone…</p>
                 <ul>
@@ -1311,9 +1195,12 @@ print('Soluzione corretta!')
 
             <section>
                 <section>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span> e <span class="code">y</span>.
+                    <p class="slide-context">Esercizi</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
+                        <span class="code">d</span>.
                         Esegui
-                        il codice per verificare la sua correttezza</p>
+                        il codice per verificare la sua correttezza
+                    </p>
                     <div class="row">
                         <div class="col">
                             <img src="assets/lawnmower-2.png" alt="Image of the exercise">
@@ -1322,78 +1209,23 @@ print('Soluzione corretta!')
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="d = 100
 
-soluzione = '<EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>'
+<EDITABLE>x,y = 0,  0      </EDITABLE># True
+<EDITABLE>#x,y = 25, 25    </EDITABLE># True
+<EDITABLE>#x,y = 75, 75    </EDITABLE># True
+<EDITABLE>#x,y = 75, 25    </EDITABLE># False
+<EDITABLE>#x,y = 25, 75    </EDITABLE># False
+<EDITABLE>#x,y = 100, 100  </EDITABLE># True
+<EDITABLE>#x,y = 10, 90    </EDITABLE># False
+<EDITABLE>#x,y = 60, 60    </EDITABLE># True
 
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Check student's code
-import sys
-x, y = 0, 0
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 25
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 75, 75
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 75, 25
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 75
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 100, 100
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 10, 90
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 60, 60
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-print('Soluzione corretta!')
-" />
+print(soluzione)" />
                         </div>
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">(x &lt; d/2 and y &lt; d/2) or (x &gt; d/2 and y &gt;
                             d/2)</span></p>
@@ -1401,6 +1233,7 @@ print('Soluzione corretta!')
             </section>
 
             <section>
+                <p class="slide-context">Esercizi</p>
                 <h3 class="title">Esercizio - Il tagliaerbe 3</h3>
                 <p>Il dottor Angelo si è stufato di giardini squadrati, e vuole dividere il prato in diagonale.</p>
                 <ul>
@@ -1411,6 +1244,7 @@ print('Soluzione corretta!')
 
             <section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">x</span> e <span class="code">y</span>.
                         Esegui
                         il codice per verificare la sua correttezza</p>
@@ -1422,80 +1256,29 @@ print('Soluzione corretta!')
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="d = 100
 
-soluzione = '<EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>'
+<EDITABLE>x,y = 50, 10   </EDITABLE># True
+<EDITABLE>#x,y = 100,0   </EDITABLE># True
+<EDITABLE>#x,y = 75, 70  </EDITABLE># True
+<EDITABLE>#x,y = 25,75   </EDITABLE># False
+<EDITABLE>#x,y = 25, 5   </EDITABLE># True
+<EDITABLE>#x,y = 5, 80   </EDITABLE># False
+<EDITABLE>#x,y = 60, 70  </EDITABLE># False
 
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Check student's code
-import sys
-x, y = 50, 10
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 100, 0
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 75, 70
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 75
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 5
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 5, 80
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 60, 70
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-print('Soluzione corretta!')
-" />
+print(soluzione)" />
                         </div>
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">y &lt; x</span></p>
                 </section>
             </section>
 
             <section>
+                <p class="slide-context">Esercizi</p>
                 <h3 class="title">Esercizio - Il tagliaerbe 4</h3>
                 <p>Altro giorno, altra diagonale per Jobe...</p>
                 <ul>
@@ -1508,9 +1291,12 @@ print('Soluzione corretta!')
 
             <section>
                 <section>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span> e <span class="code">y</span>.
+                    <p class="slide-context">Esercizi</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
+                        <span class="code">d</span>.
                         Esegui
-                        il codice per verificare la sua correttezza</p>
+                        il codice per verificare la sua correttezza
+                    </p>
                     <div class="row">
                         <div class="col">
                             <img src="assets/lawnmower-4.png" alt="Image of the exercise">
@@ -1519,80 +1305,29 @@ print('Soluzione corretta!')
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="d = 100
 
-soluzione = '<EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>'
+<EDITABLE>x,y = 50, 10   </EDITABLE># True
+<EDITABLE>#x,y = 0,0     </EDITABLE># True
+<EDITABLE>#x,y = 75, 70  </EDITABLE># False
+<EDITABLE>#x,y = 25,90   </EDITABLE># False
+<EDITABLE>#x,y = 25, 5   </EDITABLE># True
+<EDITABLE>#x,y = 80, 20  </EDITABLE># False
+<EDITABLE>#x,y = 25, 25  </EDITABLE># True
 
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Check student's code
-import sys
-x, y = 50, 10
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 0, 0
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 75, 70
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 90
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 5
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 80, 20
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 25, 25
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-print('Soluzione corretta!')
-" />
+print(soluzione)" />
                         </div>
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">y &lt; -x + d</span></p>
                 </section>
             </section>
 
             <section>
+                <p class="slide-context">Esercizi</p>
                 <h3 class="title">Esercizio - Il Tempio di Lava</h3>
                 <p>Durante i tuoi studi scopri una mappa di un antico tempio, ove sono custoditi mirabolanti tesori.</p>
                 <p>Il tempio misura <span class="code">d=80</span> metri di lato ed è un labirinto di corridoi. Sai per
@@ -1609,9 +1344,12 @@ print('Soluzione corretta!')
 
             <section>
                 <section>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span> e <span class="code">y</span>.
+                    <p class="slide-context">Esercizi</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
+                        <span class="code">d</span>.
                         Esegui
-                        il codice per verificare la sua correttezza</p>
+                        il codice per verificare la sua correttezza
+                    </p>
                     <div class="row">
                         <div class="col">
                             <img src="assets/bool-temple-1.png" alt="Image of the exercise">
@@ -1620,82 +1358,24 @@ print('Soluzione corretta!')
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="d = 80
 
-soluzione = '<EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>'
+<EDITABLE>x,y = 0, 0     </EDITABLE># False
+<EDITABLE>#x,y = 20, 20  </EDITABLE># False
+<EDITABLE>#x,y = 60, 10  </EDITABLE># True
+<EDITABLE>#x,y = 10, 60  </EDITABLE># True
+<EDITABLE>#x,y = 20, 70  </EDITABLE># False
+<EDITABLE>#x,y = 70, 20  </EDITABLE># False
+<EDITABLE>#x,y = 70, 70  </EDITABLE># False
+<EDITABLE>#x,y = 0,60    </EDITABLE># True
+<EDITABLE>#x,y = 60,0    </EDITABLE># True
 
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Check student's code
-import sys
-x, y = 0, 0
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 20, 20
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 60, 10
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 10, 60
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 20, 70
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 70, 20
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 70, 70
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 0, 60
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-x, y = 60, 0
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-print('Soluzione corretta!')
-" />
+print(soluzione)" />
                         </div>
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">((x &gt; d//2) or (y &gt; d//2)) and (x &lt; -y + d)</span>
                     </p>
@@ -1703,6 +1383,7 @@ print('Soluzione corretta!')
             </section>
 
             <section>
+                <p class="slide-context">Esercizi</p>
                 <h3 class="title">Esercizio - La Torre di Gradius I</h3>
                 <p>La lancetta dell’orologio sulla prima Torre di Gradius ha compiuto finora una rotazione di <span
                         class="code">n</span> gradi. Scrivi del codice che mostra <span class="code">True</span> se la
@@ -1724,6 +1405,7 @@ print('Soluzione corretta!')
 
             <section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">n</span>.
                         Esegui
                         il codice per verificare la sua correttezza</p>
@@ -1733,106 +1415,29 @@ print('Soluzione corretta!')
                             <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="
+                            <base-editor contenteditable="true" language="python" code="<EDITABLE>n = 20    </EDITABLE># False
+<EDITABLE>#n = 405  </EDITABLE># False
+<EDITABLE>#n = 70   </EDITABLE># False
+<EDITABLE>#n = 100  </EDITABLE># True
+<EDITABLE>#n = 460  </EDITABLE># True
+<EDITABLE>#n = 225  </EDITABLE># True
+<EDITABLE>#n = 182  </EDITABLE># False
+<EDITABLE>#n = 253  </EDITABLE># False
+<EDITABLE>#n = 275  </EDITABLE># False
+<EDITABLE>#n = 205  </EDITABLE># False
+<EDITABLE>#n = 350  </EDITABLE># True
+<EDITABLE>#n = 925  </EDITABLE># False
+<EDITABLE>#n = 815  </EDITABLE># True
+<EDITABLE>#n = 92   </EDITABLE># True
 
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>
 
-
-soluzione = '<EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Check student's code
-import sys
-n = 20
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 405
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 70
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 100
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 460
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 225
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 182
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 253
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 275
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 205
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 350
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 925
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 815
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n = 92
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-print('Soluzione corretta!')
-" />
+print(soluzione)" />
                         </div>
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <div class="r-stack">
                         <div class="fragment fade-out" data-fragment-index="1">
@@ -1869,6 +1474,7 @@ print('Soluzione corretta!')
             </section>
 
             <section>
+                <p class="slide-context">Esercizi</p>
                 <h3 class="title">Esercizio - Il Salto del Tubo</h3>
                 <p>Un idraulico italiano vede 3 tubi di altezza rispettivamente <span class="code">t1</span>, <span
                         class="code">t2</span>, <span class="code">t3</span>, sopra cui vi sono rispettivamente sono
@@ -1889,6 +1495,7 @@ print('Soluzione corretta!')
 
             <section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">h</span>, <span class="code">t1</span>,
                         <span class="code">t2</span>, <span class="code">t3</span>.
                         Esegui
@@ -1900,66 +1507,21 @@ print('Soluzione corretta!')
                             <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="
-t1,t2,t3 = 200,500,600
+                            <base-editor contenteditable="true" language="python" code="t1,t2,t3 = 200,500,600
 
+<EDITABLE>h=450   </EDITABLE># 10
+<EDITABLE>#h=570  </EDITABLE># 20
+<EDITABLE>#h=610  </EDITABLE># 30
+<EDITABLE>#h=50   </EDITABLE># 0
 
-soluzione = '<EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>'
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Check student's code
-import sys
-h = 450
-if eval(soluzione) != 10:
-    sys.exit('Soluzione errata')
-
-h = 570
-if eval(soluzione) != 20:
-    sys.exit('Soluzione errata')
-
-h = 610
-if eval(soluzione) != 30:
-    sys.exit('Soluzione errata')
-
-h = 50
-if eval(soluzione) != 0:
-    sys.exit('Soluzione errata')
-
-print('Soluzione corretta!')
-" />
+print(soluzione)" />
                         </div>
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">(h &gt;= t3 and 30) or (h &gt;= t2 and 20) or (h &gt;= t1 and
                             10) or 0</span>
@@ -1968,6 +1530,7 @@ print('Soluzione corretta!')
             </section>
 
             <section>
+                <p class="slide-context">Esercizi</p>
                 <h3 class="title">Esercizio - La Torre di Gradius II</h3>
                 <p>Le lancette dell’orologio sulla seconda Torre di Gradius hanno compiuto finora una rotazione
                     rispettivamente di <span class="code">n</span> e <span class="code">m</span> gradi. Scrivi del
@@ -1984,6 +1547,7 @@ print('Soluzione corretta!')
 
             <section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">n</span> e <span class="code">m</span>.
                         Esegui
                         il codice per verificare la sua correttezza</p>
@@ -1994,85 +1558,25 @@ print('Soluzione corretta!')
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="
+<EDITABLE>n,m = 160,170   </EDITABLE># True
+<EDITABLE>#n,m = 135, 140 </EDITABLE># False
+<EDITABLE>#n,m = 160,190  </EDITABLE># False
+<EDITABLE>#n,m = 70,170   </EDITABLE># False
+<EDITABLE>#n,m = 350,260  </EDITABLE># False
+<EDITABLE>#n,m = 350,340  </EDITABLE># True
+<EDITABLE>#n,m = 350,340  </EDITABLE># True
+<EDITABLE>#n,m = 430,530  </EDITABLE># False
+<EDITABLE>#n,m = 520,510  </EDITABLE># True
+<EDITABLE>#n,m = 730,740  </EDITABLE># False
 
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>
 
-
-soluzione = '<EDITABLE>LA_TUA_SOLUZIONE</EDITABLE>'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Check student's code
-import sys
-n,m = 160,170
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n,m = 135,140
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n,m = 160,190
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n,m = 70,170
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n,m = 350,260
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n,m = 350,340
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n,m = 430,530
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n,m = 520,510
-if not eval(soluzione):
-    sys.exit('Soluzione errata')
-
-n,m = 730,740
-if eval(soluzione):
-    sys.exit('Soluzione errata')
-
-print('Soluzione corretta!')
-" />
+print(soluzione)" />
                         </div>
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">Esercizi</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">(n % 90 &gt; 60) and ((n // 90) % 4 == (m // 90) % 4)
                         </span></p>
@@ -2102,6 +1606,8 @@ print('Soluzione corretta!')
             width: "90%",
             // Set the height of the slides
             height: "90%",
+            // Enable the slide number counter
+            slideNumber: 'c/t',
             // Vertical centering of slides
             center: true,
             // Loop the presentation
@@ -2119,6 +1625,21 @@ print('Soluzione corretta!')
             // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
             disableLayout: true
         });
+    </script>
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            css.innerHTML = "section { height: auto; } .slide-context {display: none;}";
+            // Append the css to the head
+            document.head.appendChild(css);
+
+            const printVersionText = document.getElementById('print-version-text');
+            printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+        }
     </script>
 </body>
 

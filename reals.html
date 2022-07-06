@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Code Playgrounds</title>
+
+    <!-- Main Reveal Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+    <!-- Blood Reveal Theme Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+    <!-- Custom stylesheet to make reveal work with our playgrounds -->
+    <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
+
+    <!-- Bundle containing the code playground web components -->
+    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <!-- <script src="icp-bundle.umd.js"></script> -->
+
+    <style>
+        li {
+            padding-bottom: 2vmin;
+        }
+
+        .code {
+            padding: 0 .5rem;
+            background-color: rgb(215, 237, 255);
+            font-family: monospace;
+        }
+
+        .slide-context {
+            position: absolute;
+            bottom: 0;
+            left: 3vw;
+            font-size: 2vmin;
+        }
+
+        .exercise-button {
+            margin-top: 8vh;
+            width: 10vw;
+            height: 7vh;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ededed;
+            transition: background-color .2s ease-in-out;
+            font-size: 1.7vmin;
+        }
+        .exercise-button:hover {
+            background-color: #dedede;
+        }
+    </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+    <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+        data-background-transition="fade">
+        <div class="slides">
+
+            <!-- Each <section> is a slide -->
+            <section>
+                <!-- title class: custom style for titles -->
+                <h3 class="title">Numeri Reali</h3>
+
+                <!-- subtitle class: custom style for subtitles -->
+                <p class="subtitle">In Python</p>
+                <div style="margin-top: 5vh;">
+                    <p>Slide adattate da <a
+                            href="https://it.softpython.org/basics/basics3-floats-sol.html">softpython</a></p>
+                    <p id="print-version-text"><a href="?print-pdf">Clicca qui</a> per la versione stampabile</p>
+                </div>
+
+                <div style="margin-top: 5vh;">
+                    <p><small>Premi <span class="code">esc</span> per l'overview generale</small></p>
+                </div>
+            </section>
+
+            <section>
+                <section>
+                    <p class="slide-context">Introduzione</p>
+                    <h3 class="title">I Numeri Reali</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Anche chiamati numeri a virgola mobile</li>
+                                <li>Il loro tipo è <span class="code">float</span></li>
+                                <li>Python li salva in 64 bit di informazione (segno, esponente, mantissa)</li>
+                                <li class="fragment"><strong>Nota:</strong> bisogna usare il punto, non la virgola!</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="x = 3.14
+print('Il valore di x è:', x)
+print('Il tipo di x è:', type(x))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">Introduzione</p>
+                    <h3 class="title">Notazione scientifica</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Con la notazione scientifica, si scrive <span class="code"><em>xen</em></span> per rappresentare il numero <span class="code">x ⋅ 10<sup>n</sup></sup></span> </li>
+                                <li>In questo modo in memoria vengono memorizzate solo le cifre più significative e l'esponente</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul style="list-style-type: none">
+                                <li><code>75e1 -> 750.0</code></li>
+                                <li><code>75e2 -> 7500.0</code></li>
+                                <li><code>75e123 -> 7.5e+124</code></li>
+                                <li><code>75e0 -> 75.0</code></li>
+                                <li><code>75e-1 -> 7.5</code></li>
+                                <li><code>75e-2 -> 0.75</code></li>
+                                <li><code>75e-123 -> 7.5e-123</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">Introduzione</p>
+                    <h3 class="title">Il tuo turno!</h3>
+                    <ul style="list-style-type: none; margin-bottom: 2vh;">
+                        <li>Cerca di indovinare il risultato che producono le seguenti espressioni!</li>
+                        <li style="text-align: center;">Esegui il codice per verificare!</li>
+                    </ul>
+                    <div class="row" style="gap: 3vw;">
+                        <div class="col" style="height: 50vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(1.000.000)" />
+                        </div>
+                        <div class="col" style="height: 50vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(3,000,000.000)" />
+                        </div>
+                        <div class="col" style="height: 50vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(2000000.000)" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">Introduzione</p>
+                    <div class="row" style="gap: 3vw;">
+                        <div class="col" style="height: 50vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(0.000.123)" />
+                        </div>
+                        <div class="col" style="height: 50vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(0.-123)" />
+                        </div>
+                        <div class="col" style="height: 50vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(0.123)" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">Introduzione</p>
+                    <div class="row" style="gap: 3vw;">
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(3e0)" />
+                        </div>
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(3.0e0)" />
+                        </div>
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(7e-1)" />
+                        </div>
+                    </div>
+                    <div class="row" style="gap: 3vw; margin-top: 2vh;">
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(3.0e-2)" />
+                        </div>
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(3.0-e2)" />
+                        </div>
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(4e2-4e1)" />
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">Dettagli</p>
+                    <h3 class="title">Numeri troppo grandi o troppo piccoli</h3>
+                    <ul style="list-style-type: none; margin-bottom: 2vh; margin-top: 5vh;">
+                        <li>A volte i calcoli su numeri estremamente piccoli o enormi porta ai risultati:</li>
+                        <ul style="text-align: center; list-style-type: none;">
+                            <li><span class="code">math.nan</span></li>
+                            <li><span class="code">math.inf</span></li>
+                        </ul>
+                        <li>Al momento li menzioniamo e basta, trovi maggiori dettagli nel <a href="https://it.softpython.org/matrices-numpy/matrices-numpy-sol.html#NaN-e-infinit%C3%A0">foglio di Numpy</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">Esercizi</p>
+                    <h3 class="title">Esercizi</h3>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">Conversioni</p>
+                    <h3 class="title">Reali - Conversioni</h3>
+                    <p>Per convertire da reale ad intero, abbiamo diversi metodi:</p>
+                    <table>
+                        <tr>
+                            <th>Funzione</th>
+                            <th>Descrizione</th>
+                            <th>Simbolo matematico</th>
+                            <th>Risultato</th>
+                        </tr>
+                        <tr>
+                            <td><span class="code">math.floor(x)</span></td>
+                            <td>Arrotonda x all'intero inferiore</td>
+                            <td>⌊8,7⌋</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">int(x)</span></td>
+                            <td>Arrotonda x all'intero inferiore</td>
+                            <td>⌊8,7⌋</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">math.ceil(x)</span></td>
+                            <td>Arrotonda x all'intero superiore</td>
+                            <td>⌈5,3⌉</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">round(x)</span></td>
+                            <td>Arrotonda x all'intero più vicino</td>
+                            <td>2.49</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>2.51</td>
+                            <td>3</td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <p class="slide-context">Conversioni</p>
+                    <p>Come prima, cerca di indovinare il risultato delle seguenti espressioni:</p>
+                    <div class="row" style="gap: 3vw; margin-top: 2vh;">
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="import math
+
+print(math.floor(2.3))" />
+                        </div>
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="import math
+
+print(math.floor(-2.3))" />
+                        </div>
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(round(3.49))" />
+                        </div>
+                    </div>
+                    <div class="row" style="gap: 3vw; margin-top: 2vh;">
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(round(3.51))" />
+                        </div>
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="print(round(-3.51))" />
+                        </div>
+                        <div class="col" style="height: 30vh; width: 25vw;">
+                            <base-editor contenteditable="true" language="python" code="import math
+
+print(math.ceil(-8.1))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">Conversioni</p>
+                    <p>Dato un qualsiasi float <span class="code">x</span>, la seguente formula</p>
+                    <p><span class="code">math.floor(math.ceil(x)) == math.ceil(math.floor(x))</span></p>
+                    <p style="text-align: center;">è:</p>
+                    <ol>
+                        <li>sempre <span class="code">True</span></li>
+                        <li>sempre <span class="code">False</span></li>
+                        <li>a volte <span class="code">True</span>, a volte <span class="code">False</span> (fornire gli esempi)</li>
+                    </ol>
+                    <button class="exercise-button" onclick="document.querySelector('#correct-resp-1').style.display = 'block'; this.style.display = 'none';">Mostra soluzione</button>
+                    <p id="correct-resp-1" style="display: none; margin-top: 5vh;">La risposta corretta è la 3: per interi come <span class="code">x=2.0</span> è <span class="code">True</span>, in casi come <span class="code">x=2.3</span> è <span class="code">False</span></p>
+                </section>
+                <section>
+                    <p class="slide-context">Conversioni</p>
+                    <p>Dato un qualsiasi float <span class="code">x</span>, la seguente formula</p>
+                    <p><span class="code">math.floor(x) == -math.ceil(-x)</span></p>
+                    <p style="text-align: center;">è:</p>
+                    <ol>
+                        <li>sempre <span class="code">True</span></li>
+                        <li>sempre <span class="code">False</span></li>
+                        <li>a volte <span class="code">True</span>, a volte <span class="code">False</span> (fornire gli esempi)</li>
+                    </ol>
+                    <button class="exercise-button" onclick="document.querySelector('#correct-resp-2').style.display = 'block'; this.style.display = 'none';">Mostra soluzione</button>
+                    <p id="correct-resp-2" style="display: none; margin-top: 5vh;">La risposta corretta è la 1</p>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <!-- Import the main reveal script -->
+    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js">
+    </script>
+
+    <!-- Initialize reveal -->
+    <script>
+        Reveal.initialize({
+            // Display controls in the bottom right corner
+            controls: true,
+            // Display a presentation progress bar
+            progress: true,
+            // Push each slide change to the browser history
+            history: true,
+            // Enable keyboard shortcuts for navigation
+            keyboard: true,
+            // Enable the slide overview mode
+            overview: true,
+            // Set the width of the slides
+            width: "90%",
+            // Set the height of the slides
+            height: "90%",
+            // Enable the slide number counter
+            slideNumber: 'c/t',
+            // Vertical centering of slides
+            center: true,
+            // Loop the presentation
+            loop: false,
+            // Enables touch navigation on devices with touch input
+            touch: true,
+            // Apply a 3D roll to links on hover
+            rollingLinks: true,
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+            // Select a theme
+            theme: 'blood',
+            // Select the type of slides transition
+            transition: 'slide',
+            // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+            disableLayout: true
+        });
+    </script>
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            css.innerHTML = "section { height: auto; } .slide-context {display: none;}";
+            // Append the css to the head
+            document.head.appendChild(css);
+
+            const printVersionText = document.getElementById('print-version-text');
+            printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+        }
+    </script>
+</body>
+
+</html>

@@ -345,6 +345,8 @@ print(math.ceil(-8.1))" />
             theme: 'blood',
             // Select the type of slides transition
             transition: 'slide',
+            // Revealjs navigation mode (https://revealjs.com/vertical-slides/)
+            navigationMode: 'linear',
             // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
             disableLayout: true
         });
@@ -356,7 +358,10 @@ print(math.ceil(-8.1))" />
         if (window.location.href.indexOf('?print-pdf') > -1) {
             // Create a new css element setting the height of .section to none
             var css = document.createElement("style");
-            css.innerHTML = "section { height: auto; } .slide-context {display: none;}";
+            // Modify section height to fix the layout
+            // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+            // Hide the slide context (the slide number)
+            css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
             // Append the css to the head
             document.head.appendChild(css);
 

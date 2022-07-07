@@ -19,18 +19,6 @@
     <!-- Bundle containing the code playground web components -->
     <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
 
-    <!-- If the user asks for the pdf version, set section height to auto -->
-    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
-    <script>
-        if (window.location.href.indexOf('?print-pdf') > -1) {
-            // Create a new css element setting the height of .section to none
-            var css = document.createElement("style");
-            css.innerHTML = "section { height: auto; }";
-            // Append the css to the head
-            document.head.appendChild(css);
-        }
-    </script>
-
     <style>
         li {
             padding-bottom: 2vmin;
@@ -322,6 +310,24 @@ SELECT number from elements ORDER BY number;
             // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
             disableLayout: true
         });
+    </script>
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            // Modify section height to fix the layout
+            // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+            // Hide the slide context (the slide number)
+            css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+            // Append the css to the head
+            document.head.appendChild(css);
+
+            const printVersionText = document.getElementById('print-version-text');
+            printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+        }
     </script>
 </body>
 

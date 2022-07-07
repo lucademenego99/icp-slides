@@ -33,9 +33,11 @@
 
         .slide-context {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 3vw;
-            font-size: 2vmin;
+            font-size: 3vmin;
+            font-weight: 100;
+            letter-spacing: .3vmin;
         }
     </style>
 </head>
@@ -67,7 +69,7 @@
 
             <section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 1/1</p>
                     <h3 class="title">Cosa sono i booleani?</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -90,7 +92,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 1/2</p>
                     <h3 class="title">L'algebra booleana</h3>
                     <div style="display: flex; flex-direction:row; width: 90%; margin-top: 10vh;">
                         <table>
@@ -164,7 +166,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 2/1</p>
                     <div class="r-stack">
                         <div>
                             <h3 class="title fragment fade-out" data-fragment-index="0">Il tuo turno!</h3>
@@ -244,7 +246,7 @@ print('Risposte:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 2/2</p>
                     <div style="height: 70vh; width: 50vw;">
                         <base-editor contenteditable="true" language="python" code="# Inserisci le tue risposte nella variabile 'risp'
 espr1 = not (not (not False))
@@ -290,7 +292,7 @@ print('Risposte:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 2/3</p>
                     <h3 class="title">Domande con variabili</h3>
                     <div class="row" style="width: 90%;">
                         <div class="col" style="text-align: left;">
@@ -358,7 +360,7 @@ print('Risposte:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 2/4</p>
                     <h4 class="title">Come prima!</h4>
                     <div style="height: 70vh; width: 50vw;">
                         <base-editor contenteditable="true" language="python" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
@@ -414,7 +416,7 @@ print('Risposte sbagliate:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 2/5</p>
                     <h4 class="title">Al contrario!</h4>
                     <div class="row" style="width: 90%;">
                         <div class="col" style="text-align: left;">
@@ -478,7 +480,7 @@ print('Risposte:', ''.join(answers))" />
 
             <section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">2. De Morgan 1</p>
                     <h3 class="title">De Morgan</h3>
                     <table style="margin: 2em">
                         <tr>
@@ -499,7 +501,7 @@ print('Risposte:', ''.join(answers))" />
                 </section>
 
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">2. De Morgan 2</p>
                     <div>
                         <h3 class="title">Il tuo turno!</h3>
                         <div class="row" style="width: 90%; margin-top: 8vh;">
@@ -599,7 +601,7 @@ print('trasf=',trasf)" />
 
             <section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">3. Conversioni - 1</p>
                     <h3 class="title">Conversioni</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -637,7 +639,7 @@ print('trasf=',trasf)" />
                 </section>
 
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">3. Conversioni - 2</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -711,7 +713,7 @@ print('Risposte:', ''.join(answers))" />
 
             <section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">4. Ordine di Valutazione 1</p>
                     <h3 class="title">Ordine di valutazione</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -731,8 +733,8 @@ print('Risposte:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
-                    <h3 class="title">Ordine di valutazione (2)</h3>
+                    <p class="slide-context">4. Ordine di Valutazione 2</p>
+                    <h3 class="title">Ordine di valutazione</h3>
                     <ul style="list-style-type: none; margin-top: 4vh;">
                         <li>Se invece la valutazione continua, il risultato sarà la valutazione
                             dell’<strong>ultima</strong> espressione</li>
@@ -744,8 +746,8 @@ print('Risposte:', ''.join(answers))" />
                 </section>
 
                 <section>
-                    <p class="slide-context">Dettagli</p>
-                    <h3 class="title">Ordine di valutazione (3)</h3>
+                    <p class="slide-context">4. Ordine di Valutazione 3</p>
+                    <h3 class="title">Ordine di valutazione</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
@@ -765,7 +767,7 @@ print('Risposte:', ''.join(answers))" />
                 </section>
 
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">4. Ordine di Valutazione 4</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -831,7 +833,7 @@ print('Risposte:', ''.join(answers))" />
 
             <section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">5. Errori 1</p>
                     <h3 class="title">Errori nella valutazione</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -878,7 +880,7 @@ print('dopo...')" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">5. Errori 2</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <ul style="list-style-type: none; margin-bottom: 2vh;">
                         <li>Guarda le espressioni seguenti, e per ciascuna cerca di indovinare quale risultato
@@ -899,7 +901,7 @@ print('dopo...')" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">5. Errori 3</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div style="margin-right: 20vw;" class="col">
@@ -933,7 +935,7 @@ print('dopo...')" />
 
             <section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">6. Comparazione 1</p>
                     <h3 class="title">Operatori di comparazione</h3>
                     <table style="margin: 2em">
                         <tr>
@@ -972,7 +974,7 @@ print('dopo...')" />
                 </section>
 
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">6. Comparazione 2</p>
                     <h3 class="title">Qualche esempio</h3>
                     <div class="row" style="width: 80vw; margin-top: 10vh;">
                         <div class="col">
@@ -1002,7 +1004,7 @@ print('dopo...')" />
                 </section>
 
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">6. Comparazione 3</p>
                     <p>Dato che le comparazioni sono espressioni che producono booleani, possiamo anche assegnare il
                         risultato ad una variabile</p>
                     <div style="height: 40vh; width: 40vw; margin-top: 4vh;">
@@ -1014,7 +1016,7 @@ print(x)" />
 
             <section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">7. Congiungere Operazioni 1</p>
                     <h3 class="title">Congiungere operazioni</h3>
                     <div class="r-stack">
                         <div class="fragment fade-out" data-fragment-index="0">
@@ -1083,7 +1085,7 @@ print((x and y) > 0)   # ATTENZIONE!" />
                 </section>
 
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">7. Congiungere Operazioni 2</p>
                     <h3>Perché <span class="code">(x and y) > 0</span> non funziona</h3>
                     <p>Sia <span class="code">x</span> che <span class="code">y</span> vengono considerate singole
                         espressioni booleane, quindi Python internamente ridurrà l'espressione nei seguenti passi:</p>
@@ -1098,7 +1100,7 @@ print((x and y) > 0)   # ATTENZIONE!" />
                     </p>
                 </section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">7. Congiungere Operazioni 3</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <ul style="list-style-type: none; margin-bottom: 2vh;">
                         <li>Prova ad indovinare il risultato delle espressioni in basso (o se producono
@@ -1122,6 +1124,7 @@ print(x)" />
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">7. Congiungere Operazioni 4</p>
                     <div class="row" style="gap: 3vw;">
                         <div class="col" style="height: 50vh; width: 25vw;">
                             <base-editor contenteditable="true" language="python" code="x,y = 9,10
@@ -1144,7 +1147,7 @@ print(x == y)" />
             </section>
             <section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 1/1</p>
                     <h3 class="title">Esercizio - Il tagliaerbe 1</h3>
                     <p>Il dottor Angelo possiede un prato di area quadrata di lato <span class="code">d=100</span> metri
                         che
@@ -1167,7 +1170,7 @@ print(x == y)" />
                     <img src="assets/lawnmower-1.png" alt="Image of the exercise">
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 1/2</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
                         <span class="code">d</span>.
                         Esegui
@@ -1197,14 +1200,13 @@ print(soluzione)" />
                     </div>
                 </section>
                 <section>
+                    <p class="slide-context">8. Esercizi 1/3</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">x &lt; d/2 and y &gt; d/2</span></p>
                 </section>
-            </section>
-
-            <section>
+            
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 2/1</p>
                     <h3 class="title">Esercizio - Il tagliaerbe 2</h3>
                     <p>Il dottor Angelo adesso richiede a Jobe di tagliare più zone…</p>
                     <ul>
@@ -1213,7 +1215,7 @@ print(soluzione)" />
                     <img src="assets/lawnmower-2.png" alt="Image of the exercise">
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 2/2</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
                         <span class="code">d</span>.
                         Esegui
@@ -1243,16 +1245,14 @@ print(soluzione)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 2/3</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">(x &lt; d/2 and y &lt; d/2) or (x &gt; d/2 and y &gt;
                             d/2)</span></p>
                 </section>
-            </section>
 
-            <section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 3/1</p>
                     <h3 class="title">Esercizio - Il tagliaerbe 3</h3>
                     <p>Il dottor Angelo si è stufato di giardini squadrati, e vuole dividere il prato in diagonale.</p>
                     <ul>
@@ -1261,7 +1261,7 @@ print(soluzione)" />
                     <img src="assets/lawnmower-3.png" alt="Image of the exercise">
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 3/2</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">x</span> e <span class="code">y</span>.
                         Esegui
                         il codice per verificare la sua correttezza</p>
@@ -1288,15 +1288,13 @@ print(soluzione)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 3/3</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">y &lt; x</span></p>
                 </section>
-            </section>
 
-            <section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 4/1</p>
                     <h3 class="title">Esercizio - Il tagliaerbe 4</h3>
                     <p>Altro giorno, altra diagonale per Jobe...</p>
                     <ul>
@@ -1308,7 +1306,7 @@ print(soluzione)" />
                     <img src="assets/lawnmower-4.png" alt="Image of the exercise">
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 4/2</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
                         <span class="code">d</span>.
                         Esegui
@@ -1337,7 +1335,7 @@ print(soluzione)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 4/3</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">y &lt; -x + d</span></p>
                 </section>
@@ -1345,7 +1343,7 @@ print(soluzione)" />
 
             <section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 5/1</p>
                     <h3 class="title">Esercizio - Il Tempio di Lava</h3>
                     <p>Durante i tuoi studi scopri una mappa di un antico tempio, ove sono custoditi mirabolanti tesori.
                     </p>
@@ -1364,7 +1362,7 @@ print(soluzione)" />
                     <img src="assets/bool-temple-1.png" alt="Image of the exercise">
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 5/2</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
                         <span class="code">d</span>.
                         Esegui
@@ -1395,7 +1393,7 @@ print(soluzione)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 5/3</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">((x &gt; d//2) or (y &gt; d//2)) and (x &lt; -y + d)</span>
                     </p>
@@ -1404,7 +1402,62 @@ print(soluzione)" />
 
             <section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 6/1</p>
+                    <h3 class="title">Esercizio - Il Salto del Tubo</h3>
+                    <p>Un idraulico italiano vede 3 tubi di altezza rispettivamente <span class="code">t1</span>, <span
+                            class="code">t2</span>, <span class="code">t3</span>, sopra cui vi sono rispettivamente sono
+                        <span class="code">10</span>, <span class="code">20</span>, <span class="code">30</span> monete.
+                        Esaltato, spicca un balzo di altezza <span class="code">h</span>. Scrivi del codice che stampa
+                        quante monete raccoglie (<span class="code">10</span>, <span class="code">20</span> o <span
+                            class="code">30</span>).
+                    </p>
+                    <ul>
+                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                        <li><strong>SUGGERIMENTO</strong>: se non sai come fare, riguardati le slide sull'<a
+                                href="#/11">Ordine
+                                di valutazione</a> e prova a pensare come produrre dei numeri solo quando una certa
+                            condizione è vera...</li>
+                    </ul>
+                    <img src="assets/bool-jump-1.png" alt="Image of the exercise">
+                </section>
+                <section>
+                    <p class="slide-context">8. Esercizi 6/2</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">h</span>, <span class="code">t1</span>,
+                        <span class="code">t2</span>, <span class="code">t3</span>.
+                        Esegui
+                        il codice per verificare la sua correttezza
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <img src="assets/bool-jump-1.png" alt="Image of the exercise">
+                            <p>Vai giù per la soluzione!</p>
+                        </div>
+                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                            <base-editor contenteditable="true" language="python" code="t1,t2,t3 = 200,500,600
+
+<EDITABLE>h=450   </EDITABLE># 10
+<EDITABLE>#h=570  </EDITABLE># 20
+<EDITABLE>#h=610  </EDITABLE># 30
+<EDITABLE>#h=50   </EDITABLE># 0
+
+soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE> 
+
+print(soluzione)" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">8. Esercizi 6/3</p>
+                    <h3>Sicuro di volere la soluzione?</h3>
+                    <p class="fragment"><span class="code">(h &gt;= t3 and 30) or (h &gt;= t2 and 20) or (h &gt;= t1 and
+                            10) or 0</span>
+                    </p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <p class="slide-context">8. Esercizi 7/1</p>
                     <h3 class="title">Esercizio - La Torre di Gradius I</h3>
                     <p>La lancetta dell’orologio sulla prima Torre di Gradius ha compiuto finora una rotazione di <span
                             class="code">n</span> gradi. Scrivi del codice che mostra <span class="code">True</span> se
@@ -1426,7 +1479,7 @@ print(soluzione)" />
                     <img src="assets/gradius-tower-1.png" alt="Image of the exercise">
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 7/2</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">n</span>.
                         Esegui
                         il codice per verificare la sua correttezza</p>
@@ -1458,7 +1511,7 @@ print(soluzione)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 7/3</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <div class="r-stack">
                         <div class="fragment fade-out" data-fragment-index="1">
@@ -1492,66 +1545,9 @@ print(soluzione)" />
                         </div>
                     </div>
                 </section>
-            </section>
 
-            <section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
-                    <h3 class="title">Esercizio - Il Salto del Tubo</h3>
-                    <p>Un idraulico italiano vede 3 tubi di altezza rispettivamente <span class="code">t1</span>, <span
-                            class="code">t2</span>, <span class="code">t3</span>, sopra cui vi sono rispettivamente sono
-                        <span class="code">10</span>, <span class="code">20</span>, <span class="code">30</span> monete.
-                        Esaltato, spicca un balzo di altezza <span class="code">h</span>. Scrivi del codice che stampa
-                        quante monete raccoglie (<span class="code">10</span>, <span class="code">20</span> o <span
-                            class="code">30</span>).
-                    </p>
-                    <ul>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                        <li><strong>SUGGERIMENTO</strong>: se non sai come fare, riguardati le slide sull'<a
-                                href="#/11">Ordine
-                                di valutazione</a> e prova a pensare come produrre dei numeri solo quando una certa
-                            condizione è vera...</li>
-                    </ul>
-                    <img src="assets/bool-jump-1.png" alt="Image of the exercise">
-                </section>
-                <section>
-                    <p class="slide-context">Esercizi</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">h</span>, <span class="code">t1</span>,
-                        <span class="code">t2</span>, <span class="code">t3</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
-                    <div class="row">
-                        <div class="col">
-                            <img src="assets/bool-jump-1.png" alt="Image of the exercise">
-                            <p>Vai giù per la soluzione!</p>
-                        </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="t1,t2,t3 = 200,500,600
-
-<EDITABLE>h=450   </EDITABLE># 10
-<EDITABLE>#h=570  </EDITABLE># 20
-<EDITABLE>#h=610  </EDITABLE># 30
-<EDITABLE>#h=50   </EDITABLE># 0
-
-soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE> 
-
-print(soluzione)" />
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <p class="slide-context">Esercizi</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <p class="fragment"><span class="code">(h &gt;= t3 and 30) or (h &gt;= t2 and 20) or (h &gt;= t1 and
-                            10) or 0</span>
-                    </p>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 8/1</p>
                     <h3 class="title">Esercizio - La Torre di Gradius II</h3>
                     <p>Le lancette dell’orologio sulla seconda Torre di Gradius hanno compiuto finora una rotazione
                         rispettivamente di <span class="code">n</span> e <span class="code">m</span> gradi. Scrivi del
@@ -1567,7 +1563,7 @@ print(soluzione)" />
                 </section>
 
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 8/2</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">n</span> e <span class="code">m</span>.
                         Esegui
                         il codice per verificare la sua correttezza</p>
@@ -1596,7 +1592,7 @@ print(soluzione)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">8. Esercizi 8/3</p>
                     <h3>Sicuro di volere la soluzione?</h3>
                     <p class="fragment"><span class="code">(n % 90 &gt; 60) and ((n // 90) % 4 == (m // 90) % 4)
                         </span></p>

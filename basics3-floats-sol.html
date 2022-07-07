@@ -33,9 +33,11 @@
 
         .slide-context {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 3vw;
-            font-size: 2vmin;
+            font-size: 3vmin;
+            font-weight: 100;
+            letter-spacing: .3vmin;
         }
 
         .exercise-button {
@@ -82,7 +84,7 @@
 
             <section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 1</p>
                     <h3 class="title">I Numeri Reali</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -101,7 +103,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 2</p>
                     <h3 class="title">Notazione scientifica</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -124,7 +126,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 3</p>
                     <h3 class="title">Il tuo turno!</h3>
                     <ul style="list-style-type: none; margin-bottom: 2vh;">
                         <li>Cerca di indovinare il risultato che producono le seguenti espressioni!</li>
@@ -143,7 +145,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 4</p>
                     <div class="row" style="gap: 3vw;">
                         <div class="col" style="height: 50vh; width: 25vw;">
                             <base-editor contenteditable="true" language="python" code="print(0.000.123)" />
@@ -157,7 +159,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Introduzione</p>
+                    <p class="slide-context">1. Introduzione 5</p>
                     <div class="row" style="gap: 3vw;">
                         <div class="col" style="height: 30vh; width: 25vw;">
                             <base-editor contenteditable="true" language="python" code="print(3e0)" />
@@ -184,7 +186,7 @@ print('Il tipo di x è:', type(x))" />
             </section>
             <section>
                 <section>
-                    <p class="slide-context">Dettagli</p>
+                    <p class="slide-context">2. Dettagli 1</p>
                     <h3 class="title">Numeri troppo grandi o troppo piccoli</h3>
                     <ul style="list-style-type: none; margin-bottom: 2vh; margin-top: 5vh;">
                         <li>A volte i calcoli su numeri estremamente piccoli o enormi porta ai risultati:</li>
@@ -198,13 +200,13 @@ print('Il tipo di x è:', type(x))" />
             </section>
             <section>
                 <section>
-                    <p class="slide-context">Esercizi</p>
+                    <p class="slide-context">3. Esercizi 1</p>
                     <h3 class="title">Esercizi</h3>
                 </section>
             </section>
             <section>
                 <section>
-                    <p class="slide-context">Conversioni</p>
+                    <p class="slide-context">4. Conversioni 1</p>
                     <h3 class="title">Reali - Conversioni</h3>
                     <p>Per convertire da reale ad intero, abbiamo diversi metodi:</p>
                     <table>
@@ -247,7 +249,7 @@ print('Il tipo di x è:', type(x))" />
                     </table>
                 </section>
                 <section>
-                    <p class="slide-context">Conversioni</p>
+                    <p class="slide-context">4. Conversioni 2</p>
                     <p>Come prima, cerca di indovinare il risultato delle seguenti espressioni:</p>
                     <div class="row" style="gap: 3vw; margin-top: 2vh;">
                         <div class="col" style="height: 30vh; width: 25vw;">
@@ -279,7 +281,7 @@ print(math.ceil(-8.1))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">Conversioni</p>
+                    <p class="slide-context">4. Conversioni 3</p>
                     <p>Dato un qualsiasi float <span class="code">x</span>, la seguente formula</p>
                     <p><span class="code">math.floor(math.ceil(x)) == math.ceil(math.floor(x))</span></p>
                     <p style="text-align: center;">è:</p>
@@ -292,7 +294,7 @@ print(math.ceil(-8.1))" />
                     <p id="correct-resp-1" style="display: none; margin-top: 5vh;">La risposta corretta è la 3: per interi come <span class="code">x=2.0</span> è <span class="code">True</span>, in casi come <span class="code">x=2.3</span> è <span class="code">False</span></p>
                 </section>
                 <section>
-                    <p class="slide-context">Conversioni</p>
+                    <p class="slide-context">4. Conversioni 4</p>
                     <p>Dato un qualsiasi float <span class="code">x</span>, la seguente formula</p>
                     <p><span class="code">math.floor(x) == -math.ceil(-x)</span></p>
                     <p style="text-align: center;">è:</p>

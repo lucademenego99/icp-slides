@@ -31,6 +31,17 @@
             font-family: monospace;
         }
 
+        code {
+            background-color: #272822;
+            font-family: monospace;
+            color: white;
+        }
+
+        code.example {
+            background-color: transparent;
+            color: black;
+        }
+
         .slide-context {
             position: absolute;
             top: 0;
@@ -51,6 +62,7 @@
             transition: background-color .2s ease-in-out;
             font-size: 1.7vmin;
         }
+
         .exercise-button:hover {
             background-color: #dedede;
         }
@@ -108,19 +120,21 @@ print('Il tipo di x è:', type(x))" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Con la notazione scientifica, si scrive <span class="code"><em>xen</em></span> per rappresentare il numero <span class="code">x ⋅ 10<sup>n</sup></sup></span> </li>
-                                <li>In questo modo in memoria vengono memorizzate solo le cifre più significative e l'esponente</li>
+                                <li>Con la notazione scientifica, si scrive <span class="code"><em>xen</em></span> per
+                                    rappresentare il numero <span class="code">x ⋅ 10<sup>n</sup></sup></span> </li>
+                                <li>In questo modo in memoria vengono memorizzate solo le cifre più significative e
+                                    l'esponente</li>
                             </ul>
                         </div>
                         <div class="col">
                             <ul style="list-style-type: none">
-                                <li><code>75e1 -> 750.0</code></li>
-                                <li><code>75e2 -> 7500.0</code></li>
-                                <li><code>75e123 -> 7.5e+124</code></li>
-                                <li><code>75e0 -> 75.0</code></li>
-                                <li><code>75e-1 -> 7.5</code></li>
-                                <li><code>75e-2 -> 0.75</code></li>
-                                <li><code>75e-123 -> 7.5e-123</code></li>
+                                <li><code class="example">75e1 -> 750.0</code></li>
+                                <li><code class="example">75e2 -> 7500.0</code></li>
+                                <li><code class="example">75e123 -> 7.5e+124</code></li>
+                                <li><code class="example">75e0 -> 75.0</code></li>
+                                <li><code class="example">75e-1 -> 7.5</code></li>
+                                <li><code class="example">75e-2 -> 0.75</code></li>
+                                <li><code class="example">75e-123 -> 7.5e-123</code></li>
                             </ul>
                         </div>
                     </div>
@@ -194,14 +208,121 @@ print('Il tipo di x è:', type(x))" />
                             <li><span class="code">math.nan</span></li>
                             <li><span class="code">math.inf</span></li>
                         </ul>
-                        <li>Al momento li menzioniamo e basta, trovi maggiori dettagli nel <a href="https://it.softpython.org/matrices-numpy/matrices-numpy-sol.html#NaN-e-infinit%C3%A0">foglio di Numpy</a></li>
+                        <li>Al momento li menzioniamo e basta, trovi maggiori dettagli nel <a
+                                href="https://it.softpython.org/matrices-numpy/matrices-numpy-sol.html#NaN-e-infinit%C3%A0">foglio
+                                di Numpy</a></li>
                     </ul>
                 </section>
             </section>
             <section>
                 <section>
-                    <p class="slide-context">3. Esercizi 1</p>
-                    <h3 class="title">Esercizi</h3>
+                    <p class="slide-context">3. Esercizi 1/1</p>
+                    <h3 class="title">Esercizio - Cerchio</h3>
+                    <p>Calcola l'area di un cerchio al centro di un pallone da calcio (raggio = 9.15m).</p>
+                    <p>Ricordati che <span class="code">area = pi * r<sup>2</sup></span>, e che l'operatore per la
+                        potenza è <span class="code">**</span></p>
+                    <p>Il tuo codice dovrebbe stampare il risultato <span class="code">263.02199094102605</span></p>
+                    <div style="height: 50vh; width: 50vw;">
+                        <base-editor contenteditable="true" language="python" code="# inserisci qui la tua soluzione" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 1/2</p>
+                    <p>Procedi per vedere la soluzione</p>
+
+                    <pre class="fragment" data-fragment-index="0" style="width: 30vw;"><code>r = 9.15
+pi = 3.1415926536
+area = pi*(r**2)
+print(area)</code></pre>
+                    <p class="fragment" data-fragment-index="0">Nota: le parentesi intorno a <span
+                            class="code">r**2</span> non sono necessarie: aiutano solo la leggibilità del codice</p>
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 1/3</p>
+                    <h3 class="title">Ricordiamo la precedenza degli operatori</h3>
+
+                    <table>
+                        <tr>
+                            <th>Operatore</th>
+                            <th>Descrizione</th>
+                        </tr>
+                        <tr>
+                            <td><span class="code">**</span></td>
+                            <td>Potenza (massima precedenza)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">+</span> <span class="code">-</span></td>
+                            <td>Più e meno unari</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">*</span> <span class="code">/</span> <span class="code">//</span> <span class="code">%</span></td>
+                            <td>Moltiplicazione, divisione, divisione intera, modulo</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">+</span> <span class="code">-</span></td>
+                            <td>Addizione e sottrazione</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;=</span> <span class="code">&lt;</span> <span class="code">&gt;</span> <span class="code">&gt;=</span></td>
+                            <td>Operatori di comparazione</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">==</span> <span class="code">!=</span></td>
+                            <td>Operatori di uguaglianza</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">not</span> <span class="code">or</span> <span class="code">and</span></td>
+                            <td>Operatori logici (minima precedenza)</td>
+                        </tr>
+                    </table>    
+
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 2/1</p>
+                    <h3 class="title">Esercizio - Il campo da Golf</h3>
+                    <p>Il giardiniere Jobe è diventato così bravo che il dottor Angelo decide di promuoverlo a curatore del campo da golf dove è solito trascorrere i weekend. Ma una nuova sfida lo attende: al campo Jobe deve radere perfettamente il <em>green</em>, cioè l’area circolare di raggio <span class="code">r</span> che comprende la buca. La spia sul tagliaerbe di Jobe si deve accendere quando è posizionato sul verde chiaro: scrivi un espressione che date due coordinate <span class="code">x,y</span> produce <span class="code">True</span> quando il tagliaerbe è sul verde chiaro, e <span class="code">False</span> altrimenti. Al solo scopo di darti dei riferimenti visuali, questa volta sul campo sono disposte anche delle palline con delle lettere.</p>
+                    <ul style="list-style-type: none;">
+                        <li>Nota: questa volta l'origine è al centro del quadrato</li>
+                        <li>Non usare il comando <span class="cod">if</span></li>
+                        <li>Suggerimento: ricordi come si calcola la distanza tra due punti? Ti servirà la radice quadrata <span class="cod">math.sqrt</span></li>
+                    </ul>
+                    <img src="assets/lawnmower-5.png" alt="Immagine esercizio">
+                </section>
+                <section>
+                    <p class="slide-context">8. Esercizi 2/2</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
+                        <span class="code">r</span>.
+                        Esegui
+                        il codice per verificare la sua correttezza
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <img src="assets/lawnmower-5.png" alt="Image of the exercise">
+                            <p>Vai giù per la soluzione!</p>
+                        </div>
+                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                            <base-editor contenteditable="true" language="python" code="import math
+
+r = 50
+
+x,y = 35,20     # A: True
+#x,y = 45,-40   # B: False
+#x,y = 10,-40   # C: True
+#x,y = -41,-46  # D: False
+#x,y = -30,-10  # E: True
+#x,y = -35,35   # F: True
+#x,y = -37,37   # G: False
+
+# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 2/3</p>
+                    <p>Procedi per vedere la soluzione</p>
+
+                    <pre class="fragment" data-fragment-index="0" style="width: 30vw;"><code>dist = math.sqrt(x**2 + y**2)
+dist &lt; r</code></pre>
                 </section>
             </section>
             <section>
@@ -288,10 +409,15 @@ print(math.ceil(-8.1))" />
                     <ol>
                         <li>sempre <span class="code">True</span></li>
                         <li>sempre <span class="code">False</span></li>
-                        <li>a volte <span class="code">True</span>, a volte <span class="code">False</span> (fornire gli esempi)</li>
+                        <li>a volte <span class="code">True</span>, a volte <span class="code">False</span> (fornire gli
+                            esempi)</li>
                     </ol>
-                    <button class="exercise-button" onclick="document.querySelector('#correct-resp-1').style.display = 'block'; this.style.display = 'none';">Mostra soluzione</button>
-                    <p id="correct-resp-1" style="display: none; margin-top: 5vh;">La risposta corretta è la 3: per interi come <span class="code">x=2.0</span> è <span class="code">True</span>, in casi come <span class="code">x=2.3</span> è <span class="code">False</span></p>
+                    <button class="exercise-button"
+                        onclick="document.querySelector('#correct-resp-1').style.display = 'block'; this.style.display = 'none';">Mostra
+                        soluzione</button>
+                    <p id="correct-resp-1" style="display: none; margin-top: 5vh;">La risposta corretta è la 3: per
+                        interi come <span class="code">x=2.0</span> è <span class="code">True</span>, in casi come <span
+                            class="code">x=2.3</span> è <span class="code">False</span></p>
                 </section>
                 <section>
                     <p class="slide-context">4. Conversioni 4</p>
@@ -301,18 +427,170 @@ print(math.ceil(-8.1))" />
                     <ol>
                         <li>sempre <span class="code">True</span></li>
                         <li>sempre <span class="code">False</span></li>
-                        <li>a volte <span class="code">True</span>, a volte <span class="code">False</span> (fornire gli esempi)</li>
+                        <li>a volte <span class="code">True</span>, a volte <span class="code">False</span> (fornire gli
+                            esempi)</li>
                     </ol>
-                    <button class="exercise-button" onclick="document.querySelector('#correct-resp-2').style.display = 'block'; this.style.display = 'none';">Mostra soluzione</button>
+                    <button class="exercise-button"
+                        onclick="document.querySelector('#correct-resp-2').style.display = 'block'; this.style.display = 'none';">Mostra
+                        soluzione</button>
                     <p id="correct-resp-2" style="display: none; margin-top: 5vh;">La risposta corretta è la 1</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">5. Uguaglianza 1</p>
+                    <h3 class="title">Errori di arrotondamento</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Nei calcoli con virgola mobile, il processore può commettere errori di
+                                    arrotondamento</li>
+                                <li>I float sono memorizzati in codice binario a <span class="code">64 bit</span>
+                                    (IEEE-754)</li>
+                                <li>Ciò impone un limite fisico alla precisione!</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="x = 4.1
+
+
+print('Il valore di x è:', x)
+print('Il valore di x con 55 cifre di precisione è:', format(4.1, '.55f'))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Uguaglianza 2</p>
+                    <h3 class="title">Indaghiamo meglio...</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Ma allora cosa succede quando eseguiamo operazioni aritmetiche con i floating point?
+                                </li>
+                                <li class="fragment">Il risultato è completamente diverso da quello atteso!</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="x = 7.9
+y = 3.8
+
+print(x-y)
+print('Differenza con 55 cifre di precisione:', format(x-y, '.55f'))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Uguaglianza 3</p>
+                    <h3 class="title">Uguaglianza tra reali</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li><strong>ATTENZIONE: EVITA IL <span class="code">==</span> CON I FLOAT!</strong></li>
+                                <li>L'alternativa da preferire è verificare se un numero float è <em>vicino</em> ad un
+                                    altro</li>
+                                <li><span class="code">math.isclose</span> permette di fare ciò</li>
+                                <ul>
+                                    <li>precisione di default: <span class="code">1e-09</span></li>
+                                    <li>override possibile tramite il parametro <span class="code">abs_tol</span></li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="x = 7.9
+y = 3.8
+print( x - y == 4.1 ) # Mi aspetterei True!
+
+import math
+print(math.isclose(x - y, 4.1)) # MOLTO MEGLIO
+
+# Esempio di come cambiare la precisione
+print(math.isclose(x - y, 4.1, abs_tol=0.000001))" />
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <p class="slide-context">6. Decimali 1</p>
+                    <h3 class="title">Numeri decimali</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Se hai proprio bisogno di più precisione, Python offre <span
+                                        class="code">Decimal</span></li>
+                                <li>Possiamo crearlo partendo da una stringa</li>
+                                <ul>
+                                    <li><strong>ATTENZIONE: se lo crei a partire da una costante, USA una
+                                            stringa</strong></li>
+                                    <li>Altrimenti, passando un <span class="code">float</span>, perdi l'utilità dei
+                                        <span class="code">Decimal</span></li>
+                                </ul>
+                                <li>Operazioni tra <span class="code">Decimal</span> producono altri <span
+                                        class="code">Decimal</span></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="from decimal import Decimal
+print(Decimal('4.1'))
+
+# ATTENZIONE al tipo dell'argomento! Così mi ritrovo con il problema dei float
+print(Decimal(4.1))
+
+print(Decimal('7.9') - Decimal('3.8'))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Decimali 2</p>
+                    <h3 class="title">Numeri decimali</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Con i <span class="code">Decimal</span> possiamo anche usare l'operatore di
+                                    uguaglianza</li>
+                                <li class="fragment fade-in" data-fragment-index="0">Alcune funzioni matematiche sono
+                                    inoltre supportate</li>
+                                <li class="fragment fade-in" data-fragment-index="1"><strong>Ma la memoria del computer
+                                        è comunque finita!</strong> Con i <span class="code">Decimal</span> hai solo un
+                                    maggior numero di cifre per rappresentarli</li>
+                            </ul>
+                        </div>
+                        <div class="r-stack">
+                            <div class="col fragment fade-out" data-fragment-index="0"
+                                style="height: 40vh; width: 40vw;">
+                                <base-editor contenteditable="true" language="python" code="from decimal import Decimal
+
+
+# L'uguaglianza funziona!
+print(Decimal('4.1') == Decimal('7.9') - Decimal('3.8'))" />
+                            </div>
+                            <div class="col fragment fade-in-then-out" data-fragment-index="0"
+                                style="height: 40vh; width: 40vw;">
+                                <base-editor contenteditable="true" language="python" code="from decimal import Decimal
+
+
+# Alcune funzioni matematiche sono supportate!
+# E con risultati spesso più predicibili
+print(Decimal('2').sqrt())" />
+                            </div>
+                            <div class="col fragment fade-in" data-fragment-index="1"
+                                style="height: 40vh; width: 40vw;">
+                                <base-editor contenteditable="true" language="python" code="from decimal import Decimal
+
+
+# Ma ci sono sempre dei limiti
+print(Decimal('2').sqrt()**Decimal('2'))" />
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </section>
         </div>
     </div>
 
     <!-- Import the main reveal script -->
-    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js">
-    </script>
+    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
 
     <!-- Initialize reveal -->
     <script>

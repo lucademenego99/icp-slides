@@ -660,7 +660,8 @@ print('s = ', s)" />
                                 <li>All'interno di esse possiamo inserire caratteri che rappresentano cifre</li>
                                 <li class="fragment" data-fragment-index="0">Come si comporta Python quando abbiamo una
                                     <em>stringa</em> che contiene solo una sequenza di caratteri che rappresenta un
-                                    numero (es. '254')?</li>
+                                    numero (es. '254')?
+                                </li>
                                 <li class="fragment" data-fragment-index="1">Se hai eseguito il codice, avrai notato che
                                     Python si offende immediatamente, perché:</li>
                                 <ul class="fragment" data-fragment-index="1">
@@ -709,8 +710,10 @@ print(type(254))" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li>Quindi come sommiamo <span class="code">'254' + 4</span>?</li>
-                                <li>Possiamo convertire la stringa <span class="code">'254'</span> ad un vero intero</li>
-                                <li>Per farlo, basta usare <span class="code">int</span> come se fosse una funzione, passandogli l'argomento da convertire</li>
+                                <li>Possiamo convertire la stringa <span class="code">'254'</span> ad un vero intero
+                                </li>
+                                <li>Per farlo, basta usare <span class="code">int</span> come se fosse una funzione,
+                                    passandogli l'argomento da convertire</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -725,7 +728,8 @@ print(type(254))" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li><strong>NOTA:</strong> le stringhe e i numeri sono immutabili.</li>
-                                <li>Scrivendo <span class="code">int('254')</span> viene generato un nuovo numero senza intaccare la stringa <span class="code">'254'</span></li>
+                                <li>Scrivendo <span class="code">int('254')</span> viene generato un nuovo numero senza
+                                    intaccare la stringa <span class="code">'254'</span></li>
                                 <li>Vediamolo con un esempio</li>
                             </ul>
                         </div>
@@ -747,7 +751,9 @@ print(type(y))" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Prova a convertire una stringa che rappresenta un numero malformato (per es. un numero con dentro un carattere: <span class="code">'43K12'</span>) in un <span class="code">int</span>.</li>
+                                <li>Prova a convertire una stringa che rappresenta un numero malformato (per es. un
+                                    numero con dentro un carattere: <span class="code">'43K12'</span>) in un <span
+                                        class="code">int</span>.</li>
                                 <li>Che succede?</li>
                             </ul>
                         </div>
@@ -762,7 +768,9 @@ print(type(y))" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Qualsiasi oggetto può essere convertito a stringa usando <span class="code">str</span> come se fosse una funzione e passandogli l'oggetto da convertire</li>
+                                <li>Qualsiasi oggetto può essere convertito a stringa usando <span
+                                        class="code">str</span> come se fosse una funzione e passandogli l'oggetto da
+                                    convertire</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -777,9 +785,15 @@ print('Tipo:', type(x), 'valore:', x)" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Se volessimo ottenere una stringa che sia la concatenazione di oggetti di tipo diverso dobbiamo stare attenti...</li>
-                                <li class="fragment" data-fragment-index="0">Un modo di ovviare al problema (anche se non è il più comodo) è convertire a stringa ciascuno degli oggetti che usiamo nella concatenazione</li>
-                                <li class="fragment" data-fragment-index="1"><strong>DOMANDA:</strong> visto quanto detto in precedenza, dopo l'esecuzione del codice nella cella precedente, alla variabile <span class="code">x</span> risulterà associato un <em>numero</em> o una <em>stringa</em>?</li>
+                                <li>Se volessimo ottenere una stringa che sia la concatenazione di oggetti di tipo
+                                    diverso dobbiamo stare attenti...</li>
+                                <li class="fragment" data-fragment-index="0">Un modo di ovviare al problema (anche se
+                                    non è il più comodo) è convertire a stringa ciascuno degli oggetti che usiamo nella
+                                    concatenazione</li>
+                                <li class="fragment" data-fragment-index="1"><strong>DOMANDA:</strong> visto quanto
+                                    detto in precedenza, dopo l'esecuzione del codice nella cella precedente, alla
+                                    variabile <span class="code">x</span> risulterà associato un <em>numero</em> o una
+                                    <em>stringa</em>?</li>
                             </ul>
                         </div>
                         <div class="r-stack" style="width: 45vw;">
@@ -791,8 +805,7 @@ print(s)" />
                             </div>
                             <div class="col fragment fade-in" data-fragment-index="0"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
-                                <base-editor contenteditable="true" language="python"
-                                    code="x = 5
+                                <base-editor contenteditable="true" language="python" code="x = 5
 s = 'I giorni di lavoro settimanali sono ' + str(x)
 print(s)" />
                             </div>
@@ -805,8 +818,13 @@ print(s)" />
                     <p class="slide-context">6. Formattazione 1</p>
                     <h3 class="title">Formattare stringhe</h3>
                     <div style="width: 50vw;">
-                        <p>Concatenare stringhe con un segno <span class="code">+</span> come sopra è macchinoso e si presta ad errori.</p>
-                        <p>Ci sono diverse soluzioni migliori, per una recensione completa ci riferiamo al sito <a href="https://realpython.com/python-formatted-output/">Real Python</a>. In particolare, guardare le più utili che sono le <a href="https://realpython.com/python-formatted-output/#the-python-formatted-string-literal-f-string">f-strings</a>, disponibili per Python &gt;= 3.6</p>
+                        <p>Concatenare stringhe con un segno <span class="code">+</span> come sopra è macchinoso e si
+                            presta ad errori.</p>
+                        <p>Ci sono diverse soluzioni migliori, per una recensione completa ci riferiamo al sito <a
+                                href="https://realpython.com/python-formatted-output/">Real Python</a>. In particolare,
+                            guardare le più utili che sono le <a
+                                href="https://realpython.com/python-formatted-output/#the-python-formatted-string-literal-f-string">f-strings</a>,
+                            disponibili per Python &gt;= 3.6</p>
                     </div>
                 </section>
                 <section>
@@ -815,9 +833,14 @@ print(s)" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Questa soluzione non è la migliore, ma è molto usata e supportata in tutte le versioni di Python, perciò l’abbiamo adottata nel libro</li>
-                                <li class="fragment" data-fragment-index="0">Abbiamo usato un <em>place-holder</em> (segnaposto) <span class="code">%s</span> dentro la stringa, per dire a Python di sostituirlo con una variabile</li>
-                                <li class="fragment" data-fragment-index="0">Per passare a Python la variabile, dopo la stringa abbiamo messo un simbolo <span class="code">%</span> seguito da una variabile</li>
+                                <li>Questa soluzione non è la migliore, ma è molto usata e supportata in tutte le
+                                    versioni di Python, perciò l’abbiamo adottata nel libro</li>
+                                <li class="fragment" data-fragment-index="0">Abbiamo usato un <em>place-holder</em>
+                                    (segnaposto) <span class="code">%s</span> dentro la stringa, per dire a Python di
+                                    sostituirlo con una variabile</li>
+                                <li class="fragment" data-fragment-index="0">Per passare a Python la variabile, dopo la
+                                    stringa abbiamo messo un simbolo <span class="code">%</span> seguito da una
+                                    variabile</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -833,7 +856,9 @@ print(s)" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li>Se volessimo usare più variabili?</li>
-                                <li>Bisogna solo aggiungere più segnaposti <span class="code">%s</span>, e dopo il <span class="code">%</span> mettere la lista di variabili in delle parentesi tonde</li>
+                                <li>Bisogna solo aggiungere più segnaposti <span class="code">%s</span>, e dopo il <span
+                                        class="code">%</span> mettere la lista di variabili in delle parentesi tonde
+                                </li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -849,10 +874,12 @@ premio = 'Migliore Atleta della Valle'
                     <p class="slide-context">6. Formattazione 4</p>
                     <h3 class="title">Esercizio - Supercar</h3>
                     <div style="width: 60vw;">
-                        <p>Hai ricevuto dei soldi, perciò decidi di comprare due modelli di auto sportive. Visto lo stile di guida scellerato prevedi già incidenti, perciò per ciascun modello comprerai tante auto quanti caratteri ci sono nel nome di ciascun modello.</p>
+                        <p>Hai ricevuto dei soldi, perciò decidi di comprare due modelli di auto sportive. Visto lo
+                            stile di guida scellerato prevedi già incidenti, perciò per ciascun modello comprerai tante
+                            auto quanti caratteri ci sono nel nome di ciascun modello.</p>
                         <p>Scrivi del codice che salva nella stringa s il numero di auto che comprerai.</p>
                         <ul>
-                            <li><strong>USA</strong> il segnaposto <span class="code">%s</span></li> 
+                            <li><strong>USA</strong> il segnaposto <span class="code">%s</span></li>
                         </ul>
                     </div>
                     <p><strong>Esempio:</strong> dati</p>
@@ -866,10 +893,10 @@ auto2 = 'Ferrari'</code></pre>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <p><strong>Esempio:</strong> dati</p>
-                    <pre><code>auto1 = 'Jaguar'
+                            <pre><code>auto1 = 'Jaguar'
 auto2 = 'Ferrari'</code></pre>
-                    <p>il tuo codice dovrebbe mostrare</p>
-                    <pre><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
+                            <p>il tuo codice dovrebbe mostrare</p>
+                            <pre><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="# Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi

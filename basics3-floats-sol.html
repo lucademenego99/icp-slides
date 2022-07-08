@@ -255,7 +255,9 @@ print(area)</code></pre>
                             <td>Più e meno unari</td>
                         </tr>
                         <tr>
-                            <td><span class="code">*</span> <span class="code">/</span> <span class="code">//</span> <span class="code">%</span></td>
+                            <td><span class="code">*</span> <span class="code">/</span> <span class="code">//</span>
+                                <span class="code">%</span>
+                            </td>
                             <td>Moltiplicazione, divisione, divisione intera, modulo</td>
                         </tr>
                         <tr>
@@ -263,7 +265,8 @@ print(area)</code></pre>
                             <td>Addizione e sottrazione</td>
                         </tr>
                         <tr>
-                            <td><span class="code">&lt;=</span> <span class="code">&lt;</span> <span class="code">&gt;</span> <span class="code">&gt;=</span></td>
+                            <td><span class="code">&lt;=</span> <span class="code">&lt;</span> <span
+                                    class="code">&gt;</span> <span class="code">&gt;=</span></td>
                             <td>Operatori di comparazione</td>
                         </tr>
                         <tr>
@@ -271,20 +274,30 @@ print(area)</code></pre>
                             <td>Operatori di uguaglianza</td>
                         </tr>
                         <tr>
-                            <td><span class="code">not</span> <span class="code">or</span> <span class="code">and</span></td>
+                            <td><span class="code">not</span> <span class="code">or</span> <span class="code">and</span>
+                            </td>
                             <td>Operatori logici (minima precedenza)</td>
                         </tr>
-                    </table>    
+                    </table>
 
                 </section>
                 <section>
                     <p class="slide-context">3. Esercizi 2/1</p>
                     <h3 class="title">Esercizio - Il campo da Golf</h3>
-                    <p>Il giardiniere Jobe è diventato così bravo che il dottor Angelo decide di promuoverlo a curatore del campo da golf dove è solito trascorrere i weekend. Ma una nuova sfida lo attende: al campo Jobe deve radere perfettamente il <em>green</em>, cioè l’area circolare di raggio <span class="code">r</span> che comprende la buca. La spia sul tagliaerbe di Jobe si deve accendere quando è posizionato sul verde chiaro: scrivi un espressione che date due coordinate <span class="code">x,y</span> produce <span class="code">True</span> quando il tagliaerbe è sul verde chiaro, e <span class="code">False</span> altrimenti. Al solo scopo di darti dei riferimenti visuali, questa volta sul campo sono disposte anche delle palline con delle lettere.</p>
+                    <p>Il giardiniere Jobe è diventato così bravo che il dottor Angelo decide di promuoverlo a curatore
+                        del campo da golf dove è solito trascorrere i weekend. Ma una nuova sfida lo attende: al campo
+                        Jobe deve radere perfettamente il <em>green</em>, cioè l’area circolare di raggio <span
+                            class="code">r</span> che comprende la buca. La spia sul tagliaerbe di Jobe si deve
+                        accendere quando è posizionato sul verde chiaro: scrivi un espressione che date due coordinate
+                        <span class="code">x,y</span> produce <span class="code">True</span> quando il tagliaerbe è sul
+                        verde chiaro, e <span class="code">False</span> altrimenti. Al solo scopo di darti dei
+                        riferimenti visuali, questa volta sul campo sono disposte anche delle palline con delle lettere.
+                    </p>
                     <ul style="list-style-type: none;">
                         <li>Nota: questa volta l'origine è al centro del quadrato</li>
                         <li>Non usare il comando <span class="cod">if</span></li>
-                        <li>Suggerimento: ricordi come si calcola la distanza tra due punti? Ti servirà la radice quadrata <span class="cod">math.sqrt</span></li>
+                        <li>Suggerimento: ricordi come si calcola la distanza tra due punti? Ti servirà la radice
+                            quadrata <span class="cod">math.sqrt</span></li>
                     </ul>
                     <img src="assets/lawnmower-5.png" alt="Immagine esercizio">
                 </section>
@@ -321,8 +334,72 @@ x,y = 35,20     # A: True
                     <p class="slide-context">3. Esercizi 2/3</p>
                     <p>Procedi per vedere la soluzione</p>
 
-                    <pre class="fragment" data-fragment-index="0" style="width: 30vw;"><code>dist = math.sqrt(x**2 + y**2)
+                    <pre class="fragment" data-fragment-index="0" style="width: auto;"><code>dist = math.sqrt(x**2 + y**2)
 dist &lt; r</code></pre>
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 3/1</p>
+                    <h3 class="title">Esercizio - Frazionamento</h3>
+                    <p>Scrivi il codice per ottenere il valore della seguente formula per <span class="code">x =
+                            0.000003</span></p>
+                    <p>Dovresti ottenere <span class="code">2.753278226511882</span></p>
+                    <img src="assets/eq-1.png" alt="Immagine esercizio">
+                </section>
+                <section>
+                    <p class="slide-context">8. Esercizi 3/2</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>.
+                        Esegui
+                        il codice per verificare la sua correttezza
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <img src="assets/eq-1.png" alt="Image of the exercise">
+                            <p>Vai giù per la soluzione!</p>
+                        </div>
+                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                            <base-editor contenteditable="true" language="python" code="x = 0.000003
+
+# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 3/3</p>
+                    <p>Procedi per vedere la soluzione</p>
+
+                    <pre class="fragment" data-fragment-index="0" style="width: auto;"><code>import math
+- math.sqrt(x+3) / (((x+2)**3)/math.log(x))</code></pre>
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 4/1</p>
+                    <h3 class="title">Esercizio - Sommatoria</h3>
+                    <p>Scrivi il codice per ottenere il valore della seguente espressione (non usare cicli, scrivi per
+                        esteso tutti i calcoli)</p>
+                    <p>Dovresti ottenere <span class="code">20.53333333333333</span></p>
+                    <img src="assets/eq-2.png" alt="Immagine esercizio">
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 4/2</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>.
+                        Esegui
+                        il codice per verificare la sua correttezza
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <img src="assets/eq-2.png" alt="Image of the exercise">
+                            <p>Vai giù per la soluzione!</p>
+                        </div>
+                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                            <base-editor contenteditable="true" language="python" code="# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Esercizi 4/3</p>
+                    <p>Procedi per vedere la soluzione</p>
+
+                    <pre class="fragment" data-fragment-index="0"
+                        style="width: auto;"><code>((1**4) / (1+2)) + ((2**4) / (2+2)) + ((3**4) / (3+2))</code></pre>
                 </section>
             </section>
             <section>
@@ -435,6 +512,134 @@ print(math.ceil(-8.1))" />
                         soluzione</button>
                     <p id="correct-resp-2" style="display: none; margin-top: 5vh;">La risposta corretta è la 1</p>
                 </section>
+                <section>
+                    <p class="slide-context">4. Conversioni 5</p>
+                    <div style="width: 60vw;">
+                        <p>Gli studi eccessivi ti hanno portato a cercare su internet ricette di bevande energetiche.
+                            Fortunatamente, una guru della nutrizione ha appena postato sul suo canale Instagram
+                            @BeviCheTiFaBene la ricetta di un frappè portentoso:</p>
+                        <p style="font-size: 2.5vmin;"><em>Versare in un contenitore 2 decilitri di spremuta di kiwi, 4
+                                decilitri di salsa di soia, e 3 decilitri di shampoo al karitè bio. Miscelare
+                                vigorosamente e poi versare metà del composto in un bicchiere. Rabboccare il bicchiere
+                                fino al decilitro intero superiore. Tracannare avidamente.</em></p>
+                        <p>Corri a comprare gli ingredienti, e ti appresti a miscelarli. Hai a disposizione un misurino
+                            in cui travasi i preziosi fluidi, ad uno ad uno. Nell’effettuare il travaso, versi sempre un
+                            po’ più del necessario (ma mai più di 1 decilitro), e ad ogni ingrediente elimini poi
+                            l’eccesso.</p>
+                        <ul style="margin-top: 7vh;">
+                            <li><strong>NON</strong> usare sottrazioni, prova ad usare solo gli operatori di
+                                arrotondamento</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">4. Conversioni 6</p>
+                    <h4>Esempio</h4>
+                    <p>Dati:</p>
+                    <pre style="width: auto;"><code>kiwi = 2.4
+soia = 4.8
+shampoo = 3.1
+misurino = 0.0
+mixer = 0
+bicchiere = 0.0</code></pre>
+                    <p>Il tuo codice deve stampare:</p>
+                    <pre style="width: auto;"><code style="background-color: #f3f3f3; color: #272822;">Verso nel misurino 2.4 dl di kiwi, tolgo eccesso fino a tenere 2 dl
+Travaso nel mixer, adesso contiene 2 dl
+Verso nel misurino 4.8 dl di soia, tolgo eccesso fino a tenere 4 dl
+Travaso nel mixer, adesso contiene 6 dl
+Verso nel misurino 3.1 dl di shampoo, tolgo eccesso fino a tenere 3 dl
+Travaso nel mixer, adesso contiene 9 dl
+Verso metà della miscela ( 4.5 dl ) nel bicchiere
+Rabbocco il bicchiere fino al decilitro intero superiore, adesso contiene 5 dl</code></pre>
+                </section>
+                <section>
+                    <p class="slide-context">4. Conversioni 7</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>.
+                        Esegui
+                        il codice per verificare la sua correttezza
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <p style="background-color: #f3f3f3; color: #272822; text-align: left;">Verso nel misurino
+                                2.4 dl di kiwi, tolgo eccesso fino a tenere 2 dl<br />
+                                Travaso nel mixer, adesso contiene 2 dl<br />
+                                Verso nel misurino 4.8 dl di soia, tolgo eccesso fino a tenere 4 dl<br />
+                                Travaso nel mixer, adesso contiene 6 dl<br />
+                                Verso nel misurino 3.1 dl di shampoo, tolgo eccesso fino a tenere 3 dl<br />
+                                Travaso nel mixer, adesso contiene 9 dl<br />
+                                Verso metà della miscela ( 4.5 dl ) nel bicchiere<br />
+                                Rabbocco il bicchiere fino al decilitro intero superiore, adesso contiene 5 dl</p>
+                            <p>Vai giù per la soluzione!</p>
+                        </div>
+                        <div class="col" style="height: 60vh; width: 40vw; margin-left: 3vw;">
+                            <base-editor contenteditable="true" language="python" code="kiwi = 2.4
+soia = 4.8
+shampoo = 3.1
+misurino = 0.0
+mixer = 0.0
+bicchiere = 0.0
+
+# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">4. Conversioni 8</p>
+                    <p>Procedi per vedere la soluzione</p>
+
+                    <pre class="fragment" data-fragment-index="0"
+                        style="width: auto;"><code style="max-height: none; height: 100%;">import math
+
+print('Verso nel misurino', kiwi, 'dl di kiwi, tolgo eccesso fino a tenere', int(kiwi), 'dl')
+mixer += int(kiwi)
+print('Travaso nel mixer, adesso contiene', mixer, 'dl')
+print('Verso nel misurino', soia, 'dl di soia, tolgo eccesso fino a tenere', int(soia), 'dl')
+mixer += int(soia)
+print('Travaso nel mixer, adesso contiene', mixer, 'dl')
+print('Verso nel misurino', shampoo, 'dl di shampoo, tolgo eccesso fino a tenere', int(shampoo), 'dl')
+mixer += int(shampoo)
+print('Travaso nel mixer, adesso contiene', mixer, 'dl')
+bicchiere = mixer/2
+print('Verso metà della miscela (', bicchiere, 'dl ) nel bicchiere')
+print('Rabbocco il bicchiere fino al decilitro intero superiore, adesso contiene:', math.ceil(bicchiere), 'dl')</code></pre>
+                </section>
+
+                <section>
+                    <p class="slide-context">4. Conversioni 9</p>
+                    <h3 class="title">Esercizio - Arrotondamente</h3>
+                    <p>Scrivi il codice per ottenere il valore della seguente formula per <span class="code">x =
+                            -5.51</span></p>
+                    <p>Dovresti ottenere <span class="code">41</span></p>
+                    <img src="assets/eq-3.png" alt="Immagine esercizio">
+                </section>
+                <section>
+                    <p class="slide-context">4. Conversioni 10</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>.
+                        Esegui
+                        il codice per verificare la sua correttezza
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <img src="assets/eq-3.png" alt="Image of the exercise">
+                            <p>Vai giù per la soluzione!</p>
+                        </div>
+                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                            <base-editor contenteditable="true" language="python" code="import math
+
+x = -5.51   # 41
+#x = -5.49  # 30
+
+# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">4. Conversioni 11</p>
+                    <p>Procedi per vedere la soluzione</p>
+
+                    <pre class="fragment" data-fragment-index="0"
+                        style="width: auto;"><code>abs(math.ceil(x)) + round(x)**2</code></pre>
+                </section>
             </section>
             <section>
                 <section>
@@ -508,84 +713,233 @@ print(math.isclose(x - y, 4.1, abs_tol=0.000001))" />
                         </div>
                     </div>
                 </section>
+                <section>
+                    <p class="slide-context">5. Uguaglianza 4</p>
+                    <h3 class="title">Domanda 1</h3>
+                    <p>Possiamo rappresentare perfettamente il numero <span>&#8730;</span>2 in un <span
+                            class="code">float</span>?</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <p class="fragment" style="width: 50vw; margin-top: 6vh;"><span>&#8730;</span>2 è irrazionale e pertanto non
+                        possiamo
+                        sperare di rappresentarlo perfettamente, qualunque calcolo useremo per ottenerlo avrà sempre un
+                        certo
+                        grado di imprecisione.</p>
+                </section>
+
+                <section>
+                    <p class="slide-context">5. Uguaglianza 5</p>
+                    <h3 class="title">Domanda 2</h3>
+                    <p>Quali di queste tre espressioni di codice danno lo stesso risultato?</p>
+                    <p>Esegui il codice per la soluzione</p>
+                    <div style="width: 60vw; height: 40vh;">
+                        <base-editor contenteditable="true" language="python" code="import math
+
+print('a)', math.sqrt(3)**2 == 3.0)
+print('b)', abs(math.sqrt(3)**2 - 3.0) < 0.0000001)
+print('c)', math.isclose(math.sqrt(3)**2, 3.0, abs_tol=0.0000001))" />
+                    </div>
+                </section>
+
+                <section>
+                    <p class="slide-context">5. Uguaglianza 6</p>
+                    <h3 class="title">Esercizio - Quadratica</h3>
+                    <p>Scrivi del codice che calcola gli zero dell’equazione <span class="code">ax<sup>2</sup> - b = 0</span></p>
+                    <p>Mostra i numeri con <strong>20 cifre</strong> di precisione</p>
+                    <p>Alla fine controlla che sostituendo il valore ottenuto di <span class="code">x</span> nell'equazione si ottenga effettivamente zero.</p>
+                    <p><strong>Esempio.</strong> Dati:</p>
+                    <pre style="width: auto;"><code>a = 11.0
+b = 3.3</code></pre>
+                    <p>Il tuo codice dovrà stampare:</p>
+                    <pre style="width: auto;"><code>11.0 * x**2 - 3.3 = 0  per x1 = 0.54772255750516607442
+11.0 * x**2 - 3.3 = 0  per x2 = -0.54772255750516607442
+0.54772255750516607442 è una soluzione? True
+-0.54772255750516607442 è una soluzione? True</code></pre>
+                </section>
+
+                <section>
+                    <p class="slide-context">5. Uguaglianza 7</p>
+                    <p>Inserisci la tua soluzione, usando <span class="code">a</span> e <span class="code">b</span>.
+                        Esegui
+                        il codice per verificare la sua correttezza
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <pre style="width: 40vw;"><code>11.0 * x**2 - 3.3 = 0  per x1 = 0.54772255750516607442
+11.0 * x**2 - 3.3 = 0  per x2 = -0.54772255750516607442
+0.54772255750516607442 è una soluzione? True
+-0.54772255750516607442 è una soluzione? True</code></pre>
+                            <p>Vai giù per la soluzione!</p>
+                        </div>
+                        <div class="col" style="margin-left: 2vw; height: 60vh; width: 50vw;">
+                            <base-editor contenteditable="true" language="python" code="a = 11.0
+b = 3.3
+
+# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="slide-context">5. Uguaglianza 8</p>
+                    <p>Procedi per vedere la soluzione</p>
+
+                    <pre class="fragment" data-fragment-index="0"
+                        style="width: auto;"><code>import math
+
+x1 = math.sqrt(b/a)
+x2 = -math.sqrt(b/a)
+
+print(a, "* x**2 -",b,"= 0  per x1 =", format(x1, '.20f'))
+print(a, "* x**2 -",b,"= 0  per x2 =", format(x2, '.20f'))
+
+# abbiamo bisogno di cambiare il valore di default di tolleranza
+print(format(x1, '.20f'), "è una soluzione?", math.isclose(a*(x1**2) - b,0, abs_tol=0.00001))
+print(format(x2, '.20f'), "è una soluzione?", math.isclose(a*((x2)**2) - b,0, abs_tol=0.00001))</code></pre>
+                </section>
+
+                <section>
+                    <p class="slide-context">5. Uguaglianza 9</p>
+                    <h3 class="title">Esercizio - Alla moda</h3>
+                    <p>Stai già pensando alle prossime vacanze, ma c’è un problema: dove vai, se un <em>selfie-stick</em> non ce l’hai? Non puoi partire con questo grave turbamento: per uniformarti al fenomeno di massa devi comprare lo stick più simile agli altri. Conduci quindi prima un’indagine statistica tra turisti malati di <em>selfie-stick</em> con l’obiettivo di scoprire i brand più frequenti, in altre parole, la moda delle frequenze. Ottieni questi risultati:</p>
+                    <pre style="width: auto;"><code>b1,b2,b3,b4,b5 = 'TroppiLike', 'ErMejo United', 'Perditempo SpA', 'Vanità 3.0','TronistiPerCaso' # brand
+f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3   # frequenze (in percentuale)</code></pre>
+                    <p>Desumiamo quindi che le masse prediligono i selfie-stick dei brand <span class="code">'ErMejo United'</span> e <span class="code">'TronistiPerCaso'</span>, entrambi a parimerito con un <span class="code">30%</span> di turisti ciascuno. Scrivi quindi del codice che stampa questo risultato:</p>
+                    <pre style="width: auto;"><code>TroppiLike è il più frequente? False ( 25.0 % )
+ErMejo United è il più frequente? True ( 30.0 % )
+Perditempo Inc è il più frequente? False ( 10.0 % )
+Vanità 3.0 è il più frequente? False ( 5.0 % )
+TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
+                    <p><strong>ATTENZIONE:</strong> il tuo codice deve funzionare con <strong>QUALUNQUE</strong> serie di variabili!</p>
+                </section>
+
+                <section>
+                    <p class="slide-context">5. Uguaglianza 10</p>
+                    <p>Inserisci la tua soluzione.
+                        Esegui
+                        il codice per verificare la sua correttezza
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <pre style="width: auto;"><code>TroppiLike è il più frequente? False ( 25.0 % )
+ErMejo United è il più frequente? True ( 30.0 % )
+Perditempo Inc è il più frequente? False ( 10.0 % )
+Vanità 3.0 è il più frequente? False ( 5.0 % )
+TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
+                            <p>Vai giù per la soluzione!</p>
+                        </div>
+                        <div class="col" style="margin-left: 2vw; height: 60vh; width: 50vw;">
+                            <base-editor contenteditable="true" language="python" code="
+
+# BRAND:
+b1,b2,b3,b4,b5 = 'TroppiLike', 'ErMejo United', 'Perditempo Inc', 'Vanità 3.0','TronistiPerCaso'
+# Frequenze (in percentuale) False True False False True
+f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3
+# OCCHIO, sembrano uguali ma deve funzionare anche con queste ;-)
+# False True False False True
+#f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.1 + 0.2
+
+# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="slide-context">5. Uguaglianza 11</p>
+                    <p>Procedi per vedere la soluzione</p>
+
+                    <pre class="fragment" data-fragment-index="0"
+                        style="width: auto;"><code>import math
+
+mx = max(f1,f2,f3,f4,f5)
+print(b1, 'è il più frequente?', math.isclose(f1,mx), '(', f1*100.0, '% )')
+print(b2, 'è il più frequente?', math.isclose(f2,mx), '(', f2*100.0, '% )')
+print(b3, 'è il più frequente?', math.isclose(f3,mx), '(', f3*100.0, '% )')
+print(b4, 'è il più frequente?', math.isclose(f4,mx), '(', f4*100.0, '% )')
+print(b5, 'è il più frequente?', math.isclose(f5,mx), '(', f5*100.0, '% )')</code></pre>
+                </section>
             </section>
 
-            <section>
+
                 <section>
-                    <p class="slide-context">6. Decimali 1</p>
-                    <h3 class="title">Numeri decimali</h3>
-                    <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col" style="text-align: left;">
-                            <ul style="list-style-type: none;">
-                                <li>Se hai proprio bisogno di più precisione, Python offre <span
-                                        class="code">Decimal</span></li>
-                                <li>Possiamo crearlo partendo da una stringa</li>
-                                <ul>
-                                    <li><strong>ATTENZIONE: se lo crei a partire da una costante, USA una
-                                            stringa</strong></li>
-                                    <li>Altrimenti, passando un <span class="code">float</span>, perdi l'utilità dei
-                                        <span class="code">Decimal</span></li>
+                    <section>
+                        <p class="slide-context">6. Decimali 1</p>
+                        <h3 class="title">Numeri decimali</h3>
+                        <div class="row" style="width: 90%; margin-top: 8vh;">
+                            <div class="col" style="text-align: left;">
+                                <ul style="list-style-type: none;">
+                                    <li>Se hai proprio bisogno di più precisione, Python offre <span
+                                            class="code">Decimal</span></li>
+                                    <li>Possiamo crearlo partendo da una stringa</li>
+                                    <ul>
+                                        <li><strong>ATTENZIONE: se lo crei a partire da una costante, USA una
+                                                stringa</strong></li>
+                                        <li>Altrimenti, passando un <span class="code">float</span>, perdi l'utilità dei
+                                            <span class="code">Decimal</span>
+                                        </li>
+                                    </ul>
+                                    <li>Operazioni tra <span class="code">Decimal</span> producono altri <span
+                                            class="code">Decimal</span></li>
                                 </ul>
-                                <li>Operazioni tra <span class="code">Decimal</span> producono altri <span
-                                        class="code">Decimal</span></li>
-                            </ul>
-                        </div>
-                        <div class="col" style="height: 40vh; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="from decimal import Decimal
+                            </div>
+                            <div class="col" style="height: 40vh; margin-left: 1vw;">
+                                <base-editor contenteditable="true" language="python" code="from decimal import Decimal
 print(Decimal('4.1'))
 
 # ATTENZIONE al tipo dell'argomento! Così mi ritrovo con il problema dei float
 print(Decimal(4.1))
 
 print(Decimal('7.9') - Decimal('3.8'))" />
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section>
-                    <p class="slide-context">6. Decimali 2</p>
-                    <h3 class="title">Numeri decimali</h3>
-                    <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col" style="text-align: left;">
-                            <ul style="list-style-type: none;">
-                                <li>Con i <span class="code">Decimal</span> possiamo anche usare l'operatore di
-                                    uguaglianza</li>
-                                <li class="fragment fade-in" data-fragment-index="0">Alcune funzioni matematiche sono
-                                    inoltre supportate</li>
-                                <li class="fragment fade-in" data-fragment-index="1"><strong>Ma la memoria del computer
-                                        è comunque finita!</strong> Con i <span class="code">Decimal</span> hai solo un
-                                    maggior numero di cifre per rappresentarli</li>
-                            </ul>
-                        </div>
-                        <div class="r-stack">
-                            <div class="col fragment fade-out" data-fragment-index="0"
-                                style="height: 40vh; width: 40vw;">
-                                <base-editor contenteditable="true" language="python" code="from decimal import Decimal
+                    </section>
+                    <section>
+                        <p class="slide-context">6. Decimali 2</p>
+                        <h3 class="title">Numeri decimali</h3>
+                        <div class="row" style="width: 90%; margin-top: 8vh;">
+                            <div class="col" style="text-align: left;">
+                                <ul style="list-style-type: none;">
+                                    <li>Con i <span class="code">Decimal</span> possiamo anche usare l'operatore di
+                                        uguaglianza</li>
+                                    <li class="fragment fade-in" data-fragment-index="0">Alcune funzioni matematiche
+                                        sono
+                                        inoltre supportate</li>
+                                    <li class="fragment fade-in" data-fragment-index="1"><strong>Ma la memoria del
+                                            computer
+                                            è comunque finita!</strong> Con i <span class="code">Decimal</span> hai solo
+                                        un
+                                        maggior numero di cifre per rappresentarli</li>
+                                </ul>
+                            </div>
+                            <div class="r-stack">
+                                <div class="col fragment fade-out" data-fragment-index="0"
+                                    style="height: 40vh; width: 40vw;">
+                                    <base-editor contenteditable="true" language="python" code="from decimal import Decimal
 
 
 # L'uguaglianza funziona!
 print(Decimal('4.1') == Decimal('7.9') - Decimal('3.8'))" />
-                            </div>
-                            <div class="col fragment fade-in-then-out" data-fragment-index="0"
-                                style="height: 40vh; width: 40vw;">
-                                <base-editor contenteditable="true" language="python" code="from decimal import Decimal
+                                </div>
+                                <div class="col fragment fade-in-then-out" data-fragment-index="0"
+                                    style="height: 40vh; width: 40vw;">
+                                    <base-editor contenteditable="true" language="python" code="from decimal import Decimal
 
 
 # Alcune funzioni matematiche sono supportate!
 # E con risultati spesso più predicibili
 print(Decimal('2').sqrt())" />
-                            </div>
-                            <div class="col fragment fade-in" data-fragment-index="1"
-                                style="height: 40vh; width: 40vw;">
-                                <base-editor contenteditable="true" language="python" code="from decimal import Decimal
+                                </div>
+                                <div class="col fragment fade-in" data-fragment-index="1"
+                                    style="height: 40vh; width: 40vw;">
+                                    <base-editor contenteditable="true" language="python" code="from decimal import Decimal
 
 
 # Ma ci sono sempre dei limiti
 print(Decimal('2').sqrt()**Decimal('2'))" />
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </section>
-            </section>
         </div>
     </div>
 

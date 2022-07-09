@@ -131,7 +131,8 @@
                         </tr>
                         <tr>
                             <td>slice</td>
-                            <td>str<span class="code">[</span>int<span class="code">:</span>int<span class="code">]</span></td>
+                            <td>str<span class="code">[</span>int<span class="code">:</span>int<span
+                                    class="code">]</span></td>
                             <td>str</td>
                             <td>Estrae una sotto-stringa</td>
                         </tr>
@@ -157,9 +158,11 @@
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Una stringa è una sequenza di caratteri, e spesso potremmo voler accedere ad un singolo carattere specificando la sua posizione</li>
+                                <li>Una stringa è una sequenza di caratteri, e spesso potremmo voler accedere ad un
+                                    singolo carattere specificando la sua posizione</li>
                                 <li><strong>NOTA:</strong> le posizioni dei caratteri nelle stringhe iniziano da 0</li>
-                                <li>Per leggere un carattere ad una certa posizione, dobbiamo scrivere la stringa seguita da parentesi quadre, con all'interno la posizione</li>
+                                <li>Per leggere un carattere ad una certa posizione, dobbiamo scrivere la stringa
+                                    seguita da parentesi quadre, con all'interno la posizione</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
@@ -231,7 +234,8 @@ print(type(x[2]))" />
                     <button class="exercise-button"
                         onclick="document.querySelector('#correct-resp-1').style.display = 'block'; this.style.display = 'none';">Mostra
                         soluzione</button>
-                    <p id="correct-resp-1" style="display: none; margin-top: 5vh;">La risposta corretta è la 3: potremmo ottenere un errore con una stringa vuota</p>
+                    <p id="correct-resp-1" style="display: none; margin-top: 5vh;">La risposta corretta è la 3: potremmo
+                        ottenere un errore con una stringa vuota</p>
                 </section>
                 <section>
                     <p class="slide-context">2. Caratteri 6</p>
@@ -247,13 +251,17 @@ print(type(x[2]))" />
                     <button class="exercise-button"
                         onclick="document.querySelector('#correct-resp-2').style.display = 'block'; this.style.display = 'none';">Mostra
                         soluzione</button>
-                    <p id="correct-resp-2" style="display: none; margin-top: 5vh;">La risposta corretta è la 2: poiché l'indicizzazione inizia da 0, <span class="code">len</span> ci dà sempre un numero superiore di 1 rispetto al più grande indice usabile</p>
+                    <p id="correct-resp-2" style="display: none; margin-top: 5vh;">La risposta corretta è la 2: poiché
+                        l'indicizzazione inizia da 0, <span class="code">len</span> ci dà sempre un numero superiore di
+                        1 rispetto al più grande indice usabile</p>
                 </section>
                 <section>
                     <p class="slide-context">2. Caratteri 7</p>
                     <h3 class="title">Esercizio</h3>
                     <div style="width: 50vw;">
-                        <p>Date due stringhe che hanno entrambe lunghezza <span class="code">3</span>, stampa una stringa che inercala caratteri da entrambe le stringhe. Il tuo codice deve poter funzionare con qualsiasi stringa di questa lunghezza</p>
+                        <p>Date due stringhe che hanno entrambe lunghezza <span class="code">3</span>, stampa una
+                            stringa che inercala caratteri da entrambe le stringhe. Il tuo codice deve poter funzionare
+                            con qualsiasi stringa di questa lunghezza</p>
                     </div>
                     <p>Esempio: dati</p>
                     <pre style="width: auto;"><code>x="say"
@@ -293,7 +301,8 @@ print(x[0] + y[0] + x[1] + y[1] + x[2] + y[2])</code></pre>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>In Python possiamo anche usare indici negativi, che invece di partire dall'inizio partono dalla fine</li>
+                                <li>In Python possiamo anche usare indici negativi, che invece di partire dall'inizio
+                                    partono dalla fine</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
@@ -332,7 +341,8 @@ print('ciao'[-4])" />
                     <button class="exercise-button"
                         onclick="document.querySelector('#correct-resp-3').style.display = 'block'; this.style.display = 'none';">Mostra
                         soluzione</button>
-                    <p id="correct-resp-3" style="display: none; margin-top: 5vh;">La risposta corretta è la 1 (abbiamo supposto che la stringa non sia mai vuota)</p>
+                    <p id="correct-resp-3" style="display: none; margin-top: 5vh;">La risposta corretta è la 1 (abbiamo
+                        supposto che la stringa non sia mai vuota)</p>
                 </section>
                 <section>
                     <p class="slide-context">3. Indici Negativi 4</p>
@@ -344,7 +354,9 @@ print('ciao'[-4])" />
                     <button class="exercise-button"
                         onclick="document.querySelector('#correct-resp-4').style.display = 'block'; this.style.display = 'none';">Mostra
                         soluzione</button>
-                    <p id="correct-resp-4" style="display: none; margin-top: 5vh;">Le espressioni sono equivalenti: se la stringa è vuota entrambe producono un errore, se è piena entrambe restituiscono l’ultimo carattere</p>
+                    <p id="correct-resp-4" style="display: none; margin-top: 5vh;">Le espressioni sono equivalenti: se
+                        la stringa è vuota entrambe producono un errore, se è piena entrambe restituiscono l’ultimo
+                        carattere</p>
                 </section>
                 <section>
                     <p class="slide-context">3. Indici Negativi 5</p>
@@ -355,29 +367,43 @@ print('ciao'[-4])" />
                     <button class="exercise-button"
                         onclick="document.querySelector('#correct-resp-5').style.display = 'block'; this.style.display = 'none';">Mostra
                         soluzione</button>
-                    <p id="correct-resp-5" style="display: none; margin-top: 5vh;">corrisponde a <span class="code">x[0]</span></p>
+                    <p id="correct-resp-5" style="display: none; margin-top: 5vh;">corrisponde a <span
+                            class="code">x[0]</span></p>
                 </section>
                 <section>
                     <p class="slide-context">3. Indici Negativi 6</p>
                     <h3 class="title">Domanda</h3>
-                    <p>Data una stringa <span class="code">x</span> NON vuota, cosa produce la seguente espressione? Un errore? Altro?</p>
+                    <p>Data una stringa <span class="code">x</span> NON vuota, cosa produce la seguente espressione? Un
+                        errore? Altro?</p>
                     <p>Possiamo semplificarla in una via più breve?</p>
                     <p><span class="code">'ciao'[0][0]</span></p>
                     <button class="exercise-button"
                         onclick="document.querySelector('#correct-resp-6').style.display = 'block'; this.style.display = 'none';">Mostra
                         soluzione</button>
-                    <p id="correct-resp-6" style="display: none; margin-top: 5vh;">Sappiamo che <span class="code">'ciao'[0]</span> produce un carattere, ma sappiamo anche che in Python i caratteri estratti dalle stringhe sono a loro volta stringhe di lunghezza <span class="code">1</span>. Quindi se dopo l’espressione <span class="code">"ciao"[0]</span> che produce la stringa <span class="code">'c'</span> aggiungiamo un altro <span class="code">[0]</span> è come se stessimo scrivendo <span class="code">'c'[0]</span>, che ritorna il carattere zeresimo trovato nella stringa <span class="code">'c'</span>, cioè <span class="code">c</span> stesso.</p>
+                    <p id="correct-resp-6" style="display: none; margin-top: 5vh;">Sappiamo che <span
+                            class="code">'ciao'[0]</span> produce un carattere, ma sappiamo anche che in Python i
+                        caratteri estratti dalle stringhe sono a loro volta stringhe di lunghezza <span
+                            class="code">1</span>. Quindi se dopo l’espressione <span class="code">"ciao"[0]</span> che
+                        produce la stringa <span class="code">'c'</span> aggiungiamo un altro <span
+                            class="code">[0]</span> è come se stessimo scrivendo <span class="code">'c'[0]</span>, che
+                        ritorna il carattere zeresimo trovato nella stringa <span class="code">'c'</span>, cioè <span
+                            class="code">c</span> stesso.</p>
                 </section>
                 <section>
                     <p class="slide-context">3. Indici Negativi 7</p>
                     <h3 class="title">Domanda</h3>
-                    <p>Data una stringa <span class="code">x</span> NON vuota, cosa produce la seguente espressione? Un errore? Altro?</p>
+                    <p>Data una stringa <span class="code">x</span> NON vuota, cosa produce la seguente espressione? Un
+                        errore? Altro?</p>
                     <p>Possiamo semplificarla in una via più breve?</p>
                     <p><span class="code">(x[0])[0]</span></p>
                     <button class="exercise-button"
                         onclick="document.querySelector('#correct-resp-7').style.display = 'block'; this.style.display = 'none';">Mostra
                         soluzione</button>
-                    <p id="correct-resp-7" style="display: none; margin-top: 5vh;"><span class="code">x[0]</span> è un espressione che produce il primo carattere della stringa <span class="code">x</span>. In Python, possiamo mettere le espressioni tra parentesi che vogliamo. Quindi in questo caso la parentesi non produce nessun effetto, e l’espressione è equivalente a <span class="code">x[0][0]</span> che come abbiamo visto prima è uguale a scrivere <span class="code">x[0]</span></p>
+                    <p id="correct-resp-7" style="display: none; margin-top: 5vh;"><span class="code">x[0]</span> è un
+                        espressione che produce il primo carattere della stringa <span class="code">x</span>. In Python,
+                        possiamo mettere le espressioni tra parentesi che vogliamo. Quindi in questo caso la parentesi
+                        non produce nessun effetto, e l’espressione è equivalente a <span class="code">x[0][0]</span>
+                        che come abbiamo visto prima è uguale a scrivere <span class="code">x[0]</span></p>
                 </section>
             </section>
             <section>
@@ -388,7 +414,8 @@ print('ciao'[-4])" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li>Abbiamo detto che in Python le stringhe sono immutabili</li>
-                                <li>Nell'esempio sulla destra vogliamo cambiare il carattere in posizione 2. Come facciamo?</li>
+                                <li>Nell'esempio sulla destra vogliamo cambiare il carattere in posizione 2. Come
+                                    facciamo?</li>
                                 <li class="fragment"><strong>La soluzione proposta non funziona...</strong></li>
                             </ul>
                         </div>
@@ -404,8 +431,11 @@ x[2] = 'b'" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>La soluzione corretta è assegnare a <span class="code">x</span> una stringa completamente nuova, ottenuta prendendo pezzi della precedente</li>
-                                <li class="fragment fade-in" data-fragment-index="0">Se il fatto che la <span class="code">x</span> compaia a destra dell'uguale ti sconcerta, potremmo scomporre il codice così:</li>
+                                <li>La soluzione corretta è assegnare a <span class="code">x</span> una stringa
+                                    completamente nuova, ottenuta prendendo pezzi della precedente</li>
+                                <li class="fragment fade-in" data-fragment-index="0">Se il fatto che la <span
+                                        class="code">x</span> compaia a destra dell'uguale ti sconcerta, potremmo
+                                    scomporre il codice così:</li>
                             </ul>
                             <pre class="fragment fade-in" data-fragment-index="0"><code>x = "ciao"
 y = x
@@ -426,11 +456,18 @@ print(x)" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Potremmo voler leggere solo una sottosequenza che parte da una posizione e finisce in un’altra.</li>
-                                <li>Nell'esempio sulla destra, vogliamo estrarre <span class="code">canti</span> da <span class="code">mercantile</span></li>
-                                <li>Potremmo usare i singoli caratteri e concatenarli con <span class="code">+</span>, ma scriveremmo tantissimo codice</li>
-                                <li>Un'opzione migliore è usare le <a href="https://davidleoni.github.io/ThinkPythonItalian/html/thinkpython2009.html#sec98">slice</a></li>
-                                <li class="fragment"><strong>NOTA:</strong> estrarre una sottostringa con slice NON modifica la stringa originale!</li>
+                                <li>Potremmo voler leggere solo una sottosequenza che parte da una posizione e finisce
+                                    in un’altra.</li>
+                                <li>Nell'esempio sulla destra, vogliamo estrarre <span class="code">canti</span> da
+                                    <span class="code">mercantile</span>
+                                </li>
+                                <li>Potremmo usare i singoli caratteri e concatenarli con <span class="code">+</span>,
+                                    ma scriveremmo tantissimo codice</li>
+                                <li>Un'opzione migliore è usare le <a
+                                        href="https://davidleoni.github.io/ThinkPythonItalian/html/thinkpython2009.html#sec98">slice</a>
+                                </li>
+                                <li class="fragment"><strong>NOTA:</strong> estrarre una sottostringa con slice NON
+                                    modifica la stringa originale!</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
@@ -449,7 +486,8 @@ print('              x è', x)" />
                 <section>
                     <p class="slide-context">5. Slice 2</p>
                     <h3 class="title">Domanda</h3>
-                    <p>Se <span class="code">x</span> è una stringa qualsiasi di lunghezza almeno 5, cosa fa questo codice?</p>
+                    <p>Se <span class="code">x</span> è una stringa qualsiasi di lunghezza almeno 5, cosa fa questo
+                        codice?</p>
                     <p>Dà errore? Funziona? Possiamo abbreviarlo?</p>
                     <p><span class="code">x[3:4]</span></p>
                     <button class="exercise-button"
@@ -458,17 +496,23 @@ print('              x è', x)" />
                     <div id="correct-resp-8" style="display: none; margin-top: 5vh; width: 40vw;">
                         <p>Se la stringa ha lunghezza almeno 5, potremmo avere una situazione del genere:</p>
                         <pre style="width: auto;"><code>x = 'abcde'</code></pre>
-                        <p>La slice <span class="code">x[3:4]</span> estrarrà i caratteri da posizione <span class="code">3</span> <strong>incluso</strong> fino alla posizione <span class="code">4</span> <strong>esclusa</strong>, quindi di fatto estrarrà solo un carattere alla posizione <span class="code">3</span>. Il codice è quindi equivalente a <span class="code">x[3]</span></p>
+                        <p>La slice <span class="code">x[3:4]</span> estrarrà i caratteri da posizione <span
+                                class="code">3</span> <strong>incluso</strong> fino alla posizione <span
+                                class="code">4</span> <strong>esclusa</strong>, quindi di fatto estrarrà solo un
+                            carattere alla posizione <span class="code">3</span>. Il codice è quindi equivalente a <span
+                                class="code">x[3]</span></p>
                     </div>
                 </section>
                 <section>
                     <p class="slide-context">5. Slice 3</p>
                     <h3 class="title">Esercizio - garalampog</h3>
-                    <p>Scrivi del codice per estrarre e stampare <span class="code">alam</span> dalla stringa <span class="code">"garalampog"</span>. Prova a indovinare correttamente gli indici.</p>
+                    <p>Scrivi del codice per estrarre e stampare <span class="code">alam</span> dalla stringa <span
+                            class="code">"garalampog"</span>. Prova a indovinare correttamente gli indici.</p>
                     <div style="height: 50vh; width: 50vw; margin-top: 5vh;">
                         <base-editor contenteditable="true" language="python" code="x = 'garalampog'
 
-# scrivi qui" />
+# scrivi qui
+" />
                     </div>
                 </section>
                 <section>
@@ -481,11 +525,15 @@ print('              x è', x)" />
                 <section>
                     <p class="slide-context">5. Slice 5</p>
                     <h3 class="title">Esercizio - ifEEfav lkD lkWe</h3>
-                    <p>Scrivi del codice per estrarre e stampare <span class="code">kS</span> dalla stringa <span class="code">"ifE\te\nfav  lkD lkWe"</span>. Fai attenzione agli spazi e caratteri speciali (prima potresti voler stampare <span class="code">x</span>). Prova a indovinare gli indici corretti.</p>
+                    <p>Scrivi del codice per estrarre e stampare <span class="code">kS</span> dalla stringa <span
+                            class="code">"ifE\te\nfav lkD lkWe"</span>. Fai attenzione agli spazi e caratteri speciali
+                        (prima potresti voler stampare <span class="code">x</span>). Prova a indovinare gli indici
+                        corretti.</p>
                     <div style="height: 50vh; width: 50vw; margin-top: 5vh;">
                         <base-editor contenteditable="true" language="python" code="x = 'ifE\te\nfav  lkD lkWe'
 
-# scrivi qui" />
+# scrivi qui
+" />
                     </div>
                 </section>
                 <section>
@@ -502,7 +550,8 @@ print('              x è', x)" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li>Quando operiamo con le slice dobbiamo stare attenti ai limiti degli indici.</li>
-                                <li><strong>NOTA:</strong> se andiamo oltre la lunghezza della stringa Python non si arrabbia</li>
+                                <li><strong>NOTA:</strong> se andiamo oltre la lunghezza della stringa Python non si
+                                    arrabbia</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
@@ -521,14 +570,21 @@ print("sedia"[0:6])  # NESSUN ERRORE
                 <section>
                     <p class="slide-context">5. Slice 8</p>
                     <h3 class="title">Domanda</h3>
-                    <p>Se <span class="code">x</span> è una stringa qualsiasi (anche vuota), questa espressione cosa fa? Può dare errore? O ritorna qualcosa di utile?</p>
+                    <p>Se <span class="code">x</span> è una stringa qualsiasi (anche vuota), questa espressione cosa fa?
+                        Può dare errore? O ritorna qualcosa di utile?</p>
                     <p><span class="code">x[0:len(x)]</span></p>
                     <button class="exercise-button"
                         onclick="document.querySelector('#correct-resp-9').style.display = 'block'; this.style.display = 'none';">Mostra
                         soluzione</button>
                     <div id="correct-resp-9" style="display: none; margin-top: 5vh; width: 40vw;">
-                        <p>Ritorna sempre una NUOVA copia dell’intera stringa, perchè parte da indice <span class="code">0</span> incluso e finisce a indice <span class="code">len(x)</span> escluso.</p>
-                        <p>Funziona anche con la stringa vuota, perchè <span class="code">''[0:len('')]</span> equivale a <span class="code">''[0:0]</span> cioè sottostringa da 0 incluso a 0 escluso, quindi non prendiamo nessun carattere e non sforiamo i limiti della stringa. In realtà, anche se sforassimo, Python non avrebbe problemi (prova a scrivere <span class="code">''[0:100]</span>)</p>
+                        <p>Ritorna sempre una NUOVA copia dell’intera stringa, perchè parte da indice <span
+                                class="code">0</span> incluso e finisce a indice <span class="code">len(x)</span>
+                            escluso.</p>
+                        <p>Funziona anche con la stringa vuota, perchè <span class="code">''[0:len('')]</span> equivale
+                            a <span class="code">''[0:0]</span> cioè sottostringa da 0 incluso a 0 escluso, quindi non
+                            prendiamo nessun carattere e non sforiamo i limiti della stringa. In realtà, anche se
+                            sforassimo, Python non avrebbe problemi (prova a scrivere <span
+                                class="code">''[0:100]</span>)</p>
                     </div>
                 </section>
                 <section>
@@ -537,7 +593,8 @@ print("sedia"[0:6])  # NESSUN ERRORE
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Se omettiamo l'indice di partenza, Python supporrà sia <span class="code">0</span></li>
+                                <li>Se omettiamo l'indice di partenza, Python supporrà sia <span class="code">0</span>
+                                </li>
                                 <li>Se omettiamo l'indice di fine, Python estrarrà fino alla fine della stringa</li>
                                 <li>Se omettiamo entrambi gli indici, si ottiene l'intera stringa</li>
                             </ul>
@@ -545,9 +602,728 @@ print("sedia"[0:6])  # NESSUN ERRORE
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code='print("traghetto"[:3])
 print("traghetto"[3:])
-print("traghetto"[:])
-' />
+print("traghetto"[:])' />
                         </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 10</p>
+                    <h3 class="title">Esercizio - isteroister</h3>
+                    <p>Scrivere del codice che data una stringa <span class="code">x</span> stampa la stringa composta
+                        da tutte le lettere di <span class="code">x</span> eccetto la prima seguita da tutte le lettere
+                        di <span class="code">x</span> eccetto l’ultima</p>
+                    <ul>
+                        <li>il tuo codice deve funzionare con qualunque stringa</li>
+                    </ul>
+                    <p>Esempio: dato <span class="code">x = "mistero"</span> deve stampare <span
+                            class="code">isteromister</span></p>
+                    <p>Esempio: dato <span class="code">x = "corale"</span> deve stampare <span
+                            class="code">oralecoral</span></p>
+                    <div style="height: 40vh; width: 60vw;">
+                        <base-editor contenteditable="true" language="python" code='x = "mistero"
+#x = "corale"
+
+# scrivi qui
+' />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 11</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <div class="fragment">
+                        <pre style="width: auto;"><code>print(x[1:] + x[0:len(x)-1])</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 12</p>
+                    <h3 class="title">Slice - limiti negativi</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p>Volendo è anche possibile impostare limiti negativi, per quanto non sia sempre molto
+                                intuitivo</p>
+                            <div style="width: 40vw; height: 50vh;">
+                                <base-editor contenteditable="true" language="python" code='# Da indice 3 a indici 
+# positivi <= 3 non produce nulla
+print("foresta"[3:0])
+
+print("foresta"[3:1])
+print("foresta"[3:2])
+print("foresta"[3:3])' />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <p>Vediamo cosa succede con indici negativi</p><br>
+                            <div style="width: 40vw; height: 50vh;">
+                                <base-editor contenteditable="true" language="python" code='print("foresta"[3:-1])
+print("foresta"[3:-2])
+print("foresta"[3:-3])
+print("foresta"[3:-4])
+print("foresta"[3:-5])' />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 13</p>
+                    <h3 class="title">Esercizio - javarnanda</h3>
+                    <p>Data una stringa <span class="code">x</span>, scrivi del codice per estrarre e stampare i suoi
+                        ultimi 3 caratteri e unirli ai primi 3.</p>
+                    <ul>
+                        <li>Il tuo codice deve funzionare per qualsiasi stringa di lunghezza uguale o superiore a 3</li>
+                    </ul>
+                    <p>Esempio: dato <span class="code">x = "javarnanda"</span> deve stampare <span
+                            class="code">javnda</span></p>
+                    <p>Esempio: dato <span class="code">x = "bang"</span> deve stampare <span class="code">banang</span>
+                    </p>
+                    <div style="height: 40vh; width: 60vw;">
+                        <base-editor contenteditable="true" language="python" code='x = "javarnanda"
+#x = "bang"
+
+# scrivi qui
+' />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 14</p>
+                    <h3 class="title">Slice - modifica</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>Data la stringa a destra, supponiamo di voler cambiare la parola <span
+                                        class="code">tavolo</span> con <span class="code">divano</span></li>
+                                <li>Potremmo essere tentati di ridefinire la sequenza di caratteri corrispondente alla
+                                    parola <span class="code">"tavolo"</span>...</li>
+                                <li class="fragment">Otteniamo un errore, perché <strong>le stringhe sono
+                                        IMMUTABILI</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+
+                            <base-editor contenteditable="true" language="python" code='s = "il tavolo bianco è al centro della stanza"
+s[3:9] = "divano"   # ATTENZIONE! SBAGLIATO!' />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 15</p>
+                    <h3 class="title">Slice - modifica</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>Quello che invece possiamo fare è </li>
+                                <ol>
+                                    <li>costruire una NUOVA stringa a partire da pezzi della stringa originale</li>
+                                    <li>concatenare i caratteri desiderati</li>
+                                    <li>associare il risultato alla variabile di cui vogliamo modificare l’assegnazione
+                                    </li>
+                                </ol>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+
+                            <base-editor contenteditable="true" language="python" code='s = "il tavolo bianco è al centro della stanza"
+s = s[0:3] + "divano" + s[9:]
+print(s)' />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 16</p>
+                    <h3 class="title">Esercizio - la corsa</h3>
+                    <p>Scrivere del codice per cui data una stringa s</p>
+                    <pre style="width: auto;"><code>s = "la corsa all'oro è iniziata."</code></pre>
+                    <p>e delle variabili</p>
+                    <pre style="width: auto;"><code>cosa = "atomo"
+verbo = "finita"</code></pre>
+                    <p>sostituisce la sottostringa in corrispondenza di <span class="code">"oro"</span> con la stringa
+                        presente nella variabile <span class="code">cosa</span> e sostituisce la sottostringa in
+                        corrispondenza di <span class="code">"iniziata"</span> con la stringa presente nella variabile
+                        <span class="code">verbo</span>.
+                    </p>
+                    <p>Dopo l'esecuzione del tuo codice, la stringa associata ad <span class="code">s</span> dovrà
+                        essere <span class="code">"la corsa all'atomo è finita"</span></p>
+                    <ul>
+                        <li><strong>NON</strong> usare caratteri costanti nel tuo codice, quindi niente punto <span
+                                class="code">'.'</span>!</li>
+                    </ul>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 17</p>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <p>Data:</p>
+                            <pre><code>s = "la corsa all'oro è iniziata."</code></pre>
+                            <p>il codice dovrebbe restituire:</p>
+                            <pre><code>"la corsa all'atomo è finita"</code></pre>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+
+                            <base-editor contenteditable="true" language="python" code="s = 'la corsa all\'oro è iniziata.'
+cosa = 'atomo'
+verbo = 'finita'
+
+# scrivi qui
+" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Slice 18</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <div class="fragment">
+                        <pre style="width: auto;"><code>s = s[:13] + cosa + s[16:19] + verbo + s[27:]</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">6. Operatore in 1</p>
+                    <h3 class="title">Operatore <span class="code">in</span></h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>Per verificare se una stringa è contenuta in un’altra, possiamo usare l’operatore
+                                    <span class="code">in</span>
+                                </li>
+                                <li>Il risultato di questa espressione è un booleano</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+                            <base-editor contenteditable="true" language="python" code="print('tra' in 'Cantando per le strade')
+    
+# l'operatore in distingue tra maiuscole/minuscole
+print('ca' in 'Cantando per le strade')
+
+print('Ca' in 'Cantando per le strade')" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Operatore in 2</p>
+                    <h3 class="title">Attenzione!</h3>
+                    <div style="width: 60vw;">
+                        <p>NON abusare dell'operatore <span class="code">in</span></p>
+                        <p>Chiediti sempre:</p>
+                        <ol>
+                            <li>la stringa potrebbe non contenere la sottostringa cercata? Ricordati di gestire anche
+                                questo caso!</li>
+                            <li><span class="code">in</span> compie una ricerca in tutta la stringa, che può essere
+                                inefficiente: è proprio necessaria, o sappiamo già l’intervallo in cui cercare?</li>
+                            <li>se vogliamo sapere se un carattere è in una posizione nota a priori (es <span
+                                    class="code">3</span>), <span class="code">in</span> non ci serve, basta scrivere
+                                <span class="code">stringa[3] == carattere</span>. Usando <span class="code">in</span>
+                                potrebbe trovare caratteri duplicati che stanno prima o dopo di quello che vogliamo
+                                verificare!
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Operatore in 3</p>
+                    <h3 class="title">Esercizio - contenute 1</h3>
+                    <p>Ti vengono date due stringhe <span class="code">x</span> e <span class="code">y</span>, e una
+                        terza <span class="code">z</span>. Scrivi del codice che stampa <span class="code">True</span>
+                        se <span class="code">x</span> e <span class="code">y</span> sono entrambe contenute in <span
+                            class="code">z</span>.</p>
+                    <p>Esempio 1: date</p>
+                    <pre style="width: auto;"><code>x = 'cad'
+y = 'ra'
+z = 'abracadabra'</code></pre>
+                    <p>dovrebbe stampare <span class="code">True</span></p>
+                    <p>Esempio 2: date</p>
+                    <pre style="width: auto;"><code>x = 'zam'
+y = 'ra'
+z = 'abracadabra'</code></pre>
+                    <p>dovrebbe stampare <span class="code">False</span></p>
+                </section>
+                <section>
+                    <p class="slide-context">6. Operatore in 4</p>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <p>Esempio 1: date</p>
+                            <pre><code>x = 'cad'
+y = 'ra'
+z = 'abracadabra'</code></pre>
+                            <p>dovrebbe stampare <span class="code">True</span></p>
+                            <p>Esempio 2: date</p>
+                            <pre><code>x = 'zam'
+y = 'ra'
+z = 'abracadabra'</code></pre>
+                            <p>dovrebbe stampare <span class="code">False</span></p>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+
+                            <base-editor contenteditable="true" language="python" code="x,y,z = 'cad','ra','abracadabra'   # True
+#x,y,z = 'zam','ra','abracadabra'  # False
+
+# scrivi qui
+" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Operatore in 5</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <div class="fragment">
+                        <pre style="width: auto;"><code>print((x in z) and (y in z))</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Operatore in 6</p>
+                    <h3 class="title">Esercizio - contenute 2</h3>
+                    <p>Date tre stringhe <span class="code">x</span>, <span class="code">y</span>, <span
+                            class="code">z</span>, scrivere del codice che stampa <span class="code">True</span> se una
+                        stringa <span class="code">x</span> è contenuta almeno in una delle stringhe <span
+                            class="code">y</span> o <span class="code">z</span>, altrimenti stampa <span
+                            class="code">False</span></p>
+                    <ul>
+                        <li>il tuo codice deve funzionare con qualunque insieme di stringhe</li>
+                    </ul>
+                    <div class="row" style="gap: 2vw;">
+                        <div class="col">
+                            <p>Esempio 1: dati</p>
+                            <pre style="width: auto;"><code>x = 'tti'
+y = 'patti chiari amicizia lunga'
+z = 'tutto chiaro?'</code></pre>
+                            <p>dovrebbe stampare <span class="code">True</span></p>
+                        </div>
+                        <div class="col">
+                            <p>Esempio 2: dati</p>
+                            <pre style="width: auto;"><code>x = 'zio'
+y = 'patti chiari amicizia lunga'
+z = 'tutto chiaro?'</code></pre>
+                            <p>dovrebbe stampare <span class="code">False</span></p>
+                        </div>
+                        <div class="col">
+                            <p>Esempio 3: dati</p>
+                            <pre style="width: auto;"><code>x = 'chiaro'
+y = 'patti chiari amicizia lunga'
+z = 'tutto chiaro?'</code></pre>
+                            <p>dovrebbe stampare <span class="code">True</span></p>
+                        </div>
+                    </div>
+                    <div style="width: 60vw; height: 40vh;">
+                        <base-editor contenteditable="true" language="python" code="x,y,z = 'tti', 'patti chiari amicizia lunga', 'tutto chiaro?'   # True
+#x,y,z = 'zio','patti chiari amicizia lunga','tutto chiaro?'    # False
+#x,y,z = 'chiaro','patti chiari amicizia lunga','tutto chiaro?' # True
+
+# scrivi qui
+" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Operatore in 7</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <div class="fragment">
+                        <pre style="width: auto;"><code>print((x in y) or (x  in z))</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 1</p>
+                    <h3 class="title">Comparazioni - uguaglianza</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>Python ci offre la possibilità di eseguire una comparazione lessicografica tra
+                                    stringhe</li>
+                                <li>Per verificare se due stringhe sono uguali, possiamo usare l’operatore <span
+                                        class="code">==</span> che come risultato produce un booleano <span
+                                        class="code">True</span> oppure <span class="code">False</span></li>
+                                <li><strong>ATTENZIONE:</strong> si scrive con due uguali!</li>
+                                <li>L'operatore di uguaglianza distingue tra maiuscole e minuscole!</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+                            <base-editor contenteditable="true" language="python" code='print("gatto" == "gatto")
+print("gatto" == "cane")
+
+print("gatto" == "GATTO")' />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 2</p>
+                    <h3 class="title">Comparazioni - disuguaglianza</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>Per vedere se due stringhe NON sono uguali, possiamo usare l’operatore <span
+                                        class="code">!=</span></li>
+                                <li>Esso si comporta all'opposto di <span class="code">==</span></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+                            <base-editor contenteditable="true" language="python" code='print("gatto" != "gatto")
+print("gatto" != "cane")
+
+print("gatto" != "GATTO")' />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 3</p>
+                    <h3 class="title">Comparazioni - disuguaglianza</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>In alternativa potremmo anche usare l'operatore <span class="code">not</span></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+                            <base-editor contenteditable="true" language="python" code='print(not "gatto" == "gatto")
+print(not "gatto" == "cane")
+
+print(not "gatto" == "GATTO")' />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 4</p>
+                    <h3 class="title">Domanda</h3>
+                    <p>Cosa stampa il codice seguente?</p>
+                    <p>Esegui per verificare!</p>
+                    <div style="width: 50vw; height: 40vh;">
+                        <base-editor contenteditable="true" language="python" code='x = "fiume" == "fiume"
+print(x)' />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 4</p>
+                    <h3 class="title">Domanda</h3>
+                    <p>Per ciascuna delle espressioni seguenti, prova a indovinare se produce True o False</p>
+                    <p>Procedi per vedere i risultati</p>
+                    <table>
+                        <tr>
+                            <th>Espressione</th>
+                            <th>Risultato</th>
+                        </tr>
+                        <tr>
+                            <td><span class="code">'cappello' != 'Cappello'</span></td>
+                            <td class="fragment">True</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">'cappello' == 'CAPPELLO'</span></td>
+                            <td class="fragment">False</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">'pensieroso'[4:8] == 'forestiero'[6:]</span></td>
+                            <td class="fragment">True</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">'CoStOsO'[4:] == 'oSo'</span></td>
+                            <td class="fragment">False</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">'chiaro'[9:20] == 'scuro'[10:15]</span></td>
+                            <td class="fragment">True</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">'ramarro'[-1] == 'giglio'[-1]</span></td>
+                            <td class="fragment">True</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">('cappello' != 'giacca') == ('pantaloni' != 'cravatta')</span></td>
+                            <td class="fragment">True</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">('stra' in 'stradivarius') == ('div' in 'divano')</span></td>
+                            <td class="fragment">True</td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 4</p>
+                    <h3 class="title">Domanda</h3>
+                    <p>Per ciascuna delle espressioni seguenti, prova a indovinare se produce True o False</p>
+                    <p>Procedi per vedere i risultati</p>
+                    <table>
+                        <tr>
+                            <th>Espressione</th>
+                            <th>Risultato</th>
+                        </tr>
+                        <tr>
+                            <td><span class="code">len('nota') in '5436'</span></td>
+                            <td class="fragment">ERROR</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">str(len('nota')) in '5436'</span></td>
+                            <td class="fragment">True</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">len('cartellone') in '5436'</span></td>
+                            <td class="fragment">ERROR</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">str(len('cartellone')) in '5436'</span></td>
+                            <td class="fragment">False</td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 5</p>
+                    <h3 class="title">Esercizio - rockettaro</h3>
+                    <p>Scrivi del codice che stampa <span class="code">True</span> se una <span
+                            class="code">parola</span> inizia con le stesse due lettere con cui finisce</p>
+                    <ul>
+                        <li>Il tuo codice deve funzionare per qualsiasi <span class="code">parola</span></li>
+                    </ul>
+                    <div style="width: 60vw; height: 50vh;">
+                        <base-editor contenteditable="true" language="python" code="parola = 'rockettaro'  # True
+#parola = 'massima'    # True
+#parola = 'stima'      # False
+#parola = 'baobab'     # False
+
+# scrivi qui
+" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 6</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <div class="fragment">
+                        <pre style="width: auto;"><code>print(parola[:2] == parola[-2:len(parola)])</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 7</p>
+                    <h3 class="title">Comparare caratteri</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>I caratteri hanno un ordine che possiamo sfruttare</li>
+                                <li>Dobbiamo ricordare che la codifica ASCII assegna un numero di posizione ad ogni
+                                    carattere, definendo di fatto un ordine tra tutti i suoi caratteri</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+                            <base-editor contenteditable="true" language="python" code="print('a' < 'g')
+print('m' > 'c')
+
+# Maiuscole vs minuscole
+print('a' < 'Z')
+
+# UNICODE
+print('a' > '♥')" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 8</p>
+                    <h3 class="title">Comparare caratteri</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>Se vogliamo sapere il numero corrispondente di un carattere, possiamo usare la
+                                    funzione <span class="code">ord</span></li>
+                                <li>Se vogliamo andare nell’altro senso, dato un numero di posizione possiamo ottenere
+                                    il carattere corrispondente con la funzione <span class="code">chr</span></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+                            <base-editor contenteditable="true" language="python" code="print(ord('a'))
+print(ord('b'))
+
+# I caratteri maiuscoli hanno posizioni diverse!
+print(ord('Z'))
+
+print(chr(97))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 9</p>
+                    <h3 class="title">Esercizio</h3>
+                    <p>Usando le funzioni di cui abbiamo parlato, prova a trovare quali caratteri sono tra la <span
+                            class="code">Z</span> maiuscola e la <span class="code">a</span> minuscola</p>
+                    <div style="width: 60vw; height: 50vh;">
+                        <base-editor contenteditable="true" language="python" code="# scrivi qui
+" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 10</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <div class="fragment">
+                        <pre
+                            style="width: auto;"><code>print(chr(91),chr(92), chr(93),chr(94), chr(95),chr(96))</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 11</p>
+                    <p><strong>NOTA:</strong> l'ordine ci permette di eseguire comparazioni lessicografiche tra
+                        caratteri singoli!</p>
+                    <div style="width: 60vw; height: 50vh; margin-top: 7vh;">
+                        <base-editor contenteditable="true" language="python" code="print('a' < 'b')
+print('g' >= 'm')" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 12</p>
+                    <h3 class="title">Esercizio</h3>
+                    <p>Scrivi del codice che</p>
+                    <ol>
+                        <li>stampa i valori <span class="code">ord</span> di <span class="code">'A'</span>, <span
+                                class="code">'Z'</span> e un dato carattere <span class="code">car</span></li>
+                        <li>stampa <span class="code">True</span> se <span class="code">car</span> è maiuscolo, e <span
+                                class="code">False</span> altrimenti</li>
+                    </ol>
+                    <p>Domanda: il tuo codice funzionerebbe anche con caratteri accentati capitalizzati come <span
+                            class="code">'Á'</span>?</p>
+                    <p>Nota: gli insiemi di caratteri possibili sono parecchi, perciò la soluzione appropriata sarebbe
+                        usare il metodo <span class="code">isupper</span> che vedremo prossimamente</p>
+                    <div style="width: 60vw; height: 50vh;">
+                        <base-editor contenteditable="true" language="python" code="car = 'G'   # True
+#car = 'g'  # False
+
+#car = 'Á'  # True ?? Nota l'accento!
+
+# scrivi qui" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 13</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <div class="fragment">
+                        <pre style="width: auto;"><code>print('A:', ord('A'), ' Z:', ord('Z'))
+print(car+':',ord(car))
+ord(car) >= ord('A') and ord(car) <= ord('Z')  # only checks simple English alphabet cases</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 14</p>
+                    <h3 class="title">Comparare caratteri e ord</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>Dato che l'insieme dei caratteri Unicode include l'ASCII, l'ordine dei caratteri
+                                    ASCII può essere usato per compararli in sicurezza coi caratteri Unicode</li>
+                                <li>Dunque comparare i caratteri o i loro <span class="code">ord</span> dovrebbe essere
+                                    sempre equivalente</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="width: 40vw; height: 50vh;">
+                            <base-editor contenteditable="true" language="python" code="print(ord('a')) # ascii
+print(ord('♥')) # unicode
+
+print('a' > '♥')
+print(ord('a') > ord('♥'))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 15</p>
+                    <h3 class="title">Comparare stringhe</h3>
+                    <ul style="list-style-type: none;">
+                        <li>Python offre anche comparazioni lessigrafiche su stringhe con più di un carattere</li>
+                        <li>Per capire il risultato atteso, dobbiamo distinguere due casi:</li>
+                        <ul>
+                            <li>stringhe di lunghezza uguale / differente</li>
+                            <li>stringhe con capitalizzazione uguale / diversa</li>
+                        </ul>
+                    </ul>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 16</p>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p style="text-align: center;">Stringhe con stessa lunghezza</p>
+                            <div style="width: 40vw; height: 50vh;">
+                                <base-editor contenteditable="true" language="python" code="print('mario' > 'luigi')
+print('mario' > 'wario')
+print('Mario' > 'Wario')
+
+# Il maiuscolo è prima del minuscolo in ASCII
+print('Wario' < 'mario')" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <p style="text-align: center;">Stringhe con lunghezza diversa</p>
+                            <div style="width: 40vw; height: 50vh;">
+                                <base-editor contenteditable="true" language="python" code="# Stringhe corte incluse in altre
+# più lunghe appaiono prima nell'ordinamento
+print('troll' < 'trolley')
+
+# Se condividono il prefisso con una stringa più lunga,
+# Python compara i caratteri dopo il prefisso comune
+print('trolley' < 'trolls')" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 16</p>
+                    <h3 class="title">Esercizio - Intervalli di caratteri</h3>
+                    <div style="width: 60vw;">
+                        <p>Ti vengono fornite due coppie di stringhe <span class="code">i1</span> e <span
+                                class="code">i2</span> da due caratteri ciascuna</p>
+                        <p>Supponi che rappresentino intervalli di caratteri: il primo carattere di un intervallo ha
+                            sempre un numero d’ordine inferiore o uguale al secondo</p>
+                        <p>Ci sono cinque possibilità: il primo intervallo 'è contenuto in', oppure 'contiene', oppure
+                            'si sovrappone parzialmente a', oppure 'è prima' o 'è dopo' il secondo intervallo. Scrivi
+                            del codice che dice quale relazione di contenimento abbiamo</p>
+                        <p>Esempio 1: dati</p>
+                        <pre><code>i1 = 'gm'
+i2 = 'cp'</code></pre>
+                        <p>il tuo programma dovrebbe stampare <span class="code">gm è contenuto in cp</span></p>
+                        <p>Per vedere perché, puoi guardare questa piccola rappresentazione (non è necessario
+                            stamparla!)</p>
+                        <pre><code>  c   g     m  p
+abcdefghijklmnopqrstuvwxyz</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 17</p>
+                    <div style="width: 60vw;">
+                        <p>Esempio 2: dati</p>
+                        <pre><code>i1 = 'mr'
+i2 = 'pt'</code></pre>
+                        <p>il tuo programma dovrebbe stampare <span class="code">mr si sovrappone parzialmente a
+                                pt</span></p>
+                        <p>perchè <span class="code">mr</span> non è contenuto né contiene né completamente precede né
+                            completamente segue <span class="code">pt</span></p>
+                        <pre><code>            m  p r t
+abcdefghijklmnopqrstuvwxyz</code></pre>
+                        <ul style="margin-top: 5vh;">
+                            <li>se l’intervallo <span class="code">i1</span> coincide con <span class="code">i2</span>,
+                                è considerato come contenente <span class="code">i2</span></li>
+                            <li><strong>NON</strong> usare cicli né <span class="code">if</span></li>
+                            <li><strong>SUGGERIMENTO</strong>: per soddisfare i vincoli qui sopra, pensa all’<a
+                                    href="https://it.softpython.org/basics/basics2-bools-sol.html#Ordine-di-valutazione">ordine
+                                    di valutazione dei booleani</a></li>
+                        </ul>
+                        <pre><code>'g' >= 'c' and 'm' <= 'p' and 'è contenuto in'</code></pre>
+                        <p>produce come risultato la stringa <span class="code">'è contenuto in'</span></p>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 17</p>
+                    <div style="width: 60vw; height: 60vh;">
+                        <base-editor contenteditable="true" language="python" code="i1,i2 = 'gm','cp'   # gm è contenuto in cp
+#i1,i2 = 'dh','dh'  # gm è contenuto in cp  #(caso speciale)
+#i1,i2 = 'bw','dq'  # bw contiene dq
+#i1,i2 = 'ac','bd'  # ac si sovrappone parzialmente a bd
+#i1,i2 = 'mr','pt'  # mr si sovrappone parzialmente  pt
+#i1,i2 = 'fm','su'  # fm è prima di su
+#i1,i2 = 'xz','pq'  # xz è dopo pq
+
+# scrivi qui
+" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">7. Comparazioni 18</p>
+                    <p>Vai avanti per la soluzione</p>
+                    <div class="fragment">
+                        <pre style="width: auto;"><code>res = (i1[0] >= i2[0] and i1[1] <= i2[1] and 'è contenuto in')  \
+or (i1[0] < i2[0] and i1[1] >i2[1] and 'contiene')         \
+or (i1[0] >= i2[0] and i1[0] <= i2[1] and 'si sovrappone parzialmente a') \
+or (i1[1] >= i2[0] and i1[1] <= i2[1] and 'si sovrappone parzialmente a')  \
+or (i1[1] < i2[0] and 'è prima di')   \
+or (i1[0] > i2[1] and 'è dopo')
+
+print(i1, res, i2)</code></pre>
                     </div>
                 </section>
             </section>

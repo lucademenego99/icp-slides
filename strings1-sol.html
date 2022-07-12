@@ -286,9 +286,9 @@ print('a\tb')" />
                                 </tr>
                             </table>
                         </div>
-                        <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print('ESEMPIO tab: Ciao\tMondo')
-print('ESEMPIO linefeed: Ciao\nmondo\n!!!')" />
+                        <div class="col" style="height: 50vh; width: 100%; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="print('ESEMPIO linefeed: Ciao\nmondo\n!!!')
+print('ESEMPIO tab: Ciao\tMondo')" />
                         </div>
                     </div>
                 </section>
@@ -402,24 +402,20 @@ print("Così metto \"doppie virgolette\" nella stringa")' />
                     <p class="slide-context">3. Caratteri speciali 2</p>
                     <h3 class="title">Esercizio 1</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col" style="text-align: left;">
+                        <div>
                             <p>Trova una stringa da stampare con la <span class="code">print</span> che stampata mostri
                                 la sequenza seguente</p>
                             <p><span class="code">Questo "genio" delle stringhe vuole /\\/ fregarmi \//\ con esercizi
                                     atroci O_o'</span></p>
                             <p>La stringa <strong>DEVE</strong> iniziare e finire con apici singoli <span class="code">
-                                    '</span></p>
-                            <ul>
-                                <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span
-                                        class="code">\n</span></li>
-                                <li><span class="code">NON</span> usare spazi</li>
-                                <li>NON usare tripli apici</li>
-                            </ul>
-                        </div>
-                        <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="# scrivi qui" />
-                        </div>
+                                    '</span></p>                            
+                        </div>                        
                     </div>
+                    
+                    <div style="height: 40vh; width: 50vw;">
+                        <base-editor contenteditable="true" language="python" code="# scrivi qui" />
+                    </div>
+                    
                 </section>
             </section>
             <section>
@@ -442,27 +438,27 @@ print("Così metto \"doppie virgolette\" nella stringa")' />
                 <section>
                     <p class="slide-context">4. Encodings 2</p>
                     <h3 class="title">Caratteri UNICODE</h3>
-                    <ul style="list-style-type: none; width: 60vw; margin-top: 5vh;">
-                        <li>Quando abbiamo bisogno di caratteri particolari come ✪ che non sono disponibili sulla
-                            tastiera, possiamo guardare i caratteri Unicode.</li>
-                        <li>Se vai in <a href="https://www.fileformat.info/info/unicode/char/272a/index.htm">questa
-                                pagina</a>, puoi copia-incollare il carattere ✪ ed inserirlo nel codice Python</li>
-                        <li>In altri casi, il carattere potrebbe essere così speciale da non poter essere nemmeno
-                            correttamente visualizzato. Qui dovremmo utilizzare sequenze più complesse nel formato <span
-                                class="code">\uxxxx</span></li>
-                    </ul>
                     <table>
-                        <tr>
-                            <th>Descrizione</th>
+                        <tr>                            
                             <th>Sequenza di escape</th>
                             <th>Risultato stampato</th>
                         </tr>
-                        <tr>
-                            <td>Esempio stella (carattere precedente)</td>
+                        <tr>                            
                             <td><span class="code">\u272A</span></td>
                             <td>✪</td>
                         </tr>
                     </table>
+                    
+                    <div>                        
+                        Vai a <a href="https://www.fileformat.info/info/unicode/char/272a/index.htm" target="_blank">questa
+                                pagina</a>, copia-incolla il carattere ✪ e stampalo da codice Python <br><br>
+                                
+                    </div>
+                    
+                    
+                    <div style="height: 40vh; width: 50vw;">
+                        <base-editor contenteditable="true" language="python" code="# scrivi qui" />
+                    </div>                    
                 </section>
                 <section>
                     <p class="slide-context">4. Encodings 3</p>

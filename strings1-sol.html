@@ -93,7 +93,7 @@
                     <p><small>Premi <span class="code">esc</span> per l'overview generale</small></p>
                 </div>
             </section>
-
+            
             <section>
                 <section>
                     <p class="slide-context">1. Introduzione 1</p>
@@ -101,15 +101,15 @@
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Le stringhe sono sequenze immutabili di caratteri, e costituiscono uno dei tipi di
-                                    base di Python.</li>
-                                <li>Possiamo definirle in diversi modi:</li>
+
+                                <li>Sequenze immutabili di caratteri</li>
+                                                                
                                 <ul>
-                                    <li class="fragment" data-fragment-index="0">doppie virgolette, su una linea</li>
-                                    <li class="fragment" data-fragment-index="1">virgolette singole, su una linea</li>
-                                    <li class="fragment" data-fragment-index="2">tre doppie virgolette, su più linee
+                                    <li class="fragment" data-fragment-index="0">doppie virgolette,  una linea</li>
+                                    <li class="fragment" data-fragment-index="1">virgolette singole, una linea</li>
+                                    <li class="fragment" data-fragment-index="2">tre doppie virgolette, più linee
                                     </li>
-                                    <li class="fragment" data-fragment-index="3">tre apici, su più linee</li>
+                                    <li class="fragment" data-fragment-index="3">tre apici, più linee</li>
                                 </ul>
                             </ul>
                         </div>
@@ -149,29 +149,38 @@ su più linee'''" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Per stampare una stringa possiamo usare la funzione print</li>
-                                <li class="fragment" data-fragment-index="0">Se invece scriviamo direttamente la stringa
-                                    senza la print, vedremo gli apici</li>
-                                <li class="fragment" data-fragment-index="1">Anche se scriviamo la stringa coi doppi
-                                    apici, il risultato avrà gli apici singoli</li>
-                                <li class="fragment" data-fragment-index="2">Lo stesso discorso si applica se assegniamo
-                                    una stringa a una variabile</li>
+                                <li>Comando <span class="code">print</span></li>
+                                <li class="fragment" data-fragment-index="0">
+                                    Modalità script, senza print: nulla</li>
+                                <li class="fragment" data-fragment-index="1">
+                                     Modalità interprete, apici singoli: vediamo apici singoli</li>
+                                <li class="fragment" data-fragment-index="2">Modalità interprete, con apici doppi?</li>
+                                <li class="fragment" data-fragment-index="3">Idem quando assegniamo variabili</li>
                             </ul>
                         </div>
                         <div class="r-stack" style="width: 50vw;">
+                            <!-- DAVID: MODALITA' SCRIPT -->
                             <div class="col fragment fade-out" data-fragment-index="0"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code="print('ciao')" />
                             </div>
+                            <!-- DAVID: MODALITA' SCRIPT -->
                             <div class="col fragment fade-in-then-out" data-fragment-index="0"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code="'ciao'" />
                             </div>
+                            <!-- DAVID: MODALITA' INTERPRETE -->
                             <div class="col fragment fade-in-then-out" data-fragment-index="1"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <base-editor contenteditable="true" language="python" code="'ciao'" />
+                            </div>
+                            <!-- DAVID: MODALITA' INTERPRETE -->
+                            <div class="col fragment fade-in-then-out" data-fragment-index="2"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code='"ciao"' />
                             </div>
-                            <div class="col fragment fade-in-then-out" data-fragment-index="2"
+                            <!-- DAVID: MODALITA' INTERPRETE -->
+                            <div class="col fragment fade-in-then-out" data-fragment-index="3"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code="x = 'ciao'
 x" />

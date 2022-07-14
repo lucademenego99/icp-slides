@@ -196,7 +196,7 @@ cammina CAMMINA cammina CAMMINA</code></pre>
                 <section>
                     <p class="slide-context">2. Esercizi vari 1</p>
                     <h3 class="title">Esercizio - lowermezzo</h3>
-                    <div style="width: 65vw;">
+                    <div style="width: 60vw;">
                         <p>Scrivi del codice che data una stringa qualsiasi <span class="code">x</span> di lunghezza
                             dispari, stampa una nuova stringa uguale a <span class="code">x</span> eccetto al carattere
                             in mezzo che deve essere in minuscolo.</p>
@@ -323,6 +323,161 @@ z = 'per'</code></pre>
                                 <base-editor contenteditable="true" language="python" code="x = 'per Giove'
 y = 'per Zeus'
 z = 'per'
+
+# scrivi qui
+" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Esercizi vari 7</p>
+                    <h3 class="title">Esercizio - Snobbonis</h3>
+                    <div style="width: 65vw;">
+                        <p>Dati nomi di coppie <span class="code">marito</span> e <span class="code">moglie</span>,
+                            scrivi del codice che stampa <span class="code">True</span> se condividono il cognome, <span
+                                class="code">False</span> altrimenti.</p>
+                        <ul>
+                            <li>assumi che il cognome sia sempre alla stessa posizione</li>
+                            <li>il tuo codice deve funzionare per qualsiasi coppia <span class="code">marito</span>
+                                <span class="code">moglie</span></li>
+                        </ul>
+                    </div>
+                    <div style="height: 50vh; width: 60vw; margin-top: 5vh;">
+                        <base-editor contenteditable="true" language="python" code="                 #0123456789               #0123456789
+marito, moglie = 'Antonio  Snobbonis',     'Carolina Snobbonis'   # True
+#marito, moglie = 'Camillo  De Spaparanzi', 'Matilda  Degli Agi'  # False
+
+# scrivi qui                        
+" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Esercizi vari 8</p>
+                    <h3 class="title">Esercizio - Combattiamo gli hacker</h3>
+                    <div style="width: 65vw;">
+                        <p>Come è noto nei piani bassi dell’Interpol, gli hacker internazionali comunicano usando una
+                            lingua ricca di slang chiamata Leet. Tuttavia questa moda si sta diffondendo anche nelle
+                            scuole, dove si viene considerati K001 (cool) se si sa comunicare in questa scomoda maniera.
+                            La base è cercare di sostituire alle lettere dei numeri durante la scrittura (<a
+                                href="https://simple.wikipedia.org/wiki/Leet" target="_blank">qui una guida completa</a>).</p>
+                        <pre style="width: 20vw;"><code>1 -> i
+2 -> z
+3 -> e
+4 -> h, a, y
+etc</code></pre>
+                        <p>Scrivi un codice che controlla i <span class="code">nome</span> e <span
+                                class="code">cognome</span> forniti dagli studenti per evitare che si esprimano in
+                            questa maniera, che Dante di sicuro disapprova!</p>
+                        <ul>
+                            <li>stampa <span class="code">True</span> se almeno una delle parole contiene numeri al
+                                posto di lettere, altrimenti stampa <span class="code">False</span></li>
+                            <li>Il codice deve essere generico, valido per tutte le parole</li>
+                            <li><strong>NON</strong> usare l’istruzione <span class="code">if</span></li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Esercizi vari 9</p>
+                    <h3 class="title">Esercizio - Combattiamo gli hacker</h3>
+                    <div class="row" style="width: 90vw;">
+                        <div class="col">
+                            <p>Dati</p>
+                            <pre><code>nome = 'Cool'
+cognome = 'H4ck3r'</code></pre>
+                            <p>il codice deve stampare <span class="code">True</span></p>
+                        </div>
+                        <div class="col" style="flex: 2">
+                            <div style="height: 50vh; width: 100%;">
+                                <base-editor contenteditable="true" language="python" code="nome, cognome = 'K001', 'H4ck3r'     # True
+#nome, cognome = 'Cool',  'H4ck3r'     # True
+#nome, cognome = 'Romina','Rossi'      # False
+#nome, cognome = 'Peppo', 'Sbirilli'   # False
+#nome, cognome = 'K001',  'Sbirilli'   # True
+
+# scrivi qui
+" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Esercizi vari 10</p>
+                    <h3 class="title">Esercizio - Vendere numeri</h3>
+                    <div style="width: 65vw;">
+                        <p>La multinazionale ToxiCorp è riuscita a mettere le mani su un tesoro di dati personali di ignari utenti, e ti propone di analizzarli per poi vendere informazioni private sul mercato nero al miglior offerente. L’offerta ti pare questionabile, ma pagano bene, perciò accetti.</p>
+                        <p>Occorre capire che dati sono e come catalogarli. Tra i tanti hai trovato una serie di stringhe che sembrano dei numeri di telefono. Ogni numero dovrebbe essere così composto:</p>
+                        <pre style="width: 30vw;"><code>+[prefisso nazionale 39][10 numeri]</code></pre>
+                        <p>Per esempio, questo è un numero valido: <span class="code">+392574856985</span></p>
+                        <p>Scrivi del codice che stampa <span class="code">True</span> se la stringa è un numero telefonico, <span class="code">False</span> altrimenti</p>
+                        <ul>
+                            <li>Prova le varie combinazioni scommentando <span class="code">telefono</span></li>
+                            <li>Il codice deve essere generico, valido per tutti i numeri</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Esercizi vari 11</p>
+                    <h3 class="title">Esercizio - Vendere numeri</h3>
+                    <div class="row" style="width: 90vw;">
+                        <div class="col">
+                            <p>Dato</p>
+                            <pre><code>telefono = '+392574856985'</code></pre>
+                            <p>il codice deve stampare <span class="code">True</span></p>
+                        </div>
+                        <div class="col" style="flex: 2">
+                            <div style="height: 50vh; width: 100%;">
+                                <base-editor contenteditable="true" language="python" code="telefono = '+392574856985'    # True
+#telefono = '395851256954'    # False (manca il '+')
+#telefono = '++7485125874'    # False (manca il prefisso)
+#telefono = '+39333457Ciao'   # False (mi pare ovvio :D )
+#telefono = '+3912'           # False (troppo corto)
+#telefono = '+393481489945'   # True
+
+# scrivi qui
+" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Esercizi vari 12</p>
+                    <h3 class="title">Esercizio - nani e GIGANTI</h3>
+                    <div style="width: 65vw;">
+                        <p>In un mondo fantasy eccitante e sconosciuto vivono due popolazioni: si tratta dei nani e dei GIGANTI.</p>
+                        <ul>
+                            <li>I nani amano dare nomi ai propri pargoli che contengono solo lettere minuscole.</li>
+                            <li>I GIGANTI invece non devono nemmeno pensarci, perchè come scritto sulle tavole di GROCK i nomi dei GIGANTI possono solo avere lettere maiuscole.</li>
+                        </ul>
+                        <p>Un giorno arrivò una minaccia malvagia da un regno lontano e come in tutti i clichè fu composta una compagnia. Una profezia diceva che solo una compagnia mista di GIGANTI e di nani per un totale di <span class="code">4</span> persone avrebbe potuto sconfiggere il malvagio di turno.</p>
+                        <ol>
+                            <li>Scrivi del codice che controlla se quattro componenti possono comporre una compagnia valida:</li>
+                            <ul>
+                                <li>Stampa <span class="code">True</span> se i quattro nomi sono sia di nani che di GIGANTI, altrimenti se sono di una sola delle due popolazioni stampa <span class="code">False</span></li>
+                                <li>Il codice deve essere generico, valido per tutte le stringhe</li>
+                            </ul>
+                            <li>Cerca dei <a href="https://www.fantasynamegenerators.com/giant-names.php" target="_blank">nomi di GIGANTI</a> e <a href="http://https://www.fantasynamegenerators.com/dwarf_names.php" target="_blank">nomi di nani</a> e prova a metterli, facendo attenzione a tradurli con la capitalizzazione tutta minuscola / tutta maiuscola corretta, es “Jisog” non è un nome di gigante valido, va tradotto alla scrittura gigantica “JISOG”.</li>
+                        </ol>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Esercizi vari 13</p>
+                    <h3 class="title">Esercizio - nani e GIGANTI</h3>
+                    <div class="row" style="width: 90vw;">
+                        <div class="col">
+                            <p>Dati</p>
+                            <pre><code>avv1 = 'krakrerlig'
+avv2 = 'GUCAM'
+avv3 = 'SUXGROG'
+avv4 = 'kodearen'</code></pre>
+                            <p>il codice deve stampare <span class="code">True</span></p>
+                        </div>
+                        <div class="col" style="flex: 2">
+                            <div style="height: 50vh; width: 100%;">
+                                <base-editor contenteditable="true" language="python" code="avv1, avv2, avv3, avv4 = 'gimli', 'savorlim', 'glazouc', 'hondouni'       # False
+#avv1, avv2, avv3, avv4 = 'OXLOR', 'HIVAR', 'ELOR', 'SUXGROG'             # False
+#avv1, avv2, avv3, avv4 = 'krakrerlig', 'GUCAM', 'SUXGROG', 'kodearen'    # True
+#avv1, avv2, avv3, avv4 = 'yarnithra', 'krakrerlig', 'jandreda', 'TOVIR'  # True
 
 # scrivi qui
 " />

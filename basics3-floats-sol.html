@@ -50,22 +50,6 @@
             font-weight: 100;
             letter-spacing: .3vmin;
         }
-
-        .exercise-button {
-            margin-top: 8vh;
-            width: 10vw;
-            height: 7vh;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #ededed;
-            transition: background-color .2s ease-in-out;
-            font-size: 1.7vmin;
-        }
-
-        .exercise-button:hover {
-            background-color: #dedede;
-        }
     </style>
 </head>
 
@@ -85,7 +69,7 @@
                 <p class="subtitle">In Python</p>
                 <div style="margin-top: 5vh;">
                     <p>Slide adattate da <a
-                            href="https://it.softpython.org/basics/basics3-floats-sol.html">softpython</a></p>
+                            href="https://it.softpython.org/basics/basics3-floats-sol.html" target="_blank">softpython</a></p>
                     <p id="print-version-text"><a href="?print-pdf">Clicca qui</a> per la versione stampabile</p>
                 </div>
 
@@ -185,7 +169,7 @@ print('Il tipo di x è:', type(x))" />
                             <base-editor contenteditable="true" language="python" code="print(7e-1)" />
                         </div>
                     </div>
-                    <div class="row" style="gap: 3vw; margin-top: 2vh;">
+                    <div class="row" style="gap: 3vw; margin-top: 7vh;">
                         <div class="col" style="height: 30vh; width: 25vw;">
                             <base-editor contenteditable="true" language="python" code="print(3.0e-2)" />
                         </div>
@@ -209,7 +193,7 @@ print('Il tipo di x è:', type(x))" />
                             <li><span class="code">math.inf</span></li>
                         </ul>
                         <li>Al momento li menzioniamo e basta, trovi maggiori dettagli nel <a
-                                href="https://it.softpython.org/matrices-numpy/matrices-numpy-sol.html#NaN-e-infinit%C3%A0">foglio
+                                href="https://it.softpython.org/matrices-numpy/matrices-numpy-sol.html#NaN-e-infinit%C3%A0" target="_blank">foglio
                                 di Numpy</a></li>
                     </ul>
                 </section>
@@ -222,23 +206,12 @@ print('Il tipo di x è:', type(x))" />
                     <p>Ricordati che <span class="code">area = pi * r<sup>2</sup></span>, e che l'operatore per la
                         potenza è <span class="code">**</span></p>
                     <p>Il tuo codice dovrebbe stampare il risultato <span class="code">263.02199094102605</span></p>
-                    <div style="height: 50vh; width: 50vw;">
+                    <div style="height: 50vh; width: 50vw; margin-top: 3vh;">
                         <base-editor contenteditable="true" language="python" code="# inserisci qui la tua soluzione" />
                     </div>
                 </section>
                 <section>
                     <p class="slide-context">3. Esercizi 1/2</p>
-                    <p>Procedi per vedere la soluzione</p>
-
-                    <pre class="fragment" data-fragment-index="0" style="width: 30vw;"><code>r = 9.15
-pi = 3.1415926536
-area = pi*(r**2)
-print(area)</code></pre>
-                    <p class="fragment" data-fragment-index="0">Nota: le parentesi intorno a <span
-                            class="code">r**2</span> non sono necessarie: aiutano solo la leggibilità del codice</p>
-                </section>
-                <section>
-                    <p class="slide-context">3. Esercizi 1/3</p>
                     <h3 class="title">Ricordiamo la precedenza degli operatori</h3>
 
                     <table>
@@ -311,7 +284,6 @@ print(area)</code></pre>
                     <div class="row">
                         <div class="col">
                             <img src="assets/lawnmower-5.png" alt="Image of the exercise">
-                            <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="import math
@@ -331,13 +303,6 @@ x,y = 35,20     # A: True
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">3. Esercizi 2/3</p>
-                    <p>Procedi per vedere la soluzione</p>
-
-                    <pre class="fragment" data-fragment-index="0" style="width: auto;"><code>dist = math.sqrt(x**2 + y**2)
-dist &lt; r</code></pre>
-                </section>
-                <section>
                     <p class="slide-context">3. Esercizi 3/1</p>
                     <h3 class="title">Esercizio - Frazionamento</h3>
                     <p>Scrivi il codice per ottenere il valore della seguente formula per <span class="code">x =
@@ -354,7 +319,6 @@ dist &lt; r</code></pre>
                     <div class="row">
                         <div class="col">
                             <img src="assets/eq-1.png" alt="Image of the exercise">
-                            <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="x = 0.000003
@@ -362,13 +326,6 @@ dist &lt; r</code></pre>
 # scrivi qui" />
                         </div>
                     </div>
-                </section>
-                <section>
-                    <p class="slide-context">3. Esercizi 3/3</p>
-                    <p>Procedi per vedere la soluzione</p>
-
-                    <pre class="fragment" data-fragment-index="0" style="width: auto;"><code>import math
-- math.sqrt(x+3) / (((x+2)**3)/math.log(x))</code></pre>
                 </section>
                 <section>
                     <p class="slide-context">3. Esercizi 4/1</p>
@@ -387,19 +344,11 @@ dist &lt; r</code></pre>
                     <div class="row">
                         <div class="col">
                             <img src="assets/eq-2.png" alt="Image of the exercise">
-                            <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="# scrivi qui" />
                         </div>
                     </div>
-                </section>
-                <section>
-                    <p class="slide-context">3. Esercizi 4/3</p>
-                    <p>Procedi per vedere la soluzione</p>
-
-                    <pre class="fragment" data-fragment-index="0"
-                        style="width: auto;"><code>((1**4) / (1+2)) + ((2**4) / (2+2)) + ((3**4) / (3+2))</code></pre>
                 </section>
             </section>
             <section>
@@ -464,7 +413,7 @@ print(math.floor(-2.3))" />
                             <base-editor contenteditable="true" language="python" code="print(round(3.49))" />
                         </div>
                     </div>
-                    <div class="row" style="gap: 3vw; margin-top: 2vh;">
+                    <div class="row" style="gap: 3vw; margin-top: 7vh;">
                         <div class="col" style="height: 30vh; width: 25vw;">
                             <base-editor contenteditable="true" language="python" code="print(round(3.51))" />
                         </div>
@@ -480,6 +429,7 @@ print(math.ceil(-8.1))" />
                 </section>
                 <section>
                     <p class="slide-context">4. Conversioni 3</p>
+                    <h3 class="title">Domanda</h3>
                     <p>Dato un qualsiasi float <span class="code">x</span>, la seguente formula</p>
                     <p><span class="code">math.floor(math.ceil(x)) == math.ceil(math.floor(x))</span></p>
                     <p style="text-align: center;">è:</p>
@@ -489,15 +439,10 @@ print(math.ceil(-8.1))" />
                         <li>a volte <span class="code">True</span>, a volte <span class="code">False</span> (fornire gli
                             esempi)</li>
                     </ol>
-                    <button class="exercise-button"
-                        onclick="document.querySelector('#correct-resp-1').style.display = 'block'; this.style.display = 'none';">Mostra
-                        soluzione</button>
-                    <p id="correct-resp-1" style="display: none; margin-top: 5vh;">La risposta corretta è la 3: per
-                        interi come <span class="code">x=2.0</span> è <span class="code">True</span>, in casi come <span
-                            class="code">x=2.3</span> è <span class="code">False</span></p>
                 </section>
                 <section>
                     <p class="slide-context">4. Conversioni 4</p>
+                    <h3 class="title">Domanda</h3>
                     <p>Dato un qualsiasi float <span class="code">x</span>, la seguente formula</p>
                     <p><span class="code">math.floor(x) == -math.ceil(-x)</span></p>
                     <p style="text-align: center;">è:</p>
@@ -507,14 +452,11 @@ print(math.ceil(-8.1))" />
                         <li>a volte <span class="code">True</span>, a volte <span class="code">False</span> (fornire gli
                             esempi)</li>
                     </ol>
-                    <button class="exercise-button"
-                        onclick="document.querySelector('#correct-resp-2').style.display = 'block'; this.style.display = 'none';">Mostra
-                        soluzione</button>
-                    <p id="correct-resp-2" style="display: none; margin-top: 5vh;">La risposta corretta è la 1</p>
                 </section>
                 <section>
                     <p class="slide-context">4. Conversioni 5</p>
                     <div style="width: 60vw;">
+                        <h3 class="title">Esercizio</h3>
                         <p>Gli studi eccessivi ti hanno portato a cercare su internet ricette di bevande energetiche.
                             Fortunatamente, una guru della nutrizione ha appena postato sul suo canale Instagram
                             @BeviCheTiFaBene la ricetta di un frappè portentoso:</p>
@@ -569,7 +511,6 @@ Rabbocco il bicchiere fino al decilitro intero superiore, adesso contiene 5 dl</
                                 Travaso nel mixer, adesso contiene 9 dl<br />
                                 Verso metà della miscela ( 4.5 dl ) nel bicchiere<br />
                                 Rabbocco il bicchiere fino al decilitro intero superiore, adesso contiene 5 dl</p>
-                            <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="height: 60vh; width: 40vw; margin-left: 3vw;">
                             <base-editor contenteditable="true" language="python" code="kiwi = 2.4
@@ -583,29 +524,9 @@ bicchiere = 0.0
                         </div>
                     </div>
                 </section>
+
                 <section>
                     <p class="slide-context">4. Conversioni 8</p>
-                    <p>Procedi per vedere la soluzione</p>
-
-                    <pre class="fragment" data-fragment-index="0"
-                        style="width: auto;"><code style="max-height: none; height: 100%;">import math
-
-print('Verso nel misurino', kiwi, 'dl di kiwi, tolgo eccesso fino a tenere', int(kiwi), 'dl')
-mixer += int(kiwi)
-print('Travaso nel mixer, adesso contiene', mixer, 'dl')
-print('Verso nel misurino', soia, 'dl di soia, tolgo eccesso fino a tenere', int(soia), 'dl')
-mixer += int(soia)
-print('Travaso nel mixer, adesso contiene', mixer, 'dl')
-print('Verso nel misurino', shampoo, 'dl di shampoo, tolgo eccesso fino a tenere', int(shampoo), 'dl')
-mixer += int(shampoo)
-print('Travaso nel mixer, adesso contiene', mixer, 'dl')
-bicchiere = mixer/2
-print('Verso metà della miscela (', bicchiere, 'dl ) nel bicchiere')
-print('Rabbocco il bicchiere fino al decilitro intero superiore, adesso contiene:', math.ceil(bicchiere), 'dl')</code></pre>
-                </section>
-
-                <section>
-                    <p class="slide-context">4. Conversioni 9</p>
                     <h3 class="title">Esercizio - Arrotondamente</h3>
                     <p>Scrivi il codice per ottenere il valore della seguente formula per <span class="code">x =
                             -5.51</span></p>
@@ -613,7 +534,7 @@ print('Rabbocco il bicchiere fino al decilitro intero superiore, adesso contiene
                     <img src="assets/eq-3.png" alt="Immagine esercizio">
                 </section>
                 <section>
-                    <p class="slide-context">4. Conversioni 10</p>
+                    <p class="slide-context">4. Conversioni 9</p>
                     <p>Inserisci la tua soluzione, usando <span class="code">x</span>.
                         Esegui
                         il codice per verificare la sua correttezza
@@ -621,7 +542,6 @@ print('Rabbocco il bicchiere fino al decilitro intero superiore, adesso contiene
                     <div class="row">
                         <div class="col">
                             <img src="assets/eq-3.png" alt="Image of the exercise">
-                            <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="import math
@@ -632,13 +552,6 @@ x = -5.51   # 41
 # scrivi qui" />
                         </div>
                     </div>
-                </section>
-                <section>
-                    <p class="slide-context">4. Conversioni 11</p>
-                    <p>Procedi per vedere la soluzione</p>
-
-                    <pre class="fragment" data-fragment-index="0"
-                        style="width: auto;"><code>abs(math.ceil(x)) + round(x)**2</code></pre>
                 </section>
             </section>
             <section>
@@ -718,13 +631,6 @@ print(math.isclose(x - y, 4.1, abs_tol=0.000001))" />
                     <h3 class="title">Domanda 1</h3>
                     <p>Possiamo rappresentare perfettamente il numero <span>&#8730;</span>2 in un <span
                             class="code">float</span>?</p>
-                    <p>Vai avanti per la soluzione</p>
-                    <p class="fragment" style="width: 50vw; margin-top: 6vh;"><span>&#8730;</span>2 è irrazionale e
-                        pertanto non
-                        possiamo
-                        sperare di rappresentarlo perfettamente, qualunque calcolo useremo per ottenerlo avrà sempre un
-                        certo
-                        grado di imprecisione.</p>
                 </section>
 
                 <section>
@@ -771,7 +677,6 @@ b = 3.3</code></pre>
 11.0 * x**2 - 3.3 = 0  per x2 = -0.54772255750516607442
 0.54772255750516607442 è una soluzione? True
 -0.54772255750516607442 è una soluzione? True</code></pre>
-                            <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="margin-left: 2vw; height: 60vh; width: 50vw;">
                             <base-editor contenteditable="true" language="python" code="a = 11.0
@@ -784,23 +689,6 @@ b = 3.3
 
                 <section>
                     <p class="slide-context">5. Uguaglianza 8</p>
-                    <p>Procedi per vedere la soluzione</p>
-
-                    <pre class="fragment" data-fragment-index="0" style="width: auto;"><code>import math
-
-x1 = math.sqrt(b/a)
-x2 = -math.sqrt(b/a)
-
-print(a, "* x**2 -",b,"= 0  per x1 =", format(x1, '.20f'))
-print(a, "* x**2 -",b,"= 0  per x2 =", format(x2, '.20f'))
-
-# abbiamo bisogno di cambiare il valore di default di tolleranza
-print(format(x1, '.20f'), "è una soluzione?", math.isclose(a*(x1**2) - b,0, abs_tol=0.00001))
-print(format(x2, '.20f'), "è una soluzione?", math.isclose(a*((x2)**2) - b,0, abs_tol=0.00001))</code></pre>
-                </section>
-
-                <section>
-                    <p class="slide-context">5. Uguaglianza 9</p>
                     <h3 class="title">Esercizio - Alla moda</h3>
                     <p>Stai già pensando alle prossime vacanze, ma c’è un problema: dove vai, se un
                         <em>selfie-stick</em> non ce l’hai? Non puoi partire con questo grave turbamento: per
@@ -824,7 +712,7 @@ TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
                 </section>
 
                 <section>
-                    <p class="slide-context">5. Uguaglianza 10</p>
+                    <p class="slide-context">5. Uguaglianza 9</p>
                     <p>Inserisci la tua soluzione.
                         Esegui
                         il codice per verificare la sua correttezza
@@ -836,7 +724,6 @@ ErMejo United è il più frequente? True ( 30.0 % )
 Perditempo Inc è il più frequente? False ( 10.0 % )
 Vanità 3.0 è il più frequente? False ( 5.0 % )
 TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
-                            <p>Vai giù per la soluzione!</p>
                         </div>
                         <div class="col" style="margin-left: 2vw; height: 60vh; width: 50vw;">
                             <base-editor contenteditable="true" language="python" code="
@@ -854,19 +741,6 @@ f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3
                     </div>
                 </section>
 
-                <section>
-                    <p class="slide-context">5. Uguaglianza 11</p>
-                    <p>Procedi per vedere la soluzione</p>
-
-                    <pre class="fragment" data-fragment-index="0" style="width: auto;"><code>import math
-
-mx = max(f1,f2,f3,f4,f5)
-print(b1, 'è il più frequente?', math.isclose(f1,mx), '(', f1*100.0, '% )')
-print(b2, 'è il più frequente?', math.isclose(f2,mx), '(', f2*100.0, '% )')
-print(b3, 'è il più frequente?', math.isclose(f3,mx), '(', f3*100.0, '% )')
-print(b4, 'è il più frequente?', math.isclose(f4,mx), '(', f4*100.0, '% )')
-print(b5, 'è il più frequente?', math.isclose(f5,mx), '(', f5*100.0, '% )')</code></pre>
-                </section>
             </section>
 
 

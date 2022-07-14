@@ -50,22 +50,6 @@
             font-weight: 100;
             letter-spacing: .3vmin;
         }
-
-        .exercise-button {
-            margin-top: 8vh;
-            width: 10vw;
-            height: 7vh;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #ededed;
-            transition: background-color .2s ease-in-out;
-            font-size: 1.7vmin;
-        }
-
-        .exercise-button:hover {
-            background-color: #dedede;
-        }
     </style>
 </head>
 
@@ -82,9 +66,9 @@
                 <h3 class="title">Stringhe 1</h3>
 
                 <!-- subtitle class: custom style for subtitles -->
-                <p class="subtitle">In Python</p>
+                <p class="subtitle">Introduzione</p>
                 <div style="margin-top: 5vh;">
-                    <p>Slide adattate da <a href="https://it.softpython.org/strings/strings1-sol.html">softpython</a>
+                    <p>Slide adattate da <a href="https://it.softpython.org/strings/strings1-sol.html" target="_blank">softpython</a>
                     </p>
                     <p id="print-version-text"><a href="?print-pdf">Clicca qui</a> per la versione stampabile</p>
                 </div>
@@ -101,7 +85,6 @@
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-
                                 <li>Sequenze immutabili di caratteri</li>
                                                                 
                                 <ul>
@@ -149,6 +132,7 @@ su più linee'''" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
+
                                 <li>Comando <span class="code">print</span></li>
                                 <li class="fragment" data-fragment-index="0">
                                     Modalità script, senza print: nulla</li>
@@ -193,6 +177,7 @@ x" />
                     <h3 class="title">Stampare più stringhe</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
+
                             <ul style="list-style-type: none;">                                
                                 <li>Più parameteri per <span class="code">print</span></li>
                                 <li>Anche mischiati con altri tipi (es. numeri)</li>
@@ -228,19 +213,17 @@ print(len(""))' />
                     <p class="slide-context">1. Introduzione 5</p>
                     <h3 class="title">Domanda 1</h3>
                     <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
-                    <p><span class="code">"len"("ciao")</span></p>
-                    
+                    <p><span class="code">"len"("ciao")</span></p>                    
                     <div style="height: 40vh; width: 50vw; margin-top:10vh;">
                         <base-editor contenteditable="true" language="python" code='print( "len"("ciao") )' />
-                    </div>
-                    
-                    
+                    </div>                                        
                 </section>
                 <section>
                     <p class="slide-context">1. Introduzione 6</p>
                     <h3 class="title">Domanda 2</h3>
                     <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
                     <p><span class="code">len("len('ciao')")</span></p>
+
                     <div style="height: 40vh; width: 50vw; margin-top:10vh;">
                         <base-editor contenteditable="true" language="python" code="print( len(&quot;len('ciao')&quot;) )" />
                     </div>
@@ -263,7 +246,7 @@ print(len(""))' />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Alcune sequenze particolari dette <em>di escape</em> occupano meno spazi di quello
+                                <li>Le <em>sequenze di escape</em> possono occupare meno spazi di quello
                                     che sembra</li>
                             </ul>
                         </div>
@@ -372,8 +355,6 @@ te</code></pre>
                     <h3 class="title">Caratteri Speciali</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <p>Come inserire apici <span class="code">'</span> o doppie virgolette <span class="code">"</span>?
-                            </p>                                
                             <table>
                                 <tr>
                                     <th>Descrizione</th>
@@ -429,18 +410,18 @@ print("Così metto \"doppie virgolette\" nella stringa")' />
                 <section>
                     <p class="slide-context">4. Encodings 1</p>
                     <h3 class="title">Caratteri ASCII</h3>
-                    <ul style="list-style-type: none; width: 60vw; margin-top: 10vh;">
-                        <li>La rappresentazione dei bit in memoria è chiamata <em>encoding</em></li>
-                        <li>L'<em>encoding</em> più famoso è lo <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a>,
-                            che offre 127 caselle fatte da <a
-                                href="https://it.wikipedia.org/wiki/ASCII#Stampabili">caratteri stampabili</a>
-                            dall'alfabeto inglese e <a
-                                href="https://en.wikipedia.org/wiki/C0_and_C1_control_codes#Basic_ASCII_control_codes">sequenze
-                                di controllo</a></li>
-                        <li>La tabella originale ASCII manca del supporto per linugaggi non inglesi. Parecchie
-                            estensioni sono state sviluppate per supportare tali linguaggi (es. <a
-                                href="https://it.wikipedia.org/wiki/ASCII_esteso">Extended ASCII</a></li>
-                    </ul>
+                    <div class="row">
+                        <div class="col">
+                            <ul>
+                                <li>encoding</li>
+                                <li>127 caratteri</li>
+                                <li>Extended ASCII</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <img src="assets/ascii.png" alt="Ascii image">
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <p class="slide-context">4. Encodings 2</p>
@@ -475,11 +456,6 @@ print("Così metto \"doppie virgolette\" nella stringa")' />
                             <p>Cerca su Google <em>Unicode heart</em> e prova a stampare un cuore in Python</p>
                             <p>Fallo <strong>sia</strong> copia-incollando il carattere, <strong>sia</strong> usando la
                                 notazione <span class="code">\uxxxx</span></p>
-                            <p style="text-align: center"><strong>Vai avanti per la soluzione</strong></p>
-                            <div class="fragment">
-                                <pre style="width: auto"><code>print("I ♥ Python, con copia e incolla")
-print("I \u2665 Python, anche in formato \\uxxxx")</code></pre>
-                            </div>
                         </div>
                         <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="# scrivi qui" />
@@ -495,9 +471,9 @@ print("I \u2665 Python, anche in formato \\uxxxx")</code></pre>
                             che dovresti leggere:</p>
                         <ul>
                             <li>prima parte sull’encoding Unicode <a
-                                    href="http://gpiancastelli.altervista.org/dip3-it/stringhe.html">dal capitolo
+                                    href="http://gpiancastelli.altervista.org/dip3-it/stringhe.html" target="_blank">dal capitolo
                                     Stringhe nel libro Dive into Python 3</a></li>
-                            <li><a href="https://docs.python.org/3/howto/unicode.html">Documentazione unicode di Python
+                            <li><a href="https://docs.python.org/3/howto/unicode.html" target="_blank">Documentazione unicode di Python
                                     3</a></li>
                         </ul>
                     </div>
@@ -533,10 +509,8 @@ print(y)" />
                     <h3 class="title">Riassegnare variabili</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <p>Altre variazioni allo stato di memoria possono essere ottenute riassegnando le variabili
-                            </p>
-                            <p class="fragment">Se una stringa che è stata creata non risulta assegnata a nessuna
-                                variabile, Python si occuperà automaticamente di eliminarla dalla memoria.</p>
+                            <p>Possiamo riassegnare le variabili</p>
+                            <p class="fragment">Python si occupa di liberare la memoria</p>
                         </div>
                         <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="x = 'ciao'
@@ -660,17 +634,14 @@ print('s = ', s)" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li>Le stringhe in Python hanno il tipo <span class="code">str</span></li>
-                                <li>All'interno di esse possiamo inserire caratteri che rappresentano cifre</li>
-                                <li class="fragment" data-fragment-index="0">Come si comporta Python quando abbiamo una
-                                    <em>stringa</em> che contiene solo una sequenza di caratteri che rappresenta un
-                                    numero (es. '254')?
+                                <li class="fragment" data-fragment-index="0">Se una
+                                    <em>stringa</em> contiene un numero?
                                 </li>
-                                <li class="fragment" data-fragment-index="1">Se hai eseguito il codice, avrai notato che
-                                    Python si offende immediatamente, perché:</li>
+                                <li class="fragment" data-fragment-index="1">Questo codice porta ad un errore, perché:</li>
                                 <ul class="fragment" data-fragment-index="1">
-                                    <li>scrivendo '254' stiamo creando una stringa di tipo <span class="code">str</span>
+                                    <li><span class="code">'254'</span> è di tipo <span class="code">str</span>
                                     </li>
-                                    <li>scrivendo 254 creiamo un numero di tipo <span class="code">int</span></li>
+                                    <li>254 è di tipo <span class="code">int</span></li>
                                 </ul>
                             </ul>
                         </div>
@@ -713,10 +684,7 @@ print(type(254))" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li>Quindi come sommiamo <span class="code">'254' + 4</span>?</li>
-                                <li>Possiamo convertire la stringa <span class="code">'254'</span> ad un vero intero
-                                </li>
-                                <li>Per farlo, basta usare <span class="code">int</span> come se fosse una funzione,
-                                    passandogli l'argomento da convertire</li>
+                                <li>Converti la stringa ad intero con <span class="code">int</span></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -731,9 +699,7 @@ print(type(254))" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li><strong>NOTA:</strong> le stringhe e i numeri sono immutabili.</li>
-                                <li>Scrivendo <span class="code">int('254')</span> viene generato un nuovo numero senza
-                                    intaccare la stringa <span class="code">'254'</span></li>
-                                <li>Vediamolo con un esempio</li>
+                                <li>Scrivendo <span class="code">int('254')</span> viene generato un nuovo numero</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -772,8 +738,7 @@ print(type(y))" />
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
                                 <li>Qualsiasi oggetto può essere convertito a stringa usando <span
-                                        class="code">str</span> come se fosse una funzione e passandogli l'oggetto da
-                                    convertire</li>
+                                        class="code">str</span></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -790,9 +755,7 @@ print('Tipo:', type(x), 'valore:', x)" />
                             <ul style="list-style-type: none;">
                                 <li>Se volessimo ottenere una stringa che sia la concatenazione di oggetti di tipo
                                     diverso dobbiamo stare attenti...</li>
-                                <li class="fragment" data-fragment-index="0">Un modo di ovviare al problema (anche se
-                                    non è il più comodo) è convertire a stringa ciascuno degli oggetti che usiamo nella
-                                    concatenazione</li>
+                                <li class="fragment" data-fragment-index="0">Soluzione: usa <span class="code">str</span></li>
                                 <li class="fragment" data-fragment-index="1"><strong>DOMANDA:</strong> visto quanto
                                     detto in precedenza, dopo l'esecuzione del codice nella cella precedente, alla
                                     variabile <span class="code">x</span> risulterà associato un <em>numero</em> o una
@@ -824,9 +787,9 @@ print(s)" />
                         <p>Concatenare stringhe con un segno <span class="code">+</span> come sopra è macchinoso e si
                             presta ad errori.</p>
                         <p>Ci sono diverse soluzioni migliori, per una recensione completa ci riferiamo al sito <a
-                                href="https://realpython.com/python-formatted-output/">Real Python</a>. In particolare,
+                                href="https://realpython.com/python-formatted-output/" target="_blank">Real Python</a>. In particolare,
                             guardare le più utili che sono le <a
-                                href="https://realpython.com/python-formatted-output/#the-python-formatted-string-literal-f-string">f-strings</a>,
+                                href="https://realpython.com/python-formatted-output/#the-python-formatted-string-literal-f-string" target="_blank">f-strings</a>,
                             disponibili per Python &gt;= 3.6</p>
                     </div>
                 </section>
@@ -836,14 +799,9 @@ print(s)" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Questa soluzione non è la migliore, ma è molto usata e supportata in tutte le
-                                    versioni di Python, perciò l’abbiamo adottata nel libro</li>
-                                <li class="fragment" data-fragment-index="0">Abbiamo usato un <em>place-holder</em>
-                                    (segnaposto) <span class="code">%s</span> dentro la stringa, per dire a Python di
-                                    sostituirlo con una variabile</li>
-                                <li class="fragment" data-fragment-index="0">Per passare a Python la variabile, dopo la
-                                    stringa abbiamo messo un simbolo <span class="code">%</span> seguito da una
-                                    variabile</li>
+                                <li class="fragment" data-fragment-index="0">Il <em>place-holder</em> (segnaposto) <span class="code">%s</span>
+                                    verrà sostituito con una variabile</li>
+                                <li class="fragment" data-fragment-index="0">La variabile è definita dopo, con <span class="code">%x</span></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -911,13 +869,6 @@ auto1, auto2 = 'Jaguar','Ferrari'
 
 # scrivi qui" />
                         </div>
-                    </div>
-                </section>
-                <section>
-                    <p>Vai avanti per la soluzione</p>
-                    <div class="fragment">
-                        <pre style="width: auto;"><code>s = 'Comprerò %s %s e %s %s perchè tengo i dindi' % (len(auto1), auto1, len(auto2), auto2)
-print(s)</code></pre>
                     </div>
                 </section>
             </section>

@@ -608,12 +608,12 @@ print('s = ', s)" />
             </section>
             <section>
                 <section>
-                    <p class="slide-context">5. str e num 1</p>
+                    <p class="slide-context">5. Stringhe e numeri 1</p>
                     <h3 class="title">Stringhe e numeri</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Le stringhe in Python hanno il tipo <span class="code">str</span></li>
+                                <li>Tipo stringhe: <span class="code">str</span></li>
                                 <li class="fragment" data-fragment-index="0">Se una
                                     <em>stringa</em> contiene un numero?
                                 </li>
@@ -639,46 +639,45 @@ print("Il carattere 5 rappresenta la cifra cinque, il carattere 3 rappresenta la
                             </div>
                             <div class="col fragment fade-in-then-out" data-fragment-index="1"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
-                                <base-editor contenteditable="true" language="python" code="print(type('254'))
+                                <base-editor contenteditable="true" language="python" code="# '254' + 3
+print(type('254'))
 print(type(254))" />
                             </div>
                         </div>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. str e num 2</p>
-                    <h3 class="title">Attenzione!</h3>
+                    <p class="slide-context">5. Stringhe e numeri 2</p>
+                    <h3 class="title">Attento a quello che vedi!</h3>
                     <div style="width: 50vw;">
-                        <p style="margin-top: 10vh;">Se provi a stampare con <span class="code">print</span> una stringa
-                            che contiene solo cifre, Python la mostrerà senza apici, e questo potrebbe ingannarti
-                            riguardo la sua vera natura!</p>
+                        <p style="margin-top: 10vh;">Prova a stampare questa stringa con <span class="code">print</span>, cosa sembra?</p>
                     </div>
                     <div style="height: 40vh; width: 50vw;">
                         <base-editor contenteditable="true" language="python" code="print('254')" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. str e num 3</p>
-                    <h3 class="title">Conversioni - da str a num</h3>
+                    <p class="slide-context">5. Stringhe e numeri 3</p>
+                    <h3 class="title">Conversioni - da stringa a numero</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Quindi come sommiamo <span class="code">'254' + 4</span>?</li>
-                                <li>Converti la stringa ad intero con <span class="code">int</span></li>
+                                <li>Come sommare <span class="code">'254'</span> e <span class="code">3</span>?</li>
+                                <li>Converti la stringa ad intero con la funzione <span class="code">int</span></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print(int('254') + 3)" />
+                            <base-editor contenteditable="true" language="python" code="print( int('254') + 3 )" />
                         </div>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. str e num 4</p>
-                    <h3 class="title">Conversioni - da str a num</h3>
+                    <p class="slide-context">5. Stringhe e numeri 4</p>
+                    <h3 class="title">Conversioni - da stringa a numero</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li><strong>NOTA:</strong> le stringhe e i numeri sono immutabili.</li>
+                                <li><strong>NOTA:</strong> le stringhe e i numeri sono immutabili</li>
                                 <li>Scrivendo <span class="code">int('254')</span> viene generato un nuovo numero</li>
                             </ul>
                         </div>
@@ -689,13 +688,16 @@ x = '254'
 # Assegno alla variabile y il numero ottenuto convertendo '254' in int
 y = int(x)
 
+print(x)
+print(y)
+
 print(type(x))
 print(type(y))" />
                         </div>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. str e num 5</p>
+                    <p class="slide-context">5. Stringhe e numeri 5</p>
                     <h3 class="title">Esercizio</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -712,7 +714,7 @@ print(type(y))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. str e num 6</p>
+                    <p class="slide-context">5. Stringhe e numeri 6</p>
                     <h3 class="title">Conversioni - da num a str</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -728,17 +730,14 @@ print('Tipo:', type(x), 'valore:', x)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. str e num 7</p>
-                    <h3 class="title">Conversioni - da num a str</h3>
+                    <p class="slide-context">5. Stringhe e numeri 7</p>
+                    <h3 class="title">Conversioni - da numero a stringa</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Se volessimo ottenere una stringa che sia la concatenazione di oggetti di tipo
-                                    diverso dobbiamo stare attenti...</li>
+                                <li>Attenzione a concatenare stringhe con oggetti di tipo diverso!</li>
                                 <li class="fragment" data-fragment-index="0">Soluzione: usa <span class="code">str</span></li>
-                                <li class="fragment" data-fragment-index="1"><strong>DOMANDA:</strong> visto quanto
-                                    detto in precedenza, dopo l'esecuzione del codice nella cella precedente, alla
-                                    variabile <span class="code">x</span> risulterà associato un <em>numero</em> o una
+                                <li class="fragment" data-fragment-index="1"><strong>DOMANDA:</strong> Dopo l'esecuzione del codice nella cella precedente, alla variabile <span class="code">x</span> risulterà associato un <em>numero</em> o una
                                     <em>stringa</em>?</li>
                             </ul>
                         </div>

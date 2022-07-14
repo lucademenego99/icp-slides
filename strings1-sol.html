@@ -229,32 +229,31 @@ print(len(""))' />
                     <h3 class="title">Domanda 1</h3>
                     <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
                     <p><span class="code">"len"("ciao")</span></p>
-                    <p class="fragment" style="margin-top: 5vh;">Vai avanti per la soluzione</p>
-                    <p class="fragment" style="margin-top: 10vh;">No, <span class="code">"len"</span> tra virgolette
-                        verrà interpretato come una stringa, non come una funzione, e quindi Python si lamenterà
-                        dicendoci che non possiamo applicare una stringa ad un’altra stringa.</p>
+                    
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <base-editor contenteditable="true" language="python" code='print( "len"("ciao") )' />
+                    </div>
+                    
+                    
                 </section>
                 <section>
                     <p class="slide-context">1. Introduzione 6</p>
                     <h3 class="title">Domanda 2</h3>
                     <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
                     <p><span class="code">len("len('ciao')")</span></p>
-                    <p class="fragment" style="margin-top: 5vh;">Vai avanti per la soluzione</p>
-                    <p class="fragment" style="margin-top: 10vh;">Restituisce il numero <span class="code">11</span>:
-                        mettendo il codice Python <span class="code">len('ciao')</span> tra doppie virgolette, è
-                        diventato una stringa come tutte le altre. Quindi scrivendo <span
-                            class="code">len("len('ciao')")</span> andiamo a contare quanto è lunga la stringa <span
-                            class="code">"len('ciao')"</span>, cioè <span class="code">11</span>.</p>
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <base-editor contenteditable="true" language="python" code="print( len(&quot;len('ciao')&quot;) )" />
+                    </div>
                 </section>
                 <section>
                     <p class="slide-context">1. Introduzione 7</p>
                     <h3 class="title">Domanda 3</h3>
                     <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
                     <p><span class="code">len(((((("ciao"))))))</span></p>
-                    <p class="fragment" style="margin-top: 5vh;">Vai avanti per la soluzione</p>
-                    <p class="fragment" style="margin-top: 10vh;">Restituisce la lunghezza della stringa, infatti <span
-                            class="code">"ciao"</span> è una espressione, e come tale possiamo racchiuderla in quante
-                        parentesi tonde vogliamo</p>
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <base-editor contenteditable="true" language="python" code='print(  len(((((("ciao"))))))  )' />
+                    </div>
+                    
                 </section>
             </section>
             <section>

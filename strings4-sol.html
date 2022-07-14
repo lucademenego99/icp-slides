@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Code Playgrounds</title>
+
+    <!-- Main Reveal Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+    <!-- Blood Reveal Theme Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+    <!-- Custom stylesheet to make reveal work with our playgrounds -->
+    <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
+
+    <!-- Bundle containing the code playground web components -->
+    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <!-- <script src="icp-bundle.umd.js"></script> -->
+
+    <style>
+        li {
+            padding-bottom: 2vmin;
+        }
+
+        .code {
+            padding: 0 .5rem;
+            background-color: rgb(215, 237, 255);
+            font-family: monospace;
+        }
+
+        code {
+            background-color: #272822;
+            font-family: monospace;
+            color: white;
+        }
+
+        code.example {
+            background-color: transparent;
+            color: black;
+        }
+
+        .slide-context {
+            position: absolute;
+            top: 0;
+            left: 3vw;
+            font-size: 3vmin;
+            font-weight: 100;
+            letter-spacing: .3vmin;
+        }
+    </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+    <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+        data-background-transition="fade">
+        <div class="slides">
+
+            <!-- Each <section> is a slide -->
+            <section>
+                <!-- title class: custom style for titles -->
+                <h3 class="title">Stringhe 4</h3>
+
+                <!-- subtitle class: custom style for subtitles -->
+                <p class="subtitle">Metodi di ricerca</p>
+                <div style="margin-top: 5vh;">
+                    <p>Slide adattate da <a href="https://it.softpython.org/strings/strings4-sol.html"
+                            target="_blank">softpython</a>
+                    </p>
+                    <p id="print-version-text"><a href="?print-pdf">Clicca qui</a> per la versione stampabile</p>
+                </div>
+
+                <div style="margin-top: 5vh;">
+                    <p><small>Premi <span class="code">esc</span> per l'overview generale</small></p>
+                </div>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">1. Introduzione 1</p>
+                    <table>
+                        <tr>
+                            <th>Risultato</th>
+                            <th>Metodo</th>
+                            <th>Significato</th>
+                        </tr>
+                        <tr>
+                            <td>str</td>
+                            <td><span class="code"><a href="https://it.softpython.org/strings/strings4-sol.html#Metodo-strip" target="_blank">str.strip(str)</a></span></td>
+                            <td>Rimuove stringhe dai lati</td>
+                        </tr>
+                        <tr>
+                            <td>str</td>
+                            <td><span class="code"><a href="https://it.softpython.org/strings/strings4-sol.html#Metodo-lstrip" target="_blank">str.lstrip(str)</a></span></td>
+                            <td>Rimuove stringhe da sinistra</td>
+                        </tr>
+                        <tr>
+                            <td>str</td>
+                            <td><span class="code"><a href="https://it.softpython.org/strings/strings4-sol.html#Metodo-rstrip" target="_blank">str.rstrip(str)</a></span></td>
+                            <td>Rimuove stringhe da destra</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td><span class="code"><a href="https://it.softpython.org/strings/strings4-sol.html#Metodo-count" target="_blank">str.count(str)</a></span></td>
+                            <td>Conta il numero di occorrenze di una sottostringa</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td><span class="code"><a href="https://it.softpython.org/strings/strings4-sol.html#Metodo-find" target="_blank">str.find(str)</a></span></td>
+                            <td>Ritorna la prima posizione di una sottostringa a partire da sinistra</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td><span class="code"><a href="https://it.softpython.org/strings/strings4-sol.html#Metodo-rfind" target="_blank">str.rfind(str)</a></span></td>
+                            <td>Ritorna la prima posizione di una sottostringa a partire da destra</td>
+                        </tr>
+                        <tr>
+                            <td>str</td>
+                            <td><span class="code"><a href="https://it.softpython.org/strings/strings4-sol.html#Metodo-replace">str.replace(str, str)</a></span></td>
+                            <td>Sostituisce sottostringhe</td>
+                        </tr>
+                    </table>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">2. Count 1</p>
+                    <h3 class="title">Metodo <span class="code">count</span></h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li><span class="code">count</span> conta quante occorrenza della sottostringa in input ci sono nella stringa su cui è applicato</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="print('raggi astrali'.count('a'))
+
+# C'è distinzione tra lettere minuscole e maiuscole!
+print('raggi astrali'.count('A'))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Count 2</p>
+                    <h3 class="title">Metodo <span class="code">count</span></h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Opzionalmente puoi passare un indice da cui partire a contare e/o dove terminare</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="print('raggi astrali'.count('a', 4, 9))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Count 2</p>
+                    <h3 class="title">Esercizio - denaro astrale</h3>
+                    <div style="width: 80vw;">
+                        <p>Durante il lockdown 2020, mentre guardavi le stelle nella notte, hai cominciato a sentire… onde. Rimuginandoci sopra, hai deciso che LORO vogliono comunicare con te, perciò hai montato un antenna satellitare sul tuo tetto per ricevere messaggi dagli alieni. Dopo mesi di rumori apparentemente irrilevanti, un giorno hai finalmente ricevuto un radio-messaggio che pensi di poter tradurre. Gli alieni ovviamente stanno cercando di dirti i numeri vincenti della lotto!</p>
+                        <p>Un messaggio è una sequenza di esattamente 3 diverse ripetizioni di caratteri: il numero di caratteri in ogni ripetizione è un numero che proverai alla lotteria. Inizi freneticamente a sviluppare il traduttore per mostrare questi numeri fortunati sul terminale.</p>
+                        <p>Esempio: data</p>
+                        <pre style="width: 20vw"><code>s = '$$$$€€€€€!!'</code></pre>
+                        <p>dovrebbe stampare</p>
+                        <pre style="width: 20vw"><code>$ € !
+4 5 2</code></pre>
+                        <ul>
+                            <li><strong>IMPORTANTE: puoi assumere che tutte le sequenze abbiano caratteri *differenti*</strong></li>
+                            <li><strong>NON</strong> usare cicli nè comprehension</li>
+                            <li>per semplicità assumi che ogni sequenza di caratteri abbia al più 9 ripetizioni</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="title">Esercizio - denaro astrale</h3>
+                    <div style="width: 60vw; height: 60vh; margin-top: 2vh;">
+                        <base-editor contenteditable="true" language="python" code="    #01234567890      # $ € !
+s = '$$$$€€€€€!!'     # 4 5 2
+
+    # I M Q
+#s = 'IIIMMMMMMQQQ'   # 3 6 3
+
+    # H A L
+#s = 'HAL'            # 1 1 1
+
+# scrivi qui
+" />
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">3. Replace 1</p>
+                    <h3 class="title">Metodo <span class="code">replace</span></h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li><span class="code">replace</span> prende due stringhe, restituendone una nuova ricavata sostituendo nella stringa su cui è chiamata tutte le occorrenze del primo parametro con il secondo</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="print('il treno percorre'.replace('re', 'RO'))
+print('alberello bello'.replace('llo', 'llini'))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Replace 2</p>
+                    <h3 class="title">Metodo <span class="code">replace</span></h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>E' possibile specificare fino a quante occorrenze verranno sostituite</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
+                            <base-editor contenteditable="true" language="python" code="'apollo fece una palla di pelle di pollo'.replace('ll', 'Zz', 3)" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Replace 3</p>
+                    <h3 class="title">Domanda</h3>
+                    <p>Prova ad indovinare che risultato produce la seguente espressione</p>
+                    <p>Esegui il codice per verificare</p>
+                    <div style="height: 55vh; width: 50vw;">
+                        <base-editor contenteditable="true" language="python" code="'$£mangia il ricco£$'.replace('£','').replace('$','')" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Replace 4</p>
+                    <h3 class="title">Domanda</h3>
+                    <p>Prova ad indovinare che risultato produce la seguente espressione</p>
+                    <p>Esegui il codice per verificare</p>
+                    <div style="height: 55vh; width: 50vw;">
+                        <base-editor contenteditable="true" language="python" code="'$£mangia il ricco
+£$'.strip('£').strip('$')" />
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <!-- Import the main reveal script -->
+    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+
+    <!-- Initialize reveal -->
+    <script>
+        Reveal.initialize({
+            // Display controls in the bottom right corner
+            controls: true,
+            // Display a presentation progress bar
+            progress: true,
+            // Push each slide change to the browser history
+            history: true,
+            // Enable keyboard shortcuts for navigation
+            keyboard: true,
+            // Enable the slide overview mode
+            overview: true,
+            // Set the width of the slides
+            width: "90%",
+            // Set the height of the slides
+            height: "90%",
+            // Enable the slide number counter
+            slideNumber: 'c/t',
+            // Vertical centering of slides
+            center: true,
+            // Loop the presentation
+            loop: false,
+            // Enables touch navigation on devices with touch input
+            touch: true,
+            // Apply a 3D roll to links on hover
+            rollingLinks: true,
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+            // Select a theme
+            theme: 'blood',
+            // Select the type of slides transition
+            transition: 'slide',
+            // Revealjs navigation mode (https://revealjs.com/vertical-slides/)
+            navigationMode: 'linear',
+            // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+            disableLayout: true
+        });
+    </script>
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            // Modify section height to fix the layout
+            // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+            // Hide the slide context (the slide number)
+            css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+            // Append the css to the head
+            document.head.appendChild(css);
+
+            const printVersionText = document.getElementById('print-version-text');
+            printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+        }
+    </script>
+</body>
+
+</html>

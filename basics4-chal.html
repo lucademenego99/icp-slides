@@ -114,6 +114,72 @@ print((x or y) and (not x and z))
                     </div>
                 </section>
             </section>
+            <section>
+                <section>
+                    <p class="slide-context">2. Aeroporto 1</p>
+                    <h3 class="title">Sfida - Aeroporto</h3>
+                    <div style="width: 60vw;">
+                        <p>✪ Finalmente decidi di prenderti una vacanza e vai all’aereoporto, ma già sai che dovrai fare varie code. Fortunatamente hai solo il bagaglio a mano, quindi ti rechi subito ai controlli di sicurezza, dove puoi scegliere tra tre file di <span class="code">sic1</span>, <span class="code">sic2</span> e <span class="code">sic3</span> persone. Ogni persona in media ci mette 4 minuti ad essere esaminata, te incluso, e ovviamente scegli la fila più corta. Dopodichè vai al gate, dove trovi due file di <span class="code">ga1</span> e <span class="code">ga2</span> persone, e sai che ogni persona te incluso in media ci mette 20 secondi a passare: di nuovo scegli la fila più corta. Fortunatamente l’aereo è prossimo al gate quindi puoi subito scegliere se salire dalla fila in testa all’aereo con bo1 persone o dalla fila in coda all’aereo con <span class="code">bo2</span> persone. Per salire ogni passeggero te incluso in media ci mette 30 secondi, e scegli la coda più corta.</p>
+                        <p>Scrivi del codice per calcolare quanto tempo ci impieghi in totale ad entrare nell’aereo, mostrandolo in minuti e secondi</p>
+                        <p>Esempio: dati</p>
+                        <pre><code>sic1,sic2,sic3,ga1,ga2,bo1,bo2 = 4,5,8,5,2,7,6</code></pre>
+                        <p>il tuo codice deve stampare <span class="code">24 minuti e 30 secondi</span></p>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Aeroporto 2</p>
+                    <h3 class="title">Editor - Aeroporto</h3>
+                    <div style="width: 70vw; height: 70vh;">
+                        <base-editor contenteditable="true" language="python" code="sic1,sic2,sic3,ga1,ga2,bo1,bo2 = 4,5,8,5,2,7,6   # 24 minuti e 30 secondi
+#sic1,sic2,sic3,ga1,ga2,bo1,bo2 = 9,7,1,3,5,2,9  # 10 minuti e 50 secondi
+
+# scrivi qui
+" />
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">3. Boccino 1</p>
+                    <h3 class="title">Sfida - Teoria del boccino</h3>
+                    <div style="width: 70vw;">
+                        <p>Vengono tirate delle bocce, con l’obiettivo di avvicinarsi il più possibile al boccino rosso.</p>
+                        <ol>
+                            <li>Scrivi del codice che mostra <span class="code">True</span> se una certa boccia è dentro la fascia scura, <span class="code">False</span> altrimenti</li>
+                            <li>Scrivi del codice che mostra <span class="code">True</span> se una certa boccia è dentro il cerchio, <span class="code">False</span> altrimenti (SUGGERIMENTO: avrai bisogno di calcolare la distanza dal boccino con <span class="code">math.sqrt</span> …)</li>
+                        </ol>
+                        <p><strong>NON usare l’istruzione if</strong></p>
+                    </div>
+                    <img src="assets/bocce.png" alt="Immagine esercizio">
+                </section>
+                <section>
+                    <p class="slide-context">3. Boccino 2</p>
+                    <h3 class="title">Editor - Teoria del boccino</h3>
+                    <div class="row" style="width: 100%;">
+                        <div class="col" style="flex: 1;">
+                            <img src="assets/bocce.png" alt="Immagine esercizio">
+                        </div>
+                        <div class="col" style="flex: 2; width: 100%; height: 70vh;">
+                            <base-editor contenteditable="true" language="python" code="import math
+
+h = 30
+w = 20
+r = 5
+
+
+x=17; y=25   # a   fascia: False   cerchio: False
+#x=19; y=36  # b   fascia: True    cerchio: False
+#x=8;  y=36  # c   fascia: True    cerchio: True
+#x=16; y=32  # d   fascia: True    cerchio: False
+#x=7;  y=41  # e   fascia: False   cerchio: False
+#x=12;y=33   # f   fascia: True    cerchio: True
+
+# scrivi qui                            
+" />
+                        </div>
+                    </div>
+                </section>
+            </section>
         </div>
     </div>
 

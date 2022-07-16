@@ -754,8 +754,7 @@ z = 'tutto chiaro?'</code></pre>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col">
                             <ul style="list-style-type: none;">
-                                <li>Per verificare se due stringhe sono uguali, possiamo usare l’operatore <span
-                                        class="code">==</span></li>
+                                <li>L'operatore <span class="code">==</span> produce un booleano</li>
                                 <li><strong>ATTENZIONE:</strong> si scrive con due uguali!</li>
                             </ul>
                         </div>
@@ -773,33 +772,20 @@ print("gatto" == "GATTO")' />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col">
                             <ul style="list-style-type: none;">
-                                <li>Per vedere se due stringhe NON sono uguali, possiamo usare l’operatore <span
-                                        class="code">!=</span></li>
-                                <li>Esso si comporta all'opposto di <span class="code">==</span></li>
+                                <li class="fragment" data-fragment-index="0">Operatore <span class="code">!=</span></li>                                
+                                <li class="fragment" data-fragment-index="1">Alternativa: operatore <span class="code">not</span></li>
                             </ul>
                         </div>
-                        <div class="col" style="width: 40vw; height: 50vh;">
-                            <base-editor contenteditable="true" language="python" code='print("gatto" != "gatto")
-print("gatto" != "cane")
+                        <div class="col" style="width: 40vw; height: 60vh;">
+                            <base-editor class="fragment" data-fragment-index="0" contenteditable="true" language="python" code='print("gatto" != "gatto")
+print(not "gatto" == "gatto")
 
-print("gatto" != "GATTO")' />
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <p class="slide-context">7. Comparazioni 3</p>
-                    <h3 class="title">Comparazioni - disuguaglianza</h3>
-                    <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col">
-                            <ul style="list-style-type: none;">
-                                <li>In alternativa potremmo anche usare l'operatore <span class="code">not</span></li>
-                            </ul>
-                        </div>
-                        <div class="col" style="width: 40vw; height: 50vh;">
-                            <base-editor contenteditable="true" language="python" code='print(not "gatto" == "gatto")
+print("gatto" != "cane")
 print(not "gatto" == "cane")
 
+print("gatto" != "GATTO")
 print(not "gatto" == "GATTO")' />
+
                         </div>
                     </div>
                 </section>
@@ -980,7 +966,7 @@ print('g' >= 'm')" />
                             class="code">'Á'</span>?</p>
                     <p>Nota: gli insiemi di caratteri possibili sono parecchi, perciò la soluzione appropriata sarebbe
                         usare il metodo <span class="code">isupper</span> che vedremo prossimamente</p>
-                    <div style="width: 60vw; height: 50vh;">
+                    <div style="width: 60vw; height: 40vh; margin-top:5vh">
                         <base-editor contenteditable="true" language="python" code="car = 'G'   # True
 #car = 'g'  # False
 
@@ -1056,16 +1042,18 @@ print('trolley' < 'trolls')" />
                         <p>Ti vengono fornite due coppie di stringhe <span class="code">i1</span> e <span
                                 class="code">i2</span> da due caratteri ciascuna</p>
                         <p>Supponi che rappresentino intervalli di caratteri: il primo carattere di un intervallo ha
-                            sempre un numero d’ordine inferiore o uguale al secondo</p>
-                        <p>Ci sono cinque possibilità: il primo intervallo 'è contenuto in', oppure 'contiene', oppure
-                            'si sovrappone parzialmente a', oppure 'è prima' o 'è dopo' il secondo intervallo. Scrivi
-                            del codice che dice quale relazione di contenimento abbiamo</p>
+                            sempre un numero d’ordine inferiore o uguale al secondo. </p>
+                            
+                        <p> Ci sono 5 possibilità: il primo intervallo
+                        
+                        'è contenuto in','contiene', 'si sovrappone parzialmente a', 'è prima', oppure 'è dopo' il secondo intervallo. </p>
+                        
+                            <p> Scrivi del codice che dice quale relazione di contenimento abbiamo</p>
                         <p>Esempio 1: dati</p>
                         <pre><code>i1 = 'gm'
 i2 = 'cp'</code></pre>
                         <p>il tuo programma dovrebbe stampare <span class="code">gm è contenuto in cp</span></p>
-                        <p>Per vedere perché, puoi guardare questa piccola rappresentazione (non è necessario
-                            stamparla!)</p>
+                        <p>Per vedere perché, guarda questa rappresentazione (non è necessario stamparla!)</p>
                         <pre><code>  c   g     m  p
 abcdefghijklmnopqrstuvwxyz</code></pre>
                     </div>
@@ -1112,7 +1100,7 @@ abcdefghijklmnopqrstuvwxyz</code></pre>
                 </section>
                 <section>
                     <p class="slide-context">7. Comparazioni 19</p>
-                    <h3 class="title">Esercizio - La biblioteca di Encodius</h3>
+                    <h3 class="title">Esercizio - La biblioteca di Encodicus</h3>
                     <div style="width: 60vw;">
                         <p>Nello studio dell’algoritmista Encodicus è presente uno scaffale diviso in 26 sezioni
                             ordinate alfabeticamente, ove custodisce gelosamente i suoi preziosi testi alchemici.

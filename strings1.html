@@ -766,17 +766,17 @@ print(s)" />
             <section>
                 <section>
                     <p class="slide-context">6. Formattazione 1</p>
-                    <h3 class="title">Formattare stringhe</h3>
-                    <div style="width: 50vw;">
-                        <p>Concatenare stringhe con un segno <span class="code">+</span> come sopra è macchinoso e si
-                            presta ad errori.</p>
-                        <p>Ci sono diverse soluzioni migliori, per una recensione completa ci riferiamo al sito <a
-                                href="https://realpython.com/python-formatted-output/" target="_blank">Real Python</a>.
-                            In particolare,
-                            guardare le più utili che sono le <a
+                    <h3 class="title">Modi per formattare stringhe</h3>
+                    <div style="width: 50vw; margin-top:5vh">
+                        <ul>
+                            <li> <span class="code">+</span>: macchinoso</li>
+                            <li> <span class="code">%</span>: più comodo, parecchio usato</li>
+                            <li><a
                                 href="https://realpython.com/python-formatted-output/#the-python-formatted-string-literal-f-string"
-                                target="_blank">f-strings</a>,
-                            disponibili per Python &gt;= 3.6</p>
+                                target="_blank">f-strings</a>: molto comodo, da Python >= 3.6</li>
+                            <li><a
+                                href="https://realpython.com/python-formatted-output/" target="_blank">altre opzioni...</a></li>
+                        </ul>
                     </div>
                 </section>
                 <section>
@@ -785,11 +785,11 @@ print(s)" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li class="fragment" data-fragment-index="0">Il <em>place-holder</em> (segnaposto) <span
+                                <li class="fragment" data-fragment-index="0"><em>place-holder</em> (segnaposto) <span
                                         class="code">%s</span>
-                                    verrà sostituito con una variabile</li>
-                                <li class="fragment" data-fragment-index="0">La variabile è definita dopo, con <span
-                                        class="code">%x</span></li>
+                                <li> viene sostituito</li>
+                                <li class="fragment" data-fragment-index="0">variabile dopo il <span
+                                        class="code">%</span></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -802,52 +802,43 @@ print(s)" />
                     <p class="slide-context">6. Formattazione 3</p>
                     <h3 class="title">Formattare con <span class="code">%</span></h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col" style="text-align: left;">
+                        <div class="col" style="text-align: left; width:40%">
                             <ul style="list-style-type: none;">
-                                <li>Se volessimo usare più variabili?</li>
-                                <li>Bisogna solo aggiungere più segnaposti <span class="code">%s</span>, e dopo il <span
-                                        class="code">%</span> mettere la lista di variabili in delle parentesi tonde
-                                </li>
+                                <li>Per più variabili...</li>
+                                <li>... più segnaposti <span class="code">%s</span></li>
+                                <li> Dopo il <span class="code">%</span>: sequenza variabili in parentesi tonde </li>
                             </ul>
                         </div>
-                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                        <div class="col" style="height: 50vh; width: 60%; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="
 x = 3
 y = 5
 premio = 'Migliore Atleta della Valle'
-'Ho saltato %s volte, fatto %s flessioni e vinto il premio %s' % (x,y,premio)" />
+'Ho fatto %s salti, %s flessioni, e sono il %s' % (x,y,premio)" />
                         </div>
                     </div>
                 </section>
                 <section>
                     <p class="slide-context">6. Formattazione 4</p>
                     <h3 class="title">Esercizio - Supercar</h3>
-                    <div style="width: 60vw;">
-                        <p>Hai ricevuto dei soldi, perciò decidi di comprare due modelli di auto sportive. Visto lo
-                            stile di guida scellerato prevedi già incidenti, perciò per ciascun modello comprerai tante
-                            auto quanti caratteri ci sono nel nome di ciascun modello.</p>
-                        <p>Scrivi del codice che salva nella stringa s il numero di auto che comprerai.</p>
-                        <ul>
-                            <li><strong>USA</strong> il segnaposto <span class="code">%s</span></li>
-                        </ul>
-                    </div>
-                    <p><strong>Esempio:</strong> dati</p>
-                    <pre style="width: auto;"><code>auto1 = 'Jaguar'
-auto2 = 'Ferrari'</code></pre>
-                    <p>il tuo codice dovrebbe mostrare</p>
-                    <pre style="width: auto;"><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
-                </section>
-                <section>
-                    <p class="slide-context">6. Formattazione 5</p>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col" style="text-align: left;">
-                            <p><strong>Esempio:</strong> dati</p>
-                            <pre><code>auto1 = 'Jaguar'
-auto2 = 'Ferrari'</code></pre>
-                            <p>il tuo codice dovrebbe mostrare</p>
-                            <pre><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
+                        <div style="width: 40vw; text-align:left">
+                            <p>Hai ricevuto dei soldi, perciò decidi di comprare due modelli di auto sportive. Visto lo
+                                stile di guida scellerato prevedi già incidenti, perciò per ciascun modello comprerai tante
+                                auto quanti caratteri ci sono nel nome di ciascun modello.</p>
+                            <p>Scrivi del codice che salva nella stringa <span class="code">s</span> il numero di auto che comprerai.</p>
+                            <ul>
+                                <li><strong>USA</strong> il segnaposto <span class="code">%s</span></li>
+                            </ul>
+                        
+                        <p><strong>Esempio:</strong> dati</p>
+                        <pre style="width: auto;"><code>auto1 = 'Jaguar'
+    auto2 = 'Ferrari'</code></pre>
+                        <p>con <span class="code">print(s)</span> il tuo codice dovrebbe mostrare:</p>
+                        <pre style="width: auto;"><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
                         </div>
-                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                    
+                        <div class="col" style="height: 50vh; width: 60vw; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="# Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi
 auto1, auto2 = 'Jaguar','Ferrari'
 

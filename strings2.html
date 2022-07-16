@@ -376,16 +376,13 @@ print(x)" />
                     <h3 class="title">Slice</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <ul style="list-style-type: none;">
-                                <li>Come leggere una sottosequenza</li>
-                                <li>Nell'esempio sulla destra, vogliamo estrarre <span class="code">canti</span> da
-                                    <span class="code">mercantile</span>
-                                </li>
-                                <li><a href="https://davidleoni.github.io/ThinkPythonItalian/html/thinkpython2009.html#sec98"
-                                        target="_blank">slice</a>
-                                </li>
-                                <li class="fragment"><strong>NOTA:</strong> estrarre una sottostringa con slice NON
-                                    modifica la stringa originale!</li>
+                            <p>Scrivendo <span class="code">"mercantile"[3:8]</span></p>
+                            <ul style="list-style-type: none;">                                                                
+                                <li> Python genera una NUOVA stringa <span class="code">"canti"</span></li>
+                                <li> a partire dall'indice <span class="code">3</span> INCLUSO</li>
+                                <li> fino all'indice <span class="code">8</span> ESCLUSO</li>                                                                
+                                
+                                <li class="fragment">La stringa originale NON viene modificata!</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
@@ -408,6 +405,8 @@ print('              x è', x)" />
                         codice?</p>
                     <p>Dà errore? Funziona? Possiamo abbreviarlo?</p>
                     <p><span class="code">x[3:4]</span></p>
+                    <div style="height: 50vh; width: 50vw; margin-top: 5vh;">
+                        <base-editor contenteditable="true" language="python" code="# fai qualche prova" />                    
                 </section>
                 <section>
                     <p class="slide-context">5. Slice 3</p>
@@ -425,9 +424,10 @@ print('              x è', x)" />
                     <p class="slide-context">5. Slice 4</p>
                     <h3 class="title">Esercizio - ifEEfav lkD lkWe</h3>
                     <p>Scrivi del codice per estrarre e stampare <span class="code">kS</span> dalla stringa <span
-                            class="code">"ifE\te\nfav lkD lkWe"</span>. Fai attenzione agli spazi e caratteri speciali
-                        (prima potresti voler stampare <span class="code">x</span>). Prova a indovinare gli indici
-                        corretti.</p>
+                            class="code">"ifE\te\nfav lkD lkWe"</span> </p>
+                    <p>Fai attenzione agli spazi e caratteri speciali (prima potresti voler stampare <span class="code">x</span>) </p>
+                        
+                    <p>Prova a indovinare gli indici corretti</p>
                     <div style="height: 50vh; width: 50vw; margin-top: 5vh;">
                         <base-editor contenteditable="true" language="python" code="x = 'ifE\te\nfav  lkD lkWe'
 
@@ -468,10 +468,9 @@ print("sedia"[0:6])  # NESSUN ERRORE
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Se omettiamo l'indice di partenza, Python supporrà sia <span class="code">0</span>
-                                </li>
-                                <li>Se omettiamo l'indice di fine, Python estrarrà fino alla fine della stringa</li>
-                                <li>Se omettiamo entrambi gli indici, si ottiene l'intera stringa</li>
+                                <li>Omettere indice di partenza: vale come <span class="code">0</span></li>
+                                <li>Omettere indice di fine: estrae fino alla fine</li>
+                                <li>Omettere entrambi: otteniamo l'intera stringa</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
@@ -484,11 +483,12 @@ print("traghetto"[:])' />
                 <section>
                     <p class="slide-context">5. Slice 8</p>
                     <h3 class="title">Esercizio - isteroister</h3>
-                    <p>Scrivere del codice che data una stringa <span class="code">x</span> stampa la stringa composta
-                        da tutte le lettere di <span class="code">x</span> eccetto la prima seguita da tutte le lettere
-                        di <span class="code">x</span> eccetto l’ultima</p>
-                    <ul>
-                        <li>il tuo codice deve funzionare con qualunque stringa</li>
+                    <p>Scrivi del codice che data una stringa <span class="code">x</span> ne produce un altra così: </p>
+                        <ul>                                                        
+                            <li> con tutti i caratteri eccetto il primo, seguiti da tutti i caratteri eccetto l'ultimo</li>
+                            <li>il tuo codice deve funzionare con qualunque stringa</li>
+                        <ul>
+                        
                     </ul>
                     <p>Esempio: dato <span class="code">x = "mistero"</span> deve stampare <span
                             class="code">isteromister</span></p>
@@ -556,11 +556,10 @@ print("foresta"[3:-5])' />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col">
                             <ul style="list-style-type: none;">
-                                <li>Data la stringa a destra, supponiamo di voler cambiare la parola <span
+                                <li>Supponiamo di voler cambiare la parola <span
                                         class="code">tavolo</span> con <span class="code">divano</span></li>
-                                <li>Potremmo essere tentati di ridefinire la sequenza di caratteri corrispondente alla
-                                    parola <span class="code">"tavolo"</span>...</li>
-                                <li class="fragment">Otteniamo un errore, perché <strong>le stringhe sono
+                                <li>Tentazione: ridefinire sequenza di caratteri corrispondente a <span class="code">"tavolo"</span>...</li>
+                                <li class="fragment">Errore! <strong>Le stringhe sono
                                         IMMUTABILI</strong></li>
                             </ul>
                         </div>
@@ -577,12 +576,11 @@ s[3:9] = "divano"   # ATTENZIONE! SBAGLIATO!' />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col">
                             <ul style="list-style-type: none;">
-                                <li>Quello che invece possiamo fare è </li>
+                                <li>Modo corretto: </li>
                                 <ol>
-                                    <li>costruire una NUOVA stringa a partire da pezzi della stringa originale</li>
-                                    <li>concatenare i caratteri desiderati</li>
-                                    <li>associare il risultato alla variabile di cui vogliamo modificare l’assegnazione
-                                    </li>
+                                    <li>Costruire NUOVA stringa da pezzi della stringa originale</li>
+                                    <li>Concatenare i caratteri desiderati</li>
+                                    <li>Associare risultato alla variabile</li>
                                 </ol>
                             </ul>
                         </div>
@@ -596,36 +594,31 @@ print(s)' />
                 </section>
                 <section>
                     <p class="slide-context">5. Slice 13</p>
-                    <h3 class="title">Esercizio - la corsa</h3>
-                    <p>Scrivere del codice per cui data una stringa s</p>
-                    <pre style="width: auto;"><code>s = "la corsa all'oro è iniziata."</code></pre>
-                    <p>e delle variabili</p>
-                    <pre style="width: auto;"><code>cosa = "atomo"
-verbo = "finita"</code></pre>
-                    <p>sostituisce la sottostringa in corrispondenza di <span class="code">"oro"</span> con la stringa
-                        presente nella variabile <span class="code">cosa</span> e sostituisce la sottostringa in
-                        corrispondenza di <span class="code">"iniziata"</span> con la stringa presente nella variabile
-                        <span class="code">verbo</span>.
-                    </p>
-                    <p>Dopo l'esecuzione del tuo codice, la stringa associata ad <span class="code">s</span> dovrà
-                        essere <span class="code">"la corsa all'atomo è finita"</span></p>
-                    <ul>
-                        <li><strong>NON</strong> usare caratteri costanti nel tuo codice, quindi niente punto <span
-                                class="code">'.'</span>!</li>
-                    </ul>
-                </section>
-                <section>
-                    <p class="slide-context">5. Slice 14</p>
-                    <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col">
-                            <p>Data:</p>
+                    <div class="row">
+                        <div class="col" style="text-align:left">
+                            <h3 class="title">Esercizio - la corsa</h3>
+                            <p>Scrivere del codice per cui data una stringa <span class="code">s</span></p>
                             <pre><code>s = "la corsa all'oro è iniziata."</code></pre>
-                            <p>il codice dovrebbe restituire:</p>
-                            <pre><code>"la corsa all'atomo è finita"</code></pre>
+                            <p>e delle variabili</p>
+                            <pre><code>cosa = "atomo"
+verbo = "finita"</code></pre>
+                            <p>sostituisce la sottostringa in corrispondenza di <span class="code">"oro"</span> con la stringa
+                                presente nella variabile <span class="code">cosa</span> e sostituisce la sottostringa in
+                                corrispondenza di <span class="code">"iniziata"</span> con la stringa presente nella variabile
+                                <span class="code">verbo</span>.
+                            </p>
+                            <p>Dopo l'esecuzione del tuo codice, <span class="code">print(s)</span> dovrà
+                                stampare: 
+                                <pre>la corsa all'atomo è finita</pre></p>
+                            <ul>
+                                <li><strong>NON</strong> usare caratteri costanti nel tuo codice, quindi niente punto <span
+                                        class="code">'.'</span></li>
+                            </ul>
                         </div>
-                        <div class="col" style="width: 40vw; height: 50vh;">
+                        <div class="col">                    
+                            <div class="col" style="width: 40vw; height: 50vh;">
 
-                            <base-editor contenteditable="true" language="python" code="s = 'la corsa all\'oro è iniziata.'
+                                <base-editor contenteditable="true" language="python" code="s = 'la corsa all\'oro è iniziata.'
 cosa = 'atomo'
 verbo = 'finita'
 

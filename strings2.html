@@ -192,7 +192,7 @@ print(x[2])" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Qual è il tipo del carattere di una stringa? Verifichiamolo...</li>
+                                <li>Qual è il tipo del carattere di una stringa?</li>
                                 <li class="fragment">E' a sua volta una stringa!</li>
                             </ul>
                         </div>
@@ -230,30 +230,23 @@ print(type(x[2]))" />
                 <section>
                     <p class="slide-context">2. Caratteri 7</p>
                     <h3 class="title">Esercizio</h3>
-                    <div style="width: 50vw;">
-                        <p>Date due stringhe che hanno entrambe lunghezza <span class="code">3</span>, stampa una
-                            stringa che inercala caratteri da entrambe le stringhe. Il tuo codice deve poter funzionare
-                            con qualsiasi stringa di questa lunghezza</p>
-                    </div>
-                    <p>Esempio: dati</p>
-                    <pre style="width: auto;"><code>x="say"
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="height: 55vh; width: 35vw; margin-left: 1vw; text-align:left">
+                            
+                            <p>Date due stringhe che hanno entrambe lunghezza <span class="code">3</span>, stampa una
+                                stringa che intercala caratteri da entrambe le stringhe. <br>
+                                <br>
+                                Il tuo codice deve poter funzionare con qualsiasi stringa di questa lunghezza</p>
+                            
+                            <p>Esempio: dati</p>
+                            <pre style="width: auto;"><code>x="say"
 y="hi!"</code></pre>
-                    <p>dovrebbe stampare</p>
-                    <pre style="width: auto;"><code>shaiy!</code></pre>
-                </section>
-                <section>
-                    <p class="slide-context">2. Caratteri 8</p>
-                    <div class="row">
-                        <div class="col">
-                            <p>Input:</p>
-                            <pre><code>x="say"
-y="hi!"</code></pre>
-                            <p>Output voluto:</p>
-                            <pre><code>shaiy!</code></pre>
+                            <p>dovrebbe stampare</p>
+                            <pre style="width: auto;"><code>shaiy!</code></pre>
                         </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw; margin-left: 10vw;">
+                        <div class="col" style="height: 60vh; width: 50vw; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="# scrivi qui" />
-                        </div>
+                        </div>                                                
                     </div>
                 </section>
             </section>
@@ -314,7 +307,7 @@ print('ciao'[-4])" />
                     <p class="slide-context">3. Indici Negativi 5</p>
                     <h3 class="title">Domanda</h3>
                     <p>Data una stringa <span class="code">x</span> NON vuota, cosa produce la seguente espressione?</p>
-                    <p>Possiamo semplificarla in una via più breve?</p>
+                    <p>Possiamo semplificarla?</p>
                     <p><span class="code">(x + x)[len(x)]</span></p>
                 </section>
                 <section>
@@ -322,7 +315,7 @@ print('ciao'[-4])" />
                     <h3 class="title">Domanda</h3>
                     <p>Data una stringa <span class="code">x</span> NON vuota, cosa produce la seguente espressione? Un
                         errore? Altro?</p>
-                    <p>Possiamo semplificarla in una via più breve?</p>
+                    <p>Possiamo semplificarla?</p>
                     <p><span class="code">'ciao'[0][0]</span></p>
                 </section>
                 <section>
@@ -330,7 +323,7 @@ print('ciao'[-4])" />
                     <h3 class="title">Domanda</h3>
                     <p>Data una stringa <span class="code">x</span> NON vuota, cosa produce la seguente espressione? Un
                         errore? Altro?</p>
-                    <p>Possiamo semplificarla in una via più breve?</p>
+                    <p>Possiamo semplificarla?</p>
                     <p><span class="code">(x[0])[0]</span></p>
                 </section>
             </section>
@@ -341,15 +334,15 @@ print('ciao'[-4])" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Abbiamo detto che in Python le stringhe sono immutabili</li>
-                                <li>Nell'esempio sulla destra vogliamo cambiare il carattere in posizione 2. Come
+                                <li>le stringhe sono immutabili</li>
+                                <li>Se vogliamo cambiare il carattere in posizione 2 come
                                     facciamo?</li>
                                 <li class="fragment"><strong>La soluzione proposta non funziona...</strong></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="x = 'ciao'
-x[2] = 'b'" />
+x[2] = 'b'  # SBAGLIATO!"/>
                         </div>
                     </div>
                 </section>
@@ -358,12 +351,12 @@ x[2] = 'b'" />
                     <h3 class="title">Sostituire caratteri</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
+                        <p> Soluzione corretta:</p>
                             <ul style="list-style-type: none;">
-                                <li>La soluzione corretta è assegnare a <span class="code">x</span> una stringa
-                                    completamente nuova, ottenuta prendendo pezzi della precedente</li>
-                                <li class="fragment fade-in" data-fragment-index="0">Se il fatto che la <span
-                                        class="code">x</span> compaia a destra dell'uguale ti sconcerta, potremmo
-                                    scomporre il codice così:</li>
+                                <li> assegnare a <span class="code">x</span> una stringa
+                                    completamente nuova</li>
+                                <li> prendere pezzi della precedente </li>
+                                <li class="fragment fade-in" data-fragment-index="0">Codice equivalente:</li>
                             </ul>
                             <pre class="fragment fade-in" data-fragment-index="0"><code>x = "ciao"
 y = x

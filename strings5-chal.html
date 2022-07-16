@@ -82,7 +82,8 @@
                 <section>
                     <p class="slide-context">1. Il drago Smaug 1</p>
                     <h3 class="title">Sfida - Il Drago Smaug</h3>
-                    <p>✪ Trova UNA SOLA stringa che stampata con print venga mostrata (all’incirca) come la seguente:</p>
+                    <p>✪ Trova UNA SOLA stringa che stampata con print venga mostrata (all’incirca) come la seguente:
+                    </p>
                     <pre style="width: auto;"><code>________________~----~______________
 ////            Storia          \\\\
 Il      cavaliere
@@ -92,9 +93,12 @@ Il      cavaliere
                 al       castello</code></pre>
                     <ul>
                         <li>inizia e concludi la stringa con apice singolo</li>
-                        <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span class="code">\n</span></li>
+                        <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span
+                                class="code">\n</span></li>
                         <li><strong>NON</strong> usare spazi</li>
-                        <li><strong>NOTA:</strong> usando i tab potresti vedere risultati diversi a seconda dell’editor che stai usando, quindi puoi solo sperare di ottenere un risultato simile a quello proposto.</li>
+                        <li><strong>NOTA:</strong> usando i tab potresti vedere risultati diversi a seconda dell’editor
+                            che stai usando, quindi puoi solo sperare di ottenere un risultato simile a quello proposto.
+                        </li>
                     </ul>
                 </section>
                 <section>
@@ -111,10 +115,125 @@ Il      cavaliere
                 al       castello</code></pre>
                         </div>
                         <div class="col" style="height: 60vh; width: 100%;">
-                            <base-editor contenteditable="true" language="python"
-                            code="# Scrivi qui
+                            <base-editor contenteditable="true" language="python" code="# Scrivi qui
 " />
                         </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">2. Psycho Circus 1</p>
+                    <h3 class="title">Sfida - Psycho Circus</h3>
+                    <p>✪ Requisiti: slice</p>
+                    <p>Nella variabile <span class="code">kiss_album</span> è contenuta la lista delle tracce dell’album
+                        Psycho Circus pubblicato nel 1998 dai KISS, una band di gentlemen del glam rock. La variabile è
+                        una stringa multilinea (aperta come si vede tramite tre <span class="code">"""</span> e chiusa
+                        nello stesso modo).</p>
+                    <p>In ogni riga della stringa è presente del testo, il titolo della canzone, e una serie di <span
+                            class="code">_</span> in modo da rendere tutte le righe della stessa lunghezza.</p>
+                    <pre style="width: auto;"><code style="max-height: none;">#La lunghezza di ogni riga
+lunghezza_etichetta = 48
+
+# Il database contenente le canzoni
+kiss_album = """Psycho Circus _________________________________
+Within ________________________________________
+I Pledge Allegiance to the State of Rock & Roll
+Into the Void _________________________________
+We Are One ____________________________________
+You Wanted the Best ___________________________
+Raise Your Glasses ____________________________
+I Finally Found My Way_________________________
+Dreamin _______________________________________
+Journey of 1,000 Years ________________________"""</code></pre>
+                </section>
+                <section>
+                    <p class="slide-context">2. Psycho Circus 2</p>
+                    <h3 class="title">Sfida - Psycho Circus</h3>
+                    <p>Stiamo programmando il controllore di uno stereo e dato il suo numero <span
+                            class="code">num_canzone</span> nell’album, vogliamo STAMPARE numero e titolo.</p>
+                    <p>Per esempio, se riceviamo <span class="code">num_canzone = 3</span> dobbiamo stampare:</p>
+                    <pre style="width: auto;"><code>numero canzone: 3
+Into the Void _________________________________</code></pre>
+                    <p><strong>NOTA: </strong>alla fine di ogni riga di <span class="code">kiss_album</span>, c’è un
+                        carattere speciale, giusto? :)</p>
+                </section>
+                <section>
+                    <p class="slide-context">2. Psycho Circus 3</p>
+                    <h3 class="title">Editor - Psycho Circus</h3>
+                    <div class="row" style="width: 100%; gap: 2vw;">
+                        <div class="col" style="flex: 2;">
+                            <p>Se riceviamo <span class="code">num_canzone = 3</span> dobbiamo stampare:</p>
+                            <pre style="width: auto;"><code>numero canzone: 3
+Into the Void _________________________________</code></pre>
+                        </div>
+                        <div class="col" style="flex: 3; height: 75vh; width: 100%;">
+                            <base-editor contenteditable="true" language="python" code='lunghezza_etichetta = 48
+num_canzone = 3    #  Into the Void _________________________________
+#num_canzone = 9   #  Journey of 1,000 Years ________________________
+
+kiss_album = """Psycho Circus _________________________________
+Within ________________________________________
+I Pledge Allegiance to the State of Rock & Roll
+Into the Void _________________________________
+We Are One ____________________________________
+You Wanted the Best ___________________________
+Raise Your Glasses ____________________________
+I Finally Found My Way_________________________
+Dreamin _______________________________________
+Journey of 1,000 Years ________________________"""
+
+# scrivi qui
+' />
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">3. Censura al tiramisù 1</p>
+                    <h3 class="title">Sfida - Censura al tiramisù</h3>
+                    <div style="width: 65vw;">
+                        <p>✪ Ci è stato inviato un testo illegale, immorale e che fa pure ingrassare. Per tutelare la
+                            pubblica salute abbiamo l’arduo compito di censurarlo e renderlo consono al buon costume.
+                        </p>
+                        <ol>
+                            <li>E’ necessario sostituire OGNI occorrenza delle due parole malefiche con una più salubre
+                                censura, trasformando il testo in modo che la print di testo_censurato non contenga
+                                nessuna parola incriminata.</li>
+                            <p>Esempio:</p>
+                            <pre style="width: auto;"><code>testo= "Grazie all'uso di Cera Splendent tutto brilla!"
+parola_malefica = "splendent"
+censura = "******"
+testo_censurato: "Grazie all'uso di Cera ****** tutto brilla!"</code></pre>
+                            <li>Per scrivere il nostro rapporto di censori dobbiamo rendere conto di quante parole
+                                abbiamo censurato. Stampare alla fine il numero (ovviamente in maniera automatica ), per
+                                esempio:</li>
+                            <pre style="width: auto;"><code>"Censurata 1 parola"</code></pre>
+                        </ol>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Censura al tiramisù 2</p>
+                    <h3 class="title">Editor - Censura al tiramisù</h3>
+                    <div style="width: 70vw; height: 70vh;">
+                        <base-editor contenteditable="true" language="python" code='testo = """Ed è proprio da questa portentosa crema che nasce la crema al mascarpone
+base del tiramisù, prima classificata al premio Crema dell Anno insieme
+alla nutella. Il dolce italiano per eccellenza, quello più famoso e amato,
+ma soprattutto che ha dato vita a tantissime altre versioni, anche tiramisù senza uova!
+Poi il Tiramisù alle fragole o quello alla Nutella, giusto per citarne un paio!
+Senza contare le rivisitazioni più raffinate come la crostata morbida o la torta al tiramisù.
+"""
+
+parola_malefica1 = "Tiramisù"
+parola_malefica2 = "nutella"
+
+censura = "******"
+
+testo_censurato = ""
+
+# scrivi qui    
+' />
                     </div>
                 </section>
             </section>
@@ -156,7 +275,7 @@ Il      cavaliere
             // Select a theme
             theme: 'blood',
             // Select the type of slides transition
-            transition: 'slide',
+            transition: 'fade',
             // Revealjs navigation mode (https://revealjs.com/vertical-slides/)
             navigationMode: 'linear',
             // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly

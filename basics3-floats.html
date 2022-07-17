@@ -192,16 +192,15 @@ print('Il tipo di x è:', type(x))" />
                             <li><span class="code">math.nan</span></li>
                             <li><span class="code">math.inf</span></li>
                         </ul>
-                        <li>Al momento li menzioniamo e basta, trovi maggiori dettagli nel <a
+                        <li>Al momento li menzioniamo solo (maggiori dettagli: <a
                                 href="https://it.softpython.org/matrices-numpy/matrices-numpy-sol.html#NaN-e-infinit%C3%A0"
-                                target="_blank">foglio
-                                di Numpy</a></li>
+                                target="_blank">foglio di Numpy</a>)</li>
                     </ul>
                 </section>
             </section>
             <section>
                 <section>
-                    <p class="slide-context">3. Esercizi 1/1</p>
+                    <p class="slide-context">3. Esercizi 1-1</p>
                     <h3 class="title">Esercizio - Cerchio</h3>
                     <p>Calcola l'area di un cerchio al centro di un pallone da calcio (raggio = 9.15m).</p>
                     <p>Ricordati che <span class="code">area = pi * r<sup>2</sup></span>, e che l'operatore per la
@@ -212,7 +211,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">3. Esercizi 1/2</p>
+                    <p class="slide-context">3. Esercizi 1-2</p>
                     <h3 class="title">Ricordiamo la precedenza degli operatori</h3>
 
                     <table>
@@ -256,37 +255,38 @@ print('Il tipo di x è:', type(x))" />
 
                 </section>
                 <section>
-                    <p class="slide-context">3. Esercizi 2/1</p>
-                    <h3 class="title">Esercizio - Il campo da Golf</h3>
-                    <p>Il giardiniere Jobe è diventato così bravo che il dottor Angelo decide di promuoverlo a curatore
-                        del campo da golf dove è solito trascorrere i weekend. Ma una nuova sfida lo attende: al campo
-                        Jobe deve radere perfettamente il <em>green</em>, cioè l’area circolare di raggio <span
-                            class="code">r</span> che comprende la buca. La spia sul tagliaerbe di Jobe si deve
-                        accendere quando è posizionato sul verde chiaro: scrivi un espressione che date due coordinate
-                        <span class="code">x,y</span> produce <span class="code">True</span> quando il tagliaerbe è sul
-                        verde chiaro, e <span class="code">False</span> altrimenti. Al solo scopo di darti dei
-                        riferimenti visuali, questa volta sul campo sono disposte anche delle palline con delle lettere.
-                    </p>
-                    <ul style="list-style-type: none;">
-                        <li>Nota: questa volta l'origine è al centro del quadrato</li>
-                        <li>Non usare il comando <span class="cod">if</span></li>
-                        <li>Suggerimento: ricordi come si calcola la distanza tra due punti? Ti servirà la radice
-                            quadrata <span class="cod">math.sqrt</span></li>
-                    </ul>
-                    <img src="assets/lawnmower-5.png" alt="Immagine esercizio">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 2/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
-                        <span class="code">r</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
+                    <p class="slide-context">3. Esercizi 2</p>                    
                     <div class="row">
                         <div class="col">
-                            <img src="assets/lawnmower-5.png" alt="Image of the exercise">
-                        </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                            <p>Il giardiniere Jobe è diventato così bravo che il dottor Angelo decide di promuoverlo a curatore
+                                del campo da golf dove è solito trascorrere i weekend. Ma una nuova sfida lo attende: al campo
+                                Jobe deve radere perfettamente il <em>green</em>, cioè l’area circolare di raggio <span
+                                    class="code">r</span> che comprende la buca. La spia sul tagliaerbe di Jobe si deve
+                                accendere quando è posizionato sul verde chiaro.</p>
+                                <p> Scrivi un espressione che date due coordinate
+                                <span class="code">x,y</span> produce <span class="code">True</span> quando il tagliaerbe è sul
+                                verde chiaro, e <span class="code">False</span> altrimenti. Al solo scopo di darti dei
+                                riferimenti visuali, questa volta sul campo sono disposte anche delle palline con delle lettere.
+                            </p>
+                            <div class="row">
+                                <div class="col">
+                                    <ul style="list-style-type: none;">
+                                        <li style="padding-bottom:0">Nota: questa volta l'origine è al centro del quadrato</li>
+                                        <li style="padding-bottom:0"><strong>NON</strong> usare il comando <span class="code">if</span></li>
+                                        <li style="padding-bottom:0"><strong>SUGGERIMENTO</strong>: ricordi come si calcola la distanza tra due punti? Ti servirà la radice
+                                            quadrata <span class="cod">math.sqrt</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <img src="assets/lawnmower-5.png" alt="Immagine esercizio">
+                                </div>
+                            </div>
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
+                            <span class="code">r</span></p>                    
+                        </div>                                                                                    
+                        <div class="col" style="height: 60vh; width: 60vw;">
+                            <h3 class="title">Esercizio <br> Il campo da Golf</h3>
+                            <div style="margin-top:5vh;">
                             <base-editor contenteditable="true" language="python" code="import math
 
 r = 50
@@ -300,28 +300,22 @@ x,y = 35,20     # A: True
 #x,y = -37,37   # G: False
 
 # scrivi qui" />
+                            </div>
                         </div>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">3. Esercizi 3/1</p>
+                    <p class="slide-context">3. Esercizi 3</p>
                     <h3 class="title">Esercizio - Frazionamento</h3>
-                    <p>Scrivi il codice per ottenere il valore della seguente formula per <span class="code">x =
-                            0.000003</span></p>
-                    <p>Dovresti ottenere <span class="code">2.753278226511882</span></p>
-                    <img src="assets/eq-1.png" alt="Immagine esercizio">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 3/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
                     <div class="row">
                         <div class="col">
-                            <img src="assets/eq-1.png" alt="Image of the exercise">
+                            <p>Scrivi il codice per ottenere il valore della seguente formula </p>                            
+                            <img src="assets/eq-1.png" alt="Immagine esercizio">
+                            <p> per <span class="code">x = 0.000003</span></p>                            
+                            <p>Dovresti ottenere <span class="code">2.753278226511882</span></p>
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span></p>                    
                         </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                        <div class="col" style="height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="x = 0.000003
 
 # scrivi qui" />
@@ -329,24 +323,23 @@ x,y = 35,20     # A: True
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">3. Esercizi 4/1</p>
+                    <p class="slide-context">3. Esercizi 4</p>
                     <h3 class="title">Esercizio - Sommatoria</h3>
-                    <p>Scrivi il codice per ottenere il valore della seguente espressione (non usare cicli, scrivi per
-                        esteso tutti i calcoli)</p>
-                    <p>Dovresti ottenere <span class="code">20.53333333333333</span></p>
-                    <img src="assets/eq-2.png" alt="Immagine esercizio">
-                </section>
-                <section>
-                    <p class="slide-context">3. Esercizi 4/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
                     <div class="row">
-                        <div class="col">
-                            <img src="assets/eq-2.png" alt="Image of the exercise">
+                        <div class="col">                    
+                            <p>Scrivi il codice per ottenere il valore della seguente espressione </p>                            
+                            
+                            <img src="assets/eq-2.png" alt="Immagine esercizio">
+                            <div>
+                                <ul>
+                                    <li>Non usare cicli</li>
+                                    <li>scrivi per esteso tutti i calcoli</li>
+                                </ul>                            
+                            </div>
+                            <p>Dovresti ottenere <span class="code">20.53333333333333</span></p>
+                            <p>Inserisci la tua soluzione, usando <span class="code">x</span></p>                            
                         </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                        <div class="col" style="height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="# scrivi qui" />
                         </div>
                     </div>
@@ -391,7 +384,7 @@ x,y = 35,20     # A: True
                         <tr>
                             <td></td>
                             <td></td>
-                            <td>2.51</td>
+                            <td>⌊2.51⌉</td>
                             <td>3</td>
                         </tr>
                     </table>
@@ -399,7 +392,7 @@ x,y = 35,20     # A: True
                 <section>
                     <p class="slide-context">4. Conversioni 2</p>
                     <p>Come prima, cerca di indovinare il risultato delle seguenti espressioni:</p>
-                    <div class="row" style="gap: 3vw; margin-top: 2vh;">
+                    <div class="row" style="gap: 3vw; margin-top: 6vh;">
                         <div class="col" style="height: 30vh; width: 25vw;">
                             <base-editor contenteditable="true" language="python" code="import math
 
@@ -529,22 +522,16 @@ bicchiere = 0.0
                 <section>
                     <p class="slide-context">4. Conversioni 8</p>
                     <h3 class="title">Esercizio - Arrotondamente</h3>
-                    <p>Scrivi il codice per ottenere il valore della seguente formula per <span class="code">x =
-                            -5.51</span></p>
-                    <p>Dovresti ottenere <span class="code">41</span></p>
-                    <img src="assets/eq-3.png" alt="Immagine esercizio">
-                </section>
-                <section>
-                    <p class="slide-context">4. Conversioni 9</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
                     <div class="row">
                         <div class="col">
-                            <img src="assets/eq-3.png" alt="Image of the exercise">
+                            <p>Scrivi il codice per ottenere il valore della seguente formula per <span class="code">x =
+                                    -5.51</span></p>
+                            <p>Dovresti ottenere <span class="code">41</span></p>
+                            <img src="assets/eq-3.png" alt="Immagine esercizio">
+                        
+                            <p>Inserisci la tua soluzione, usando <span class="code">x</span></p>                                       
                         </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                        <div class="col" style="height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="import math
 
 x = -5.51   # 41
@@ -564,8 +551,8 @@ x = -5.51   # 41
                             <ul style="list-style-type: none;">
                                 <li>Nei calcoli con virgola mobile, il processore può commettere errori di
                                     arrotondamento</li>
-                                <li>I float sono memorizzati in codice binario a <span class="code">64 bit</span>
-                                    (IEEE-754)</li>
+                                <li>I float sono memorizzati in codice binario a <span class="code">64 bit</span><br>
+                                    (<i>standard IEEE-754</i>)</li>
                                 <li>Ciò impone un limite fisico alla precisione!</li>
                             </ul>
                         </div>
@@ -586,7 +573,7 @@ print('Il valore di x con 55 cifre di precisione è:', format(4.1, '.55f'))" />
                             <ul style="list-style-type: none;">
                                 <li>Ma allora cosa succede quando eseguiamo operazioni aritmetiche con i floating point?
                                 </li>
-                                <li class="fragment">Il risultato è completamente diverso da quello atteso!</li>
+                                <li class="fragment">Il risultato è piuttosto diverso da quello atteso!</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; margin-left: 1vw;">
@@ -637,8 +624,7 @@ print(math.isclose(x - y, 4.1, abs_tol=0.000001))" />
                 <section>
                     <p class="slide-context">5. Uguaglianza 5</p>
                     <h3 class="title">Domanda 2</h3>
-                    <p>Quali di queste tre espressioni di codice danno lo stesso risultato?</p>
-                    <p>Esegui il codice per la soluzione</p>
+                    <p>Quali di queste tre espressioni di codice danno lo stesso risultato?</p>                    
                     <div style="width: 60vw; height: 40vh;">
                         <base-editor contenteditable="true" language="python" code="import math
 
@@ -668,9 +654,7 @@ b = 3.3</code></pre>
 
                 <section>
                     <p class="slide-context">5. Uguaglianza 7</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">a</span> e <span class="code">b</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
+                    <p>Inserisci la tua soluzione, usando <span class="code">a</span> e <span class="code">b</span>
                     </p>
                     <div class="row">
                         <div class="col">
@@ -689,47 +673,35 @@ b = 3.3
                 </section>
 
                 <section>
-                    <p class="slide-context">5. Uguaglianza 8</p>
-                    <h3 class="title">Esercizio - Alla moda</h3>
-                    <p>Stai già pensando alle prossime vacanze, ma c’è un problema: dove vai, se un
-                        <em>selfie-stick</em> non ce l’hai? Non puoi partire con questo grave turbamento: per
-                        uniformarti al fenomeno di massa devi comprare lo stick più simile agli altri. Conduci quindi
-                        prima un’indagine statistica tra turisti malati di <em>selfie-stick</em> con l’obiettivo di
-                        scoprire i brand più frequenti, in altre parole, la moda delle frequenze. Ottieni questi
-                        risultati:
-                    </p>
-                    <pre style="width: auto;"><code>b1,b2,b3,b4,b5 = 'TroppiLike', 'ErMejo United', 'Perditempo SpA', 'Vanità 3.0','TronistiPerCaso' # brand
-f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3   # frequenze (in percentuale)</code></pre>
-                    <p>Desumiamo quindi che le masse prediligono i selfie-stick dei brand <span class="code">'ErMejo
-                            United'</span> e <span class="code">'TronistiPerCaso'</span>, entrambi a parimerito con un
-                        <span class="code">30%</span> di turisti ciascuno. Scrivi quindi del codice che stampa questo
-                        risultato:
-                    </p>
-                    <pre style="width: auto;"><code>TroppiLike è il più frequente? False ( 25.0 % )
-ErMejo United è il più frequente? True ( 30.0 % )
-Perditempo Inc è il più frequente? False ( 10.0 % )
-Vanità 3.0 è il più frequente? False ( 5.0 % )
-TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
-                    <p><strong>ATTENZIONE:</strong> il tuo codice deve funzionare con <strong>QUALUNQUE</strong> serie
-                        di variabili!</p>
-                </section>
-
-                <section>
-                    <p class="slide-context">5. Uguaglianza 9</p>
-                    <p>Inserisci la tua soluzione.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
+                    <p class="slide-context">5. Uguaglianza 8</p>                    
                     <div class="row">
-                        <div class="col">
-                            <pre style="width: auto;"><code>TroppiLike è il più frequente? False ( 25.0 % )
-ErMejo United è il più frequente? True ( 30.0 % )
-Perditempo Inc è il più frequente? False ( 10.0 % )
-Vanità 3.0 è il più frequente? False ( 5.0 % )
-TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
+                        <div class="col" style="width:45vw">
+                            <p>Stai già pensando alle prossime vacanze, ma c’è un problema: dove vai, se un
+                                <em>selfie-stick</em> non ce l’hai? Non puoi partire con questo grave turbamento: per
+                                uniformarti al fenomeno di massa devi comprare lo stick più simile agli altri. Conduci quindi
+                                prima un’indagine statistica tra turisti malati di <em>selfie-stick</em> con l’obiettivo di
+                                scoprire i brand più frequenti, in altre parole, la moda delle frequenze. Ottieni questi
+                                risultati:
+                            </p>
+                            <pre><code>b1,b2,b3,b4,b5 = 'TroppiLike', 'ErMejo United', 'Perditempo SpA', 'Vanità 3.0','TronistiPerCaso' # brand
+        f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3   # frequenze (in percentuale)</code></pre>
+                            <p>Desumiamo quindi che le masse prediligono i selfie-stick dei brand <span class="code">'ErMejo
+                                    United'</span> e <span class="code">'TronistiPerCaso'</span>, entrambi a parimerito con un
+                                <span class="code">30%</span> di turisti ciascuno. Scrivi quindi del codice che stampa questo
+                                risultato:
+                            </p>
+                            <pre><code>TroppiLike è il più frequente? False ( 25.0 % )
+        ErMejo United è il più frequente? True ( 30.0 % )
+        Perditempo Inc è il più frequente? False ( 10.0 % )
+        Vanità 3.0 è il più frequente? False ( 5.0 % )
+        TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
+                            <p><strong>ATTENZIONE:</strong> il tuo codice deve funzionare con <strong>QUALUNQUE</strong> serie
+                                di variabili!</p>                            
                         </div>
-                        <div class="col" style="margin-left: 2vw; height: 60vh; width: 50vw;">
-                            <base-editor contenteditable="true" language="python" code="
+                        <div class="col" style="margin-left: 2vw; width: 50vw;">
+                            <h3 class="title">Esercizio - Alla moda</h3>
+                            <div style="margin-top:5vh; height: 60vh;">
+                                <base-editor contenteditable="true" language="python" code="
 
 # BRAND:
 b1,b2,b3,b4,b5 = 'TroppiLike', 'ErMejo United', 'Perditempo Inc', 'Vanità 3.0','TronistiPerCaso'
@@ -740,6 +712,7 @@ f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3
 #f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.1 + 0.2
 
 # scrivi qui" />
+                            </div>
                         </div>
                     </div>
                 </section>

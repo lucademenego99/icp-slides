@@ -78,7 +78,7 @@
                     <p><small>Premi <span class="code">esc</span> per l'overview generale</small></p>
                 </div>
             </section>
-
+            
             <section>
                 <section>
                     <p class="slide-context">1. Introduzione 1</p>
@@ -86,14 +86,14 @@
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Stringa: sequenza immutabili di caratteri.</li>
-                                <li>Definibile con:</li>
+                                <li>Sequenze immutabili di caratteri</li>
+                                                                
                                 <ul>
-                                    <li class="fragment" data-fragment-index="0">doppie virgolette, su una linea</li>
-                                    <li class="fragment" data-fragment-index="1">virgolette singole, su una linea</li>
-                                    <li class="fragment" data-fragment-index="2">tre doppie virgolette, su più linee
+                                    <li class="fragment" data-fragment-index="0">doppie virgolette,  una linea</li>
+                                    <li class="fragment" data-fragment-index="1">virgolette singole, una linea</li>
+                                    <li class="fragment" data-fragment-index="2">tre doppie virgolette, più linee
                                     </li>
-                                    <li class="fragment" data-fragment-index="3">tre apici, su più linee</li>
+                                    <li class="fragment" data-fragment-index="3">tre apici, più linee</li>
                                 </ul>
                             </ul>
                         </div>
@@ -133,28 +133,31 @@ su più linee'''" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Stampa con <span class="code">print</span></li>
-                                <li class="fragment" data-fragment-index="0">Se invece scriviamo direttamente la stringa
-                                    senza la print, vedremo gli apici</li>
-                                <li class="fragment" data-fragment-index="1">Anche se scriviamo la stringa coi doppi
-                                    apici, il risultato avrà gli apici singoli</li>
-                                <li class="fragment" data-fragment-index="2">Lo stesso discorso si applica se assegniamo
-                                    una stringa a una variabile</li>
+
+                                <li>Comando <span class="code">print</span></li>
+                                <li class="fragment" data-fragment-index="0">
+                                     Modalità interprete, apici singoli: vediamo apici singoli</li>
+                                <li class="fragment" data-fragment-index="1">Modalità interprete, con apici doppi?</li>
+                                <li class="fragment" data-fragment-index="2">Modalità interprete, con variabili?</li>
                             </ul>
                         </div>
                         <div class="r-stack" style="width: 50vw;">
+                            <!-- DAVID: MODALITA' SCRIPT -->
                             <div class="col fragment fade-out" data-fragment-index="0"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code="print('ciao')" />
                             </div>
+                            <!-- DAVID: MODALITA' INTERPRETE -->
                             <div class="col fragment fade-in-then-out" data-fragment-index="0"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code="'ciao'" />
                             </div>
+                            <!-- DAVID: MODALITA' INTERPRETE -->
                             <div class="col fragment fade-in-then-out" data-fragment-index="1"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code='"ciao"' />
                             </div>
+                            <!-- DAVID: MODALITA' INTERPRETE -->
                             <div class="col fragment fade-in-then-out" data-fragment-index="2"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code="x = 'ciao'
@@ -168,10 +171,11 @@ x" />
                     <h3 class="title">Stampare più stringhe</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <ul style="list-style-type: none;">
-                                <li>Stampare più stringhe con <span class="code">print</span></li>
-                                <li>Possiamo aggiungere quanti parametri vogliamo,
-                                    e possono anche essere mischiati con altri tipi come i numeri. Provaci!</li>
+
+                            <ul style="list-style-type: none;">                                
+                                <li>Più parameteri per <span class="code">print</span></li>
+                                <li>Anche mischiati con altri tipi (es. numeri)</li>
+                                <li>Prova tu!</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
@@ -189,8 +193,8 @@ print(x,y)
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                Per ottenere la lunghezza di una stringa (o in genere di qualunque sequenza), possiamo
-                                usare la funzione <span class="code">len</span>
+                                <li> funzione <span class="code">len</span> </li>
+                                <li> (qualunque sequenza) </li>
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
@@ -203,19 +207,30 @@ print(len(""))' />
                     <p class="slide-context">1. Introduzione 5</p>
                     <h3 class="title">Domanda 1</h3>
                     <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
-                    <p><span class="code">"len"("ciao")</span></p>
+                    <p><span class="code">"len"("ciao")</span></p>                    
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <base-editor contenteditable="true" language="python" code='print( "len"("ciao") )' />
+                    </div>                                        
                 </section>
                 <section>
                     <p class="slide-context">1. Introduzione 6</p>
                     <h3 class="title">Domanda 2</h3>
                     <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
                     <p><span class="code">len("len('ciao')")</span></p>
+
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <base-editor contenteditable="true" language="python" code="print( len(&quot;len('ciao')&quot;) )" />
+                    </div>
                 </section>
                 <section>
                     <p class="slide-context">1. Introduzione 7</p>
                     <h3 class="title">Domanda 3</h3>
                     <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
                     <p><span class="code">len(((((("ciao"))))))</span></p>
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <base-editor contenteditable="true" language="python" code='print(  len(((((("ciao"))))))  )' />
+                    </div>
+                    
                 </section>
             </section>
             <section>
@@ -266,9 +281,10 @@ print('ESEMPIO tab: Ciao\tMondo')" />
                     <h3 class="title">Esercizio 1</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <p>Visto che le sequenze di escape sono speciali, ci si può chiedere quanto siano lunghe.
-                                Prova a stampare la lunghezza delle seguenti stringhe: <span
-                                    class="code">'ab\ncd'</span> e <span class="code">'ab\tcd'</span></p>
+                            <p>Quanto sono lunghe le sequenze di escape speciali?</p>
+                            <p>
+                                Prova a stampare la lunghezza delle seguenti stringhe: <span class="code">'ab\ncd'</span> 
+                                e <span class="code">'ab\tcd'</span></p>
                             <p>Noti qualcosa di strano?</p>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
@@ -284,7 +300,7 @@ b = 'ab\tcd'
                     <h3 class="title">Esercizio 2</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <p>Trova UNA SOLA stringa che stampata con print venga mostrata come la seguente.</p>
+                            <p>Trova UNA SOLA stringa che stampata con <span class="code">print</span> venga mostrata come la seguente.</p>
                             <pre><code>Questa  è
 una
 
@@ -292,7 +308,7 @@ sfida   apparentemente      semplice</code></pre>
                             <ul>
                                 <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span
                                         class="code">\n</span></li>
-                                <li><span class="code">NON</span> usare spazi</li>
+                                <li><strong>NON</strong> usare spazi</li>
                                 <li>inizia e concludi la stringa con apice singolo</li>
                             </ul>
                         </div>
@@ -306,7 +322,7 @@ sfida   apparentemente      semplice</code></pre>
                     <h3 class="title">Esercizio 3</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <p>Trova UNA SOLA stringa che stampata con print venga mostrata come la seguente.</p>
+                            <p>Trova UNA SOLA stringa che stampata con <span class="code">print</span> venga mostrata come la seguente.</p>
                             <pre><code>At  te
 n   tis
 simame
@@ -316,8 +332,8 @@ te</code></pre>
                             <ul>
                                 <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span
                                         class="code">\n</span></li>
-                                <li><span class="code">NON</span> usare spazi</li>
-                                <li>NON usare tripli apici</li>
+                                <li><strong>NON</strong> usare spazi</li>
+                                <li><strong>NON</strong> usare tripli apici</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
@@ -444,10 +460,7 @@ print("Così metto \"doppie virgolette\" nella stringa")' />
                 <section>
                     <p class="slide-context">4. Encodings 4</p>
                     <h3 class="title">Riferimenti</h3>
-                    <div style="width: 55vw;">
-                        <p>Abbiamo solo menzionato Unicode ma può essere un argomento complesso, se avrai mai a che fare
-                            con insiemi di caratteri giapponesi o encodings eterogenei trovi qui un paio di riferimenti
-                            che dovresti leggere:</p>
+                    <div style="width: 55vw;">                        
                         <ul>
                             <li>prima parte sull’encoding Unicode <a
                                     href="http://gpiancastelli.altervista.org/dip3-it/stringhe.html" target="_blank">dal
@@ -462,20 +475,18 @@ print("Così metto \"doppie virgolette\" nella stringa")' />
             </section>
             <section>
                 <section>
-                    <p class="slide-context">5. Dettagli 1</p>
+                    <p class="slide-context">5. Immutabilità 1</p>
                     <h3 class="title">Le stringhe sono immutabili</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <p>Le stringhe sono <em>oggetti immutabili</em>. Tuttavia possiamo:</p>
+                            <p>Le stringhe sono <em>oggetti immutabili</em>. </p>
+                            
+                            <p>Si può solo:</p>
                             <ul>
-                                <li>generare una nuova stringa a partire da stringhe precedenti</li>
-                                <li>se abbiamo una variabile a cui abbiamo assegnato una stringa, possiamo assegnare
-                                    un’altra stringa a quella variabile</li>
-                            </ul>
-                            <p>Nell'esempio sulla destra generiamo una nuova stringa a partire da altre definite
-                                precedentemenete</p>
-                            <p class="fragment">L'operazione <span class="code">+</span> quando eseguita <em>tra
-                                    stringhe</em> le concatena creando una NUOVA stringa.</p>
+                                <li>generare una nuova stringa a partire da altre</li>
+                                <li>riassegnare una variabile stringa</li>
+                            </ul>                            
+                            <p class="fragment">L'operazione <span class="code">+</span> concatena creando una NUOVA stringa</p>
                         </div>
                         <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="x = 'ciao'
@@ -486,7 +497,7 @@ print(y)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. Dettagli 2</p>
+                    <p class="slide-context">5. Immutabilità 2</p>
                     <h3 class="title">Riassegnare variabili</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
@@ -503,25 +514,14 @@ print(y)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. Dettagli 3</p>
+                    <p class="slide-context">5. Immutabilità 3</p>
                     <h3 class="title">Riassegnare variabili</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                            <p>Cosa succede se assegniamo una variabile a sé stessa?</p>
-                            <p class="fragment" data-fragment-index="0">Nulla di che... ma cosa succede se alla destra
-                                dell'<span class="code">=</span> mettiamo una formula più complessa?</p>
+                            <p >Cosa succede se alla destra dell'<span class="code">=</span> mettiamo una formula del genere?</p>
                         </div>
-                        <div class="r-stack" style="width: 40vw;">
-                            <div class="col fragment fade-out" data-fragment-index="0"
-                                style="height: 40vh; width: 100%; margin-left: 1vw;">
-                                <base-editor contenteditable="true" language="python" code="x = 'ciao'
-
-x = x
-
-print(x)" />
-                            </div>
-                            <div class="col fragment fade-in-then-out" data-fragment-index="0"
-                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                        <div class="r-stack" style="width: 40vw;">                            
+                            <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
                                 <base-editor contenteditable="true" language="python" code="x = 'ciao'
 
 x = x + 'mondo'
@@ -532,24 +532,25 @@ print(x)" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">5. Dettagli 4</p>
+                    <p class="slide-context">5. Immutabilità 4</p>
                     <h3 class="title">Cosa è successo?</h3>
                     <pre style="width: auto;"><code>x = 'ciao'
 x = x + 'mondo'</code></pre>
                     <ol>
-                        <li>Nella prima linea Python ha generato la stringa <span class="code">'ciao'</span> e l'ha
-                            assegnata ad <span class="code">x</span></li>
-                        <li>Nella seconda linea Python ha:</li>
+                        <li>Python genera la stringa <span class="code">'ciao'</span> e la assegna ad <span class="code">x</span></li>
+                        <li>Poi:</li>
                         <ul>
-                            <li>calcolato il risultato di <span class="code">x + 'mondo'</span>, generando la NUOVA
+                            <li>calcola il risultato di <span class="code">x + 'mondo'</span>, genera NUOVA
                                 stringa <span class="code">'ciaomondo'</span></li>
-                            <li>assegnato la stringa appena generata alla variabile <span class="code">x</span></li>
+                            <li>assegna la nuova stringa a <span class="code">x</span></li>
                         </ul>
                     </ol>
                 </section>
                 <section>
-                    <p class="slide-context">5. Dettagli 5</p>
+                    <p class="slide-context">5. Immutabilità 5</p>
                     <h3 class="title">Per riassumere...</h3>
+                    <pre style="width: auto;"><code>x = 'ciao'
+x = x + 'mondo'</code></pre>                    
                     <ol style="margin-top: 10vh;">
                         <li><strong>PRIMA</strong> viene calcolato il risultato dell'espressione a destra dell'<span
                                 class="code">=</span></li>
@@ -558,35 +559,28 @@ x = x + 'mondo'</code></pre>
                     </ol>
                 </section>
                 <section>
-                    <p class="slide-context">5. Dettagli 6</p>
-                    <h3 class="title">Esercizio</h3>
-                    <p>Scrivi del codice che cambia lo stato della memoria in modo che alla fine risulti la stampa
-                        seguente:</p>
-                    <pre style="width: auto;"><code>z =  Questo
+                    <p class="slide-context">5. Immutabilità 6</p>                    
+                    <div class="row" style="width: 90%; margin-top: 1vh;">
+                        <div class="col" style="text-align: left; height: 40vh; width: 40vw; margin-left: 1vw;">
+                            <h3 class="title">Esercizio</h3>
+                            <p>Scrivi del codice che cambia lo stato della memoria in modo che alla fine risulti la stampa
+                                seguente:</p>
+                            <pre style="width: auto;"><code>z =  Questo
 w =  era
 x =  un problema
 y =  era
 s =  Questo era un problema</code></pre>
-                    <ul style="margin-top: 5vh;">
-                        <li>Usa <strong>SOLO</strong> i simboli <span class="code">=</span>, <span
-                                class="code">+</span>, <span class="code">w</span>, <span class="code">x</span>, <span
-                                class="code">y</span>, <span class="code">s</span></li>
-                        <li>puoi usare quante linee di codice ritieni opportune</li>
-                        <li>puoi usare ogni simbolo quante volte vuoi</li>
-                    </ul>
-                </section>
-                <section>
-                    <p class="slide-context">5. Dettagli 7</p>
-                    <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col" style="text-align: left;">
-                            <pre><code>z =  Questo
-w =  era
-x =  un problema
-y =  era
-s =  Questo era un problema</code></pre>
+                            <ul style="margin-top: 5vh;">
+                                <li>Usa <strong>SOLO</strong> i simboli <span class="code">=</span>, <span
+                                        class="code">+</span>, <span class="code">w</span>, <span class="code">x</span>, <span
+                                        class="code">y</span>, <span class="code">s</span></li>
+                                <li>puoi usare quante linee di codice ritieni opportune</li>
+                                <li>puoi usare ogni simbolo quante volte vuoi</li>
+                            </ul>
                         </div>
-                        <div class="col" style="height: 70vh; width: 40vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="# Queste variabili ti sono date
+                        <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">                            
+                            <div class="col" style="height: 70vh; width: 40vw; margin-right: 1vw;">
+                                <base-editor contenteditable="true" language="python" code="# Queste variabili ti sono date
 z = 'Questo'
 w = 'è'
 x = 'un problema'
@@ -603,8 +597,10 @@ print('w = ', w)
 print('x = ', x)
 print('y = ', y)
 print('s = ', s)" />
+                            </div>
                         </div>
-                    </div>
+                    </div>    
+                    
                 </section>
             </section>
             <section>
@@ -614,7 +610,7 @@ print('s = ', s)" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Le stringhe in Python hanno il tipo <span class="code">str</span></li>
+                                <li>Tipo stringhe: <span class="code">str</span></li>
                                 <li class="fragment" data-fragment-index="0">Se una
                                     <em>stringa</em> contiene un numero?
                                 </li>
@@ -641,7 +637,8 @@ print("Il carattere 5 rappresenta la cifra cinque, il carattere 3 rappresenta la
                             </div>
                             <div class="col fragment fade-in-then-out" data-fragment-index="1"
                                 style="height: 40vh; width: 100%; margin-left: 1vw;">
-                                <base-editor contenteditable="true" language="python" code="print(type('254'))
+                                <base-editor contenteditable="true" language="python" code="# '254' + 3
+print(type('254'))
 print(type(254))" />
                             </div>
                         </div>
@@ -649,11 +646,9 @@ print(type(254))" />
                 </section>
                 <section>
                     <p class="slide-context">5. Stringhe e numeri 2</p>
-                    <h3 class="title">Attenzione!</h3>
+                    <h3 class="title">Attento a quello che vedi!</h3>
                     <div style="width: 50vw;">
-                        <p style="margin-top: 10vh;">Se provi a stampare con <span class="code">print</span> una stringa
-                            che contiene solo cifre, Python la mostrerà senza apici, e questo potrebbe ingannarti
-                            riguardo la sua vera natura!</p>
+                        <p style="margin-top: 10vh;">Prova a stampare questa stringa con <span class="code">print</span>, cosa sembra?</p>
                     </div>
                     <div style="height: 40vh; width: 50vw;">
                         <base-editor contenteditable="true" language="python" code="print('254')" />
@@ -661,26 +656,26 @@ print(type(254))" />
                 </section>
                 <section>
                     <p class="slide-context">5. Stringhe e numeri 3</p>
-                    <h3 class="title">Conversioni - da str a num</h3>
+                    <h3 class="title">Conversioni - da stringa a numero</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Quindi come sommiamo <span class="code">'254' + 4</span>?</li>
-                                <li>Converti la stringa ad intero con <span class="code">int</span></li>
+                                <li>Come sommare <span class="code">'254'</span> e <span class="code">3</span>?</li>
+                                <li>Converti la stringa ad intero con la funzione <span class="code">int</span></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print(int('254') + 3)" />
+                            <base-editor contenteditable="true" language="python" code="print( int('254') + 3 )" />
                         </div>
                     </div>
                 </section>
                 <section>
                     <p class="slide-context">5. Stringhe e numeri 4</p>
-                    <h3 class="title">Conversioni - da str a num</h3>
+                    <h3 class="title">Conversioni - da stringa a numero</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li><strong>NOTA:</strong> le stringhe e i numeri sono immutabili.</li>
+                                <li><strong>NOTA:</strong> le stringhe e i numeri sono immutabili</li>
                                 <li>Scrivendo <span class="code">int('254')</span> viene generato un nuovo numero</li>
                             </ul>
                         </div>
@@ -690,6 +685,9 @@ x = '254'
 
 # Assegno alla variabile y il numero ottenuto convertendo '254' in int
 y = int(x)
+
+print(x)
+print(y)
 
 print(type(x))
 print(type(y))" />
@@ -715,7 +713,7 @@ print(type(y))" />
                 </section>
                 <section>
                     <p class="slide-context">5. Stringhe e numeri 6</p>
-                    <h3 class="title">Conversioni - da num a str</h3>
+                    <h3 class="title">Conversioni - da numero a stringa</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
@@ -731,19 +729,14 @@ print('Tipo:', type(x), 'valore:', x)" />
                 </section>
                 <section>
                     <p class="slide-context">5. Stringhe e numeri 7</p>
-                    <h3 class="title">Conversioni - da num a str</h3>
+                    <h3 class="title">Conversioni - da numero a stringa</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li>Se volessimo ottenere una stringa che sia la concatenazione di oggetti di tipo
-                                    diverso dobbiamo stare attenti...</li>
-                                <li class="fragment" data-fragment-index="0">Soluzione: usa <span
-                                        class="code">str</span></li>
-                                <li class="fragment" data-fragment-index="1"><strong>DOMANDA:</strong> visto quanto
-                                    detto in precedenza, dopo l'esecuzione del codice nella cella precedente, alla
-                                    variabile <span class="code">x</span> risulterà associato un <em>numero</em> o una
-                                    <em>stringa</em>?
-                                </li>
+                                <li>Come concatenare oggetti di tipo diverso?</li>
+                                <li class="fragment" data-fragment-index="0">Si può usare <span class="code">str</span></li>
+                                <li class="fragment" data-fragment-index="1"><strong>DOMANDA:</strong> Dopo l'esecuzione del codice nella cella precedente, alla variabile <span class="code">x</span> risulterà associato un <em>numero</em> o una
+                                    <em>stringa</em>?</li>
                             </ul>
                         </div>
                         <div class="r-stack" style="width: 45vw;">
@@ -766,17 +759,17 @@ print(s)" />
             <section>
                 <section>
                     <p class="slide-context">6. Formattazione 1</p>
-                    <h3 class="title">Formattare stringhe</h3>
-                    <div style="width: 50vw;">
-                        <p>Concatenare stringhe con un segno <span class="code">+</span> come sopra è macchinoso e si
-                            presta ad errori.</p>
-                        <p>Ci sono diverse soluzioni migliori, per una recensione completa ci riferiamo al sito <a
-                                href="https://realpython.com/python-formatted-output/" target="_blank">Real Python</a>.
-                            In particolare,
-                            guardare le più utili che sono le <a
+                    <h3 class="title">Modi per formattare stringhe</h3>
+                    <div style="width: 50vw; margin-top:5vh">
+                        <ul>
+                            <li> <span class="code">+</span>: macchinoso</li>
+                            <li> <span class="code">%</span>: più comodo, parecchio usato</li>
+                            <li><a
                                 href="https://realpython.com/python-formatted-output/#the-python-formatted-string-literal-f-string"
-                                target="_blank">f-strings</a>,
-                            disponibili per Python &gt;= 3.6</p>
+                                target="_blank">f-strings</a>: molto comodo, da Python >= 3.6</li>
+                            <li><a
+                                href="https://realpython.com/python-formatted-output/" target="_blank">altre opzioni...</a></li>
+                        </ul>
                     </div>
                 </section>
                 <section>
@@ -785,11 +778,11 @@ print(s)" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li class="fragment" data-fragment-index="0">Il <em>place-holder</em> (segnaposto) <span
+                                <li class="fragment" data-fragment-index="0"><em>place-holder</em> (segnaposto) <span
                                         class="code">%s</span>
-                                    verrà sostituito con una variabile</li>
-                                <li class="fragment" data-fragment-index="0">La variabile è definita dopo, con <span
-                                        class="code">%x</span></li>
+                                <li> viene sostituito</li>
+                                <li class="fragment" data-fragment-index="0">variabile dopo il <span
+                                        class="code">%</span></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
@@ -802,52 +795,43 @@ print(s)" />
                     <p class="slide-context">6. Formattazione 3</p>
                     <h3 class="title">Formattare con <span class="code">%</span></h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col" style="text-align: left;">
+                        <div class="col" style="text-align: left; width:40%">
                             <ul style="list-style-type: none;">
-                                <li>Se volessimo usare più variabili?</li>
-                                <li>Bisogna solo aggiungere più segnaposti <span class="code">%s</span>, e dopo il <span
-                                        class="code">%</span> mettere la lista di variabili in delle parentesi tonde
-                                </li>
+                                <li>Per più variabili...</li>
+                                <li>... più segnaposti <span class="code">%s</span></li>
+                                <li> Dopo il <span class="code">%</span>: sequenza variabili in parentesi tonde </li>
                             </ul>
                         </div>
-                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                        <div class="col" style="height: 50vh; width: 60%; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="
 x = 3
 y = 5
 premio = 'Migliore Atleta della Valle'
-'Ho saltato %s volte, fatto %s flessioni e vinto il premio %s' % (x,y,premio)" />
+'Ho fatto %s salti, %s flessioni, e sono il %s' % (x,y,premio)" />
                         </div>
                     </div>
                 </section>
                 <section>
                     <p class="slide-context">6. Formattazione 4</p>
                     <h3 class="title">Esercizio - Supercar</h3>
-                    <div style="width: 60vw;">
-                        <p>Hai ricevuto dei soldi, perciò decidi di comprare due modelli di auto sportive. Visto lo
-                            stile di guida scellerato prevedi già incidenti, perciò per ciascun modello comprerai tante
-                            auto quanti caratteri ci sono nel nome di ciascun modello.</p>
-                        <p>Scrivi del codice che salva nella stringa s il numero di auto che comprerai.</p>
-                        <ul>
-                            <li><strong>USA</strong> il segnaposto <span class="code">%s</span></li>
-                        </ul>
-                    </div>
-                    <p><strong>Esempio:</strong> dati</p>
-                    <pre style="width: auto;"><code>auto1 = 'Jaguar'
-auto2 = 'Ferrari'</code></pre>
-                    <p>il tuo codice dovrebbe mostrare</p>
-                    <pre style="width: auto;"><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
-                </section>
-                <section>
-                    <p class="slide-context">6. Formattazione 5</p>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
-                        <div class="col" style="text-align: left;">
-                            <p><strong>Esempio:</strong> dati</p>
-                            <pre><code>auto1 = 'Jaguar'
-auto2 = 'Ferrari'</code></pre>
-                            <p>il tuo codice dovrebbe mostrare</p>
-                            <pre><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
+                        <div style="width: 40vw; text-align:left">
+                            <p>Hai ricevuto dei soldi, perciò decidi di comprare due modelli di auto sportive. Visto lo
+                                stile di guida scellerato prevedi già incidenti, perciò per ciascun modello comprerai tante
+                                auto quanti caratteri ci sono nel nome di ciascun modello.</p>
+                            <p>Scrivi del codice che salva nella stringa <span class="code">s</span> il numero di auto che comprerai.</p>
+                            <ul>
+                                <li><strong>USA</strong> il segnaposto <span class="code">%s</span></li>
+                            </ul>
+                        
+                        <p><strong>Esempio:</strong> dati</p>
+                        <pre style="width: auto;"><code>auto1 = 'Jaguar'
+    auto2 = 'Ferrari'</code></pre>
+                        <p>con <span class="code">print(s)</span> il tuo codice dovrebbe mostrare:</p>
+                        <pre style="width: auto;"><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
                         </div>
-                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                    
+                        <div class="col" style="height: 50vh; width: 60vw; margin-left: 1vw;">
                             <base-editor contenteditable="true" language="python" code="# Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi
 auto1, auto2 = 'Jaguar','Ferrari'
 

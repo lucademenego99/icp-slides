@@ -92,7 +92,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">1. Introduzione 1/2</p>
+                    <p class="slide-context">1. Introduzione 1-2</p>
                     <h3 class="title">L'algebra booleana</h3>
                     <div style="display: flex; flex-direction:row; width: 90%; margin-top: 10vh;">
                         <table>
@@ -122,7 +122,7 @@ print('Il tipo di x è:', type(x))" />
                                 <td>False</td>
                             </tr>
                         </table>
-                        <table>
+                        <table class="fragment" data-fragment-index="1">
                             <tr>
                                 <th>a</th>
                                 <th>b</th>
@@ -149,7 +149,7 @@ print('Il tipo di x è:', type(x))" />
                                 <td>False</td>
                             </tr>
                         </table>
-                        <table>
+                        <table class="fragment" data-fragment-index="2">
                             <tr>
                                 <th>a</th>
                                 <th><span class="code">not</span> a</th>
@@ -166,7 +166,7 @@ print('Il tipo di x è:', type(x))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">1. Introduzione 2/1</p>
+                    <p class="slide-context">1. Introduzione 2-1</p>
                     <div class="r-stack">
                         <div>
                             <h3 class="title fragment fade-out" data-fragment-index="0">Il tuo turno!</h3>
@@ -233,20 +233,12 @@ print('Risposte:', ''.join(answers))" />
                             </div>
                         </div>
                         <div class="fragment fade-in" data-fragment-index="0">
-                            <p style="font-size: 5.5vmin;">Vuoi più esercizi?</p>
-                            <p style="font-size: 4vmin; color: #888">Vai giù ed esercitati!</p>
-                            <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M36.7733 16.6285H32.66C32.4265 16.6285 32.203 16.7301 32.0456 16.9078L20.9296 29.7199V1.125C20.9296 0.901562 20.7468 0.71875 20.5233 0.71875H17.4765C17.253 0.71875 17.0702 0.901562 17.0702 1.125V29.7199L5.95419 16.9078C5.80185 16.7301 5.57841 16.6285 5.33974 16.6285H1.22646C0.881144 16.6285 0.693253 17.0398 0.921769 17.2988L17.7761 36.7227C17.9284 36.8984 18.1168 37.0394 18.3284 37.136C18.5399 37.2326 18.7698 37.2826 19.0024 37.2826C19.235 37.2826 19.4649 37.2326 19.6765 37.136C19.8881 37.0394 20.0764 36.8984 20.2288 36.7227L37.078 17.2988C37.3065 17.0348 37.1186 16.6285 36.7733 16.6285Z"
-                                    fill="#555" />
-                            </svg>
-
+                            <p style="font-size: 5.5vmin;">Altri esercizi</p>
                         </div>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">1. Introduzione 2/2</p>
+                    <p class="slide-context">1. Introduzione 2-2</p>
                     <div style="height: 70vh; width: 50vw;">
                         <base-editor contenteditable="true" language="python" code="# Inserisci le tue risposte nella variabile 'risp'
 espr1 = not (not (not False))
@@ -292,7 +284,7 @@ print('Risposte:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">1. Introduzione 2/3</p>
+                    <p class="slide-context">1. Introduzione 2-3</p>
                     <h3 class="title">Domande con variabili</h3>
                     <div class="row" style="width: 90%;">
                         <div class="col" style="text-align: left;">
@@ -360,7 +352,7 @@ print('Risposte:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">1. Introduzione 2/4</p>
+                    <p class="slide-context">1. Introduzione 2-4</p>
                     <h4 class="title">Come prima!</h4>
                     <div style="height: 70vh; width: 50vw;">
                         <base-editor contenteditable="true" language="python" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
@@ -416,7 +408,7 @@ print('Risposte sbagliate:', ''.join(answers))" />
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">1. Introduzione 2/5</p>
+                    <p class="slide-context">1. Introduzione 2-5</p>
                     <h4 class="title">Al contrario!</h4>
                     <div class="row" style="width: 90%;">
                         <div class="col" style="text-align: left;">
@@ -727,8 +719,7 @@ print('Risposte:', ''.join(answers))" />
                             <base-editor contenteditable="true" language="python" code="print('False and x:', False and x)
 
 # NOTA: qui x non è nemmeno definito...
-# Se provi a mettere True al posto di False,
-# infatti, ti ritroverai con un errore - prova!" />
+# Prova a mettere True al posto di False, che succede?" />
                         </div>
                     </div>
                 </section>
@@ -740,8 +731,8 @@ print('Risposte:', ''.join(answers))" />
                             dell’<strong>ultima</strong> espressione</li>
                     </ul>
                     <ul style="list-style-type: none; margin-top: 3vh;">
-                        <li><code>True and 5 -> 5</code></li>
-                        <li><code>5 and True -> True</code></li>
+                        <li><span class="code">True and 5</span> -> <span class="code">5</span></li>
+                        <li><span class="code">5 and True</span> -> <span class="code">True</span></li>
                     </ul>
                 </section>
 
@@ -760,8 +751,7 @@ print('Risposte:', ''.join(answers))" />
                             <base-editor contenteditable="true" language="python" code="print('True or x:', True or x)
 
 # NOTA: anche in questo caso x non è nemmeno definito...
-# Se provi a mettere False invece di True, infatti,
-# ti ritroverai con un errore - prova!" />
+# Prova a mettere False al posto di True, che succede?" />
                         </div>
                     </div>
                 </section>
@@ -839,11 +829,11 @@ print('Risposte:', ''.join(answers))" />
                         <div class="col" style="text-align: left;">
                             <div class="r-stack">
                                 <ul style="list-style-type: none;" class="fragment fade-out" data-fragment-index="0">
-                                    <li>Cosa succede se un'espressione booleana contiene del codice che genererebbe un
+                                    <li>Che succede se un'espressione booleana contiene del codice che genererebbe un
                                         errore?
                                     </li>
-                                    <li>Intuitivamente, il programma dovrebbe terminare, ma non è sempre così.</li>
-                                    <li>Proviamo a generare di proposito un errore.</li>
+                                    <li>Il programma dovrebbe terminare? <strong>Non sempre</strong>!</li>
+                                    <li>Proviamo a generare di proposito un errore</li>
                                 </ul>
                                 <ul style="list-style-type: none;" class="fragment fade-in-then-out"
                                     data-fragment-index="0">
@@ -851,7 +841,7 @@ print('Risposte:', ''.join(answers))" />
                                 </ul>
                                 <ul style="list-style-type: none;" class="fragment fade-in-then-out"
                                     data-fragment-index="1">
-                                    <li>Nota che 'dopo' non viene stampato perchè il programma si interrompe prima.</li>
+                                    <li>Nota che 'dopo' non viene stampato perchè il programma si interrompe prima</li>
                                 </ul>
                                 <ul style="list-style-type: none;" class="fragment fade-in-then-out"
                                     data-fragment-index="2">
@@ -886,7 +876,7 @@ print('dopo...')" />
                         <li>Guarda le espressioni seguenti, e per ciascuna cerca di indovinare quale risultato
                             produce, o se dà errore</li>
                     </ul>
-                    <div class="row" style="gap: 3vw;">
+                    <div class="row" style="gap: 3vw; margin-top:5vh">
                         <div class="col" style="height: 50vh; width: 25vw;">
                             <base-editor contenteditable="true" language="python" code="print(True and 1/0)" />
                         </div>
@@ -1003,8 +993,8 @@ print('dopo...')" />
 
                 <section>
                     <p class="slide-context">6. Comparazione 3</p>
-                    <p>Dato che le comparazioni sono espressioni che producono booleani, possiamo anche assegnare il
-                        risultato ad una variabile</p>
+                    <p>Le comparazioni sono espressioni che producono booleani</p>
+                    <p>  ⮕ possiamo assegnare il risultato ad una variabile</p>
                     <div style="height: 40vh; width: 40vw; margin-top: 4vh;">
                         <base-editor contenteditable="true" language="python" code="x = 5 > 3
 print(x)" />
@@ -1019,12 +1009,9 @@ print(x)" />
                     <div class="r-stack">
                         <div class="fragment fade-out" data-fragment-index="0">
                             <p>Dato un paio di quantità <span class="code">x, y = 7, 5</span></p>
-                            <p>Come potremmo scrivere una espressione booleana per chiederci se <span
-                                    class="code">x</span>
-                                e
-                                <span class="code">y</span> sono entrambe maggiori di zero?
-                            </p>
-                            <p>Provaci!</p>
+                            <p>Trova una espressione booleana che ci dice se <span class="code">x</span> e 
+                            <span class="code">y</span> sono entrambe maggiori di zero
+                            </p>                            
                         </div>
                         <div class="fragment fade-in-then-out" data-fragment-index="0">
                             <p><span class="emph">Attenzione!</span> La scrittura <span class="code">x and y > 0</span>
@@ -1105,7 +1092,7 @@ print((x and y) > 0)   # ATTENZIONE!" />
                             errori)
                         </li>
                     </ul>
-                    <div class="row" style="gap: 3vw;">
+                    <div class="row" style="gap: 3vw; margin-top:5vh">
                         <div class="col" style="height: 50vh; width: 25vw;">
                             <base-editor contenteditable="true" language="python" code="x = 3 == 4
 print(x)" />
@@ -1144,42 +1131,44 @@ print(x == y)" />
             </section>
             <section>
                 <section>
-                    <p class="slide-context">8. Esercizi 1/1</p>
-                    <h3 class="title">Esercizio - Il tagliaerbe 1</h3>
-                    <p>Il dottor Angelo possiede un prato di area quadrata di lato <span class="code">d=100</span> metri
-                        che
-                        viene accudito ogni settimana da Jobe il giardiniere. Jobe passa sempre meticolosomente il
-                        tagliarbe
-                        su tutta l’area del prato, ma un giorno il dottore decide di rendere più elaborato il giardino e
-                        chiede a Jobe di tagliare solo alcune zone. Purtroppo, Jobe non è molto forte in geometria e per
-                        agevolarlo il dottore inventa un sensore in grado di rilevare la posizione, collegato ad una
-                        spia
-                        che si illumina solo quando il tagliaerbe va azionato.</p>
-                    <p>Scrivi un’espressione che date due coordinate <span class="code">x,y</span>, produca <span
-                            class="code">True</span> quando il tagliaerbe è nella zona verde chiaro, e <span
-                            class="code">False</span> altrimenti.</p>
-                    <ul>
-                        <li>Nota che l'origine delle coordinate è in basso a sinistra</li>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                        <li><strong>SCRIVI</strong> una formula generica usando <span class="code">d</span> (quindi non
-                            scrivere <span class="code">50</span>...)</li>
-                    </ul>
-                    <img src="assets/lawnmower-1.png" alt="Image of the exercise">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 1/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
-                        <span class="code">d</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
+                
+                    <p class="slide-context">8. Esercizi 1</p>                    
                     <div class="row">
-                        <div class="col">
-                            <img src="assets/lawnmower-1.png" alt="Image of the exercise">
-                            <p>Vai avanti per la soluzione!</p>
+                        <div class="col" style="width:45vw; margin-right:2vw">
+                            <p>Il dottor Angelo possiede un prato di area quadrata di lato <span class="code">d=100</span> metri
+                                che
+                                viene accudito ogni settimana da Jobe il giardiniere. Jobe passa sempre meticolosomente il
+                                tagliarbe
+                                su tutta l’area del prato, ma un giorno il dottore decide di rendere più elaborato il giardino e
+                                chiede a Jobe di tagliare solo alcune zone. Purtroppo, Jobe non è molto forte in geometria e per
+                                agevolarlo il dottore inventa un sensore in grado di rilevare la posizione, collegato ad una
+                                spia
+                                che si illumina solo quando il tagliaerbe va azionato.</p>
+                            <p>Scrivi un’espressione che date due coordinate <span class="code">x,y</span>, produca <span
+                                    class="code">True</span> quando il tagliaerbe è nella zona verde chiaro, e <span
+                                    class="code">False</span> altrimenti.</p>
+                            <div class="row">
+                                <div class="col">
+                                    <ul>
+                                        <li style="padding-bottom:0">Nota che l'origine delle coordinate è in basso a sinistra</li>
+                                        <li style="padding-bottom:0"><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                                        <li style="padding-bottom:0"><strong>SCRIVI</strong> una formula generica usando <span class="code">d</span> (quindi non
+                                            scrivere <span class="code">50</span>...)</li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <img src="assets/lawnmower-1.png" alt="Image of the exercise">
+                                </div>
+                            </div>                    
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
+                                <span class="code">d</span></p>                            
+                            </p>                        
+                            
                         </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="d = 100
+                        <div class="col" style="height: 60vh; width: 50vw;">
+                            <h3 class="title">Esercizio <br> Il tagliaerbe 1</h3>
+                            <div style="margin-top:5vh; height:100%">
+                                <base-editor contenteditable="true" language="python" code="d = 100
 
 <EDITABLE>x,y = 0,  0      </EDITABLE># False
 <EDITABLE>#x,y = 25, 25    </EDITABLE># False
@@ -1193,35 +1182,25 @@ print(x == y)" />
 soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE> 
 
 print(soluzione)" />
+                            </div>
                         </div>
                     </div>
                 </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 1/3</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <p class="fragment"><span class="code">x &lt; d/2 and y &gt; d/2</span></p>
-                </section>
 
                 <section>
-                    <p class="slide-context">8. Esercizi 2/1</p>
+                    <p class="slide-context">8. Esercizi 2</p>
                     <h3 class="title">Esercizio - Il tagliaerbe 2</h3>
-                    <p>Il dottor Angelo adesso richiede a Jobe di tagliare più zone…</p>
-                    <ul>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                    </ul>
-                    <img src="assets/lawnmower-2.png" alt="Image of the exercise">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 2/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
-                        <span class="code">d</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
                     <div class="row">
-                        <div class="col">
-                            <img src="assets/lawnmower-2.png" alt="Image of the exercise">
-                            <p>Vai avanti per la soluzione!</p>
+                        <div class="col" style="width:35vw; margin-right:3vw">
+                            <p>Il dottor Angelo adesso richiede a Jobe di tagliare più zone…</p>
+                            <ul>
+                                <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                            </ul>
+                            <img style="display:block; margin-left:auto; margin-right:auto;" src="assets/lawnmower-2.png" alt="Image of the exercise">
+                                                    
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
+                                <span class="code">d</span>.                        
+                            </p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="d = 100
@@ -1241,31 +1220,19 @@ print(soluzione)" />
                         </div>
                     </div>
                 </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 2/3</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <p class="fragment"><span class="code">(x &lt; d/2 and y &lt; d/2) or (x &gt; d/2 and y &gt;
-                            d/2)</span></p>
-                </section>
 
                 <section>
-                    <p class="slide-context">8. Esercizi 3/1</p>
+                    <p class="slide-context">8. Esercizi 3</p>
                     <h3 class="title">Esercizio - Il tagliaerbe 3</h3>
-                    <p>Il dottor Angelo si è stufato di giardini squadrati, e vuole dividere il prato in diagonale.</p>
-                    <ul>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                    </ul>
-                    <img src="assets/lawnmower-3.png" alt="Image of the exercise">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 3/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span> e <span class="code">y</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza</p>
                     <div class="row">
-                        <div class="col">
-                            <img src="assets/lawnmower-3.png" alt="Image of the exercise">
-                            <p>Vai avanti per la soluzione!</p>
+                        <div class="col" style="width:35vw; margin-right:3vw;">
+                            <p>Il dottor Angelo si è stufato di giardini squadrati, e vuole dividere il prato in diagonale.</p>
+                            <ul>
+                                <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                            </ul>
+                            <img style="display:block; margin-left:auto; margin-right:auto;" src="assets/lawnmower-3.png" alt="Image of the exercise">
+                                        
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span> e <span class="code">y</span>                                                            
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="d = 100
@@ -1284,35 +1251,24 @@ print(soluzione)" />
                         </div>
                     </div>
                 </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 3/3</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <p class="fragment"><span class="code">y &lt; x</span></p>
-                </section>
 
                 <section>
-                    <p class="slide-context">8. Esercizi 4/1</p>
+                    <p class="slide-context">8. Esercizi 4</p>
                     <h3 class="title">Esercizio - Il tagliaerbe 4</h3>
-                    <p>Altro giorno, altra diagonale per Jobe...</p>
-                    <ul>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                        <li><strong>SUGGERIMENTO</strong>: se non ricordi l'equazione della retta è il momento di
-                            cercarla
-                            :-)</li>
-                    </ul>
-                    <img src="assets/lawnmower-4.png" alt="Image of the exercise">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 4/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
-                        <span class="code">d</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
                     <div class="row">
-                        <div class="col">
-                            <img src="assets/lawnmower-4.png" alt="Image of the exercise">
-                            <p>Vai avanti per la soluzione!</p>
+                        <div class="col" style="width:35vw; margin-right:3vw;">
+                            <p>Altro giorno, altra diagonale per Jobe...</p>
+                            <ul>
+                                <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                                <li><strong>SUGGERIMENTO</strong>: se non ricordi l'equazione della retta è il momento di
+                                    cercarla
+                                    :-)</li>
+                            </ul>
+                            <img style="display:block; margin-left:auto; margin-right:auto;" src="assets/lawnmower-4.png" alt="Image of the exercise">
+                            
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
+                                <span class="code">d</span>
+                            </p>                            
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
                             <base-editor contenteditable="true" language="python" code="d = 100
@@ -1331,268 +1287,186 @@ print(soluzione)" />
                         </div>
                     </div>
                 </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 4/3</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <p class="fragment"><span class="code">y &lt; -x + d</span></p>
-                </section>
             </section>
 
             <section>
                 <section>
-                    <p class="slide-context">8. Esercizi 5/1</p>
-                    <h3 class="title">Esercizio - Il Tempio di Lava</h3>
-                    <p>Durante i tuoi studi scopri una mappa di un antico tempio, ove sono custoditi mirabolanti tesori.
-                    </p>
-                    <p>Il tempio misura <span class="code">d=80</span> metri di lato ed è un labirinto di corridoi. Sai
-                        per
-                        certo che alcune aree mostrate in rosso contengono pavimento fragile sotto il quale scorrono
-                        fiumi
-                        di lava incandescente: per avvertirti del pericolo mentre cammini, ti costruisci un detector che
-                        emetterà un suono quando sarai in zone rosse.</p>
-                    <p>Scrivi un’espressione booleana che restituisca <span class="code">True</span> se sei in una zona
-                        di
-                        pericolo, <span class="code">False</span> altrimenti.</p>
-                    <ul>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                    </ul>
-                    <img src="assets/bool-temple-1.png" alt="Image of the exercise">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 5/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">x</span>, <span class="code">y</span> e
-                        <span class="code">d</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
-                    <div class="row">
-                        <div class="col">
-                            <img src="assets/bool-temple-1.png" alt="Image of the exercise">
-                            <p>Vai avanti per la soluzione!</p>
-                        </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="d = 80
+                    <p class="slide-context">8. Esercizi 5</p>                    
+                    <div class="row" style="margin-top:5vh">
+                        <div class="col" style="width: 35vw; margin-right:3vw">
+                            <p>Durante i tuoi studi scopri una mappa di un antico tempio, ove sono custoditi mirabolanti tesori.
+                            </p>
+                            <p>Il tempio misura <span class="code">d=80</span> metri di lato ed è un labirinto di corridoi. Sai
+                                per
+                                certo che alcune aree mostrate in rosso contengono pavimento fragile sotto il quale scorrono
+                                fiumi
+                                di lava incandescente: per avvertirti del pericolo mentre cammini, ti costruisci un detector che
+                                emetterà un suono quando sarai in zone rosse.</p>
+                            <p>Scrivi un’espressione booleana che restituisca <span class="code">True</span> se sei in una zona
+                                di
+                                pericolo, <span class="code">False</span> altrimenti.</p>
+                            <ul>
+                                <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                            </ul>
+                            <img style="display:block; margin-left:auto; margin-right:auto;" src="assets/bool-temple-1.png" alt="Image of the exercise">
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
+                            <span class="code">d</span></p>                            
+                        </div>                        
+                        
+                        
+                        <div class="col" style=" width:60vw;">
+                            <h3 class="title">Esercizio <br> Il Tempio di Lava</h3>    
+                            <div style="margin-top:5vh; height:65vh">
+                                <base-editor contenteditable="true" language="python" code="d = 80
 
-<EDITABLE>x,y = 0, 0     </EDITABLE># False
-<EDITABLE>#x,y = 20, 20  </EDITABLE># False
-<EDITABLE>#x,y = 60, 10  </EDITABLE># True
-<EDITABLE>#x,y = 10, 60  </EDITABLE># True
-<EDITABLE>#x,y = 20, 70  </EDITABLE># False
-<EDITABLE>#x,y = 70, 20  </EDITABLE># False
-<EDITABLE>#x,y = 70, 70  </EDITABLE># False
-<EDITABLE>#x,y = 0,60    </EDITABLE># True
-<EDITABLE>#x,y = 60,0    </EDITABLE># True
+x,y = 0, 0     # False
+#x,y = 20, 20  # False
+#x,y = 60, 10  # True
+#x,y = 10, 60  # True
+#x,y = 20, 70  # False
+#x,y = 70, 20  # False
+#x,y = 70, 70  # False
+#x,y = 0,60    # True
+#x,y = 60,0    # True
 
-soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE> 
+soluzione = LA_TUA_SOLUZIONE 
 
 print(soluzione)" />
+                            </div>
                         </div>
                     </div>
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 5/3</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <p class="fragment"><span class="code">((x &gt; d//2) or (y &gt; d//2)) and (x &lt; -y + d)</span>
-                    </p>
-                </section>
+                </section>                
             </section>
 
             <section>
                 <section>
-                    <p class="slide-context">8. Esercizi 6/1</p>
+                    <p class="slide-context">8. Esercizi 6</p>
                     <h3 class="title">Esercizio - Il Salto del Tubo</h3>
-                    <p>Un idraulico italiano vede 3 tubi di altezza rispettivamente <span class="code">t1</span>, <span
-                            class="code">t2</span>, <span class="code">t3</span>, sopra cui vi sono rispettivamente sono
-                        <span class="code">10</span>, <span class="code">20</span>, <span class="code">30</span> monete.
-                        Esaltato, spicca un balzo di altezza <span class="code">h</span>. Scrivi del codice che stampa
-                        quante monete raccoglie (<span class="code">10</span>, <span class="code">20</span> o <span
-                            class="code">30</span>).
-                    </p>
-                    <ul>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                        <li><strong>SUGGERIMENTO</strong>: se non sai come fare, riguardati le slide sull'<a
-                                href="#/11">Ordine
-                                di valutazione</a> e prova a pensare come produrre dei numeri solo quando una certa
-                            condizione è vera...</li>
-                    </ul>
-                    <img src="assets/bool-jump-1.png" alt="Image of the exercise">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 6/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">h</span>, <span class="code">t1</span>,
-                        <span class="code">t2</span>, <span class="code">t3</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza
-                    </p>
                     <div class="row">
                         <div class="col">
+                            <p>Un idraulico italiano vede 3 tubi di altezza rispettivamente <span class="code">t1</span>, <span
+                                    class="code">t2</span>, <span class="code">t3</span>, sopra cui vi sono rispettivamente sono
+                                <span class="code">10</span>, <span class="code">20</span>, <span class="code">30</span> monete.
+                                Esaltato, spicca un balzo di altezza <span class="code">h</span>. </p>
+                                
+                            <p>Scrivi del codice che stampa
+                            quante monete raccoglie (<span class="code">10</span>, <span class="code">20</span> o <span
+                                class="code">30</span>).</p>
+                            
+                            <ul>
+                                <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                                <li><strong>SUGGERIMENTO</strong>: se non sai come fare, riguardati le slide sull'<a
+                                        href="#/11">Ordine
+                                        di valutazione</a> e prova a pensare come produrre dei numeri solo quando una certa
+                                    condizione è vera...</li>
+                            </ul>
                             <img src="assets/bool-jump-1.png" alt="Image of the exercise">
-                            <p>Vai avanti per la soluzione!</p>
+                            <p>Inserisci la tua espressione, usando <span class="code">h</span>, <span class="code">t1</span>,
+                            <span class="code">t2</span>, <span class="code">t3</span></p>
                         </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
+                        <div class="col" style="width: 60vw; height:60vh;">
                             <base-editor contenteditable="true" language="python" code="t1,t2,t3 = 200,500,600
 
-<EDITABLE>h=450   </EDITABLE># 10
-<EDITABLE>#h=570  </EDITABLE># 20
-<EDITABLE>#h=610  </EDITABLE># 30
-<EDITABLE>#h=50   </EDITABLE># 0
+h=450   # 10
+#h=570  # 20
+#h=610  # 30
+#h=50   # 0
 
-soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE> 
+soluzione = LA_TUA_SOLUZIONE 
 
 print(soluzione)" />
                         </div>
                     </div>
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 6/3</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <p class="fragment"><span class="code">(h &gt;= t3 and 30) or (h &gt;= t2 and 20) or (h &gt;= t1 and
-                            10) or 0</span>
-                    </p>
                 </section>
             </section>
 
             <section>
                 <section>
-                    <p class="slide-context">8. Esercizi 7/1</p>
-                    <h3 class="title">Esercizio - La Torre di Gradius I</h3>
-                    <p>La lancetta dell’orologio sulla prima Torre di Gradius ha compiuto finora una rotazione di <span
-                            class="code">n</span> gradi. Scrivi del codice che mostra <span class="code">True</span> se
-                        la
-                        lancetta si trova nelle zone evidenziate, <span class="code">False</span> altrimenti.</p>
-                    <ul>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                        <li><span class="code">n</span> può essere maggiore di <span class="code">360</span></li>
-                    </ul>
-                    <p>Ci sono due modi di risolvere il problema:</p>
-                    <ol>
-                        <li>semplice: potresti scrivere una espressione lunga con diversi <span class="code">and</span>
-                            e
-                            <span class="code">or</span>
-                        </li>
-                        <li>più difficile: riesci a scrivere una sola espressione breve <em>senza</em> <span
-                                class="code">and</span> né <span class="code">or</span>?</li>
-                    </ol>
-                    <img src="assets/gradius-tower-1.png" alt="Image of the exercise">
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 7/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">n</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza</p>
+                    <p class="slide-context">8. Esercizi 7</p>                    
                     <div class="row">
-                        <div class="col">
+                        <div class="col" style="margin-top:5vh">   
+                            <p>La lancetta dell’orologio sulla prima Torre di Gradius ha compiuto finora una rotazione di <span
+                                    class="code">n</span> gradi. Scrivi del codice che mostra <span class="code">True</span> se
+                                la
+                                lancetta si trova nelle zone evidenziate, <span class="code">False</span> altrimenti.</p>
+                            <ul>
+                                <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                                <li><span class="code">n</span> può essere maggiore di <span class="code">360</span></li>
+                            </ul>
+                            <p>Ci sono due modi di risolvere il problema:</p>
+                            <ol>
+                                <li>semplice: potresti scrivere una espressione lunga con diversi <span class="code">and</span>
+                                    e
+                                    <span class="code">or</span>
+                                </li>
+                                <li>più difficile: riesci a scrivere una sola espressione breve <em>senza</em> <span
+                                        class="code">and</span> né <span class="code">or</span>?</li>
+                            </ol>
                             <img src="assets/gradius-tower-1.png" alt="Image of the exercise">
-                            <p>Vai avanti per la soluzione!</p>
-                        </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="<EDITABLE>n = 20    </EDITABLE># False
-<EDITABLE>#n = 405  </EDITABLE># False
-<EDITABLE>#n = 70   </EDITABLE># False
-<EDITABLE>#n = 100  </EDITABLE># True
-<EDITABLE>#n = 460  </EDITABLE># True
-<EDITABLE>#n = 225  </EDITABLE># True
-<EDITABLE>#n = 182  </EDITABLE># False
-<EDITABLE>#n = 253  </EDITABLE># False
-<EDITABLE>#n = 275  </EDITABLE># False
-<EDITABLE>#n = 205  </EDITABLE># False
-<EDITABLE>#n = 350  </EDITABLE># True
-<EDITABLE>#n = 925  </EDITABLE># False
-<EDITABLE>#n = 815  </EDITABLE># True
-<EDITABLE>#n = 92   </EDITABLE># True
+                            <p>Inserisci la tua espressione, usando <span class="code">n</span>.</p>                        
+                        </div>                                                                                    
+                        <div class="col" style="height: 60vh; width: 60vw;">
+                            <h3 class="title">Esercizio <br> La Torre di Gradius I</h3>
+                            <div style="margin-top:5vh;">
+                                <base-editor contenteditable="true" language="python" code="<EDITABLE>n = 20    </EDITABLE># False
+#n = 405  # False
+#n = 70   # False
+#n = 100  # True
+#n = 460  # True
+#n = 225  # True
+#n = 182  # False
+#n = 253  # False
+#n = 275  # False
+#n = 205  # False
+#n = 350  # True
+#n = 925  # False
+#n = 815  # True
+#n = 92   # True
 
-soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE> 
+soluzione = LA_TUA_SOLUZIONE 
 
 print(soluzione)" />
+                            </div>
                         </div>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">8. Esercizi 7/3</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <div class="r-stack">
-                        <div class="fragment fade-out" data-fragment-index="1">
-                            <h5 class="fragment" data-fragment-index="0">Soluzione 'lunga'</h5>
-                            <p class="fragment" data-fragment-index="0">Un primo problema da affrontare potrebbe essere
-                                il
-                                fatto
-                                che la lancetta può aver girato anche più di 360°. Per risolvere questo primo problema,
-                                possiamo
-                                direttamente usare il modulo: <span class="code">n % 360</span> che ci darà sempre un
-                                numero
-                                compreso tra 0 e 359 inclusi.</p>
-                            <p class="fragment" data-fragment-index="0">Già così potremmo risolvere abbastanza
-                                semplicemente
-                                l'esercizio con tanti and e or, per esempio:</p>
-                            <p class="fragment" data-fragment-index="0"><span class="code">(n % 360 &gt;= 90 and n % 360
-                                    &lt;
-                                    120) or (n % 360
-                                    &gt;= 210 and n % 360 &lt; 240) or (n % 360 &gt;= 330 and n % 360 &lt; 360) </span>
-                            </p>
-                        </div>
-                        <div class="fragment fade-in" data-fragment-index="1">
-                            <h5>Soluzione 'breve'</h5>
-                            <p>In alternativa, possiamo anche usare una soluzione breve, osservando il fatto che se
-                                consideri sequenze di 4 spicchi di 30° l'uno, ogni sequenza occupa 120° e a noi
-                                interessa sapere se la lancetta è nell'ultimo spicchio, tra 90° e 120°.</p>
-                            <p>Quindi possiamo
-                                usare creativamente il modulo per 'accorciare' la plancia e ignorare tutti i gradi dopo
-                                il 120esimo, e infine guardariamo se n sta nell'ultimo spicchio:</p>
-                            <p><span class="code">n % 120 &gt; 90</span></p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <p class="slide-context">8. Esercizi 8/1</p>
+                    <p class="slide-context">8. Esercizi 8</p>
                     <h3 class="title">Esercizio - La Torre di Gradius II</h3>
-                    <p>Le lancette dell’orologio sulla seconda Torre di Gradius hanno compiuto finora una rotazione
-                        rispettivamente di <span class="code">n</span> e <span class="code">m</span> gradi. Scrivi del
-                        codice che mostri <span class="code">True</span> se entrambe le lancette si trovano
-                        nella stessa zona tra quelle evidenziate, <span class="code">False</span> altrimenti.</p>
-                    <ul>
-                        <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                        <li><span class="code">n</span> e <span class="code">m</span> possono essere maggiori di <span
-                                class="code">360</span></li>
-                    </ul>
-
-                    <img src="assets/gradius-tower-2.png" alt="Image of the exercise">
-                </section>
-
-                <section>
-                    <p class="slide-context">8. Esercizi 8/2</p>
-                    <p>Inserisci la tua soluzione, usando <span class="code">n</span> e <span class="code">m</span>.
-                        Esegui
-                        il codice per verificare la sua correttezza</p>
                     <div class="row">
-                        <div class="col">
-                            <img src="assets/gradius-tower-2.png" alt="Image of the exercise">
-                            <p>Vai avanti per la soluzione!</p>
-                        </div>
-                        <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="
-<EDITABLE>n,m = 160,170   </EDITABLE># True
-<EDITABLE>#n,m = 135, 140 </EDITABLE># False
-<EDITABLE>#n,m = 160,190  </EDITABLE># False
-<EDITABLE>#n,m = 70,170   </EDITABLE># False
-<EDITABLE>#n,m = 350,260  </EDITABLE># False
-<EDITABLE>#n,m = 350,340  </EDITABLE># True
-<EDITABLE>#n,m = 350,340  </EDITABLE># True
-<EDITABLE>#n,m = 430,530  </EDITABLE># False
-<EDITABLE>#n,m = 520,510  </EDITABLE># True
-<EDITABLE>#n,m = 730,740  </EDITABLE># False
+                        <div class="col" style="margin-right:3vw">
+                            <p>Le lancette dell’orologio sulla seconda Torre di Gradius hanno compiuto finora una rotazione
+                                rispettivamente di <span class="code">n</span> e <span class="code">m</span> gradi.</p>
+                            <p>Scrivi del codice che mostri <span class="code">True</span> se entrambe le lancette si trovano
+                                nella stessa zona tra quelle evidenziate, <span class="code">False</span> altrimenti.</p>
+                            <ul>
+                                <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
+                                <li><span class="code">n</span> e <span class="code">m</span> possono essere maggiori di <span
+                                        class="code">360</span></li>
+                            </ul>
 
-soluzione = <EDITABLE>LA_TUA_SOLUZIONE</EDITABLE> 
+                            <img src="assets/gradius-tower-2.png" alt="Image of the exercise">
+
+                            <p>Inserisci la tua soluzione, usando <span class="code">n</span> e <span class="code">m</span>                        
+                        </div>                    
+                        <div class="col" style="height: 70vh; width: 60vw;">
+                            <base-editor contenteditable="true" language="python" code="
+n,m = 160,170   # True
+#n,m = 135, 140 # False
+#n,m = 160,190  # False
+#n,m = 70,170   # False
+#n,m = 350,260  # False
+#n,m = 350,340  # True
+#n,m = 350,340  # True
+#n,m = 430,530  # False
+#n,m = 520,510  # True
+#n,m = 730,740  # False
+
+soluzione = LA_TUA_SOLUZIONE 
 
 print(soluzione)" />
                         </div>
                     </div>
-                </section>
-                <section>
-                    <p class="slide-context">8. Esercizi 8/3</p>
-                    <h3>Sicuro di volere la soluzione?</h3>
-                    <p class="fragment"><span class="code">(n % 90 &gt; 60) and ((n // 90) % 4 == (m // 90) % 4)
-                        </span></p>
                 </section>
             </section>
         </div>

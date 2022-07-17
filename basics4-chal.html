@@ -83,9 +83,8 @@
                     <p class="slide-context">1. Quasi booleani 1</p>
                     <h3 class="title">Sfida - Quasi booleani 1?</h3>
                     <p>✪ Trova la riga che assegnando valori a <span class="code">x</span> e <span class="code">y</span>
-                        faccia in modo che la stampa stampi <span class="code">True</span>. Esiste una sola combinazione
-                        o più di una?
-                    </p>
+                        faccia in modo che la stampa stampi <span class="code">True</span></p>
+                        <p>Esiste una sola combinazione o più di una? </p>
                     <div style="width: 50vw; height: 50vh; margin-top: 7vh;">
                         <base-editor contenteditable="true" language="python" code="x = False; y = False
 #x = False; y = True
@@ -100,8 +99,8 @@ print(x and y)
                     <p class="slide-context">1. Quasi booleani 2</p>
                     <h3 class="title">Sfida - Quasi booleani 2?</h3>
                     <p>✪ Trova la riga che assegnando valori a <span class="code">x</span> e <span class="code">y</span>
-                        faccia in modo che la stampa stampi <span class="code">True</span>. Esiste una sola combinazione
-                        o più di una?
+                        faccia in modo che la stampa stampi <span class="code">True</span>. </p>
+                        <p>Esiste una sola combinazione o più di una? </p>
                     </p>
                     <div style="width: 50vw; height: 50vh; margin-top: 7vh;">
                         <base-editor contenteditable="true" language="python" code="x = False; y = False; z = False
@@ -120,65 +119,65 @@ print((x or y) and (not x and z))
             </section>
             <section>
                 <section>
-                    <p class="slide-context">2. Aeroporto 1</p>
+                    <p class="slide-context">2. Aeroporto</p>
                     <h3 class="title">Sfida - Aeroporto</h3>
-                    <div style="width: 60vw;">
-                        <p>✪✪ Finalmente decidi di prenderti una vacanza e vai all’aereoporto, ma già sai che dovrai
-                            fare varie code. Fortunatamente hai solo il bagaglio a mano, quindi ti rechi subito ai
-                            controlli di sicurezza, dove puoi scegliere tra tre file di <span class="code">sic1</span>,
-                            <span class="code">sic2</span> e <span class="code">sic3</span> persone. Ogni persona in
-                            media ci mette 4 minuti ad essere esaminata, te incluso, e ovviamente scegli la fila più
-                            corta. Dopodichè vai al gate, dove trovi due file di <span class="code">ga1</span> e <span
-                                class="code">ga2</span> persone, e sai che ogni persona te incluso in media ci mette 20
-                            secondi a passare: di nuovo scegli la fila più corta. Fortunatamente l’aereo è prossimo al
-                            gate quindi puoi subito scegliere se salire dalla fila in testa all’aereo con bo1 persone o
-                            dalla fila in coda all’aereo con <span class="code">bo2</span> persone. Per salire ogni
-                            passeggero te incluso in media ci mette 30 secondi, e scegli la coda più corta.</p>
-                        <p>Scrivi del codice per calcolare quanto tempo ci impieghi in totale ad entrare nell’aereo,
-                            mostrandolo in minuti e secondi</p>
-                        <p>Esempio: dati</p>
-                        <pre><code>sic1,sic2,sic3,ga1,ga2,bo1,bo2 = 4,5,8,5,2,7,6</code></pre>
-                        <p>il tuo codice deve stampare <span class="code">24 minuti e 30 secondi</span></p>
-                    </div>
-                </section>
-                <section>
-                    <p class="slide-context">2. Aeroporto 2</p>
-                    <h3 class="title">Editor - Aeroporto</h3>
-                    <div style="width: 70vw; height: 70vh;">
-                        <base-editor contenteditable="true" language="python" code="sic1,sic2,sic3,ga1,ga2,bo1,bo2 = 4,5,8,5,2,7,6   # 24 minuti e 30 secondi
+                    <div class="row">
+                        <div class="col">
+                            <div style="width: 45vw; margin-right:3vw;">
+                                <p>✪✪ Finalmente decidi di prenderti una vacanza e vai all’aereoporto, ma già sai che dovrai
+                                    fare varie code. Fortunatamente hai solo il bagaglio a mano, quindi ti rechi subito ai
+                                    controlli di sicurezza, dove puoi scegliere tra tre file di <span class="code">sic1</span>,
+                                    <span class="code">sic2</span> e <span class="code">sic3</span> persone. Ogni persona in
+                                    media ci mette 4 minuti ad essere esaminata, te incluso, e ovviamente scegli la fila più
+                                    corta. Dopodichè vai al gate, dove trovi due file di <span class="code">ga1</span> e <span
+                                        class="code">ga2</span> persone, e sai che ogni persona te incluso in media ci mette 20
+                                    secondi a passare: di nuovo scegli la fila più corta. Fortunatamente l’aereo è prossimo al
+                                    gate quindi puoi subito scegliere se salire dalla fila in testa all’aereo con bo1 persone o
+                                    dalla fila in coda all’aereo con <span class="code">bo2</span> persone. Per salire ogni
+                                    passeggero te incluso in media ci mette 30 secondi, e scegli la coda più corta.</p>
+                                <p>Scrivi del codice per calcolare quanto tempo ci impieghi in totale ad entrare nell’aereo,
+                                    mostrandolo in minuti e secondi</p>
+                                <p>Esempio: dati</p>
+                                <pre><code>sic1,sic2,sic3,ga1,ga2,bo1,bo2 = 4,5,8,5,2,7,6</code></pre>
+                                <p>il tuo codice deve stampare <span class="code">24 minuti e 30 secondi</span></p>
+                            </div>
+                        </div>
+                        <div style="width: 50vw; height: 70vh;">
+                            <base-editor contenteditable="true" language="python" code="sic1,sic2,sic3,ga1,ga2,bo1,bo2 = 4,5,8,5,2,7,6   # 24 minuti e 30 secondi
 #sic1,sic2,sic3,ga1,ga2,bo1,bo2 = 9,7,1,3,5,2,9  # 10 minuti e 50 secondi
 
 # scrivi qui
 " />
+                        </div>
                     </div>
+                        
                 </section>
             </section>
             <section>
                 <section>
-                    <p class="slide-context">3. Boccino 1</p>
+                    <p class="slide-context">3. Boccino</p>
                     <h3 class="title">Sfida - Teoria del boccino</h3>
-                    <div style="width: 70vw;">
-                        <p>Vengono tirate delle bocce, con l’obiettivo di avvicinarsi il più possibile al boccino rosso.
-                        </p>
-                        <ol>
-                            <li>Scrivi del codice che mostra <span class="code">True</span> se una certa boccia è dentro
-                                la fascia scura, <span class="code">False</span> altrimenti</li>
-                            <li>Scrivi del codice che mostra <span class="code">True</span> se una certa boccia è dentro
-                                il cerchio, <span class="code">False</span> altrimenti (SUGGERIMENTO: avrai bisogno di
-                                calcolare la distanza dal boccino con <span class="code">math.sqrt</span> …)</li>
-                        </ol>
-                        <p><strong>NON usare l’istruzione if</strong></p>
-                    </div>
-                    <img src="assets/bocce.png" alt="Immagine esercizio">
-                </section>
-                <section>
-                    <p class="slide-context">3. Boccino 2</p>
-                    <h3 class="title">Editor - Teoria del boccino</h3>
-                    <div class="row" style="width: 100%;">
-                        <div class="col" style="flex: 1;">
-                            <img src="assets/bocce.png" alt="Immagine esercizio">
+                    <div class="row">                        
+                        <div class="col" style="width: 50vw; margin-right:5vw;">
+                            <div class="row" style="margin-right:1vw;">   
+                                <div class="col">
+                                    <p>Vengono tirate delle bocce, con l’obiettivo di avvicinarsi il più possibile al boccino rosso.</p>
+                                    <ol>
+                                        <li>Scrivi del codice che mostra <span class="code">True</span> se una certa boccia è dentro
+                                            la fascia scura, <span class="code">False</span> altrimenti</li>
+                                        <li>Scrivi del codice che mostra <span class="code">True</span> se una certa boccia è dentro
+                                            il cerchio, <span class="code">False</span> altrimenti (SUGGERIMENTO: avrai bisogno di
+                                            calcolare la distanza dal boccino con <span class="code">math.sqrt</span> …)</li>
+                                    </ol>
+                                    <p><strong>NON usare l’istruzione if</strong></p>
+                                </div>
+                                <div class="col">
+                                    <img src="assets/bocce.png" alt="Immagine esercizio">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col" style="flex: 2; width: 100%; height: 70vh;">
+                    
+                        <div class="col" style="width: 40vw; height: 70vh;">
                             <base-editor contenteditable="true" language="python" code="import math
 
 h = 30
@@ -201,44 +200,40 @@ x=17; y=25   # a   fascia: False   cerchio: False
             </section>
             <section>
                 <section>
-                    <p class="slide-context">4. Space mining 1</p>
-                    <h3 class="title">Sfida - Space Mining</h3>
-                    <div style="width: 60vw;">
-                        <p>✪✪ Un robot è atterrato sul pianeta Zorbon 5, con il compito di trivellare il terreno per
-                            estrarre il prezioso metallo Tiberium. La zona di ricerca ha lato <span
-                                class="code">d</span> ed è divisa in settori, con l’origine (0,0) al centro. I colori
-                            nella mappa rappresentano la densità di Tiberium:</p>
-                        <div class="row">
-                            <div class="col">
+                    <p class="slide-context">4. Space mining</p>                    
+                    <div class="row">
+                        <div class="col" style="width:60vw; margin-right:5vw">
+                            <div>
+                                <p>✪✪ Un robot è atterrato sul pianeta Zorbon 5, con il compito di trivellare il terreno per
+                                    estrarre il prezioso metallo Tiberium. La zona di ricerca ha lato <span
+                                        class="code">d</span> ed è divisa in settori, con l’origine (0,0) al centro. I colori
+                                    nella mappa rappresentano la densità di Tiberium:</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <ul>
+                                            <li>rosso: 3</li>
+                                            <li>arancione: 2</li>
+                                            <li>giallo: 1</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <img src="assets/space-mining.png" alt="Immagine esercizio">
+                                    </div>
+                                </div>
+                                <p>Il robot conosce le proprie coordinate <span class="code">x</span> e <span
+                                        class="code">y</span>: scrivi del codice che stampa la densità di Tiberium
+                                    corrispondente alla posizione del robot.</p>
                                 <ul>
-                                    <li>rosso: 3</li>
-                                    <li>arancione: 2</li>
-                                    <li>giallo: 1</li>
+                                    <li><strong>NON usare l'istruzione if</strong></li>
+                                    <li><strong>SUGGERIMENTO:</strong> usa la funzione <span class="code">abs(x)</span> per
+                                        calcolare il valore assoluto</li>
                                 </ul>
                             </div>
-                            <div class="col">
-                                <img src="assets/space-mining.png" alt="Immagine esercizio">
-                            </div>
                         </div>
-                        <p>Il robot conosce le proprie coordinate <span class="code">x</span> e <span
-                                class="code">y</span>: scrivi del codice che stampa la densità di Tiberium
-                            corrispondente alla posizione del robot.</p>
-                        <ul>
-                            <li><strong>NON usare l'istruzione if</strong></li>
-                            <li><strong>SUGGERIMENTO:</strong> usa la funzione <span class="code">abs(x)</span> per
-                                calcolare il valore assoluto</li>
-                        </ul>
-                    </div>
-                </section>
-                <section>
-                    <p class="slide-context">4. Space mining 2</p>
-                    <h3 class="title">Editor - Space Mining</h3>
-                    <div class="row" style="width: 100%;">
-                        <div class="col" style="flex: 1;">
-                            <img src="assets/space-mining.png" alt="Immagine esercizio">
-                        </div>
-                        <div class="col" style="flex: 2; width: 100%; height: 70vh;">
-                            <base-editor contenteditable="true" language="python" code="d = 30
+                        <div class="col" style="width: 100%;">
+                            <h3 class="title">Sfida - Space Mining</h3>
+                            <div style="margin-top:6vh; height: 70vh;">
+                                <base-editor contenteditable="true" language="python" code="d = 30
 
 x,y = 0, 0       # 3
 #x,y = 2, 2      # 3
@@ -256,34 +251,29 @@ x,y = 0, 0       # 3
 
 # scrivi qui
 " />
+                            </div>
                         </div>
                     </div>
                 </section>
             </section>
             <section>
                 <section>
-                    <p class="slide-context">5. La fabbrica infinita 1</p>
-                    <h3 class="title">Sfida - La fabbrica infinita</h3>
-                    <div style="width: 60vw;">
-                        <p>✪✪ Nel regno di Steamland esiste una fabbrica che si dice si estenda all’infinito.</p>
-                        <p>La fabbrica è popolata da robot che in prossimità degli incroci dei corridoi grigio chiari e gialli hanno il compito di azionare i complessi meccanismi a vapore che governano la fabbrica. Ogni robot conosce la sua posizione <span class="code">x</span>, <span class="code">y</span>. L’origine è in basso a sinistra e ogni corridoio è largo <span class="code">m</span>.</p>
-                        <p>Scrivi del codice che stampa <span class="code">True</span> quando i robot sono negli incroci, e <span class="code">False</span> altrimenti.</p>
-                        <ul>
-                            <li><strong>NON usare l'istruzione if</strong></li>
-                            <li>Il tuo codice deve funzionare anche per qualsiasi valore di <span class="code">x</span> e <span class="code">y</span>, anche enormi</li>
-                        </ul>
-                        <img src="assets/factory-grid-1.png" alt="Immagine esercizio">
-                    </div>
-                </section>
-                <section>
-                    <p class="slide-context">5. La fabbrica infinita 2</p>
-                    <h3 class="title">Editor - La fabbrica infinita</h3>
-                    <div class="row" style="width: 100%;">
-                        <div class="col" style="flex: 1;">
+                    <p class="slide-context">5. La fabbrica infinita</p>                    
+                    <div class="row">
+                        <div class="col" style="width:60vw; margin-right:5vw; margin-top:5vh;">                    
+                            <p>✪✪ Nel regno di Steamland esiste una fabbrica che si dice si estenda all’infinito.
+                            La fabbrica è popolata da robot che in prossimità degli incroci dei corridoi grigio chiari e gialli hanno il compito di azionare i complessi meccanismi a vapore che governano la fabbrica. Ogni robot conosce la sua posizione <span class="code">x</span>, <span class="code">y</span>. L’origine è in basso a sinistra e ogni corridoio è largo <span class="code">m</span>.</p>
+                            <p>Scrivi del codice che stampa <span class="code">True</span> quando i robot sono negli incroci, e <span class="code">False</span> altrimenti.</p>
+                            <ul>
+                                <li><strong>NON usare l'istruzione if</strong></li>
+                                <li>Il tuo codice deve funzionare anche per qualsiasi valore di <span class="code">x</span> e <span class="code">y</span>, anche enormi</li>
+                            </ul>
                             <img src="assets/factory-grid-1.png" alt="Immagine esercizio">
                         </div>
-                        <div class="col" style="flex: 2; width: 100%; height: 70vh;">
-                            <base-editor contenteditable="true" language="python" code="m = 10
+                        <div class="col" style="width: 100%;">
+                            <h3 class="title">Sfida <br>La fabbrica infinita</h3>
+                            <div style="margin-top:6vh; height: 70vh;">
+                                <base-editor contenteditable="true" language="python" code="m = 10
 
 x,y = 2.5 * m, 0.5 * m       # True
 #x,y = 2.5 * m, 1.5 * m      # False
@@ -297,40 +287,37 @@ x,y = 2.5 * m, 0.5 * m       # True
 
 # scrivi qui
 " />
+                            
+                            </div>
                         </div>
                     </div>
                 </section>
             </section>
             <section>
                 <section>
-                    <p class="slide-context">6. L'anello di luce 1</p>
-                    <h3 class="title">Sfida - L'anello di luce</h3>
-                    <div style="width: 60vw;">
-                        <p>✪✪✪ Il malvagio stregone Tenebron ha scagliato una maledizione contro il tuo regno, e Re Tribolatus corre trafelato nel tuo studio alchemico implorandoti di contrastare queste forze oscure. Per fortuna, leggendo i tuoi grimori scopri il rituale del RendeRing che è in grado di erigere un anello di forza intorno al regno. Il sortilegio prescrive di tracciare un anello con un’intensità che varia da <span class="code">0.0</span> (buio) fino all’intensità massima <span class="code">5.0</span> (bianco). L’intensità aumenta linearmente fino a che si raggiunge il raggio <span class="code">r=5.0</span>, dopodichè descresce linearmente fino a raggiungere lo <span class="code">0.0</span></p>
-                        <p>Data la posizione <span class="code">x</span>, <span class="code">y</span>, scrivi del codice che calcola l’intensità di luce.</p>
-                        <div class="row">
-                            <div class="col">
-                                <ul>
-                                    <li><strong>NON usare l'istruzione if</strong></li>
-                                    <li><strong>NOTA:</strong> l'intensità non può mai essere negativa</li>
-                                    <li><strong>SUGGERIMENTO:</strong> usa <span class="code">math.sqrt</span></li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <img src="assets/the-ring.png" alt="Immagine esercizio">
+                    <p class="slide-context">6. L'anello di luce</p>                    
+                    <div class="row">                    
+                        <div class="col" style="width:60vw; margin-right:5vw; margin-top:5vh;">
+                            <h3 class="title" style="margin-top:4vh;">Sfida - L'anello di luce</h3>
+                            <p>✪✪✪ Il malvagio stregone Tenebron ha scagliato una maledizione contro il tuo regno, e Re Tribolatus corre trafelato nel tuo studio alchemico implorandoti di contrastare queste forze oscure. Per fortuna, leggendo i tuoi grimori scopri il rituale del RendeRing che è in grado di erigere un anello di forza intorno al regno. Il sortilegio prescrive di tracciare un anello con un’intensità che varia da <span class="code">0.0</span> (buio) fino all’intensità massima <span class="code">5.0</span> (bianco). L’intensità aumenta linearmente fino a che si raggiunge il raggio <span class="code">r=5.0</span>, dopodichè descresce linearmente fino a raggiungere lo <span class="code">0.0</span></p>
+                            <p>Data la posizione <span class="code">x</span>, <span class="code">y</span>, scrivi del codice che calcola l’intensità di luce.</p>
+                            <div class="row">
+                                <div class="col">
+                                    <ul>
+                                        <li><strong>NON usare l'istruzione if</strong></li>
+                                        <li><strong>NOTA:</strong> l'intensità non può mai essere negativa</li>
+                                        <li><strong>SUGGERIMENTO:</strong> usa <span class="code">math.sqrt</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <img src="assets/the-ring.png" alt="Immagine esercizio">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <section>
-                    <p class="slide-context">6. L'anello di luce 2</p>
-                    <h3 class="title">Sfida - L'anello di luce</h3>
-                    <div class="row" style="width: 100%;">
-                        <div class="col" style="flex: 1;">
-                            <img src="assets/the-ring.png" alt="Immagine esercizio">
-                        </div>
-                        <div class="col" style="flex: 2; width: 100%; height: 70vh;">
-                            <base-editor contenteditable="true" language="python" code="import math
+                        
+                        <div class="col" style="width: 100%;">
+                            <div style="margin-top:6vh; height: 90vh;">
+                                <base-editor contenteditable="true" language="python" code="import math
 
 r = 5.0
 
@@ -350,6 +337,7 @@ x,y = 0,0    #  0.0
 
 # scrivi qui
 " />
+                            </div>
                         </div>
                     </div>
                 </section>

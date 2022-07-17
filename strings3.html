@@ -148,27 +148,29 @@
             <section>
                 <section>
                     <p class="slide-context">2. Upper 1</p>
-                    <h3 class="title">Metodo <span class="code">upper</span></h3>
+                    <strong>Metodo <span class="code">upper</span></strong>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li><span class="code">str.upper()</span> prende la stringa su cui è applicato creandone
-                                    una nuova con tutti i caratteri in maiuscolo</li>
+                                <li><span class="code">str.upper()</span> prende la stringa su cui è applicato  </li>
+                                <li> ne crea una NUOVA con tutti i caratteri in maiuscolo</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print('ciao'.upper())
+                            <base-editor contenteditable="true" language="python" code="
+print( 'ciao'.upper() )
 
 # Può essere anche applicato ad una variabile!
+
 x = 'mondo'
-print(x.upper())" />
+print( x.upper() )" />
                         </div>
                     </div>
                 </section>
                 <section>
                     <p class="slide-context">2. Upper 2</p>
                     <h3 class="title">Esercizio - cammina</h3>
-                    <p>Scrivere del codice che data una stringa x (per es: <span class="code">x='cammina'</span>) stampa
+                    <p>Scrivi del codice che data una stringa x (per es: <span class="code">x='cammina'</span>) stampa
                         due volta la riga</p>
                     <pre style="width: auto;"><code>cammina CAMMINA cammina CAMMINA
 cammina CAMMINA cammina CAMMINA</code></pre>
@@ -178,6 +180,7 @@ cammina CAMMINA cammina CAMMINA</code></pre>
                     </ul>
                     <div style="height: 50vh; width: 55vw;">
                         <base-editor contenteditable="true" language="python" code="x = 'cammina'
+#x = 'corri'
 
 # scrivi qui
 " />
@@ -197,34 +200,27 @@ cammina CAMMINA cammina CAMMINA</code></pre>
                 <section>
                     <p class="slide-context">2. Esercizi vari 1</p>
                     <h3 class="title">Esercizio - lowermezzo</h3>
-                    <div style="width: 60vw;">
-                        <p>Scrivi del codice che data una stringa qualsiasi <span class="code">x</span> di lunghezza
-                            dispari, stampa una nuova stringa uguale a <span class="code">x</span> eccetto al carattere
-                            in mezzo che deve essere in minuscolo.</p>
-                        <ul>
-                            <li>Il tuo codice deve funzionare con qualunque stringa!</li>
-                            <li><strong>SUGGERIMENTO:</strong> per calcolare la posizione del carattere in mezzo, usa la
-                                divisione intera con l’operatore <span class="code">//</span></li>
-                        </ul>
-                    </div>
-                    <p>Esempio: dato</p>
-                    <pre style="width: auto;"><code>x = 'ASCENSORE'</code></pre>
-                    <p>il tuo codice deve stampare <span class="code">ASCEnSORE</span></p>
-                    <p>Esempio: dato</p>
-                    <pre style="width: auto;"><code>x = 'LAMPADA'</code></pre>
-                    <p>il tuo codice deve stampare <span class="code">LAMpADA</span></p>
-                </section>
-                <section>
-                    <p class="slide-context">2. Esercizi vari 2</p>
-                    <h3 class="title">Esercizio - lowermezzo</h3>
                     <div class="row">
                         <div class="col">
-                            <p>Dato</p>
+                            <div style="width: 40vw; text-align:left; margin-left:3vw">
+                                <p>Scrivi del codice che data una stringa qualsiasi <span class="code">x</span> di lunghezza
+                                    dispari, stampa una nuova stringa uguale a <span class="code">x</span> eccetto al carattere
+                                    in mezzo che deve essere in minuscolo</p>
+                                <ul>
+                                    <li>Il tuo codice deve funzionare con qualunque stringa!</li>
+                                    <li><strong>SUGGERIMENTO:</strong> per calcolare la posizione del carattere in mezzo, usa la
+                                        divisione intera con l’operatore <span class="code">//</span></li>
+                                </ul>
+                            </div>
+                            <p>Esempio: dato</p>
                             <pre><code>x = 'ASCENSORE'</code></pre>
                             <p>il tuo codice deve stampare <span class="code">ASCEnSORE</span></p>
+                            <p>Esempio: dato</p>
+                            <pre><code>x = 'LAMPADA'</code></pre>
+                            <p>il tuo codice deve stampare <span class="code">LAMpADA</span></p>                            
                         </div>
-                        <div class="col">
-                            <div style="height: 50vh; width: 40vw;">
+                        <div class="col">                    
+                            <div style="height: 50vh; width: 60vw;">
                                 <base-editor contenteditable="true" language="python" code="#    012345678
 x = 'ASCENSORE'
 k = len(x) // 2
@@ -236,33 +232,25 @@ k = len(x) // 2
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 3</p>
-                    <h3 class="title">Esercizio - Vostra Eccellenza</h3>
-                    <div style="width: 65vw;">
-                        <p>Scrivere del codice che date due stringhe qualsiasi <span class="code">x</span> e <span
-                                class="code">y</span> restituisce le due stringhe concatenate, separandole con uno
-                            spazio ed entrambe tutte in minuscolo eccetto le rispettive prime lettere che devono essere
-                            maiuscole.</p>
-                    </div>
-                    <p>Esempio: dati</p>
-                    <pre style="width: auto;"><code>x = 'vosTRA'
-y = 'ecCeLLeNza'</code></pre>
-                    <p>il tuo codice deve stampare <span class="code">Vostra Eccellenza</span></p>
-                    <p>Esempio: dati</p>
-                    <pre style="width: auto;"><code>x = 'sUa'
-y = 'maEStà'</code></pre>
-                    <p>il tuo codice deve stampare <span class="code">Sua Maestà</span></p>
-                </section>
-                <section>
-                    <p class="slide-context">2. Esercizi vari 4</p>
-                    <h3 class="title">Esercizio - Vostra Eccellenza</h3>
                     <div class="row">
-                        <div class="col">
-                            <p>Dato</p>
-                            <pre><code>x = 'vosTRA'
+                            <div class="col">
+                                <p class="slide-context">2. Esercizi vari 2</p>
+                                <h3 class="title">Esercizio - Vostra Eccellenza</h3>
+                                <div style="width: 90%;">
+                                    <p>Scrivere del codice che date due stringhe qualsiasi <span class="code">x</span> e <span
+                                            class="code">y</span> restituisce le due stringhe concatenate, separandole con uno
+                                        spazio ed entrambe tutte in minuscolo eccetto le rispettive prime lettere che devono essere
+                                        maiuscole.</p>
+                                </div>
+                                <p>Esempio: dati</p>
+                                <pre><code>x = 'vosTRA'
 y = 'ecCeLLeNza'</code></pre>
-                            <p>il tuo codice deve stampare <span class="code">Vostra Eccellenza</span></p>
-                        </div>
+                                <p>il tuo codice deve stampare <span class="code">Vostra Eccellenza</span></p>
+                                <p>Esempio: dati</p>
+                                <pre><code>x = 'sUa'
+y = 'maEStà'</code></pre>
+                                <p>il tuo codice deve stampare <span class="code">Sua Maestà</span></p>
+                        </div>                        
                         <div class="col">
                             <div style="height: 50vh; width: 40vw;">
                                 <base-editor contenteditable="true" language="python" code="x,y = 'vosTRA', 'ecCeLLeNza'
@@ -270,12 +258,12 @@ y = 'ecCeLLeNza'</code></pre>
 
 # scrivi qui
 " />
-                            </div>
+                            
                         </div>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 5</p>
+                    <p class="slide-context">2. Esercizi vari 3</p>
                     <h3 class="title">Esercizio - Per Giove</h3>
                     <div style="width: 65vw;">
                         <p>Scrivere del codice che date tre stringhe qualsiasi <span class="code">x</span>, <span
@@ -284,46 +272,39 @@ y = 'ecCeLLeNza'</code></pre>
                                 class="code">y</span> iniziano con la stringa <span class="code">z</span>, altrimenti
                             stampa <span class="code">False</span></p>
                     </div>
-                    <div class="row" style="width: 100%; gap: 3vw;">
-                        <div class="col">
-                            <p>Esempio: dati</p>
-                            <pre style="width: auto;"><code>x = 'per Giove'
-y = 'per Zeus'
-z = 'per'</code></pre>
-                            <p>il codice deve stampare <span class="code">True</span></p>
-                        </div>
-                        <div class="col">
-                            <p>Esempio: dati</p>
-                            <pre style="width: auto;"><code>x = 'per Giove'
-y = 'per Zeus'
-z = 'da'</code></pre>
-                            <p>il codice deve stampare <span class="code">False</span></p>
-                        </div>
-                        <div class="col">
-                            <p>Esempio: dati</p>
-                            <pre style="width: auto;"><code>x = 'da Giove'
-y = 'per Zeus'
-z = 'per'</code></pre>
-                            <p>il codice deve stampare <span class="code">False</span></p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <p class="slide-context">2. Esercizi vari 6</p>
-                    <h3 class="title">Esercizio - Per Giove</h3>
                     <div class="row">
-                        <div class="col">
-                            <p>Dati</p>
-                            <pre><code>x = 'per Giove'
+                        <div class="col" style="width:40vw;">
+                            <table> 
+                                <tr>
+                                    <th>Dati:</th>
+                                    <th>il codice deve stampare:</th>
+                                </tr>
+                                <tr>
+                                    <td><pre style="width: auto;"><code>x = 'per Giove'
 y = 'per Zeus'
-z = 'per'</code></pre>
-                            <p>il codice deve stampare <span class="code">True</span></p>
+z = 'per'</code></pre></td>
+                                    <td><span class="code">True</span></td>
+                                </tr>
+                                <tr>
+                                    <td><pre style="width: auto;"><code>x = 'per Giove'
+y = 'per Zeus'
+z = 'da'</code></pre></td>
+                                    <td><span class="code">False</span></td>
+                                </tr>
+                                <tr>
+                                    <td><pre style="width: auto;"><code>x = 'da Giove'
+y = 'per Zeus'
+z = 'per'</code></pre></td>
+                                    <td><span class="code">False</span></td>
+                                </tr>
+                                                        
+                            </table>
                         </div>
-                        <div class="col">
-                            <div style="height: 50vh; width: 40vw;">
-                                <base-editor contenteditable="true" language="python" code="x = 'per Giove'
-y = 'per Zeus'
-z = 'per'
+                        <div class="col" style="width:50vw;">
+                            <div style="height:50vh">
+                                <base-editor contenteditable="true" language="python" code="x,y,z = 'per Giove', 'per Zeus', 'per'    # True
+#x,y,z = 'per Giove', 'per Zeus', 'da'    # False
+#x,y,z = 'da Giove', 'per Zeus', 'per'    # False
 
 # scrivi qui
 " />
@@ -332,13 +313,14 @@ z = 'per'
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 7</p>
+                    <p class="slide-context">2. Esercizi vari 4</p>
                     <h3 class="title">Esercizio - Snobbonis</h3>
                     <div style="width: 65vw;">
                         <p>Dati nomi di coppie <span class="code">marito</span> e <span class="code">moglie</span>,
-                            scrivi del codice che stampa <span class="code">True</span> se condividono il cognome, <span
+                            scrivi del codice che </p>
+                        <p> stampa <span class="code">True</span> se condividono il cognome, <span
                                 class="code">False</span> altrimenti.</p>
-                        <ul>
+                        <ul style="margin-top:3vh">                        
                             <li>assumi che il cognome sia sempre alla stessa posizione</li>
                             <li>il tuo codice deve funzionare per qualsiasi coppia <span class="code">marito</span>
                                 <span class="code">moglie</span>
@@ -355,7 +337,7 @@ marito, moglie = 'Antonio  Snobbonis',     'Carolina Snobbonis'   # True
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 8</p>
+                    <p class="slide-context">2. Esercizi vari 5</p>
                     <h3 class="title">Esercizio - Combattiamo gli hacker</h3>
                     <div style="width: 65vw;">
                         <p>Come è noto nei piani bassi dell’Interpol, gli hacker internazionali comunicano usando una
@@ -381,7 +363,7 @@ etc</code></pre>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 9</p>
+                    <p class="slide-context">2. Esercizi vari 6</p>
                     <h3 class="title">Esercizio - Combattiamo gli hacker</h3>
                     <div class="row" style="width: 90vw;">
                         <div class="col">
@@ -405,7 +387,7 @@ cognome = 'H4ck3r'</code></pre>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 10</p>
+                    <p class="slide-context">2. Esercizi vari 7</p>
                     <h3 class="title">Esercizio - Vendere numeri</h3>
                     <div style="width: 65vw;">
                         <p>La multinazionale ToxiCorp è riuscita a mettere le mani su un tesoro di dati personali di
@@ -425,7 +407,7 @@ cognome = 'H4ck3r'</code></pre>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 11</p>
+                    <p class="slide-context">2. Esercizi vari 8</p>
                     <h3 class="title">Esercizio - Vendere numeri</h3>
                     <div class="row" style="width: 90vw;">
                         <div class="col">
@@ -449,7 +431,7 @@ cognome = 'H4ck3r'</code></pre>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 12</p>
+                    <p class="slide-context">2. Esercizi vari 9</p>
                     <h3 class="title">Esercizio - nani e GIGANTI</h3>
                     <div style="width: 65vw;">
                         <p>In un mondo fantasy eccitante e sconosciuto vivono due popolazioni: si tratta dei nani e dei
@@ -482,7 +464,7 @@ cognome = 'H4ck3r'</code></pre>
                     </div>
                 </section>
                 <section>
-                    <p class="slide-context">2. Esercizi vari 13</p>
+                    <p class="slide-context">2. Esercizi vari 10</p>
                     <h3 class="title">Esercizio - nani e GIGANTI</h3>
                     <div class="row" style="width: 90vw;">
                         <div class="col">

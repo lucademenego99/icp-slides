@@ -41,15 +41,6 @@
             background-color: transparent;
             color: black;
         }
-
-        .slide-context {
-            position: absolute;
-            top: 0;
-            left: 3vw;
-            font-size: 3vmin;
-            font-weight: 100;
-            letter-spacing: .3vmin;
-        }
     </style>
 </head>
 
@@ -373,9 +364,7 @@ te</code></pre>
                             </table>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code='
-
-# ESEMPIO
+                            <base-editor contenteditable="true" language="python" code='# ESEMPIO
 print("Così metto \"doppie virgolette\" nella stringa")' />
                         </div>
                     </div>
@@ -560,8 +549,8 @@ x = x + 'mondo'</code></pre>
                 </section>
                 <section>
                     <p class="slide-context">5. Immutabilità 6</p>                    
-                    <div class="row" style="width: 90%; margin-top: 1vh;">
-                        <div class="col" style="text-align: left; height: 40vh; width: 40vw; margin-left: 1vw;">
+                    <div class="row" style="width: 90%;">
+                        <div class="col" style="text-align: left; height: 100%; width: 40vw; margin-left: 1vw;">
                             <h3 class="title">Esercizio</h3>
                             <p>Scrivi del codice che cambia lo stato della memoria in modo che alla fine risulti la stampa
                                 seguente:</p>
@@ -578,7 +567,7 @@ s =  Questo era un problema</code></pre>
                                 <li>puoi usare ogni simbolo quante volte vuoi</li>
                             </ul>
                         </div>
-                        <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">                            
+                        <div class="col" style="height: 100%; width: 40vw; margin-left: 1vw;">                            
                             <div class="col" style="height: 70vh; width: 40vw; margin-right: 1vw;">
                                 <base-editor contenteditable="true" language="python" code="# Queste variabili ti sono date
 z = 'Questo'

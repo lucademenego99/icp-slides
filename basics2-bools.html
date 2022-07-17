@@ -30,15 +30,6 @@
             background-color: rgb(215, 237, 255);
             font-family: monospace;
         }
-
-        .slide-context {
-            position: absolute;
-            top: 0;
-            left: 3vw;
-            font-size: 3vmin;
-            font-weight: 100;
-            letter-spacing: .3vmin;
-        }
     </style>
 </head>
 
@@ -1135,7 +1126,7 @@ print(x == y)" />
                     <p class="slide-context">8. Esercizi 1</p>                    
                     <div class="row">
                         <div class="col" style="width:45vw; margin-right:2vw">
-                            <p>Il dottor Angelo possiede un prato di area quadrata di lato <span class="code">d=100</span> metri
+                            <p class="small">Il dottor Angelo possiede un prato di area quadrata di lato <span class="code">d=100</span> metri
                                 che
                                 viene accudito ogni settimana da Jobe il giardiniere. Jobe passa sempre meticolosomente il
                                 tagliarbe
@@ -1165,9 +1156,9 @@ print(x == y)" />
                             </p>                        
                             
                         </div>
-                        <div class="col" style="height: 60vh; width: 50vw;">
-                            <h3 class="title">Esercizio <br> Il tagliaerbe 1</h3>
-                            <div style="margin-top:5vh; height:100%">
+                        <div class="col" style="height: 100%; width: 50vw;">
+                            <h4 class="subtitle">Esercizio <br> Il tagliaerbe 1</h4 class="subtitle">
+                            <div style="height:60vh">
                                 <base-editor contenteditable="true" language="python" code="d = 100
 
 <EDITABLE>x,y = 0,  0      </EDITABLE># False
@@ -1294,14 +1285,14 @@ print(soluzione)" />
                     <p class="slide-context">8. Esercizi 5</p>                    
                     <div class="row" style="margin-top:5vh">
                         <div class="col" style="width: 35vw; margin-right:3vw">
-                            <p>Durante i tuoi studi scopri una mappa di un antico tempio, ove sono custoditi mirabolanti tesori.
-                            </p>
-                            <p>Il tempio misura <span class="code">d=80</span> metri di lato ed è un labirinto di corridoi. Sai
+                            <p class="small">Durante i tuoi studi scopri una mappa di un antico tempio, ove sono custoditi mirabolanti tesori.
+                                Il tempio misura <span class="code">d=80</span> metri di lato ed è un labirinto di corridoi. Sai
                                 per
                                 certo che alcune aree mostrate in rosso contengono pavimento fragile sotto il quale scorrono
                                 fiumi
                                 di lava incandescente: per avvertirti del pericolo mentre cammini, ti costruisci un detector che
-                                emetterà un suono quando sarai in zone rosse.</p>
+                                emetterà un suono quando sarai in zone rosse.
+                            </p>
                             <p>Scrivi un’espressione booleana che restituisca <span class="code">True</span> se sei in una zona
                                 di
                                 pericolo, <span class="code">False</span> altrimenti.</p>
@@ -1315,7 +1306,7 @@ print(soluzione)" />
                         
                         
                         <div class="col" style=" width:60vw;">
-                            <h3 class="title">Esercizio <br> Il Tempio di Lava</h3>    
+                            <h4 class="subtitle">Esercizio <br> Il Tempio di Lava</h4>    
                             <div style="margin-top:5vh; height:65vh">
                                 <base-editor contenteditable="true" language="python" code="d = 80
 
@@ -1344,7 +1335,7 @@ print(soluzione)" />
                     <h3 class="title">Esercizio - Il Salto del Tubo</h3>
                     <div class="row">
                         <div class="col">
-                            <p>Un idraulico italiano vede 3 tubi di altezza rispettivamente <span class="code">t1</span>, <span
+                            <p class="small">Un idraulico italiano vede 3 tubi di altezza rispettivamente <span class="code">t1</span>, <span
                                     class="code">t2</span>, <span class="code">t3</span>, sopra cui vi sono rispettivamente sono
                                 <span class="code">10</span>, <span class="code">20</span>, <span class="code">30</span> monete.
                                 Esaltato, spicca un balzo di altezza <span class="code">h</span>. </p>
@@ -1393,8 +1384,8 @@ print(soluzione)" />
                                 <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
                                 <li><span class="code">n</span> può essere maggiore di <span class="code">360</span></li>
                             </ul>
-                            <p>Ci sono due modi di risolvere il problema:</p>
-                            <ol>
+                            <p class="small">Ci sono due modi di risolvere il problema:</p>
+                            <ol class="small">
                                 <li>semplice: potresti scrivere una espressione lunga con diversi <span class="code">and</span>
                                     e
                                     <span class="code">or</span>
@@ -1405,9 +1396,9 @@ print(soluzione)" />
                             <img src="assets/gradius-tower-1.png" alt="Image of the exercise">
                             <p>Inserisci la tua espressione, usando <span class="code">n</span>.</p>                        
                         </div>                                                                                    
-                        <div class="col" style="height: 60vh; width: 60vw;">
-                            <h3 class="title">Esercizio <br> La Torre di Gradius I</h3>
-                            <div style="margin-top:5vh;">
+                        <div class="col" style="width: 60vw;">
+                            <h4 class="subtitle">Esercizio <br> La Torre di Gradius I</h4>
+                            <div style="margin-top:5vh; height: 60vh">
                                 <base-editor contenteditable="true" language="python" code="<EDITABLE>n = 20    </EDITABLE># False
 #n = 405  # False
 #n = 70   # False

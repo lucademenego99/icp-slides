@@ -41,15 +41,6 @@
             background-color: transparent;
             color: black;
         }
-
-        .slide-context {
-            position: absolute;
-            top: 0;
-            left: 3vw;
-            font-size: 3vmin;
-            font-weight: 100;
-            letter-spacing: .3vmin;
-        }
     </style>
 </head>
 
@@ -124,7 +115,7 @@ print((x or y) and (not x and z))
                     <div class="row">
                         <div class="col">
                             <div style="width: 45vw; margin-right:3vw;">
-                                <p>✪✪ Finalmente decidi di prenderti una vacanza e vai all’aereoporto, ma già sai che dovrai
+                                <p class="small">✪✪ Finalmente decidi di prenderti una vacanza e vai all’aereoporto, ma già sai che dovrai
                                     fare varie code. Fortunatamente hai solo il bagaglio a mano, quindi ti rechi subito ai
                                     controlli di sicurezza, dove puoi scegliere tra tre file di <span class="code">sic1</span>,
                                     <span class="code">sic2</span> e <span class="code">sic3</span> persone. Ogni persona in
@@ -204,7 +195,7 @@ x=17; y=25   # a   fascia: False   cerchio: False
                     <div class="row">
                         <div class="col" style="width:60vw; margin-right:5vw">
                             <div>
-                                <p>✪✪ Un robot è atterrato sul pianeta Zorbon 5, con il compito di trivellare il terreno per
+                                <p class="small">✪✪ Un robot è atterrato sul pianeta Zorbon 5, con il compito di trivellare il terreno per
                                     estrarre il prezioso metallo Tiberium. La zona di ricerca ha lato <span
                                         class="code">d</span> ed è divisa in settori, con l’origine (0,0) al centro. I colori
                                     nella mappa rappresentano la densità di Tiberium:</p>
@@ -261,7 +252,7 @@ x,y = 0, 0       # 3
                     <p class="slide-context">5. La fabbrica infinita</p>                    
                     <div class="row">
                         <div class="col" style="width:60vw; margin-right:5vw; margin-top:5vh;">                    
-                            <p>✪✪ Nel regno di Steamland esiste una fabbrica che si dice si estenda all’infinito.
+                            <p class="small">✪✪ Nel regno di Steamland esiste una fabbrica che si dice si estenda all’infinito.
                             La fabbrica è popolata da robot che in prossimità degli incroci dei corridoi grigio chiari e gialli hanno il compito di azionare i complessi meccanismi a vapore che governano la fabbrica. Ogni robot conosce la sua posizione <span class="code">x</span>, <span class="code">y</span>. L’origine è in basso a sinistra e ogni corridoio è largo <span class="code">m</span>.</p>
                             <p>Scrivi del codice che stampa <span class="code">True</span> quando i robot sono negli incroci, e <span class="code">False</span> altrimenti.</p>
                             <ul>
@@ -299,7 +290,7 @@ x,y = 2.5 * m, 0.5 * m       # True
                     <div class="row">                    
                         <div class="col" style="width:60vw; margin-right:5vw; margin-top:5vh;">
                             <h3 class="title" style="margin-top:4vh;">Sfida - L'anello di luce</h3>
-                            <p>✪✪✪ Il malvagio stregone Tenebron ha scagliato una maledizione contro il tuo regno, e Re Tribolatus corre trafelato nel tuo studio alchemico implorandoti di contrastare queste forze oscure. Per fortuna, leggendo i tuoi grimori scopri il rituale del RendeRing che è in grado di erigere un anello di forza intorno al regno. Il sortilegio prescrive di tracciare un anello con un’intensità che varia da <span class="code">0.0</span> (buio) fino all’intensità massima <span class="code">5.0</span> (bianco). L’intensità aumenta linearmente fino a che si raggiunge il raggio <span class="code">r=5.0</span>, dopodichè descresce linearmente fino a raggiungere lo <span class="code">0.0</span></p>
+                            <p class="small">✪✪✪ Il malvagio stregone Tenebron ha scagliato una maledizione contro il tuo regno, e Re Tribolatus corre trafelato nel tuo studio alchemico implorandoti di contrastare queste forze oscure. Per fortuna, leggendo i tuoi grimori scopri il rituale del RendeRing che è in grado di erigere un anello di forza intorno al regno. Il sortilegio prescrive di tracciare un anello con un’intensità che varia da <span class="code">0.0</span> (buio) fino all’intensità massima <span class="code">5.0</span> (bianco). L’intensità aumenta linearmente fino a che si raggiunge il raggio <span class="code">r=5.0</span>, dopodichè descresce linearmente fino a raggiungere lo <span class="code">0.0</span></p>
                             <p>Data la posizione <span class="code">x</span>, <span class="code">y</span>, scrivi del codice che calcola l’intensità di luce.</p>
                             <div class="row">
                                 <div class="col">
@@ -316,7 +307,7 @@ x,y = 2.5 * m, 0.5 * m       # True
                         </div>
                         
                         <div class="col" style="width: 100%;">
-                            <div style="margin-top:6vh; height: 90vh;">
+                            <div style="margin-top:6vh; height: 85vh;">
                                 <base-editor contenteditable="true" language="python" code="import math
 
 r = 5.0

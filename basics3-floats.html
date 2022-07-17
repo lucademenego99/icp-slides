@@ -41,15 +41,6 @@
             background-color: transparent;
             color: black;
         }
-
-        .slide-context {
-            position: absolute;
-            top: 0;
-            left: 3vw;
-            font-size: 3vmin;
-            font-weight: 100;
-            letter-spacing: .3vmin;
-        }
     </style>
 </head>
 
@@ -256,9 +247,9 @@ print('Il tipo di x è:', type(x))" />
                 </section>
                 <section>
                     <p class="slide-context">3. Esercizi 2</p>                    
-                    <div class="row">
+                    <div class="row" style="gap: 3vw;">
                         <div class="col">
-                            <p>Il giardiniere Jobe è diventato così bravo che il dottor Angelo decide di promuoverlo a curatore
+                            <p class="small">Il giardiniere Jobe è diventato così bravo che il dottor Angelo decide di promuoverlo a curatore
                                 del campo da golf dove è solito trascorrere i weekend. Ma una nuova sfida lo attende: al campo
                                 Jobe deve radere perfettamente il <em>green</em>, cioè l’area circolare di raggio <span
                                     class="code">r</span> che comprende la buca. La spia sul tagliaerbe di Jobe si deve
@@ -284,10 +275,10 @@ print('Il tipo di x è:', type(x))" />
                             <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
                             <span class="code">r</span></p>                    
                         </div>                                                                                    
-                        <div class="col" style="height: 60vh; width: 60vw;">
-                            <h3 class="title">Esercizio <br> Il campo da Golf</h3>
-                            <div style="margin-top:5vh;">
-                            <base-editor contenteditable="true" language="python" code="import math
+                        <div class="col" style="height: 100%; width: 60vw;">
+                            <h4 class="subtitle">Esercizio <br> Il campo da Golf</h4>
+                            <div style="margin-top:5vh; height: 60vh;">
+                                <base-editor contenteditable="true" language="python" code="import math
 
 r = 50
 
@@ -299,7 +290,8 @@ x,y = 35,20     # A: True
 #x,y = -35,35   # F: True
 #x,y = -37,37   # G: False
 
-# scrivi qui" />
+# scrivi qui
+" />
                             </div>
                         </div>
                     </div>
@@ -676,7 +668,7 @@ b = 3.3
                     <p class="slide-context">5. Uguaglianza 8</p>                    
                     <div class="row">
                         <div class="col" style="width:45vw">
-                            <p>Stai già pensando alle prossime vacanze, ma c’è un problema: dove vai, se un
+                            <p class="small">Stai già pensando alle prossime vacanze, ma c’è un problema: dove vai, se un
                                 <em>selfie-stick</em> non ce l’hai? Non puoi partire con questo grave turbamento: per
                                 uniformarti al fenomeno di massa devi comprare lo stick più simile agli altri. Conduci quindi
                                 prima un’indagine statistica tra turisti malati di <em>selfie-stick</em> con l’obiettivo di
@@ -684,26 +676,24 @@ b = 3.3
                                 risultati:
                             </p>
                             <pre><code>b1,b2,b3,b4,b5 = 'TroppiLike', 'ErMejo United', 'Perditempo SpA', 'Vanità 3.0','TronistiPerCaso' # brand
-        f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3   # frequenze (in percentuale)</code></pre>
+f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3   # frequenze (in percentuale)</code></pre>
                             <p>Desumiamo quindi che le masse prediligono i selfie-stick dei brand <span class="code">'ErMejo
                                     United'</span> e <span class="code">'TronistiPerCaso'</span>, entrambi a parimerito con un
                                 <span class="code">30%</span> di turisti ciascuno. Scrivi quindi del codice che stampa questo
                                 risultato:
                             </p>
                             <pre><code>TroppiLike è il più frequente? False ( 25.0 % )
-        ErMejo United è il più frequente? True ( 30.0 % )
-        Perditempo Inc è il più frequente? False ( 10.0 % )
-        Vanità 3.0 è il più frequente? False ( 5.0 % )
-        TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
+ErMejo United è il più frequente? True ( 30.0 % )
+Perditempo Inc è il più frequente? False ( 10.0 % )
+Vanità 3.0 è il più frequente? False ( 5.0 % )
+TronistiPerCaso è il più frequente? True ( 30.0 % )</code></pre>
                             <p><strong>ATTENZIONE:</strong> il tuo codice deve funzionare con <strong>QUALUNQUE</strong> serie
                                 di variabili!</p>                            
                         </div>
                         <div class="col" style="margin-left: 2vw; width: 50vw;">
-                            <h3 class="title">Esercizio - Alla moda</h3>
+                            <h4 class="subtitle">Esercizio - Alla moda</h4>
                             <div style="margin-top:5vh; height: 60vh;">
-                                <base-editor contenteditable="true" language="python" code="
-
-# BRAND:
+                                <base-editor contenteditable="true" language="python" code="# BRAND:
 b1,b2,b3,b4,b5 = 'TroppiLike', 'ErMejo United', 'Perditempo Inc', 'Vanità 3.0','TronistiPerCaso'
 # Frequenze (in percentuale) False True False False True
 f1,f2,f3,f4,f5 = 0.25, 0.3, 0.1, 0.05, 0.3

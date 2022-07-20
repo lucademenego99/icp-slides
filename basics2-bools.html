@@ -437,21 +437,21 @@ espr3 = not (x and (not y) and (x or z))
 
 score = 0
 answers = []
-if espr1:
+if not espr1:
     score = score + 1
     answers.append('\n - espr1 CORRETTA')
 else:
-    answers.append('\n - espr1 ERRATA - non è True!')
-if espr2:
+    answers.append('\n - espr1 ERRATA - non è False!')
+if not espr2:
     score = score + 1
     answers.append('\n - espr2 CORRETTA')
 else:
-    answers.append('\n - espr2 ERRATA - non è True!')
-if espr3:
+    answers.append('\n - espr2 ERRATA - non è False!')
+if not espr3:
     score = score + 1
     answers.append('\n - espr3 CORRETTA')
 else:
-    answers.append('\n - espr3 ERRATA - non è True!')
+    answers.append('\n - espr3 ERRATA - non è False!')
 
 print('Punteggio:', score, '/3')
 

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.1.1/dist/base/python.iife.js"></script>
     <!-- <script src="icp-bundle.umd.js"></script> -->
 
     <style>
@@ -76,7 +76,7 @@
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh;">
-                            <base-editor contenteditable="true" language="python" code="x = True
+                            <python-editor contenteditable="true" code="x = True
 print('Il valore di x è:', x)
 print('Il tipo di x è:', type(x))" />
                         </div>
@@ -171,8 +171,8 @@ print('Il tipo di x è:', type(x))" />
                                         <li>Infine esegui il codice e verifica il tuo punteggio</li>
                                     </ul>
                                 </div>
-                                <div class="col" style="height: 70vh;">
-                                    <base-editor contenteditable="true" language="python" code="# Inserisci le tue risposte nella variabile 'risp'
+                                <div class="col" style="height: 70vh; width: 50vw;">
+                                    <python-editor contenteditable="true" code="# Inserisci le tue risposte nella variabile 'risp'
 espr1 = not (True and False)
 risp1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 
@@ -231,7 +231,7 @@ print('Risposte:', ''.join(answers))" />
                 <section>
                     <p class="slide-context">1. Introduzione 2-2</p>
                     <div style="height: 70vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python" code="# Inserisci le tue risposte nella variabile 'risp'
+                        <python-editor contenteditable="true" code="# Inserisci le tue risposte nella variabile 'risp'
 espr1 = not (not (not False))
 risp1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 
@@ -289,7 +289,7 @@ print('Risposte:', ''.join(answers))" />
                             </ul>
                         </div>
                         <div class="col" style="height: 70vh; margin-left: 1em;">
-                            <base-editor contenteditable="true" language="python" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
+                            <python-editor contenteditable="true" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 espr1 = x or (not x)
 
 x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
@@ -346,7 +346,7 @@ print('Risposte:', ''.join(answers))" />
                     <p class="slide-context">1. Introduzione 2-4</p>
                     <h4 class="title">Come prima!</h4>
                     <div style="height: 70vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
+                        <python-editor contenteditable="true" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 espr1 = (not x) or  y
 
@@ -411,7 +411,7 @@ print('Risposte sbagliate:', ''.join(answers))" />
                             </ul>
                         </div>
                         <div class="col" style="height: 70vh; margin-left: 1em;">
-                            <base-editor contenteditable="true" language="python" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
+                            <python-editor contenteditable="true" code="x = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 y = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 z = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 espr1 = x or ((not y) or z)
@@ -518,7 +518,7 @@ print('Risposte:', ''.join(answers))" />
                             <div class="r-stack">
                                 <div class="col fragment fade-out" data-fragment-index="0"
                                     style="height: 70vh; width: 40vw;">
-                                    <base-editor contenteditable="true" language="python" code="# ESEMPIO
+                                    <python-editor contenteditable="true" code="# ESEMPIO
 
 # Verifica che effettivamente funzioni
 # testando le espressioni con tutti i
@@ -536,7 +536,7 @@ print('trasf=',trasf)" />
                                 </div>
                                 <div class="col fragment fade-in-then-out" data-fragment-index="0"
                                     style="height: 70vh; width: 40vw;">
-                                    <base-editor contenteditable="true" language="python" code="# ESERCIZIO 1
+                                    <python-editor contenteditable="true" code="# ESERCIZIO 1
 
 <EDITABLE>x,y = False, False</EDITABLE> 
 <EDITABLE>#x,y = False, True</EDITABLE> 
@@ -550,7 +550,7 @@ print('trasf=',trasf)" />
                                 </div>
                                 <div class="col fragment fade-in-then-out" data-fragment-index="1"
                                     style="height: 70vh; width: 40vw;">
-                                    <base-editor contenteditable="true" language="python" code="# ESERCIZIO 2
+                                    <python-editor contenteditable="true" code="# ESERCIZIO 2
 
 <EDITABLE>x,y = False, False</EDITABLE> 
 <EDITABLE>#x,y = False, True</EDITABLE> 
@@ -564,7 +564,7 @@ print('trasf=',trasf)" />
                                 </div>
                                 <div class="col fragment fade-in" data-fragment-index="2"
                                     style="height: 70vh; width: 40vw;">
-                                    <base-editor contenteditable="true" language="python" code="# ESERCIZIO 3
+                                    <python-editor contenteditable="true" code="# ESERCIZIO 3
 
 <EDITABLE>x,y = False, False</EDITABLE> 
 <EDITABLE>#x,y = False, True</EDITABLE> 
@@ -634,7 +634,7 @@ print('trasf=',trasf)" />
                             </ul>
                         </div>
                         <div class="col" style="height: 70vh;">
-                            <base-editor contenteditable="true" language="python" code="espr1 = bool(True)
+                            <python-editor contenteditable="true" code="espr1 = bool(True)
 risp1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 
 espr2 = bool(2+4)
@@ -707,7 +707,7 @@ print('Risposte:', ''.join(answers))" />
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; margin: 2vh;">
-                            <base-editor contenteditable="true" language="python" code="print('False and x:', False and x)
+                            <python-editor contenteditable="true" code="print('False and x:', False and x)
 
 # NOTA: qui x non è nemmeno definito...
 # Prova a mettere True al posto di False, che succede?" />
@@ -739,7 +739,7 @@ print('Risposte:', ''.join(answers))" />
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; margin: 2vh;">
-                            <base-editor contenteditable="true" language="python" code="print('True or x:', True or x)
+                            <python-editor contenteditable="true" code="print('True or x:', True or x)
 
 # NOTA: anche in questo caso x non è nemmeno definito...
 # Prova a mettere False al posto di True, che succede?" />
@@ -760,7 +760,7 @@ print('Risposte:', ''.join(answers))" />
                             </ul>
                         </div>
                         <div class="col" style="height: 70vh;">
-                            <base-editor contenteditable="true" language="python" code="espr1 = 0 and True
+                            <python-editor contenteditable="true" code="espr1 = 0 and True
 risp1 = <EDITABLE>LA_TUA_RISPOSTA</EDITABLE> 
 
 espr2 = 1 and 0
@@ -851,11 +851,11 @@ print('Risposte:', ''.join(answers))" />
                         </div>
                         <div class="col r-stack" style="height: 40vh; margin: 2vh;">
                             <div style="width: 100%; height: 100%;" class="fragment fade-out" data-fragment-index="2">
-                                <base-editor contenteditable="true" language="python" code="print(1/0)
+                                <python-editor contenteditable="true" code="print(1/0)
 print('dopo...')" />
                             </div>
                             <div style="width: 100%; height: 100%;" class="fragment fade-in" data-fragment-index="3">
-                                <base-editor contenteditable="true" language="python" code="print(False and 1/0)" />
+                                <python-editor contenteditable="true" code="print(False and 1/0)" />
                             </div>
                         </div>
                     </div>
@@ -869,13 +869,13 @@ print('dopo...')" />
                     </ul>
                     <div class="row" style="gap: 3vw; margin-top:5vh">
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="print(True and 1/0)" />
+                            <python-editor contenteditable="true" code="print(True and 1/0)" />
                         </div>
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="print(True or 1/0)" />
+                            <python-editor contenteditable="true" code="print(True or 1/0)" />
                         </div>
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="print(False or 1/0)" />
+                            <python-editor contenteditable="true" code="print(False or 1/0)" />
                         </div>
                     </div>
                 </section>
@@ -885,27 +885,24 @@ print('dopo...')" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div style="margin-right: 20vw;" class="col">
                             <div style="height: 20vh; margin-bottom: 7vh">
-                                <base-editor contenteditable="true" language="python" code="print(1/0 and 1/0)" />
+                                <python-editor contenteditable="true" code="print(1/0 and 1/0)" />
                             </div>
                             <div style="height: 20vh; margin-bottom: 7vh">
-                                <base-editor contenteditable="true" language="python" code="print(1/0 or True)" />
+                                <python-editor contenteditable="true" code="print(1/0 or True)" />
                             </div>
                             <div style="height: 20vh; margin-bottom: 7vh">
-                                <base-editor contenteditable="true" language="python" code="print(1/0 or 1/0)" />
+                                <python-editor contenteditable="true" code="print(1/0 or 1/0)" />
                             </div>
                         </div>
                         <div class="col">
                             <div style="height: 20vh; margin-bottom: 7vh">
-                                <base-editor contenteditable="true" language="python"
-                                    code="print(True or (1/0 and True))" />
+                                <python-editor contenteditable="true" code="print(True or (1/0 and True))" />
                             </div>
                             <div style="height: 20vh; margin-bottom: 7vh">
-                                <base-editor contenteditable="true" language="python"
-                                    code="print((not False) or not 1/0)" />
+                                <python-editor contenteditable="true" code="print((not False) or not 1/0)" />
                             </div>
                             <div style="height: 20vh; margin-bottom: 7vh">
-                                <base-editor contenteditable="true" language="python"
-                                    code="print(True and 1/0 and True)" />
+                                <python-editor contenteditable="true" code="print(True and 1/0 and True)" />
                             </div>
                         </div>
                     </div>
@@ -985,9 +982,9 @@ print('dopo...')" />
                 <section>
                     <p class="slide-context">6. Comparazione 3</p>
                     <p>Le comparazioni sono espressioni che producono booleani</p>
-                    <p>  ⮕ possiamo assegnare il risultato ad una variabile</p>
+                    <p> ⮕ possiamo assegnare il risultato ad una variabile</p>
                     <div style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                        <base-editor contenteditable="true" language="python" code="x = 5 > 3
+                        <python-editor contenteditable="true" code="x = 5 > 3
 print(x)" />
                     </div>
                 </section>
@@ -1000,9 +997,9 @@ print(x)" />
                     <div class="r-stack">
                         <div class="fragment fade-out" data-fragment-index="0">
                             <p>Dato un paio di quantità <span class="code">x, y = 7, 5</span></p>
-                            <p>Trova una espressione booleana che ci dice se <span class="code">x</span> e 
-                            <span class="code">y</span> sono entrambe maggiori di zero
-                            </p>                            
+                            <p>Trova una espressione booleana che ci dice se <span class="code">x</span> e
+                                <span class="code">y</span> sono entrambe maggiori di zero
+                            </p>
                         </div>
                         <div class="fragment fade-in-then-out" data-fragment-index="0">
                             <p><span class="emph">Attenzione!</span> La scrittura <span class="code">x and y > 0</span>
@@ -1036,12 +1033,12 @@ print(x)" />
                     <div class="r-stack">
                         <div class="fragment fade-out" data-fragment-index="1"
                             style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                            <base-editor contenteditable="true" language="python" code="x, y = 7, 5
+                            <python-editor contenteditable="true" code="x, y = 7, 5
 print(<EDITABLE>LA_TUA_ESPRESSIONE</EDITABLE>)" />
                         </div>
                         <div class="fragment fade-in-then-out" data-fragment-index="1"
                             style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                            <base-editor contenteditable="true" language="python" code="x,y = 7, 5
+                            <python-editor contenteditable="true" code="x,y = 7, 5
 print(x and y > 0)  # ATTENZIONE!
 
 x,y = 7, -6
@@ -1049,12 +1046,12 @@ print(x and y > 0)  # ATTENZIONE!" />
                         </div>
                         <div class="fragment fade-in" data-fragment-index="2"
                             style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                            <base-editor contenteditable="true" language="python" code="x,y = -3, 5
+                            <python-editor contenteditable="true" code="x,y = -3, 5
 print(x and y > 0)   # ATTENZIONE!" />
                         </div>
                         <div class="fragment fade-in" data-fragment-index="4"
                             style="height: 40vh; width: 40vw; margin-top: 4vh;">
-                            <base-editor contenteditable="true" language="python" code="x,y = -3, 5
+                            <python-editor contenteditable="true" code="x,y = -3, 5
 print((x and y) > 0)   # ATTENZIONE!" />
                         </div>
                     </div>
@@ -1085,15 +1082,15 @@ print((x and y) > 0)   # ATTENZIONE!" />
                     </ul>
                     <div class="row" style="gap: 3vw; margin-top:5vh">
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="x = 3 == 4
+                            <python-editor contenteditable="true" code="x = 3 == 4
 print(x)" />
                         </div>
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="x = False or True
+                            <python-editor contenteditable="true" code="x = False or True
 print(x)" />
                         </div>
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="True or False = x or False
+                            <python-editor contenteditable="true" code="True or False = x or False
 print(x)" />
                         </div>
                     </div>
@@ -1102,18 +1099,18 @@ print(x)" />
                     <p class="slide-context">7. Congiungere Operazioni 4</p>
                     <div class="row" style="gap: 3vw;">
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="x,y = 9,10
+                            <python-editor contenteditable="true" code="x,y = 9,10
 z = x < y and x == 3**2
 print(z)" />
                         </div>
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="a,b = 7,6
+                            <python-editor contenteditable="true" code="a,b = 7,6
 a = b
 x = a >= b + 1
 print(x)" />
                         </div>
                         <div class="col" style="height: 50vh; width: 25vw;">
-                            <base-editor contenteditable="true" language="python" code="x = 3^2
+                            <python-editor contenteditable="true" code="x = 3^2
 y = 9
 print(x == y)" />
                         </div>
@@ -1122,44 +1119,56 @@ print(x == y)" />
             </section>
             <section>
                 <section>
-                
-                    <p class="slide-context">8. Esercizi 1</p>                    
+
+                    <p class="slide-context">8. Esercizi 1</p>
                     <div class="row">
                         <div class="col" style="width:45vw; margin-right:2vw">
-                            <p class="small">Il dottor Angelo possiede un prato di area quadrata di lato <span class="code">d=100</span> metri
+                            <p class="small">Il dottor Angelo possiede un prato di area quadrata di lato <span
+                                    class="code">d=100</span> metri
                                 che
-                                viene accudito ogni settimana da Jobe il giardiniere. Jobe passa sempre meticolosomente il
+                                viene accudito ogni settimana da Jobe il giardiniere. Jobe passa sempre meticolosomente
+                                il
                                 tagliarbe
-                                su tutta l’area del prato, ma un giorno il dottore decide di rendere più elaborato il giardino e
-                                chiede a Jobe di tagliare solo alcune zone. Purtroppo, Jobe non è molto forte in geometria e per
-                                agevolarlo il dottore inventa un sensore in grado di rilevare la posizione, collegato ad una
+                                su tutta l’area del prato, ma un giorno il dottore decide di rendere più elaborato il
+                                giardino e
+                                chiede a Jobe di tagliare solo alcune zone. Purtroppo, Jobe non è molto forte in
+                                geometria e per
+                                agevolarlo il dottore inventa un sensore in grado di rilevare la posizione, collegato ad
+                                una
                                 spia
                                 che si illumina solo quando il tagliaerbe va azionato.</p>
-                            <p>Scrivi un’espressione che date due coordinate <span class="code">x,y</span>, produca <span
-                                    class="code">True</span> quando il tagliaerbe è nella zona verde chiaro, e <span
-                                    class="code">False</span> altrimenti.</p>
+                            <p>Scrivi un’espressione che date due coordinate <span class="code">x,y</span>, produca
+                                <span class="code">True</span> quando il tagliaerbe è nella zona verde chiaro, e <span
+                                    class="code">False</span> altrimenti.
+                            </p>
                             <div class="row">
                                 <div class="col">
                                     <ul>
-                                        <li style="padding-bottom:0">Nota che l'origine delle coordinate è in basso a sinistra</li>
-                                        <li style="padding-bottom:0"><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                                        <li style="padding-bottom:0"><strong>SCRIVI</strong> una formula generica usando <span class="code">d</span> (quindi non
-                                            scrivere <span class="code">50</span>...)</li>
+                                        <li style="padding-bottom:0">Nota che l'origine delle coordinate è in basso a
+                                            sinistra</li>
+                                        <li style="padding-bottom:0"><strong>NON usare istruzioni</strong> <span
+                                                class="code">if</span></li>
+                                        <li style="padding-bottom:0"><strong>SCRIVI</strong> una formula generica usando
+                                            <span class="code">d</span> (quindi non
+                                            scrivere <span class="code">50</span>...)
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col">
                                     <img src="assets/lawnmower-1.png" alt="Image of the exercise">
                                 </div>
-                            </div>                    
-                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
-                                <span class="code">d</span></p>                            
-                            </p>                        
-                            
+                            </div>
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span
+                                    class="code">y</span> e
+                                <span class="code">d</span>
+                            </p>
+                            </p>
+
                         </div>
                         <div class="col" style="height: 100%; width: 50vw;">
                             <h4 class="subtitle">Esercizio <br> Il tagliaerbe 1</h4 class="subtitle">
                             <div style="height:60vh">
-                                <base-editor contenteditable="true" language="python" code="d = 100
+                                <python-editor contenteditable="true" code="d = 100
 
 <EDITABLE>x,y = 0,  0      </EDITABLE># False
 <EDITABLE>#x,y = 25, 25    </EDITABLE># False
@@ -1187,14 +1196,16 @@ print(soluzione)" />
                             <ul>
                                 <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
                             </ul>
-                            <img style="display:block; margin-left:auto; margin-right:auto;" src="assets/lawnmower-2.png" alt="Image of the exercise">
-                                                    
-                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
-                                <span class="code">d</span>.                        
+                            <img style="display:block; margin-left:auto; margin-right:auto;"
+                                src="assets/lawnmower-2.png" alt="Image of the exercise">
+
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span
+                                    class="code">y</span> e
+                                <span class="code">d</span>.
                             </p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="d = 100
+                            <python-editor contenteditable="true" code="d = 100
 
 <EDITABLE>x,y = 0,  0      </EDITABLE># True
 <EDITABLE>#x,y = 25, 25    </EDITABLE># True
@@ -1217,16 +1228,19 @@ print(soluzione)" />
                     <h3 class="title">Esercizio - Il tagliaerbe 3</h3>
                     <div class="row">
                         <div class="col" style="width:35vw; margin-right:3vw;">
-                            <p>Il dottor Angelo si è stufato di giardini squadrati, e vuole dividere il prato in diagonale.</p>
+                            <p>Il dottor Angelo si è stufato di giardini squadrati, e vuole dividere il prato in
+                                diagonale.</p>
                             <ul>
                                 <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
                             </ul>
-                            <img style="display:block; margin-left:auto; margin-right:auto;" src="assets/lawnmower-3.png" alt="Image of the exercise">
-                                        
-                            <p>Inserisci la tua espressione, usando <span class="code">x</span> e <span class="code">y</span>                                                            
+                            <img style="display:block; margin-left:auto; margin-right:auto;"
+                                src="assets/lawnmower-3.png" alt="Image of the exercise">
+
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span> e <span
+                                    class="code">y</span>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="d = 100
+                            <python-editor contenteditable="true" code="d = 100
 
 <EDITABLE>x,y = 50, 10   </EDITABLE># True
 <EDITABLE>#x,y = 100,0   </EDITABLE># True
@@ -1251,18 +1265,21 @@ print(soluzione)" />
                             <p>Altro giorno, altra diagonale per Jobe...</p>
                             <ul>
                                 <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                                <li><strong>SUGGERIMENTO</strong>: se non ricordi l'equazione della retta è il momento di
+                                <li><strong>SUGGERIMENTO</strong>: se non ricordi l'equazione della retta è il momento
+                                    di
                                     cercarla
                                     :-)</li>
                             </ul>
-                            <img style="display:block; margin-left:auto; margin-right:auto;" src="assets/lawnmower-4.png" alt="Image of the exercise">
-                            
-                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
+                            <img style="display:block; margin-left:auto; margin-right:auto;"
+                                src="assets/lawnmower-4.png" alt="Image of the exercise">
+
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span
+                                    class="code">y</span> e
                                 <span class="code">d</span>
-                            </p>                            
+                            </p>
                         </div>
                         <div class="col" style="flex: 2; height: 60vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="d = 100
+                            <python-editor contenteditable="true" code="d = 100
 
 <EDITABLE>x,y = 50, 10   </EDITABLE># True
 <EDITABLE>#x,y = 0,0     </EDITABLE># True
@@ -1282,33 +1299,41 @@ print(soluzione)" />
 
             <section>
                 <section>
-                    <p class="slide-context">8. Esercizi 5</p>                    
+                    <p class="slide-context">8. Esercizi 5</p>
                     <div class="row" style="margin-top:5vh">
                         <div class="col" style="width: 35vw; margin-right:3vw">
-                            <p class="small">Durante i tuoi studi scopri una mappa di un antico tempio, ove sono custoditi mirabolanti tesori.
-                                Il tempio misura <span class="code">d=80</span> metri di lato ed è un labirinto di corridoi. Sai
+                            <p class="small">Durante i tuoi studi scopri una mappa di un antico tempio, ove sono
+                                custoditi mirabolanti tesori.
+                                Il tempio misura <span class="code">d=80</span> metri di lato ed è un labirinto di
+                                corridoi. Sai
                                 per
-                                certo che alcune aree mostrate in rosso contengono pavimento fragile sotto il quale scorrono
+                                certo che alcune aree mostrate in rosso contengono pavimento fragile sotto il quale
+                                scorrono
                                 fiumi
-                                di lava incandescente: per avvertirti del pericolo mentre cammini, ti costruisci un detector che
+                                di lava incandescente: per avvertirti del pericolo mentre cammini, ti costruisci un
+                                detector che
                                 emetterà un suono quando sarai in zone rosse.
                             </p>
-                            <p>Scrivi un’espressione booleana che restituisca <span class="code">True</span> se sei in una zona
+                            <p>Scrivi un’espressione booleana che restituisca <span class="code">True</span> se sei in
+                                una zona
                                 di
                                 pericolo, <span class="code">False</span> altrimenti.</p>
                             <ul>
                                 <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
                             </ul>
-                            <img style="display:block; margin-left:auto; margin-right:auto;" src="assets/bool-temple-1.png" alt="Image of the exercise">
-                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span class="code">y</span> e
-                            <span class="code">d</span></p>                            
-                        </div>                        
-                        
-                        
+                            <img style="display:block; margin-left:auto; margin-right:auto;"
+                                src="assets/bool-temple-1.png" alt="Image of the exercise">
+                            <p>Inserisci la tua espressione, usando <span class="code">x</span>, <span
+                                    class="code">y</span> e
+                                <span class="code">d</span>
+                            </p>
+                        </div>
+
+
                         <div class="col" style=" width:60vw;">
-                            <h4 class="subtitle">Esercizio <br> Il Tempio di Lava</h4>    
+                            <h4 class="subtitle">Esercizio <br> Il Tempio di Lava</h4>
                             <div style="margin-top:5vh; height:65vh">
-                                <base-editor contenteditable="true" language="python" code="d = 80
+                                <python-editor contenteditable="true" code="d = 80
 
 x,y = 0, 0     # False
 #x,y = 20, 20  # False
@@ -1326,7 +1351,7 @@ print(soluzione)" />
                             </div>
                         </div>
                     </div>
-                </section>                
+                </section>
             </section>
 
             <section>
@@ -1335,28 +1360,35 @@ print(soluzione)" />
                     <h3 class="title">Esercizio - Il Salto del Tubo</h3>
                     <div class="row">
                         <div class="col">
-                            <p class="small">Un idraulico italiano vede 3 tubi di altezza rispettivamente <span class="code">t1</span>, <span
-                                    class="code">t2</span>, <span class="code">t3</span>, sopra cui vi sono rispettivamente sono
-                                <span class="code">10</span>, <span class="code">20</span>, <span class="code">30</span> monete.
-                                Esaltato, spicca un balzo di altezza <span class="code">h</span>. </p>
-                                
+                            <p class="small">Un idraulico italiano vede 3 tubi di altezza rispettivamente <span
+                                    class="code">t1</span>, <span class="code">t2</span>, <span class="code">t3</span>,
+                                sopra cui vi sono rispettivamente sono
+                                <span class="code">10</span>, <span class="code">20</span>, <span class="code">30</span>
+                                monete.
+                                Esaltato, spicca un balzo di altezza <span class="code">h</span>.
+                            </p>
+
                             <p>Scrivi del codice che stampa
-                            quante monete raccoglie (<span class="code">10</span>, <span class="code">20</span> o <span
-                                class="code">30</span>).</p>
-                            
+                                quante monete raccoglie (<span class="code">10</span>, <span class="code">20</span> o
+                                <span class="code">30</span>).
+                            </p>
+
                             <ul>
                                 <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
                                 <li><strong>SUGGERIMENTO</strong>: se non sai come fare, riguardati le slide sull'<a
                                         href="#/11">Ordine
-                                        di valutazione</a> e prova a pensare come produrre dei numeri solo quando una certa
+                                        di valutazione</a> e prova a pensare come produrre dei numeri solo quando una
+                                    certa
                                     condizione è vera...</li>
                             </ul>
                             <img src="assets/bool-jump-1.png" alt="Image of the exercise">
-                            <p>Inserisci la tua espressione, usando <span class="code">h</span>, <span class="code">t1</span>,
-                            <span class="code">t2</span>, <span class="code">t3</span></p>
+                            <p>Inserisci la tua espressione, usando <span class="code">h</span>, <span
+                                    class="code">t1</span>,
+                                <span class="code">t2</span>, <span class="code">t3</span>
+                            </p>
                         </div>
                         <div class="col" style="width: 60vw; height:60vh;">
-                            <base-editor contenteditable="true" language="python" code="t1,t2,t3 = 200,500,600
+                            <python-editor contenteditable="true" code="t1,t2,t3 = 200,500,600
 
 h=450   # 10
 #h=570  # 20
@@ -1373,20 +1405,24 @@ print(soluzione)" />
 
             <section>
                 <section>
-                    <p class="slide-context">8. Esercizi 7</p>                    
+                    <p class="slide-context">8. Esercizi 7</p>
                     <div class="row">
-                        <div class="col" style="margin-top:5vh">   
-                            <p>La lancetta dell’orologio sulla prima Torre di Gradius ha compiuto finora una rotazione di <span
-                                    class="code">n</span> gradi. Scrivi del codice che mostra <span class="code">True</span> se
+                        <div class="col" style="margin-top:5vh">
+                            <p>La lancetta dell’orologio sulla prima Torre di Gradius ha compiuto finora una rotazione
+                                di <span class="code">n</span> gradi. Scrivi del codice che mostra <span
+                                    class="code">True</span> se
                                 la
-                                lancetta si trova nelle zone evidenziate, <span class="code">False</span> altrimenti.</p>
+                                lancetta si trova nelle zone evidenziate, <span class="code">False</span> altrimenti.
+                            </p>
                             <ul>
                                 <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                                <li><span class="code">n</span> può essere maggiore di <span class="code">360</span></li>
+                                <li><span class="code">n</span> può essere maggiore di <span class="code">360</span>
+                                </li>
                             </ul>
                             <p class="small">Ci sono due modi di risolvere il problema:</p>
                             <ol class="small">
-                                <li>semplice: potresti scrivere una espressione lunga con diversi <span class="code">and</span>
+                                <li>semplice: potresti scrivere una espressione lunga con diversi <span
+                                        class="code">and</span>
                                     e
                                     <span class="code">or</span>
                                 </li>
@@ -1394,12 +1430,12 @@ print(soluzione)" />
                                         class="code">and</span> né <span class="code">or</span>?</li>
                             </ol>
                             <img src="assets/gradius-tower-1.png" alt="Image of the exercise">
-                            <p>Inserisci la tua espressione, usando <span class="code">n</span>.</p>                        
-                        </div>                                                                                    
+                            <p>Inserisci la tua espressione, usando <span class="code">n</span>.</p>
+                        </div>
                         <div class="col" style="width: 60vw;">
                             <h4 class="subtitle">Esercizio <br> La Torre di Gradius I</h4>
                             <div style="margin-top:5vh; height: 60vh">
-                                <base-editor contenteditable="true" language="python" code="<EDITABLE>n = 20    </EDITABLE># False
+                                <python-editor contenteditable="true" code="<EDITABLE>n = 20    </EDITABLE># False
 #n = 405  # False
 #n = 70   # False
 #n = 100  # True
@@ -1426,22 +1462,27 @@ print(soluzione)" />
                     <h3 class="title">Esercizio - La Torre di Gradius II</h3>
                     <div class="row">
                         <div class="col" style="margin-right:3vw">
-                            <p>Le lancette dell’orologio sulla seconda Torre di Gradius hanno compiuto finora una rotazione
+                            <p>Le lancette dell’orologio sulla seconda Torre di Gradius hanno compiuto finora una
+                                rotazione
                                 rispettivamente di <span class="code">n</span> e <span class="code">m</span> gradi.</p>
-                            <p>Scrivi del codice che mostri <span class="code">True</span> se entrambe le lancette si trovano
-                                nella stessa zona tra quelle evidenziate, <span class="code">False</span> altrimenti.</p>
+                            <p>Scrivi del codice che mostri <span class="code">True</span> se entrambe le lancette si
+                                trovano
+                                nella stessa zona tra quelle evidenziate, <span class="code">False</span> altrimenti.
+                            </p>
                             <ul>
                                 <li><strong>NON usare istruzioni</strong> <span class="code">if</span></li>
-                                <li><span class="code">n</span> e <span class="code">m</span> possono essere maggiori di <span
-                                        class="code">360</span></li>
+                                <li><span class="code">n</span> e <span class="code">m</span> possono essere maggiori di
+                                    <span class="code">360</span>
+                                </li>
                             </ul>
 
                             <img src="assets/gradius-tower-2.png" alt="Image of the exercise">
 
-                            <p>Inserisci la tua soluzione, usando <span class="code">n</span> e <span class="code">m</span>                        
-                        </div>                    
+                            <p>Inserisci la tua soluzione, usando <span class="code">n</span> e <span
+                                    class="code">m</span>
+                        </div>
                         <div class="col" style="height: 70vh; width: 60vw;">
-                            <base-editor contenteditable="true" language="python" code="
+                            <python-editor contenteditable="true" code="
 n,m = 160,170   # True
 #n,m = 135, 140 # False
 #n,m = 160,190  # False

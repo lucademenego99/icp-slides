@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.1.1/dist/base/python.iife.js"></script>
     <!-- <script src="icp-bundle.umd.js"></script> -->
 
     <style>
@@ -140,7 +140,7 @@
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print('ciao'[0])
+                            <python-editor contenteditable="true" code="print('ciao'[0])
 print('ciao'[1])
 print('ciao'[2])
 print('ciao'[3])" />
@@ -157,7 +157,7 @@ print('ciao'[3])" />
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print('ciao'[4])" />
+                            <python-editor contenteditable="true" code="print('ciao'[4])" />
                         </div>
                     </div>
                 </section>
@@ -171,7 +171,7 @@ print('ciao'[3])" />
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="#    01234
+                            <python-editor contenteditable="true" code="#    01234
 x = 'panca'
 print(x[2])" />
                         </div>
@@ -188,7 +188,7 @@ print(x[2])" />
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="#    01234
+                            <python-editor contenteditable="true" code="#    01234
 x = 'panca'
 print(type(x[2]))" />
                         </div>
@@ -223,12 +223,13 @@ print(type(x[2]))" />
                     <h3 class="title">Esercizio</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="height: 55vh; width: 35vw; margin-left: 1vw; text-align:left">
-                            
+
                             <p>Date due stringhe che hanno entrambe lunghezza <span class="code">3</span>, stampa una
                                 stringa che intercala caratteri da entrambe le stringhe. <br>
                                 <br>
-                                Il tuo codice deve poter funzionare con qualsiasi stringa di questa lunghezza</p>
-                            
+                                Il tuo codice deve poter funzionare con qualsiasi stringa di questa lunghezza
+                            </p>
+
                             <p>Esempio: dati</p>
                             <pre><code>x="say"
 y="hi!"</code></pre>
@@ -236,8 +237,8 @@ y="hi!"</code></pre>
                             <pre><code>shaiy!</code></pre>
                         </div>
                         <div class="col" style="height: 60vh; width: 50vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="# scrivi qui" />
-                        </div>                                                
+                            <python-editor contenteditable="true" code="# scrivi qui" />
+                        </div>
                     </div>
                 </section>
             </section>
@@ -253,7 +254,7 @@ y="hi!"</code></pre>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print('ciao'[-1])
+                            <python-editor contenteditable="true" code="print('ciao'[-1])
 print('ciao'[-2])
 print('ciao'[-3])
 print('ciao'[-4])" />
@@ -270,7 +271,7 @@ print('ciao'[-4])" />
                             </ul>
                         </div>
                         <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print('ciao'[-5])" />
+                            <python-editor contenteditable="true" code="print('ciao'[-5])" />
                         </div>
                     </div>
                 </section>
@@ -332,8 +333,8 @@ print('ciao'[-4])" />
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="x = 'ciao'
-x[2] = 'b'  # SBAGLIATO!"/>
+                            <python-editor contenteditable="true" code="x = 'ciao'
+x[2] = 'b'  # SBAGLIATO!" />
                         </div>
                     </div>
                 </section>
@@ -342,7 +343,7 @@ x[2] = 'b'  # SBAGLIATO!"/>
                     <h3 class="title">Sostituire caratteri</h3>
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
-                        <p> Soluzione corretta:</p>
+                            <p> Soluzione corretta:</p>
                             <ul style="list-style-type: none;">
                                 <li> assegnare a <span class="code">x</span> una stringa
                                     completamente nuova</li>
@@ -354,7 +355,7 @@ y = x
 x = y[0] + y[1] + 'b' + y[3]</code></pre>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="x = 'ciao'
+                            <python-editor contenteditable="true" code="x = 'ciao'
 x = x[0] + x[1] + 'b' + x[3]
 print(x)" />
                         </div>
@@ -368,16 +369,16 @@ print(x)" />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <p>Scrivendo <span class="code">"mercantile"[3:8]</span></p>
-                            <ul style="list-style-type: none;">                                                                
+                            <ul style="list-style-type: none;">
                                 <li> Python genera una NUOVA stringa <span class="code">"canti"</span></li>
                                 <li> a partire dall'indice <span class="code">3</span> INCLUSO</li>
-                                <li> fino all'indice <span class="code">8</span> ESCLUSO</li>                                                                
-                                
+                                <li> fino all'indice <span class="code">8</span> ESCLUSO</li>
+
                                 <li class="fragment">La stringa originale NON viene modificata!</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="x = 'mercantile'
+                            <python-editor contenteditable="true" code="x = 'mercantile'
 
 
 print('              x è', x)
@@ -397,7 +398,7 @@ print('              x è', x)" />
                     <p>Dà errore? Funziona? Possiamo abbreviarlo?</p>
                     <p><span class="code">x[3:4]</span></p>
                     <div style="height: 50vh; width: 50vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="# fai qualche prova" />                    
+                        <python-editor contenteditable="true" code="# fai qualche prova" />
                 </section>
                 <section>
                     <p class="slide-context">5. Slice 3</p>
@@ -405,7 +406,7 @@ print('              x è', x)" />
                     <p>Scrivi del codice per estrarre e stampare <span class="code">alam</span> dalla stringa <span
                             class="code">"garalampog"</span>. Prova a indovinare correttamente gli indici.</p>
                     <div style="height: 50vh; width: 50vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="x = 'garalampog'
+                        <python-editor contenteditable="true" code="x = 'garalampog'
 
 # scrivi qui
 " />
@@ -416,11 +417,12 @@ print('              x è', x)" />
                     <h3 class="title">Esercizio - ifEEfav lkD lkWe</h3>
                     <p>Scrivi del codice per estrarre e stampare <span class="code">kS</span> dalla stringa <span
                             class="code">"ifE\te\nfav lkD lkWe"</span> </p>
-                    <p>Fai attenzione agli spazi e caratteri speciali (prima potresti voler stampare <span class="code">x</span>) </p>
-                        
+                    <p>Fai attenzione agli spazi e caratteri speciali (prima potresti voler stampare <span
+                            class="code">x</span>) </p>
+
                     <p>Prova a indovinare gli indici corretti</p>
                     <div style="height: 50vh; width: 50vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="x = 'ifE\te\nfav  lkD lkWe'
+                        <python-editor contenteditable="true" code="x = 'ifE\te\nfav  lkD lkWe'
 
 # scrivi qui
 " />
@@ -438,7 +440,7 @@ print('              x è', x)" />
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code='print("sedia"[0:3])  # da indice 0 *incluso* a 3 *escluso*
+                            <python-editor contenteditable="true" code='print("sedia"[0:3])  # da indice 0 *incluso* a 3 *escluso*
 print("sedia"[0:4])  # da indice 0 *incluso* a 4 *escluso*
 print("sedia"[0:5])  # da indice 0 *incluso* a 5 *escluso*
 print("sedia"[0:6])  # NESSUN ERRORE
@@ -465,7 +467,7 @@ print("sedia"[0:6])  # NESSUN ERRORE
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 100%; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code='print("traghetto"[:3])
+                            <python-editor contenteditable="true" code='print("traghetto"[:3])
 print("traghetto"[3:])
 print("traghetto"[:])' />
                         </div>
@@ -475,23 +477,23 @@ print("traghetto"[:])' />
                     <p class="slide-context">5. Slice 8</p>
                     <h3 class="title">Esercizio - isteroister</h3>
                     <p>Scrivi del codice che data una stringa <span class="code">x</span> ne produce un altra così: </p>
-                        <ul>                                                        
-                            <li> con tutti i caratteri eccetto il primo, seguiti da tutti i caratteri eccetto l'ultimo</li>
-                            <li>il tuo codice deve funzionare con qualunque stringa</li>
+                    <ul>
+                        <li> con tutti i caratteri eccetto il primo, seguiti da tutti i caratteri eccetto l'ultimo</li>
+                        <li>il tuo codice deve funzionare con qualunque stringa</li>
                         <ul>
-                        
-                    </ul>
-                    <p>Esempio: dato <span class="code">x = "mistero"</span> deve stampare <span
-                            class="code">isteromister</span></p>
-                    <p>Esempio: dato <span class="code">x = "corale"</span> deve stampare <span
-                            class="code">oralecoral</span></p>
-                    <div style="height: 40vh; width: 60vw;">
-                        <base-editor contenteditable="true" language="python" code='x = "mistero"
+
+                        </ul>
+                        <p>Esempio: dato <span class="code">x = "mistero"</span> deve stampare <span
+                                class="code">isteromister</span></p>
+                        <p>Esempio: dato <span class="code">x = "corale"</span> deve stampare <span
+                                class="code">oralecoral</span></p>
+                        <div style="height: 40vh; width: 60vw;">
+                            <python-editor contenteditable="true" code='x = "mistero"
 #x = "corale"
 
 # scrivi qui
 ' />
-                    </div>
+                        </div>
                 </section>
                 <section>
                     <p class="slide-context">5. Slice 9</p>
@@ -500,7 +502,7 @@ print("traghetto"[:])' />
                         <div class="col">
                             <p>E' anche possibile impostare limiti negativi</p>
                             <div style="width: 40vw; height: 50vh;">
-                                <base-editor contenteditable="true" language="python" code='# Da indice 3 a indici 
+                                <python-editor contenteditable="true" code='# Da indice 3 a indici 
 # positivi <= 3 non produce nulla
 print("foresta"[3:0])
 
@@ -512,7 +514,7 @@ print("foresta"[3:3])' />
                         <div class="col">
                             <p>Vediamo cosa succede con indici negativi</p>
                             <div style="width: 40vw; height: 50vh;">
-                                <base-editor contenteditable="true" language="python" code='print("foresta"[3:-1])
+                                <python-editor contenteditable="true" code='print("foresta"[3:-1])
 print("foresta"[3:-2])
 print("foresta"[3:-3])
 print("foresta"[3:-4])
@@ -534,7 +536,7 @@ print("foresta"[3:-5])' />
                     <p>Esempio: dato <span class="code">x = "bang"</span> deve stampare <span class="code">banang</span>
                     </p>
                     <div style="height: 40vh; width: 60vw;">
-                        <base-editor contenteditable="true" language="python" code='x = "javarnanda"
+                        <python-editor contenteditable="true" code='x = "javarnanda"
 #x = "bang"
 
 # scrivi qui
@@ -547,16 +549,17 @@ print("foresta"[3:-5])' />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col">
                             <ul style="list-style-type: none;">
-                                <li>Supponiamo di voler cambiare la parola <span
-                                        class="code">tavolo</span> con <span class="code">divano</span></li>
-                                <li>Tentazione: ridefinire sequenza di caratteri corrispondente a <span class="code">"tavolo"</span>...</li>
+                                <li>Supponiamo di voler cambiare la parola <span class="code">tavolo</span> con <span
+                                        class="code">divano</span></li>
+                                <li>Tentazione: ridefinire sequenza di caratteri corrispondente a <span
+                                        class="code">"tavolo"</span>...</li>
                                 <li class="fragment">Errore! <strong>Le stringhe sono
                                         IMMUTABILI</strong></li>
                             </ul>
                         </div>
                         <div class="col" style="width: 40vw; height: 50vh;">
 
-                            <base-editor contenteditable="true" language="python" code='s = "il tavolo bianco è al centro della stanza"
+                            <python-editor contenteditable="true" code='s = "il tavolo bianco è al centro della stanza"
 s[3:9] = "divano"   # ATTENZIONE! SBAGLIATO!' />
                         </div>
                     </div>
@@ -577,7 +580,7 @@ s[3:9] = "divano"   # ATTENZIONE! SBAGLIATO!' />
                         </div>
                         <div class="col" style="width: 40vw; height: 50vh;">
 
-                            <base-editor contenteditable="true" language="python" code='s = "il tavolo bianco è al centro della stanza"
+                            <python-editor contenteditable="true" code='s = "il tavolo bianco è al centro della stanza"
 s = s[0:3] + "divano" + s[9:]
 print(s)' />
                         </div>
@@ -593,30 +596,34 @@ print(s)' />
                             <p>e delle variabili</p>
                             <pre><code>cosa = "atomo"
 verbo = "finita"</code></pre>
-                            <p>sostituisce la sottostringa in corrispondenza di <span class="code">"oro"</span> con la stringa
+                            <p>sostituisce la sottostringa in corrispondenza di <span class="code">"oro"</span> con la
+                                stringa
                                 presente nella variabile <span class="code">cosa</span> e sostituisce la sottostringa in
-                                corrispondenza di <span class="code">"iniziata"</span> con la stringa presente nella variabile
+                                corrispondenza di <span class="code">"iniziata"</span> con la stringa presente nella
+                                variabile
                                 <span class="code">verbo</span>.
                             </p>
                             <p>Dopo l'esecuzione del tuo codice, <span class="code">print(s)</span> dovrà
-                                stampare: 
-                                <pre>la corsa all'atomo è finita</pre></p>
+                                stampare:
+                            <pre>la corsa all'atomo è finita</pre>
+                            </p>
                             <ul>
-                                <li><strong>NON</strong> usare caratteri costanti nel tuo codice, quindi niente punto <span
-                                        class="code">'.'</span></li>
+                                <li><strong>NON</strong> usare caratteri costanti nel tuo codice, quindi niente punto
+                                    <span class="code">'.'</span>
+                                </li>
                             </ul>
                         </div>
-                        <div class="col">                    
+                        <div class="col">
                             <div class="col" style="width: 40vw; height: 50vh;">
 
-                                <base-editor contenteditable="true" language="python" code="s = 'la corsa all\'oro è iniziata.'
+                                <python-editor contenteditable="true" code="s = 'la corsa all\'oro è iniziata.'
 cosa = 'atomo'
 verbo = 'finita'
 
 # scrivi qui
 " />
+                            </div>
                         </div>
-                    </div>
                 </section>
             </section>
             <section>
@@ -633,7 +640,7 @@ verbo = 'finita'
                             </ul>
                         </div>
                         <div class="col" style="width: 40vw; height: 50vh;">
-                            <base-editor contenteditable="true" language="python" code="print('tra' in 'Cantando per le strade')
+                            <python-editor contenteditable="true" code="print('tra' in 'Cantando per le strade')
     
 # l'operatore in distingue tra maiuscole/minuscole
 print('ca' in 'Cantando per le strade')
@@ -667,11 +674,13 @@ print('Ca' in 'Cantando per le strade')" />
                     <h3 class="title">Esercizio - contenute 1</h3>
                     <div class="row">
                         <div class="col">
-                            <p style="width:90%;">Ti vengono date due stringhe <span class="code">x</span> e <span class="code">y</span>, e una
+                            <p style="width:90%;">Ti vengono date due stringhe <span class="code">x</span> e <span
+                                    class="code">y</span>, e una
                                 terza <span class="code">z</span>. </p>
                             <p style="width:90%;">Scrivi del codice che stampa <span class="code">True</span>
-                                se <span class="code">x</span> e <span class="code">y</span> sono entrambe contenute in <span
-                                    class="code">z</span>.</p>
+                                se <span class="code">x</span> e <span class="code">y</span> sono entrambe contenute in
+                                <span class="code">z</span>.
+                            </p>
                             <p>Esempio 1: date</p>
                             <pre><code>x = 'cad'
 y = 'ra'
@@ -685,7 +694,7 @@ z = 'abracadabra'</code></pre>
                         </div>
                         <div class="col" style="width: 40vw; height: 50vh;">
 
-                            <base-editor contenteditable="true" language="python" code="x,y,z = 'cad','ra','abracadabra'   # True
+                            <python-editor contenteditable="true" code="x,y,z = 'cad','ra','abracadabra'   # True
 #x,y,z = 'zam','ra','abracadabra'  # False
 
 # scrivi qui
@@ -696,13 +705,14 @@ z = 'abracadabra'</code></pre>
                 <section>
                     <p class="slide-context">6. Operatore in 5</p>
                     <h3 class="title">Esercizio - contenute 2</h3>
-                    <p style="text-align:left">Date tre stringhe <span class="code">x</span>, <span class="code">y</span>, <span
-                            class="code">z</span>, scrivi del codice che: </p>
-                    <ul>                            
-                            <li>stampa <span class="code">True</span> se una
-                        stringa <span class="code">x</span> è contenuta almeno in una delle stringhe <span
-                            class="code">y</span> o <span class="code">z</span>, altrimenti stampa <span class="code">False</span></li>
-                    
+                    <p style="text-align:left">Date tre stringhe <span class="code">x</span>, <span
+                            class="code">y</span>, <span class="code">z</span>, scrivi del codice che: </p>
+                    <ul>
+                        <li>stampa <span class="code">True</span> se una
+                            stringa <span class="code">x</span> è contenuta almeno in una delle stringhe <span
+                                class="code">y</span> o <span class="code">z</span>, altrimenti stampa <span
+                                class="code">False</span></li>
+
                         <li>il tuo codice deve funzionare con qualunque insieme di stringhe</li>
                     </ul>
                     <div class="row" style="gap: 2vw; margin-top:5vh">
@@ -729,7 +739,7 @@ z = 'tutto chiaro?'</code></pre>
                         </div>
                     </div>
                     <div style="width: 60vw; height: 40vh; margin-top: 3vh;">
-                        <base-editor contenteditable="true" language="python" code="x,y,z = 'tti', 'patti chiari amicizia lunga', 'tutto chiaro?'   # True
+                        <python-editor contenteditable="true" code="x,y,z = 'tti', 'patti chiari amicizia lunga', 'tutto chiaro?'   # True
 #x,y,z = 'zio','patti chiari amicizia lunga','tutto chiaro?'    # False
 #x,y,z = 'chiaro','patti chiari amicizia lunga','tutto chiaro?' # True
 
@@ -750,7 +760,7 @@ z = 'tutto chiaro?'</code></pre>
                             </ul>
                         </div>
                         <div class="col" style="width: 40vw; height: 50vh;">
-                            <base-editor contenteditable="true" language="python" code='print("gatto" == "gatto")
+                            <python-editor contenteditable="true" code='print("gatto" == "gatto")
 print("gatto" == "cane")
 
 print("gatto" == "GATTO")' />
@@ -763,12 +773,13 @@ print("gatto" == "GATTO")' />
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col">
                             <ul style="list-style-type: none;">
-                                <li class="fragment" data-fragment-index="0">Operatore <span class="code">!=</span></li>                                
-                                <li class="fragment" data-fragment-index="1">Alternativa: operatore <span class="code">not</span></li>
+                                <li class="fragment" data-fragment-index="0">Operatore <span class="code">!=</span></li>
+                                <li class="fragment" data-fragment-index="1">Alternativa: operatore <span
+                                        class="code">not</span></li>
                             </ul>
                         </div>
                         <div class="col" style="width: 40vw; height: 60vh;">
-                            <base-editor class="fragment" data-fragment-index="0" contenteditable="true" language="python" code='print("gatto" != "gatto")
+                            <python-editor class="fragment" data-fragment-index="0" contenteditable="true" code='print("gatto" != "gatto")
 print(not "gatto" == "gatto")
 
 print("gatto" != "cane")
@@ -786,7 +797,7 @@ print(not "gatto" == "GATTO")' />
                     <p>Cosa stampa il codice seguente?</p>
                     <p>Esegui per verificare!</p>
                     <div style="width: 50vw; height: 40vh;">
-                        <base-editor contenteditable="true" language="python" code='x = "fiume" == "fiume"
+                        <python-editor contenteditable="true" code='x = "fiume" == "fiume"
 print(x)' />
                     </div>
                 </section>
@@ -871,7 +882,7 @@ print(x)' />
                         <li>Il tuo codice deve funzionare per qualsiasi <span class="code">parola</span></li>
                     </ul>
                     <div style="width: 60vw; height: 50vh;">
-                        <base-editor contenteditable="true" language="python" code="parola = 'rockettaro'  # True
+                        <python-editor contenteditable="true" code="parola = 'rockettaro'  # True
 #parola = 'massima'    # True
 #parola = 'stima'      # False
 #parola = 'baobab'     # False
@@ -891,7 +902,7 @@ print(x)' />
                             </ul>
                         </div>
                         <div class="col" style="width: 40vw; height: 50vh;">
-                            <base-editor contenteditable="true" language="python" code="print('a' < 'g')
+                            <python-editor contenteditable="true" code="print('a' < 'g')
 print('m' > 'c')
 
 # Maiuscole vs minuscole
@@ -914,7 +925,7 @@ print('a' > '♥')" />
                             </ul>
                         </div>
                         <div class="col" style="width: 40vw; height: 50vh;">
-                            <base-editor contenteditable="true" language="python" code="print(ord('a'))
+                            <python-editor contenteditable="true" code="print(ord('a'))
 print(ord('b'))
 
 # I caratteri maiuscoli hanno posizioni diverse!
@@ -930,7 +941,7 @@ print(chr(97))" />
                     <p>Usando le funzioni di cui abbiamo parlato, prova a trovare quali caratteri sono tra la <span
                             class="code">Z</span> maiuscola e la <span class="code">a</span> minuscola</p>
                     <div style="width: 60vw; height: 50vh; margin-top: 4vh;">
-                        <base-editor contenteditable="true" language="python" code="# scrivi qui
+                        <python-editor contenteditable="true" code="# scrivi qui
 " />
                     </div>
                 </section>
@@ -939,7 +950,7 @@ print(chr(97))" />
                     <p><strong>NOTA:</strong> l'ordine ci permette di eseguire comparazioni lessicografiche tra
                         caratteri singoli!</p>
                     <div style="width: 60vw; height: 50vh; margin-top: 7vh;">
-                        <base-editor contenteditable="true" language="python" code="print('a' < 'b')
+                        <python-editor contenteditable="true" code="print('a' < 'b')
 print('g' >= 'm')" />
                     </div>
                 </section>
@@ -958,7 +969,7 @@ print('g' >= 'm')" />
                     <p>Nota: gli insiemi di caratteri possibili sono parecchi, perciò la soluzione appropriata sarebbe
                         usare il metodo <span class="code">isupper</span> che vedremo prossimamente</p>
                     <div style="width: 60vw; height: 40vh; margin-top:5vh">
-                        <base-editor contenteditable="true" language="python" code="car = 'G'   # True
+                        <python-editor contenteditable="true" code="car = 'G'   # True
 #car = 'g'  # False
 
 #car = 'Á'  # True ?? Nota l'accento!
@@ -978,7 +989,7 @@ print('g' >= 'm')" />
                             </ul>
                         </div>
                         <div class="col" style="width: 40vw; height: 50vh;">
-                            <base-editor contenteditable="true" language="python" code="print(ord('a')) # ascii
+                            <python-editor contenteditable="true" code="print(ord('a')) # ascii
 print(ord('♥')) # unicode
 
 print('a' > '♥')
@@ -1004,7 +1015,7 @@ print(ord('a') > ord('♥'))" />
                         <div class="col" style="text-align: left;">
                             <p style="text-align: center;">Stringhe con stessa lunghezza</p>
                             <div style="width: 40vw; height: 50vh;">
-                                <base-editor contenteditable="true" language="python" code="print('mario' > 'luigi')
+                                <python-editor contenteditable="true" code="print('mario' > 'luigi')
 print('mario' > 'wario')
 print('Mario' > 'Wario')
 
@@ -1015,7 +1026,7 @@ print('Wario' < 'mario')" />
                         <div class="col">
                             <p style="text-align: center;">Stringhe con lunghezza diversa</p>
                             <div style="width: 40vw; height: 50vh;">
-                                <base-editor contenteditable="true" language="python" code="# Stringhe corte incluse in altre
+                                <python-editor contenteditable="true" code="# Stringhe corte incluse in altre
 # più lunghe appaiono prima nell'ordinamento
 print('troll' < 'trolley')
 
@@ -1034,12 +1045,13 @@ print('trolley' < 'trolls')" />
                                 class="code">i2</span> da due caratteri ciascuna</p>
                         <p>Supponi che rappresentino intervalli di caratteri: il primo carattere di un intervallo ha
                             sempre un numero d’ordine inferiore o uguale al secondo. </p>
-                            
+
                         <p> Ci sono 5 possibilità: il primo intervallo
-                        
-                        'è contenuto in','contiene', 'si sovrappone parzialmente a', 'è prima', oppure 'è dopo' il secondo intervallo. </p>
-                        
-                            <p> Scrivi del codice che dice quale relazione di contenimento abbiamo</p>
+
+                            'è contenuto in','contiene', 'si sovrappone parzialmente a', 'è prima', oppure 'è dopo' il
+                            secondo intervallo. </p>
+
+                        <p> Scrivi del codice che dice quale relazione di contenimento abbiamo</p>
                         <p>Esempio 1: dati</p>
                         <pre><code>i1 = 'gm'
 i2 = 'cp'</code></pre>
@@ -1077,7 +1089,7 @@ abcdefghijklmnopqrstuvwxyz</code></pre>
                 <section>
                     <p class="slide-context">7. Comparazioni 17</p>
                     <div style="width: 80vw; height: 80vh;">
-                        <base-editor contenteditable="true" language="python" code="i1,i2 = 'gm','cp'   # gm è contenuto in cp
+                        <python-editor contenteditable="true" code="i1,i2 = 'gm','cp'   # gm è contenuto in cp
 #i1,i2 = 'dh','dh'  # gm è contenuto in cp  #(caso speciale)
 #i1,i2 = 'bw','dq'  # bw contiene dq
 #i1,i2 = 'ac','bd'  # ac si sovrappone parzialmente a bd
@@ -1124,7 +1136,7 @@ libro = "ciclare all'aperto"</code></pre>
                         </div>
                         <div class="col">
                             <div style="width: 40vw; height: 65vh;">
-                                <base-editor contenteditable="true" language="python" code="libro = 'ciclare all\'aperto'
+                                <python-editor contenteditable="true" code="libro = 'ciclare all\'aperto'
 #libro = 'algoritmi occulti'
 #libro = 'teoria dello zippo'
 #libro = 'zoologia dello sviluppatore software'
@@ -1151,7 +1163,7 @@ scaffale = '|a 7|b 5|c 5|d 8|e 2|f 0|g 4|h 8|i 7|j 1|k 6|l 0|m 5|n 0|o 3|p 7|q 2
                         </div>
                         <div class="col">
                             <div style="width: 40vw; height: 40vh;">
-                                <base-editor contenteditable="true" language="python" code="beviamo = 'birra'
+                                <python-editor contenteditable="true" code="beviamo = 'birra'
 print(beviamo * 4)
 
 print('Vecchia stringa:', beviamo)
@@ -1183,7 +1195,7 @@ sillaba = 'za'</code></pre>
                         </div>
                         <div class="col" style="margin-left: 3vw;">
                             <div style="width: 40vw; height: 40vh;">
-                                <base-editor contenteditable="true" language="python" code="sillaba = 'za'
+                                <python-editor contenteditable="true" code="sillaba = 'za'
 frase = 'Il numero 7'   # za za za za za za za
 #frase = 'Dammi il 5'   # za za za za za
 

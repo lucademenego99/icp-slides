@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.1.1/dist/base/python.iife.js"></script>
     <!-- <script src="icp-bundle.umd.js"></script> -->
 
     <style>
@@ -143,12 +143,12 @@
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <ul style="list-style-type: none;">
-                                <li><span class="code">str.upper()</span> prende la stringa su cui è applicato  </li>
+                                <li><span class="code">str.upper()</span> prende la stringa su cui è applicato </li>
                                 <li> ne crea una NUOVA con tutti i caratteri in maiuscolo</li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="
+                            <python-editor contenteditable="true" code="
 print( 'ciao'.upper() )
 
 # Può essere anche applicato ad una variabile!
@@ -170,7 +170,7 @@ cammina CAMMINA cammina CAMMINA</code></pre>
                         <li>il tuo codice deve funzionare con qualsiasi stringa</li>
                     </ul>
                     <div style="height: 50vh; width: 55vw;">
-                        <base-editor contenteditable="true" language="python" code="x = 'cammina'
+                        <python-editor contenteditable="true" code="x = 'cammina'
 #x = 'corri'
 
 # scrivi qui
@@ -183,7 +183,7 @@ cammina CAMMINA cammina CAMMINA</code></pre>
                     <p>Se non sei sicuro riguardo ad un metodo (per esempio <span class="code">strip</span>), puoi
                         chiedere aiuto a Python nel seguente modo</p>
                     <div style="height: 60vh; width: 55vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="help('ciao'.strip)" />
+                        <python-editor contenteditable="true" code="help('ciao'.strip)" />
                     </div>
                 </section>
             </section>
@@ -194,12 +194,15 @@ cammina CAMMINA cammina CAMMINA</code></pre>
                     <div class="row">
                         <div class="col">
                             <div style="width: 40vw; text-align:left; margin-left:3vw">
-                                <p>Scrivi del codice che data una stringa qualsiasi <span class="code">x</span> di lunghezza
-                                    dispari, stampa una nuova stringa uguale a <span class="code">x</span> eccetto al carattere
+                                <p>Scrivi del codice che data una stringa qualsiasi <span class="code">x</span> di
+                                    lunghezza
+                                    dispari, stampa una nuova stringa uguale a <span class="code">x</span> eccetto al
+                                    carattere
                                     in mezzo che deve essere in minuscolo</p>
                                 <ul>
                                     <li>Il tuo codice deve funzionare con qualunque stringa!</li>
-                                    <li><strong>SUGGERIMENTO:</strong> per calcolare la posizione del carattere in mezzo, usa la
+                                    <li><strong>SUGGERIMENTO:</strong> per calcolare la posizione del carattere in
+                                        mezzo, usa la
                                         divisione intera con l’operatore <span class="code">//</span></li>
                                 </ul>
                             </div>
@@ -208,11 +211,11 @@ cammina CAMMINA cammina CAMMINA</code></pre>
                             <p>il tuo codice deve stampare <span class="code">ASCEnSORE</span></p>
                             <p>Esempio: dato</p>
                             <pre><code>x = 'LAMPADA'</code></pre>
-                            <p>il tuo codice deve stampare <span class="code">LAMpADA</span></p>                            
+                            <p>il tuo codice deve stampare <span class="code">LAMpADA</span></p>
                         </div>
-                        <div class="col">                    
+                        <div class="col">
                             <div style="height: 50vh; width: 60vw;">
-                                <base-editor contenteditable="true" language="python" code="#    012345678
+                                <python-editor contenteditable="true" code="#    012345678
 x = 'ASCENSORE'
 k = len(x) // 2
 
@@ -224,34 +227,37 @@ k = len(x) // 2
                 </section>
                 <section>
                     <div class="row">
-                            <div class="col">
-                                <p class="slide-context">2. Esercizi vari 2</p>
-                                <h3 class="title">Esercizio - Vostra Eccellenza</h3>
-                                <div style="width: 90%;">
-                                    <p>Scrivere del codice che date due stringhe qualsiasi <span class="code">x</span> e <span
-                                            class="code">y</span> restituisce le due stringhe concatenate, separandole con uno
-                                        spazio ed entrambe tutte in minuscolo eccetto le rispettive prime lettere che devono essere
-                                        maiuscole.</p>
-                                </div>
-                                <p>Esempio: dati</p>
-                                <pre><code>x = 'vosTRA'
+                        <div class="col">
+                            <p class="slide-context">2. Esercizi vari 2</p>
+                            <h3 class="title">Esercizio - Vostra Eccellenza</h3>
+                            <div style="width: 90%;">
+                                <p>Scrivere del codice che date due stringhe qualsiasi <span class="code">x</span> e
+                                    <span class="code">y</span> restituisce le due stringhe concatenate, separandole con
+                                    uno
+                                    spazio ed entrambe tutte in minuscolo eccetto le rispettive prime lettere che devono
+                                    essere
+                                    maiuscole.
+                                </p>
+                            </div>
+                            <p>Esempio: dati</p>
+                            <pre><code>x = 'vosTRA'
 y = 'ecCeLLeNza'</code></pre>
-                                <p>il tuo codice deve stampare <span class="code">Vostra Eccellenza</span></p>
-                                <p>Esempio: dati</p>
-                                <pre><code>x = 'sUa'
+                            <p>il tuo codice deve stampare <span class="code">Vostra Eccellenza</span></p>
+                            <p>Esempio: dati</p>
+                            <pre><code>x = 'sUa'
 y = 'maEStà'</code></pre>
-                                <p>il tuo codice deve stampare <span class="code">Sua Maestà</span></p>
-                        </div>                        
+                            <p>il tuo codice deve stampare <span class="code">Sua Maestà</span></p>
+                        </div>
                         <div class="col">
                             <div style="height: 50vh; width: 40vw;">
-                                <base-editor contenteditable="true" language="python" code="x,y = 'vosTRA', 'ecCeLLeNza'
+                                <python-editor contenteditable="true" code="x,y = 'vosTRA', 'ecCeLLeNza'
 #x,y = 'sUa', 'maEStà'
 
 # scrivi qui
 " />
-                            
+
+                            </div>
                         </div>
-                    </div>
                 </section>
                 <section>
                     <p class="slide-context">2. Esercizi vari 3</p>
@@ -265,35 +271,41 @@ y = 'maEStà'</code></pre>
                     </div>
                     <div class="row">
                         <div class="col" style="width:40vw;">
-                            <table> 
+                            <table>
                                 <tr>
                                     <th>Dati:</th>
                                     <th>il codice deve stampare:</th>
                                 </tr>
                                 <tr>
-                                    <td><pre style="width: auto;"><code>x = 'per Giove'
+                                    <td>
+                                        <pre style="width: auto;"><code>x = 'per Giove'
 y = 'per Zeus'
-z = 'per'</code></pre></td>
+z = 'per'</code></pre>
+                                    </td>
                                     <td><span class="code">True</span></td>
                                 </tr>
                                 <tr>
-                                    <td><pre style="width: auto;"><code>x = 'per Giove'
+                                    <td>
+                                        <pre style="width: auto;"><code>x = 'per Giove'
 y = 'per Zeus'
-z = 'da'</code></pre></td>
+z = 'da'</code></pre>
+                                    </td>
                                     <td><span class="code">False</span></td>
                                 </tr>
                                 <tr>
-                                    <td><pre style="width: auto;"><code>x = 'da Giove'
+                                    <td>
+                                        <pre style="width: auto;"><code>x = 'da Giove'
 y = 'per Zeus'
-z = 'per'</code></pre></td>
+z = 'per'</code></pre>
+                                    </td>
                                     <td><span class="code">False</span></td>
                                 </tr>
-                                                        
+
                             </table>
                         </div>
                         <div class="col" style="width:50vw;">
                             <div style="height:50vh">
-                                <base-editor contenteditable="true" language="python" code="x,y,z = 'per Giove', 'per Zeus', 'per'    # True
+                                <python-editor contenteditable="true" code="x,y,z = 'per Giove', 'per Zeus', 'per'    # True
 #x,y,z = 'per Giove', 'per Zeus', 'da'    # False
 #x,y,z = 'da Giove', 'per Zeus', 'per'    # False
 
@@ -311,7 +323,7 @@ z = 'per'</code></pre></td>
                             scrivi del codice che </p>
                         <p> stampa <span class="code">True</span> se condividono il cognome, <span
                                 class="code">False</span> altrimenti.</p>
-                        <ul style="margin-top:3vh">                        
+                        <ul style="margin-top:3vh">
                             <li>assumi che il cognome sia sempre alla stessa posizione</li>
                             <li>il tuo codice deve funzionare per qualsiasi coppia <span class="code">marito</span>
                                 <span class="code">moglie</span>
@@ -319,7 +331,7 @@ z = 'per'</code></pre></td>
                         </ul>
                     </div>
                     <div style="height: 50vh; width: 60vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="                 #0123456789               #0123456789
+                        <python-editor contenteditable="true" code="                 #0123456789               #0123456789
 marito, moglie = 'Antonio  Snobbonis',     'Carolina Snobbonis'   # True
 #marito, moglie = 'Camillo  De Spaparanzi', 'Matilda  Degli Agi'  # False
 
@@ -365,7 +377,7 @@ cognome = 'H4ck3r'</code></pre>
                         </div>
                         <div class="col" style="flex: 2">
                             <div style="height: 50vh; width: 100%;">
-                                <base-editor contenteditable="true" language="python" code="nome, cognome = 'K001', 'H4ck3r'     # True
+                                <python-editor contenteditable="true" code="nome, cognome = 'K001', 'H4ck3r'     # True
 #nome, cognome = 'Cool',  'H4ck3r'     # True
 #nome, cognome = 'Romina','Rossi'      # False
 #nome, cognome = 'Peppo', 'Sbirilli'   # False
@@ -408,7 +420,7 @@ cognome = 'H4ck3r'</code></pre>
                         </div>
                         <div class="col" style="flex: 2">
                             <div style="height: 50vh; width: 100%;">
-                                <base-editor contenteditable="true" language="python" code="telefono = '+392574856985'    # True
+                                <python-editor contenteditable="true" code="telefono = '+392574856985'    # True
 #telefono = '395851256954'    # False (manca il '+')
 #telefono = '++7485125874'    # False (manca il prefisso)
 #telefono = '+39333457Ciao'   # False (mi pare ovvio :D )
@@ -468,7 +480,7 @@ avv4 = 'kodearen'</code></pre>
                         </div>
                         <div class="col" style="flex: 2">
                             <div style="height: 50vh; width: 100%;">
-                                <base-editor contenteditable="true" language="python" code="avv1, avv2, avv3, avv4 = 'gimli', 'savorlim', 'glazouc', 'hondouni'       # False
+                                <python-editor contenteditable="true" code="avv1, avv2, avv3, avv4 = 'gimli', 'savorlim', 'glazouc', 'hondouni'       # False
 #avv1, avv2, avv3, avv4 = 'OXLOR', 'HIVAR', 'ELOR', 'SUXGROG'             # False
 #avv1, avv2, avv3, avv4 = 'krakrerlig', 'GUCAM', 'SUXGROG', 'kodearen'    # True
 #avv1, avv2, avv3, avv4 = 'yarnithra', 'krakrerlig', 'jandreda', 'TOVIR'  # True

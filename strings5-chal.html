@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.1.1/dist/base/python.iife.js"></script>
     <!-- <script src="icp-bundle.umd.js"></script> -->
 
     <style>
@@ -69,12 +69,13 @@
                     <p><small>Premi <span class="code">esc</span> per l'overview generale</small></p>
                 </div>
             </section>
-            <section>                
+            <section>
                 <p class="slide-context">1. Il drago Smaug 1</p>
                 <h3 class="title">Sfida - Il Drago Smaug</h3>
                 <div class="row">
                     <div class="col">
-                        <p>✪ Trova UNA SOLA stringa che stampata con <span class="code">print</span> venga mostrata (all’incirca) come la seguente:
+                        <p>✪ Trova UNA SOLA stringa che stampata con <span class="code">print</span> venga mostrata
+                            (all’incirca) come la seguente:
                         </p>
                         <pre><code>________________~----~______________
 ////            Storia          \\\\
@@ -83,22 +84,24 @@ Il      cavaliere
 
         il      drago   'Smaug' davanti
                 al       castello</code></pre>
-                            <ul>
-                                <li>inizia e concludi la stringa con apice singolo</li>
-                                <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span
-                                        class="code">\n</span></li>
-                                <li><strong>NON</strong> usare spazi</li>
-                                <li><strong>NOTA:</strong> usando i tab potresti vedere risultati diversi a seconda dell’editor
-                                    che stai usando, quindi puoi solo sperare di ottenere un risultato simile a quello proposto.
-                                </li>
-                            </ul>
-                      </div>                                        
-                     
-                     <div class="col" style="height: 60vh; width: 100%;">
-                        <base-editor contenteditable="true" language="python" code="# Scrivi qui
+                        <ul>
+                            <li>inizia e concludi la stringa con apice singolo</li>
+                            <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span
+                                    class="code">\n</span></li>
+                            <li><strong>NON</strong> usare spazi</li>
+                            <li><strong>NOTA:</strong> usando i tab potresti vedere risultati diversi a seconda
+                                dell’editor
+                                che stai usando, quindi puoi solo sperare di ottenere un risultato simile a quello
+                                proposto.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col" style="height: 60vh; width: 100%;">
+                        <python-editor contenteditable="true" code="# Scrivi qui
 " />
-                     </div>
-                    
+                    </div>
+
                 </div>
             </section>
             <section>
@@ -148,7 +151,7 @@ Into the Void _________________________________</code></pre>
 Into the Void _________________________________</code></pre>
                         </div>
                         <div class="col" style="flex: 3; height: 75vh; width: 100%;">
-                            <base-editor contenteditable="true" language="python" code='lunghezza_etichetta = 48
+                            <python-editor contenteditable="true" code='lunghezza_etichetta = 48
 num_canzone = 3    #  Into the Void _________________________________
 #num_canzone = 9   #  Journey of 1,000 Years ________________________
 
@@ -197,7 +200,7 @@ testo_censurato: "Grazie all'uso di Cera ****** tutto brilla!"</code></pre>
                     <p class="slide-context">3. Censura al tiramisù 2</p>
                     <h3 class="title">Editor - Censura al tiramisù</h3>
                     <div style="width: 70vw; height: 70vh;">
-                        <base-editor contenteditable="true" language="python" code='testo = """Ed è proprio da questa portentosa crema che nasce la crema al mascarpone
+                        <python-editor contenteditable="true" code='testo = """Ed è proprio da questa portentosa crema che nasce la crema al mascarpone
 base del tiramisù, prima classificata al premio Crema dell Anno insieme
 alla nutella. Il dolce italiano per eccellenza, quello più famoso e amato,
 ma soprattutto che ha dato vita a tantissime altre versioni, anche tiramisù senza uova!

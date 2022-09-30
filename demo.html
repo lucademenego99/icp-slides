@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.1.1/dist/base/full.iife.js"></script>
 
     <style>
         li {
@@ -183,7 +183,7 @@
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark"
+                        <python-editor contenteditable="true" type="vertical" theme="dark"
                             code="print('Hello, world!')" />
                     </div>
             </section>
@@ -200,7 +200,7 @@
                         <p>Demo here the feature of the restricted code editing</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark"
+                        <python-editor contenteditable="true" type="vertical" theme="dark"
                             code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
                     </div>
             </section>
@@ -212,7 +212,7 @@
                             vertical arrangement.</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark"
+                        <python-editor contenteditable="true" type="vertical" theme="dark"
                             code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
                     </div>
             </section>
@@ -223,7 +223,7 @@
                         <p class="fragment fade-out">Demo here the various themes and languages.</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <base-editor contenteditable="true" language="python" type="vertical" theme="dark"
+                        <python-editor contenteditable="true" type="vertical" theme="dark"
                             code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
                     </div>
             </section>

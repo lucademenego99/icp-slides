@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.1.1/dist/base/full.iife.js"></script>
 
 </head>
 
@@ -47,7 +47,7 @@
                     <div class="fragment fade-in col">
                         <p><strong>Help Students</strong> Learning Programming Languages</p>
                         <div style="width: 100%; height: 40vh; margin: 0 auto;">
-                            <base-editor language="python" theme="dark" contenteditable="true" id='test' code="# This program adds two numbers
+                            <python-editor theme="dark" contenteditable="true" id='test' code="# This program adds two numbers
 num1 = 1.5
 num2 = 6.3
 
@@ -92,7 +92,7 @@ print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))" />
                         by simply importing this
                         script
                     </p>
-                    <code class="big" style="color: gray;">&lt;script src='icp.bundle.js'&gt;&lt;/script&gt;</code>
+                    <code class="big" style="color: gray;">&lt;script src='full.iife.js'&gt;&lt;/script&gt;</code>
                 </div>
                 <p class="bottom-text"><small>
                         <a
@@ -103,7 +103,7 @@ print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))" />
                 <h3 class="title">Exposed Web Components</h3>
                 <p class="subtitle"><span class="emph">An example:</span></p>
                 <div style="width: 60vw; height: 60vh">
-                    <base-editor language="typescript" contenteditable="true" id='test' code="class Greeter {
+                    <typescript-editor contenteditable="true" id='test' code="class Greeter {
     greeting: string;
 
     constructor(message: string) {
@@ -116,7 +116,7 @@ print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))" />
 }
 
 let greeter = new Greeter('World!');
-greeter.greet();" />
+console.log(greeter.greet());" />
                 </div>
             </section>
             <section>

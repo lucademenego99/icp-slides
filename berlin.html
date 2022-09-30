@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.1.1/dist/base/full.iife.js"></script>
 
     <style>
         li {
@@ -104,7 +104,7 @@
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <base-editor contenteditable="true" language="python" theme="dark" type="vertical" code="elements = [39,12,18,85,72,10,2,18] 
+                        <python-editor contenteditable="true" theme="dark" type="vertical" code="elements = [39,12,18,85,72,10,2,18] 
 
 print('Unsorted list is\n', elements)
 
@@ -127,7 +127,7 @@ print('\nSorted list is\n', elements)" />
                         <div class="fragment fade-out" data-fragment-index="1" style="width: 100%">
                             <p>Restricted Editing</p>
                             <div style="height: 60vh;">
-                                <base-editor type="vertical" contenteditable="true" theme="dark" language="python" code="elements = [<EDITABLE>39,12,18,85,72,10,2,18</EDITABLE>] 
+                                <python-editor type="vertical" contenteditable="true" theme="dark" code="elements = [<EDITABLE>39,12,18,85,72,10,2,18</EDITABLE>] 
 
 print('Unsorted list is\n', elements)
 
@@ -143,7 +143,7 @@ print('\nSorted list is\n', elements)" />
                         <div class="fragment fade-in" data-fragment-index="1" style="width: 100%">
                             <p>Light Theme and Different Layouts</p>
                             <div style="height: 60vh;">
-                                <base-editor contenteditable="true" language="python" code="elements = [39,12,18,85,72,10,2,18] 
+                                <python-editor contenteditable="true" code="elements = [39,12,18,85,72,10,2,18] 
 
 print('Unsorted list is\n', elements)
 
@@ -169,7 +169,7 @@ print('\nSorted list is\n', elements)" />
                         <div class="fragment fade-out" data-fragment-index="1" style="width: 100%;">
                             <p>Typescript (and Javascript)</p>
                             <div style="height: 60vh;">
-                                <base-editor contenteditable="true" language="typescript" code="let elements = [39,12,18,85,72,10,2,18];
+                                <typescript-editor contenteditable="true" code="let elements = [39,12,18,85,72,10,2,18];
 console.log('Unsorted list is\n', elements);
 
 // Sort the list
@@ -189,7 +189,7 @@ console.log('Sorted list is\n', elements);" />
                         <div class="fragment fade-in-then-out" data-fragment-index="1" style="width: 100%;">
                             <p>Java</p>
                             <div style="height: 60vh;">
-                                <base-editor contenteditable="true" theme="dark" language="java" code='public class BubbleSort {
+                                <java-editor contenteditable="true" theme="dark" code='public class BubbleSort {
     public static void main(String[] args) {
         int[] elements = {39,12,18,85,72,10,2,18};
     

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://unpkg.com/icp-bundle/dist/base/custom-style.css">
 
     <!-- Bundle containing the code playground web components -->
-    <script src="https://unpkg.com/icp-bundle/dist/base/icp-bundle.umd.js"></script>
+    <script src="https://unpkg.com/icp-bundle@0.1.1/dist/base/python.iife.js"></script>
     <!-- <script src="icp-bundle.umd.js"></script> -->
 
     <style>
@@ -142,7 +142,7 @@
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="print('raggi astrali'.count('a'))
+                            <python-editor contenteditable="true" code="print('raggi astrali'.count('a'))
 
 # Distingue tra lettere minuscole e maiuscole!
 print('raggi astrali'.count('A'))" />
@@ -160,41 +160,46 @@ print('raggi astrali'.count('A'))" />
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python"
-                                code="print(  'raggi astrali'.count('a', 4, 9)  )" />
+                            <python-editor contenteditable="true" code="print(  'raggi astrali'.count('a', 4, 9)  )" />
                         </div>
                     </div>
                 </section>
                 <section>
                     <p class="slide-context">2. Count 3</p>
-                    
+
                     <div class="row" style="gap: 2vw;">
                         <div class="col">
-                    
-                            <p class="small">Durante il lockdown 2020, mentre guardavi le stelle nella notte, hai cominciato a sentire…
+
+                            <p class="small">Durante il lockdown 2020, mentre guardavi le stelle nella notte, hai
+                                cominciato a sentire…
                                 onde. Rimuginandoci sopra, hai deciso che LORO vogliono comunicare con te, perciò hai
-                                montato un antenna satellitare sul tuo tetto per ricevere messaggi dagli alieni. Dopo mesi
-                                di rumori apparentemente irrilevanti, un giorno hai finalmente ricevuto un radio-messaggio
+                                montato un antenna satellitare sul tuo tetto per ricevere messaggi dagli alieni. Dopo
+                                mesi
+                                di rumori apparentemente irrilevanti, un giorno hai finalmente ricevuto un
+                                radio-messaggio
                                 che pensi di poter tradurre. Gli alieni ovviamente stanno cercando di dirti i numeri
                                 vincenti della lotto!
-                            Un messaggio è una sequenza di esattamente 3 diverse ripetizioni di caratteri: il numero di
-                                caratteri in ogni ripetizione è un numero che proverai alla lotteria. Inizi freneticamente a
+                                Un messaggio è una sequenza di esattamente 3 diverse ripetizioni di caratteri: il numero
+                                di
+                                caratteri in ogni ripetizione è un numero che proverai alla lotteria. Inizi
+                                freneticamente a
                                 sviluppare il traduttore per mostrare questi numeri fortunati sul terminale.</p>
                             <p>Esempio: data</p>
                             <pre style="width: 20vw"><code>s = '$$$$€€€€€!!'</code></pre>
                             <p>dovrebbe stampare</p>
                             <pre style="width: 20vw"><code>$ € !
 4 5 2</code></pre>
-                            <ul >
-                                <li style="padding-bottom:0vh"><strong>IMPORTANTE: puoi assumere che tutte le sequenze abbiano caratteri
+                            <ul>
+                                <li style="padding-bottom:0vh"><strong>IMPORTANTE: puoi assumere che tutte le sequenze
+                                        abbiano caratteri
                                         *differenti*</strong></li>
                                 <li style="padding-bottom:0vh"><strong>NON</strong> usare cicli nè comprehension</li>
                                 <li>per semplicità assumi che ogni sequenza di caratteri abbia al più 9 ripetizioni</li>
                             </ul>
-                        </div>                                
+                        </div>
                         <div class="col" style=" height: 70vh;">
                             <!--<h3 class="title">Esercizio - denaro astrale</h3>    -->
-                            <base-editor contenteditable="true" language="python" code="    #01234567890      # $ € !
+                            <python-editor contenteditable="true" code="    #01234567890      # $ € !
 s = '$$$$€€€€€!!'     # 4 5 2
 
     # I M Q
@@ -207,8 +212,8 @@ s = '$$$$€€€€€!!'     # 4 5 2
 " />
                         </div>
                     </div>
-                </section>            
-            </section>            
+                </section>
+            </section>
             <section>
                 <section>
                     <p class="slide-context">3. Replace 1</p>
@@ -216,19 +221,22 @@ s = '$$$$€€€€€!!'     # 4 5 2
                     <div class="row" style="width: 90%; margin-top: 8vh;">
                         <div class="col" style="text-align: left;">
                             <h4>Esempio:</h4>
-                            <p style="margin-top:5vh"><span class="code">'il treno percorre'.replace('re', 'RO')</span></p>
-                            <ul style="list-style-type: none; margin-top:5vh">                                
-                                <li>sostituisce da <span class="code">'il treno percorre'</span> tutte le occorrenze di <span class="code">'re'</span> con <span class="code">'RO'</span></li>
-                                <li>produce una NUOVA stringa  <span class="code">'il tROno percorRO'</span></li>
+                            <p style="margin-top:5vh"><span class="code">'il treno percorre'.replace('re', 'RO')</span>
+                            </p>
+                            <ul style="list-style-type: none; margin-top:5vh">
+                                <li>sostituisce da <span class="code">'il treno percorre'</span> tutte le occorrenze di
+                                    <span class="code">'re'</span> con <span class="code">'RO'</span>
+                                </li>
+                                <li>produce una NUOVA stringa <span class="code">'il tROno percorRO'</span></li>
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python" code="
+                            <python-editor contenteditable="true" code="
 print('il treno percorre'.replace('re', 'RO'))
                             
 print('alberello bello'.replace('llo', 'llini'))" />
                         </div>
-                    </div>                    
+                    </div>
                 </section>
 
                 <section>
@@ -241,19 +249,19 @@ print('alberello bello'.replace('llo', 'llini'))" />
                             </ul>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw; margin-left: 1vw;">
-                            <base-editor contenteditable="true" language="python"
+                            <python-editor contenteditable="true"
                                 code="'apollo fece una palla di pelle di pollo'.replace('ll', 'Zz', 3)" />
                         </div>
-                    </div>                    
+                    </div>
                 </section>
-                
+
                 <section>
                     <p class="slide-context">3. Replace 3</p>
                     <h3 class="title">Domanda</h3>
                     <p>Prova ad indovinare che risultato produce la seguente espressione</p>
                     <p>Esegui il codice per verificare</p>
                     <div style="height: 55vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python"
+                        <python-editor contenteditable="true"
                             code="'$£mangia il ricco£$'.replace('£','').replace('$','')" />
                     </div>
                 </section>
@@ -263,7 +271,7 @@ print('alberello bello'.replace('llo', 'llini'))" />
                     <p>Prova ad indovinare che risultato produce la seguente espressione</p>
                     <p>Esegui il codice per verificare</p>
                     <div style="height: 55vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python" code="'$£mangia il ricco£$'.strip('£').strip('$')" />
+                        <python-editor contenteditable="true" code="'$£mangia il ricco£$'.strip('£').strip('$')" />
                     </div>
                 </section>
                 <section>
@@ -292,7 +300,7 @@ libro = 'H-Non aprite quella porta'</code></pre>
 libro = 'R-I promessi sposi'
 libro = 'H-Non aprite quella porta'</code></pre>
                     <div style="height: 55vh; width: 50vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
+                        <python-editor contenteditable="true" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
 libro.replace('G', 'Giallo: ').replace('R', 'Romanzo: ')" />
                     </div>
                 </section>
@@ -303,7 +311,7 @@ libro.replace('G', 'Giallo: ').replace('R', 'Romanzo: ')" />
 libro = 'R-I promessi sposi'
 libro = 'H-Non aprite quella porta'</code></pre>
                     <div style="height: 55vh; width: 50vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
+                        <python-editor contenteditable="true" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
 libro[0].replace('G', 'Giallo: ')  \
         .replace('H', 'HORROR: ')  \
         .replace('R', 'Romanzo: ') + libro[2:]" />
@@ -316,7 +324,7 @@ libro[0].replace('G', 'Giallo: ')  \
 libro = 'R-I promessi sposi'
 libro = 'H-Non aprite quella porta'</code></pre>
                     <div style="height: 55vh; width: 50vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
+                        <python-editor contenteditable="true" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
 libro.replace('G-', 'Giallo: ').replace('R-', 'Romanzo: ')" />
                     </div>
                 </section>
@@ -327,7 +335,7 @@ libro.replace('G-', 'Giallo: ').replace('R-', 'Romanzo: ')" />
 libro = 'R-I promessi sposi'
 libro = 'H-Non aprite quella porta'</code></pre>
                     <div style="height: 55vh; width: 50vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
+                        <python-editor contenteditable="true" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
 libro.replace('G-', 'Giallo: ',1).replace('R-', 'Romanzo: ',1)" />
                     </div>
                 </section>
@@ -338,7 +346,7 @@ libro.replace('G-', 'Giallo: ',1).replace('R-', 'Romanzo: ',1)" />
 libro = 'R-I promessi sposi'
 libro = 'H-Non aprite quella porta'</code></pre>
                     <div style="height: 55vh; width: 50vw; margin-top: 5vh;">
-                        <base-editor contenteditable="true" language="python" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
+                        <python-editor contenteditable="true" code="libro = '<EDITABLE>la_tua_risposta</EDITABLE>'
 libro[0:2].replace('G-', 'Giallo: ').replace('R-', 'Romanzo: ') + libro[2:]" />
                     </div>
                 </section>
@@ -378,7 +386,7 @@ libro[0:2].replace('G-', 'Giallo: ').replace('R-', 'Romanzo: ') + libro[2:]" />
                             <pre><code>'ppp|MM|vvvvvv|MM|sss|MM|dd|MM|sssss|MM|vvvvvv|MM|pppppp'</code></pre>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw;">
-                            <base-editor contenteditable="true" language="python" code="borgo =      'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
+                            <python-editor contenteditable="true" code="borgo =      'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
 # risultato: 'ppp|MM|vvvvvv|MM|sss|MM|dd|MM|sssss|MM|vvvvvv|MM|pppppp'
 
 # scrivi qui
@@ -413,7 +421,7 @@ libro[0:2].replace('G-', 'Giallo: ').replace('R-', 'Romanzo: ') + libro[2:]" />
                             <pre><code>'ppp|MM|vvvvvv|MM|sss|MM|dd|MM|sssss|MM|vvvvvv|MM|pppppp'</code></pre>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw;">
-                            <base-editor contenteditable="true" language="python" code="borgo =      'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
+                            <python-editor contenteditable="true" code="borgo =      'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
 #risultato:  'ppp|MM|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|MM|pppppp'
 #borgo =     '|mm|vvvvvv|mm||mm|ddddd|mm|ssvvv|mm|pp'
 #risultato:  '|MM|vvvvvv|mm||mm|ddddd|mm|ssvvv|MM|pp'
@@ -456,7 +464,7 @@ libro[0:2].replace('G-', 'Giallo: ').replace('R-', 'Romanzo: ') + libro[2:]" />
                             <pre><code>'PPP|mm|VVVVVV|mm|SSS|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'</code></pre>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw;">
-                            <base-editor contenteditable="true" language="python" code="borgo =      'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
+                            <python-editor contenteditable="true" code="borgo =      'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
 # risultato: 'PPP|mm|VVVVVV|mm|SSS|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
 #borgo =     '|p|ppp||p|pp|mm|vvv|vvvv|mm|sssss|mm|ddd|mm|ssss|ss|mm|vvvvvv|mm|'
 # risultato: '|P|PPP||P|PP|mm|VVV|VVVV|mm|SSSSS|mm|ddd|mm|ssss|ss|mm|vvvvvv|mm|'
@@ -478,7 +486,7 @@ libro[0:2].replace('G-', 'Giallo: ').replace('R-', 'Romanzo: ') + libro[2:]" />
                             <pre><code>'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|SSSSS|mm|VVVVVV|mm|PPPPPP'</code></pre>
                         </div>
                         <div class="col" style="height: 55vh; width: 50vw;">
-                            <base-editor contenteditable="true" language="python" code="borgo =     'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
+                            <python-editor contenteditable="true" code="borgo =     'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|sssss|mm|vvvvvv|mm|pppppp'
 #risultato: 'ppp|mm|vvvvvv|mm|sss|mm|dd|mm|SSSSS|mm|VVVVVV|mm|PPPPPP'
 #borgo =    '|p|ppp||p|pp|mm|vvv|vvvv|mm|sssss|mm|ddd|mm|ssss|ss|mm|vvvvvv|p|pp|mm|'
 #risultato: '|p|ppp||p|pp|mm|vvv|vvvv|mm|sssss|mm|ddd|mm|SSSS|SS|mm|VVVVVV|P|PP|mm|'
@@ -526,8 +534,8 @@ Dopo la lotta fratricida, il nuovo borgo è:
 
 ppp|mm|vv|mm|v|s|mm|DDDDDDD✝✝✝✝✝✝DDDDDDDDDDD|mm|ss|mm|vvvvv|mm|pppp</code></pre>
                         </div>
-                        <div class="col" style="flex: 3; height: 55vh; width: 100%;">
-                            <base-editor contenteditable="true" language="python" code="
+                        <div class="col" style="flex: 3; height: 55vh; width: 40vw;">
+                            <python-editor contenteditable="true" code="
 borgo =     'ppp|mm|vv|mm|v|s|mm|dddddddddddddddddddddddd|mm|ss|mm|vvvvv|mm|pppp'
 #risultato: 'ppp|mm|vv|mm|v|s|mm|DDDDDDD✝✝✝✝✝✝DDDDDDDDDDD|mm|ss|mm|vvvvv|mm|pppp'
 #            tot:24 sx:7 dx:11
@@ -549,8 +557,7 @@ borgo =     'ppp|mm|vv|mm|v|s|mm|dddddddddddddddddddddddd|mm|ss|mm|vvvvv|mm|pppp
                     <p>Prova ad indovinare che risultato produce la seguente espressione</p>
                     <p>Esegui il codice per verificare</p>
                     <div style="height: 55vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python"
-                            code="print('gUrP'.lower() == 'GuRp'.lower())" />
+                        <python-editor contenteditable="true" code="print('gUrP'.lower() == 'GuRp'.lower())" />
                     </div>
                 </section>
                 <section>
@@ -559,8 +566,7 @@ borgo =     'ppp|mm|vv|mm|v|s|mm|dddddddddddddddddddddddd|mm|ss|mm|vvvvv|mm|pppp
                     <p>Prova ad indovinare che risultato produce la seguente espressione</p>
                     <p>Esegui il codice per verificare</p>
                     <div style="height: 55vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python"
-                            code="print('NaNo'.lower() != 'nAnO'.upper())" />
+                        <python-editor contenteditable="true" code="print('NaNo'.lower() != 'nAnO'.upper())" />
                     </div>
                 </section>
                 <section>
@@ -569,7 +575,7 @@ borgo =     'ppp|mm|vv|mm|v|s|mm|dddddddddddddddddddddddd|mm|ss|mm|vvvvv|mm|pppp
                     <p>Prova ad indovinare che risultato produce la seguente espressione</p>
                     <p>Esegui il codice per verificare</p>
                     <div style="height: 55vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python"
+                        <python-editor contenteditable="true"
                             code="print('O' + 'ortaggio'.replace('o','\t \n     ').strip() + 'O')" />
                     </div>
                 </section>
@@ -579,8 +585,7 @@ borgo =     'ppp|mm|vv|mm|v|s|mm|dddddddddddddddddddddddd|mm|ss|mm|vvvvv|mm|pppp
                     <p>Prova ad indovinare che risultato produce la seguente espressione</p>
                     <p>Esegui il codice per verificare</p>
                     <div style="height: 55vh; width: 50vw;">
-                        <base-editor contenteditable="true" language="python"
-                            code="print('DaDo'.replace('D','b') in 'barbados')" />
+                        <python-editor contenteditable="true" code="print('DaDo'.replace('D','b') in 'barbados')" />
                     </div>
                 </section>
             </section>

@@ -39,49 +39,46 @@
                 <h3 class="title">Interactive Code Playgrounds</h3>
 
                 <!-- subtitle class: custom style for subtitles -->
-                <p class="subtitle">Rethinking the user experience of slideshows in programming classes</p>
+                <p class="subtitle">Ripensare l'esperienza utente delle presentazioni nelle lezioni di programmazione</p>
                 <div>
-                    <p><small>An interactive demo of the <a href="https://github.com/lucademenego99/icp-bundle"
+                    <p><small>Demo interattiva del progetto <a href="https://github.com/lucademenego99/icp-bundle"
                                 target="_blank">Interactive Code
-                                Playgrounds</a> project</small></p>
+                                Playgrounds</a></small></p>
                 </div>
             </section>
 
             <section>
-                <h5>Learning to code isn't easy.</h5>
-                <p class="fragment">Especially if you're a beginner.</p>
+                <h5>Imparare a programmare non è semplice.</h5>
+                <p class="fragment">Specialmente se sei un principiante.</p>
             </section>
 
             <section>
-                <p>Your university probably teaches programming through a lab course.</p>
+                <p>La tua università probabilmente insegna a programmare attraverso dei laboratori.</p>
             </section>
 
             <section>
-                <p>One of the first steps in lab courses is to make students install a coding environment.</p>
-                <p class="fragment">Without the coding environment, you can't start coding.</p>
-                <p class="fragment">Often, the installation is quite complex.</p>
+                <p>Uno dei primi passi nei laboratori è quello di far installare agli studenti un ambiente di
+                    sviluppo.</p>
+                <p class="fragment">Senza un ambiente di sviluppo, non puoi iniziare a programmare.</p>
+                <p class="fragment">Spesso l'installazione è piuttosto complessa.</p>
             </section>
 
             <section>
-                Starting out should be simpler.
+                Iniziare dovrebbe essere più semplice.
             </section>
 
             <section>
-                <p>We want to propose a solution <br />
-                    that rethinks one of the staples of programming classes.</p>
-            </section>
-
-            <section>
-                The humble slide deck.
+                <p>Vogliamo proporre una soluzione <br />
+                    che ripensa uno degli elementi fondamentali delle lezioni di programmazione.</p>
+                <h5 class="fragment">Le umili slide in PDF.</h5>
             </section>
 
             <section>
                 <section>
                     <div style="display: flex; justify-content: space-around;">
                         <div style="display: flex; flex-flow: column; justify-content: center; align-items:center;">
-                            <p>A typical slide in a programming class looks like this.</p>
-
-                            <p>Go down to analyse some of the issues this creates, or go right to continue.</p>
+                            <p>Una tipica slide in una lezione di programmazione somiglia a questa.</p>
+                            <p>Vai giù per analizzare alcuni problemi che queste slide creano, o vai a destra per continuare.</p>
                         </div>
 
                         <img src="assets/codeSample.png" style="height: 70vh; margin: 3rem;" />
@@ -91,19 +88,16 @@
                     <div style="display: flex; justify-content: space-around;">
                         <div style="display: flex; flex-flow: column; justify-content: center; ">
                             <ul style="list-style-type: none;">
-                                <li>The code to your right is an image.</li>
-                                <li class="fragment">You can't select text from it.</li>
-                                <li class="fragment">Even when you can, if it's on a PDF file, it often doesn't select
-                                    properly.</li>
-                                <li class="fragment">If you try copying and pasting from it, the output might be,
-                                    frankly, garbage.</li>
-                                <li class="fragment">Also, as a teacher, if you need to change something, you need to
-                                    re-make the image.</li>
-                                <li class="fragment">To make matters worse, there is also a problem of <span
-                                        class="emph">accessibility</span>: <br />
-                                    an image is hardly usable for a screen reader user.</li>
-                                <li class="fragment">And finally, even when you can see them, images often render ugly!
-                                    Look at those compression artifacts!</li>
+                                <li>Il codice sulla destra è un'immagine.</li>
+                                <li class="fragment">Non puoi selezionare il testo da essa.</li>
+                                <li class="fragment">Anche se lo potessi fare, se è in una slide in PDF, molto spesso non viene selezionato correttamente.</li>
+                                <li class="fragment">Se provi a copiare ed incollare il testo, il risultato potrebbe essere, francamente, spazzatura.</li>
+                                <li class="fragment">Come insegnante, se devi cambiare qualcosa devi ricreare l'immagine.</li>
+                                <li class="fragment">A peggiorare le cose, c'è anche un problema di <span
+                                        class="emph">accessibilità</span>: <br />
+                                    un'immagine è difficilmente utilizzabile per utenti che utilizzano screen reader.</li>
+                                <li class="fragment">Per finire, a volte le immagini non vengono renderizzate correttamente. 
+                                    Guarda questi artefatti di compressione!</li>
                             </ul>
                         </div>
                         <img src="assets/codeSample.png" style="height: 70vh; margin: 3rem;" />
@@ -115,8 +109,8 @@
                 <div style="display: flex; justify-content: space-around;">
                     <div style="display: flex; flex-flow: column; justify-content: center; ">
                         <ul style="list-style-type: none;">
-                            <li>But the biggest problem is this:</li>
-                            <li class="fragment">Are you studying, and curious to know what this bit of code does?</li>
+                            <li>Ma il più grande problema è questo:</li>
+                            <li class="fragment">Stai studiando, e sei curioso di sapere cosa fa questo frammento di codice?</li>
                         </ul>
                         <div class="fragment">
                             <h4>Tough <span class="fragment">luck.</span></h4>
@@ -129,28 +123,28 @@
 
             <section>
                 <section>
-                    Okay, that was maybe a bit excessive.
-                    <p>You can actually do that, but it'll take jumping through a few hoops. <br />
-                        Find out by going down, or just skip ahead to the right.</p>
+                    Okay, forse questo era un po' eccessivo.
+                    <p>Puoi scoprire cosa fa il codice, ma ci vorranno alcuni salti mortali. <br />
+                        Scoprilo andando giù, o continua sulla destra.</p>
                 </section>
                 <section>
-                    Alright, there was some interesting code on that slide! <br />
-                    Let's assume you want to run a bit of Python code...
+                    Bene, c'è del codice interessante in quella slide!<br />
+                    Diciamo che vuoi eseguire del codice Python...
                 </section>
                 <section>
-                    You'll just need to...
+                    Dovrai solo...
                 </section>
                 <section>
-                    <div>Open the Python interpreter</div>
-                    <div class="fragment">Open a text editor</div>
-                    <div class="fragment">Select the code on the slide (if you can!)</div>
-                    <div class="fragment">Copy and paste it in the text editor (or transcribe it manually!)</div>
-                    <div class="fragment">Check for copy/paste mistakes</div>
-                    <div class="fragment">Run the code in the interpreter</div>
+                    <div>Aprire l'interprete Python</div>
+                    <div class="fragment">Aprire un editor di testo</div>
+                    <div class="fragment">Selezionare il codice sulla slide (se puoi farlo!)</div>
+                    <div class="fragment">Copialo ed incollalo nell'editor (o copialo a mano!)</div>
+                    <div class="fragment">Controlla se ci sono eventuali errori derivanti dal copia-incolla</div>
+                    <div class="fragment">Esegui il codice nell'interprete</div>
                     <div class="fragment">Whew!</div>
                 </section>
                 <section>
-                    Can't we do better?
+                    Non possiamo fare di meglio?
                 </section>
             </section>
 
@@ -159,21 +153,17 @@
                 <div class="row" style="width: 100%">
                     <!-- col class: first column of the row defined before -->
                     <div class="col" style="text-align: left;">
-                        <div class="fragment semi-fade-out" data-fragment-index="1">What if code on slides could look
-                            like...</div>
+                        <div class="fragment semi-fade-out" data-fragment-index="1">E se il codice potesse somigliare somigliare...</div>
                         <div class="fragment" data-fragment-index="2">
-                            <h4>this?</h4>
+                            <h4>a questo?</h4>
                         </div>
-                        <p class="fragment" data-fragment-index="4">Go ahead and try clicking that "Run Code!" button.
+                        <p class="fragment" data-fragment-index="4">Forza, prova ad eseguire il codice.
                         </p>
-                        <p class="fragment" data-fragment-index="5">Did you see what happened in the "Output" box?</p>
-                        <p class="fragment" data-fragment-index="6">The code was run <span class="emph">directly on the
-                                slide</span>!</p>
-                        <p class="fragment" data-fragment-index="7">What's more, you can edit the code directly in the
-                            text box!</p>
-                        <p class="fragment" data-fragment-index="8">Why don't you make some changes, run the code again,
-                            and see what happens?</p>
-                        <p class="fragment" data-fragment-index="9">Move on when you're done playing.</p>
+                        <p class="fragment" data-fragment-index="5">Hai visto cosa è successo nello spazio di "Output"?</p>
+                        <p class="fragment" data-fragment-index="6">Il codice è stato eseguito <span class="emph">direttamente nella slide</span>!</p>
+                        <p class="fragment" data-fragment-index="7">Inoltre, puoi modificare il codice direttamente dall'editor!</p>
+                        <p class="fragment" data-fragment-index="8">Perché non provi a modificarlo, eseguire nuovamente il codice e vedere cosa accade?</p>
+                        <p class="fragment" data-fragment-index="9">Continua quando hai finito di giocarci...</p>
                     </div>
                     <!-- col class: second column of the row defined before -->
                     <!-- Note: the editor takes the size of the parent, so it must be specified -->
@@ -183,21 +173,20 @@
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <python-editor contenteditable="true" type="vertical" theme="dark"
+                        <python-editor contenteditable="true" theme="dark"
                             code="print('Hello, world!')" />
                     </div>
             </section>
 
             <section>
-                You just saw what we call an <span class="emph">Interactive Code Playground</span> (or ICP for
-                short).<br />
-                And there's more they can do...
+                Hai appena visto quello che chiamiamo un <span class="emph">Interactive Code Playground</span> (o ICP).<br />
+                E c'è altro che possono fare...
             </section>
 
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p>Demo here the feature of the restricted code editing</p>
+                        <p>Puoi rendere modificabili solo alcune parti di codice. Potrebbe risultare utile per eventuali esercizi guidati!</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
                         <python-editor contenteditable="true" type="vertical" theme="dark"
@@ -208,71 +197,44 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p class="fragment fade-out">Demo here extra features, like tab-handling and the copy button, in
-                            vertical arrangement.</p>
+                        <p style="margin-bottom: 2em">Cliccando sulle impostazioni, puoi trovare dei pulsanti per:</p>
+                        <ul>
+                            <li>copiare il codice</li>
+                            <li>annullare tutte le tue modifiche</li>
+                            <li>abilitare l'utilizzo dei 'tabs' nell'editor</li>
+                        </ul>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <python-editor contenteditable="true" type="vertical" theme="dark"
-                            code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
+                        <python-editor contenteditable="true" type="vertical"
+                            code="print('Hello, world!')" />
                     </div>
             </section>
 
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p class="fragment fade-out">Demo here the various themes and languages.</p>
+                        <p style="margin-bottom: 2em">ICP è compatibile con altri linguaggi!</p>
+                        <ul>
+                            <li>Javascript</li>
+                            <li>Typescript</li>
+                            <li>Java</li>
+                            <li>SQL</li>
+                        </ul>
+                        <p>Sulla destra, ad esempio, puoi eseguire del codice Java!</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <python-editor contenteditable="true" type="vertical" theme="dark"
-                            code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
+                        <java-editor contenteditable="true" theme="dark" id='test' code='public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!"); 
+    }
+}' />
                     </div>
             </section>
 
             <section>
-                <p>We hope the ICPs can make learning to code more *creative*, and based on *fast tinkering*.</p>
+                <p>Speriamo che questi ICP possano rendere l'apprendimento della programmazione più *creativa*, e basata su *fast tinkering*.</p>
+                <p class="fragment">Grazie per aver seguito questa demo.</p>
             </section>
-
-            <section>
-                And how did we do this? This is a very simple, "tape-and-glue", MVP.
-            </section>
-
-            <section>
-                Illustrate here the tech stack, vertically, or allow skipping right.
-            </section>
-
-            <section>
-                One day, we would like to simplify this quite a bit, but this is promising for a quick prototype!
-
-                For now, we can make use of all the nice features that you might expect from the components we used.
-            </section>
-
-            <section>
-                And this is all front-end code! Which means this works even if you are offline (encourage to try).
-
-                Or, more realistically, this means you can integrate ICPs in pretty much any LMS or platform without
-                installing complex components.
-            </section>
-
-            <section>
-                But since we want these to replace slides, you can also download them as a single file.
-            </section>
-
-            <section>
-                Pedagogical implications
-            </section>
-
-            <section>
-                Accessibility implications
-            </section>
-
-            <section>
-                (Edtech) policy implications
-            </section>
-
-            <section>
-                Who are we?
-            </section>
-
         </div>
     </div>
 
@@ -285,6 +247,8 @@
         Reveal.initialize({
             // Display controls in the bottom right corner
             controls: true,
+            // Show a help overlay when ? is pressed
+            help: false,
             // Display a presentation progress bar
             progress: true,
             // Push each slide change to the browser history

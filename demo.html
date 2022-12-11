@@ -77,19 +77,19 @@
 
             <section>
                 <section>
-                    <div style="display: flex; justify-content: space-around;">
-                        <div style="display: flex; flex-flow: column; justify-content: center; align-items:center;">
+                    <div class="row">
+                        <div class="col">
                             <p>A typical slide in a programming class looks like this.</p>
 
                             <p>Go down to analyse some of the issues this creates, or go right to continue.</p>
                         </div>
 
-                        <img src="assets/codeSample.png" style="height: 70vh; margin: 3rem;" />
+                        <img src="assets/codeSample.png" style="flex: 1; margin: 3rem; object-fit: contain;" />
                     </div>
                 </section>
                 <section>
-                    <div style="display: flex; justify-content: space-around;">
-                        <div style="display: flex; flex-flow: column; justify-content: center; ">
+                    <div class="row">
+                        <div class="col">
                             <ul style="list-style-type: none;">
                                 <li>The code to your right is an image.</li>
                                 <li class="fragment">You can't select text from it.</li>
@@ -106,14 +106,14 @@
                                     Look at those compression artifacts!</li>
                             </ul>
                         </div>
-                        <img src="assets/codeSample.png" style="height: 70vh; margin: 3rem;" />
+                        <img src="assets/codeSample.png" style="flex: 1; margin: 3rem; object-fit: contain;" />
                     </div>
                 </section>
             </section>
 
             <section>
-                <div style="display: flex; justify-content: space-around;">
-                    <div style="display: flex; flex-flow: column; justify-content: center; ">
+                <div class="row">
+                    <div class="col">
                         <ul style="list-style-type: none;">
                             <li>But the biggest problem is this:</li>
                             <li class="fragment">Are you studying, and curious to know what this bit of code does?</li>
@@ -123,7 +123,7 @@
                         </div>
                     </div>
 
-                    <img src="assets/codeSample.png" style="height: 70vh; margin: 3rem;" />
+                    <img src="assets/codeSample.png" style="flex: 1; margin: 3rem; object-fit: contain;" />
                 </div>
             </section>
 
@@ -183,7 +183,7 @@
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <python-editor contenteditable="true" type="vertical" theme="dark"
+                        <python-editor contenteditable="true" theme="dark"
                             code="print('Hello, world!')" />
                     </div>
             </section>
@@ -197,7 +197,7 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p>Demo here the feature of the restricted code editing</p>
+                        <p>You can restrict the editable parts of the code. It may be useful for guided exercises!</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
                         <python-editor contenteditable="true" type="vertical" theme="dark"
@@ -208,31 +208,46 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p class="fragment fade-out">Demo here extra features, like tab-handling and the copy button, in
-                            vertical arrangement.</p>
+                        <p style="margin-bottom: 2em">Clicking on the settings, you can find buttons to:</p>
+                        <ul>
+                            <li>copy the code snippet</li>
+                            <li>cancel all your changes</li>
+                            <li>enable the 'tabs' handling in the editor</li>
+                        </ul>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <python-editor contenteditable="true" type="vertical" theme="dark"
-                            code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
+                        <python-editor contenteditable="true" type="vertical"
+                            code="print('Hello, world!')" />
                     </div>
             </section>
 
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p class="fragment fade-out">Demo here the various themes and languages.</p>
+                        <p style="margin-bottom: 2em">ICP is compatible with other languages!</p>
+                        <ul>
+                            <li>Javascript</li>
+                            <li>Typescript</li>
+                            <li>Java</li>
+                            <li>SQL</li>
+                        </ul>
+                        <p>On the right, for instance, you can execute some Java code!</p>
                     </div>
                     <div class="col" style="height: 60vh; margin: 2vh">
-                        <python-editor contenteditable="true" type="vertical" theme="dark"
-                            code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
+                        <java-editor contenteditable="true" theme="dark" id='test' code='public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!"); 
+    }
+}' />
                     </div>
             </section>
 
             <section>
                 <p>We hope the ICPs can make learning to code more *creative*, and based on *fast tinkering*.</p>
+                <p class="fragment">Thanks for following this demo.</p>
             </section>
 
-            <section>
+            <!-- <section>
                 And how did we do this? This is a very simple, "tape-and-glue", MVP.
             </section>
 
@@ -271,7 +286,7 @@
 
             <section>
                 Who are we?
-            </section>
+            </section> -->
 
         </div>
     </div>

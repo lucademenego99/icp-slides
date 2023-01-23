@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Code Playgrounds</title>
+
+  <!-- Main Reveal Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+  <!-- Blood Reveal Theme Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/blood.css" id="theme">
+
+  <!-- Custom stylesheet to make reveal work with our playgrounds -->
+  <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+
+  <!-- Highlight.js Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai.min.css">
+
+  <!-- Bundle containing the code playground web components -->
+  <script src="https://lucademenego99.github.io/icp-bundle/base/p5-and-processing.iife.js"></script>
+
+  <style>
+    li {
+      padding-bottom: 2vmin;
+    }
+
+    pre {
+      width: unset !important;
+    }
+
+    pre code {
+      overflow: hidden !important;
+      padding: 2rem !important;
+    }
+
+    pre code table {
+      font-size: 2.3vmin !important;
+    }
+
+    .code {
+      padding: 0 .5rem;
+      background-color: rgb(52, 70, 85);
+      font-family: monospace;
+    }
+
+    .key__button {
+      box-sizing: border-box;
+      line-height: 40px;
+      font-size: 22px;
+      text-align: center;
+      width: 40px;
+      color: #555;
+      cursor: pointer;
+      margin: 0 8px;
+      height: 40px;
+      border-color: #f2f2f2;
+      border-style: solid;
+      text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+      border-width: 1px;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+      font-family: sans-serif;
+      display: inline-block;
+      transition: box-shadow 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 0 1px #888,0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+    }
+  </style>
+</head>
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+
+  <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+    data-background-transition="fade">
+    <div class="slides">
+      <section>
+        <!-- title class: custom style for titles -->
+        <h3 class="title">Informatica ed Elementi di Programmazione I</h3>
+
+        <!-- subtitle class: custom style for subtitles -->
+        <p class="subtitle">First Conditional Statement</p>
+        
+
+        <p style="margin: 5rem 0 0 0; color:rgb(134, 134, 134)">Shortcut</p>
+        <div style="text-align: left">
+          <p style="line-height: 40px; font-size: 22px; color:rgb(134, 134, 134)"><span class='key__button'>F</span> for fullscreen</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="subtitle">Let's consider this simple snippet of code</h3>
+        <div class="row" style="width: 90%">
+          <div class="col">
+            <pre><code>int x = 0;
+void draw(){
+  if (x>100) {
+    fill(0,255,0);
+  }
+  if (x>200) {
+    fill(255,0,0);
+  }
+  ellipse(100,100,100,100);
+  x=x+1;
+}</code></pre>
+          </div>
+          <div class="col">
+            <p>What do you think it does?</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Case 1</h3>
+        <div class="row" style="width: 90%;">
+          <div class="col">
+            <pre><code data-line-numbers="9-10">int x = 0;
+void draw(){
+  if (x>100) {
+    fill(0,255,0);
+  }
+  if (x>200) {
+    fill(255,0,0);
+  }
+  ellipse(100,100,100,100);
+  x=x+1;
+}</code></pre>
+          </div>
+          <div class="col" style="text-align: left; margin-left: 5%;">
+            <p>When <span class="code">x=0 ... 100</span>: only lines 9-10 are executed, and a white circle is shown</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Case 2</h3>
+        <div class="row" style="width: 90%;">
+          <div class="col">
+            <pre><code data-line-numbers="4,9-10">int x = 0;
+void draw(){
+  if (x>100) {
+    fill(0,255,0);
+  }
+  if (x>200) {
+    fill(255,0,0);
+  }
+  ellipse(100,100,100,100);
+  x=x+1;
+}</code></pre>
+          </div>
+          <div class="col" style="text-align: left; margin-left: 5%;">
+            <p>When <span class="code">x=101 ... 200</span>: lines 4, 9-10 are executed, and a green circle is drawn</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Case 3</h3>
+        <div class="row" style="width: 90%;">
+          <div class="col">
+            <pre><code data-line-numbers="7,9-10">int x = 0;
+void draw(){
+  if (x>100) {
+    fill(0,255,0);
+  }
+  if (x>200) {
+    fill(255,0,0);
+  }
+  ellipse(100,100,100,100);
+  x=x+1;
+}</code></pre>
+          </div>
+          <div class="col" style="text-align: left; margin-left: 5%;">
+            <p>When <span class="code">x > 200</span>: lines 7, 9-10 are executed, and a red circle is shown</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="subtitle">Let's see it in action!</h3>
+        <div style="width: 90%; height: 80vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="dark" code='int x = 0;
+void setup() {
+  // Set the size of the canvas
+  size(300, 300);
+}
+void draw(){
+  // Draw a white background
+  background(255, 255, 255);
+
+  // Conditional statements on the fill color
+  if (x>100) {
+    fill(0,255,0);
+  }
+  if (x>200) {
+    fill(255,0,0);
+  }
+
+  // Draw ellipse
+  ellipse(100,100,100,100);
+
+  // Increment x
+  x=x+1;
+
+  textSize(50);
+  text("x = " + x, 50, 200);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="subtitle">A more complex example</h3>
+        <div style="width: 90%; height: 80vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="dark" code="// x memorizes the position of the ball
+int x =0;
+void setup(){
+  size(100,100);
+}
+
+void draw(){
+  // Draw an empty red background (= cancel the previous ball)
+  background(255,0,0);
+  x=x+1;
+  // As a good practice, indent the sequence of commands in the body of the conditional instruction
+  if (x>100) {
+      // When the ball reaches (100, 100) (i.e. the bottom right corner), reset its position to (0, 0)
+      x = 0;
+  }
+  fill(0,0,255);
+  stroke(0,0,255);
+  ellipse(x,x,10,10);
+}"></processing-editor>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Import the main reveal script -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+
+  <!-- Initialize reveal -->
+  <script>
+    Reveal.initialize({
+      plugins: [RevealHighlight],
+      // Display an help overlay when ? is pressed
+      help: false,
+      // Display controls in the bottom right corner
+      controls: true,
+      // Display a presentation progress bar
+      progress: true,
+      // Push each slide change to the browser history
+      history: true,
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+      // Enable the slide overview mode
+      overview: true,
+      // Set the width of the slides
+      width: "90%",
+      // Set the height of the slides
+      height: "90%",
+      // Vertical centering of slides
+      center: true,
+      // Loop the presentation
+      loop: false,
+      // Enables touch navigation on devices with touch input
+      touch: true,
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+      // Select a theme
+      theme: 'blood',
+      // Select the type of slides transition
+      transition: 'fade',
+      // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+      disableLayout: true
+    });
+  </script>
+
+  <!-- If the user asks for the pdf version, set section height to auto -->
+  <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+  <script>
+    if (window.location.href.indexOf('?print-pdf') > -1) {
+      // Create a new css element setting the height of .section to none
+      var css = document.createElement("style");
+      // Modify section height to fix the layout
+      // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+      // Hide the slide context (the slide number)
+      css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+      // Append the css to the head
+      document.head.appendChild(css);
+
+      const printVersionText = document.getElementById('print-version-text');
+      printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+    }
+  </script>
+</body>
+
+</html>

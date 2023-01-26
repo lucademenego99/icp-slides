@@ -191,9 +191,11 @@ if (test) {
               <li><strong>NOTA:</strong> usa sempre le <strong>parentesi tonde ()</strong> per il test</li>
             </ul>
             <li>Se <span class="code">test</span> è <span class="ok bold">true</span>, verrà eseguito il codice nelle
-              <strong>parentesi graffe {}</strong></li>
+              <strong>parentesi graffe {}</strong>
+            </li>
             <li>Se <span class="code">test</span> è <span class="error bold">false</span>, il codice nelle graffe è
-              <strong>ignorato</strong>.</li>
+              <strong>ignorato</strong>.
+            </li>
           </ul>
         </div>
       </section>
@@ -202,7 +204,7 @@ if (test) {
         <h3 class="title">Un esempio</h3>
         <div class="row" style="width: 95%; gap: 3%;">
           <div class="col">
-            <p>Se <span class="code">test</span> è <span class="code bold ok">true</span>, gli statement eseguiti
+            <p>Se <span class="code">test</span> è <span class="code bold ok">true</span>, le istruzioni eseguite
               saranno:</p>
             <ul>
               <li>statement 1;</li>
@@ -222,7 +224,7 @@ statement 4;
 statement 5;</code></pre>
           </div>
           <div class="col">
-            <p>Se <span class="code">test</span> è <span class="code bold error">false</span>, gli statement eseguiti
+            <p>Se <span class="code">test</span> è <span class="code bold error">false</span>, le istruzioni eseguite
               saranno:</p>
             <ul>
               <li>statement 3;</li>
@@ -334,14 +336,16 @@ int j = 2;
 println(i=j);</code></pre>
           </div>
           <div class="col">
-            <p><span class="error bold">ERRORE: <span class="code">=</span> è l'operatore di assegnazione, mentre tu dovresti usare l'operatore di uguaglianza <span class="code">==</span></span></p>
+            <p><span class="error bold">ERRORE: <span class="code">=</span> è l'operatore di assegnazione, mentre tu
+                dovresti usare l'operatore di uguaglianza <span class="code">==</span></span></p>
           </div>
         </div>
       </section>
 
       <section>
         <h3 class="title">Esercizio 1</h3>
-        <p>Considera ogni espressione, cercando di capire se è <span class="code ok bold">true</span> o <span class="code error bold">false</span></p>
+        <p>Considera ogni espressione, cercando di capire se è <span class="code ok bold">true</span> o <span
+            class="code error bold">false</span></p>
         <p>Alla fine esegui il codice per verificare.</p>
         <div style="width: 90%; height: 50vh; margin-top: 3vh;">
           <processing-editor contenteditable="true" type="vertical" theme="white" code='// Per ricordare le tue risposte, puoi usare i commenti (come questo)
@@ -362,7 +366,8 @@ println("j) ", -3!=2);'></processing-editor>
       <section>
         <h3 class="title">Esercizio 2</h3>
         <p>Per ogni operatore, scrivi tre espressioni relazionali.</p>
-        <p>Ricorda che puoi verificare se sono <span class="code ok bold">true</span> o <span class="code error bold">false</span> usando il comando <span class="code">println()</span></p>
+        <p>Ricorda che puoi verificare se sono <span class="code ok bold">true</span> o <span
+            class="code error bold">false</span> usando il comando <span class="code">println()</span></p>
         <div style="width: 90%; height: 50vh; margin-top: 3vh;">
           <processing-editor contenteditable="true" type="vertical" theme="white" code='// Esempio:
 println(5 > 3);
@@ -541,13 +546,15 @@ void draw(){
         <h3 class="title">Indentazione</h3>
         <div style="text-align: left;">
           <ul style="font-size: 0.8em;">
-            <li>L'indentazione è l'inserimento di una certa quantità di spazio vuoto all'inizio di una riga di testo.</li>
+            <li>L'indentazione è l'inserimento di una certa quantità di spazio vuoto all'inizio di una riga di testo.
+            </li>
             <li>Questa è una convenzione usata per esprimere al meglio la struttura del codice sorgente.</li>
             <ul>
               <li>In <em>processing/java</em> non è obbligatorio (<strong>ma quasi sempre utile!</strong>)</li>
               <li>Ci sono dei linguaggi di programmazione dove viene richiesto (es. Python)</li>
             </ul>
-            <li>Esso rende il codice più leggibile, mette in relazione i flussi di controllo ed i costrutti utilizzati (condizioni e loop).</li>
+            <li>Esso rende il codice più leggibile, mette in relazione i flussi di controllo ed i costrutti utilizzati
+              (condizioni e loop).</li>
             <li>Tipicamente si utilizza il tasto di tabulazione.</li>
           </ul>
         </div>
@@ -564,7 +571,8 @@ void draw(){
           </div>
           <div class="col">
             <ol style="font-size: 0.6em;">
-              <li>La parentesi iniziale <span class="code">{</span> è posizionata sulla stessa righa dell'<span class="code">if</span></li>
+              <li>La parentesi iniziale <span class="code">{</span> è posizionata sulla stessa righa dell'<span
+                  class="code">if</span></li>
               <li>Il blocco di codice all'interno delle graffe è indentato</li>
               <li>La parentesi di chiusura dell'if si trova su una nuova riga, non indentata</li>
             </ol>
@@ -580,15 +588,19 @@ void draw(){
 }</code></pre>
           </div>
           <div class="col">
-            <p>Questa è un'altra possibilità: la prima graffa <span class="code">{</span> è posizionata su una nuova riga, non indentata</p>
+            <p>Questa è un'altra possibilità: la prima graffa <span class="code">{</span> è posizionata su una nuova
+              riga, non indentata</p>
           </div>
         </div>
-        <p>Più dettagli: <a href="http://www.datrevo.com/i-vari-stili-didentazione-lezione-46-di-java-avanzato/">http://www.datrevo.com/i-vari-stili-didentazione-lezione-46-di-java-avanzato/</a></p>
+        <p>Più dettagli: <a
+            href="http://www.datrevo.com/i-vari-stili-didentazione-lezione-46-di-java-avanzato/">http://www.datrevo.com/i-vari-stili-didentazione-lezione-46-di-java-avanzato/</a>
+        </p>
       </section>
 
       <section>
         <h3 class="title">Esercizio 1</h3>
-        <p>Cambia il codice: invece di utilizzare l'operatore <span class="code">%</span>, prova ad utilizzare uno statement condizionale</p>
+        <p>Cambia il codice: invece di utilizzare l'operatore <span class="code">%</span>, prova ad utilizzare
+          un'istruzione condizionale</p>
         <div style="width: 90%; height: 50vh;">
           <processing-editor contenteditable="true" type="vertical" theme="white" code="int y = 0;
 void setup() {
@@ -605,7 +617,8 @@ void draw(){
 
       <section>
         <h3 class="title">Esercizio 2</h3>
-        <p>Cambia il codice: invece di utilizzare l'operatore <span class="code">%</span>, prova ad utilizzare uno statement condizionale</p>
+        <p>Cambia il codice: invece di utilizzare l'operatore <span class="code">%</span>, prova ad utilizzare
+          un'istruzione condizionale</p>
         <div style="width: 90%; height: 50vh;">
           <processing-editor contenteditable="true" type="vertical" theme="white" code="int y = 0;
 int x = 0;
@@ -627,7 +640,8 @@ void draw(){
 
       <section>
         <h3 class="title">Esercizio 3</h3>
-        <p>Scrivi un programma che sceglie un numero a caso (usa la funzione <span class="code">random()</span>) e mostra un cerchio se il numero è pari, altrimenti un rettangolo.</p>
+        <p>Scrivi un programma che sceglie un numero a caso (usa la funzione <span class="code">random()</span>) e
+          mostra un cerchio se il numero è pari, altrimenti un rettangolo.</p>
         <p>Per verificare se un numero è pari utilizza l'operatore <span class="code">%</span></p>
         <div style="width: 90%; height: 50vh;">
           <processing-editor contenteditable="true" type="vertical" theme="white" code="void setup() {
@@ -643,8 +657,10 @@ void draw(){
 
       <section>
         <h3 class="title">Esercizio 4</h3>
-        <p style="margin: 0;">Crea l'animazione dell'eclissi: quando il sole finisce fuori dal canvas, riappare all'inizio</p>
-        <img style="margin: 0 0 0.5em 0;" src="conditions-assets/sun.png" alt="Immagine dell'esercizio: eclissi di sole">
+        <p style="margin: 0;">Crea l'animazione dell'eclissi: quando il sole finisce fuori dal canvas, riappare
+          all'inizio</p>
+        <img style="margin: 0 0 0.5em 0;" src="conditions-assets/sun.png"
+          alt="Immagine dell'esercizio: eclissi di sole">
         <div style="width: 90%; height: 50vh;">
           <processing-editor contenteditable="true" type="vertical" theme="white" code="// Le tue variabili...
 
@@ -664,10 +680,12 @@ void draw() {
         <h3 class="title">Esercizio 5</h3>
         <div class="row" style="width: 95%;">
           <div class="col">
-            <p style="margin: 0;">Disegna 2 palle che si muovono in due direzioni opposte. Quando si incontrano al centro, devono fermarsi.</p>
+            <p style="margin: 0;">Disegna 2 palle che si muovono in due direzioni opposte. Quando si incontrano al
+              centro, devono fermarsi.</p>
           </div>
           <div class="col">
-            <img style="margin: 0 0 0.5em 0;" src="conditions-assets/balls.png" alt="Immagine dell'esercizio: due palle che si muovono verso il centro, una da destra ed una da sinistra">
+            <img style="margin: 0 0 0.5em 0;" src="conditions-assets/balls.png"
+              alt="Immagine dell'esercizio: due palle che si muovono verso il centro, una da destra ed una da sinistra">
           </div>
         </div>
         <div style="width: 90%; height: 50vh;">
@@ -687,7 +705,8 @@ void draw() {
 
       <section>
         <h3 class="title">Esercizio 6</h3>
-        <p>Scrivi un programma che mostra un cerchio dopo 1 secondo. Poi il cerchio disappare per 1 secondo, e poi riappare ancora dopo 1 secondo.</p>
+        <p>Scrivi un programma che mostra un cerchio dopo 1 secondo. Poi il cerchio disappare per 1 secondo, e poi
+          riappare ancora dopo 1 secondo.</p>
         <p><strong>Consiglio</strong>: la funzione <span class="code">draw()</span> è chiamata 60 volte per secondo.</p>
         <div style="width: 90%; height: 50vh;">
           <processing-editor contenteditable="true" type="vertical" theme="white" code="// Le tue variabili...
@@ -701,6 +720,644 @@ void draw() {
   // Il tuo codice...
   
 }"></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">if and if and if...</h3>
+        <p>Gli <span class="code">if</span> possono essere annidati in altri <span class="code">if</span></p>
+        <p>Nota l'indentazione multi-livello</p>
+        <p><span class="error">Ricorda di chiudere ogni blocco if con <span class="code">}</span>!</span></p>
+        <div class="row" style="width: 90%">
+          <div class="col">
+            <pre><code>if (age >= 18){
+  if (age < 65){
+    if (teacher== true){
+      if (workplace == 0){
+        if (asl == true){
+          println(".. We call you back in June.");
+        }
+      }
+    }
+  }
+}</code></pre>
+          </div>
+          <div class="col">
+            <img src="conditions-assets/nestedifs.png" alt="Diagramma della configurazione con if annidati">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Istruzioni condizionali avanzate</h3>
+        <div style="text-align: left;">
+          <div class="row" style="width: 90%; justify-content: space-evenly">
+            <div class="col" style="flex: 2;">
+              <pre><code>// Sintassi da usare:
+if (test) {
+  statements 1
+} else {
+  statements 2
+}</code></pre>
+            </div>
+            <div class="col" style="flex: 3;">
+              <img src="conditions-assets/ifelsediagram.png" alt="Diagram representing the if-else statement">
+            </div>
+          </div>
+          <ul style="margin-top: 2em; font-size: 0.8em;">
+            <li>L'espressione <span class="code">test</span> deve sempre avere valore <span
+                class="code ok bold">true</span> o <span class="code error bold">false</span></li>
+            <ul>
+              <li><strong>NOTA:</strong> usa sempre le <strong>parentesi tonde ()</strong> per il test</li>
+            </ul>
+            <li>Se <span class="code">test</span> è <span class="ok bold">true</span>, verrà eseguito il codice nelle
+              <strong>PRIME parentesi graffe {}</strong>
+            </li>
+            <li>Se <span class="code">test</span> è <span class="error bold">false</span>, verrà eseguito il codice
+              nelle
+              <strong>ULTIME parentesi graffe {}</strong>.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Un esempio</h3>
+        <div class="row" style="width: 95%; gap: 3%;">
+          <div class="col">
+            <p>Se <span class="code">test</span> è <span class="code bold ok">true</span>, le istruzioni eseguite
+              saranno:</p>
+            <ul>
+              <li>statement 1;</li>
+              <li>statement 2;</li>
+              <li>statement 5;</li>
+            </ul>
+          </div>
+          <div class="col">
+            <pre><code>if (test) {
+  statement 1;
+  statement 2;
+} else {
+  statement 3;
+  statement 4;
+}
+statement 5;</code></pre>
+          </div>
+          <div class="col">
+            <p>Se <span class="code">test</span> è <span class="code bold error">false</span>, le istruzioni eseguite
+              saranno:</p>
+            <ul>
+              <li>statement 3;</li>
+              <li>statement 4;</li>
+              <li>statement 5;</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Istruzioni condizionali avanzate all'opera</h3>
+        <p>Prendiamo in considerazione questo semplice pezzo di codice <em>processing</em>:</p>
+        <div class="row" style="width: 90%">
+          <div class="col">
+            <pre><code>int x = 0;
+void draw(){
+  if (x>100) {
+    fill(0,255,0);
+  } else {
+    fill(255,0,0);
+  }
+  ellipse(100,100,100,100);
+  x=x+1;
+}</code></pre>
+          </div>
+          <div class="col">
+            <p>Cosa credi che faccia?</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Caso 1</h3>
+        <div class="row" style="width: 90%;">
+          <div class="col">
+            <pre><code data-line-numbers="6,8-9">int x = 0;
+void draw(){
+  if (x>100) {
+    fill(0,255,0);
+  } else {
+    fill(255,0,0);
+  }
+  ellipse(100,100,100,100);
+  x=x+1;
+}</code></pre>
+          </div>
+          <div class="col" style="text-align: left; margin-left: 5%;">
+            <p>Quando <span class="code">x=0 ... 100</span>: le righe 6, 8-9 vengono eseguite.</p>
+            <p>Risultato: <strong>un cerchio rosso</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Caso 2</h3>
+        <div class="row" style="width: 90%;">
+          <div class="col">
+            <pre><code data-line-numbers="4,8-9">int x = 0;
+void draw(){
+  if (x>100) {
+    fill(0,255,0);
+  } else {
+    fill(255,0,0);
+  }
+  ellipse(100,100,100,100);
+  x=x+1;
+}</code></pre>
+          </div>
+          <div class="col" style="text-align: left; margin-left: 5%;">
+            <p>Quando <span class="code">x > 100</span>: le righe 4, 8-9 vengono eseguite.</p>
+            <p>Risultato: <strong>un cerchio verde</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Verifica tu stesso!</h3>
+        <div style="width: 90%; height: 70vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int x = 0;
+void setup() {
+  // Dimensione del canvas
+  size(300, 300);
+}
+void draw(){
+  // Disegna un background bianco
+  background(255, 255, 255);
+
+  if (x>100) {
+    fill(0,255,0);
+  } else {
+    fill(255,0,0);
+  }
+
+  // Disegna un cerchio
+  ellipse(100,100,100,100);
+
+  // Incrementa x
+  x=x+1;
+
+  // Stampa il valore di x
+  textSize(50);
+  text("x = " + x, 50, 200);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <p>Scrivi un programma che sceglie un numero a caso (usa la funzione <span class="code">random()</span>) e
+          mostra un cerchio se il numero è pari, altrimenti un rettangolo.</p>
+        <p>Utilizza il costrutto <span class="code">if ... else ...</span>!</p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code="void setup() {
+  size(300,300);
+  // Esempio di utilizzo della funzione random
+  // int a = int(random(0, 100));
+  
+  // Il tuo codice...
+  
+}"></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <p>Disegna 2 palle che si muovono in due direzioni opposte da bordi opposti del canvas. Quando si incontrano al
+          centro, una si ferma e cambia colore, l'altra inizia a muoversi nella direzione opposta (torna indietro).</p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code="// Le tue variabili...
+
+
+void setup() {
+  size(300,300);
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}"></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <p>Scrivi un programma che disegna una bandiera scandinava a caso.</p>
+        <p>Utilizza la funzione <span class="code">random()</span> ed il costrutto <span class="code">if ... else
+            ...</span></p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code="void setup() {
+  size(300,300);
+
+  // Il tuo codice...
+  
+}"></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 4</h3>
+        <p>L'esercizio dell'orologio a cui avevamo lavorato qualche lezione fa mostrava un'ora a caso in uno solo dei 4
+          quadranti.</p>
+        <p>Mediante il costrutto <span class="code">if</span> migliora la tua soluzione permettendo all'orologio di
+          mostrare qualsiasi ora.</p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code="void setup() {
+  size(300,300);
+
+  // Il tuo codice...
+  
+}"></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Due ultimi commenti...</h3>
+        <p>Le parentesi graffe <span class="code">{}</span> in realtà non sono obbligatorie, tuttavia in tal caso
+          l'<span class="code">if</span> o <span class="code">else</span> sarà applicato solamente alla prima istruzione
+          presente dopo le parentesi tonde</p>
+        <p><span class="error">Dimenticare le graffe è un errore tipico</span></p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int x = 1;
+
+println("Caso 1: senza graffe");
+if (x<2)
+  println(x);
+x++;
+println(x);
+
+x = 1;
+
+println("Caso 2: con graffe");
+if (x<2) {
+  println(x);
+  x++;
+}
+println(x);'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Due ultimi commenti...</h3>
+        <div class="row">
+          <div class="col">
+            <p>E' possibile utilizzare direttamente il costrutto <span class="code">else if</span>.</p>
+            <p>Come puoi vedere sotto, funziona alla stessa maniera!</p>
+          </div>
+          <div class="col">
+            <pre><code>if (test) {
+  ...
+}
+else if (test 2) {
+  ...
+}</code></pre>
+          </div>
+        </div>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int x = 2;
+
+println("Caso 1: costrutto else if");
+if (x<3){
+  x++;
+  println(x);
+}
+else if(x>3) {
+  x--;
+  println(x);
+}
+
+x = 2;
+println("Caso 2: normale costrutto if...else");
+if (x<3){
+  x++;
+  println(x);
+}
+else {
+  if(x>3) {
+    x--;
+    println(x);
+  }
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1 (lungo)</h3>
+        <div class="row">
+          <div class="col">
+            <p>Progetta un semaforo con il costrutto <span class="code">if-else</span></p>
+          </div>
+          <div class="col">
+            <img src="conditions-assets/semaforo.png" alt="Immagine esercizio: un semaforo">
+          </div>
+        </div>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Le tue variabili...
+
+void setup() {
+  size(300,300);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2 (lungo)</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna un biliardo animato con una palla che rimbalza sui bordi del canvas</p>
+          </div>
+          <div class="col">
+            <img src="conditions-assets/billiard.png"
+              alt="Immagine esercizio: biliardo con palla che rimbalza sui bordi">
+          </div>
+        </div>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Le tue variabili...
+
+void setup() {
+  size(450,250);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3 (lungo)</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna un albero di natale animato</p>
+          </div>
+          <div class="col">
+            <img src="conditions-assets/natale.png" alt="Immagine esercizio: un albero di natale">
+          </div>
+        </div>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Le tue variabili...
+
+void setup() {
+  size(450,250);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Decisioni multiple</h3>
+        <div class="row" style="width: 95%; gap: 5%;">
+          <div class="col" style="height: 100%;">
+            <pre style="height: 100%;"><code style="height: 100%;">switch(c) {
+  case valore_1:
+    ...
+    break;
+  case valore_2:
+    ...
+    break;
+  // eventuali altri case
+  case valore_N:
+    ...
+    break;
+  default:
+}</code></pre>
+          </div>
+          <div class="col">
+            <ul>
+              <li><span class="code">c</span> è una variabile <span class="code">int</span>/<span
+                  class="code">char</span>/<span class="code">byte</span></li>
+              <li><span class="code">valore_1</span>, <span class="code">valore_2</span> sono i possibili valori di
+                <span class="code">c</span></li>
+              <li><span class="code"><span class="code">default</span>: ogni valore di <span
+                    class="code">c</span></span></li>
+              <li><span class="code">break</span> è utilizzato per uscire immediatamente dal blocco <span
+                  class="code">switch</span></li>
+              <li>Nota: <span class="code">break</span> e <span class="code">default</span> non sono obbligatori.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Un esempio</h3>
+        <p>Prova a cambiare i valori di <span class="code">a</span> ed effettuare le modifiche consigliate nel codice</p>
+        <p>In questo modo capirai esattamente come funziona questo costrutto</p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a = 4;
+switch (a) {
+  case 1:
+    println("1 ");
+    break;
+  case 2:
+    println("2 ");
+    break;
+  case 3:
+    println("3 ");
+    break;
+  case 4:
+    println("4 ");
+    break;  // COSA SUCCEDE SE RIMUOVI QUESTO BREAK?
+  default:  // COSA SUCCEDE SE RIMUOVI IL DEFAULT?
+    println("more than 4");
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <p>Rifai <a href="#/42">l'esercizio del semaforo</a> utilizzando il costrutto <span class="code">switch</span></p>
+        <div style="width: 90%; height: 55vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Le tue variabili...
+
+void setup() {
+  size(300,300);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <p>In inglese i numeri ordinali vengono creati utilizzando il «th», ad esempio, 5-th, o 7-th. L'eccezione sono i numeri: 1, 2, 3.</p>
+        <p>Scrivi un programma che sceglie un numero casuale e applica questa regola per stampare il valore sulla console, utilizzando il costrutto <span class="code">switch</span></p>
+        <div style="width: 90%; height: 55vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Il tuo codice...
+'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <p>Rifai <a href="#/38">l'esercizio sulle bandiere scandinave</a> utilizzando il costrutto <span class="code">switch</span></p>
+        <div style="width: 90%; height: 55vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300,300);
+
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 4</h3>
+        <p>Certe cose sono legali solo dopo una certa età, ad esempio i minori di 18 anni non possono comprare sigarette.</p>
+        <p>Scrivi un programma che sceglie un'età a caso e scrive su console cosa non si può fare a quell'età. Utilizza <span class="code">switch</span></p>
+        <div style="width: 90%; height: 55vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Il tuo codice...
+'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Operatori logici</h3>
+        <div style="text-align: left; width: 60%;">
+          <p>Esistono anche degli operatori logici che permettono di combinare più condizioni di test in un'unica espressione:</p>
+          <ul>
+            <li><span class="code">&&</span> (AND)</li>
+            <li><span class="code">||</span> (OR)</li>
+            <li><span class="code">!</span> (NOT)</li>
+          </ul>
+          <p>Per esempio:</p>
+          <ul>
+            <li><span class="code">(y > 2) && (y > 3)</span> è <span class="code ok bold">true</span> solo se y è più grande di 2 <strong>*E*</strong> y è più grande di 3</li>
+            <li><span class="code">(y > 2) || (y > 3)</span> è <span class="code ok bold">true</span> se y è più grande di 2 <strong>*O*</strong> y è più grande di 3 (ovviamente, anche quando y è più grande di 2 e di 3)</li>
+            <li><span class="code">!(y > 2)</span> è <span class="code ok bold">true</span> solo se y è minore o uguale a 2</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Un esempio</h3>
+        <div style="width: 90%; height: 65vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int x = 3;
+int y = 6;
+
+println("Caso 1:");
+println((x > y) && (y > 2));
+
+println("Caso 2:");
+println((y < x) || (x > 1));
+
+println("Caso 3:");
+println((y == 6) && !(x > 5));'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <div class="row" style="width: 60%;">
+          <div class="col">
+            <p>Usando gli operatori logici, scrivi un programma che verifichi se un numero a caso è divisibile per:</p>
+          </div>
+          <div class="col">
+            <ul>
+              <li>2 e 3</li>
+              <li>2 o 5</li>
+              <li>3, ma non per 4</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Il tuo codice:
+
+'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <p>Combina gli esercizi <a href="#/43">del biliardo</a> e <a href="#/37">delle due palle</a>: due palle iniziano in una posizione random del biliardo.</p>
+        <p>Ogni volta che una palla tocca l'altra palla o il bordo del canvas, la sua direzione ed il suo colore cambiano.</p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Le tue variabili
+
+void setup() {
+  size(450, 300);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <p>Scrivi lo stesso programma di prima, ma utilizzando l'operatore di negazione per capire se la palla è fuori dal canvas.</p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Le tue variabili
+
+void setup() {
+  size(450, 300);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 4</h3>
+        <p>Crea un biliardo con una buca. Quando la palla raggiunge la buca, deve disapparire.</p>
+        <div style="width: 90%; height: 50vh;">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Le tue variabili
+
+void setup() {
+  size(450, 300);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
         </div>
       </section>
     </div>

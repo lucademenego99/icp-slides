@@ -7,177 +7,312 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Code Playgrounds</title>
 
+    <!-- Main Reveal Stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+    <!-- Blood Reveal Theme Stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/blood.css" id="theme">
 
+    <!-- Custom stylesheet to make reveal work with our playgrounds -->
+    <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+
+    <!-- Bundle containing the code playground web components -->
+    <script src="https://lucademenego99.github.io/icp-bundle/base/full.iife.js"></script>
+
     <style>
-        .flex-content {
-            display: flex;
-            min-height: 550px;
-        }
-
-        .col {
-            flex: 1;
-        }
-
-        li:not(:last-child) {
-            margin-bottom: 17px;
-        }
-
-        .emph {
-            color: #a23;
-        }
-
-        a {
-            text-decoration: underline !important;
+        li {
+            padding-bottom: 2vmin;
         }
     </style>
 </head>
 
-<body class="h-screen full-page-demo reveal-viewport" data-page="icp"
-    style="transition: transform 0.8s ease 0s; --slide-width:960px; --slide-height:700px;">
+<!-- For more information on reveal.js: https://revealjs.com/ -->
 
-    <div class="reveal slide center focused has-horizontal-slides ready" role="application"
-        data-transition-speed="default" data-background-transition="fade">
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+    <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+        data-background-transition="fade">
         <div class="slides">
+
+            <!-- Each <section> is a slide -->
             <section>
-                <h3>Interactive Code Playgrounds</h3>
-                <p><small>Project Presentation</small></p>
-                <p style="padding-top: 13rem;"><small>A complete description can be found in <a
-                            href="https://docs.google.com/document/d/1BWKdk5kNK1np8LIa5sVbVbGRCMZlRT_gG1DByieyFdI/edit?usp=sharing"
-                            target="_blank">this document</a></small></p>
-            </section>
-            <section>
-                <h3>Introduction</h3>
-                <p><small><strong><span class="emph">Idea:</span> provide HTML Slides with runnable
-                            code</strong></small></p>
-                <div class="flex-content">
-                    <div class="fragment fade-in col">
-                        <p><strong>Help Students</strong> Learning Programming Languages</p>
-                        <iframe
-                            src="https://codepen.io/hakimel/embed/bzrZGo?height=300&theme-id=37007&default-tab=js,result&editable=true"
-                            frameborder="0" width="100%" height="60%"></iframe>
-                    </div>
-                    <div class="fragment fade-in col">
-                        <p>Support People with <strong>Vision Impairments</strong></p>
-                        <ul style="font-size: 0.7em; padding-top: 2em">
-                            <li>ARIA Attributes</li>
-                            <li>Semantic tags</li>
-                            <li>Images' alt</li>
-                            <li>Clear DOM Structure</li>
-                        </ul>
-                    </div>
+                <!-- title class: custom style for titles -->
+                <h3 class="title">Interactive Code Playgrounds</h3>
+
+                <!-- subtitle class: custom style for subtitles -->
+                <p class="subtitle">Rethinking the user experience of slideshows in programming classes</p>
+                <div>
+                    <p class="xsmall">An interactive demo of the <a href="https://github.com/lucademenego99/icp-bundle"
+                                target="_blank">Interactive Code
+                                Playgrounds</a> project</p>
                 </div>
             </section>
+
             <section>
-                <h3>Introduction</h3>
-                <p><small><strong><span class="emph">Future Integrations</span></strong></small></p>
-                <div class="flex-content">
-                    <div class="fragment fade-in col">
-                        <p>Easily <strong>extendable</strong> with new:</p>
-                        <ul style="font-size: 0.7em; padding-top: 2em">
-                            <li>Programming Languages</li>
-                            <li>Frameworks <span class="emph">- e.g. React, Vue.js</span></li>
-                            <li>Libraries <span class="emph">- e.g. Bootstrap, Three.js</span></li>
+                <h5>Learning to code isn't easy.</h5>
+                <p class="fragment">Especially if you're a beginner.</p>
+            </section>
+
+            <section>
+                <p>Your university probably teaches programming through a lab course.</p>
+            </section>
+
+            <section>
+                <p>One of the first steps in lab courses is to make students install a coding environment.</p>
+                <p class="fragment">Without the coding environment, you can't start coding.</p>
+                <p class="fragment">Often, the installation is quite complex.</p>
+            </section>
+
+            <section>
+                <p>Starting out should be simpler.</p>
+            </section>
+
+            <section>
+                <p>We want to propose a solution <br />
+                    that rethinks one of the staples of programming classes.</p>
+            </section>
+
+            <section>
+                <p>The humble slide deck.</p>
+            </section>
+
+            <section>
+                <section>
+                    <div class="row">
+                        <div class="col">
+                            <p>A typical slide in a programming class looks like this.</p>
+
+                            <p>Go down to analyse some of the issues this creates, or go right to continue.</p>
+                        </div>
+
+                        <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col">
+                            <ul style="list-style-type: none;">
+                                <li>The code to your right is an image.</li>
+                                <li class="fragment">You can't select text from it.</li>
+                                <li class="fragment">Even when you can, if it's on a PDF file, it often doesn't select
+                                    properly.</li>
+                                <li class="fragment">If you try copying and pasting from it, the output might be,
+                                    frankly, garbage.</li>
+                                <li class="fragment">Also, as a teacher, if you need to change something, you need to
+                                    re-make the image.</li>
+                                <li class="fragment">To make matters worse, there is also a problem of <span
+                                        class="emph">accessibility</span>: <br />
+                                    an image is hardly usable for a screen reader user.</li>
+                                <li class="fragment">And finally, even when you can see them, images often render ugly!
+                                    Look at those compression artifacts!</li>
+                            </ul>
+                        </div>
+                        <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <div class="row">
+                    <div class="col">
+                        <ul style="list-style-type: none;">
+                            <li>But the biggest problem is this:</li>
+                            <li class="fragment">Are you studying, and curious to know what this bit of code does?</li>
                         </ul>
+                        <div class="fragment">
+                            <h4>Tough <span class="fragment">luck.</span></h4>
+                        </div>
                     </div>
-                    <div class="fragment fade-in col">
-                        <p>Slides Customization <strong>Web Application</strong></p>
-                        <img src="assets/webapp-example.png" alt="Example of Web Application for Slides Customization">
-                    </div>
+
+                    <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                 </div>
             </section>
+
             <section>
-                <h3>Some Use Cases</h3>
-                <ul style="font-size: 0.7em; padding-top: 2em">
-                    <li>A professor prepares the material for a <span class="emph">programming laboratory</span> in
-                        which students are encouraged
-                        to run code and play with it</li>
-                    <li>A professor wants to give to his students a <span class="emph">common yet easy-to-use
-                            environment</span> to code</li>
-                    <li>A student wants to take <span class="emph">interactive notes</span> during a programming
-                        laboratory</li>
-                    <li>A student doesn't have enough space in his computer to <span class="emph">download a complete
-                            IDE</span></li>
-                    <li>Someone wants to create a slide deck that supports people with <span class="emph">vision
-                            Impairments</span></li>
-                </ul>
+                <section>
+                    <p class="big">Okay, that was maybe a bit excessive.</p>
+                    <p>You can actually do that, but it'll take jumping through a few hoops. <br />
+                        Find out by going down, or just skip ahead to the right.</p>
+                </section>
+                <section>
+                    <p>
+                        Alright, there was some interesting code on that slide! <br />
+                        Let's assume you want to run a bit of Python code...
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        You'll just need to...
+                    </p>
+                </section>
+                <section>
+                    <p>Open the Python interpreter</p>
+                    <p class="fragment">Open a text editor</p>
+                    <p class="fragment">Select the code on the slide (if you can!)</p>
+                    <p class="fragment">Copy and paste it in the text editor (or transcribe it manually!)</p>
+                    <p class="fragment">Check for copy/paste mistakes</p>
+                    <p class="fragment">Run the code in the interpreter</p>
+                    <p class="fragment">Whew!</p>
+                </section>
+                <section>
+                    <p>Can't we do better?</p>
+                </section>
             </section>
+
             <section>
-                <h3>Main Requirements</h3>
-                <ul style="font-size: 0.7em; padding-top: 2em">
-                    <li>Slides must be <span class="emph">downloadable and accessible</span> through any web browser
-                    </li>
-                    <li>When possible, the compilation and run processes should happen <span
-                            class="emph">client-side</span></li>
-                    <li><span class="emph">Compilation and run time</span> should be limited to a maximum of 5 seconds
-                    </li>
-                    <li><span class="emph">The Web Application</span> should at least provide tools to add a title, a
-                        paragraph, images and runnable code</li>
-                    <li>During the development a set of <span class="emph">example slide decks</span> should be created
-                    </li>
-                </ul>
+                <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
+                <div class="row" style="width: 100%">
+                    <!-- col class: first column of the row defined before -->
+                    <div class="col" style="text-align: left; margin-left: min(2vw, 4vh)">
+                        <p class="fragment semi-fade-out big" data-fragment-index="1">What if code on slides could look
+                            like...</p>
+                        <div class="fragment" data-fragment-index="2">
+                            <h4>this?</h4>
+                        </div>
+                        <p class="fragment" data-fragment-index="4">Go ahead and try clicking that "Run Code!" button.
+                        </p>
+                        <p class="fragment" data-fragment-index="5">Did you see what happened in the "Output" box?</p>
+                        <p class="fragment" data-fragment-index="6">The code was run <span class="emph">directly on the
+                                slide</span>!</p>
+                        <p class="fragment" data-fragment-index="7">What's more, you can edit the code directly in the
+                            text box!</p>
+                        <p class="fragment" data-fragment-index="8">Why don't you make some changes, run the code again,
+                            and see what happens?</p>
+                        <p class="fragment" data-fragment-index="9">Move on when you're done playing.</p>
+                    </div>
+                    <!-- col class: second column of the row defined before -->
+                    <!-- Note: the editor takes the size of the parent, so it must be specified -->
+                    <!--    in this case the parent is 100% width, 60vh height -->
+                    <div class="col fragment" data-fragment-index="2" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
+                        <!-- Normal editor, set the language and the code inside it -->
+                        <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
+                        <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
+                        <!-- Note: for reveal.js to work we need to set content editable to true -->
+                        <python-editor contenteditable="true" theme="dark"
+                            code="print('Hello, world!')" />
+                    </div>
             </section>
+
             <section>
-                <h3>Technologies</h3>
-                <ul style="font-size: 0.7em; padding-top: 2em">
-                    <li>HTML slides generation using <span class="emph">Reveal.js</span></li>
-                    <li>No external service for running <span class="emph">browser-native programming languages</span>
-                    </li>
-                    <li><span class="emph">External API</span> to compile and run the other programming languages</li>
-                    <li>Use of <span class="emph">WebAssembly</span> when possible, to limit the access to our API</li>
-                    <li><span class="emph">CodeMirror v6</span> open-source in-browser code editor</li>
-                </ul>
-                <p style="padding-top: 3rem;"><small>All the details and alternatives can be found in <a
-                            href="https://lucademenego99.github.io/icp-tiddlywiki/" target="_blank">this TiddlyWiki
-                            Notebook</a></small></p>
+                <p class="big">
+                    You just saw what we call an <span class="emph">Interactive Code Playground</span> (or ICP for
+                    short).<br />
+                    And there's more they can do...
+                </p>
             </section>
+
             <section>
-                <h3>Milestones</h3>
-                <p>There are <span class="emph">8 milestones</span>:</p>
-                <img src="assets/icp-milestones.png" alt="List of the milestones of the project">
+                <div class="row" style="width: 100%">
+                    <div class="col">
+                        <p>You can restrict the editable parts of the code. It may be useful for guided exercises!</p>
+                    </div>
+                    <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
+                        <python-editor contenteditable="true" type="vertical" theme="dark"
+                            code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
+                    </div>
             </section>
+
             <section>
-                <h3>Timeline</h3>
-                <p style="padding-top: 2rem;">The complete timeline is publicly available in <a
-                        href="https://docs.google.com/spreadsheets/d/1PTG_LTOYC9qNbaXDFD_Oj7_7ezBRNm-ib98EKjtV470/edit?usp=sharing"
-                        target="_blank">this spreadsheets document</a>.</p>
-                <p style="padding-top: 2rem;">The followed iterations are the following:</p>
-                <img src="assets/icp-iterations.png"
-                    alt="Image showing the iterations of the development of the project" width="60%">
+                <div class="row" style="width: 100%">
+                    <div class="col">
+                        <p style="margin-bottom: min(1vw, 2vh)">Clicking on the settings, you can find buttons to:</p>
+                        <ul>
+                            <li>copy the code snippet</li>
+                            <li>cancel all your changes</li>
+                            <li>enable the 'tabs' handling in the editor</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
+                        <python-editor contenteditable="true" type="vertical"
+                            code="print('Hello, world!')" />
+                    </div>
             </section>
+
             <section>
-                <h3>Some examples of slides created with ICP</h3>
-                <ul>
-                    <li><a href="editors.html">Overview of the Code Editors</a></li>
-                </ul>
+                <div class="row" style="width: 100%">
+                    <div class="col">
+                        <p style="margin-bottom: min(1vw, 2vh)">ICP is compatible with other languages!</p>
+                        <ul>
+                            <li>Javascript</li>
+                            <li>Typescript</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>SQL</li>
+                        </ul>
+                        <p>On the right, for instance, you can execute some Java code!</p>
+                    </div>
+                    <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
+                        <java-editor contenteditable="true" theme="dark" id='test' code='public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!"); 
+    }
+}' />
+                    </div>
             </section>
+
             <section>
-                <h3>Slides adapted from softpython</h3>
-                <ul>
-                    <li><a href="basics2-bools.html">Basics - booleans (ITA)</a></li>
-                    <li><a href="basics3-floats.html">Basics - floats (ITA)</a></li>
-                    <li><a href="basics4-chal.html">Basics - Challenges (ITA)</a></li>
-                    <li><a href="strings1.html">Strings 1 (ITA)</a></li>
-                    <li><a href="strings2.html">Strings 2 (ITA)</a></li>
-                    <li><a href="strings3.html">Strings 3 (ITA)</a></li>
-                    <li><a href="strings4.html">Strings 4 (ITA)</a></li>
-                    <li><a href="strings5-chal.html">Strings 5 - challenges (ITA)</a></li>
-                </ul>
+                <p>We hope the ICPs can make learning to code more *creative*, and based on *fast tinkering*.</p>
+                <p class="fragment">Thanks for following this demo.</p>
             </section>
+
+            <!-- <section>
+                And how did we do this? This is a very simple, "tape-and-glue", MVP.
+            </section>
+
+            <section>
+                Illustrate here the tech stack, vertically, or allow skipping right.
+            </section>
+
+            <section>
+                One day, we would like to simplify this quite a bit, but this is promising for a quick prototype!
+
+                For now, we can make use of all the nice features that you might expect from the components we used.
+            </section>
+
+            <section>
+                And this is all front-end code! Which means this works even if you are offline (encourage to try).
+
+                Or, more realistically, this means you can integrate ICPs in pretty much any LMS or platform without
+                installing complex components.
+            </section>
+
+            <section>
+                But since we want these to replace slides, you can also download them as a single file.
+            </section>
+
+            <section>
+                Pedagogical implications
+            </section>
+
+            <section>
+                Accessibility implications
+            </section>
+
+            <section>
+                (Edtech) policy implications
+            </section>
+
+            <section>
+                Who are we?
+            </section> -->
+
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+    <!-- Import the main reveal script -->
+    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js">
+    </script>
 
+    <!-- Initialize reveal -->
     <script>
         Reveal.initialize({
-            // Display controls in the botom right corner
+            // Display an help overlay when ? is pressed
+            help: false,
+            // Display controls in the bottom right corner
             controls: true,
             // Display a presentation progress bar
             progress: true,
             // Push each slide change to the browser history
-            history: false,
+            history: true,
             // Enable keyboard shortcuts for navigation
             keyboard: true,
             // Enable the slide overview mode
@@ -195,9 +330,28 @@
             // Select a theme
             theme: 'blood',
             // Select the type of slides transition
-            transition: 'slide',
-
+            transition: 'fade',
+            // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+            disableLayout: true
         });
+    </script>
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            // Modify section height to fix the layout
+            // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+            // Hide the slide context (the slide number)
+            css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+            // Append the css to the head
+            document.head.appendChild(css);
+
+            const printVersionText = document.getElementById('print-version-text');
+            printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+        }
     </script>
 </body>
 

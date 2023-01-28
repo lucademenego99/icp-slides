@@ -41,9 +41,9 @@
                 <!-- subtitle class: custom style for subtitles -->
                 <p class="subtitle">Ripensare l'esperienza utente delle presentazioni nelle lezioni di programmazione</p>
                 <div>
-                    <p><small>Demo interattiva del progetto <a href="https://github.com/lucademenego99/icp-bundle"
+                    <p class="xsmall">Demo interattiva del progetto <a href="https://github.com/lucademenego99/icp-bundle"
                                 target="_blank">Interactive Code
-                                Playgrounds</a></small></p>
+                                Playgrounds</a></p>
                 </div>
             </section>
 
@@ -64,7 +64,7 @@
             </section>
 
             <section>
-                Iniziare dovrebbe essere più semplice.
+                <p>Iniziare dovrebbe essere più semplice.</p>
             </section>
 
             <section>
@@ -81,7 +81,7 @@
                             <p>Vai giù per analizzare alcuni problemi che queste slide creano, o vai a destra per continuare.</p>
                         </div>
 
-                        <img src="assets/codeSample.png" style="flex: 1; margin: 3rem; object-fit: contain;" />
+                        <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                     </div>
                 </section>
                 <section>
@@ -100,7 +100,7 @@
                                     Guarda questi artefatti di compressione!</li>
                             </ul>
                         </div>
-                        <img src="assets/codeSample.png" style="flex: 1; margin: 3rem; object-fit: contain;" />
+                        <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                     </div>
                 </section>
             </section>
@@ -117,22 +117,24 @@
                         </div>
                     </div>
 
-                    <img src="assets/codeSample.png" style="flex: 1; margin: 3rem; object-fit: contain;" />
+                    <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                 </div>
             </section>
 
             <section>
                 <section>
-                    Okay, forse questo era un po' eccessivo.
+                    <p class="big">Okay, forse questo era un po' eccessivo.</p>
                     <p>Puoi scoprire cosa fa il codice, ma ci vorranno alcuni salti mortali. <br />
                         Scoprilo andando giù, o continua sulla destra.</p>
                 </section>
                 <section>
+                    <p>
                     Bene, c'è del codice interessante in quella slide!<br />
                     Diciamo che vuoi eseguire del codice Python...
+                </p>
                 </section>
                 <section>
-                    Dovrai solo...
+                    <p>Dovrai solo...</p>
                 </section>
                 <section>
                     <div>Aprire l'interprete Python</div>
@@ -144,7 +146,7 @@
                     <div class="fragment">Whew!</div>
                 </section>
                 <section>
-                    Non possiamo fare di meglio?
+                    <p>Non possiamo fare di meglio?</p>
                 </section>
             </section>
 
@@ -168,7 +170,7 @@
                     <!-- col class: second column of the row defined before -->
                     <!-- Note: the editor takes the size of the parent, so it must be specified -->
                     <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col fragment" data-fragment-index="2" style="height: 60vh; margin: 2vh">
+                    <div class="col fragment" data-fragment-index="2" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
                         <!-- Normal editor, set the language and the code inside it -->
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
@@ -179,8 +181,10 @@
             </section>
 
             <section>
-                Hai appena visto quello che chiamiamo un <span class="emph">Interactive Code Playground</span> (o ICP).<br />
-                E c'è altro che possono fare...
+                <p class="big">
+                    Hai appena visto quello che chiamiamo un <span class="emph">Interactive Code Playground</span> (o ICP).<br />
+                    E c'è altro che possono fare...
+                </p>
             </section>
 
             <section>
@@ -188,7 +192,7 @@
                     <div class="col">
                         <p>Puoi rendere modificabili solo alcune parti di codice. Potrebbe risultare utile per eventuali esercizi guidati!</p>
                     </div>
-                    <div class="col" style="height: 60vh; margin: 2vh">
+                    <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
                         <python-editor contenteditable="true" type="vertical" theme="dark"
                             code="print('Hello, <EDITABLE>world</EDITABLE>!')" />
                     </div>
@@ -197,14 +201,14 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p style="margin-bottom: 2em">Cliccando sulle impostazioni, puoi trovare dei pulsanti per:</p>
+                        <p style="margin-bottom: min(1vw, 2vh)">Cliccando sulle impostazioni, puoi trovare dei pulsanti per:</p>
                         <ul>
                             <li>copiare il codice</li>
                             <li>annullare tutte le tue modifiche</li>
                             <li>abilitare l'utilizzo dei 'tabs' nell'editor</li>
                         </ul>
                     </div>
-                    <div class="col" style="height: 60vh; margin: 2vh">
+                    <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
                         <python-editor contenteditable="true" type="vertical"
                             code="print('Hello, world!')" />
                     </div>
@@ -213,7 +217,7 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p style="margin-bottom: 2em">ICP è compatibile con altri linguaggi!</p>
+                        <p style="margin-bottom: min(1vw, 2vh)">ICP è compatibile con altri linguaggi!</p>
                         <ul>
                             <li>Javascript</li>
                             <li>Typescript</li>
@@ -223,7 +227,7 @@
                         </ul>
                         <p>Sulla destra, ad esempio, puoi eseguire del codice Java!</p>
                     </div>
-                    <div class="col" style="height: 60vh; margin: 2vh">
+                    <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
                         <java-editor contenteditable="true" theme="dark" id='test' code='public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, World!"); 
@@ -260,10 +264,6 @@
             keyboard: true,
             // Enable the slide overview mode
             overview: true,
-            // Set the width of the slides
-            width: "90%",
-            // Set the height of the slides
-            height: "90%",
             // Vertical centering of slides
             center: true,
             // Loop the presentation

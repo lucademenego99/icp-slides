@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Code Playgrounds</title>
+
+    <!-- Main Reveal Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+    <!-- Blood Reveal Theme Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+    <!-- Custom stylesheet to make reveal work with our playgrounds -->
+    <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+
+    <!-- Bundle containing the code playground web components -->
+    <script src="https://lucademenego99.github.io/icp-bundle/base/python.iife.js"></script>
+    <!-- <script src="icp-bundle.umd.js"></script> -->
+
+    <style>
+        li {
+            padding-bottom: 2vmin;
+        }
+
+        .code {
+            padding: 0 .5rem;
+            background-color: rgb(215, 237, 255);
+            font-family: monospace;
+        }
+
+        code {
+            background-color: #272822;
+            font-family: monospace;
+            color: white;
+        }
+
+        code.example {
+            background-color: transparent;
+            color: black;
+        }
+    </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+    <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+        data-background-transition="fade">
+        <div class="slides">
+
+            <!-- Each <section> is a slide -->
+            <section>
+                <!-- title class: custom style for titles -->
+                <h3 class="title">Stringhe 1</h3>
+
+                <!-- subtitle class: custom style for subtitles -->
+                <p class="subtitle">Introduzione</p>
+                <div style="margin-top: 5vh;">
+                    <p>Slide adattate da <a href="https://it.softpython.org/strings/strings1-sol.html"
+                            target="_blank">softpython</a>
+                    </p>
+                    <p id="print-version-text"><a href="?print-pdf">Clicca qui</a> per la versione stampabile</p>
+                </div>
+
+                <div style="margin-top: 5vh;">
+                    <p><small>Premi <span class="code">esc</span> per l'overview generale</small></p>
+                </div>
+            </section>
+
+            <section>
+                <section>
+                    <p class="slide-context">1. Introduzione 1</p>
+                    <h3 class="title">Le stringhe</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Sequenze immutabili di caratteri</li>
+
+                                <ul>
+                                    <li class="fragment" data-fragment-index="0">doppie virgolette, una linea</li>
+                                    <li class="fragment" data-fragment-index="1">virgolette singole, una linea</li>
+                                    <li class="fragment" data-fragment-index="2">tre doppie virgolette, più linee
+                                    </li>
+                                    <li class="fragment" data-fragment-index="3">tre apici, più linee</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="r-stack" style="width: 50vw;">
+                            <div class="col fragment fade-in-then-out" data-fragment-index="0"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true"
+                                    code='a = "la mia prima stringa, in doppie virgolette"' />
+                            </div>
+                            <div class="col fragment fade-in-then-out" data-fragment-index="1"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true"
+                                    code="a = 'la mia seconda stringa, in virgolette singole'" />
+                            </div>
+                            <div class="col fragment fade-in-then-out" data-fragment-index="2"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code='a = """la mia terza stringa
+in triple doppie virgolette
+quindi la posso mettere
+
+su più righe"""' />
+                            </div>
+                            <div class="col fragment fade-in" data-fragment-index="3"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="a = '''la mia quarta stringa,
+in tripli apici
+può pure essere messa
+
+su più linee'''" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">1. Introduzione 2</p>
+                    <h3 class="title">Stampare le stringhe</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+
+                                <li>Comando <span class="code">print</span></li>
+                                <li class="fragment" data-fragment-index="0">
+                                    Modalità interprete, apici singoli: vediamo apici singoli</li>
+                                <li class="fragment" data-fragment-index="1">Modalità interprete, con apici doppi?</li>
+                                <li class="fragment" data-fragment-index="2">Modalità interprete, con variabili?</li>
+                            </ul>
+                        </div>
+                        <div class="r-stack" style="width: 50vw;">
+                            <!-- DAVID: MODALITA' SCRIPT -->
+                            <div class="col fragment fade-out" data-fragment-index="0"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="print('ciao')" />
+                            </div>
+                            <!-- DAVID: MODALITA' INTERPRETE -->
+                            <div class="col fragment fade-in-then-out" data-fragment-index="0"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="'ciao'" />
+                            </div>
+                            <!-- DAVID: MODALITA' INTERPRETE -->
+                            <div class="col fragment fade-in-then-out" data-fragment-index="1"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code='"ciao"' />
+                            </div>
+                            <!-- DAVID: MODALITA' INTERPRETE -->
+                            <div class="col fragment fade-in-then-out" data-fragment-index="2"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="x = 'ciao'
+x" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">1. Introduzione 3</p>
+                    <h3 class="title">Stampare più stringhe</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+
+                            <ul style="list-style-type: none;">
+                                <li>Più parameteri per <span class="code">print</span></li>
+                                <li>Anche mischiati con altri tipi (es. numeri)</li>
+                                <li>Prova tu!</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code='x = "ciao"
+y = "Python"
+
+print(x,y)
+# nota che nella stampa Python inserisce uno spazio' />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">1. Introduzione 4</p>
+                    <h3 class="title">Lunghezza di una stringa</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li> funzione <span class="code">len</span> </li>
+                                <li> (qualunque sequenza) </li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code='print(len("ciao"))
+print(len(""))' />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">1. Introduzione 5</p>
+                    <h3 class="title">Domanda 1</h3>
+                    <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
+                    <p><span class="code">"len"("ciao")</span></p>
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <python-editor contenteditable="true" code='print( "len"("ciao") )' />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">1. Introduzione 6</p>
+                    <h3 class="title">Domanda 2</h3>
+                    <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
+                    <p><span class="code">len("len('ciao')")</span></p>
+
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <python-editor contenteditable="true" code="print( len(&quot;len('ciao')&quot;) )" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">1. Introduzione 7</p>
+                    <h3 class="title">Domanda 3</h3>
+                    <p>Possiamo scrivere una cosa del genere? Cosa produce?</p>
+                    <p><span class="code">len(((((("ciao"))))))</span></p>
+                    <div style="height: 40vh; width: 50vw; margin-top:10vh;">
+                        <python-editor contenteditable="true" code='print(  len(((((("ciao"))))))  )' />
+                    </div>
+
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">2. Escape 1</p>
+                    <h3 class="title">Contare sequenze di escape</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Le <em>sequenze di escape</em> possono occupare meno spazi di quello
+                                    che sembra</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="print(len('a\tb'))
+print('a\tb')" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Escape 2</p>
+                    <h3 class="title">Le sequenze di escape</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <table>
+                                <tr>
+                                    <th>Descrizione</th>
+                                    <th>Sequenza di escape</th>
+                                </tr>
+                                <tr>
+                                    <td>Ritorno a capo (linefeed)</td>
+                                    <td><span class="code">\n</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Tabulazione (ASCII tab)</td>
+                                    <td><span class="code">\t</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col" style="height: 50vh; width: 100%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="print('ESEMPIO linefeed: Ciao\nmondo\n!!!')
+print('ESEMPIO tab: Ciao\tMondo')" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Escape 3</p>
+                    <h3 class="title">Esercizio 1</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p>Quanto sono lunghe le sequenze di escape speciali?</p>
+                            <p>
+                                Prova a stampare la lunghezza delle seguenti stringhe: <span
+                                    class="code">'ab\ncd'</span>
+                                e <span class="code">'ab\tcd'</span></p>
+                            <p>Noti qualcosa di strano?</p>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="a = 'ab\ncd'
+b = 'ab\tcd'
+
+# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Escape 4</p>
+                    <h3 class="title">Esercizio 2</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p>Trova UNA SOLA stringa che stampata con <span class="code">print</span> venga mostrata
+                                come la seguente.</p>
+                            <pre><code>Questa  è
+una
+
+sfida   apparentemente      semplice</code></pre>
+                            <ul>
+                                <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span
+                                        class="code">\n</span></li>
+                                <li><strong>NON</strong> usare spazi</li>
+                                <li>inizia e concludi la stringa con apice singolo</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">2. Escape 5</p>
+                    <h3 class="title">Esercizio 3</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p>Trova UNA SOLA stringa che stampata con <span class="code">print</span> venga mostrata
+                                come la seguente.</p>
+                            <pre><code>At  te
+n   tis
+simame
+
+n
+te</code></pre>
+                            <ul>
+                                <li><strong>USA SOLO</strong> combinazioni di <span class="code">\t</span> e <span
+                                        class="code">\n</span></li>
+                                <li><strong>NON</strong> usare spazi</li>
+                                <li><strong>NON</strong> usare tripli apici</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <p class="slide-context">3. Caratteri speciali 1</p>
+                    <h3 class="title">Caratteri Speciali</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <table>
+                                <tr>
+                                    <th>Descrizione</th>
+                                    <th>Sequenza di escape</th>
+                                    <th>Risultato a stampa</th>
+                                </tr>
+                                <tr>
+                                    <td>Apice singolo</td>
+                                    <td><span class="code">\'</span></td>
+                                    <td><span class="code"> ' </span></td>
+                                </tr>
+                                <tr>
+                                    <td>Doppio apice</td>
+                                    <td><span class="code">\"</span></td>
+                                    <td><span class="code"> " </span></td>
+                                </tr>
+                                <tr>
+                                    <td>Backslash</td>
+                                    <td><span class="code">\\</span></td>
+                                    <td><span class="code">\</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code='# ESEMPIO
+print("Così metto \"doppie virgolette\" nella stringa")' />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">3. Caratteri speciali 2</p>
+                    <h3 class="title">Esercizio 1</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div>
+                            <p>Trova una stringa da stampare con la <span class="code">print</span> che stampata mostri
+                                la sequenza seguente</p>
+                            <p><span class="code">Questo "genio" delle stringhe vuole /\\/ fregarmi \//\ con esercizi
+                                    atroci O_o'</span></p>
+                            <p>La stringa <strong>DEVE</strong> iniziare e finire con apici singoli <span class="code">
+                                    '</span></p>
+                        </div>
+                    </div>
+
+                    <div style="height: 40vh; width: 50vw;">
+                        <python-editor contenteditable="true" code="# scrivi qui" />
+                    </div>
+
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">4. Encodings 1</p>
+                    <h3 class="title">Caratteri ASCII</h3>
+                    <div class="row">
+                        <div class="col">
+                            <ul>
+                                <li>encoding</li>
+                                <li>127 caratteri</li>
+                                <li>Extended ASCII</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <img src="assets/ascii.png" alt="Ascii image">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">4. Encodings 2</p>
+                    <h3 class="title">Caratteri UNICODE</h3>
+                    <table>
+                        <tr>
+                            <th>Sequenza di escape</th>
+                            <th>Risultato stampato</th>
+                        </tr>
+                        <tr>
+                            <td><span class="code">\u272A</span></td>
+                            <td>✪</td>
+                        </tr>
+                    </table>
+
+                    <div>
+                        Vai a <a href="https://www.fileformat.info/info/unicode/char/272a/index.htm"
+                            target="_blank">questa
+                            pagina</a>, copia-incolla il carattere ✪ e stampalo da codice Python <br><br>
+
+                    </div>
+
+
+                    <div style="height: 40vh; width: 50vw;">
+                        <python-editor contenteditable="true" code="# scrivi qui" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">4. Encodings 3</p>
+                    <h3 class="title">Esercizio</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p>Cerca su Google <em>Unicode heart</em> e prova a stampare un cuore in Python</p>
+                            <p>Fallo <strong>sia</strong> copia-incollando il carattere, <strong>sia</strong> usando la
+                                notazione <span class="code">\uxxxx</span></p>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">4. Encodings 4</p>
+                    <h3 class="title">Riferimenti</h3>
+                    <div style="width: 55vw;">
+                        <ul>
+                            <li>prima parte sull’encoding Unicode <a
+                                    href="http://gpiancastelli.altervista.org/dip3-it/stringhe.html" target="_blank">dal
+                                    capitolo
+                                    Stringhe nel libro Dive into Python 3</a></li>
+                            <li><a href="https://docs.python.org/3/howto/unicode.html" target="_blank">Documentazione
+                                    unicode di Python
+                                    3</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">5. Immutabilità 1</p>
+                    <h3 class="title">Le stringhe sono immutabili</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p>Le stringhe sono <em>oggetti immutabili</em>. </p>
+
+                            <p>Si può solo:</p>
+                            <ul>
+                                <li>generare una nuova stringa a partire da altre</li>
+                                <li>riassegnare una variabile stringa</li>
+                            </ul>
+                            <p class="fragment">L'operazione <span class="code">+</span> concatena creando una NUOVA
+                                stringa</p>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="x = 'ciao'
+y = x + 'mondo'
+print(x)
+print(y)" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Immutabilità 2</p>
+                    <h3 class="title">Riassegnare variabili</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p>Possiamo riassegnare le variabili</p>
+                            <p class="fragment">Python si occupa di liberare la memoria</p>
+                        </div>
+                        <div class="col" style="height: 40vh; width: 40vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="x = 'ciao'
+y = 'mondo'
+x = y
+print(x)
+print(y)" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Immutabilità 3</p>
+                    <h3 class="title">Riassegnare variabili</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <p>Cosa succede se alla destra dell'<span class="code">=</span> mettiamo una formula del
+                                genere?</p>
+                        </div>
+                        <div class="r-stack" style="width: 40vw;">
+                            <div class="col" style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="x = 'ciao'
+
+x = x + 'mondo'
+
+print(x)" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Immutabilità 4</p>
+                    <h3 class="title">Cosa è successo?</h3>
+                    <pre style="width: auto;"><code>x = 'ciao'
+x = x + 'mondo'</code></pre>
+                    <ol>
+                        <li>Python genera la stringa <span class="code">'ciao'</span> e la assegna ad <span
+                                class="code">x</span></li>
+                        <li>Poi:</li>
+                        <ul>
+                            <li>calcola il risultato di <span class="code">x + 'mondo'</span>, genera NUOVA
+                                stringa <span class="code">'ciaomondo'</span></li>
+                            <li>assegna la nuova stringa a <span class="code">x</span></li>
+                        </ul>
+                    </ol>
+                </section>
+                <section>
+                    <p class="slide-context">5. Immutabilità 5</p>
+                    <h3 class="title">Per riassumere...</h3>
+                    <pre style="width: auto;"><code>x = 'ciao'
+x = x + 'mondo'</code></pre>
+                    <ol style="margin-top: 10vh;">
+                        <li><strong>PRIMA</strong> viene calcolato il risultato dell'espressione a destra dell'<span
+                                class="code">=</span></li>
+                        <li><strong>POI</strong> il risultato viene associato alla variabile a sinistra dell'<span
+                                class="code">=</span></li>
+                    </ol>
+                </section>
+                <section>
+                    <p class="slide-context">5. Immutabilità 6</p>
+                    <div class="row" style="width: 90%;">
+                        <div class="col" style="text-align: left; height: 100%; width: 40vw; margin-left: 1vw;">
+                            <h3 class="title">Esercizio</h3>
+                            <p>Scrivi del codice che cambia lo stato della memoria in modo che alla fine risulti la
+                                stampa
+                                seguente:</p>
+                            <pre style="width: auto;"><code>z =  Questo
+w =  era
+x =  un problema
+y =  era
+s =  Questo era un problema</code></pre>
+                            <ul style="margin-top: 5vh;">
+                                <li>Usa <strong>SOLO</strong> i simboli <span class="code">=</span>, <span
+                                        class="code">+</span>, <span class="code">w</span>, <span class="code">x</span>,
+                                    <span class="code">y</span>, <span class="code">s</span>
+                                </li>
+                                <li>puoi usare quante linee di codice ritieni opportune</li>
+                                <li>puoi usare ogni simbolo quante volte vuoi</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 100%; width: 40vw; margin-left: 1vw;">
+                            <div class="col" style="height: 70vh; width: 40vw; margin-right: 1vw;">
+                                <python-editor contenteditable="true" code="# Queste variabili ti sono date
+z = 'Questo'
+w = 'è'
+x = 'un problema'
+y = 'era'
+s = ' '
+
+# Scrivi qui il codice
+
+
+
+# Infine stampiamo le nuova variabili
+print('z = ', z)
+print('w = ', w)
+print('x = ', x)
+print('y = ', y)
+print('s = ', s)" />
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">5. Stringhe e numeri 1</p>
+                    <h3 class="title">Stringhe e numeri</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Tipo stringhe: <span class="code">str</span></li>
+                                <li class="fragment" data-fragment-index="0">Se una
+                                    <em>stringa</em> contiene un numero?
+                                </li>
+                                <li class="fragment" data-fragment-index="1">Questo codice porta ad un errore, perché:
+                                </li>
+                                <ul class="fragment" data-fragment-index="1">
+                                    <li><span class="code">'254'</span> è di tipo <span class="code">str</span>
+                                    </li>
+                                    <li>254 è di tipo <span class="code">int</span></li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="r-stack" style="width: 50vw;">
+                            <div class="col fragment fade-out" data-fragment-index="0"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code='
+
+print(type("ciao mondo"))
+print("Il carattere 5 rappresenta la cifra cinque, il carattere 3 rappresenta la cifra tre")' />
+                            </div>
+                            <div class="col fragment fade-in-then-out" data-fragment-index="0"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="'254' + 3" />
+                            </div>
+                            <div class="col fragment fade-in-then-out" data-fragment-index="1"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="# '254' + 3
+print(type('254'))
+print(type(254))" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Stringhe e numeri 2</p>
+                    <h3 class="title">Attento a quello che vedi!</h3>
+                    <div style="width: 50vw;">
+                        <p style="margin-top: 10vh;">Prova a stampare questa stringa con <span
+                                class="code">print</span>, cosa sembra?</p>
+                    </div>
+                    <div style="height: 40vh; width: 50vw;">
+                        <python-editor contenteditable="true" code="print('254')" />
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Stringhe e numeri 3</p>
+                    <h3 class="title">Conversioni - da stringa a numero</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Come sommare <span class="code">'254'</span> e <span class="code">3</span>?</li>
+                                <li>Converti la stringa ad intero con la funzione <span class="code">int</span></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="print( int('254') + 3 )" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Stringhe e numeri 4</p>
+                    <h3 class="title">Conversioni - da stringa a numero</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li><strong>NOTA:</strong> le stringhe e i numeri sono immutabili</li>
+                                <li>Scrivendo <span class="code">int('254')</span> viene generato un nuovo numero</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="# Assegno alla variabile x la stringa '254'
+x = '254'
+
+# Assegno alla variabile y il numero ottenuto convertendo '254' in int
+y = int(x)
+
+print(x)
+print(y)
+
+print(type(x))
+print(type(y))" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Stringhe e numeri 5</p>
+                    <h3 class="title">Esercizio</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Prova a convertire una stringa che rappresenta un numero malformato (per es. un
+                                    numero con dentro un carattere: <span class="code">'43K12'</span>) in un <span
+                                        class="code">int</span>.</li>
+                                <li>Che succede?</li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="# Scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Stringhe e numeri 6</p>
+                    <h3 class="title">Conversioni - da numero a stringa</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Qualsiasi oggetto può essere convertito a stringa usando <span
+                                        class="code">str</span></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="x = str(5)
+print('Tipo:', type(x), 'valore:', x)" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">5. Stringhe e numeri 7</p>
+                    <h3 class="title">Conversioni - da numero a stringa</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li>Come concatenare oggetti di tipo diverso?</li>
+                                <li class="fragment" data-fragment-index="0">Si può usare <span class="code">str</span>
+                                </li>
+                                <li class="fragment" data-fragment-index="1"><strong>DOMANDA:</strong> Dopo l'esecuzione
+                                    del codice nella cella precedente, alla variabile <span class="code">x</span>
+                                    risulterà associato un <em>numero</em> o una
+                                    <em>stringa</em>?
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="r-stack" style="width: 45vw;">
+                            <div class="col fragment fade-out" data-fragment-index="0"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="x = 5
+s = 'I giorni di lavoro settimanali sono ' + x
+print(s)" />
+                            </div>
+                            <div class="col fragment fade-in" data-fragment-index="0"
+                                style="height: 40vh; width: 100%; margin-left: 1vw;">
+                                <python-editor contenteditable="true" code="x = 5
+s = 'I giorni di lavoro settimanali sono ' + str(x)
+print(s)" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p class="slide-context">6. Formattazione 1</p>
+                    <h3 class="title">Modi per formattare stringhe</h3>
+                    <div style="width: 50vw; margin-top:5vh">
+                        <ul>
+                            <li> <span class="code">+</span>: macchinoso</li>
+                            <li> <span class="code">%</span>: più comodo, parecchio usato</li>
+                            <li><a href="https://realpython.com/python-formatted-output/#the-python-formatted-string-literal-f-string"
+                                    target="_blank">f-strings</a>: molto comodo, da Python >= 3.6</li>
+                            <li><a href="https://realpython.com/python-formatted-output/" target="_blank">altre
+                                    opzioni...</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Formattazione 2</p>
+                    <h3 class="title">Formattare con <span class="code">%</span></h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left;">
+                            <ul style="list-style-type: none;">
+                                <li class="fragment" data-fragment-index="0"><em>place-holder</em> (segnaposto) <span
+                                        class="code">%s</span>
+                                <li> viene sostituito</li>
+                                <li class="fragment" data-fragment-index="0">variabile dopo il <span
+                                        class="code">%</span></li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 50vh; width: 40vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="x = 3
+'Ho saltato %s volte' % x" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Formattazione 3</p>
+                    <h3 class="title">Formattare con <span class="code">%</span></h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div class="col" style="text-align: left; width:40%">
+                            <ul style="list-style-type: none;">
+                                <li>Per più variabili...</li>
+                                <li>... più segnaposti <span class="code">%s</span></li>
+                                <li> Dopo il <span class="code">%</span>: sequenza variabili in parentesi tonde </li>
+                            </ul>
+                        </div>
+                        <div class="col" style="height: 50vh; width: 60%; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="
+x = 3
+y = 5
+premio = 'Migliore Atleta della Valle'
+'Ho fatto %s salti, %s flessioni, e sono il %s' % (x,y,premio)" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="slide-context">6. Formattazione 4</p>
+                    <h3 class="title">Esercizio - Supercar</h3>
+                    <div class="row" style="width: 90%; margin-top: 8vh;">
+                        <div style="width: 40vw; text-align:left">
+                            <p>Hai ricevuto dei soldi, perciò decidi di comprare due modelli di auto sportive. Visto lo
+                                stile di guida scellerato prevedi già incidenti, perciò per ciascun modello comprerai
+                                tante
+                                auto quanti caratteri ci sono nel nome di ciascun modello.</p>
+                            <p>Scrivi del codice che salva nella stringa <span class="code">s</span> il numero di auto
+                                che comprerai.</p>
+                            <ul>
+                                <li><strong>USA</strong> il segnaposto <span class="code">%s</span></li>
+                            </ul>
+
+                            <p><strong>Esempio:</strong> dati</p>
+                            <pre style="width: auto;"><code>auto1 = 'Jaguar'
+    auto2 = 'Ferrari'</code></pre>
+                            <p>con <span class="code">print(s)</span> il tuo codice dovrebbe mostrare:</p>
+                            <pre
+                                style="width: auto;"><code>'Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi'</code></pre>
+                        </div>
+
+                        <div class="col" style="height: 50vh; width: 60vw; margin-left: 1vw;">
+                            <python-editor contenteditable="true" code="# Comprerò 6 Jaguar e 7 Ferrari perchè tengo i dindi
+auto1, auto2 = 'Jaguar','Ferrari'
+
+# Comprerò 7 Porsche e 11 Lamborghini perchè tengo i dindi
+#auto1, auto2 = 'Porsche','Lamborghini'
+
+
+# scrivi qui" />
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <!-- Import the main reveal script -->
+    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+
+    <!-- Initialize reveal -->
+    <script>
+        Reveal.initialize({
+            // Display an help overlay when ? is pressed
+            help: false,
+            // Display controls in the bottom right corner
+            controls: true,
+            // Display a presentation progress bar
+            progress: true,
+            // Push each slide change to the browser history
+            history: true,
+            // Enable keyboard shortcuts for navigation
+            keyboard: true,
+            // Enable the slide overview mode
+            overview: true,
+            // Set the width of the slides
+            width: "90%",
+            // Set the height of the slides
+            height: "90%",
+            // Enable the slide number counter
+            slideNumber: 'c/t',
+            // Vertical centering of slides
+            center: true,
+            // Loop the presentation
+            loop: false,
+            // Enables touch navigation on devices with touch input
+            touch: true,
+            // Apply a 3D roll to links on hover
+            rollingLinks: true,
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+            // Select a theme
+            theme: 'blood',
+            // Select the type of slides transition
+            transition: 'fade',
+            // Revealjs navigation mode (https://revealjs.com/vertical-slides/)
+            navigationMode: 'linear',
+            // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+            disableLayout: true
+        });
+    </script>
+
+    <!-- If the user asks for the pdf version, set section height to auto -->
+    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+    <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+            // Create a new css element setting the height of .section to none
+            var css = document.createElement("style");
+            // Modify section height to fix the layout
+            // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+            // Hide the slide context (the slide number)
+            css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+            // Append the css to the head
+            document.head.appendChild(css);
+
+            const printVersionText = document.getElementById('print-version-text');
+            printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+        }
+    </script>
+</body>
+
+</html>

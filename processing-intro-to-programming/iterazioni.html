@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Code Playgrounds</title>
+
+  <!-- Main Reveal Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+  <!-- Blood Reveal Theme Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Highlight.js Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai.min.css">
+
+  <!-- Custom stylesheet to make reveal work with our playgrounds -->
+  <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+
+  <!-- Bundle containing the code playground web components -->
+  <script src="https://lucademenego99.github.io/icp-bundle/base/p5-and-processing.iife.js"></script>
+
+  <style>
+    pre code {
+      padding: min(1vw, 2vh) !important;
+    }
+
+    .code {
+      padding: 0 min(1vw, 2vh);
+      background-color: rgb(215, 237, 255);
+      font-family: monospace;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .ok {
+      color: green;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .row {
+      width: min(80vw, 160vh);
+    }
+
+    .mt {
+      margin-top: min(1vw, 2vh) !important;
+    }
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+    .mt2 {
+      margin-top: min(3vw, 6vh) !important;
+    }
+
+    .key__button {
+      box-sizing: border-box;
+      line-height: min(2vw, 4vh);
+      font-size: min(1.4vw, 2.8vh);
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      margin: 0 min(0.5vw, 1vh);
+      min-width: min(2.3vw, 4.6vh);
+      height: min(2.3vw, 4.6vh);
+      padding: 0 min(0.5vw, 1vh);
+      border-color: #f2f2f2;
+      border-style: solid;
+      text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+      border-width: 1px;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+      font-family: sans-serif;
+      display: inline-block;
+      transition: box-shadow 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+    }
+  </style>
+</head>
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+
+  <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+    data-background-transition="fade">
+    <div class="slides">
+      <section>
+        <!-- title class: custom style for titles -->
+        <h3 class="title">6. Iterazioni</h3>
+
+        <p class="mt2" style="color:rgb(134, 134, 134)">Shortcut</p>
+        <div style="text-align: left">
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>F</span> per
+            fullscreen</p>
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>CTRL</span>
+            + <span class='key__button'>ENTER</span> per eseguire del codice</p>
+        </div>
+
+        <p class="xsmall mt2" id="print-version-text"><a href="?print-pdf">Clicca qui</a> per la versione stampabile</p>
+      </section>
+
+      <section>
+        <h3 class="title">Strutture di iterazione</h3>
+        <p>Le strutture di iterazione ci permettono di eseguire un blocco di codice più volte.</p>
+        <p>Esse riducono linee di codice ripetitivo, portandolo ad una versione più compatta</p>
+        <p>Generalmente riducono gli errori</p>
+
+        <img src="iterations-assets/usa-iterazioni.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Perché i costrutti per l'iterazione sono necessari">
+      </section>
+
+      <section>
+        <h3 class="title">Ricetta dei ravioli</h3>
+        <img src="iterations-assets/ravioli-1.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Ricetta dei ravioli schemizzata">
+      </section>
+
+      <section>
+        <h3 class="title">Ricetta dei ravioli</h3>
+        <img src="iterations-assets/ravioli-2.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Ricetta dei ravioli schemizzata, focus sul ciclo">
+      </section>
+
+      <section>
+        <h3 class="title">Sintassi del ciclo for</h3>
+        <div class="row">
+          <div class="col">
+            <pre><code class="hljs javascript">// Sintassi del ciclo for
+for (init; test; update) {
+  statements
+}</code></pre>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/for-diagram.png" style="max-width: 100%; object-fit: contain; max-height: min(13vw, 25vh)" alt="Diagramma del ciclo for">
+          </div>
+        </div>
+        <div style="text-align: left;">
+          <p>Il ciclo <span class="code">for</span> è tipicamente utilizzato quando il numero di iterazioni è conosciuto a priori</p>
+          <p><span class="code">test</span> è l'espressione razionale, valutata <span class="code ok bold">true</span> o <span class="code error bold">false</span></p>
+          <p>Nelle parentesi graffe <span class="code">{}</span> inseriamo il codice che va ripetuto</p>
+          <p>Il counter è tipicamente creato in <span class="code">init</span></p>
+          <ul>
+            <li>Esso è una variabile che conta il numero di iterazioni</li>
+            <li>Esso viene tipicamente aggiornato in <span class="code">update</span></li>
+            <li>La stessa variabile è tipicamente utilizzata in <span class="code">test</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Sintassi del ciclo for</h3>
+        <img src="iterations-assets/for-syntax.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Sintassi del for">
+      </section>
+    </div>
+  </div>
+
+  <!-- Import the main reveal script -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+
+  <!-- Initialize reveal -->
+  <script>
+    Reveal.initialize({
+      plugins: [RevealHighlight],
+      // Display an help overlay when ? is pressed
+      help: false,
+      // Display controls in the bottom right corner
+      controls: true,
+      // Display a presentation progress bar
+      progress: true,
+      // Push each slide change to the browser history
+      history: true,
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+      // Enable the slide overview mode
+      overview: true,
+      // Enable the slide number counter
+      slideNumber: 'c/t',
+      // Set the width of the slides
+      width: "90%",
+      // Set the height of the slides
+      height: "90%",
+      // Vertical centering of slides
+      center: true,
+      // Loop the presentation
+      loop: false,
+      // Enables touch navigation on devices with touch input
+      touch: true,
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+      // Select a theme
+      theme: 'white',
+      // Select the type of slides transition
+      transition: 'fade',
+      // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+      disableLayout: true
+    });
+  </script>
+
+  <!-- If the user asks for the pdf version, set section height to auto -->
+  <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+  <script>
+    if (window.location.href.indexOf('?print-pdf') > -1) {
+      // Create a new css element setting the height of .section to none
+      var css = document.createElement("style");
+      // Modify section height to fix the layout
+      // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+      // Hide the slide context (the slide number)
+      css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+      // Append the css to the head
+      document.head.appendChild(css);
+
+      const printVersionText = document.getElementById('print-version-text');
+      printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+    }
+  </script>
+</body>
+
+</html>

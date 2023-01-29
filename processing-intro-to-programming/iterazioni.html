@@ -28,9 +28,20 @@
     }
 
     .code {
-      padding: 0 min(1vw, 2vh);
+      padding: 0 min(0.5vw, 1vh);
       background-color: rgb(215, 237, 255);
       font-family: monospace;
+    }
+
+    .code-without-pre {
+      padding: min(2vw, 4vh);
+      color: white;
+      background-color: #272822;
+    }
+
+    code .code {
+      background-color: #d9ddd0;
+      color: black;
     }
 
     .error {
@@ -41,8 +52,16 @@
       color: green;
     }
 
+    .warn {
+      color: orange;
+    }
+
     .bold {
       font-weight: bold;
+    }
+
+    .underline {
+      text-decoration: underline;
     }
 
     .row {
@@ -57,6 +76,13 @@
     }
     .mt2 {
       margin-top: min(3vw, 6vh) !important;
+    }
+    .ml2 {
+      margin-left: min(3vw, 6vh) !important;
+    }
+
+    .alpha-list {
+      list-style-type: lower-alpha !important;
     }
 
     .key__button {
@@ -152,6 +178,707 @@ for (init; test; update) {
       <section>
         <h3 class="title">Sintassi del ciclo for</h3>
         <img src="iterations-assets/for-syntax.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Sintassi del for">
+      </section>
+
+      <section>
+        <h3 class="title">Un esempio</h3>
+        <div class="row">
+          <div class="col">
+            <div class="r-stack">
+              <code class="code-without-pre fragment fade-out" data-fragment-index="0" style="text-align: left;">for(<span class="code">int i = 0</span>; i < 2; i++) {<br><span style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</code>
+              <code class="code-without-pre fragment fade-in" data-fragment-index="0" style="text-align: left;"><span class="fragment fade-out" data-fragment-index="2">for(int i = 0; <span class="code">i < 2</span>; i++) {<br><span style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</span></code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="2" style="text-align: left;">for(int i = 0; i < 2; i++) {<br><span class="code" style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="3" style="text-align: left;">for(int i = 0; i < 2; <span class="code">i++</span>) {<br><span style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</code>
+              
+              <code class="code-without-pre fragment fade-in" data-fragment-index="4" style="text-align: left;"><span class="fragment fade-out" data-fragment-index="6">for(int i = 0; <span class="code">i < 2</span>; i++) {<br><span style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</span></code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="6" style="text-align: left;">for(int i = 0; i < 2; i++) {<br><span class="code" style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="7" style="text-align: left;">for(int i = 0; i < 2; <span class="code">i++</span>) {<br><span style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</code>
+
+              <code class="code-without-pre fragment fade-in" data-fragment-index="8" style="text-align: left;"><span class="fragment fade-out" data-fragment-index="10">for(int i = 0; <span class="code">i < 2</span>; i++) {<br><span style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</span></code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="10" style="text-align: left;">for(int i = 0; i < 2; i++) {<br><span style="margin-left: min(2vw, 4vh)">println(i);</span><br><span class="code">}</span></code>
+            </div>
+          </div>
+          <div class="col">
+            <ol>
+              <li class="fragment semi-fade-out" data-fragment-index="0"><span class="code">i</span> è inizializzato a 0</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="0">Controlla se <span class="code">i</span> è minore di 2</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="1"><span class="ok bold ml">SI!</span></li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="2">stampa il valore di <span class="code">i</span>: 0</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="3"><span class="code">i</span> viene incrementato di 1: diventa 1</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="4">Controlla se <span class="code">i</span> è minore di 2</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="5"><span class="ok bold ml">SI!</span></li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="6">stampa il valore di <span class="code">i</span>: 1</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="7"><span class="code">i</span> viene incrementato di 1: diventa 2</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="8">Controlla se <span class="code">i</span> è minore di 2</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="9"><span class="error bold ml">NO!</span></li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="10">Il ciclo termina</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='for (int i= 1; i < 3; i++){
+  println(i);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='for (int i= 0; i <= 5; i++){
+  println(i);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='for (int i= 0; i > 3; i++){
+  println(i);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='for (int i= 1; i < 3; i=i+2){
+  println(i);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='for (int i= 0; i <= 5; i--){
+  println(i);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qualche consiglio</h3>
+        <ul class="mt">
+          <li>Si, i cicli possono essere infiniti (tipicamente un <span class="error">errore</span> del programmatore)</li>
+          <li>Non confondere un ciclo con un <span class="code">draw():</span></li>
+          <ul>
+            <li><span class="code">draw()</span> può essere usato per dare l'impressione di movimento</li>
+            <li><span class="code">for</span> disegnerà tutto <em>il prima possibile</em></li>
+          </ul>
+          <li>E' possibile dichiarare il <em>counter</em> prima del ciclo</li>
+          <li><span class="code">println()</span> può essere utile se il ciclo non si comporta come previsto (vedi slide su Debugger)</li>
+          <li>Usa la variabile counter dentro il <span class="code">for</span>! Per esempio, per disegnare qualcosa che dipende dal valore del counter</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="title">Compara i due snippet</h3>
+        <p>Quale credi sia la differenza?</p>
+        <div class="row">
+          <div class="col">
+            <pre><code class="hljs javascript">void setup() {
+  size(300, 300);
+  for (int i = 1; i < 50; i++) {
+    line(i*10,i*10,i*10+10,i*10);
+  }
+}</code></pre>
+          </div>
+          <div class="col">
+            <pre><code class="hljs javascript">int i;
+void setup() {
+  size(300, 300);
+}
+void draw() {
+  line(i*10,i*10,i*10+10,i*10);
+  i++;
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Primo snippet - for</h3>
+        <p>La variabile <span class="code">i</span> è il counter che controlla il ciclo, utilizzata per disegnare le linee.</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  for (int i = 1; i < 50; i++) {
+    line(i*10,i*10,i*10+10,i*10);
+  }
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Secondo snippet - draw</h3>
+        <p>La variabile <span class="code">i</span> è utilizzata per disegnare le linee, un frame alla volta.</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int i = 0;
+void setup() {
+  size(300, 300);
+}
+void draw() {
+  line(i*10,i*10,i*10+10,i*10);
+  i++;
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <p>Scrivi un programma che disegna 10 forme (usa <span class="code">for</span>) in posizioni random del canvas.</p>
+        <p>Le figure dispari (prima, terza, ...) sono rettangoli, quelle pari (seconda, quarta, ...) sono cerchi.</p>
+
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <p>Scrivi un programma che disegna una linea orizzontale, una verticale ed una diagonale, usando <span class="code">for</span> e la funzione <span class="code">point()</span></p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <p>Scrivi un programma che stampa tutti i numeri pari tra <span class="code">a</span> e <span class="code">b</span>. Usa il ciclo <span class="code">for</span></p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a = 10;
+int b = 21;
+// Il tuo codice
+'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 4</h3>
+        <div class="row">
+          <div class="col">
+            <p>Scrivi un programma che disegna un pattern a zebra</p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/zebra.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="Immagine di un pattern a zebra" />
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 5</h3>
+        <div class="row">
+          <div class="col">
+            <p>Scrivi un programma che disegna 10 cerchi concentrici</p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/cerchi-concentrici.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="Immagine di un pattern a cerchi concentrici" />
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 6</h3>
+        <div class="row">
+          <div class="col">
+            <p>Scrivi un programma che disegna una rete a triangoli</p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/triangle-net.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="Immagine di un pattern a triangoli" />
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 6</h3>
+        <p>Scrivi un programma che disegna una griglia</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <div class="r-stack">
+          <div class="fragment fade-out" data-fragment-index="0">
+            <h3 class="title"><span class="error">COURSE ASSIGNMENT 3</span></h3>
+            <p>Progetta 3 texture pattern differenti. Usa cicli o cicli annidati (prossima lezione).</p>
+            <p>Un disegno deve usare il <span class="code">for</span>, uno il <span class="code">while</span> ed uno il <span class="code">do while</span>.</p>
+
+            <div class="row">
+              <div class="col">
+                <img src="iterations-assets/pattern-1.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Pattern di esempio">
+              </div>
+              <div class="col">
+                <img src="iterations-assets/pattern-2.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Pattern di esempio">
+              </div>
+            </div>
+          </div>
+          <div class="fragment fade-in-then-out" data-fragment-index="0">
+            <img src="iterations-assets/pattern-3.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Pattern di esempio">
+          </div>
+          <div class="fragment fade-in-then-out" data-fragment-index="1">
+            <img src="iterations-assets/pattern-4.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Pattern di esempio">
+          </div>
+          <div class="fragment fade-in-then-out" data-fragment-index="2">
+            <img src="iterations-assets/pattern-5.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Pattern di esempio">
+          </div>
+          <div class="fragment fade-in-then-out" data-fragment-index="3">
+            <img src="iterations-assets/pattern-6.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Pattern di esempio">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Sintassi del while</h3>
+        <div class="row">
+          <div class="col">
+            <pre><code class="hljs javascript">// Sintassi del while
+while(test) {
+  statements
+}</code></pre>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/while-diagram.png" style="max-width: 100%; object-fit: contain; max-height: min(13vw, 25vh)" alt="Diagramma del ciclo for">
+          </div>
+        </div>
+        <div style="text-align: left;">
+          <p><span class="code">while</span> è tipicamente utilizzato quando il numero di iterazioni <strong>non</strong> è conosciuto a priori</p>
+          <p>Nelle parentesi graffe <span class="code">{}</span> inseriamo il codice che va ripetuto</p>
+          <p><span class="code">test</span> è l'espressione razionale, valutata <span class="code ok bold">true</span> o <span class="code error bold">false</span></p>
+          <ul>
+            <li>se viene valutata <span class="code error bold">false</span>, esci immediatamente dal ciclo e continua con il resto del programma (dopo <span class="code">}</span>)</li>
+            <li>se viene valutata <span class="code ok bold">true</span>, esegui le istruzioni all'interno del block <span class="code">{}</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esempi</h3>
+        <div class="row">
+          <div class="col">
+            <pre><code>int i = 9;
+while (i != 1) {
+  i = (int) random(3);
+  println(i);
+}</code></pre>
+          <p>Non possiamo sapere quando si fermerà!</p>
+          </div>
+          <div class="col">
+            <pre><code>int i = 9;
+while (i != 1) {
+  println(i);
+}</code></pre>
+          <p>Non si fermerà mai! <span class="code">i</span> infatti non viene mai cambiato</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">For o... while?</h3>
+        <div class="row">
+          <div class="col" style="text-align: left; flex: 3;">
+            <div class="r-stack">
+              <code class="code-without-pre" style="text-align: left;">for(<span class="error">int i = 0</span>; <span class="ok">i < 2</span>; <span class="warn">i++</span>) {<br><span style="margin-left: min(2vw, 4vh)">println(i);</span><br>}</code>
+            </div>
+          </div>
+          <div class="col" style="flex: 1;">
+            <svg style="width: min(7vw, 13vh); height: min(7vw, 13vh);" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z"></path>
+            </svg>
+          </div>
+          <div class="col" style="flex: 3">
+            <div class="r-stack">
+              <code class="code-without-pre" style="text-align: left;"><span class="error">int i = 0</span>;<br>while(<span class="ok">i < 2</span>) {<br><span class="ml2">println(i)</span><br><span class="ml2 warn">i++</span>;<br>}</code>
+            </div>
+          </div>
+        </div>
+        <div class="mt2">
+          <p><span class="bold">Ogni</span> ciclo <span class="code">for</span> può essere convertito ad un <span class="code">while</span></p>
+          <p><span class="bold ok">ESERCIZIO: prova a scrivere tutti gli esercizi precedenti usando <span class="code">while</span> invece di <span class="code">for</span></span></p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Sintassi del do ... while</h3>
+        <div style="width: min(40vw, 75vh);">
+            <pre><code class="hljs javascript">// Sintassi del do while
+do {
+  statements
+} while(test)</code></pre>
+        </div>
+        <div style="text-align: left;">
+          <p><span class="code">do...while</span> è tipicamente utilizzato quando il numero di iterazioni <strong>non</strong> è conosciuto a priori</p>
+          <p>Nelle parentesi graffe <span class="code">{}</span> inseriamo il codice che va ripetuto</p>
+          <p><span class="code">test</span> è l'espressione razionale, valutata <span class="code ok bold">true</span> o <span class="code error bold">false</span></p>
+          <p><span class="bold underline">PRIMA</span> le istruzioni vengono eseguite, <span class="bold underline">DOPO:</span></p>
+          <p>L'espressione razionale <span class="code">test</span> viene valutata:</p>
+          <ul>
+            <li>se viene valutata <span class="code error bold">false</span>, esci immediatamente dal ciclo e continua con il resto del programma (dopo <span class="code">}</span>)</li>
+            <li>se viene valutata <span class="code ok bold">true</span>, esegui le istruzioni all'interno del block <span class="code">{}</span> <span class="bold">di nuovo</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int i = 0;
+do {
+  println(i + ",");
+  i++;
+} while(i < 3);'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int i = 4;
+do {
+  println(i + ",");
+  i++;
+} while(i < 3);'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">while vs do...while</h3>
+        <div class="row mt2" style="gap: min(2vw, 4vh);">
+          <div class="col" style="border: 1px solid #9e9b9b; padding: min(1vw, 2vh);">
+            <p><span class="code">while</span></p>
+            <ul class="mt2">
+              <li>L'espressione è testata <span class="bold">prima</span> di un'iterazione</li>
+              <li><span class="error">Il numero minimo di iterazioni è 0</span></li>
+              <li>Esci se l'espressione di test è <span class="code">false</span></li>
+            </ul>
+          </div>
+          <div class="col" style="border: 1px solid #9e9b9b; padding: min(1vw, 2vh);">
+            <p><span class="code">do...while</span></p>
+            <ul class="mt2">
+              <li>L'espressione è testata <span class="bold">dopo</span> un'iterazione</li>
+              <li><span class="error">Il numero minimo di iterazioni è 1</span></li>
+              <li>Esci se l'espressione di test è <span class="code">false</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna linee verticali fino alla fine del canvas. Usa <span class="code">while</span></p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/vertical-lines.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="Canvas con linee verticali, che dimostra come fare l'esercizio">
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <p>Scrivi un programma che sceglie un numero a random continuamente finché non ottiene 5 usando il <span class="code">do...while</span>.</p>
+        <p>Conta quante volte deve scegliere un numero prima di ottenere 5. Infine, ripeti il tutto 10 volte: qual è il numero medio di sorteggi?</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Il tuo codice
+'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <p>Scrivi un programma che stampa tutti i numeri tra <span class="code">a</span> e <span class="code">b</span>. Usa il ciclo <span class="code">while</span></p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a = 10;
+int b = 21;
+// Il tuo codice
+'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 4</h3>
+        <p>Disegna un cerchio dopo un delay di 5 secondi usando il <span class="code">while</span>.</p>
+        <p><strong>Nota:</strong> non usare <span class="code">draw()</span>, le funzioni <span class="code">second()</span>, <span class="code">minute()</span> e <span class="code">hour()</span> possono essere usate per leggere l'ora attuale</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(400, 400);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 5</h3>
+        <div class="row">
+          <div class="col">
+            <p>Scrivi un programma che estragga numeri a caso finché il numero non è divisibile per:</p>
+          </div>
+          <div class="col">
+            <ol class="alpha-list">
+              <li>2 e 3</li>
+              <li>2 o 5</li>
+              <li>3, ma non per 4</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="med-code-long">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='// Il tuo codice:
+
+'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Cicli annidati</h3>
+        <div style="text-align: left;">
+          <p>E' possibile inserire un ciclo all'interno di un altro</p>
+          <ul>
+            <li>Il ciclo interno esegue un ciclo completo per ogni singola iterazione del ciclo esterno</li>
+            <li>quindi il ciclo interno è più <em>"veloce"</em></li>
+          </ul>
+        </div>
+
+        <img src="iterations-assets/nested-loops.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)" alt="Esempio di un ciclo annidato">
+
+        <p><strong>Quindi</strong>, per ogni iterazione del ciclo esterno vengono eseguite tutte le iterazioni del ciclo interno</p>
+        <p>Tipicamente, utilizziamo due variabili counter</p>
+      </section>
+
+      <section>
+        <img src="iterations-assets/nested-loops-example.png" style="max-width: 100%; object-fit: contain; max-height: min(60vw, 120vh)" alt="Esempio di un ciclo annidato">
+      </section>
+
+      <section>
+        <h3 class="title">Confronta i due snippet</h3>
+        <div class="row">
+          <div class="col">
+            <pre><code>int a = 0;
+for (int i= 0; i < 100; i=i+10){
+  for (int j= 0; j < 100; j=j+10){
+    a++;
+  }
+}</code></pre>
+          </div>
+          <div class="col">
+            <pre><code>int a = 0;
+for (int i= 0; i < 100; i=i+10){
+  a++;
+}
+for (int j= 0; j < 100; j=j+10){
+  a++;
+}</code></pre>
+          </div>
+        </div>
+        <p class="mt2">Ti aspetti un diverso valore di <span class="code">a</span> alla fine dei due programmi?</p>
+        <p>Nelle prossime due slide puoi eseguire il codice e verificare!</p>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è il valore...</h3>
+        <p>Quale credi sia il valore di <span class="code">a</span> alla fine del seguente pezzo di codice? Esegui per verificare!</p>
+
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a = 0;
+for (int i= 0; i < 100; i=i+10){
+  for (int j= 0; j < 100; j=j+10){
+    a++;
+  }
+}
+
+println(a);'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è il valore...</h3>
+        <p>Quale credi sia il valore di <span class="code">a</span> alla fine del seguente pezzo di codice? Esegui per verificare!</p>
+
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a = 0;
+for (int i= 0; i < 100; i=i+10){
+  a++;
+}
+for (int j= 0; j < 100; j=j+10){
+  a++;
+}
+
+println(a);'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esempio di utilizzo cicli annidati</h3>
+        <p>I cicli annidati sono molto utili quando vogliamo disegnare qualcosa in 2D</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  for (int i= 0; i < 300; i=i+10){
+    for (int j= 0; j < 300; j=j+10){
+      fill (i+j);
+      rect(i,j,10,10);
+    }
+  }
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna una piramide</p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/piramide.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="Piramide costruita con processing, fatta di triangoli">            
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna un tartan</p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/tartan.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="Esempio di tartan">            
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna una scacchiera</p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/scacchiera.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="Una scacchiera">
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 4</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna il backgammon</p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/backgammon.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="Backgammon">
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 5</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna 9 insiemi di cerchi concentrici</p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/sets-of-circles.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)" alt="9 Sets of circles">
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
       </section>
     </div>
   </div>

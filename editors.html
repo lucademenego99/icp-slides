@@ -42,6 +42,7 @@
           <li>&lt;python-editor /&gt;</li>
           <li>&lt;typescript-editor /&gt;</li>
           <li>&lt;java-editor /&gt;</li>
+          <li>&lt;cpp-editor /&gt;</li>
           <li>&lt;sql-editor /&gt;</li>
           <li>&lt;p5-editor /&gt;</li>
           <li>&lt;processing-editor /&gt;</li>
@@ -91,6 +92,18 @@ console.log(greeter.greet());" />
   public static void main(String[] args) {
     System.out.println("<EDITABLE>Hello, World</EDITABLE>!"); 
   }
+}' />
+        </div>
+      </section>
+      <section class="center-slide">
+        <p class="subtitle">&lt;cpp-editor <span class="emph">theme</span>="dark" /&gt;</p>
+        <div class="med-code">
+          <cpp-editor contenteditable="true" theme="dark" id='test' code='#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!" << endl;
+  return 0;
 }' />
         </div>
       </section>

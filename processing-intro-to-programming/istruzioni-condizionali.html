@@ -41,6 +41,10 @@
       color: green;
     }
 
+    .warning {
+      color: orange;
+    }
+
     .bold {
       font-weight: bold;
     }
@@ -139,11 +143,11 @@
             </ol>
           </div>
           <div class="col" style="align-self: flex-start;">
-            <div class="fragment fade-in-then-out" data-fragment-index="2">
-              <p class="big"><strong>Qui l'ATM deve fare un controllo</strong></p>
-              <p><span class="code">if</span> il codice è corretto: <span
+            <div class="fragment fade-in" data-fragment-index="7">
+              <p class="big"><strong>Nella fase di inserimento del PIN l'ATM deve fare un controllo</strong></p>
+              <p><span class="code">Se</span> il codice è corretto: <span
                   class="ok">continua</span></p>
-              <p><span class="code">else</span> <span class="error">chiedi nuovamente il
+              <p><span class="code">altrimenti</span> <span class="error">chiedi nuovamente il
                   PIN</span></p>
             </div>
           </div>
@@ -159,11 +163,13 @@
             <li><span class="code">TEST</span> - La condizione il cui valore determina se eseguire il codice associato
             </li>
             <ul>
-              <li><strong>SE</strong> la pasta sta bollendo:</li>
+              <li><strong>SE</strong> la pasta sta bollendo...</li>
+              <li><strong>SE</strong> il PIN è corretto...</li>
             </ul>
             <li><span class="code">BODY</span> - Il blocco di codice da eseguire se la condizione è vera</li>
             <ul>
               <li><strong>ALLORA</strong> butta la pasta!</li>
+              <li><strong>ALLORA</strong> ritira il denaro!</li>
             </ul>
           </ul>
         </div>
@@ -281,17 +287,23 @@ println("Dopo *if*");
     println("5 è maggiore di 3");
 }
 
+/*
 if (5<3) {
     println("5 è minore di 3");
 }
+*/
 
+/*
 if (5==3) {
     println("5 è uguale a 3");
 }
+*/
 
+/*
 if (5!=3) {
     println("5 è diverso da 3");
-}'></processing-editor>
+}
+*/'></processing-editor>
         </div>
       </section>
 
@@ -304,16 +316,20 @@ int b = 25;
 int c = 10;
 
 if (a == c) {
-  println("a è maggiore o uguale a c");
+  println("a è uguale a c");
 }
 
+/*
 if (b >= a) {
-  println("b è maggiore di a");
+  println("b è maggiore o uguale ad a");
 }
+*/
 
+/*
 if (b == c) {
   println("b è uguale a c");
-}'></processing-editor>
+}
+*/'></processing-editor>
         </div>
       </section>
 
@@ -325,7 +341,12 @@ if (b == c) {
 println(i > 10);</code></pre>
           </div>
           <div class="col">
-            <p><span class="error bold">ERRORE: la variabile <span class="code">i</span> non è inizializzata</span></p>
+            <div class="row" style="width: 100%; justify-content: flex-start; align-items: center; gap: min(2vw, 4vh);">
+              <svg style="width: min(4.5vw, 9vh); height: min(4.5vw, 9vh);" fill="red" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm-1 15v-2h2v2h-2Zm0-10v6h2V7h-2Z" clip-rule="evenodd"></path>
+              </svg>
+              <p><span class="error bold">ERRORE: la variabile <span class="code">i</span> non è inizializzata</span></p>
+            </div>
           </div>
         </div>
         <div class="row mt">
@@ -335,8 +356,30 @@ int j = 2;
 println(i=j);</code></pre>
           </div>
           <div class="col">
-            <p><span class="error bold">ERRORE: <span class="code">=</span> è l'operatore di assegnazione, mentre tu
+            <div class="row" style="width: 100%; justify-content: flex-start; align-items: center; gap: min(2vw, 4vh);">
+              <svg style="width: min(10vw, 20vh); height: min(10vw, 20vh);" fill="orange" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M23 21 12 2 1 21h22Zm-12-3v-2h2v2h-2Zm0-4h2v-4h-2v4Z" clip-rule="evenodd"></path>
+              </svg>
+              <p><span class="warning bold">ATTENZIONE: <span class="code">=</span> è l'operatore di assegnazione, mentre tu
                 dovresti usare l'operatore di uguaglianza <span class="code">==</span></span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Tipici errori</h3>
+        <p>Verifica tu stesso la differenza tra l'operatore di uguaglianza e quello di assegnazione!</p>
+        <div class="row" style="width: min(95vw, 190vh); gap: min(3vw, 6vh);">
+          <div class="col" style="width: min(30vw, 60vh); height: min(30vw, 60vh);">
+            <processing-editor contenteditable="true" type="vertical" theme="white" code='int i = 1;
+int j = 2;
+println(i == j);'></processing-editor>
+          </div>
+          <div class="col" style="width: min(30vw, 60vh); height: min(30vw, 60vh);">
+            <processing-editor contenteditable="true" type="vertical" theme="white" code='int i = 1;
+int j = 2;
+println(i = j);'></processing-editor>
           </div>
         </div>
       </section>
@@ -464,7 +507,7 @@ void draw(){
         <h3 class="title">Caso 3</h3>
         <div class="row">
           <div class="col">
-            <pre><code class="hljs javascript" data-line-numbers="7,9-10">int x = 0;
+            <pre><code class="hljs javascript" data-line-numbers="4,7,9-10">int x = 0;
 void draw(){
   if (x>100) {
     fill(0,255,0);
@@ -477,7 +520,7 @@ void draw(){
 }</code></pre>
           </div>
           <div class="col ml" style="text-align: left;">
-            <p>Quando <span class="code">x > 200</span>: le righe 7, 9-10 vengono eseguite.</p>
+            <p>Quando <span class="code">x > 200</span>: le righe 4, 7, 9-10 vengono eseguite.</p>
             <p>Risultato: <strong>un cerchio rosso</strong></p>
           </div>
         </div>
@@ -485,7 +528,7 @@ void draw(){
 
       <section>
         <h3 class="title">Verifica tu stesso!</h3>
-        <div class="big-code-long">
+        <div class="med-code-long">
           <processing-editor contenteditable="true" type="vertical" theme="white" code='int x = 0;
 void setup() {
   // Dimensione del canvas
@@ -515,6 +558,8 @@ void draw(){
   text("x = " + x, 50, 200);
 }'></processing-editor>
         </div>
+        <p class="fragment mt2 error bold" data-fragment-index="1">Ora prova a cambiare da solo il codice.</p>
+        <p class="fragment" data-fragment-index="1">Al posto della combinazione <span class="code">bianco-verde-rosso</span>, crea un'animazione con la sequenza di colori <span class="code">blu-giallo-bianco</span></p>
       </section>
 
       <section>
@@ -538,6 +583,104 @@ void draw(){
   stroke(0,0,255);
   ellipse(x,x,10,10);
 }"></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Dettagli esempio</h3>
+        <div class="r-stack">
+          <div class="row fragment fade-out" data-fragment-index="0">
+            <div class="col">
+              <pre><code class="hljs javascript" data-line-numbers="1">int x =0;
+void setup(){
+  size(300,300);
+}
+
+void draw(){
+  background(255,0,0);
+  x=x+1;
+  if (x>300) {
+      x = 0;
+  }
+  fill(0,0,255);
+  stroke(0,0,255);
+  ellipse(x,x,10,10);
+}</code></pre>
+            </div>
+            <div class="col">
+              <h4><strong>RIGA 1</strong></h4>
+              <p>La variabile <span class="code">x</span> è usata per memorizzare la posizione della palla</p>
+            </div>
+          </div>
+          <div class="row fragment fade-in-then-out" data-fragment-index="0">
+            <div class="col">
+              <pre><code class="hljs javascript" data-line-numbers="7">int x =0;
+void setup(){
+  size(300,300);
+}
+
+void draw(){
+  background(255,0,0);
+  x=x+1;
+  if (x>300) {
+      x = 0;
+  }
+  fill(0,0,255);
+  stroke(0,0,255);
+  ellipse(x,x,10,10);
+}</code></pre>
+            </div>
+            <div class="col">
+              <h4><strong>RIGA 7</strong></h4>
+              <p><span class="code">background()</span> disegna un sfondo rosso vuoto (= cancella la palla precedente)</p>
+            </div>
+          </div>
+          <div class="row fragment fade-in-then-out" data-fragment-index="1">
+            <div class="col">
+              <pre><code class="hljs javascript" data-line-numbers="9-11">int x =0;
+void setup(){
+  size(300,300);
+}
+
+void draw(){
+  background(255,0,0);
+  x=x+1;
+  if (x>300) {
+      x = 0;
+  }
+  fill(0,0,255);
+  stroke(0,0,255);
+  ellipse(x,x,10,10);
+}</code></pre>
+            </div>
+            <div class="col">
+              <h4><strong>RIGA 10</strong></h4>
+              <p>Una buona pratica è quella di mantenere <strong>l'indentazione</strong> per sequenze di istruzioni presenti all'interno dei blocchi delle istruzioni condizionali</p>
+            </div>
+          </div>
+          <div class="row fragment fade-in" data-fragment-index="2">
+            <div class="col">
+              <pre><code class="hljs javascript" data-line-numbers="10">int x =0;
+void setup(){
+  size(300,300);
+}
+
+void draw(){
+  background(255,0,0);
+  x=x+1;
+  if (x>300) {
+      x = 0;
+  }
+  fill(0,0,255);
+  stroke(0,0,255);
+  ellipse(x,x,10,10);
+}</code></pre>
+            </div>
+            <div class="col">
+              <h4><strong>RIGA 10</strong></h4>
+              <p>Quando la palla raggiunge <span class="code">(100, 100)</span> (angolo in basso a destra), torna a <span class="code">(0, 0)</span> (angolo in alto a sinistra)</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -599,7 +742,7 @@ void draw(){
       <section>
         <h3 class="title">Esercizio 1</h3>
         <p>Cambia il codice: invece di utilizzare l'operatore <span class="code">%</span>, prova ad utilizzare
-          un'istruzione condizionale</p>
+          un'istruzione condizionale per ottenere lo stesso effetto</p>
         <div class="med-code-long">
           <processing-editor id="istruzioni-condizionali-cambia-codice-1" save="true" downloadable="true" contenteditable="true" type="vertical" theme="white" code="int y = 0;
 void setup() {
@@ -617,7 +760,7 @@ void draw(){
       <section>
         <h3 class="title">Esercizio 2</h3>
         <p>Cambia il codice: invece di utilizzare l'operatore <span class="code">%</span>, prova ad utilizzare
-          un'istruzione condizionale</p>
+          un'istruzione condizionale per ottenere lo stesso effetto</p>
         <div class="med-code-long">
           <processing-editor id="istruzioni-condizionali-cambia-codice-2" save="true" downloadable="true" contenteditable="true" type="vertical" theme="white" code="int y = 0;
 int x = 0;
@@ -658,11 +801,11 @@ void draw(){
         <h3 class="title">Esercizio 4</h3>
         <div class="row">
           <div class="col">
-            <p style="margin: 0;">Crea l'animazione dell'eclissi: quando il sole finisce fuori dal canvas, riappare
+            <p style="margin: 0;">Crea l'animazione dell'eclissi: quando la luna finisce fuori dal canvas, riappare
               all'inizio</p>
           </div>
           <div class="col">
-            <img style="max-width: 100%; object-fit: contain; max-height: min(8vw, 15vh);" src="conditions-assets/sun.png"
+            <img style="max-width: 100%; object-fit: contain; max-height: min(8vw, 15vh);" src="conditions-assets/eclissi-anim.gif"
               alt="Immagine dell'esercizio: eclissi di sole">
           </div>
         </div>
@@ -671,7 +814,7 @@ void draw(){
 
 
 void setup() {
-  size(300,300);
+  size(500,300);
 }
 
 void draw() {
@@ -689,7 +832,7 @@ void draw() {
               centro, devono fermarsi.</p>
           </div>
           <div class="col">
-            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh);" src="conditions-assets/balls.png"
+            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh);" src="conditions-assets/cerchi-anim.gif"
               alt="Immagine dell'esercizio: due palle che si muovono verso il centro, una da destra ed una da sinistra">
           </div>
         </div>
@@ -698,7 +841,7 @@ void draw() {
 
 
 void setup() {
-  size(300,300);
+  size(400,200);
 }
 
 void draw() {
@@ -992,21 +1135,21 @@ void draw() {
         <p><span class="error">Dimenticare le graffe è un errore tipico</span></p>
         <div class="med-code-long">
           <processing-editor contenteditable="true" type="vertical" theme="white" code='int x = 5;
-
-println("Caso 1: senza graffe");
-if (x<2)
-  println(x);
-x++;
-println(x);
-
-x = 5;
-
-println("Caso 2: con graffe");
+println("Caso 1: con graffe");
 if (x<2) {
   println(x);
   x++;
 }
-println(x);'></processing-editor>
+println(x);
+
+/*
+x = 5;
+println("Caso 2: senza graffe");
+if (x<2)
+  println(x);
+x++;
+println(x);
+*/'></processing-editor>
         </div>
       </section>
 
@@ -1028,19 +1171,7 @@ else if (test 2) {
         </div>
         <div class="small-code-long">
           <processing-editor contenteditable="true" type="vertical" theme="white" code='int x = 5;
-
-println("Caso 1: costrutto else if");
-if (x<3){
-  x++;
-  println(x);
-}
-else if(x>3) {
-  x--;
-  println(x);
-}
-
-x = 5;
-println("Caso 2: normale costrutto if...else");
+println("Caso 1: normale costrutto if...else");
 if (x<3){
   x++;
   println(x);
@@ -1050,7 +1181,20 @@ else {
     x--;
     println(x);
   }
-}'></processing-editor>
+}
+
+/*
+x = 5;
+println("Caso 2: costrutto else if");
+if (x<3){
+  x++;
+  println(x);
+}
+else if(x>3) {
+  x--;
+  println(x);
+}
+*/'></processing-editor>
         </div>
       </section>
 
@@ -1061,7 +1205,7 @@ else {
             <p>Progetta un semaforo con il costrutto <span class="code">if-else</span></p>
           </div>
           <div class="col">
-            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh);" src="conditions-assets/semaforo.png" alt="Immagine esercizio: un semaforo">
+            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh);" src="conditions-assets/semaforo-anim.gif" alt="Immagine esercizio: un semaforo">
           </div>
         </div>
         <div class="med-code-long">
@@ -1088,7 +1232,7 @@ void draw() {
             <p>Disegna un biliardo animato con una palla che rimbalza sui bordi del canvas</p>
           </div>
           <div class="col">
-            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh);" src="conditions-assets/billiard.png"
+            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh);" src="conditions-assets/ball-anim.gif"
               alt="Immagine esercizio: biliardo con palla che rimbalza sui bordi">
           </div>
         </div>
@@ -1116,7 +1260,7 @@ void draw() {
             <p>Disegna un albero di natale animato</p>
           </div>
           <div class="col">
-            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 12vh);" src="conditions-assets/natale.png" alt="Immagine esercizio: un albero di natale">
+            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 12vh);" src="conditions-assets/tree-anim.gif" alt="Immagine esercizio: un albero di natale">
           </div>
         </div>
         <div class="med-code-long">
@@ -1307,8 +1451,15 @@ println((y == 6) && !(x > 5));'></processing-editor>
 
       <section>
         <h3 class="title">Esercizio 2</h3>
-        <p>Combina gli esercizi <a href="#/43">del biliardo</a> e <a href="#/37">delle due palle</a>: due palle iniziano in una posizione random del biliardo.</p>
+        <div class="row">
+          <div class="col">
+            <p>Combina gli esercizi <a href="#/43">del biliardo</a> e <a href="#/37">delle due palle</a>: due palle iniziano in una posizione random del biliardo.</p>
         <p>Ogni volta che una palla tocca l'altra palla o il bordo del canvas, la sua direzione ed il suo colore cambiano.</p>
+          </div>
+          <div class="col">
+            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 12vh);" src="conditions-assets/ball-anim2.gif" alt="Immagine esercizio: due palle che rimbalzano e cambiano colore">
+          </div>
+        </div>
         <div class="med-code-long">
           <processing-editor id="istruzioni-condizionali-biliardo-2" save="true" downloadable="true" contenteditable="true" type="vertical" theme="white" code='// Le tue variabili
 
@@ -1348,7 +1499,14 @@ void draw() {
 
       <section>
         <h3 class="title">Esercizio 4</h3>
-        <p>Crea un biliardo con una buca. Quando la palla raggiunge la buca, deve disapparire.</p>
+        <div class="row">
+          <div class="col">
+            <p>Crea un biliardo con una buca. Quando la palla raggiunge la buca, deve disapparire.</p>
+          </div>
+          <div class="col">
+            <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 12vh);" src="conditions-assets/ball-disappearing-anim.gif" alt="Immagine esercizio: palla che scompare nella buca">
+          </div>
+        </div>
         <div class="med-code-long">
           <processing-editor id="istruzioni-condizionali-biliardo-4" save="true" downloadable="true" contenteditable="true" type="vertical" theme="white" code='// Le tue variabili
 

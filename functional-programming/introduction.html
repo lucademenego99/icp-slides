@@ -127,7 +127,8 @@
       <!-- Each <section> is a slide -->
       <section>
         <!-- title class: custom style for titles -->
-        <h3 class="title">Functional Programming DEMO</h3>
+        <h3 class="title">Functional Programming</h3>
+        <p class="subtitle">Introduction</p>
 
         <p class="mt2" style="color:rgb(134, 134, 134)">Shortcuts</p>
         <div style="text-align: left">
@@ -224,7 +225,7 @@
         <h3 class="title">Running ML</h3>
         <ul>
             <li>Three ways (+ bonus)</li>
-            <ol>
+            <ul>
                 <li>Command line <span class="code">poly</span></li>
                 <li>If <span class="code">foo</span> is a file name, there are two options:</li>
                 <ul>
@@ -232,7 +233,7 @@
                     <li><span class="code">use "foo";</span></li>
                 </ul>
                 <li>ML comes with various built-in structures, <span class="code">Int</span>, <span class="code">Real</span> and others, called the <em>standard bias</em></li>
-            </ol>
+            </ul>
         </ul>
       </section>
 
@@ -882,6 +883,269 @@ str #"a";'></standardml-editor>
                 <div class="col small-code">
                     <standardml-editor contenteditable="true" code='chr 256;'></standardml-editor>
                 </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Variables</h3>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>Note the response of the snippet on the right has the name of the variable, rather than <span class="code">it</span></li>
+                        <li>No variable declaration needed!</li>
+                        <ul>
+                            <li>ML deduces the type of the variable automatically</li>
+                        </ul>
+                        <li class="mt2">A new declaration creates a new variable, and does not change the value of the existing one</li>
+                        <ul>
+                            <li>Note that even the type can change</li>
+                            <li>The old definition is still there, but (at least at the top-level environment) is no longer accessible</li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="col small-code">
+                    <standardml-editor contenteditable="true" code='val pi = 3;
+
+val pi = 3.14159;'></standardml-editor>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Variables</h3>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>Any "reasonable" sequence of alphanumeric characters</li>
+                        <li>Full details in the book, but we won't bother with them</li>
+                        <li>We won't use things like on the right...</li>
+                    </ul>
+                </div>
+                <div class="col small-code">
+                    <standardml-editor contenteditable="true" code='val $$$ = "ab";'></standardml-editor>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Examples</h3>
+            <div class="med-code">
+                <standardml-editor contenteditable="true" code='val pi = 3.14159;
+
+val radius = 4.0;
+
+pi * radius * radius;
+
+val area = pi * radius * radius;'></standardml-editor>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Exercise</h3>
+            <p>What does the environment contain after these commands?</p>
+            <div class="med-code">
+                <standardml-editor contenteditable="true" code='val a = 3;
+
+val b = 98.6;
+
+val a = "three";
+
+val c = a ^ str(chr(floor(b)));'></standardml-editor>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Tuples</h3>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>Note the use of <span class="code">*</span> for complex types on the snippet result</li>
+                        <li>We can mix types in tuples definitions</li>
+                        <li>We can also use a complex type instead of a simple one</li>
+                    </ul>
+                </div>
+                <div class="col small-code">
+                    <standardml-editor contenteditable="true" code='val t1 = (1,2,3);
+
+(* Mix types *)
+val t2 = (4, 5.0, "six");
+
+(* Complex types *)
+val t3 = (1, (2,3,4));'></standardml-editor>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Accessing components of tuple</h3>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>Access via <span class="code">#</span>index</li>
+                    </ul>
+                    <p class="fragment error bold mt2" data-fragment-index="0">Look out to out of bound access</p>
+                </div>
+                <div class="col">
+                    <div class="r-stack" style="justify-content: center">
+                        <div class="small-code fragment fade-out" data-fragment-index="0">
+                            <standardml-editor contenteditable="true" code='val t = (4, 5.0, "six");
+
+#1 (t);
+
+#3 (t);'></standardml-editor>
+                        </div>
+                        <div class="small-code fragment fade-in" data-fragment-index="0">
+                            <standardml-editor contenteditable="true" code='val t = (4, 5.0, "six");
+
+#4 (t);'></standardml-editor>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Lists</h3>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>Note that all elements of a list (unlike tuples) must be of the same type</li>
+                    </ul>
+                </div>
+                <div class="col small-code">
+                    <standardml-editor contenteditable="true" code='[1,2,3];
+
+[1.0, 2.0];'></standardml-editor>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Lists</h3>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>Elements must have the same type</li>
+                        <li class="fragment mt2" data-fragment-index="0">For an empty list, ML cannot determine the type of the elements</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="r-stack" style="justify-content: center">
+                        <div class="small-code fragment fade-out" data-fragment-index="0">
+                            <standardml-editor contenteditable="true" code='[1,2.0];'></standardml-editor>
+                        </div>
+                        <div class="small-code fragment fade-in" data-fragment-index="0">
+                            <standardml-editor contenteditable="true" code='[];'></standardml-editor>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Head of a list</h3>
+            <p><strong>Head</strong>: first element of a list</p>
+            <div class="med-code">
+                <standardml-editor contenteditable="true" code='val L = [2,3,4];
+
+val M = [5];
+
+hd(L);
+
+hd(M);'></standardml-editor>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Tail of a list</h3>
+            <p><strong>Tail</strong>: all the rest</p>
+            <p class="small">Notice that even if the tail is an empty list ML can determine the type</p>
+            <div class="med-code">
+                <standardml-editor contenteditable="true" code='val L = [2,3,4];
+
+val M = [5];
+
+tl(L);
+
+tl(M);'></standardml-editor>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Concatenation of lists</h3>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>List concatenation is applied with <span class="code">@</span></li>
+                        <li>So there are two different types of concatenation:</li>
+                        <ul>
+                            <li><span class="code">^</span>: Strings</li>
+                            <li><span class="code">@</span>: List</li>
+                        </ul>
+                        <li class="fragment error" data-fragment-index="0">Note that both lists must be the same type</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="r-stack" style="justify-content: center">
+                        <div class="small-code fragment fade-out" data-fragment-index="0">
+                            <standardml-editor contenteditable="true" code='[1,2] @ [3,4];'></standardml-editor>
+                        </div>
+                        <div class="small-code fragment fade-in" data-fragment-index="0">
+                            <standardml-editor contenteditable="true" code='[1,2] @ ["a", "b"];'></standardml-editor>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Cons</h3>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>Takes an element of type <span class="code">'a</span> and a list of type <span class="code">'a list</span> and combines them</li>
+                        <li class="fragment mt2" data-fragment-index="0"><span class="code">::</span> is right associative</li>
+                        <li class="fragment" data-fragment-index="0">The other way would make no sense</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="r-stack" style="justify-content: center">
+                        <div class="small-code fragment fade-out" data-fragment-index="0">
+                            <standardml-editor contenteditable="true" code='2 :: [3,4];
+
+2 :: nil;
+
+2 :: [];'></standardml-editor>
+                        </div>
+                        <div class="small-code fragment fade-in" data-fragment-index="0">
+                            <standardml-editor contenteditable="true" code='1 :: 2 :: 3 :: nil;
+
+(1 :: (2 :: (3 :: nil)));'></standardml-editor>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Strings to list</h3>
+            <p>Strings can be converted to lists of characaters by using <span class="code">explode</span></p>
+            <div class="med-code">
+                <standardml-editor contenteditable="true" code='explode ("abcd");
+
+explode ("");'></standardml-editor>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="title">Lists to strings</h3>
+            <p>Lists of characters can be converted to strings by using <span class="code">implode</span></p>
+            <div class="med-code">
+                <standardml-editor contenteditable="true" code='implode ([#"a", #"b", #"c", #"d"]);
+
+implode (nil);
+
+implode (explode ("xyz"));'></standardml-editor>
             </div>
         </section>
     </div>

@@ -820,7 +820,7 @@ str #"a";'></standardml-editor>
             </div>
 
             <div class="med-code">
-                <standardml-editor contenteditable="true" code=''></standardml-editor>
+                <standardml-editor downloadable="true" save="true" id="ml-introduction-convert1" contenteditable="true" code=''></standardml-editor>
             </div>
         </section>
 
@@ -835,7 +835,7 @@ str #"a";'></standardml-editor>
             </div>
 
             <div class="med-code">
-                <standardml-editor contenteditable="true" code=''></standardml-editor>
+                <standardml-editor downloadable="true" save="true" id="ml-introduction-convert2" contenteditable="true" code=''></standardml-editor>
             </div>
         </section>
 
@@ -850,7 +850,7 @@ str #"a";'></standardml-editor>
             </div>
 
             <div class="med-code">
-                <standardml-editor contenteditable="true" code=''></standardml-editor>
+                <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-introduction-convert3" code=''></standardml-editor>
             </div>
         </section>
 
@@ -866,7 +866,7 @@ str #"a";'></standardml-editor>
             </div>
 
             <div class="med-code">
-                <standardml-editor contenteditable="true" code=''></standardml-editor>
+                <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-introduction-convert4" code=''></standardml-editor>
             </div>
         </section>
 
@@ -1205,7 +1205,7 @@ implode (explode ("xyz"));'></standardml-editor>
       // Modify section height to fix the layout
       // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
       // Hide the slide context (the slide number)
-      css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+      css.innerHTML = "section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
       // Append the css to the head
       document.head.appendChild(css);
 

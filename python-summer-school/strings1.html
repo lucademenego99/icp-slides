@@ -905,7 +905,7 @@ auto1, auto2 = 'Jaguar','Ferrari'
             // Modify section height to fix the layout
             // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
             // Hide the slide context (the slide number)
-            css.innerHTML = "section { height: auto; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+            css.innerHTML = "section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
             // Append the css to the head
             document.head.appendChild(css);
 

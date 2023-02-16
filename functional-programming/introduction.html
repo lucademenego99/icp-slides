@@ -60,6 +60,10 @@
       gap: min(1.5vw, 2.8vh);
     }
 
+    .xxsmall {
+      font-size: min(0.9vw, 1.8vh);
+    }
+
     .mt {
       margin-top: min(1vw, 2vh) !important;
     }
@@ -148,18 +152,19 @@
           <ul>
             <li>ML is <em>a functional language</em></li>
             <ul>
-                <li>Basic mode of computation: definition and application of functions</li>
-                <li>Functions can be written as code</li>
-                <li>But they can also be treated as values, and compute new functions from them</li>
+              <li>Basic mode of computation: definition and application of functions</li>
+              <li>Functions can be written as code</li>
+              <li>But they can also be treated as values, and compute new functions from them</li>
             </ul>
             <li>No side effects</li>
             <ul>
-                <li>Computation is by evaluation, not by assigning values to variables</li>
-                <li>If needed, side effects are allowed (printing output), but are not the main means of computation</li>
-                <ul>
-                    <li>In C <span class="code">a=b+c</span> modifies the value of <span class="code">a</span> (side effect)</li>
-                    <li>In ML, <span class="code">b+c</span> creates a new element associated with the result</li>
-                </ul>
+              <li>Computation is by evaluation, not by assigning values to variables</li>
+              <li>If needed, side effects are allowed (printing output), but are not the main means of computation</li>
+              <ul>
+                <li>In C <span class="code">a=b+c</span> modifies the value of <span class="code">a</span> (side effect)
+                </li>
+                <li>In ML, <span class="code">b+c</span> creates a new element associated with the result</li>
+              </ul>
             </ul>
           </ul>
         </div>
@@ -171,16 +176,16 @@
           <ul>
             <li>Higher-order functions</li>
             <ul>
-                <li>Functions that take functions as values are supported</li>
-                <li>Other languages like C usually only have limited support for this</li>
+              <li>Functions that take functions as values are supported</li>
+              <li>Other languages like C usually only have limited support for this</li>
             </ul>
             <li>Polymorphism</li>
             <ul>
-                <li>A function can have arguments of different types</li>
-                <ul>
-                    <li>In C, we may have to create "stack of integers", "stack of strings" etc.</li>
-                    <li>In ML we can define one type of stack that works for both cases</li>
-                </ul>
+              <li>A function can have arguments of different types</li>
+              <ul>
+                <li>In C, we may have to create "stack of integers", "stack of strings" etc.</li>
+                <li>In ML we can define one type of stack that works for both cases</li>
+              </ul>
             </ul>
           </ul>
         </div>
@@ -189,60 +194,62 @@
       <section>
         <h3 class="title">ML</h3>
         <ul>
-            <li>Abstract Data Types (Structures)</li>
-            <ul>
-                <li>Elegant type system</li>
-                <li>Ability to construct new types</li>
-                <li>Constructs that restricts access to objects of a given type</li>
-            </ul>
-            <li>Recursion</li>
-            <ul>
-                <li>Strongly encouraged in ML in preference for while-loops</li>
-                <li>Can be implemented efficiently</li>
-                <li>Iterative constructs are available in ML, when more appropriate</li>
-            </ul>
+          <li>Abstract Data Types (Structures)</li>
+          <ul>
+            <li>Elegant type system</li>
+            <li>Ability to construct new types</li>
+            <li>Constructs that restricts access to objects of a given type</li>
+          </ul>
+          <li>Recursion</li>
+          <ul>
+            <li>Strongly encouraged in ML in preference for while-loops</li>
+            <li>Can be implemented efficiently</li>
+            <li>Iterative constructs are available in ML, when more appropriate</li>
+          </ul>
         </ul>
       </section>
 
       <section>
         <h3 class="title">ML</h3>
         <ul>
-            <li>Rule-based programming</li>
-            <ul>
-                <li>If-then-else rules implemented via pattern matching</li>
-            </ul>
-            <li>Strong typing</li>
-            <ul>
-                <li>All values and variables have types that can be determined at "compile-time"</li>
-                <li><span class="code">4</span> value of integer type, <span class="code">4.0</span> value of real type</li>
-                <li>Valuable debugging aid</li>
-                <li>Variable declarations usually not needed</li>
-            </ul>
+          <li>Rule-based programming</li>
+          <ul>
+            <li>If-then-else rules implemented via pattern matching</li>
+          </ul>
+          <li>Strong typing</li>
+          <ul>
+            <li>All values and variables have types that can be determined at "compile-time"</li>
+            <li><span class="code">4</span> value of integer type, <span class="code">4.0</span> value of real type</li>
+            <li>Valuable debugging aid</li>
+            <li>Variable declarations usually not needed</li>
+          </ul>
         </ul>
       </section>
 
       <section>
         <h3 class="title">Running ML</h3>
         <ul>
-            <li>Three ways (+ bonus)</li>
+          <li>Three ways (+ bonus)</li>
+          <ul>
+            <li>Command line <span class="code">poly</span></li>
+            <li>If <span class="code">foo</span> is a file name, there are two options:</li>
             <ul>
-                <li>Command line <span class="code">poly</span></li>
-                <li>If <span class="code">foo</span> is a file name, there are two options:</li>
-                <ul>
-                    <li><span class="code">poly &lt; foo</span></li>
-                    <li><span class="code">use "foo";</span></li>
-                </ul>
-                <li>ML comes with various built-in structures, <span class="code">Int</span>, <span class="code">Real</span> and others, called the <em>standard bias</em></li>
+              <li><span class="code">poly &lt; foo</span></li>
+              <li><span class="code">use "foo";</span></li>
             </ul>
+            <li>ML comes with various built-in structures, <span class="code">Int</span>, <span class="code">Real</span>
+              and others, called the <em>standard bias</em></li>
+          </ul>
         </ul>
       </section>
 
       <section>
         <h3 class="title">Running ML - bonus</h3>
         <p>These slides provide a built-in interpreter for Standard ML, running locally in your browser</p>
-        <p>Sometimes it behaves a bit differently than poly, but if you see a playground it means their outputs are relatable</p>
+        <p>Sometimes it behaves a bit differently than poly, but if you see a playground it means their outputs are
+          relatable</p>
         <div class="med-code mt">
-            <standardml-editor contenteditable="true" code='(* This is a Standard ML playground *)
+          <standardml-editor contenteditable="true" code='(* This is a Standard ML playground *)
 (* You can modify the code and execute it *)
 (* Execute it by: *)
 (*    - clicking on the play button *)
@@ -255,181 +262,189 @@
       <section>
         <h3 class="title">Expressions</h3>
         <div class="row">
-            <div class="col">
-                <ul>
-                    <li><span class="code">val</span>: value of expression</li>
-                    <li><span class="code">int</span>: Type (inferred automatically) of result</li>
-                </ul>
-            </div>
-            <div class="col small-code">
-                <standardml-editor contenteditable="true" code='1+2*3;'></standardml-editor>
-            </div>
+          <div class="col">
+            <ul>
+              <li><span class="code">val</span>: value of expression</li>
+              <li><span class="code">int</span>: Type (inferred automatically) of result</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='1+2*3;'></standardml-editor>
+          </div>
         </div>
       </section>
 
       <section>
         <h3 class="title">Constants - Integers</h3>
         <div class="row">
-            <div class="col">
-                <ul>
-                    <li>Normal integers, <span class="code">0</span>, <span class="code">1234</span></li>
-                    <li>Negative integers, <span class="code">~1234</span> (<strong>not</strong> -1234)</li>
-                    <li>Hexadecimals, <span class="code">0x124</span></li>
-                </ul>
-            </div>
-            <div class="col small-code">
-                <standardml-editor contenteditable="true" code='1+2*3;
+          <div class="col">
+            <ul>
+              <li>Normal integers, <span class="code">0</span>, <span class="code">1234</span></li>
+              <li>Negative integers, <span class="code">~1234</span> (<strong>not</strong> -1234)</li>
+              <li>Hexadecimals, <span class="code">0x124</span></li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='1+2*3;
 
 ~1234;
 
 0x124;'></standardml-editor>
-            </div>
+          </div>
         </div>
       </section>
 
-        <section>
-            <h3 class="title">Constants - Reals</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Optional <span class="code">~</span></li>
-                        <li>One of more digits</li>
-                        <li>At least one of:</li>
-                        <ul>
-                            <li>Decimal point and more digits</li>
-                            <li>The letter <span class="code">E</span> or <span class="code">e</span>, optional <span class="code">~</span> and one or more digits</li>
-                        </ul>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='~123.0;
+      <section>
+        <h3 class="title">Constants - Reals</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Optional <span class="code">~</span></li>
+              <li>One of more digits</li>
+              <li>At least one of:</li>
+              <ul>
+                <li>Decimal point and more digits</li>
+                <li>The letter <span class="code">E</span> or <span class="code">e</span>, optional <span
+                    class="code">~</span> and one or more digits</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='~123.0;
 
 3E~3;
 
 3.14e12;'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Constants - Booleans</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li><span class="code">true</span> and <span class="code">false</span> (only lower-case)</li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='true;
+      <section>
+        <h3 class="title">Constants - Booleans</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li><span class="code">true</span> and <span class="code">false</span> (only lower-case)</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='true;
 
 1 = 3;'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Constants - Strings</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Double quotes <span class="code">"foo"</span></li>
-                        <li>Special characters</li>
-                        <ul>
-                            <li><span class="code">\n</span>: newline</li>
-                            <li><span class="code">\t</span>: tab</li>
-                            <li><span class="code">\\</span>: backslash</li>
-                            <li><span class="code">\"</span>: double-quote</li>
-                            <li><span class="code">\xyz</span>: ASCII character with this code</li>
-                            <li><span class="code">\^x</span>: control character. ^G is the same as \007</li>
-                        </ul>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='"Hello World!";'></standardml-editor>
-                </div>
-            </div>
-        </section>
+      <section>
+        <h3 class="title">Constants - Strings</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Double quotes <span class="code">"foo"</span></li>
+              <li>Special characters</li>
+              <ul>
+                <li><span class="code">\n</span>: newline</li>
+                <li><span class="code">\t</span>: tab</li>
+                <li><span class="code">\\</span>: backslash</li>
+                <li><span class="code">\"</span>: double-quote</li>
+                <li><span class="code">\xyz</span>: ASCII character with this code</li>
+                <li><span class="code">\^x</span>: control character. ^G is the same as \007</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='"Hello World!";'></standardml-editor>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Constants - Characters</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Single character <span class="code">#"a"</span></li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='#"a";'></standardml-editor>
-                </div>
-            </div>
-        </section>
+      <section>
+        <h3 class="title">Constants - Characters</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Single character <span class="code">#"a"</span></li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='#"a";'></standardml-editor>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Arithmetic operators</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li><span class="code">+</span> and <span class="code">-</span></li>
-                        <li><span class="code">*</span></li>
-                        <li><span class="code">/</span>: division of reals</li>
-                        <li><span class="code">div</span>: division of integers, rounding down</li>
-                        <li><span class="code">mod</span>: remainder of integer division</li>
-                        <li><span class="code">~</span>: unary minus</li>
-                    </ul>
-                    <p>The usual precedence rules apply</p>
-                    <p class="fragment error bold" data-fragment-index="0">What about this snippet?</p>
-                </div>
-                <div class="col">
-                    <div class="r-stack" style="justify-content: center">
-                        <div class="small-code fragment fade-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='3.0 -4.5 + 6.7;
+      <section>
+        <h3 class="title">Arithmetic operators</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li><span class="code">+</span> and <span class="code">-</span></li>
+              <li><span class="code">*</span></li>
+              <li><span class="code">/</span>: division of reals</li>
+              <li><span class="code">div</span>: division of integers, rounding down</li>
+              <li><span class="code">mod</span>: remainder of integer division</li>
+              <li><span class="code">~</span>: unary minus</li>
+            </ul>
+            <p>The usual precedence rules apply</p>
+            <p class="fragment error bold" data-fragment-index="0">What about this snippet?</p>
+          </div>
+          <div class="col">
+            <div class="r-stack" style="justify-content: center">
+              <div class="small-code fragment fade-out" data-fragment-index="0">
+                <standardml-editor contenteditable="true" code='3.0 -4.5 + 6.7;
 
 3-4+6;
 
 43 div (8 mod 3) * 5;'></standardml-editor>
-                        </div>
-                        <div class="small-code fragment fade-in" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='3 + 4.0;'></standardml-editor>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="small-code fragment fade-in" data-fragment-index="0">
+                <pre><code class="sml">3 + 4.0;</code></pre>
+                <pre class="fragment mt2" data-fragment-index="1"><code class="text error xxsmall bold">poly: : error: Type error in function application.
+  Function: + : int * int -> int
+  Argument: (3, 4.0) : int * real
+  Reason: Can’t unify int (*In Basis*) with real (*In Basis*)
+  (Different type constructors)
+  Found near 3 + 4.0 Static Errors</code></pre>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">String operators</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li><span class="code">^</span>: concatenation</li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='"house" ^ "cat";
+      <section>
+        <h3 class="title">String operators</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li><span class="code">^</span>: concatenation</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='"house" ^ "cat";
 
 "house" ^ "";'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Comparisons</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li><span class="code">=</span>, <span class="code">&lt;</span>, <span class="code">&gt;</span>, <span class="code">&lt;=</span>, <span class="code">&gt;=</span>, <span class="code">&lt;&gt;</span></li>
-                        <li>Can be used to compare integers, reals, characters, strings (lexicographical order), but:</li>
-                        <ul>
-                            <li>Equality (and non-equality) comparisons of reals is <em>not allowed</em></li>
-                        </ul>
-                    </ul>
+      <section>
+        <h3 class="title">Comparisons</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li><span class="code">=</span>, <span class="code">&lt;</span>, <span class="code">&gt;</span>, <span
+                  class="code">&lt;=</span>, <span class="code">&gt;=</span>, <span class="code">&lt;&gt;</span></li>
+              <li>Can be used to compare integers, reals, characters, strings (lexicographical order), but:</li>
+              <ul>
+                <li>Equality (and non-equality) comparisons of reals is <em>not allowed</em></li>
+              </ul>
+            </ul>
 
-                    <p class="fragment bold error" data-fragment-index="0">What about this snippet?</p>
-                </div>
-                <div class="col">
-                    <div class="r-stack" style="justify-content: center">
-                        <div class="small-code fragment fade-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='1 < 2;
+            <p class="fragment bold error" data-fragment-index="0">What about this snippet?</p>
+          </div>
+          <div class="col">
+            <div class="r-stack" style="justify-content: center">
+              <div class="small-code fragment fade-out" data-fragment-index="0">
+                <standardml-editor contenteditable="true" code='1 < 2;
 
 1.0 < 2.0;
 
@@ -438,716 +453,818 @@
 "abc" <= "ac";
 
 #"Z" < #"a";'></standardml-editor>
-                        </div>
+              </div>
 
-                        <div class="small-code fragment fade-in" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='1.0 = 2.0;'></standardml-editor>
-                        </div>
-                    </div>
-                </div>
+              <div class="small-code fragment fade-in" data-fragment-index="0">
+                <pre><code class="sml">1.0 = 2.0;</code></pre>
+                <pre class="fragment mt2" data-fragment-index="1"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: = : ’’a * ’’a -> bool
+  Argument: (1.0, 2.0) : real * real
+  Reason: Can’t unify ’’a to real (Requires equality type)
+  Found near 1.0 = 2.0</code></pre>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Logical operations</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Operations on booleans:</li>
-                        <ul>
-                            <li><span class="code">not</span></li>
-                            <li><span class="code">andalso</span></li>
-                            <li><span class="code">orelse</span></li>
-                        </ul>
-                        <li>Note that in the first example on the right, the second comparison is not evaluated</li>
-                    </ul>
-                    <p class="fragment error bold" data-fragment-index="0">Note the precedence!</p>
-                </div>
-                <div class="col">
-                    <div class="r-stack" style="justify-content: center">
-                        <div class="small-code fragment fade-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='1 < 2 orelse 3 > 4;
+      <section>
+        <h3 class="title">Logical operations</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Operations on booleans:</li>
+              <ul>
+                <li><span class="code">not</span></li>
+                <li><span class="code">andalso</span></li>
+                <li><span class="code">orelse</span></li>
+              </ul>
+              <li>Note that in the first example on the right, the second comparison is not evaluated</li>
+            </ul>
+            <p class="fragment error bold" data-fragment-index="0">Note the precedence!</p>
+            <p class="fragment ok bold" data-fragment-index="1">This is correct!</p>
+          </div>
+          <div class="col">
+            <div class="r-stack" style="justify-content: center">
+              <div class="small-code fragment fade-out" data-fragment-index="0">
+                <standardml-editor contenteditable="true" code='1 < 2 orelse 3 > 4;
 
 1 < 2 andalso 3 > 4;'></standardml-editor>
-                        </div>
+              </div>
 
-                        <div class="small-code fragment fade-in" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='not 1 < 2;
-
-(* You need to use not (1 < 2)! *)'></standardml-editor>
-                        </div>
-                    </div>
-                </div>
+              <div class="small-code fragment fade-in-then-out" data-fragment-index="0">
+                <pre><code class="sml">not 1 &lt; 2;</code></pre>
+                <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: not : bool -> bool
+  Argument: 1 : int [...]</code></pre>
+              </div>
+              <div class="small-code fragment fade-in" data-fragment-index="1">
+                <standardml-editor contenteditable="true" code='not (1 < 2);'></standardml-editor>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">If-then-else</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>This (like everything in ML) is an <em>expression</em></li>
-                        <li class="fragment" data-fragment-index="0">It must have a value</li>
-                        <ul class="fragment" data-fragment-index="0">
-                            <li>Therefore, the <span class="code">else</span> <span class="error">is not optional</span></li>
-                        </ul>
-                        <li class="fragment" data-fragment-index="1">It must have a <span class="error">well-defined type</span></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <div class="r-stack" style="justify-content: center">
-                        <div class="small-code fragment fade-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='if 1 < 2 then 3+4 else 5+6;'></standardml-editor>
-                        </div>
+      <section>
+        <h3 class="title">If-then-else</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>This (like everything in ML) is an <em>expression</em></li>
+              <li class="fragment" data-fragment-index="0">It must have a value</li>
+              <ul class="fragment" data-fragment-index="0">
+                <li>Therefore, the <span class="code">else</span> <span class="error">is not optional</span></li>
+              </ul>
+              <li class="fragment" data-fragment-index="1">It must have a <span class="error">well-defined type</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="r-stack" style="justify-content: center">
+              <div class="small-code fragment fade-out" data-fragment-index="0">
+                <standardml-editor contenteditable="true" code='if 1 < 2 then 3+4 else 5+6;'></standardml-editor>
+              </div>
 
-                        <div class="small-code fragment fade-in-then-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='if 1 < 2 then 3+4;'></standardml-editor>
-                        </div>
+              <div class="small-code fragment fade-in-then-out" data-fragment-index="0">
+                <pre><code class="sml">if 1 &lt; 2 then 3+4;</code></pre>
+                <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: else expected but ; was found
+poly: : error: Expression expected but ; was found</code></pre>
+              </div>
 
-                        <div class="small-code fragment fade-in" data-fragment-index="1">
-                            <standardml-editor contenteditable="true" code='if 1 < 2 then 3+4 else 5.0 + 6.0;'></standardml-editor>
-                        </div>
-                    </div>
-                </div>
+              <div class="small-code fragment fade-in" data-fragment-index="1">
+                <pre><code class="sml">if 1&lt;2 then 3+4 else 5.0+6.0;</code></pre>
+                <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type mismatch between then-part and else-part.
+  Then: 3 + 4 : int
+  Else: 5.0 + 6.0 : real
+  Reason:
+    Can’t unify int (*In Basis*) with real (*In Basis*)
+    (Different type constructors)
+Found near if 1 &lt; 2 then 3 + 4 else 5.0 + 6.0</code></pre>
+              
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise 1</h3>
-            <p>What is the response of ML to the following (<strong>without using ML...</strong>)?</p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='1+2*3;
+      <section>
+        <h3 class="title">Exercise 1</h3>
+        <p>What is the response of ML to the following (<strong>without using ML...</strong>)?</p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='1+2*3;
 
 (* Different interpreters may behave differently when handling reals *)
 5.0 - 4.2 / 1.4;'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise 2</h3>
-            <p>What is the response of ML to the following (<strong>without using ML...</strong>)?</p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='11 div 2 mod 3;
+      <section>
+        <h3 class="title">Exercise 2</h3>
+        <p>What is the response of ML to the following (<strong>without using ML...</strong>)?</p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='11 div 2 mod 3;
 
 "foo" ^ "bar" ^ "";'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise 3</h3>
-            <p>What is the response of ML to the following (<strong>without using ML...</strong>)?</p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='3>4 orelse 5<6 andalso not (7<>8);
+      <section>
+        <h3 class="title">Exercise 3</h3>
+        <p>What is the response of ML to the following (<strong>without using ML...</strong>)?</p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='3>4 orelse 5<6 andalso not (7<>8);
 
 if 6<10 then 6.0 else 10.6;'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise 4</h3>
-            <p>What is the response of ML to the following (<strong>without using ML...</strong>)?</p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='0xab + 123;
+      <section>
+        <h3 class="title">Exercise 4</h3>
+        <p>What is the response of ML to the following (<strong>without using ML...</strong>)?</p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='0xab + 123;
 
 0xab < 123;'></standardml-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 5</h3>
+        <p>What are the errors in the following expressions?</p>
+        <div class="row">
+          <div class="col small-code">
+            <pre><code class="sml">8/4;</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: / : real * real -> real
+  Argument: (8, 4) : int * int</code></pre>
+          </div>
+
+          <div class="col small-code">
+              <pre><code class="sml">if 2&lt;3 then 4;</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: else expected but ; was found</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 6</h3>
+        <p>What are the errors in the following expressions?</p>
+        <div class="row">
+          <div class="col small-code">
+            <pre><code class="sml">1&lt;2 and 5&gt;3;</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: ; expected but and was found</code></pre>
+          </div>
+
+          <div class="col small-code">
+              <pre><code class="sml">6+7 DIV 2;</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Value or constructor (DIV) has not been declared
+  Found near 6 + 7 DIV 2
+  poly: : error: Type error in function application.
+  Function: 7 : int
+  Argument: DIV : bad
+  Reason: Value being applied does not have a function type
+  Found near 6 + 7 DIV 2</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 7</h3>
+        <p>What are the errors in the following expressions?</p>
+        <div class="row">
+          <div class="col small-code">
+            <pre><code class="sml">4. + 3.5;</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: malformed real number: 4.
+  Static Errors</code></pre>
+          </div>
+
+          <div class="col small-code">
+              <pre><code class="sml">1.0&lt;2.0 or 3&gt;4;</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Value or constructor (or) has not been declared
+Found near 1.0 < 2.0 or 3 > 4
+poly: : error: Type error in function application.
+  Function: 2.0 : real
+  Argument: or : bad
+  Reason: Value being applied does not have a function type
+Found near 1.0 < 2.0 or 3 > 4
+poly: : error: Type error in function application.
+  Function: > : ’a * ’a -> bool
+  Argument: (1.0 < 2.0 or 3, 4) : bool * ’a
+  Reason:
+    Can’t unify int (*In Basis*) with bool (*In Basis*)
+    (Different type constructors)
+Found near 1.0 < 2.0 or 3 > 4
+Static Errors</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 8</h3>
+        <p>What are the errors in the following expressions?</p>
+        <div class="row">
+          <div class="col small-code">
+            <pre><code class="sml">#"a" ^ #"b";</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: ^ : string * string -> string
+  Argument: (#"a", #"b") : char * char
+  Reason:
+    Can’t unify string (*In Basis*) with char (*In Basis*)
+    (Different type constructors)
+Found near #"a" ^ #"b"
+Static Errors</code></pre>
+          </div>
+
+          <div class="col small-code">
+            <pre><code class="sml">123.;</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: malformed real number: 123.;
+Static Errors</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 9</h3>
+        <p>What are the errors in the following expressions?</p>
+        <div class="row">
+            <div class="small-code">
+              <pre><code class="sml">1.0 = 2.0;</code></pre>
+              <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+    Function: = : ’’a * ’’a -> bool
+    Argument: (1.0, 2.0) : real * real
+    Reason: Can’t unify ’’a to real (Requires equality type)
+  Found near 1.0 = 2.0
+  Static Errors</code></pre>
             </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise 5</h3>
-            <p>What are the errors in the following expressions?</p>
-            <div class="row">
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='8/4;'></standardml-editor>
-                </div>
+      <section>
+        <h3 class="title">Exercise 10</h3>
+        <p>Express <span class="code">E orelse F</span> and <span class="code">E andalso F</span> using if-then-else
+          statements</p>
+        
+        <p class="fragment bold mt2" data-fragment-index="0">Solution:</p>
+        <pre style="width: min(50vw, 100vh);" class="fragment" data-fragment-index="0"><code class="sml">if E then true
+  else F;
 
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='if 2<3 then 4;'></standardml-editor>
-                </div>
-            </div>
-        </section>
 
-        <section>
-            <h3 class="title">Exercise 6</h3>
-            <p>What are the errors in the following expressions?</p>
-            <div class="row">
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='1<2 and 5>3;'></standardml-editor>
-                </div>
+if E then F
+  else false;</code></pre>
+      </section>
 
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='6+7 DIV 2;'></standardml-editor>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="title">Exercise 7</h3>
-            <p>What are the errors in the following expressions?</p>
-            <div class="row">
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='4. +3.5;'></standardml-editor>
-                </div>
-
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='1.0<2.0 or 3>4;'></standardml-editor>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="title">Exercise 8</h3>
-            <p>What are the errors in the following expressions?</p>
-            <div class="row">
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='#"a" ^ #"b";'></standardml-editor>
-                </div>
-
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='123.;'></standardml-editor>
-                </div>
-
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='1.0 = 2.0;'></standardml-editor>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="title">Exercise 9</h3>
-            <p>Express <span class="code">E orelse F</span> and <span class="code">E andalso F</span> using if-then-else statements</p>
-        </section>
-
-        <section>
-            <h3 class="title">Type errors</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>We have seen that the following operations work:</li>
-                        <ul>
-                            <li><span class="code">1+2;</span></li>
-                            <li><span class="code">1.0+2.0;</span></li>
-                        </ul>
-                        <li class="error bold">What does the error on the right mean?</li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='1 + 2.0;'></standardml-editor>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="title">Type errors</h3>
-            <div class="row">
-                <div class="col">
-                    <p>In PolyML you would get something similar:</p>
-                    <pre><code class="xsmall text">poly: : error: Type error in function application.
-Function: + : int * int -> int
-Argument: (1, 2.0) : int * real
-Reason:
-Can't unify int (*In Basis*) with real (*In Basis*)
-(Different type constructors)
+      <section>
+        <h3 class="title">Type errors</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>We have seen that the following operations work:</li>
+              <ul>
+                <li><span class="code">1+2;</span></li>
+                <li><span class="code">1.0+2.0;</span></li>
+              </ul>
+              <li class="error bold">What does the error on the right mean?</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <pre><code class="sml">1+2.0;</code></pre>
+            <pre><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: + : int * int -> int
+  Argument: (1, 2.0) : int * real
+  Reason:
+    Can’t unify int (*In Basis*) with real (*In Basis*)
+    (Different type constructors)
 Found near 1 + 2.0
 Static Errors</code></pre>
-                </div>
-                <div class="col">
-                    <ul>
-                        <li>Note the line:</li>
-                        <ul>
-                            <li><span class="code">Function: + : int * int -> int</span></li>
-                        </ul>
-                        <li>Operators in ML are prefix form <span class="code">(+(1,2))</span> with infix notation allowed for some operators for convenience</li>
-                        <li>How many arguments does <span class="code">+</span> have?</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Tuples</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li><strong>Answer:</strong> one!</li>
-                        <li>But this argument is a <em>tuple</em> of two numbers!</li>
-                        <li>Check the snippet on the right</li>
-                        <li>In the ML type system, <span class="code">*</span> is used for tuples</li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='(1,2);
+      <section>
+        <h3 class="title">Type errors</h3>
+        <div class="row">
+          <div class="col">
+            <pre><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: + : int * int -> int
+  Argument: (1, 2.0) : int * real
+  Reason:
+    Can’t unify int (*In Basis*) with real (*In Basis*)
+    (Different type constructors)
+Found near 1 + 2.0
+Static Errors</code></pre>
+          </div>
+          <div class="col">
+            <ul>
+              <li>Note the line:</li>
+              <ul>
+                <li><span class="code">Function: + : int * int -> int</span></li>
+              </ul>
+              <li>Operators in ML are prefix form <span class="code">(+(1,2))</span> with infix notation allowed for
+                some operators for convenience</li>
+              <li>How many arguments does <span class="code">+</span> have?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Tuples</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li><strong>Answer:</strong> one!</li>
+              <li>But this argument is a <em>tuple</em> of two numbers!</li>
+              <li>Check the snippet on the right</li>
+              <li>In the ML type system, <span class="code">*</span> is used for tuples</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='(1,2);
 
 (1.0, 2.0);
 
 (1,2.0);'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Type errors</h3>
-            <div class="row">
-                <div class="col">
-                    <p>Our error message was</p>
-                    <pre><code class="xsmall text">poly: : error: Type error in function application.
-Function: + : int * int -> int
-Argument: (1, 2.0) : int * real
-Reason:
-Can't unify int (*In Basis*) with real (*In Basis*)
-(Different type constructors)
+      <section>
+        <h3 class="title">Type errors</h3>
+        <div class="row">
+          <div class="col">
+            <p>Our error message was</p>
+            <pre><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: + : int * int -> int
+  Argument: (1, 2.0) : int * real
+  Reason:
+    Can’t unify int (*In Basis*) with real (*In Basis*)
+    (Different type constructors)
 Found near 1 + 2.0
 Static Errors</code></pre>
-                </div>
-                <div class="col">
-                    <ul>
-                        <li>Type of <span class="code">+</span> is <span class="code">int * int -> int</span></li>
-                        <li>Actually, <span class="code">+</span> can have different types, but, based on the first argument, ML decides on the integer version</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+          </div>
+          <div class="col">
+            <ul>
+              <li>Type of <span class="code">+</span> is <span class="code">int * int -> int</span></li>
+              <li>Actually, <span class="code">+</span> can have different types, but, based on the first argument, ML
+                decides on the integer version</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Type errors</h3>
-            <div class="row">
-                <div class="col">
-                    <p>In fact, if we execute <span class="code">1.0 + 2;</span> in poly we get:</p>
-                    <pre><code class="xsmall text">poly: : error: Type error in function application.
-Function: + : real * real -> real
-Argument: (1.0, 2) : real * int
-Reason:
-Can't unify int (*In Basis*) with real (*In Basis*)
-(Different type constructors)
+      <section>
+        <h3 class="title">Type errors</h3>
+        <div class="row">
+          <div class="col">
+            <p>In fact, if we execute <span class="code">1.0 + 2;</span> in poly we get:</p>
+            <pre><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: + : real * real -> real
+  Argument: (1.0, 2) : real * int
+  Reason:
+    Can’t unify int (*In Basis*) with real (*In Basis*)
+    (Different type constructors)
 Found near 1.0 + 2
 Static Errors</code></pre>
-                </div>
-                <div class="col">
-                    <ul>
-                        <li>In this case, ML decides that we want real addition</li>
-                        <li>In both cases, the second argument does not match the first </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+          </div>
+          <div class="col">
+            <ul>
+              <li>In this case, ML decides that we want real addition</li>
+              <li>In both cases, the second argument does not match the first </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">More examples</h3>
-            <div class="row">
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='#"a" ^ "bc";'></standardml-editor>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='1/2;'></standardml-editor>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='if 1<2 then #"a" else "bc";'></standardml-editor>
-                </div>
-            </div>
-        </section>
+      <section>
+        <h3 class="title">More examples</h3>
+        <div class="row">
+          <div class="col small-code">
+            <pre><code class="sml">#"a" ^ "bc";</code></pre>
+              <pre><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: ^ : string * string -> string
+  Argument: (#"a", "bc") : char * string</code></pre>
+          </div>
+          <div class="col small-code">
+            <pre><code class="sml">1/2;</code></pre>
+              <pre><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: / : real * real -> real
+  Argument: (1, 2) : int * int</code></pre>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Coercion</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Convert integer to real</li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='real(4);
+      <section>
+        <h3 class="title">More examples</h3>
+        <div class="small-code">
+          <pre><code class="sml">if 1&lt;2 then #"a" else "bc";</code></pre>
+            <pre ><code class="text error bold xxsmall">poly: : error: Type mismatch between then-part and else-part.
+  Then: #"a" : char
+  Else: "bc" : string</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Coercion</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Convert integer to real</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='real(4);
 
 real 4;'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Real to integer</h3>
-            <p>There are <strong>four</strong> possibilities</p>
-            <div class="r-stack">
-                <div class="row fragment fade-out" data-fragment-index="0">
-                    <div class="col small-code">
-                        <p><span class="code">floor</span>: round down</p>
-                        <standardml-editor contenteditable="true" code='floor 3.5;
+      <section>
+        <h3 class="title">Real to integer</h3>
+        <p>There are <strong>four</strong> possibilities</p>
+        <div class="r-stack">
+          <div class="row fragment fade-out" data-fragment-index="0">
+            <div class="col small-code">
+              <p><span class="code">floor</span>: round down</p>
+              <standardml-editor contenteditable="true" code='floor 3.5;
 
 floor ~3.5;'></standardml-editor>
-                    </div>
-                    <div class="col small-code">
-                        <p><span class="code">ceil</span>: round up</p>
-                        <standardml-editor contenteditable="true" code='ceil 3.5;'></standardml-editor>
-                    </div>
-                </div>
-                <div class="row fragment fade-in" data-fragment-index="0">
-                    <div class="col small-code">
-                        <p><span class="code">round</span>: nearest integer</p>
-                        <standardml-editor contenteditable="true" code='round 3.5;'></standardml-editor>
-                    </div>
-                    <div class="col small-code">
-                        <p><span class="code">trunc</span>: truncate</p>
-                        <standardml-editor contenteditable="true" code='trunc 3.5;
+            </div>
+            <div class="col small-code">
+              <p><span class="code">ceil</span>: round up</p>
+              <standardml-editor contenteditable="true" code='ceil 3.5;'></standardml-editor>
+            </div>
+          </div>
+          <div class="row fragment fade-in" data-fragment-index="0">
+            <div class="col small-code">
+              <p><span class="code">round</span>: nearest integer</p>
+              <standardml-editor contenteditable="true" code='round 3.5;'></standardml-editor>
+            </div>
+            <div class="col small-code">
+              <p><span class="code">trunc</span>: truncate</p>
+              <standardml-editor contenteditable="true" code='trunc 3.5;
 
 trunc ~3.5;'></standardml-editor>
-                    </div>
-                </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Conversion between characters and integers</h3>
-            <div class="row">
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='ord #"a";
+      <section>
+        <h3 class="title">Conversion between characters and integers</h3>
+        <div class="row">
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='ord #"a";
 
 ord #"a" - ord #"A";
 
 str #"a";'></standardml-editor>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='chr 97;'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='chr 97;'></standardml-editor>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise 1</h3>
-            <div style="text-align: left;">
-                <p>Write expressions to:</p>
-                <ul>
-                    <li>Convert <span class="code">123.45</span> to the next lower integer</li>
-                    <li>Convert <span class="code">~123.45</span> to the next lower integer</li>
-                </ul>
-            </div>
+      <section>
+        <h3 class="title">Exercise 1</h3>
+        <div style="text-align: left;">
+          <p>Write expressions to:</p>
+          <ul>
+            <li>Convert <span class="code">123.45</span> to the next lower integer</li>
+            <li>Convert <span class="code">~123.45</span> to the next lower integer</li>
+          </ul>
+        </div>
+      </section>
 
-            <div class="med-code">
-                <standardml-editor downloadable="true" save="true" id="ml-introduction-convert1" contenteditable="true" code=''></standardml-editor>
-            </div>
-        </section>
+      <section>
+        <h3 class="title">Exercise 2</h3>
+        <div style="text-align: left;">
+          <p>Write expressions to:</p>
+          <ul>
+            <li>Convert <span class="code">123.45</span> to the next higer integer</li>
+            <li>Convert <span class="code">~123.45</span> to the next higher integer</li>
+          </ul>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise 2</h3>
-            <div style="text-align: left;">
-                <p>Write expressions to:</p>
-                <ul>
-                    <li>Convert <span class="code">123.45</span> to the next higer integer</li>
-                    <li>Convert <span class="code">~123.45</span> to the next higher integer</li>
-                </ul>
-            </div>
+      <section>
+        <h3 class="title">Exercise 3</h3>
+        <div style="text-align: left;">
+          <p>Write expressions to:</p>
+          <ul>
+            <li>Convert <span class="code">#"Y"</span> to an integer</li>
+            <li>Convert <span class="code">~120</span> to a character</li>
+          </ul>
+        </div>
+      </section>
 
-            <div class="med-code">
-                <standardml-editor downloadable="true" save="true" id="ml-introduction-convert2" contenteditable="true" code=''></standardml-editor>
-            </div>
-        </section>
+      <section>
+        <h3 class="title">Exercise 4</h3>
+        <div style="text-align: left;">
+          <p>Write expressions to:</p>
+          <ul>
+            <li>Convert <span class="code">#"N"</span> to a real</li>
+            <li>Convert <span class="code">97</span> to a character</li>
+            <li>Convert <span class="code">#"Z"</span> to a string</li>
+          </ul>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise 3</h3>
-            <div style="text-align: left;">
-                <p>Write expressions to:</p>
-                <ul>
-                    <li>Convert <span class="code">#"Y"</span> to an integer</li>
-                    <li>Convert <span class="code">~120</span> to a character</li>
-                </ul>
-            </div>
+      <section>
+        <h3 class="title">Exercise 5</h3>
+        <p>What are the type errors in the following expressions, and how can we fix them?</p>
+        <div class="med-code">
+          <pre><code class="sml">ceil 4;</code></pre>
+          <pre><code class="sml">if true then 5+6 else 7.0;</code></pre>
+          <pre><code class="sml">chr 256;</code></pre>
+        </div>
+      </section>
 
-            <div class="med-code">
-                <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-introduction-convert3" code=''></standardml-editor>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="title">Exercise 4</h3>
-            <div style="text-align: left;">
-                <p>Write expressions to:</p>
-                <ul>
-                    <li>Convert <span class="code">#"N"</span> to a real</li>
-                    <li>Convert <span class="code">97</span> to a character</li>
-                    <li>Convert <span class="code">#"Z"</span> to a string</li>
-                </ul>
-            </div>
-
-            <div class="med-code">
-                <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-introduction-convert4" code=''></standardml-editor>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="title">Exercise 5</h3>
-            <p>What are the type errors in the following expressions, and how can we fix them?</p>
-            <div class="row">
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='ceil 4;'></standardml-editor>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='if true then 5+6 else 7.0;'></standardml-editor>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='chr 256;'></standardml-editor>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="title">Variables</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Note the response of the snippet on the right has the name of the variable, rather than <span class="code">it</span></li>
-                        <li>No variable declaration needed!</li>
-                        <ul>
-                            <li>ML deduces the type of the variable automatically</li>
-                        </ul>
-                        <li class="mt2">A new declaration creates a new variable, and does not change the value of the existing one</li>
-                        <ul>
-                            <li>Note that even the type can change</li>
-                            <li>The old definition is still there, but (at least at the top-level environment) is no longer accessible</li>
-                        </ul>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='val pi = 3;
+      <section>
+        <h3 class="title">Variables</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Note the response of the snippet on the right has the name of the variable, rather than <span
+                  class="code">it</span></li>
+              <li>No variable declaration needed!</li>
+              <ul>
+                <li>ML deduces the type of the variable automatically</li>
+              </ul>
+              <li class="mt2">A new declaration creates a new variable, and does not change the value of the existing
+                one</li>
+              <ul>
+                <li>Note that even the type can change</li>
+                <li>The old definition is still there, but (at least at the top-level environment) is no longer
+                  accessible</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='val pi = 3;
 
 val pi = 3.14159;'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Variables</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Any "reasonable" sequence of alphanumeric characters</li>
-                        <li>Full details in the book, but we won't bother with them</li>
-                        <li>We won't use things like on the right...</li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='val $$$ = "ab";'></standardml-editor>
-                </div>
-            </div>
-        </section>
+      <section>
+        <h3 class="title">Variables</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Any "reasonable" sequence of alphanumeric characters</li>
+              <li>Full details in the book, but we won't bother with them</li>
+              <li>We won't use things like on the right...</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='val $$$ = "ab";'></standardml-editor>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Examples</h3>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='val pi = 3.14159;
+      <section>
+        <h3 class="title">Examples</h3>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='val pi = 3.14159;
 
 val radius = 4.0;
 
 pi * radius * radius;
 
 val area = pi * radius * radius;'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Exercise</h3>
-            <p>What does the environment contain after these commands?</p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='val a = 3;
+      <section>
+        <h3 class="title">Exercise</h3>
+        <p>What does the environment contain after these commands?</p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='val a = 3;
 
 val b = 98.6;
 
 val a = "three";
 
 val c = a ^ str(chr(floor(b)));'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Tuples</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Note the use of <span class="code">*</span> for complex types on the snippet result</li>
-                        <li>We can mix types in tuples definitions</li>
-                        <li>We can also use a complex type instead of a simple one</li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='val t1 = (1,2,3);
+      <section>
+        <h3 class="title">Tuples</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Note the use of <span class="code">*</span> for complex types on the snippet result</li>
+              <li>We can mix types in tuples definitions</li>
+              <li>We can also use a complex type instead of a simple one</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='val t1 = (1,2,3);
 
 (* Mix types *)
 val t2 = (4, 5.0, "six");
 
 (* Complex types *)
 val t3 = (1, (2,3,4));'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Accessing components of tuple</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Access via <span class="code">#</span>index</li>
-                    </ul>
-                    <p class="fragment error bold mt2" data-fragment-index="0">Look out to out of bound access</p>
-                </div>
-                <div class="col">
-                    <div class="r-stack" style="justify-content: center">
-                        <div class="small-code fragment fade-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='val t = (4, 5.0, "six");
+      <section>
+        <h3 class="title">Accessing components of tuple</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Access via <span class="code">#</span>index</li>
+            </ul>
+            <p class="fragment error bold mt2" data-fragment-index="0">Look out to out of bound access</p>
+          </div>
+          <div class="col">
+            <div class="r-stack" style="justify-content: center">
+              <div class="small-code fragment fade-out" data-fragment-index="0">
+                <standardml-editor contenteditable="true" code='val t = (4, 5.0, "six");
 
 #1 (t);
 
 #3 (t);'></standardml-editor>
-                        </div>
-                        <div class="small-code fragment fade-in" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='val t = (4, 5.0, "six");
-
-#4 (t);'></standardml-editor>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="small-code fragment fade-in" data-fragment-index="0">
+                <pre><code class="sml">#4 (t);</code></pre>
+                <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: #4 : ’a * ’b * ’c * ’d -> ’d
+  Argument: (t) : int * real * string
+  Reason: Can’t unify {4: ’a} to int * real * string
+    (Field 4 missing)</code></pre>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Lists</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Note that all elements of a list (unlike tuples) must be of the same type</li>
-                    </ul>
-                </div>
-                <div class="col small-code">
-                    <standardml-editor contenteditable="true" code='[1,2,3];
+      <section>
+        <h3 class="title">Lists</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Note that all elements of a list (unlike tuples) must be of the same type</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='[1,2,3];
 
 [1.0, 2.0];'></standardml-editor>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Lists</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Elements must have the same type</li>
-                        <li class="fragment mt2" data-fragment-index="0">For an empty list, ML cannot determine the type of the elements</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <div class="r-stack" style="justify-content: center">
-                        <div class="small-code fragment fade-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='[1,2.0];'></standardml-editor>
-                        </div>
-                        <div class="small-code fragment fade-in" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='[];'></standardml-editor>
-                        </div>
-                    </div>
-                </div>
+      <section>
+        <h3 class="title">Lists</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>When elements are not of the same type we get an error</li>
+              <li class="fragment mt2" data-fragment-index="0">For an empty list, ML cannot determine the type of the
+                elements</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="r-stack" style="justify-content: center">
+              <div class="small-code fragment fade-out" data-fragment-index="0">
+                <pre><code class="sml">[1, 2.0];</code></pre>
+                <pre><code class="text error bold xxsmall">poly: : error: Elements in a list have different types.
+  Item 1: 1 : int
+  Item 2: 2.0 : real
+  Reason:
+    Can’t unify int (*In Basis*) with real (*In Basis*)
+    (Different type constructors)</code></pre>
+              </div>
+              <div class="small-code fragment fade-in" data-fragment-index="0">
+                <pre><code class="sml">[];</code></pre>
+                <pre class="fragment" data-fragment-index="0"><code class="text">val it = []: ’a list</code></pre>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Head of a list</h3>
-            <p><strong>Head</strong>: first element of a list</p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='val L = [2,3,4];
+      <section>
+        <h3 class="title">Head of a list</h3>
+        <p><strong>Head</strong>: first element of a list</p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='val L = [2,3,4];
 
 val M = [5];
 
 hd(L);
 
 hd(M);'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Tail of a list</h3>
-            <p><strong>Tail</strong>: all the rest</p>
-            <p class="small">Notice that even if the tail is an empty list ML can determine the type</p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='val L = [2,3,4];
+      <section>
+        <h3 class="title">Tail of a list</h3>
+        <p><strong>Tail</strong>: all the rest</p>
+        <p class="small">Notice that even if the tail is an empty list ML can determine the type</p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='val L = [2,3,4];
 
 val M = [5];
 
 tl(L);
 
 tl(M);'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Concatenation of lists</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>List concatenation is applied with <span class="code">@</span></li>
-                        <li>So there are two different types of concatenation:</li>
-                        <ul>
-                            <li><span class="code">^</span>: Strings</li>
-                            <li><span class="code">@</span>: List</li>
-                        </ul>
-                        <li class="fragment error" data-fragment-index="0">Note that both lists must be the same type</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <div class="r-stack" style="justify-content: center">
-                        <div class="small-code fragment fade-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='[1,2] @ [3,4];'></standardml-editor>
-                        </div>
-                        <div class="small-code fragment fade-in" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='[1,2] @ ["a", "b"];'></standardml-editor>
-                        </div>
-                    </div>
-                </div>
+      <section>
+        <h3 class="title">Concatenation of lists</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>List concatenation is applied with <span class="code">@</span></li>
+              <li>So there are two different types of concatenation:</li>
+              <ul>
+                <li><span class="code">^</span>: Strings</li>
+                <li><span class="code">@</span>: List</li>
+              </ul>
+              <li class="fragment error" data-fragment-index="0">Note that both lists must be the same type</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="r-stack" style="justify-content: center">
+              <div class="small-code fragment fade-out" data-fragment-index="0">
+                <standardml-editor contenteditable="true" code='[1,2] @ [3,4];'></standardml-editor>
+              </div>
+              <div class="small-code fragment fade-in" data-fragment-index="0">
+                <pre><code class="sml">[1,2] @ ["a","b"];</code></pre>
+                <pre><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: @ : int list * int list -> int list
+  Argument: ([1, 2], ["a", "b"]) : int list * string list
+  Reason:
+    Can’t unify int (*In Basis*) with string (*In Basis*)
+    (Different type constructors)</code></pre>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Cons</h3>
-            <div class="row">
-                <div class="col">
-                    <ul>
-                        <li>Takes an element of type <span class="code">'a</span> and a list of type <span class="code">'a list</span> and combines them</li>
-                        <li class="fragment mt2" data-fragment-index="0"><span class="code">::</span> is right associative</li>
-                        <li class="fragment" data-fragment-index="0">The other way would make no sense</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <div class="r-stack" style="justify-content: center">
-                        <div class="small-code fragment fade-out" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='2 :: [3,4];
+      <section>
+        <h3 class="title">Cons</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Takes an element of type <span class="code">'a</span> and a list of type <span class="code">'a
+                  list</span> and combines them</li>
+              <li class="fragment mt2" data-fragment-index="0"><span class="code">::</span> is right associative</li>
+              <li class="fragment" data-fragment-index="0">The other way would make no sense</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="r-stack" style="justify-content: center">
+              <div class="small-code fragment fade-out" data-fragment-index="0">
+                <standardml-editor contenteditable="true" code='2 :: [3,4];
 
 2 :: nil;
 
 2 :: [];'></standardml-editor>
-                        </div>
-                        <div class="small-code fragment fade-in" data-fragment-index="0">
-                            <standardml-editor contenteditable="true" code='1 :: 2 :: 3 :: nil;
+              </div>
+              <div class="small-code fragment fade-in" data-fragment-index="0">
+                <standardml-editor contenteditable="true" code='1 :: 2 :: 3 :: nil;
 
 (1 :: (2 :: (3 :: nil)));'></standardml-editor>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Strings to list</h3>
-            <p>Strings can be converted to lists of characaters by using <span class="code">explode</span></p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='explode ("abcd");
+      <section>
+        <h3 class="title">Strings to list</h3>
+        <p>Strings can be converted to lists of characaters by using <span class="code">explode</span></p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='explode ("abcd");
 
 explode ("");'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-            <h3 class="title">Lists to strings</h3>
-            <p>Lists of characters can be converted to strings by using <span class="code">implode</span></p>
-            <div class="med-code">
-                <standardml-editor contenteditable="true" code='implode ([#"a", #"b", #"c", #"d"]);
+      <section>
+        <h3 class="title">Lists to strings</h3>
+        <p>Lists of characters can be converted to strings by using <span class="code">implode</span></p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='implode ([#"a", #"b", #"c", #"d"]);
 
 implode (nil);
 
 implode (explode ("xyz"));'></standardml-editor>
-            </div>
-        </section>
+        </div>
+      </section>
     </div>
   </div>
 

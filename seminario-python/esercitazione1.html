@@ -729,6 +729,203 @@ tupla[3] = 666"></python-editor>
         </div>
       </section>
 
+      <section>
+        <h3 class="title">Ripasso liste</h3>
+        <div class="row" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Una lista è una <em>sequenza mutabile</em> di elementi eterogenei</p>
+            <p>L'ordine in cui mettiamo gli oggetti viene preservato</p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='numeri = [1,1,2,3,5,8,13]
+frutti = ["banana", "mela", "arancia"]
+
+print(type(numeri))'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Tabelle</h3>
+        <div class="row" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Una lista può a sua volta contenere altre liste</p>
+            <p>Per una migliore leggibilità, puoi disporre strutture come questa su più righe</p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code="tabella = [
+  ['a','b','c'],
+  ['d','e','f']
+]
+
+print(tabella)"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Date le liste <span class="code">l1</span> e <span class="code">l2</span>, riesci a sostituire il loro contenuto?</p>
+            <p>Dopo il tuo codice, <span class="code">l1</span> dovrebbe contenere ciò che in origine era contenuto in <span class="code">l2</span> e viceversa</p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> usa una lista <span class="code">l3</span> per memorizzare risultati intermedi</p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e15" downloadable="true" save="true" contenteditable="true" code="l1 = [1,2,3]
+l2 = [3,2,1]
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Inserisci dei valori nelle liste <span class="code">l1</span> e <span class="code">l2</span> affinché il risultato finale sia:</p>
+            <p><span class="code">[[[8, 4], [8, 4]], [[4, 8, 4], [8, 4]]]</span></p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e16" downloadable="true" save="true" contenteditable="true" code="l1 = [   ]    # inserisci dei numeri
+l2 = [   ]    # inserisci dei numeri
+
+print([[l1,l1],[l2,l1]])"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Inserisci dei valori nelle liste <span class="code">l1</span>, <span class="code">l2</span> e <span class="code">l3</span> affinché il risultato finale sia:</p>
+            <p><span class="code">[[[8, [7, 7]], [8, [7, 7]], [[8, 7], [8, 5]]], [8, 7]]</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> qualche lista potrebbe contenere a sua volta delle liste!</p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e17" downloadable="true" save="true" contenteditable="true" code="l1 = [   ]    # inserisci dei numeri
+l2 = [   ]    # inserisci dei numeri
+l3 = [   ]    # inserisci dei numeri
+
+print([[l2,l2,[l3,l1]],l3])"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Conversione sequenze-liste</h3>
+        <div class="row" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p><span class="code">list</span> può anche servire per convertire una qualsiasi sequenza in una <em>nuova</em> stringa</p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='caratteri = list("treno")
+
+print(caratteri)'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Data una stringa con caratteri misti minuscoli e maiuscoli, crea una lista contenente come primo elemento una lista con tutti i caratteri della stringa, convertiti in minuscolo; come secondo elemento un'altra lista con tutti i caratteri, ma convertiti in maiuscolo</p>
+            <p class="mt">Esempio: data la stringa <span class="code">GuLp</span>, il tuo codice dovrebbe stampare:</p>
+            <p><span class="code">[['g', 'u', 'l', 'p'], ['G', 'U', 'L', 'P']]</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> ricorda i metodi <span class="code">.lower()</span> e <span class="code">.upper()</span> delle stringhe</p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e18" downloadable="true" save="true" contenteditable="true" code="s = 'GuLp'
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Operatori</h3>
+        <div class="row">
+          <table>
+            <tr>
+              <th>Operatore</th>
+              <th>Risultato</th>
+              <th>Significato</th>
+            </tr>
+            <tr>
+              <td><span class="code">len(</span>list<span class="code">)</span></td>
+              <td>int</td>
+              <td>Ritorna la lunghezza di una lista</td>
+            </tr>
+            <tr>
+              <td>list<span class="code">[</span>int<span class="code">]</span></td>
+              <td>obj</td>
+              <td>Legge/scrive un elemento all'indice specificato</td>
+            </tr>
+            <tr>
+              <td>list <span class="code">[</span>int<span class="code">:</span>int<span class="code">]</span></td>
+              <td>list</td>
+              <td>Estrae una sotto-lista - ritorna una nuova lista</td>
+            </tr>
+            <tr>
+              <td>obj <span class="code">in</span> list</td>
+              <td>bool</td>
+              <td>Controlla se un elemento è presente in una lista</td>
+            </tr>
+            <tr>
+              <td>list <span class="code">+</span> list</td>
+              <td>list</td>
+              <td>Concatena due liste - ritorna una nuova lista</td>
+            </tr>
+            <tr>
+              <td><span class="code">max(</span>list<span class="code">)</span></td>
+              <td>obj</td>
+              <td>Data una lista di numeri, ritorna il massimo</td>
+            </tr>
+            <tr>
+              <td><span class="code">min(</span>list<span class="code">)</span></td>
+              <td>obj</td>
+              <td>Data una lista di numeri, ritorna il minimo</td>
+            </tr>
+            <tr>
+              <td><span class="code">sum(</span>list<span class="code">)</span></td>
+              <td>obj</td>
+              <td>Data una lista di numeri, ritorna la somma</td>
+            </tr>
+            <tr>
+              <td>list <span class="code">*</span> int</td>
+              <td>list</td>
+              <td>Replica la lista - ritorna una nuova lista</td>
+            </tr>
+            <tr>
+              <td><span class="code">==</span>, <span class="code">!=</span></td>
+              <td>bool</td>
+              <td>Controlla se due liste sono uguali o differenti</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Devo aver sbagliato qualcosa... Il codice sulla destra <span class="error bold">non funziona</span>!</p>
+            <p>Quale credi sia il problema? Prova a <span class="ok bold">correggerlo</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> non si utilizza così <span class="code">len</span></p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e19" downloadable="true" save="true" contenteditable="true" code='s = "lunghezza di una stringa"
+
+print(s.len())'></python-editor>
+          </div>
+        </div>
+      </section>
+
     <!-- Import the main reveal script -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>

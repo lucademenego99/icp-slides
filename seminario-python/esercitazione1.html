@@ -477,6 +477,258 @@ b = "ciao a tutti"
         </div>
       </section>
 
+      <section>
+        <h3 class="title">Ripasso tuple</h3>
+        <div class="row" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Una tupla è una <em>sequenza immutabile</em> di elementi eterogenei</p>
+            <p>Sono ammessi duplicati</p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='x = (1,1,2,3,5,8,13, "ciao", True)
+
+print(type(x))'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Tuple da sequenze (e viceversa)</h3>
+        <div class="row" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Una tupla può essere creata da una sequenza tramite <span class="code">tuple(sequenza)</span></p>
+            <p>Una sequenza può essere creata da una tupla tramite <span class="code">list(tupla)</span></p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='tupla = (1,1,2,3,5,8,13, "ciao", True)
+print(list(tupla))
+
+sequenza = [1,1,2,3,5,8,13, "ciao", True]
+print(tuple(sequenza))'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <p class="mt">Prova ad indovinare quale risultato producono le seguenti espressioni</p>
+        <div class="row mt">
+          <table>
+            <tr>
+                <th>Espressione</th>
+                <th>Risultato</th>
+            </tr>
+            <tr>
+                <td><span class="code">(1.2,3.4)</span></td>
+                <td class="fragment code ok" style="border-color: black">(1.2, 3.4)</td>
+            </tr>
+            <tr>
+                <td><span class="code">(1;2;3;4)</span></td>
+                <td class="fragment code error" style="border-color: black">SyntaxError: invalid syntax</td>
+            </tr>
+            <tr>
+                <td><span class="code">(1,2;3,4)</span></td>
+                <td class="fragment code error" style="border-color: black">SyntaxError: invalid syntax</td>
+            </tr>
+            <tr>
+                <td><span class="code">(1,2,3,4)</span></td>
+                <td class="fragment code ok" style="border-color: black">(1, 2, 3, 4)</td>
+            </tr>
+            <tr>
+                <td><span class="code">(())</span></td>
+                <td class="fragment code ok" style="border-color: black">()</td>
+            </tr>
+            <tr>
+                <td><span class="code">type(())</span></td>
+                <td class="fragment code ok" style="border-color: black">tuple</td>
+            </tr>
+            <tr>
+                <td><span class="code">((),)</span></td>
+                <td class="fragment code ok" style="border-color: black">((),)</td>
+            </tr>
+            <tr>
+                <td><span class="code">tuple([('a'),('b'),('c')])</span></td>
+                <td class="fragment code ok" style="border-color: black">('a', 'b', 'c')</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Operatori</h3>
+        <div class="row mt">
+          <table>
+            <tr>
+              <th>Operatore</th>
+              <th>Risultato</th>
+              <th>Significato</th>
+            </tr>
+            <tr>
+              <td><span class="code">len(</span>tuple<span class="code">)</span></td>
+              <td>int</td>
+              <td>Ritorna la lunghezza di una tupla</td>
+            </tr>
+            <tr>
+              <td>tuple<span class="code">[</span>int<span class="code">]</span></td>
+              <td>obj</td>
+              <td>Legge un elemento all'indice specificato</td>
+            </tr>
+            <tr>
+              <td>tuple<span class="code">[</span>int<span class="code">:</span>int<span class="code">]</span></td>
+              <td>tuple</td>
+              <td>Estrae una sotto-tupla (ne ritorna una nuova)</td>
+            </tr>
+            <tr>
+              <td>tuple <span class="code">+</span> tuple</td>
+              <td>tuple</td>
+              <td>Concatena due tuple (ne ritorna una nuova)</td>
+            </tr>
+            <tr>
+              <td>obj <span class="code">in</span> tuple</td>
+              <td>bool</td>
+              <td>Controlla se un elemento è presente in una tupla</td>
+            </tr>
+            <tr>
+              <td>tuple <span class="code">*</span> int</td>
+              <td>tuple</td>
+              <td>Replica la tupla (ne ritorna una nuova)</td>
+            </tr>
+            <tr>
+              <td><span class="code">==</span>, <span class="code">!=</span></td>
+              <td>bool</td>
+              <td>Controlla se due tuple sono uguali o differenti</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <p class="mt">Prova ad indovinare quale risultato producono le seguenti espressioni</p>
+        <div class="row mt">
+          <table>
+            <tr>
+                <th>Espressione</th>
+                <th>Risultato</th>
+            </tr>
+            <tr>
+                <td><span class="code">len(3,2,4)</span></td>
+                <td class="fragment code error" style="border-color: black">TypeError: len() takes exactly one argument (3 given)</td>
+            </tr>
+            <tr>
+                <td><span class="code">len((3,2,4))</span></td>
+                <td class="fragment code ok" style="border-color: black">3</td>
+            </tr>
+            <tr>
+                <td><span class="code">len(len((1,2,3,4)))</span></td>
+                <td class="fragment code error" style="border-color: black">TypeError: object of type 'int' has no len()</td>
+            </tr>
+            <tr>
+                <td><span class="code">(1,2,3)[2]</span></td>
+                <td class="fragment code ok" style="border-color: black">3</td>
+            </tr>
+            <tr>
+                <td><span class="code">(1,2,3)[3]</span></td>
+                <td class="fragment code error" style="border-color: black">IndexError: tuple index out of range</td>
+            </tr>
+            <tr>
+                <td><span class="code">(7,6,8,9,5)[1:3]</span></td>
+                <td class="fragment code ok" style="border-color: black">(6, 8)</td>
+            </tr>
+            <tr>
+                <td><span class="code">(1,2,3) + (4,5,6)</span></td>
+                <td class="fragment code ok" style="border-color: black">(1, 2, 3, 4, 5, 6)</td>
+            </tr>
+            <tr>
+                <td><span class="code">'a' in ('c','a','s','c','o')</span></td>
+                <td class="fragment code ok" style="border-color: black">True</td>
+            </tr>
+            <tr>
+              <td><span class="code">(5,6,7)*3</span></td>
+              <td class="fragment code ok" style="border-color: black">(5, 6, 7, 5, 6, 7, 5, 6, 7)</td>
+          </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Date le tuple <span class="code">x</span> (di interi) e <span class="code">y</span> (di tuple di caratteri), crea una nuova tupla <span class="code">z</span> contenente ogni tupla di <span class="code">y</span> moltiplicata per il numero corrispondente in <span class="code">x</span></p>
+            <p><strong>Esempio:</strong> dati</p>
+            <pre><code class="python">x = (1,2,2)
+y = (('a', 'b'), ('c'), ('d', 'e')) </code></pre>
+              <p><span class="code">z</span> dovrà essere</p>
+              <p><span class="code">('a', 'b', 'c', 'c', 'd', 'e', 'd', 'e')</span></p>
+            <p><strong>Nota:</strong> <span class="code">x</span> e <span class="code">y</span> avranno sempre lunghezza <span class="code">3</span></p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e11" downloadable="true" save="true" contenteditable="true" code="x = (2,4,3)
+y = (('w','e','l','c'),('o',),('m','e'))
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Devo aver sbagliato qualcosa... Il codice sulla destra <span class="error bold">non funziona</span>!</p>
+            <p>Quale credi sia il problema? Prova a <span class="ok bold">correggerlo</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> le tuple sono <em>immutabili</em>, bisogna crearne una nuova 🔁</p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e12" downloadable="true" save="true" contenteditable="true" code="tupla = (5,8,7,9,11)
+tupla[3] = 666"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 4</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Data la tupla <span class="code">x</span>, crea una tupla <span class="code">y</span> contenente all'inizio tutti gli elementi di <span class="code">x</span> tranne l'ultimo; alla fine gli elementi <span class="code">'d', 'e'</span></p>
+            <p><strong>Nota:</strong> il tuo codice deve funzionare con qualsiasi tupla <span class="code">x</span></p>
+            <p><strong>Esempio:</strong> data</p>
+            <pre><code class="python">x = ('a' ,'b', 'c')</code></pre>
+            <p><span class="code">y</span> dovrà essere</p>
+            <p><span class="code">('a', 'b', 'd', 'e')</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> puoi usare l'operatore slice anche con numeri negativi! (es. <span class="code">x[:-3]</span>)</p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e13" downloadable="true" save="true" contenteditable="true" code="x = ('a','b','c')
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 5</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Data la tupla <span class="code">t</span> avente caratteri <strong>intervallati</strong> maiuscoli e minuscoli, modifica l'assegnazione di <span class="code">t</span> in modo che essa contenga tutti i caratteri maiuscoli per primi e quelli minuscoli per ultimi</p>
+            <p><strong>Esempio:</strong> data</p>
+            <pre><code class="python">t = ('A', 'b', 'C', 'd')</code></pre>
+            <p><span class="code">t</span> dovrà diventare</p>
+            <p><span class="code">('A', 'C', 'b', 'd')</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> utilizza il costrutto speciale dell'operatore slice <span class="code">[start:stop:step]</span></p>
+          </div>
+          <div class="col med-code">
+            <python-editor id="seminario-python-e14" downloadable="true" save="true" contenteditable="true" code="t = ('C', 'a', 'R', 'i', 'S', 'm', 'A')
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
+      </section>
+
     <!-- Import the main reveal script -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>

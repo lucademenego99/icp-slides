@@ -22,6 +22,9 @@
   <!-- Bundle containing the code playground web components -->
   <script src="https://lucademenego99.github.io/icp-bundle/base/python.iife.js"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
   <style>
     pre code {
       padding: min(1vw, 2vh) !important;
@@ -148,6 +151,428 @@
       </section>
 
       <section>
+        <h3 class="title">Ripasso tipi predefiniti</h3>
+        <div class="row">
+          <table>
+            <tr>
+              <th>Tipo</th>
+              <th>Significato</th>
+              <th>Dominio</th>
+              <th>Mutabile?</th>
+            </tr>
+            <tr>
+              <td><span class="code">bool</span></td>
+              <td>Condizione</td>
+              <td><span class="code">True</span>, <span class="code">False</span></td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><span class="code">int</span></td>
+              <td>Numero intero</td>
+              <td>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow data-mjx-texclass="ORD">
+                    <mi mathvariant="double-struck">Z</mi>
+                  </mrow>
+                </math>
+              </td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><span class="code">long</span></td>
+              <td>Numero intero</td>
+              <td>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow data-mjx-texclass="ORD">
+                    <mi mathvariant="double-struck">Z</mi>
+                  </mrow>
+                </math>
+              </td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><span class="code">float</span></td>
+              <td>Numero razionale</td>
+              <td>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow data-mjx-texclass="ORD">
+                    <mi mathvariant="double-struck">Q</mi>
+                  </mrow>
+                </math> (più o meno)
+              </td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><span class="code">str</span></td>
+              <td>Testo</td>
+              <td>Testo</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><span class="code">list</span></td>
+              <td>Sequenza</td>
+              <td>Collezione di oggetti</td>
+              <td>Si</td>
+            </tr>
+            <tr>
+              <td><span class="code">tuple</span></td>
+              <td>Sequenza</td>
+              <td>Collezione di oggetti</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><span class="code">set</span></td>
+              <td>Insieme</td>
+              <td>Collezione di oggetti</td>
+              <td>Si</td>
+            </tr>
+            <tr>
+              <td><span class="code">dict</span></td>
+              <td>Associazione</td>
+              <td>Collezione di coppie chiave-valore</td>
+              <td>Si</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Conversioni tra tipi</h3>
+        <div class="row mt" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>E' possibile convertire un tipo <em>primitivo</em> ad un altro utilizzando la funzione del tipo
+              destinazione corrispondente</p>
+            <table class="mt">
+              <tr>
+                <th>Da</th>
+                <th>A</th>
+                <th>Funzione</th>
+              </tr>
+              <tr>
+                <td><span class="code">int</span></td>
+                <td><span class="code">string</span></td>
+                <td><span class="code">str(x)</span></td>
+              </tr>
+              <tr>
+                <td><span class="code">string</span></td>
+                <td><span class="code">int</span></td>
+                <td><span class="code">int(x)</span></td>
+              </tr>
+              <tr>
+                <td><span class="code">int</span></td>
+                <td><span class="code">float</span></td>
+                <td><span class="code">float(x)</span></td>
+              </tr>
+              <tr>
+                <td><span class="code">...</span></td>
+                <td><span class="code">...</span></td>
+                <td><span class="code">...</span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='x = 45
+convertito = str(x)
+
+print(type(convertito))'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Operatori e funzioni sui numeri</h3>
+        <div class="row mt2">
+          <div class="col">
+            <table>
+              <tr>
+                <th>Operatore</th>
+                <th>Descrizione</th>
+              </tr>
+              <tr>
+                <td><span class="code">+</span></td>
+                <td>Somma</td>
+              </tr>
+              <tr>
+                <td><span class="code">-</span></td>
+                <td>Sottrazione</td>
+              </tr>
+              <tr>
+                <td><span class="code">*</span></td>
+                <td>Moltiplicazione</td>
+              </tr>
+              <tr>
+                <td><span class="code">/</span></td>
+                <td>Divisione</td>
+              </tr>
+              <tr>
+                <td><span class="code">%</span></td>
+                <td>Resto della divisione</td>
+              </tr>
+              <tr>
+                <td><span class="code">**</span></td>
+                <td>Elevamento a potenza</td>
+              </tr>
+              <tr>
+                <td><span class="code">//</span></td>
+                <td>Divisione intera</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col">
+            <table>
+              <tr>
+                <th>Funzione</th>
+                <th>Descrizione</th>
+              </tr>
+              <tr>
+                <td><span class="code">abs(x)</span></td>
+                <td>Valore assoluto</td>
+              </tr>
+              <tr>
+                <td><span class="code">min(x, y, ...)</span></td>
+                <td>Il minimo tra i numeri inseriti</td>
+              </tr>
+              <tr>
+                <td><span class="code">max(x, y, ...)</span></td>
+                <td>Il massimo tra i numeri inseriti</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <p class="fragment mt2"><span class="code">+</span> e <span class="code">-</span> possono essere anche operatori
+          unari</p>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <div class="row">
+          <div class="col">
+            <p>Ci viene data un'importante scadenza tra:</p>
+            <pre><code>giorni = 4
+ore = 13
+minuti = 52</code></pre>
+            <p>Scrivi del codice che stampa i minuti in totale. Il codice dovrebbe stampare:</p>
+            <p><span class="code">In totale mancano 6592 minuti</span></p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='giorni = 4
+ore = 13
+minuti = 52
+
+# Scrivi qui
+'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <div class="row">
+          <div class="col">
+            <p>Date le due variabili <span class="code">a</span> e <span class="code">b</span></p>
+            <p>Scrivi del codice che scambia i loro valori</p>
+            <p><strong>Esempio:</strong> date</p>
+            <pre><code class="python">a = 3
+b = 5</code></pre>
+            <p>Dopo il tuo codice <span class="code">a</span> dovrebbe valere 5 e <span class="code">b</span> 3</p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> usa una variabile aggiuntiva per contenere risultati
+              intermedi</p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='a = 3
+b = 5
+
+# Scrivi qui
+
+
+
+# Infine stampiamo le variabili
+print(a)
+print(b)'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Ripasso booleani</h3>
+        <p>Un booleano può avere valori <span class="code">True</span> o <span class="code">False</span></p>
+        <div class="row mt2" style="align-items: flex-start;">
+          <div class="col">
+            <h5>Operatori</h5>
+            <table>
+              <tr>
+                <th>Operatore</th>
+                <th>Descrizione</th>
+              </tr>
+              <tr>
+                <td><span class="code">and</span></td>
+                <td><span class="code">True</span> se entrambi i valori sono <span class="code">True</span></td>
+              </tr>
+              <tr>
+                <td><span class="code">or</span></td>
+                <td><span class="code">True</span> se almeno uno dei due valori è <span class="code">True</span></td>
+              </tr>
+              <tr>
+                <td><span class="code">not</span></td>
+                <td><span class="code">True</span> se il valore è <span class="code">False</span>, <span
+                    class="code">False</span> altrimenti</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col">
+            <h5>De Morgan</h5>
+            <table>
+              <tr>
+                <th>Formula</th>
+                <th>Equivalente a</th>
+              </tr>
+              <tr>
+                <td><span class="code">x or y</span></td>
+                <td><span class="code">not(not x and not y)</span></td>
+              </tr>
+              <tr>
+                <td><span class="code">x and y</span></td>
+                <td><span class="code">not(not x or not y)</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Operatori di comparazione</h3>
+        <div class="row">
+          <div class="col">
+            <table>
+              <tr>
+                <th>Operatore</th>
+                <th>Descrizione</th>
+              </tr>
+              <tr>
+                <td><span class="code">a == b</span></td>
+                <td>uguale</td>
+              </tr>
+              <tr>
+                <td><span class="code">a != b</span></td>
+                <td>diverso</td>
+              </tr>
+              <tr>
+                <td><span class="code">a &lt; b</span></td>
+                <td>minore</td>
+              </tr>
+              <tr>
+                <td><span class="code">a &gt; b</span></td>
+                <td>maggiore</td>
+              </tr>
+              <tr>
+                <td><span class="code">a &lt;= b</span></td>
+                <td>minore o uguale</td>
+              </tr>
+              <tr>
+                <td><span class="code">a &gt;= b</span></td>
+                <td>maggiore o uguale</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col">
+            <p>Possono essere usati anche per confrontare stringhe</p>
+            <p>Le stringhe sono ordinate secondo l'<a href="https://it.wikipedia.org/wiki/Ordine_lessicografico">ordine
+                lessicografico</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <p>Prova ad indovinare quale risultato producono le seguenti espressioni</p>
+        <div class="row mt">
+          <table>
+            <tr>
+              <th>Espressione</th>
+              <th>Risultato</th>
+            </tr>
+            <tr>
+              <td><span class="code">not (True and False)</span></td>
+              <td class="fragment code ok" style="border-color: black">True</td>
+            </tr>
+            <tr>
+              <td><span class="code">(not True) or (not (True or False))</span></td>
+              <td class="fragment code error" style="border-color: black">False</td>
+            </tr>
+            <tr>
+              <td><span class="code">x or (not x)</span></td>
+              <td class="fragment code ok" style="border-color: black">True (∀ x)</td>
+            </tr>
+            <tr>
+              <td><span class="code">bool(2 + 4)</span></td>
+              <td class="fragment code ok" style="border-color: black">True</td>
+            </tr>
+            <tr>
+              <td><span class="code">bool(4-3-1)</span></td>
+              <td class="fragment code error" style="border-color: black">False</td>
+            </tr>
+            <tr>
+              <td><span class="code">True + True</span></td>
+              <td class="fragment code" style="border-color: black">2</td>
+            </tr>
+            <tr>
+              <td><span class="code">True and 1/0</span></td>
+              <td class="fragment code error" style="border-color: black">ZeroDivisionError: division by zero</td>
+            </tr>
+            <tr>
+              <td><span class="code">True or 1/0</span></td>
+              <td class="fragment code ok" style="border-color: black">True</td>
+            </tr>
+            <tr>
+              <td><span class="code">8 > 5</span></td>
+              <td class="fragment code ok" style="border-color: black">True</td>
+            </tr>
+            <tr>
+              <td><span class="code">8 > 8</span></td>
+              <td class="fragment code error" style="border-color: black">False</td>
+            </tr>
+            <tr>
+              <td><span class="code">3 == 6</span></td>
+              <td class="fragment code error" style="border-color: black">False</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Challenge 1</h3>
+        <div class="row" style="gap: min(1vw, 2vh); width: min(95vw, 190vh)">
+          <div class="col">
+            <p>Skinner possiede un prato di area quadrata con lato <span class="code">d=100</span> metri che viene accudito ogni settimana dal giardiniere Willy. Un giorno Skinner decide di rendere più elaborato il giardino, e chiede a Willy di tagliare solo alcune zone. Ma Willy non è molto forte in geometria, quindi per aiutarlo Skinner inventa un sensore in grado di rilevare la posizione e dire se il tagliaerba va azionato.</p>
+            <div style="text-align: left;">
+              <p><strong>Compito:</strong> scrivi un'espressione che, date due coordinate <span class="code">x</span> e <span class="code">y</span>, produca <span class="code">True</span> quando il tagliaerba è nella zona verde chiaro, <span class="code">False</span> altrimenti.</p>
+              <p><strong>Nota:</strong> l'origine è in basso a sinistra</p>
+            </div>
+            <img style="max-width: 100%; object-fit: contain; max-height: min(15vw, 28vh)" src="assets/tagliaerba-1.png" alt="Immagine del prato">
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code='d = 100
+
+# Questi sono alcuni casi di test
+# Decommenta una riga alla volta per testare il tuo codice
+x,y = 0,  0      # True
+#x,y = 25, 25    # True
+#x,y = 75, 75    # True
+#x,y = 75, 25    # False
+#x,y = 25, 75    # False
+#x,y = 100, 100  # True
+#x,y = 10, 90    # False
+#x,y = 60, 60    # True
+
+# La tua soluzione
+
+
+'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h3 class="title">Ripasso stringhe</h3>
         <div class="row">
           <div class="col">
@@ -165,38 +590,63 @@ print(x, y)'></python-editor>
       </section>
 
       <section>
-        <h3 class="title">Qualche operatore...</h3>
-        <div class="row" style="gap: min(1vw, 2vh)">
-          <div class="col">
-            <p>In classe abbiamo visto diversi operatori per stringhe. Questi sono i più semplici</p>
-            <table class="mt">
-              <tr>
-                <th>Operatore</th>
-                <th>Significato</th>
-              </tr>
-              <tr>
-                <td><span class="code">len</span>(str)</td>
-                <td>Ritorna la lunghezza della stringa</td>
-              </tr>
-              <tr>
-                <td>str <span class="code">+</span> str</td>
-                <td>Concatena due stringhe</td>
-              </tr>
-            </table>
-          </div>
-          <div class="col small-code">
-            <python-editor contenteditable="true" code='stringa1 = "Ciao"
-stringa2 = "Python"
-
-lunghezza_totale = len(stringa1 + stringa2)
-print(lunghezza_totale)'></python-editor>
-          </div>
+        <h3 class="title">Operatori sulle stringhe</h3>
+        <div class="row mt2">
+          <table>
+            <tr>
+              <th>Operatore</th>
+              <th>Uso</th>
+              <th>Risultato</th>
+              <th>Significato</th>
+            </tr>
+            <tr>
+              <td>Lunghezza</td>
+              <td><span class="code">len(</span>str<span class="code">)</span></td>
+              <td>int</td>
+              <td>Restituisce la lunghezza della stringa</td>
+            </tr>
+            <tr>
+              <td>Concatenazione</td>
+              <td>str <span class="code">+</span> str</td>
+              <td>str</td>
+              <td>Concatena due stringhe</td>
+            </tr>
+            <tr>
+              <td>Inclusione</td>
+              <td>str <span class="code">in</span> str</td>
+              <td>bool</td>
+              <td>Controlla se la stringa è presente in un'altra stringa</td>
+            </tr>
+            <tr>
+              <td>Indice</td>
+              <td>str<span class="code">[</span>int<span class="code">]</span></td>
+              <td>str</td>
+              <td>Legge il carattere all'indice specificato</td>
+            </tr>
+            <tr>
+              <td>Slice</td>
+              <td>str<span class="code">[</span>int<span class="code">:</span>int<span class="code">]</span></td>
+              <td>str</td>
+              <td>Estrae una sotto-stringa</td>
+            </tr>
+            <tr>
+              <td>Uguaglianza</td>
+              <td><span class="code">==</span>,<span class="code">!=</span></td>
+              <td>bool</td>
+              <td>Controlla se due stringhe sono uguali o differenti</td>
+            </tr>
+            <tr>
+              <td>Replicazione</td>
+              <td>str <span class="code">*</span> int</td>
+              <td>str</td>
+              <td>Replica la stringa</td>
+            </tr>
+          </table>
         </div>
       </section>
 
       <section>
         <h3 class="title">Caratteri speciali</h3>
-        <p class="mt"><em>Te li ricordi tutti? </em>🫠</p>
         <div class="row mt2">
           <div class="col" style="text-align: left;">
             <table>
@@ -247,7 +697,7 @@ sfida   apparentemente      semplice</code></pre>
             <p class="mt"><strong>NON usare spazi</strong> &nbsp; 👀</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e01" downloadable="true" save="true" contenteditable="true" code=''>
+            <python-editor contenteditable="true" code=''>
             </python-editor>
           </div>
         </div>
@@ -261,7 +711,7 @@ sfida   apparentemente      semplice</code></pre>
             <p class="mt2">Il risultato dovrebbe essere <span class="code">12</span></p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e02" downloadable="true" save="true" contenteditable="true" code='stringa1 = "Ciao"
+            <python-editor contenteditable="true" code='stringa1 = "Ciao"
 stringa2 = "Mondo"
 stringa3 = "!!!"
 
@@ -282,33 +732,14 @@ stringa3 = "!!!"
             <p></p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e03" downloadable="true" save="true" contenteditable="true" code='stringa = "L&#39;anatra sta "bene""
+            <python-editor contenteditable="true" code='stringa = "L&#39;anatra sta "bene""
 print(stringa)'></python-editor>
           </div>
         </div>
       </section>
 
       <section>
-        <h3 class="title">Conversioni</h3>
-        <div class="row">
-          <div class="col">
-            <p>I numeri possono essere convertiti in stringhe tramite <span class="code">str()</span></p>
-            <p>Le stringhe possono essere convertite in interi tramite <span class="code">int()</span></p>
-          </div>
-          <div class="col small-code">
-            <python-editor contenteditable="true" code='a_stringa = "20"
-a_numero = int(a_stringa)
-print(type(a_numero))
-
-b_numero = 20
-b_stringa = str(b_numero)
-print(type(b_stringa))'></python-editor>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 1</h3>
+        <h3 class="title">Esercizio 4</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
             <p><span class="code">a</span> e <span class="code">b</span> sono semplici interi</p>
@@ -317,7 +748,7 @@ print(type(b_stringa))'></python-editor>
               sarebbe semplice 🥲</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e04" downloadable="true" save="true" contenteditable="true" code='a = 12
+            <python-editor contenteditable="true" code='a = 12
 b = 345
 
 # Scrivi qui
@@ -326,7 +757,7 @@ b = 345
         </div>
       </section>
 
-      <section>
+      <!-- <section>
         <h3 class="title">Esercizio 2</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
@@ -336,7 +767,7 @@ b = 345
               stringhe... Come le possiamo convertire? 😮‍💨</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e05" downloadable="true" save="true" contenteditable="true" code='a = "2"
+            <python-editor contenteditable="true" code='a = "2"
 b = "3"
 
 # Scrivi qui
@@ -354,60 +785,15 @@ b = "3"
             <p class="fragment mt2"><strong>Consiglio:</strong> Quello zero sembra tanto ad una O maiuscola 😛</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e06" downloadable="true" save="true" contenteditable="true" code='a = "1O3"
+            <python-editor contenteditable="true" code='a = "1O3"
 
 a_numero = int(a)'></python-editor>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section>
-        <h3 class="title">Altri operatori</h3>
-        <p>Oltre a <span class="code">len</span> e <span class="code">+</span> esistono molti altri operatori</p>
-        <div class="row mt">
-          <table>
-            <tr>
-              <th>Operatore</th>
-              <th>Uso</th>
-              <th>Risultato</th>
-              <th>Significato</th>
-            </tr>
-            <tr>
-              <td>inclusione</td>
-              <td>str <span class="code">in</span> str</td>
-              <td>bool</td>
-              <td>Controlla se la stringa è presente in un'altra stringa</td>
-            </tr>
-            <tr>
-              <td>indice</td>
-              <td>str<span class="code">[</span>int<span class="code">]</span></td>
-              <td>str</td>
-              <td>Legge il carattere all'indice specificato</td>
-            </tr>
-            <tr>
-              <td>slice</td>
-              <td>str<span class="code">[</span>int<span class="code">:</span>int<span class="code">]</span></td>
-              <td>str</td>
-              <td>Estrae una sotto-stringa</td>
-            </tr>
-            <tr>
-              <td>uguaglianza</td>
-              <td><span class="code">==</span>,<span class="code">!=</span></td>
-              <td>bool</td>
-              <td>Controlla se due stringhe sono uguali o differenti</td>
-            </tr>
-            <tr>
-              <td>replicazione</td>
-              <td>str <span class="code">*</span> int</td>
-              <td>str</td>
-              <td>Replica la stringa</td>
-            </tr>
-          </table>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 1</h3>
+        <h3 class="title">Esercizio 5</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
             <p><span class="code">a</span> e <span class="code">b</span> sono stringhe</p>
@@ -416,7 +802,7 @@ a_numero = int(a)'></python-editor>
                 class="code">]</span> (es. <span class="code">a[0]+b[1]</span>)</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e07" downloadable="true" save="true" contenteditable="true" code='a = "ciao"
+            <python-editor contenteditable="true" code='a = "ciao"
 b = "mondo"
 # Scrivi qui
 
@@ -426,7 +812,7 @@ b = "mondo"
       </section>
 
       <section>
-        <h3 class="title">Esercizio 2</h3>
+        <h3 class="title">Esercizio 6</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
             <p><span class="code">a</span> e <span class="code">b</span> sono stringhe</p>
@@ -434,7 +820,7 @@ b = "mondo"
             <p class="fragment mt2"><strong>Consiglio:</strong> Usa l'operatore <span class="code">in</span>!</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e08" downloadable="true" save="true" contenteditable="true" code='a = "tutti"
+            <python-editor contenteditable="true" code='a = "tutti"
 b = "ciao a tutti"
 
 # Scrivi qui
@@ -444,15 +830,17 @@ b = "ciao a tutti"
       </section>
 
       <section>
-        <h3 class="title">Esercizio 3</h3>
+        <h3 class="title">Esercizio 7</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
-            <p>Riesci ad ottenere <span class="code">canti</span> dalla stringa <span class="code">mercantile?</span></p>
+            <p>Riesci ad ottenere <span class="code">canti</span> dalla stringa <span class="code">mercantile?</span>
+            </p>
             <p><strong>Nota:</strong> esiste un modo migliore di usare l'operatore <span class="code">[ ]</span></p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> Usa l'operatore <span class="code">slice</span> (es. <span class="code">a[1:3]</span>)!</p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> Usa l'operatore <span class="code">slice</span> (es.
+              <span class="code">a[1:3]</span>)!</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e09" downloadable="true" save="true" contenteditable="true" code='a = "mercantile"
+            <python-editor contenteditable="true" code='a = "mercantile"
 
 # Scrivi qui
 '></python-editor>
@@ -461,6 +849,112 @@ b = "ciao a tutti"
       </section>
 
       <section>
+        <h3 class="title">Metodi base sulle stringhe</h3>
+        <div class="row mt">
+          <table>
+            <tr>
+              <th>Risultato</th>
+              <th>Metodo</th>
+              <th>Significato</th>
+            </tr>
+            <tr>
+              <td><span class="code">str</span></td>
+              <td><span class="code">str.upper()</span></td>
+              <td>Ritorna la stringa con tutti i caratteri in maiuscolo</td>
+            </tr>
+            <tr>
+              <td><span class="code">str</span></td>
+              <td><span class="code">str.lower()</span></td>
+              <td>Ritorna la stringa con tutti i caratteri in minuscolo</td>
+            </tr>
+            <tr>
+              <td><span class="code">str</span></td>
+              <td><span class="code">str.capitalize()</span></td>
+              <td>Ritorna la stringa con il primo carattere in maiuscolo</td>
+            </tr>
+            <tr>
+              <td><span class="code">bool</span></td>
+              <td><span class="code">str.startswith(str)</span></td>
+              <td>Controlla se la stringa inizia come un'altra</td>
+            </tr>
+            <tr>
+              <td><span class="code">bool</span></td>
+              <td><span class="code">str.endswith(str)</span></td>
+              <td>Controlla se la stringa finisce come un'altra</td>
+            </tr>
+            <tr>
+              <td><span class="code">bool</span></td>
+              <td><span class="code">str.isalpha()</span></td>
+              <td>Controlla se la stringa contiene solo caratteri alfabetici</td>
+            </tr>
+            <tr>
+              <td><span class="code">bool</span></td>
+              <td><span class="code">str.isdigit()</span></td>
+              <td>Controlla se la stringa contiene solo caratteri numerici</td>
+            </tr>
+            <tr>
+              <td><span class="code">bool</span></td>
+              <td><span class="code">str.isupper()</span></td>
+              <td>Controlla se la stringa contiene solo caratteri maiuscoli</td>
+            </tr>
+            <tr>
+              <td><span class="code">bool</span></td>
+              <td><span class="code">str.islower()</span></td>
+              <td>Controlla se la stringa contiene solo caratteri minuscoli</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Metodi di ricerca sulle stringhe</h3>
+        <div class="row mt">
+          <table>
+            <tr>
+              <th>Risultato</th>
+              <th>Metodo</th>
+              <th>Significato</th>
+            </tr>
+            <tr>
+              <td><span class="code">str</span></td>
+              <td><span class="code">str.strip(str)</span></td>
+              <td>Rimuove stringhe dai lati</td>
+            </tr>
+            <tr>
+              <td><span class="code">str</span></td>
+              <td><span class="code">str.lstrip(str)</span></td>
+              <td>Rimuove stringhe dalla sinistra</td>
+            </tr>
+            <tr>
+              <td><span class="code">str</span></td>
+              <td><span class="code">str.rstrip(str)</span></td>
+              <td>Rimuove stringhe dalla destra</td>
+            </tr>
+            <tr>
+              <td><span class="code">int</span></td>
+              <td><span class="code">str.count(str)</span></td>
+              <td>Conta il numero di occorrenze di una sottostringa</td>
+            </tr>
+            <tr>
+              <td><span class="code">int</span></td>
+              <td><span class="code">str.find(str)</span></td>
+              <td>Ritorna la prima posizione di una sottostringa, da sinistra</td>
+            </tr>
+            <tr>
+              <td><span class="code">int</span></td>
+              <td><span class="code">str.rfind(str)</span></td>
+              <td>Ritorna la prima posizione di una sottostringa, da destra</td>
+            </tr>
+            <tr>
+              <td><span class="code">str</span></td>
+              <td><span class="code">str.replace(str, str)</span></td>
+              <td>Sostituisce sottostringhe</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- <section>
         <h3 class="title">Esercizio 4</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
@@ -469,262 +963,64 @@ b = "ciao a tutti"
             <p class="fragment mt2"><strong>Consiglio:</strong> Usa l'operatore <span class="code">*</span>!</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e10" downloadable="true" save="true" contenteditable="true" code='a = "ciao "
+            <python-editor contenteditable="true" code='a = "ciao "
 
 # Scrivi qui
 '></python-editor>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section>
-        <h3 class="title">Ripasso tuple</h3>
-        <div class="row" style="gap: min(1vw, 2vh)">
+        <h3 class="title">Challenge 2</h3>
+        <div class="row" style="gap: min(1vw, 2vh); width: min(95vw, 190vh)">
           <div class="col">
-            <p>Una tupla è una <em>sequenza immutabile</em> di elementi eterogenei</p>
-            <p>Sono ammessi duplicati</p>
-          </div>
-          <div class="col small-code">
-            <python-editor contenteditable="true" code='x = (1,1,2,3,5,8,13, "ciao", True)
-
-print(type(x))'></python-editor>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Tuple da sequenze (e viceversa)</h3>
-        <div class="row" style="gap: min(1vw, 2vh)">
-          <div class="col">
-            <p>Una tupla può essere creata da una sequenza tramite <span class="code">tuple(sequenza)</span></p>
-            <p>Una sequenza può essere creata da una tupla tramite <span class="code">list(tupla)</span></p>
-          </div>
-          <div class="col small-code">
-            <python-editor contenteditable="true" code='tupla = (1,1,2,3,5,8,13, "ciao", True)
-print(list(tupla))
-
-sequenza = [1,1,2,3,5,8,13, "ciao", True]
-print(tuple(sequenza))'></python-editor>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 1</h3>
-        <p class="mt">Prova ad indovinare quale risultato producono le seguenti espressioni</p>
-        <div class="row mt">
-          <table>
-            <tr>
-                <th>Espressione</th>
-                <th>Risultato</th>
-            </tr>
-            <tr>
-                <td><span class="code">(1.2,3.4)</span></td>
-                <td class="fragment code ok" style="border-color: black">(1.2, 3.4)</td>
-            </tr>
-            <tr>
-                <td><span class="code">(1;2;3;4)</span></td>
-                <td class="fragment code error" style="border-color: black">SyntaxError: invalid syntax</td>
-            </tr>
-            <tr>
-                <td><span class="code">(1,2;3,4)</span></td>
-                <td class="fragment code error" style="border-color: black">SyntaxError: invalid syntax</td>
-            </tr>
-            <tr>
-                <td><span class="code">(1,2,3,4)</span></td>
-                <td class="fragment code ok" style="border-color: black">(1, 2, 3, 4)</td>
-            </tr>
-            <tr>
-                <td><span class="code">(())</span></td>
-                <td class="fragment code ok" style="border-color: black">()</td>
-            </tr>
-            <tr>
-                <td><span class="code">type(())</span></td>
-                <td class="fragment code ok" style="border-color: black">tuple</td>
-            </tr>
-            <tr>
-                <td><span class="code">((),)</span></td>
-                <td class="fragment code ok" style="border-color: black">((),)</td>
-            </tr>
-            <tr>
-                <td><span class="code">tuple([('a'),('b'),('c')])</span></td>
-                <td class="fragment code ok" style="border-color: black">('a', 'b', 'c')</td>
-            </tr>
-          </table>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Operatori</h3>
-        <div class="row mt">
-          <table>
-            <tr>
-              <th>Operatore</th>
-              <th>Risultato</th>
-              <th>Significato</th>
-            </tr>
-            <tr>
-              <td><span class="code">len(</span>tuple<span class="code">)</span></td>
-              <td>int</td>
-              <td>Ritorna la lunghezza di una tupla</td>
-            </tr>
-            <tr>
-              <td>tuple<span class="code">[</span>int<span class="code">]</span></td>
-              <td>obj</td>
-              <td>Legge un elemento all'indice specificato</td>
-            </tr>
-            <tr>
-              <td>tuple<span class="code">[</span>int<span class="code">:</span>int<span class="code">]</span></td>
-              <td>tuple</td>
-              <td>Estrae una sotto-tupla (ne ritorna una nuova)</td>
-            </tr>
-            <tr>
-              <td>tuple <span class="code">+</span> tuple</td>
-              <td>tuple</td>
-              <td>Concatena due tuple (ne ritorna una nuova)</td>
-            </tr>
-            <tr>
-              <td>obj <span class="code">in</span> tuple</td>
-              <td>bool</td>
-              <td>Controlla se un elemento è presente in una tupla</td>
-            </tr>
-            <tr>
-              <td>tuple <span class="code">*</span> int</td>
-              <td>tuple</td>
-              <td>Replica la tupla (ne ritorna una nuova)</td>
-            </tr>
-            <tr>
-              <td><span class="code">==</span>, <span class="code">!=</span></td>
-              <td>bool</td>
-              <td>Controlla se due tuple sono uguali o differenti</td>
-            </tr>
-          </table>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 1</h3>
-        <p class="mt">Prova ad indovinare quale risultato producono le seguenti espressioni</p>
-        <div class="row mt">
-          <table>
-            <tr>
-                <th>Espressione</th>
-                <th>Risultato</th>
-            </tr>
-            <tr>
-                <td><span class="code">len(3,2,4)</span></td>
-                <td class="fragment code error" style="border-color: black">TypeError: len() takes exactly one argument (3 given)</td>
-            </tr>
-            <tr>
-                <td><span class="code">len((3,2,4))</span></td>
-                <td class="fragment code ok" style="border-color: black">3</td>
-            </tr>
-            <tr>
-                <td><span class="code">len(len((1,2,3,4)))</span></td>
-                <td class="fragment code error" style="border-color: black">TypeError: object of type 'int' has no len()</td>
-            </tr>
-            <tr>
-                <td><span class="code">(1,2,3)[2]</span></td>
-                <td class="fragment code ok" style="border-color: black">3</td>
-            </tr>
-            <tr>
-                <td><span class="code">(1,2,3)[3]</span></td>
-                <td class="fragment code error" style="border-color: black">IndexError: tuple index out of range</td>
-            </tr>
-            <tr>
-                <td><span class="code">(7,6,8,9,5)[1:3]</span></td>
-                <td class="fragment code ok" style="border-color: black">(6, 8)</td>
-            </tr>
-            <tr>
-                <td><span class="code">(1,2,3) + (4,5,6)</span></td>
-                <td class="fragment code ok" style="border-color: black">(1, 2, 3, 4, 5, 6)</td>
-            </tr>
-            <tr>
-                <td><span class="code">'a' in ('c','a','s','c','o')</span></td>
-                <td class="fragment code ok" style="border-color: black">True</td>
-            </tr>
-            <tr>
-              <td><span class="code">(5,6,7)*3</span></td>
-              <td class="fragment code ok" style="border-color: black">(5, 6, 7, 5, 6, 7, 5, 6, 7)</td>
-          </tr>
-          </table>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 2</h3>
-        <div class="row" style="gap: min(1vw, 2vh);">
-          <div class="col">
-            <p>Date le tuple <span class="code">x</span> (di interi) e <span class="code">y</span> (di tuple di caratteri), crea una nuova tupla <span class="code">z</span> contenente ogni tupla di <span class="code">y</span> moltiplicata per il numero corrispondente in <span class="code">x</span></p>
-            <p><strong>Esempio:</strong> dati</p>
-            <pre><code class="python">x = (1,2,2)
-y = (('a', 'b'), ('c'), ('d', 'e')) </code></pre>
-              <p><span class="code">z</span> dovrà essere</p>
-              <p><span class="code">('a', 'b', 'c', 'c', 'd', 'e', 'd', 'e')</span></p>
-            <p><strong>Nota:</strong> <span class="code">x</span> e <span class="code">y</span> avranno sempre lunghezza <span class="code">3</span></p>
+            <p>Sei riuscito a mettere le mani su un tesoro di dati personali di ignari utenti; ora devi solo capire che dati sono e come catalogarli. Tra i tanti hai trovato una serie di stringhe che sembrano dei numeri di telefono. Ogni numero dovrebbe essere così composto:</p>
+            <pre><code>+[prefisso nazionale 39][10 numeri]</code></pre>
+            <p>Per esempio, un numero valido è <span class="code">+393983472673</span></p>
+            <p><strong>Compito:</strong> scrivi del codice che stampi <span class="code">True</span> se la stringa è un numero telefonico valido, <span class="code">False</span> altrimenti</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e11" downloadable="true" save="true" contenteditable="true" code="x = (2,4,3)
-y = (('w','e','l','c'),('o',),('m','e'))
+            <python-editor contenteditable="true" code="telefono = '+392574856985'    # True
+#telefono = '395851256954'    # False (manca il '+')
+#telefono = '++7485125874'    # False (manca il prefisso)
+#telefono = '+39333457Ciao'   # False (mi pare ovvio :D )
+#telefono = '+3912'           # False (troppo corto)
+#telefono = '+393481489945'   # True
 
-# Scrivi qui
+# La tua soluzione
+
 "></python-editor>
           </div>
         </div>
       </section>
 
       <section>
-        <h3 class="title">Esercizio 3</h3>
-        <div class="row" style="gap: min(1vw, 2vh);">
+        <h3 class="title">Challenge 3</h3>
+        <div class="row" style="gap: min(1vw, 2vh); width: min(95vw, 190vh)">
           <div class="col">
-            <p>Devo aver sbagliato qualcosa... Il codice sulla destra <span class="error bold">non funziona</span>!</p>
-            <p>Quale credi sia il problema? Prova a <span class="ok bold">correggerlo</span></p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> le tuple sono <em>immutabili</em>, bisogna crearne una nuova 🔁</p>
+            <p>Ci è stato inviato un testo illegale, immorale e che fa pure ingrassare. Per tutelare la pubblica salute dovrai censurarlo. Ogni occorrenza delle due parole malefiche va sostituita con una censura.</p>
+            <p>Oltre a questo, alla fine dovrai rendere conto di quante parole hai censurato. Di seguito un esempio:</p>
+            <pre><code class="python xsmall">testo= "Grazie all'uso di Cera Splendent tutto brilla!"
+parola_malefica = "splendent"
+censura = "******"
+</code></pre>
+          <pre><code class="text xsmall">testo finale: "Grazie all'uso di Cera ****** tutto brilla!"
+
+[Censurata 1 parola]</code></pre>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e12" downloadable="true" save="true" contenteditable="true" code="tupla = (5,8,7,9,11)
-tupla[3] = 666"></python-editor>
-          </div>
-        </div>
-      </section>
+            <python-editor contenteditable="true" code='testo = """Ed è proprio da questa portentosa crema che nasce la crema al mascarpone base del tiramisù, prima classificata al premio Crema dell&lsquo;Anno insieme alla nutella. Il dolce italiano per eccellenza, quello più famoso e amato, ma soprattutto che ha dato vita a tantissime altre versioni, anche tiramisù senza uova! Poi il Tiramisù alle fragole o quello alla Nutella, giusto per citarne un paio! Senza contare le rivisitazioni più raffinate come la crostata morbida o la torta al tiramisù."""
 
-      <section>
-        <h3 class="title">Esercizio 4</h3>
-        <div class="row" style="gap: min(1vw, 2vh);">
-          <div class="col">
-            <p>Data la tupla <span class="code">x</span>, crea una tupla <span class="code">y</span> contenente all'inizio tutti gli elementi di <span class="code">x</span> tranne l'ultimo; alla fine gli elementi <span class="code">'d', 'e'</span></p>
-            <p><strong>Nota:</strong> il tuo codice deve funzionare con qualsiasi tupla <span class="code">x</span></p>
-            <p><strong>Esempio:</strong> data</p>
-            <pre><code class="python">x = ('a' ,'b', 'c')</code></pre>
-            <p><span class="code">y</span> dovrà essere</p>
-            <p><span class="code">('a', 'b', 'd', 'e')</span></p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> puoi usare l'operatore slice anche con numeri negativi! (es. <span class="code">x[:-3]</span>)</p>
-          </div>
-          <div class="col med-code">
-            <python-editor id="seminario-python-e13" downloadable="true" save="true" contenteditable="true" code="x = ('a','b','c')
+parola_malefica1 = "Tiramisù"
+parola_malefica2 = "nutella"
 
-# Scrivi qui
-"></python-editor>
-          </div>
-        </div>
-      </section>
+censura = "******"
 
-      <section>
-        <h3 class="title">Esercizio 5</h3>
-        <div class="row" style="gap: min(1vw, 2vh);">
-          <div class="col">
-            <p>Data la tupla <span class="code">t</span> avente caratteri <strong>intervallati</strong> maiuscoli e minuscoli, modifica l'assegnazione di <span class="code">t</span> in modo che essa contenga tutti i caratteri maiuscoli per primi e quelli minuscoli per ultimi</p>
-            <p><strong>Esempio:</strong> data</p>
-            <pre><code class="python">t = ('A', 'b', 'C', 'd')</code></pre>
-            <p><span class="code">t</span> dovrà diventare</p>
-            <p><span class="code">('A', 'C', 'b', 'd')</span></p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> utilizza il costrutto speciale dell'operatore slice <span class="code">[start:stop:step]</span></p>
-          </div>
-          <div class="col med-code">
-            <python-editor id="seminario-python-e14" downloadable="true" save="true" contenteditable="true" code="t = ('C', 'a', 'R', 'i', 'S', 'm', 'A')
+# La tua soluzione
 
-# Scrivi qui
-"></python-editor>
+
+'></python-editor>
           </div>
         </div>
       </section>
@@ -763,25 +1059,7 @@ print(tabella)"></python-editor>
         </div>
       </section>
 
-      <section>
-        <h3 class="title">Esercizio 1</h3>
-        <div class="row" style="gap: min(1vw, 2vh);">
-          <div class="col">
-            <p>Date le liste <span class="code">l1</span> e <span class="code">l2</span>, riesci a sostituire il loro contenuto?</p>
-            <p>Dopo il tuo codice, <span class="code">l1</span> dovrebbe contenere ciò che in origine era contenuto in <span class="code">l2</span> e viceversa</p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> usa una lista <span class="code">l3</span> per memorizzare risultati intermedi</p>
-          </div>
-          <div class="col med-code">
-            <python-editor id="seminario-python-e15" downloadable="true" save="true" contenteditable="true" code="l1 = [1,2,3]
-l2 = [3,2,1]
-
-# Scrivi qui
-"></python-editor>
-          </div>
-        </div>
-      </section>
-
-      <section>
+      <!-- <section>
         <h3 class="title">Esercizio 2</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
@@ -789,24 +1067,26 @@ l2 = [3,2,1]
             <p><span class="code">[[[8, 4], [8, 4]], [[4, 8, 4], [8, 4]]]</span></p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e16" downloadable="true" save="true" contenteditable="true" code="l1 = [   ]    # inserisci dei numeri
+            <python-editor contenteditable="true" code="l1 = [   ]    # inserisci dei numeri
 l2 = [   ]    # inserisci dei numeri
 
 print([[l1,l1],[l2,l1]])"></python-editor>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section>
-        <h3 class="title">Esercizio 3</h3>
+        <h3 class="title">Esercizio 1</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
-            <p>Inserisci dei valori nelle liste <span class="code">l1</span>, <span class="code">l2</span> e <span class="code">l3</span> affinché il risultato finale sia:</p>
+            <p>Inserisci dei valori nelle liste <span class="code">l1</span>, <span class="code">l2</span> e <span
+                class="code">l3</span> affinché il risultato finale sia:</p>
             <p><span class="code">[[[8, [7, 7]], [8, [7, 7]], [[8, 7], [8, 5]]], [8, 7]]</span></p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> qualche lista potrebbe contenere a sua volta delle liste!</p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> qualche lista potrebbe contenere a sua volta delle
+              liste!</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e17" downloadable="true" save="true" contenteditable="true" code="l1 = [   ]    # inserisci dei numeri
+            <python-editor contenteditable="true" code="l1 = [   ]    # inserisci dei numeri
 l2 = [   ]    # inserisci dei numeri
 l3 = [   ]    # inserisci dei numeri
 
@@ -819,7 +1099,8 @@ print([[l2,l2,[l3,l1]],l3])"></python-editor>
         <h3 class="title">Conversione sequenze-liste</h3>
         <div class="row" style="gap: min(1vw, 2vh)">
           <div class="col">
-            <p><span class="code">list</span> può anche servire per convertire una qualsiasi sequenza in una <em>nuova</em> stringa</p>
+            <p><span class="code">list</span> può anche servire per convertire una qualsiasi sequenza in una
+              <em>nuova</em> stringa</p>
           </div>
           <div class="col small-code">
             <python-editor contenteditable="true" code='caratteri = list("treno")
@@ -833,13 +1114,16 @@ print(caratteri)'></python-editor>
         <h3 class="title">Esercizio 1</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
-            <p>Data una stringa con caratteri misti minuscoli e maiuscoli, crea una lista contenente come primo elemento una lista con tutti i caratteri della stringa, convertiti in minuscolo; come secondo elemento un'altra lista con tutti i caratteri, ma convertiti in maiuscolo</p>
+            <p>Data una stringa con caratteri misti minuscoli e maiuscoli, crea una lista contenente come primo elemento
+              una lista con tutti i caratteri della stringa, convertiti in minuscolo; come secondo elemento un'altra
+              lista con tutti i caratteri, ma convertiti in maiuscolo</p>
             <p class="mt">Esempio: data la stringa <span class="code">GuLp</span>, il tuo codice dovrebbe stampare:</p>
             <p><span class="code">[['g', 'u', 'l', 'p'], ['G', 'U', 'L', 'P']]</span></p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> ricorda i metodi <span class="code">.lower()</span> e <span class="code">.upper()</span> delle stringhe</p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> ricorda i metodi <span class="code">.lower()</span> e
+              <span class="code">.upper()</span> delle stringhe</p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e18" downloadable="true" save="true" contenteditable="true" code="s = 'GuLp'
+            <python-editor contenteditable="true" code="s = 'GuLp'
 
 # Scrivi qui
 "></python-editor>
@@ -919,75 +1203,555 @@ print(caratteri)'></python-editor>
             <p class="fragment mt2"><strong>Consiglio:</strong> non si utilizza così <span class="code">len</span></p>
           </div>
           <div class="col med-code">
-            <python-editor id="seminario-python-e19" downloadable="true" save="true" contenteditable="true" code='s = "lunghezza di una stringa"
+            <python-editor contenteditable="true" code='s = "lunghezza di una stringa"
 
 print(s.len())'></python-editor>
           </div>
         </div>
       </section>
 
-    <!-- Import the main reveal script -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+      <section>
+        <h3 class="title">Metodi base sulle liste</h3>
+        <div class="row mt2">
+          <table>
+            <tr>
+              <th>Metodo</th>
+              <th>Ritorna</th>
+              <th>Descrizione</th>
+            </tr>
+            <tr>
+              <td><span class="code">list.append(obj)</span></td>
+              <td><span class="code">None</span></td>
+              <td>Aggiunge un elemento alla fine della lista</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.extend(list)</span></td>
+              <td><span class="code">None</span></td>
+              <td>Aggiunge nuovi elementi alle fine della lista</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.insert(int,obj)</span></td>
+              <td><span class="code">None</span></td>
+              <td>Aggiunge un elemento in una posizione specifica</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.pop()</span></td>
+              <td><span class="code">obj</span></td>
+              <td>Rimuove l'ultimo elemento della lista e lo ritorna</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.pop(int)</span></td>
+              <td><span class="code">obj</span></td>
+              <td>Rimuove l'elemento in una posizione specifica e lo ritorna</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.reverse()</span></td>
+              <td><span class="code">None</span></td>
+              <td>Inverte l'ordine degli elementi</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.sort()</span></td>
+              <td><span class="code">None</span></td>
+              <td>Ordina gli elementi</td>
+            </tr>
+            <tr>
+              <td><span class="code">"sep".join(seq)</span></td>
+              <td><span class="code">str</span></td>
+              <td>Concatena gli elementi in seq separati da <span class="code">"sep"</span></td>
+            </tr>
+          </table>
+        </div>
+      </section>
 
-    <!-- Initialize reveal -->
-    <script>
-      Reveal.initialize({
-        plugins: [RevealHighlight],
-        // Display an help overlay when ? is pressed
-        help: false,
-        // Display controls in the bottom right corner
-        controls: true,
-        // Display a presentation progress bar
-        progress: true,
-        // Push each slide change to the browser history
-        history: true,
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-        // Enable the slide overview mode
-        overview: true,
-        // Enable the slide number counter
-        slideNumber: 'c/t',
-        // Set the width of the slides
-        width: "90%",
-        // Set the height of the slides
-        height: "90%",
-        // Vertical centering of slides
-        center: true,
-        // Loop the presentation
-        loop: false,
-        // Enables touch navigation on devices with touch input
-        touch: true,
-        // Apply a 3D roll to links on hover
-        rollingLinks: true,
-        // Transition style for full page slide backgrounds
-        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
-        // Select a theme
-        theme: 'white',
-        // Select the type of slides transition
-        transition: 'fade',
-        // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
-        disableLayout: true
-      });
-    </script>
+      <section>
+        <h3 class="title">Inserisci qualche esercizio semplice</h3>
+      </section>
 
-    <!-- If the user asks for the pdf version, set section height to auto -->
-    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
-    <script>
-      if (window.location.href.indexOf('?print-pdf') > -1) {
-        // Create a new css element setting the height of .section to none
-        var css = document.createElement("style");
-        // Modify section height to fix the layout
-        // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
-        // Hide the slide context (the slide number)
-        css.innerHTML = "section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
-        // Append the css to the head
-        document.head.appendChild(css);
+      <section>
+        <h3 class="title">Metodi di ricerca sulle liste</h3>
+        <div class="row mt2">
+          <table>
+            <tr>
+              <th>Metodo</th>
+              <th>Ritorna</th>
+              <th>Descrizione</th>
+            </tr>
+            <tr>
+              <td><span class="code">str1.split(str2)</span></td>
+              <td><span class="code">list</span></td>
+              <td>Produce una lista con tutte le parole di str1 separate da str2</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.count(obj)</span></td>
+              <td><span class="code">int</span></td>
+              <td>Conta le occorrenze di un elemento nella lista</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.index(obj)</span></td>
+              <td><span class="code">int</span></td>
+              <td>Trova la prima occorrenza di un elemento e ne ritorna la posizione</td>
+            </tr>
+            <tr>
+              <td><span class="code">list.remove(obj)</span></td>
+              <td><span class="code">None</span></td>
+              <td>Rimuove la prima occorrenza di un elemento</td>
+            </tr>
+          </table>
+        </div>
+      </section>
 
-        const printVersionText = document.getElementById('print-version-text');
-        printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
-      }
-    </script>
+      <section>
+        <h3 class="title">Inserisci qualche esercizio semplice</h3>
+      </section>
+
+      <section>
+        <h3 class="title">Inserire qui qualche challenge di fine sezione</h3>
+      </section>
+
+      <section>
+        <h3 class="title">Ripasso tuple</h3>
+        <div class="row" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Una tupla è una <em>sequenza immutabile</em> di elementi eterogenei</p>
+            <p>Sono ammessi duplicati</p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='x = (1,1,2,3,5,8,13, "ciao", True)
+
+print(type(x))'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Tuple da sequenze (e viceversa)</h3>
+        <div class="row" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Una tupla può essere creata da una sequenza tramite <span class="code">tuple(sequenza)</span></p>
+            <p>Una sequenza può essere creata da una tupla tramite <span class="code">list(tupla)</span></p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code='tupla = (1,1,2,3,5,8,13, "ciao", True)
+print(list(tupla))
+
+sequenza = [1,1,2,3,5,8,13, "ciao", True]
+print(tuple(sequenza))'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <p class="mt">Prova ad indovinare quale risultato producono le seguenti espressioni</p>
+        <div class="row mt">
+          <table>
+            <tr>
+              <th>Espressione</th>
+              <th>Risultato</th>
+            </tr>
+            <tr>
+              <td><span class="code">(1.2,3.4)</span></td>
+              <td class="fragment code ok" style="border-color: black">(1.2, 3.4)</td>
+            </tr>
+            <tr>
+              <td><span class="code">(1;2;3;4)</span></td>
+              <td class="fragment code error" style="border-color: black">SyntaxError: invalid syntax</td>
+            </tr>
+            <tr>
+              <td><span class="code">(1,2;3,4)</span></td>
+              <td class="fragment code error" style="border-color: black">SyntaxError: invalid syntax</td>
+            </tr>
+            <tr>
+              <td><span class="code">(1,2,3,4)</span></td>
+              <td class="fragment code ok" style="border-color: black">(1, 2, 3, 4)</td>
+            </tr>
+            <tr>
+              <td><span class="code">(())</span></td>
+              <td class="fragment code ok" style="border-color: black">()</td>
+            </tr>
+            <tr>
+              <td><span class="code">type(())</span></td>
+              <td class="fragment code ok" style="border-color: black">tuple</td>
+            </tr>
+            <tr>
+              <td><span class="code">((),)</span></td>
+              <td class="fragment code ok" style="border-color: black">((),)</td>
+            </tr>
+            <tr>
+              <td><span class="code">tuple([('a'),('b'),('c')])</span></td>
+              <td class="fragment code ok" style="border-color: black">('a', 'b', 'c')</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Operatori</h3>
+        <div class="row mt">
+          <table>
+            <tr>
+              <th>Operatore</th>
+              <th>Risultato</th>
+              <th>Significato</th>
+            </tr>
+            <tr>
+              <td><span class="code">len(</span>tuple<span class="code">)</span></td>
+              <td>int</td>
+              <td>Ritorna la lunghezza di una tupla</td>
+            </tr>
+            <tr>
+              <td>tuple<span class="code">[</span>int<span class="code">]</span></td>
+              <td>obj</td>
+              <td>Legge un elemento all'indice specificato</td>
+            </tr>
+            <tr>
+              <td>tuple<span class="code">[</span>int<span class="code">:</span>int<span class="code">]</span></td>
+              <td>tuple</td>
+              <td>Estrae una sotto-tupla (ne ritorna una nuova)</td>
+            </tr>
+            <tr>
+              <td>tuple <span class="code">+</span> tuple</td>
+              <td>tuple</td>
+              <td>Concatena due tuple (ne ritorna una nuova)</td>
+            </tr>
+            <tr>
+              <td>obj <span class="code">in</span> tuple</td>
+              <td>bool</td>
+              <td>Controlla se un elemento è presente in una tupla</td>
+            </tr>
+            <tr>
+              <td>tuple <span class="code">*</span> int</td>
+              <td>tuple</td>
+              <td>Replica la tupla (ne ritorna una nuova)</td>
+            </tr>
+            <tr>
+              <td><span class="code">==</span>, <span class="code">!=</span></td>
+              <td>bool</td>
+              <td>Controlla se due tuple sono uguali o differenti</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1</h3>
+        <p class="mt">Prova ad indovinare quale risultato producono le seguenti espressioni</p>
+        <div class="row mt">
+          <table>
+            <tr>
+              <th>Espressione</th>
+              <th>Risultato</th>
+            </tr>
+            <tr>
+              <td><span class="code">len(3,2,4)</span></td>
+              <td class="fragment code error" style="border-color: black">TypeError: len() takes exactly one argument (3
+                given)</td>
+            </tr>
+            <tr>
+              <td><span class="code">len((3,2,4))</span></td>
+              <td class="fragment code ok" style="border-color: black">3</td>
+            </tr>
+            <tr>
+              <td><span class="code">len(len((1,2,3,4)))</span></td>
+              <td class="fragment code error" style="border-color: black">TypeError: object of type 'int' has no len()
+              </td>
+            </tr>
+            <tr>
+              <td><span class="code">(1,2,3)[2]</span></td>
+              <td class="fragment code ok" style="border-color: black">3</td>
+            </tr>
+            <tr>
+              <td><span class="code">(1,2,3)[3]</span></td>
+              <td class="fragment code error" style="border-color: black">IndexError: tuple index out of range</td>
+            </tr>
+            <tr>
+              <td><span class="code">(7,6,8,9,5)[1:3]</span></td>
+              <td class="fragment code ok" style="border-color: black">(6, 8)</td>
+            </tr>
+            <tr>
+              <td><span class="code">(1,2,3) + (4,5,6)</span></td>
+              <td class="fragment code ok" style="border-color: black">(1, 2, 3, 4, 5, 6)</td>
+            </tr>
+            <tr>
+              <td><span class="code">'a' in ('c','a','s','c','o')</span></td>
+              <td class="fragment code ok" style="border-color: black">True</td>
+            </tr>
+            <tr>
+              <td><span class="code">(5,6,7)*3</span></td>
+              <td class="fragment code ok" style="border-color: black">(5, 6, 7, 5, 6, 7, 5, 6, 7)</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Date le tuple <span class="code">x</span> (di interi) e <span class="code">y</span> (di tuple di
+              caratteri), crea una nuova tupla <span class="code">z</span> contenente ogni tupla di <span
+                class="code">y</span> moltiplicata per il numero corrispondente in <span class="code">x</span></p>
+            <p><strong>Esempio:</strong> dati</p>
+            <pre><code class="python">x = (1,2,2)
+y = (('a', 'b'), ('c'), ('d', 'e')) </code></pre>
+            <p><span class="code">z</span> dovrà essere</p>
+            <p><span class="code">('a', 'b', 'c', 'c', 'd', 'e', 'd', 'e')</span></p>
+            <p><strong>Nota:</strong> <span class="code">x</span> e <span class="code">y</span> avranno sempre lunghezza
+              <span class="code">3</span></p>
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code="x = (2,4,3)
+y = (('w','e','l','c'),('o',),('m','e'))
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 3</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Devo aver sbagliato qualcosa... Il codice sulla destra <span class="error bold">non funziona</span>!</p>
+            <p>Quale credi sia il problema? Prova a <span class="ok bold">correggerlo</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> le tuple sono <em>immutabili</em>, bisogna crearne una
+              nuova 🔁</p>
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code="tupla = (5,8,7,9,11)
+tupla[3] = 666"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 4</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Data la tupla <span class="code">x</span>, crea una tupla <span class="code">y</span> contenente
+              all'inizio tutti gli elementi di <span class="code">x</span> tranne l'ultimo; alla fine gli elementi <span
+                class="code">'d', 'e'</span></p>
+            <p><strong>Nota:</strong> il tuo codice deve funzionare con qualsiasi tupla <span class="code">x</span></p>
+            <p><strong>Esempio:</strong> data</p>
+            <pre><code class="python">x = ('a' ,'b', 'c')</code></pre>
+            <p><span class="code">y</span> dovrà essere</p>
+            <p><span class="code">('a', 'b', 'd', 'e')</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> puoi usare l'operatore slice anche con numeri negativi!
+              (es. <span class="code">x[:-3]</span>)</p>
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code="x = ('a','b','c')
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 5</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Data la tupla <span class="code">t</span> avente caratteri <strong>intervallati</strong> maiuscoli e
+              minuscoli, modifica l'assegnazione di <span class="code">t</span> in modo che essa contenga tutti i
+              caratteri maiuscoli per primi e quelli minuscoli per ultimi</p>
+            <p><strong>Esempio:</strong> data</p>
+            <pre><code class="python">t = ('A', 'b', 'C', 'd')</code></pre>
+            <p><span class="code">t</span> dovrà diventare</p>
+            <p><span class="code">('A', 'C', 'b', 'd')</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> utilizza il costrutto speciale dell'operatore slice
+              <span class="code">[start:stop:step]</span></p>
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code="t = ('C', 'a', 'R', 'i', 'S', 'm', 'A')
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Inserisci qui qualche challenge di fine sezione</h3>
+      </section>
+
+      <section>
+        <h3 class="title">Ripasso Dizionari</h3>
+        <div class="row">
+          <div class="col">
+            <p>I dizionari sono <em>contenitori mutabili</em> che ci permettono di associare voci dette
+              <strong>chiavi</strong> a dei <strong>valori</strong></p>
+            <p>Le chiavi sono immutabili, non hanno ordine e non ci possono essere duplicati</p>
+            <p>I valori possono essere duplicati</p>
+          </div>
+          <div class="col small-code">
+            <python-editor contenteditable="true" code="x = {
+  'sedia':'un mobile per sedersi',
+  'armadio':'un mobile a ripiani',
+  'lampadario': 'un apparecchio di illuminazione'
+}
+
+print(type(x))"></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Inserire qui qualche esercizio semplice</h3>
+      </section>
+
+      <section>
+        <h3 class="title">Operatori sui dizionari</h3>
+        <div class="row mt2">
+          <table>
+            <tr>
+              <th>Operatore</th>
+              <th>Ritorna</th>
+              <th>Descrizione</th>
+            </tr>
+            <tr>
+              <td><span class="code">len(</span>dict<span class="code">)</span></td>
+              <td><span class="code">int</span></td>
+              <td>Ritorna il numero di chiavi</td>
+            </tr>
+            <tr>
+              <td>dict<span class="code">[</span>chiave<span class="code">]</span></td>
+              <td><span class="code">obj</span></td>
+              <td>Ritorna il valore associato alla chiave</td>
+            </tr>
+            <tr>
+              <td>dict<span class="code">[</span>chiave<span class="code">]</span> = valore</td>
+              <td></td>
+              <td>Aggiunge o modifica il valore associato ad una chiave</td>
+            </tr>
+            <tr>
+              <td><span class="code">del</span> dict<span class="code">[</span>chiave<span class="code">]</span></td>
+              <td></td>
+              <td>Rimuove la coppia chiave/valore</td>
+            </tr>
+            <tr>
+              <td>chiave <span class="code">in</span> dict</td>
+              <td><span class="code">bool</span></td>
+              <td>Ritorna <span class="code">True</span> se la chiave è presente nel dizionario</td>
+            </tr>
+            <tr>
+              <td><span class="code">==</span>, <span class="code">!=</span></td>
+              <td><span class="code">bool</span></td>
+              <td>Controlla se due dizionari sono uguali o diversi</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Inserire qui qualche esercizio semplice</h3>
+      </section>
+
+      <section>
+        <h3 class="title">Metodi sui dizionari</h3>
+        <div class="row mt2">
+          <table>
+            <tr>
+              <th>Metodo</th>
+              <th>Ritorna</th>
+              <th>Descrizione</th>
+            </tr>
+            <tr>
+              <td><span class="code">dict.keys()</span></td>
+              <td><span class="code">dict_keys</span></td>
+              <td>Ritorna una <em>vista</em> di chiavi presenti nel dizionario</td>
+            </tr>
+            <tr>
+              <td><span class="code">dict.values()</span></td>
+              <td><span class="code">dict_values</span></td>
+              <td>Ritorna una <em>vista</em> di valori presenti nel dizionario</td>
+            </tr>
+            <tr>
+              <td><span class="code">dict.items()</span></td>
+              <td><span class="code">dict_items</span></td>
+              <td>Ritorna una <em>vista</em> di coppie (chiave,valore) presenti nel dizionario</td>
+            </tr>
+            <tr>
+              <td><span class="code">d1.update(d2)</span></td>
+              <td><span class="code">None</span></td>
+              <td>MODIFICA il dizionario <span class="code">d1</span> con le coppie (chiave,valore) di <span
+                  class="code">d2</span></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Inserire qualche esercizio semplice</h3>
+      </section>
+
+      <section>
+        <h3 class="title">Inserire qualche challenge di fine sezione</h3>
+      </section>
+
+      <!-- Import the main reveal script -->
+      <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+
+      <!-- Initialize reveal -->
+      <script>
+        Reveal.initialize({
+          plugins: [RevealHighlight],
+          // Display an help overlay when ? is pressed
+          help: false,
+          // Display controls in the bottom right corner
+          controls: true,
+          // Display a presentation progress bar
+          progress: true,
+          // Push each slide change to the browser history
+          history: true,
+          // Enable keyboard shortcuts for navigation
+          keyboard: true,
+          // Enable the slide overview mode
+          overview: true,
+          // Enable the slide number counter
+          slideNumber: 'c/t',
+          // Set the width of the slides
+          width: "90%",
+          // Set the height of the slides
+          height: "90%",
+          // Vertical centering of slides
+          center: true,
+          // Loop the presentation
+          loop: false,
+          // Enables touch navigation on devices with touch input
+          touch: true,
+          // Apply a 3D roll to links on hover
+          rollingLinks: true,
+          // Transition style for full page slide backgrounds
+          backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+          // Select a theme
+          theme: 'white',
+          // Select the type of slides transition
+          transition: 'fade',
+          // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+          disableLayout: true
+        });
+      </script>
+
+      <!-- If the user asks for the pdf version, set section height to auto -->
+      <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+      <script>
+        if (window.location.href.indexOf('?print-pdf') > -1) {
+          // Create a new css element setting the height of .section to none
+          var css = document.createElement("style");
+          // Modify section height to fix the layout
+          // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+          // Hide the slide context (the slide number)
+          css.innerHTML = "body {width: unset !important;} section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;} html.print-pdf .reveal .slides section {display: flex !important; left: 0 !important;}";
+          // Append the css to the head
+          document.head.appendChild(css);
+
+          const printVersionText = document.getElementById('print-version-text');
+          printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+        }
+      </script>
 </body>
 
 </html>

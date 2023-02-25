@@ -1204,7 +1204,7 @@ println(a);'></processing-editor>
       // Modify section height to fix the layout
       // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
       // Hide the slide context (the slide number)
-      css.innerHTML = "section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;}";
+      css.innerHTML = "body {width: unset !important;} section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;} html.print-pdf .reveal .slides section {display: flex !important; left: 0 !important;}";
       // Append the css to the head
       document.head.appendChild(css);
 

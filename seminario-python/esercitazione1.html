@@ -815,24 +815,6 @@ b = "mondo"
         <h3 class="title">Esercizio 6</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
-            <p><span class="code">a</span> e <span class="code">b</span> sono stringhe</p>
-            <p>La stringa <span class="code">a</span> è contenuta nella stringa <span class="code">b</span>?</p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> Usa l'operatore <span class="code">in</span>!</p>
-          </div>
-          <div class="col med-code">
-            <python-editor contenteditable="true" code='a = "tutti"
-b = "ciao a tutti"
-
-# Scrivi qui
-'></python-editor>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 7</h3>
-        <div class="row" style="gap: min(1vw, 2vh);">
-          <div class="col">
             <p>Riesci ad ottenere <span class="code">canti</span> dalla stringa <span class="code">mercantile?</span>
             </p>
             <p><strong>Nota:</strong> esiste un modo migliore di usare l'operatore <span class="code">[ ]</span></p>
@@ -840,7 +822,8 @@ b = "ciao a tutti"
               <span class="code">a[1:3]</span>)!</p>
           </div>
           <div class="col med-code">
-            <python-editor contenteditable="true" code='a = "mercantile"
+            <python-editor contenteditable="true" code='#    0123456789
+a = "mercantile"
 
 # Scrivi qui
 '></python-editor>
@@ -1075,7 +1058,7 @@ print([[l1,l1],[l2,l1]])"></python-editor>
         </div>
       </section> -->
 
-      <section>
+      <!-- <section>
         <h3 class="title">Esercizio 1</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
@@ -1093,7 +1076,7 @@ l3 = [   ]    # inserisci dei numeri
 print([[l2,l2,[l3,l1]],l3])"></python-editor>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section>
         <h3 class="title">Conversione sequenze-liste</h3>
@@ -1198,14 +1181,16 @@ print(caratteri)'></python-editor>
         <h3 class="title">Esercizio 1</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
-            <p>Devo aver sbagliato qualcosa... Il codice sulla destra <span class="error bold">non funziona</span>!</p>
-            <p>Quale credi sia il problema? Prova a <span class="ok bold">correggerlo</span></p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> non si utilizza così <span class="code">len</span></p>
+            <p><span class="code">voti</span> è una lista contenente i tuoi voti. Complimenti!</p>
+            <p>Riesci a calcolare la tua media?</p>
+            <p>Dovresti ottenere <span class="code">28.833333333333332</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> utilizza i metodi <span class="code">sum</span> e <span class="code">len</span></p>
           </div>
           <div class="col med-code">
-            <python-editor contenteditable="true" code='s = "lunghezza di una stringa"
+            <python-editor contenteditable="true" code='voti = [28, 30, 29, 26, 30, 30]
 
-print(s.len())'></python-editor>
+# Scrivi qui
+'></python-editor>
           </div>
         </div>
       </section>
@@ -1264,10 +1249,6 @@ print(s.len())'></python-editor>
       </section>
 
       <section>
-        <h3 class="title">Inserisci qualche esercizio semplice</h3>
-      </section>
-
-      <section>
         <h3 class="title">Metodi di ricerca sulle liste</h3>
         <div class="row mt2">
           <table>
@@ -1301,11 +1282,52 @@ print(s.len())'></python-editor>
       </section>
 
       <section>
-        <h3 class="title">Inserisci qualche esercizio semplice</h3>
+        <h3 class="title">Challenge 4</h3>
+        <div class="row" style="width: min(95vw, 190vh); gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Data una <span class="code">frase</span> che contiene esattamente 3 parole e ha sempre come parola centrale un numero <span class="code">n</span>, scrivi del codice the stampa i primi <span class="code">n</span> caratteri della terza parola</p>
+            <div style="text-align: left;">
+              <p><strong>Esempio:</strong> data</p>
+              <pre><code class="python">frase = "Prendi 4 lettere"</code></pre>
+              <p>Il tuo codice dovrebbe stampare</p>
+              <pre><code class="python">lett</code></pre>
+            </div>
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code='frase = "Prendi 4 lettere"       # lett
+#frase = "Prendere 5 caratteri"  # carat
+#frase = "Take 10 characters"    # characters
+
+# La tua soluzione
+
+'></python-editor>
+          </div>
+        </div>
       </section>
 
       <section>
-        <h3 class="title">Inserire qui qualche challenge di fine sezione</h3>
+        <h3 class="title">Challenge 5</h3>
+        <div class="row" style="width: min(95vw, 190vh); gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Data una <span class="code">frase</span> crea una lista che contenga la parola seguita da sé stessa rovesciata</p>
+            <p><strong>Nota:</strong> l'ultima lettera NON deve essere duplicata</p>
+            <div style="text-align: left;">
+              <p><strong>Esempio:</strong> data</p>
+              <pre><code class="python">parola = "vino"</code></pre>
+              <p>Il tuo codice dovrebbe stampare</p>
+              <pre><code class="python xsmall">['v', 'i', 'n', 'o', 'n', 'i', 'v']</code></pre>
+            </div>
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code="parola = &quot;cantina&quot;  #  ['c','a','n','t','i','n','a','n','i','t','n','a','c']
+#parola = &quot;vino&quot;    #  ['v', 'i', 'n', 'o', 'n', 'i', 'v']
+#parola = &quot;ok&quot;      #  ['o', 'k', 'o']
+
+# La tua soluzione
+
+"></python-editor>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -1340,7 +1362,7 @@ print(tuple(sequenza))'></python-editor>
         </div>
       </section>
 
-      <section>
+      <!-- <section>
         <h3 class="title">Esercizio 1</h3>
         <p class="mt">Prova ad indovinare quale risultato producono le seguenti espressioni</p>
         <div class="row mt">
@@ -1383,7 +1405,7 @@ print(tuple(sequenza))'></python-editor>
             </tr>
           </table>
         </div>
-      </section>
+      </section> -->
 
       <section>
         <h3 class="title">Operatori</h3>
@@ -1443,6 +1465,10 @@ print(tuple(sequenza))'></python-editor>
               <th>Risultato</th>
             </tr>
             <tr>
+              <td><span class="code">(1.2,3.4)</span></td>
+              <td class="fragment code ok" style="border-color: black">(1.2, 3.4)</td>
+            </tr>
+            <tr>
               <td><span class="code">len(3,2,4)</span></td>
               <td class="fragment code error" style="border-color: black">TypeError: len() takes exactly one argument (3
                 given)</td>
@@ -1452,9 +1478,8 @@ print(tuple(sequenza))'></python-editor>
               <td class="fragment code ok" style="border-color: black">3</td>
             </tr>
             <tr>
-              <td><span class="code">len(len((1,2,3,4)))</span></td>
-              <td class="fragment code error" style="border-color: black">TypeError: object of type 'int' has no len()
-              </td>
+              <td><span class="code">(1;2;3;4)</span></td>
+              <td class="fragment code error" style="border-color: black">SyntaxError: invalid syntax</td>
             </tr>
             <tr>
               <td><span class="code">(1,2,3)[2]</span></td>
@@ -1475,10 +1500,6 @@ print(tuple(sequenza))'></python-editor>
             <tr>
               <td><span class="code">'a' in ('c','a','s','c','o')</span></td>
               <td class="fragment code ok" style="border-color: black">True</td>
-            </tr>
-            <tr>
-              <td><span class="code">(5,6,7)*3</span></td>
-              <td class="fragment code ok" style="border-color: black">(5, 6, 7, 5, 6, 7, 5, 6, 7)</td>
             </tr>
           </table>
         </div>
@@ -1525,7 +1546,7 @@ tupla[3] = 666"></python-editor>
         </div>
       </section>
 
-      <section>
+      <!-- <section>
         <h3 class="title">Esercizio 4</h3>
         <div class="row" style="gap: min(1vw, 2vh);">
           <div class="col">
@@ -1570,10 +1591,30 @@ tupla[3] = 666"></python-editor>
 "></python-editor>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section>
-        <h3 class="title">Inserisci qui qualche challenge di fine sezione</h3>
+        <h3 class="title">Challenge 6</h3>
+        <div class="row" style="gap: min(1vw, 2vh);">
+          <div class="col">
+            <p>Data la tupla <span class="code">x</span>, crea una tupla <span class="code">y</span> contenente
+              all'inizio tutti gli elementi di <span class="code">x</span> tranne l'ultimo; alla fine gli elementi <span
+                class="code">'d', 'e'</span></p>
+            <p><strong>Nota:</strong> il tuo codice deve funzionare con qualsiasi tupla <span class="code">x</span></p>
+            <p><strong>Esempio:</strong> data</p>
+            <pre><code class="python">x = ('a' ,'b', 'c')</code></pre>
+            <p><span class="code">y</span> dovrà essere</p>
+            <p><span class="code">('a', 'b', 'd', 'e')</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> puoi usare l'operatore slice anche con numeri negativi!
+              (es. <span class="code">x[:-3]</span>)</p>
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code="x = ('a','b','c')
+
+# Scrivi qui
+"></python-editor>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -1595,10 +1636,6 @@ tupla[3] = 666"></python-editor>
 print(type(x))"></python-editor>
           </div>
         </div>
-      </section>
-
-      <section>
-        <h3 class="title">Inserire qui qualche esercizio semplice</h3>
       </section>
 
       <section>
@@ -1642,10 +1679,6 @@ print(type(x))"></python-editor>
             </tr>
           </table>
         </div>
-      </section>
-
-      <section>
-        <h3 class="title">Inserire qui qualche esercizio semplice</h3>
       </section>
 
       <section>

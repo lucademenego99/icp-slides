@@ -60,6 +60,10 @@
       gap: min(1.5vw, 2.8vh);
     }
 
+    .xxsmall {
+      font-size: min(0.9vw, 1.8vh);
+    }
+
     .mt {
       margin-top: min(1vw, 2vh) !important;
     }
@@ -193,15 +197,19 @@ implode ([#"f", #"o", #"o"]);
       <section>
         <h3 class="title">Exercise 3</h3>
         <p>What is wrong with the following expressions? When possible, correct them</p>
-        <div class="row mt2">
+        <div class="row">
           <div class="col small-code">
-            <standardml-editor contenteditable="true" code='#4 (3,4,5);'></standardml-editor>
+            <pre><code class="sml">#4 (3,4,5);</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: #4 : 'a * 'b * 'c * 'd -> 'd</code></pre>
           </div>
+
           <div class="col small-code">
-            <standardml-editor contenteditable="true" code='hd([]);'></standardml-editor>
-          </div>
-          <div class="col small-code">
-            <standardml-editor contenteditable="true" code='#1 (1);'></standardml-editor>
+              <pre><code class="sml">hd([]);</code></pre>
+            <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : warning: The type of (it) contains a free type
+  variable. Setting it to a unique
+  monotype.
+  Exception- Empty raised</code></pre>
           </div>
         </div>
       </section>
@@ -211,13 +219,16 @@ implode ([#"f", #"o", #"o"]);
         <p>What is wrong with the following expressions? When possible, correct them</p>
         <div class="row mt2">
           <div class="col small-code">
-            <standardml-editor contenteditable="true" code='explode ["bar"];'></standardml-editor>
+            <pre><code class="sml">#1 (1);</code></pre>
+          <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: #1 : {1: 'a, ...} -> 'a
+  Argument: (1) : int</code></pre>
           </div>
           <div class="col small-code">
-            <standardml-editor contenteditable="true" code='implode ( #"a", #"b") ;'></standardml-editor>
-          </div>
-          <div class="col small-code">
-            <standardml-editor contenteditable="true" code='["r"]::["a","t"];'></standardml-editor>
+            <pre><code class="sml">explode ["bar"];</code></pre>
+          <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: explode : string -> char list
+  Argument: ["bar"] : string list</code></pre>
           </div>
         </div>
       </section>
@@ -227,16 +238,40 @@ implode ([#"f", #"o", #"o"]);
         <p>What is wrong with the following expressions? When possible, correct them</p>
         <div class="row mt2">
           <div class="col small-code">
-            <standardml-editor contenteditable="true" code='tl [];'></standardml-editor>
+            <pre><code class="sml">implode ( #"a", #"b") ;</code></pre>
+          <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: implode : char list -> string</code></pre>
           </div>
           <div class="col small-code">
-            <standardml-editor contenteditable="true" code='1 @ 2;'></standardml-editor>
+            <pre><code class="sml">["r"]::["a","t"];</code></pre>
+          <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: :: : string list * string list list -> string list list
+  Argument: (["r"], ["a", "t"]) : string list * string list</code></pre>
           </div>
         </div>
       </section>
 
       <section>
         <h3 class="title">Exercise 6</h3>
+        <p>What is wrong with the following expressions? When possible, correct them</p>
+        <div class="row mt2">
+          <div class="col small-code">
+            <pre><code class="sml">tl [];</code></pre>
+          <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : warning: The type of (it) contains a free type
+  variable. Setting it to a unique monotype.
+  Exception- Empty raised</code></pre>
+          </div>
+          <div class="col small-code">
+            <pre><code class="sml">1 @ 2;</code></pre>
+          <pre class="fragment" data-fragment-index="0"><code class="text error bold xxsmall">poly: : error: Type error in function application.
+  Function: @ : 'a list * 'a list -> 'a list
+  Argument: (1, 2) : int * int</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 7</h3>
         <p>What are the types of the following expressions?</p>
         <div class="med-code">
           <standardml-editor contenteditable="true" code='(1.5, ("3",[4,5]));
@@ -246,7 +281,7 @@ implode ([#"f", #"o", #"o"]);
       </section>
 
       <section>
-        <h3 class="title">Exercise 7</h3>
+        <h3 class="title">Exercise 8</h3>
         <p>What are the types of the following expressions?</p>
         <div class="med-code">
           <standardml-editor contenteditable="true" code='[ (2,3.5), (4,5.5), (6,7.5)];
@@ -256,47 +291,22 @@ implode ([#"f", #"o", #"o"]);
       </section>
 
       <section>
-        <h3 class="title">Exercise 8</h3>
-        <p>Give examples of objects of the following types, without using empty lists</p>
-        <div class="row">
-          <div class="col small-code">
-            <p><span class="code xsmall">int list list list</span></p>
-            <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-examples1" code=''></standardml-editor>
-          </div>
-          <div class="col small-code">
-            <p><span class="code xsmall">(int * char) list</span></p>
-            <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-examples2" code=''></standardml-editor>
-          </div>
-        </div>
-      </section>
-
-      <section>
         <h3 class="title">Exercise 9</h3>
         <p>Give examples of objects of the following types, without using empty lists</p>
-        <div class="row">
-          <div class="col small-code">
-            <p><span class="code xsmall">string list * ( int * (real * string) * int</span></p>
-            <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-examples3" code=''></standardml-editor>
-          </div>
-          <div class="col small-code">
-            <p><span class="code xsmall">((int * int) * (bool list) * real) * (real * string)</span></p>
-            <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-examples4" code=''></standardml-editor>
-          </div>
+        <div style="width: min(60vw, 120vh)">
+          <pre><code class="sml">int list list list</code></pre>
+          <pre><code class="sml">(int * char) list</code></pre>
+          <pre><code class="sml">string list * ( int * (real * string) * int</code></pre>
         </div>
       </section>
 
       <section>
         <h3 class="title">Exercise 10</h3>
         <p>Give examples of objects of the following types, without using empty lists</p>
-        <div class="row">
-          <div class="col small-code">
-            <p><span class="code xsmall">(bool * int) * char</span></p>
-            <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-examples5" code=''></standardml-editor>
-          </div>
-          <div class="col small-code">
-            <p><span class="code xsmall">real * int list list list list</span></p>
-            <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-examples6" code=''></standardml-editor>
-          </div>
+        <div style="width: min(60vw, 120vh)">
+          <pre><code class="sml">((int * int) * (bool list) * real) * (real * string)</code></pre>
+          <pre><code class="sml">(bool * int) * char</code></pre>
+          <pre><code class="sml">real * int list list list list</code></pre>
         </div>
       </section>
 
@@ -441,7 +451,7 @@ max3(5, 4, 7);'></standardml-editor>
   else
     if b>c then b else c;
 
-val t = (5, 4, 7);
+val t = (4, 5, 6);
 max3 t;'></standardml-editor>
           </div>
         </div>
@@ -461,71 +471,51 @@ addx(2);'></standardml-editor>
       <section>
         <h3 class="title">Exercise 1</h3>
         <p>Write a function to compute the cube of a real number</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-cube" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 2</h3>
         <p>Write a function to compute the smallest component of a tuple of type <span class="code">int*int*int</span></p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-smallest" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 3</h3>
         <p>Find the third element of a list (it doesn't have to work properly on shorter lists)</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-third-el" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 4</h3>
         <p>Write a function to reverse a tuple of length 3</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-reverse" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 5</h3>
         <p>Find the third character of a string (it doesn't have to work properly on shorter strings)</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-third-char" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 6</h3>
         <p>Cycle a list once, i.e., convert [a1,...an] to [a2,...an,a1]. It doesn't have to work on the empty list</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-cycle" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 7</h3>
         <p>Given 3 integers, produce a pair consisting of the smallest and the largest</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-smallest-and-largest" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 8</h3>
         <p>Given 3 integers, produce a list of them in sorted order</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-sort" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 9</h3>
         <p>Round a real number to the nearest 10th</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-tenth" code=''></standardml-editor>
       </section>
 
       <section>
         <h3 class="title">Exercise 10</h3>
         <p>Given a list, remove the second element. It doesn't need to work on lists shorter than 2</p>
-        <div class="med-code">
-          <standardml-editor contenteditable="true" downloadable="true" save="true" id="ml-type-system-remove-second" code=''></standardml-editor>
       </section>
 
       <section>
@@ -631,7 +621,7 @@ g(f(7));'></standardml-editor>
       document.head.appendChild(css);
 
       const printVersionText = document.getElementById('print-version-text');
-      printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+      printVersionText.innerHTML = `<a href="?">Click here</a> to go back to the slides`;
     }
   </script>
 </body>

@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Programming</title>
+
+  <!-- Main Reveal Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+  <!-- Blood Reveal Theme Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Highlight.js Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai.min.css">
+
+  <!-- Custom stylesheet to make reveal work with our playgrounds -->
+  <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+
+  <!-- Bundle containing the code playground web components -->
+  <script src="https://lucademenego99.github.io/icp-bundle/base/standard-ml.iife.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <style>
+    pre code {
+      padding: min(1vw, 2vh) !important;
+    }
+
+    .code {
+      padding: 0 min(1vw, 2vh);
+      background-color: rgb(215, 237, 255);
+      font-family: monospace;
+    }
+
+    .code-2 {
+      padding: 0 min(0.8vw, 1.5vh);
+      background-color: rgb(234, 246, 255);
+      font-family: monospace;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .ok {
+      color: green;
+    }
+
+    .warning {
+      color: rgb(218, 141, 0);
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .row {
+      width: min(80vw, 160vh);
+      gap: min(1.5vw, 2.8vh);
+    }
+
+    .xxsmall {
+      font-size: min(0.9vw, 1.8vh);
+    }
+
+    .mt {
+      margin-top: min(1vw, 2vh) !important;
+    }
+
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+
+    .mt2 {
+      margin-top: min(3vw, 6vh) !important;
+    }
+
+    .mb {
+      margin-bottom: min(1vw, 2vh) !important;
+    }
+
+    .mb2 {
+      margin-bottom: min(3vw, 6vh) !important;
+    }
+
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+
+    .ml2 {
+      margin-left: min(3vw, 6vh) !important;
+    }
+
+    li {
+      margin-bottom: min(1vw, 1.8vh) !important;
+    }
+
+    .key__button {
+      box-sizing: border-box;
+      line-height: min(2vw, 4vh);
+      font-size: min(1.4vw, 2.8vh);
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      margin: 0 min(0.5vw, 1vh);
+      min-width: min(2.3vw, 4.6vh);
+      height: min(2.3vw, 4.6vh);
+      padding: 0 min(0.5vw, 1vh);
+      border-color: #f2f2f2;
+      border-style: solid;
+      text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+      border-width: 1px;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+      font-family: sans-serif;
+      display: inline-block;
+      transition: box-shadow 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+    }
+  </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+  <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+    data-background-transition="fade">
+    <div class="slides">
+
+      <!-- Each <section> is a slide -->
+      <section>
+        <!-- title class: custom style for titles -->
+        <h3 class="title">Functional Programming</h3>
+        <p class="subtitle">Recursion</p>
+
+        <p class="mt2" style="color:rgb(134, 134, 134)">Shortcuts</p>
+        <div style="text-align: left">
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>F</span> for
+            fullscreen</p>
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>CTRL</span>
+            + <span class='key__button'>ENTER</span> to execute code</p>
+        </div>
+
+        <p class="xsmall mt2" id="print-version-text"><a href="?print-pdf">Click here</a> for the printable
+          version</p>
+      </section>
+
+      <section>
+        <h3 class="title">Recursion</h3>
+        <div class="row">
+          <ul>
+            <li>Should be familiar from imperative languages</li>
+            <li>In functional programming much more important; used as the main mechanism for iteration</li>
+            <li>Recursive function:</li>
+            <ul>
+              <li><strong>Basis:</strong> Compute teh result directly for sufficiently small argument</li>
+              <li><strong>Inductive step:</strong> call the function recursively, with smaller arguments</li>
+            </ul>
+            <li>Always make sure that there is a way for the recursion to terminate</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Reversing a list</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Base case: empty list to empty list</li>
+              <li>Induction: reverse the tail of the list (recursively) and then append the tail</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='fun reverse L =
+  if L = nil then nil
+  else reverse (tl L) @ [hd L];
+
+reverse [1,2,3,4];
+
+reverse["ab", "bc", "cd"]'></standardml-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Nonlinear recursion</h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li>A function can call itself recursively multiple times</li>
+            <li>Example: Number of combinations of <math>
+                <mi>m</mi>
+              </math> things out of <math>
+                <mi>n</mi>
+              </math>
+            </li>
+            <ul>
+              <li>Written <math>
+                  <mfenced>
+                    <mfrac linethickness="0">
+                      <mi>n</mi>
+                      <mi>m</mi>
+                    </mfrac>
+                  </mfenced>
+                </math></li>
+              <li>Can be shown to be equal to <math>
+                  <mfrac>
+                    <mrow>
+                      <mi>n</mi>
+                      <mo>!</mo>
+                    </mrow>
+                    <mrow>
+                      <mfenced>
+                        <mrow>
+                          <mfenced>
+                            <mrow>
+                              <mi>n</mi>
+                              <mo>-</mo>
+                              <mi>m</mi>
+                            </mrow>
+                          </mfenced>
+                          <mo>!</mo>
+                          <mi>m</mi>
+                          <mo>!</mo>
+                        </mrow>
+                      </mfenced>
+                    </mrow>
+                  </mfrac>
+                </math>, which would lead to a normal recursive definition</li>
+              <li>We shall use instead the following recursive definition</li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Combinations</h3>
+        <div class="row">
+          <ul>
+            <li>Base case. if <math>
+                <mi>m</mi>
+                <mo>=</mo>
+                <mn>0</mn>
+              </math> the number of ways to pick <math>
+                <mn>0</mn>
+              </math> out
+              of <math>
+                <mi>n</mi>
+              </math> is <math>
+                <mn>0</mn>
+              </math>.<br>Similarly, if <math>
+                <mi>m</mi>
+                <mo>=</mo>
+                <mi>n</mi>
+              </math>, there is exactly one way to pick <math>
+                <mi>n</mi>
+              </math> out of <math>
+                <mi>n</mi>
+              </math>:
+              <math class="mt">
+                <mfenced>
+                  <mfrac linethickness="0">
+                    <mi>n</mi>
+                    <mn>0</mn>
+                  </mfrac>
+                </mfenced>
+                <mo>=</mo>
+                <mfenced>
+                  <mfrac linethickness="0">
+                    <mi>n</mi>
+                    <mi>m</mi>
+                  </mfrac>
+                </mfenced>
+                <mo>=</mo>
+                <mn>1</mn>
+              </math>
+            </li>
+            <li>Induction. If <math>
+                <mn>0</mn>
+                <mo>&lt;</mo>
+                <mi>m</mi>
+                <mo>&lt;</mo>
+                <mi>n</mi>
+              </math> to select <math>
+                <mi>m</mi>
+              </math> out of <math>
+                <mi>n</mi>
+              </math> we can</li>
+            <ul>
+              <li>Reject the first thing and select <math>
+                  <mi>m</mi>
+                </math> out of the remaining <math>
+                  <mi>n</mi>
+                  <mo>-</mo>
+                  <mn>1</mn>
+                </math></li>
+              <li>Pick the first thing, and pick <math>
+                  <mi>m</mi>
+                  <mo>-</mo>
+                  <mn>1</mn>
+                </math> out of the remaining <math>
+                  <mi>n</mi>
+                  <mo>-</mo>
+                  <mn>1</mn>
+                </math></li>
+              <li>Formally
+                <math>
+                  <mfenced>
+                    <mfrac linethickness="0">
+                      <mi>n</mi>
+                      <mi>m</mi>
+                    </mfrac>
+                  </mfenced>
+                  <mo>=</mo>
+                  <mfenced>
+                    <mfrac linethickness="0">
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>-</mo>
+                        <mn>1</mn>
+                      </mrow>
+                      <mi>m</mi>
+                    </mfrac>
+                  </mfenced>
+                  <mo>+</mo>
+                  <mfenced>
+                    <mfrac linethickness="0">
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>-</mo>
+                        <mn>1</mn>
+                      </mrow>
+                      <mrow>
+                        <mi>m</mi>
+                        <mo>-</mo>
+                        <mn>1</mn>
+                      </mrow>
+                    </mfrac>
+                  </mfenced>
+                </math>
+              </li>
+            </ul>
+            <li>We use this to write a ML program</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Combinations</h3>
+        <div class="row">
+          <div class="med-code">
+            <standardml-editor contenteditable="true" code='fun comb(n,m) = (* assumes 0 <= m <= n *)
+  if m=0 orelse m=n then 1
+  else comb(n-1,m) + comb(n-1,m-1);
+
+comb (5,0);
+comb (5,5);
+comb (5,2);'></standardml-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Mutual recursion</h3>
+        <div class="row">
+          <ul>
+            <li>Two functions that call one another recursively</li>
+            <li>A function that takes a list <math>
+                <mi>L</mi>
+              </math> and produces a list with the first, third, fifth etc. elements of <math>
+                <mi>L</mi>
+              </math></li>
+            <li>Two functions:</li>
+            <ul>
+              <li><span class="code">take(L)</span> takes the first element of <span class="code">L</span> and then
+                alternates</li>
+              <li><span class="cod">skip(L)</span> skips the first element and then calls <span class="code">take</span>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">First attempt</h3>
+        <div style="width: min(60vw, 120vh)">
+          <pre><code class="sml">fun take(L) =
+  if L = nil then nil
+  else hd(L) :: skip(tl(L));
+  
+fun skip(L) =
+  if L = nil then nil
+  else take(tl(L));</code></pre>
+          <p class="bold error fragment" data-fragment-index="0">Doesn't work</p>
+          <pre class="fragment" data-fragment-index="0"><code class="text error bold xsmall">fun take(L) =
+  if L = nil then nil
+  else hd(L) :: skip(tl(L));
+poly: : error: Value or constructor (skip) has not been declared
+Found near if L = nil then nil else hd (L) :: skip (tl (L))</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Solution: keyword and</h3>
+        <div class="row">
+          <div class="med-code">
+            <standardml-editor contenteditable="true" code='fun
+  take(L) =
+    if L = nil then nil
+    else hd(L) :: skip(tl(L))
+and
+  skip(L) =
+    if L = nil then nil
+    else take(tl(L));
+
+take ([1,2,3,4,5]);'></standardml-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Type inference</h3>
+        <div class="row">
+          <ul>
+            <li>How ML deduces types</li>
+            <li>Types of operands and results of arithmetic expressions must agree</li>
+            <li><math>
+                <mfenced>
+                  <mrow>
+                    <mi>a</mi>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                  </mrow>
+                </mfenced>
+                <mo>&sdot;</mo>
+                <mn>2.0</mn>
+              </math></li>
+            <ul>
+              <li>The right operand is a real</li>
+              <li>Therefore, <math>
+                  <mi>a</mi>
+                  <mo>+</mo>
+                  <mi>b</mi>
+                </math> must be a real</li>
+              <li>Therefore, so are <math>
+                  <mi>a</mi>
+                </math> and <math>
+                  <mi>b</mi>
+                </math></li>
+            </ul>
+            <li>In a comparison <math>
+                <mi>a</mi>
+                <mo>&lt;</mo>
+                <mo>=</mo>
+                <mn>10</mn>
+              </math>, both arguments have the same type, so <math>
+                <mi>a</mi>
+              </math> is an integer</li>
+            <li>In a conditional, the types of the <span class="cod">then</span>, the <span class="code">else</span> and
+              the expression itself must all be the same</li>
+            <li>If an expression used as an argument of a function is of a known type, the parameter must be of that
+              type</li>
+            <li>If the expression defining the result of a function is of a known type, the function returns that type
+            </li>
+            <li>If there is no way to determine the types of the arguments of an overloaded function (such as <span
+                class="code">+</span>), the type is the default (usually integer)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Example</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Result of <span class="code">if</span> clause is an integer</li>
+              <li>Therefore <span class="code">comb(n-1,m)+comb(n-1,m-1)</span> is an integer</li>
+              <li>Therefore, so are <span class="code">comb(n-1,m)</span> and <span class="code">comb(n-1, m-1)</span>
+              </li>
+              <li>Therefore <span class="code">comb</span> returns an integer</li>
+              <li>The expressions <span class="code">n-1</span> and <span class="code">m-1</span> must be integers, so
+                <span class="code">comb</span> maps pairs of integers to an integer</li>
+            </ul>
+          </div>
+          <div class="col small-code">
+            <standardml-editor contenteditable="true" code='fun comb(n,m) = (* assumes 0 <= m <= n *)
+  if m=0 orelse m=n then 1
+  else comb(n-1,m) + comb(n-1,m-1);'></standardml-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 1</h3>
+        <p>Write a function that computes the factorial of <math>
+            <mi>n</mi>
+          </math></p>
+        <p style="text-align: center"><math>
+            <mi>n</mi>
+            <mo>!</mo>
+            <mo>=</mo>
+            <mn>1</mn>
+            <mo>&sdot;</mo>
+            <mn>2</mn>
+            <mo>&sdot;</mo>
+            <mo>&sdot;</mo>
+            <mo>&sdot;</mo>
+            <mi>n</mi>
+          </math></p>
+        <p>where <math>
+            <mi>n</mi>
+            <mo>≥</mo>
+            <mn>1</mn>
+          </math>. It need not work correctly for smaller <math>
+            <mi>n</mi>
+          </math></p>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 2</h3>
+        <p>Given an integer <math>
+            <mi>i</mi>
+          </math> and a list <math>
+            <mi>L</mi>
+            <mo>=</mo>
+            <mfenced open="[" close="]">
+              <mrow>
+                <msub>
+                  <mi>a</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>a</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo>,</mo>
+                <mo>&sdot;</mo>
+                <mo>&sdot;</mo>
+                <mo>&sdot;</mo>
+                <mo>,</mo>
+                <msub>
+                  <mi>a</mi>
+                  <mi>n</mi>
+                </msub>
+              </mrow>
+            </mfenced>
+          </math>, cycle <math><mi>L</mi></math> <math><mi>i</mi></math> times, i.e. produce</p>
+          <p><math>
+            <mfenced open="[" close="]">
+              <mrow>
+                <msub>
+                  <mi>a</mi>
+                  <mrow>
+                    <mi>i</mi><mo>+</mo><mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>a</mi>
+                  <mrow>
+                    <mi>i</mi><mo>+</mo><mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo>,</mo>
+                <mo>&sdot;</mo>
+                <mo>&sdot;</mo>
+                <mo>&sdot;</mo>
+                <mo>,</mo>
+                <msub>
+                  <mi>a</mi>
+                  <mi>n</mi>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>a</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>,</mo>
+                <mo>&sdot;</mo>
+                <mo>&sdot;</mo>
+                <mo>&sdot;</mo>
+                <mo>,</mo>
+                <msub>
+                  <mi>a</mi>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+            </mfenced>
+          </math></p>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 3</h3>
+        <p>Duplicate each element of a list</p>
+        <p>That is, given the list <math>
+          <mfenced open="[" close="]">
+            <mrow>
+              <msub>
+                <mi>a</mi>
+                <mn>1</mn>
+              </msub>
+              <mo>,</mo>
+              <msub>
+                <mi>a</mi>
+                <mn>2</mn>
+              </msub>
+              <mo>,</mo>
+              <mo>&sdot;</mo>
+              <mo>&sdot;</mo>
+              <mo>&sdot;</mo>
+              <mo>,</mo>
+              <msub>
+                <mi>a</mi>
+                <mi>n</mi>
+              </msub>
+            </mrow>
+          </mfenced>
+        </math> produce the list <math>
+          <mfenced open="[" close="]">
+            <mrow>
+              <msub>
+                <mi>a</mi>
+                <mn>1</mn>
+              </msub>
+              <mo>,</mo>
+              <msub>
+                <mi>a</mi>
+                <mn>1</mn>
+              </msub>
+              <mo>,</mo>
+              <msub>
+                <mi>a</mi>
+                <mn>2</mn>
+              </msub>
+              <mo>,</mo>
+              <msub>
+                <mi>a</mi>
+                <mn>2</mn>
+              </msub>
+              <mo>,</mo>
+              <mo>&sdot;</mo>
+              <mo>&sdot;</mo>
+              <mo>&sdot;</mo>
+              <mo>,</mo>
+              <msub>
+                <mi>a</mi>
+                <mi>n</mi>
+              </msub>
+              <mo>,</mo>
+              <msub>
+                <mi>a</mi>
+                <mi>n</mi>
+              </msub>
+            </mrow>
+          </mfenced>
+        </math></p>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 4</h3>
+        <p>Compute the length of a list</p>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 5</h3>
+        <p>Compute <math><msup><mi>x</mi><mi>i</mi></msup></math> where <math><mi>x</mi></math> is a real, and <math><mi>i</mi></math> is a nonegative integer.</p>
+        <p>It doesn't need to work for <math><mi>i</mi><mo>&lt;</mo><mn>0</mn></math></p>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 6</h3>
+        <p>Compute the largest element (lexicographic order) of a list of strings</p>
+        <p>It doesn't need to work for empty lists</p>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 7</h3>
+        <p>In the following code, deduce the type of the variables and the function</p>
+        <div class="med-code">
+          <standardml-editor contenteditable="true" code='fun foo (a,b,c,d) =
+  if a=b then c+1 else
+  if a>b then c
+  else b+d;'></standardml-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 8</h3>
+        <p>What can be inferred about the types in the following snippet?</p>
+        <p>Run to check your answer</p>
+        <div class="small-code mt">
+          <standardml-editor contenteditable="true" code='fun f (a:int,b,c,d,e) =
+  if a&lt;b+c then d else e;'></standardml-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 9</h3>
+        <p>What can be inferred about the types in the following snippet?</p>
+        <p>Run to check your answer</p>
+        <div class="small-code mt">
+          <standardml-editor contenteditable="true" code='fun f (a:int,b,c,d,e) =
+  if a&lt;b then c else d;'></standardml-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 10</h3>
+        <p>What can be inferred about the types in the following snippet?</p>
+        <p>Run to check your answer</p>
+        <div class="small-code mt">
+          <standardml-editor contenteditable="true" code='fun f (a:int,b,c,d,e) =
+  if a&lt;b then b+c else d+e;'></standardml-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 11</h3>
+        <p>What can be inferred about the types in the following snippet?</p>
+        <p>Run to check your answer</p>
+        <div class="small-code mt">
+          <standardml-editor contenteditable="true" code='fun f (a:int,b,c,d,e) =
+  if a&lt;b then b&lt;c else d;'></standardml-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 12</h3>
+        <p>What can be inferred about the types in the following snippet?</p>
+        <p>Run to check your answer</p>
+        <div class="small-code mt">
+          <standardml-editor contenteditable="true" code='fun f (a:int,b,c,d,e) =
+  if b&lt;c then a else c+d;'></standardml-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 13</h3>
+        <p>What can be inferred about the types in the following snippet?</p>
+        <p>Run to check your answer</p>
+        <div class="small-code mt">
+          <standardml-editor contenteditable="true" code='fun f (a:int,b,c,d,e) =
+  if b&lt;c then d else e;'></standardml-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 14</h3>
+        <p>What can be inferred about the types in the following snippet?</p>
+        <p>Run to check your answer</p>
+        <div class="small-code mt">
+          <standardml-editor contenteditable="true" code='fun f (a:int,b,c,d,e) =
+  if b&lt;c then d+e else d*e;'></standardml-editor>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Import the main reveal script -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+
+  <!-- Initialize reveal -->
+  <script>
+    Reveal.initialize({
+      plugins: [RevealHighlight],
+      // Display an help overlay when ? is pressed
+      help: false,
+      // Display controls in the bottom right corner
+      controls: true,
+      // Display a presentation progress bar
+      progress: true,
+      // Push each slide change to the browser history
+      history: true,
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+      // Enable the slide overview mode
+      overview: true,
+      // Enable the slide number counter
+      slideNumber: 'c/t',
+      // Set the width of the slides
+      width: "90%",
+      // Set the height of the slides
+      height: "90%",
+      // Vertical centering of slides
+      center: true,
+      // Loop the presentation
+      loop: false,
+      // Enables touch navigation on devices with touch input
+      touch: true,
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+      // Select a theme
+      theme: 'white',
+      // Select the type of slides transition
+      transition: 'fade',
+      // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+      disableLayout: true
+    });
+  </script>
+
+  <!-- If the user asks for the pdf version, set section height to auto -->
+  <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+  <script>
+    if (window.location.href.indexOf('?print-pdf') > -1) {
+      // Create a new css element setting the height of .section to none
+      var css = document.createElement("style");
+      // Modify section height to fix the layout
+      // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+      // Hide the slide context (the slide number)
+      css.innerHTML = "body {width: unset !important;} section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;} html.print-pdf .reveal .slides section {display: flex !important; left: 0 !important;}";
+      // Append the css to the head
+      document.head.appendChild(css);
+
+      const printVersionText = document.getElementById('print-version-text');
+      printVersionText.innerHTML = `<a href="?">Click here</a> to go back to the slides`;
+    }
+  </script>
+</body>
+
+</html>

@@ -209,7 +209,7 @@
     private void grow() {
         size += defaultGrowthSize;
         int temp[] = new int[size];
-        System.arraycopy(content, 0, temp, 0, marker-1);
+        System.arraycopy(content, 0, temp, 0, marker);
         this.content = temp;
     }
     
@@ -292,7 +292,7 @@
         assert(marker>0):"No data!";
         int retval=content[0];
         for (int k=1; k<marker; k++ )
-        content[k-1]=content[k];
+          content[k-1]=content[k];
         marker--;
         return retval;
   }
@@ -332,7 +332,7 @@ class Stack {
     private void grow() {
         size += defaultGrowthSize;
         int temp[] = new int[size];
-        System.arraycopy(content, 0, temp, 0, marker-1);
+        System.arraycopy(content, 0, temp, 0, marker);
         this.content = temp;
     }
     
@@ -817,7 +817,8 @@ class B extends A {
       <section>
         <h3 class="title">Turn a Stack into a Queue</h3>
         <div style="width: min(70vw, 140vh)">
-          <p>Let's go back to our initial problem. With the previous implementation at page 7 we got the following
+          <p>Let's go back to our initial problem. With the previous implementation at <a href="#/6">slide 7</a> we got
+            the following
             error:</p>
           <pre><code class="text error small">Constructor Stack in class Stack cannot be applied to given types;
   required: int
@@ -834,7 +835,7 @@ class B extends A {
       <section>
         <h3 class="title">Turn a Stack into a Queue</h3>
         <div style="width: min(50vw, 100vh)">
-          <p>As described in the slide 27, we can write the <span class="code">Queue</span>
+          <p>As described in the <a href="#/26">slide 27</a>, we can write the <span class="code">Queue</span>
             constructor as follows:</p>
           <pre><code class="java">Queue(int size) {
   super(size);
@@ -862,7 +863,7 @@ class B extends A {
         assert(marker>0):"No data!";
         int retval=content[0];
         for (int k=1; k<marker; k++ )
-        content[k-1]=content[k];
+          content[k-1]=content[k];
         marker--;
         return retval;
   }
@@ -900,7 +901,7 @@ class Stack {
     private void grow() {
         size += defaultGrowthSize;
         int temp[] = new int[size];
-        System.arraycopy(content, 0, temp, 0, marker-1);
+        System.arraycopy(content, 0, temp, 0, marker);
         this.content = temp;
     }
     

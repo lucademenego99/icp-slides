@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Programming</title>
+
+  <!-- Main Reveal Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+  <!-- Blood Reveal Theme Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Highlight.js Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai.min.css">
+
+  <!-- Custom stylesheet to make reveal work with our playgrounds -->
+  <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+
+  <!-- Bundle containing the code playground web components -->
+  <script src="https://lucademenego99.github.io/icp-bundle/base/java.iife.js"></script>
+
+  <style>
+    pre code {
+      padding: min(1vw, 2vh) !important;
+    }
+
+    .code {
+      padding: 0 min(1vw, 2vh);
+      background-color: rgb(215, 237, 255);
+      font-family: monospace;
+    }
+
+    .code-2 {
+      padding: 0 min(0.8vw, 1.5vh);
+      background-color: rgb(234, 246, 255);
+      font-family: monospace;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .ok {
+      color: green;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .warning {
+      color: rgb(218, 141, 0);
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .row {
+      width: min(80vw, 160vh);
+      gap: min(1.5vw, 2.8vh);
+    }
+
+    .big {
+      font-size: min(2vw, 4vh) !important;
+    }
+
+    .xbig {
+      font-size: min(2.5vw, 5vh) !important;
+    }
+
+    .xxsmall {
+      font-size: min(0.9vw, 1.8vh);
+    }
+
+    .mt {
+      margin-top: min(1vw, 2vh) !important;
+    }
+
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+
+    .mt2 {
+      margin-top: min(3vw, 6vh) !important;
+    }
+
+    .mb {
+      margin-bottom: min(1vw, 2vh) !important;
+    }
+
+    .mb2 {
+      margin-bottom: min(3vw, 6vh) !important;
+    }
+
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+
+    .ml2 {
+      margin-left: min(3vw, 6vh) !important;
+    }
+
+    li {
+      margin-bottom: min(1vw, 1.8vh) !important;
+    }
+
+    .key__button {
+      box-sizing: border-box;
+      line-height: min(2vw, 4vh);
+      font-size: min(1.4vw, 2.8vh);
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      margin: 0 min(0.5vw, 1vh);
+      min-width: min(2.3vw, 4.6vh);
+      height: min(2.3vw, 4.6vh);
+      padding: 0 min(0.5vw, 1vh);
+      border-color: #f2f2f2;
+      border-style: solid;
+      text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+      border-width: 1px;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+      font-family: sans-serif;
+      display: inline-block;
+      transition: box-shadow 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+    }
+  </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+  <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+    data-background-transition="fade">
+    <div class="slides">
+
+      <!-- Each <section> is a slide -->
+      <section>
+        <!-- title class: custom style for titles -->
+        <h3 class="title">Computer Programming 2 Exercises</h3>
+
+        <p class="subtitle mt">Maurizio Marchese</p>
+        <p>Dipartimento di Ingegneria e Scienza dell'Informazione (DISI)</p>
+        <p>Università degli Studi di Trento</p>
+        <a style="font-size: min(1.3vw, 2.6vh);" href="mailto:maurizio.marchese@unitn.it">maurizio.marchese@unitn.it</a>
+
+        <p class="xsmall mt2">Adapted from teaching material shared by prof. Gian Pietro PIcco & prof. Marco Ronchetti
+        </p>
+      </section>
+
+      <section>
+        <h3>About these slides</h3>
+        <p class="mt2" style="color:rgb(134, 134, 134)">Shortcuts</p>
+        <div style="text-align: left" class="mb">
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>F</span> for
+            fullscreen</p>
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>CTRL</span>
+            + <span class='key__button'>ENTER</span> to execute code</p>
+        </div>
+
+        <p class="xsmall mt2" id="print-version-text">Printable version available <a href="?print-pdf">here</a></p>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 1: true or false?</h3>
+        <div style="width: min(90vw, 180vh)">
+          <ol>
+            <li>A <span class="code">static</span> method of a <span class="code">C</span> class cannot be invoked
+              without an instance (object) of <span class="code">C</span> being created.</li>
+            <li>A Java class defined as <span class="code">abstract</span> can be used within class hierarchies with
+              multiple inheritance.</li>
+            <li>Let there be a Java class <span class="code">A</span> that contains a method <span
+                class="code">m()</span>. A subclass <span class="code">B</span> of <span class="code">A</span> may
+              redefine <span class="code">m()</span> once by override and an arbitrary number of times by overload.</li>
+            <li>Variables declared <span class="code">static</span> are modifiable by <span class="code">private</span>
+              methods.</li>
+            <li>The constructor of a class automatically calls the constructor of the superclass with the same
+              parameters; if no constructor with the same signature is available in the superclass, the constructor with
+              no parameters is called.</li>
+            <li>Java has a destructor (similar to C++'s <span class="code">destroy()</span>) to explicitly deallocate
+              objects in memory.</li>
+            <li>The array type <span class="code">int[]</span> is a reference type, like the classes.</li>
+            <li>The <span class="code">super</span> keyword is used to declare very large objects.</li>
+            <li>Java does not support pointers: therefore, only static memory allocation on the <em>stack</em> is
+              supported, not dynamic allocation on the <em>heap</em>.</li>
+            <li>An <span class="code">x</span> attribute declared as <span class="code">public</span> in the <span
+                class="code">C</span> class of the <span class="code">P1</span> package is visible to all other classes
+              declared in <span class="code">P1</span>, but not to classes declared in packages other than <span
+                class="code">P1</span>.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 2: what is the output?</h3>
+        <p class="subtitle">Think about it before checking the solution...</p>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class F {
+  int x = 3;
+  F(int x) {
+    f(x);
+    f();
+    System.out.println(x);
+  }
+  void f() {
+    x++;
+    System.out.print(x);
+  }
+  void f(int x) {
+    this.x++;
+    x--;
+    System.out.print(x);
+  }
+  public static void main(String arg[]) {
+    F x = new F(3);
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 3: what is the output?</h3>
+        <p class="subtitle">Think about it before checking the solution...</p>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class C {
+  public static int x;
+  C(int s) {
+    x = s;
+  }
+  void f() {
+    System.out.print(x);
+  }
+  public static void main(String a[]){
+    C b = new C(2);
+    C c = new C(4);
+    b.f();
+    c.f();
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise 4: in which line is the error?</h3>
+        <p class="subtitle">Think about it before checking the solution...</p>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Test {
+  public static void main(String[] args) {
+    C obj = new C();
+    int a = C.m1();
+    int b = obj.m3();
+  }
+}
+class C {
+  static int x = 5;
+  int y = 3;
+  static public int m1() {
+    return y + m2();
+  }
+  static private int m2() {
+    return x;
+  }
+  public int m3() {
+    return m1();
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Solutions</h3>
+        <div>
+          <ul>
+            <li><strong>Deadline:</strong> before the next lesson</li>
+            <li><strong>Solutions</strong> will be published on Moodle on Tuesday March 29th</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Import the main reveal script -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+
+  <!-- Initialize reveal -->
+  <script>
+    Reveal.initialize({
+      plugins: [RevealHighlight],
+      // Display an help overlay when ? is pressed
+      help: false,
+      // Display controls in the bottom right corner
+      controls: true,
+      // Display a presentation progress bar
+      progress: true,
+      // Push each slide change to the browser history
+      history: true,
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+      // Enable the slide overview mode
+      overview: true,
+      // Enable the slide number counter
+      slideNumber: 'c/t',
+      // Set the width of the slides
+      width: "90%",
+      // Set the height of the slides
+      height: "90%",
+      // Vertical centering of slides
+      center: true,
+      // Loop the presentation
+      loop: false,
+      // Enables touch navigation on devices with touch input
+      touch: true,
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+      // Select a theme
+      theme: 'white',
+      // Select the type of slides transition
+      transition: 'fade',
+      // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+      disableLayout: true
+    });
+  </script>
+
+  <!-- If the user asks for the pdf version, set section height to auto -->
+  <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+  <script>
+    if (window.location.href.indexOf('?print-pdf') > -1) {
+      // Create a new css element setting the height of .section to none
+      var css = document.createElement("style");
+      // Modify section height to fix the layout
+      // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+      // Hide the slide context (the slide number)
+      css.innerHTML = "body {width: unset !important;} section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;} html.print-pdf .reveal .slides section {display: flex !important; left: 0 !important;}";
+      // Append the css to the head
+      document.head.appendChild(css);
+
+      const printVersionText = document.getElementById('print-version-text');
+      printVersionText.innerHTML = `<a href="?">Click here</a> to go back to the slides`;
+    }
+  </script>
+</body>
+
+</html>

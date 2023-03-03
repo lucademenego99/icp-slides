@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Programming</title>
+
+  <!-- Main Reveal Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+  <!-- Blood Reveal Theme Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Highlight.js Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai.min.css">
+
+  <!-- Custom stylesheet to make reveal work with our playgrounds -->
+  <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+
+  <!-- Bundle containing the code playground web components -->
+  <script src="https://lucademenego99.github.io/icp-bundle/base/java.iife.js"></script>
+
+  <style>
+    pre code {
+      padding: min(1vw, 2vh) !important;
+    }
+
+    .code {
+      padding: 0 min(1vw, 2vh);
+      background-color: rgb(215, 237, 255);
+      font-family: monospace;
+    }
+
+    .code-2 {
+      padding: 0 min(0.8vw, 1.5vh);
+      background-color: rgb(234, 246, 255);
+      font-family: monospace;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .ok {
+      color: green;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .warning {
+      color: rgb(218, 141, 0);
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .row {
+      width: min(80vw, 160vh);
+      gap: min(1.5vw, 2.8vh);
+    }
+
+    .big {
+      font-size: min(2vw, 4vh) !important;
+    }
+
+    .xbig {
+      font-size: min(2.5vw, 5vh) !important;
+    }
+
+    .xxsmall {
+      font-size: min(0.9vw, 1.8vh);
+    }
+
+    .mt {
+      margin-top: min(1vw, 2vh) !important;
+    }
+
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+
+    .mt2 {
+      margin-top: min(3vw, 6vh) !important;
+    }
+
+    .mb {
+      margin-bottom: min(1vw, 2vh) !important;
+    }
+
+    .mb2 {
+      margin-bottom: min(3vw, 6vh) !important;
+    }
+
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+
+    .ml2 {
+      margin-left: min(3vw, 6vh) !important;
+    }
+
+    li {
+      margin-bottom: min(1vw, 1.8vh) !important;
+    }
+
+    .key__button {
+      box-sizing: border-box;
+      line-height: min(2vw, 4vh);
+      font-size: min(1.4vw, 2.8vh);
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      margin: 0 min(0.5vw, 1vh);
+      min-width: min(2.3vw, 4.6vh);
+      height: min(2.3vw, 4.6vh);
+      padding: 0 min(0.5vw, 1vh);
+      border-color: #f2f2f2;
+      border-style: solid;
+      text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+      border-width: 1px;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+      font-family: sans-serif;
+      display: inline-block;
+      transition: box-shadow 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+    }
+  </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+  <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+    data-background-transition="fade">
+    <div class="slides">
+
+      <!-- Each <section> is a slide -->
+      <section>
+        <!-- title class: custom style for titles -->
+        <h3 class="title">Inheritance</h3>
+
+        <p class="subtitle mt">Maurizio Marchese</p>
+        <p>Dipartimento di Ingegneria e Scienza dell'Informazione (DISI)</p>
+        <p>Università degli Studi di Trento</p>
+        <a style="font-size: min(1.3vw, 2.6vh);" href="mailto:maurizio.marchese@unitn.it">maurizio.marchese@unitn.it</a>
+
+        <p class="xsmall mt2">Adapted from teaching material shared by prof. Gian Pietro PIcco & prof. Marco Ronchetti
+        </p>
+      </section>
+
+      <section>
+        <h3>About these slides</h3>
+        <p class="mt2" style="color:rgb(134, 134, 134)">Shortcuts</p>
+        <div style="text-align: left" class="mb">
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>F</span> for
+            fullscreen</p>
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>CTRL</span>
+            + <span class='key__button'>ENTER</span> to execute code</p>
+        </div>
+
+        <p class="xsmall mt2" id="print-version-text">Printable version available <a href="?print-pdf">here</a></p>
+      </section>
+
+      <section>
+        <h3 class="title">Stack and Queue</h3>
+        <p>They are very similar... what's the difference about the code?</p>
+        <div class="row">
+          <div class="col">
+            <img src="assets/stack.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing a stack">
+          </div>
+          <div class="col">
+            <img src="assets/queue.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing a queue">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Remember how we implemented the Stack?</h3>
+        <div class="big-code">
+          <java-editor contenteditable="true" code='public class Stack {
+    int size;
+    int defaultGrowthSize;
+    int marker;
+    int content[];
+    
+    Stack(int initialSize) {
+        size = initialSize;
+        defaultGrowthSize = initialSize;
+        marker = 0;
+        content = new int[initialSize];
+    }
+    
+    void push(int k) {
+        if (marker == size) {
+            grow();
+        }
+        content[marker] = k;
+        marker++;
+    }
+    
+    private void grow() {
+        size += defaultGrowthSize;
+        int temp[] = new int[size];
+        System.arraycopy(content, 0, temp, 0, marker-1);
+        this.content = temp;
+    }
+    
+    int pop() {
+        assert(marker>0):"Pop method from an empty stack!";
+        return content[--marker];
+    }
+    
+    
+    public static void main(String[] args) {
+        Stack s = new Stack(5);
+        for (int k = 0; k < 10; k++) {
+            s.push(k);
+        }
+        for (int k = 0; k < 12; k++) {
+            System.out.println(s.pop());
+        }
+    }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Turn a Stack into a Queue</h3>
+        <div class="row">
+          <div class="col">
+            <p class="ok bold big">Queue</p>
+            <pre><code class="java">int pop() {
+  assert(marker&gt;0):"No data!";
+  int retval = content[0];
+  for(int k=1; k&lt;marker; k++)
+    content[k-1] = content[k];
+  marker--;
+  return retval;
+}</code></pre>
+          </div>
+          <div class="col">
+            <p class="error bold big">Stack</p>
+            <pre><code class="java">int pop() {
+  assert(marker&gt;0):"No data!";
+  return content[--marker];
+}</code></pre>
+          </div>
+        </div>
+        <p class="big bold mt">The rest of the code is identical! Can we avoid rewriting it?</p>
+      </section>
+
+      <section>
+        <h3 class="title">Turn a Stack into a Queue</h3>
+        <div class="row">
+          <div class="col">
+            <pre><code class="java" data-line-numbers="">package myDataStructures;
+  public class Queue extends Stack {
+  int pop() {
+    assert(marker&gt;0):"No data!";
+    int retval=content[0];
+    for (int k=1; k&lt;marker; k++ )
+      content[k-1]=content[k];
+    marker--;
+    return retval;
+  }
+}</code></pre>
+          </div>
+          <div class="col" style="text-align: left;">
+            <p><strong>Solution:</strong> use inheritance</p>
+            <p class="mt2">Make the class <span class="code">Queue</span> <span class="ok bold">extend</span> <span
+                class="code">Stack</span>, and only rewrite the <span class="code">pop()</span> function</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Full example</h3>
+        <p>As you can see by executing the code, actually <span class="error bold">there is still a
+            problem</span> regarding the constructor...</p>
+        <p>We will see later how to fix this last issue</p>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Queue extends Stack {
+    int pop() {
+        assert(marker>0):"No data!";
+        int retval=content[0];
+        for (int k=1; k<marker; k++ )
+        content[k-1]=content[k];
+        marker--;
+        return retval;
+  }
+  public static void main(String[] args) {
+      Queue s = new Queue(5);
+      for (int k = 0; k < 10; k++) {
+          s.push(k);
+      }
+      for (int k = 0; k < 10; k++) {
+          System.out.println(s.pop());
+          
+      }
+  }
+}
+
+class Stack {
+    int size;
+    int defaultGrowthSize;
+    int marker;
+    int content[];
+    
+    Stack(int initialSize) {
+        size = initialSize;
+        defaultGrowthSize = initialSize;
+        marker = 0;
+        content = new int[initialSize];
+    }
+    
+    void push(int k) {
+        if (marker == size) {
+            grow();
+        }
+        content[marker] = k;
+        marker++;
+    }
+    
+    private void grow() {
+        size += defaultGrowthSize;
+        int temp[] = new int[size];
+        System.arraycopy(content, 0, temp, 0, marker-1);
+        this.content = temp;
+    }
+    
+    int pop() {
+        assert(marker>0):"Pop method from an empty stack!";
+        return content[--marker];
+    }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Inheritance's hierarchy</h3>
+        <div class="row mt2">
+          <ul>
+            <li><span class="error bold underline">All</span> classes of an OO system are bound in a <span
+                class="error">hierarchy of inheritance</span></li>
+            <li>Defined by the <span class="code">extends</span> clause</li>
+            <li>The subclass <span class="error">inherits all attributes and methods of the superclass</span></li>
+            <ul>
+              <li>e.g. <span class="code">Queue</span> inherits all attributes and methods of a <span
+                  class="code">Stack</span></li>
+            </ul>
+            <li><span class="error bold">Java supports only simple inheritance</span></li>
+            <ul>
+              <li>In other words: a class cannot inherit from more than one superclass</li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">The class <strong>Object</strong></h3>
+        <div class="row mt2" style="width: min(50vw, 100vh)">
+          <ul>
+            <li>If the clause <span class="code">extends</span> is not specified in the definition of a class, the class
+              <span class="error">implicitly</span> extends the class <span class="code">Object</span>
+            </li>
+            <ul>
+              <li>... which is therefore the <span class="error">root</span> of the inheritance hierarchy</li>
+            </ul>
+            <li><span class="code">Object</span> provides some important methods, which we will use in the following:
+            </li>
+            <ul style="width: 80%;">
+              <li>
+                <pre><code class="java">public boolean equals(Object);</code></pre>
+              </li>
+              <li>
+                <pre><code class="java">protected void finalize();</code></pre>
+              </li>
+              <li>
+                <pre><code class="java">public String toString();</code></pre>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Inheritance</h3>
+        <div class="mt2" style="width: min(50vw, 100vh)">
+          <p class="xbig">Extensions can be <span class="error bold">structural</span> (addition of instance variables)
+          </p>
+          <p class="ok bold big">and/or</p>
+          <p class="xbig"><span class="error bold">behavioral</span> (adding new methods and/or modification of existing
+            methods)</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Overriding</h3>
+        <div class="mt">
+          <p>A subclass can add new attributes and methods, but also...</p>
+          <p>... <span class="error">redefine the methods of its superclass</span></p>
+          <pre><code class="java">class ElectricCar extends Car {
+  boolean chargedBattery;
+
+  void recharge() {
+    chargedBattery = true;
+  }
+
+  void start() {
+    if(chargedBattery) on = true;
+    else on = false;
+  }
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Java <span class="error">super</span> keyword</h3>
+        <div class="mt" style="width: min(60vw, 120vh); text-align: left;">
+          <p>Within a method that redefines one of the direct superclass, we can refer to the original method by the
+            notation:</p>
+          <pre><code class="java">super.&lt;method name&gt;(&lt;parameters list&gt;)</code></pre>
+          <p class="mt2"><strong>Example:</strong></p>
+          <pre><code class="java">class ElectricCar extends Car {
+  ...
+  void start() {
+    if(chargedBattery) super.start();
+    else System.out.println("Low Batteries");
+  }
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Subclassing & overriding</h3>
+        <div class="row" style="width: min(90vw, 180vh)">
+          <div class="col" style="text-align: left;">
+            <p>Let's create a new class <span class="code">Point</span></p>
+            <p class="fragment mt2" data-fragment-index="1"><span class="code">Point</span> overrides <span
+                class="code">toString()</span> from <span class="code">Object</span></p>
+            <p class="fragment mt2" data-fragment-index="2">What do you think the output is? <span class="ok bold">Go
+                ahead to check it yourself!</span></p>
+          </div>
+          <div class="col" style="flex: 2;">
+            <pre class="small"><code class="java" data-line-numbers="8-10|">public class Point {
+  public int x = 0;
+  public int y = 0;
+  Point(int x,int y){
+    this.x = x;
+    this.y = y;
+  }
+  public String toString(){ //Overriding (from Object)
+    return "(" + x + "," + y + ")";
+  }
+  public static void main(String a[]){
+    Point p = new Point(5,3);
+    System.out.println(p);
+  }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Subclassing & overriding</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Point {
+  public int x = 0;
+  public int y = 0;
+  Point(int x,int y){
+    this.x = x;
+    this.y = y;
+  }
+  public String toString(){ //Overriding (from Object)
+    return "(" + x + "," + y + ")";
+  }
+  public static void main(String a[]){
+    Point p = new Point(5,3);
+    System.out.println(p);
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Subclassing & overriding</h3>
+        <div class="row" style="width: min(90vw, 180vh)">
+          <div class="col">
+            <p>Now let's try to <span class="error">extend</span> <span class="code">Point</span> itself</p>
+            <p class="fragment mt2" data-fragment-index="2">Has the output changed? <span class="ok bold">Go
+                ahead to check it yourself!</span></p>
+          </div>
+          <div class="col" style="flex: 2;">
+            <pre class="small"><code class="java" data-line-numbers="4,7-9|">public class NamedPoint extends Point {
+  String name;
+  public NamedPoint(int x,int y,String name) {
+    super(x,y); // always first instruction!
+    this.name = name;
+  }
+  public String toString(){ //Overriding (from Point)
+    return name + " (" + x + "," + y + ")";
+  }
+  public static void main(String a[]){
+    NamedPoint p = new NamedPoint(5,3,"A");
+    System.out.println(p);
+  }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Subclassing & overriding</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class NamedPoint extends Point {
+  String name;
+  public NamedPoint(int x,int y,String name) {
+    super(x,y); // always first instruction!
+    this.name = name;
+  }
+  public String toString(){ //Overriding (from Point)
+    return name + " (" + x + "," + y + ")";
+  }
+  public static void main(String a[]){
+    NamedPoint p = new NamedPoint(5,3,"A");
+    System.out.println(p);
+  }
+}
+
+class Point {
+  public int x = 0;
+  public int y = 0;
+  Point(int x,int y){
+    this.x = x;
+    this.y = y;
+  }
+  public String toString(){ //Overriding (from Object)
+    return "(" + x + "," + y + ")";
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Subclassing & overriding</h3>
+        <div class="row" style="width: min(90vw, 180vh)">
+          <div class="col" style="text-align: left;">
+            <p>The <span class="code">toString()</span> function can also use the parent implementation!</p>
+            <p class="fragment mt2" data-fragment-index="0">Check the difference between <strong>this
+                solution...</strong> <span class="fragment bold ok" data-fragment-index="1"> and this one!</span></p>
+          </div>
+          <div class="col" style="flex: 2;">
+            <div class="r-stack">
+              <pre class="small fragment fade-out" data-fragment-index="1"><code class="java" data-line-numbers="8">public class NamedPoint extends Point {
+  String name;
+  public NamedPoint(int x,int y,String name) {
+    super(x,y); // always first instruction!
+    this.name = name;
+  }
+  public String toString(){ //Overriding (from Point)
+    return name + " (" + x + "," + y + ")";
+  }
+  public static void main(String a[]){
+    NamedPoint p = new NamedPoint(5,3,"A");
+    System.out.println(p);
+  }
+}</code></pre>
+              <pre class="small fragment fade-in" data-fragment-index="1"><code class="java" data-line-numbers="8">public class NamedPoint extends Point {
+  String name;
+  public NamedPoint(int x,int y,String name) {
+    super(x,y); // always first instruction!
+    this.name = name;
+  }
+  public String toString(){ //Overriding (from Point)
+    return name + super.toString();
+  }
+  public static void main(String a[]){
+    NamedPoint p = new NamedPoint(5,3,"A");
+    System.out.println(p);
+  }
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Subclassing & overriding</h3>
+        <p>As you can see by executing the code, the result is still the same!</p>
+        <div class="med-code mt">
+          <java-editor contenteditable="true" code='public class NamedPoint extends Point {
+  String name;
+  public NamedPoint(int x,int y,String name) {
+    super(x,y); // always first instruction!
+    this.name = name;
+  }
+  public String toString(){ //Overriding (from Point)
+    return name + super.toString();
+  }
+  public static void main(String a[]){
+    NamedPoint p = new NamedPoint(5,3,"A");
+    System.out.println(p);
+  }
+}
+
+class Point {
+  public int x = 0;
+  public int y = 0;
+  Point(int x,int y){
+    this.x = x;
+    this.y = y;
+  }
+  public String toString(){ //Overriding (from Object)
+    return "(" + x + "," + y + ")";
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Methods Overloading</h3>
+        <div class="row mt2" style="width: min(50vw, 100vh)">
+          <ul>
+            <li>In the inside of one same class there can be more methods with the <span class="error">same name</span>,
+              provided that they are <span class="error">distinguished for number and/or type of the parameters</span>
+            </li>
+            <li><strong>Attention:</strong> the type of the return value is not enough to distinguish two methods</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Overloading: an example</h3>
+        <div class="row mt2">
+          <div class="col">
+            <p class="bold big">Class with overloading:</p>
+            <pre><code class="java">class C {
+  int f() { ... }
+
+  int f(int x) { ... }
+  // correct
+
+  void f(int x) { ... }
+  // error
+}</code></pre>
+          </div>
+          <div class="col">
+            <p class="bold big">Main:</p>
+            <pre><code class="java">C ref = new C();
+
+ref.f();
+// distinguishable
+
+ref.f(5);
+// ???
+            </code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Overloading: an example</h3>
+        <p>As you can see by executing the code, the second overloading leads to an error.</p>
+        <p><span class="error bold">Try to remove it!</span> Does it work now?</p>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class C {
+  int f() { 
+    System.out.println("Base f()");
+    return 0;
+  }
+
+  // CORRECT:
+  int f(int x) {
+    System.out.println("Overloaded f() number 1");
+    return 1;
+  }
+
+  // ERROR:
+  void f(int x) {
+    System.out.println("Overloaded f() number 2");
+    return;
+  }
+
+  public static void main(String a[]){
+    C ref = new C();
+
+    ref.f();
+    // distinguishable
+
+    ref.f(5);
+    // ???
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Overloading vs. overriding</h3>
+        <div class="row mt2" style="width: min(50vw, 100vh)">
+          <ul>
+            <li><span class="error bold">Overloading</span>: functions with the same name and different signatures can
+              co-exist, e.g.<br>
+              <pre><code class="java">move(int dx, int dy) { ... }</code></pre>
+              <pre><code class="java">move(int dx, int dy, int dz) { ... }</code></pre>
+            </li>
+            <li><span class="error bold">Overriding</span>: redefinition of a function in a subclass (while keeping the
+              signature defined in the superclass <span class="error">unchanged</span>); e.g. <span
+                class="code">pop()</span> in <span class="code">Queue</span> and <span class="code">Stack</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise</h3>
+        <img src="assets/exercise-1.png" alt="Representation of the first exercise">
+        <ol style="width: min(50vw, 100vh)" class="mt">
+          <li>Write a method <span class="code">move(int dx, int dy)</span> in <span class="code">Point</span></li>
+          <li>Extend <span class="code">Point</span> to <span class="code">Point3D</span>, adding a z-coordinate and
+            providing a method <span class="code">move(int dx, int dy, int dz)</span></li>
+        </ol>
+      </section>
+
+      <section>
+        <h3 class="title">Inheritance and constructors</h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li>Constructors are <span class="error bold">not</span> inherited</li>
+            <li>Within a constructor, it is possible to call the constructor of the superclass by means of the
+              notation:<br>
+              <pre><code class="java">super(&lt;current parameter list&gt;)</code></pre>
+              as the <span class="error bold">first instruction</span> of the constructor
+            </li>
+            <li>If the programmer does not specify a constructor, the compiler automatically inserts an invocation to
+              the <span class="underline">default (parameterless) constructor of the superclass</span>.</li>
+            <ul>
+              <li>If this does not exist, a compilation error occurs</li>
+              <li><span class="code">Object</span> defines a default constructor...</li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Default constructors - ex1</h3>
+        <p>This example <span class="error bold">does not compile</span>: the superclass does not have a default
+          constructor</p>
+        <div class="med-code mt">
+          <java-editor contenteditable="true" code='public class A {
+  int x;
+  int y;
+  A(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
+  public static void main(String[] args) {}
+}
+class B extends A {}
+'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Default constructors - ex2</h3>
+        <p style="width: min(50vw, 100vh)">This example <span class="ok bold">compiles</span>: the superclass has a
+          default
+          constructor, which is automatically invoked during B creation</p>
+        <div class="med-code mt">
+          <java-editor contenteditable="true" code='public class A {
+  int x;
+  int y;
+  A(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
+  A() {
+    x = 0;
+    y = 0;
+  }
+  public static void main(String[] args) {}
+}
+class B extends A {}
+'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Default constructors - ex3</h3>
+        <p style="width: min(50vw, 100vh)">This example <span class="ok bold">compiles</span>: the subclass explicitly
+          calls the constructor with the parameters of the superclass</p>
+        <div class="med-code mt">
+          <java-editor contenteditable="true" code='public class A {
+  int x;
+  int y;
+  A(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+  public static void main(String[] args) {}
+}
+class B extends A {
+  B(int x, int y) {
+    super(x,y);
+  }
+}
+'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Turn a Stack into a Queue</h3>
+        <div style="width: min(70vw, 140vh)">
+          <p>Let's go back to our initial problem. With the previous implementation at page 7 we got the following
+            error:</p>
+          <pre><code class="text error small">Constructor Stack in class Stack cannot be applied to given types;
+  required: int
+  found: no arguments
+  reason: actual and formal argument lists differ in length</code></pre>
+          <p class="mt2"><strong>Now we know why it happens</strong>: the superclass <span class="code">Stack</span>
+            does not have a default
+            constructor, and <span class="code">Queue</span> is not explicitly calling the <span
+              class="code">Stack</span> constructor with its parameters.</p>
+          <p class="mt"><span class="error bold">How can we solve it?</span></p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Turn a Stack into a Queue</h3>
+        <div style="width: min(50vw, 100vh)">
+          <p>As described in the slide 27, we can write the <span class="code">Queue</span>
+            constructor as follows:</p>
+          <pre><code class="java">Queue(int size) {
+  super(size);
+}</code></pre>
+          <p>then the following code will work:</p>
+          <pre><code class="java">public static void main(String args[]) {
+  int dim = 5;
+  Queue s = new Queue(dim);
+  for(int k=0; k&lt;2*dim; k++)
+    s.push(k);
+  for(int k=0; k&lt;3*dim; k++)
+    System.out.println(s.pop());
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Turn a Stack into a Queue</h3>
+        <div class="big-code">
+          <java-editor contenteditable="true" code='public class Queue extends Stack {
+    Queue(int size) {
+      super(size);
+    }
+    int pop() {
+        assert(marker>0):"No data!";
+        int retval=content[0];
+        for (int k=1; k<marker; k++ )
+        content[k-1]=content[k];
+        marker--;
+        return retval;
+  }
+  public static void main(String args[]) {
+    int dim = 5;
+    Queue s = new Queue(dim);
+    for(int k=0; k&lt;2*dim; k++)
+      s.push(k);
+    for(int k=0; k&lt;3*dim; k++)
+      System.out.println(s.pop());
+  }
+}
+
+class Stack {
+    int size;
+    int defaultGrowthSize;
+    int marker;
+    int content[];
+    
+    Stack(int initialSize) {
+        size = initialSize;
+        defaultGrowthSize = initialSize;
+        marker = 0;
+        content = new int[initialSize];
+    }
+    
+    void push(int k) {
+        if (marker == size) {
+            grow();
+        }
+        content[marker] = k;
+        marker++;
+    }
+    
+    private void grow() {
+        size += defaultGrowthSize;
+        int temp[] = new int[size];
+        System.arraycopy(content, 0, temp, 0, marker-1);
+        this.content = temp;
+    }
+    
+    int pop() {
+        assert(marker>0):"Pop method from an empty stack!";
+        return content[--marker];
+    }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Abstract classes and methods</h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li>An <span class="error bold">abstract method</span> is a method for which no implementation is specified.
+            </li>
+            <li>An <span class="error bold">abstract class</span> is an abstract class if it contains at least one
+              abstract method.</li>
+            <li>Abstract classes and methods are defined as such by the <span class="code">abstract</span> keyword.</li>
+            <li>Abstract classes are very useful for introducing high-level abstractions.</li>
+            <li>You cannot create instances of an abstract class: you have to define a subclass for it, which implements
+              its abstract methods.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Abstract classes and methods: example</h3>
+        <div class="row" style="width: min(90vw, 180vh)">
+          <div class="col" style="text-align: left;">
+            <p>Here <span class="code">Shape</span> is an <span class="error">abstract class</span></p>
+            <p class="mt"><span class="code">show()</span> is an <span class="error">abstract method</span></p>
+            <p class="mt"><span class="code">Circle</span>, which extends the abstract class, implements its abstract
+              method at
+              <strong>line 7</strong>
+            </p>
+            <p class="fragment mt2">Notice at <strong>line 12</strong> that <span class="error bold">instantiating an
+                abstract
+                class</span> leads to an error</p>
+          </div>
+          <div class="col">
+            <pre class="small"><code class="java" data-line-numbers="">abstract class Shape {
+  static Screen screen;
+  Shape(Screen s) { screen = s; }
+  abstract void show();
+}
+class Circle extends Shape {
+  void show() {
+    // implementation code
+  }
+}
+...
+Shape s = new Shape(); // error
+Circle c = new Circle(); // correct</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Abstract classes and methods: example</h3>
+        <p>As you can see by executing the code, you can't instantiate an abstract class...</p>
+        <p><span class="error bold">Try to remove the error</span> and re-run the code!</p>
+        <div class="med-code mt">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    Shape s = new Shape(0); // error
+    Circle c = new Circle(0); // correct
+    c.show();
+  }
+}
+abstract class Shape {
+  static int screen;
+  Shape(int s) { screen = s; }
+  abstract void show();
+}
+class Circle extends Shape {
+  Circle(int screen) {
+    super(screen);
+  }
+  void show() {
+    System.out.println("show() function...");
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Stack, Queue and Abstract Classes</h3>
+        <div class="row">
+          <div class="col" style="flex: 2;">
+            <pre><code class="java">abstract public class DataVector {
+  int size;
+  int defaultGrowthSize;
+  int marker;
+  int content[];
+  abstract public int pop();
+  // implementation of other methods ...
+}
+public class Stack extends DataVector {
+  public int pop() { ... }
+}
+public class Queue extends DataVector {
+  public int pop() { ... }
+}</code></pre>
+          </div>
+          <div class="col">
+            <img src="assets/datavector.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing how stack and queue can both extend an abstract class">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Import the main reveal script -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+
+  <!-- Initialize reveal -->
+  <script>
+    Reveal.initialize({
+      plugins: [RevealHighlight],
+      // Display an help overlay when ? is pressed
+      help: false,
+      // Display controls in the bottom right corner
+      controls: true,
+      // Display a presentation progress bar
+      progress: true,
+      // Push each slide change to the browser history
+      history: true,
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+      // Enable the slide overview mode
+      overview: true,
+      // Enable the slide number counter
+      slideNumber: 'c/t',
+      // Set the width of the slides
+      width: "90%",
+      // Set the height of the slides
+      height: "90%",
+      // Vertical centering of slides
+      center: true,
+      // Loop the presentation
+      loop: false,
+      // Enables touch navigation on devices with touch input
+      touch: true,
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+      // Select a theme
+      theme: 'white',
+      // Select the type of slides transition
+      transition: 'fade',
+      // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+      disableLayout: true
+    });
+  </script>
+
+  <!-- If the user asks for the pdf version, set section height to auto -->
+  <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+  <script>
+    if (window.location.href.indexOf('?print-pdf') > -1) {
+      // Create a new css element setting the height of .section to none
+      var css = document.createElement("style");
+      // Modify section height to fix the layout
+      // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+      // Hide the slide context (the slide number)
+      css.innerHTML = "body {width: unset !important;} section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;} html.print-pdf .reveal .slides section {display: flex !important; left: 0 !important;}";
+      // Append the css to the head
+      document.head.appendChild(css);
+
+      const printVersionText = document.getElementById('print-version-text');
+      printVersionText.innerHTML = `<a href="?">Click here</a> to go back to the slides`;
+    }
+  </script>
+</body>
+
+</html>

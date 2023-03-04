@@ -20,8 +20,112 @@
     <script src="https://lucademenego99.github.io/icp-bundle/base/full.iife.js"></script>
 
     <style>
+        pre code {
+            padding: min(1vw, 2vh) !important;
+        }
+
+        .code {
+            padding: 0 min(1vw, 2vh);
+            background-color: rgb(215, 237, 255);
+            font-family: monospace;
+        }
+
+        .code-2 {
+            padding: 0 min(0.8vw, 1.5vh);
+            background-color: rgb(234, 246, 255);
+            font-family: monospace;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .ok {
+            color: green;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .warning {
+            color: rgb(218, 141, 0);
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .row {
+            width: min(80vw, 160vh);
+            gap: min(1.5vw, 2.8vh);
+        }
+
+        .big {
+            font-size: min(2vw, 4vh) !important;
+        }
+
+        .xbig {
+            font-size: min(2.5vw, 5vh) !important;
+        }
+
+        .xxsmall {
+            font-size: min(0.9vw, 1.8vh);
+        }
+
+        .mt {
+            margin-top: min(1vw, 2vh) !important;
+        }
+
+        .ml {
+            margin-left: min(1vw, 2vh) !important;
+        }
+
+        .mt2 {
+            margin-top: min(3vw, 6vh) !important;
+        }
+
+        .mb {
+            margin-bottom: min(1vw, 2vh) !important;
+        }
+
+        .mb2 {
+            margin-bottom: min(3vw, 6vh) !important;
+        }
+
+        .ml {
+            margin-left: min(1vw, 2vh) !important;
+        }
+
+        .ml2 {
+            margin-left: min(3vw, 6vh) !important;
+        }
+
         li {
-            padding-bottom: 2vmin;
+            margin-bottom: min(1vw, 1.8vh) !important;
+        }
+
+        .key__button {
+            box-sizing: border-box;
+            line-height: min(2vw, 4vh);
+            font-size: min(1.4vw, 2.8vh);
+            text-align: center;
+            color: #555;
+            cursor: pointer;
+            margin: 0 min(0.5vw, 1vh);
+            min-width: min(2.3vw, 4.6vh);
+            height: min(2.3vw, 4.6vh);
+            padding: 0 min(0.5vw, 1vh);
+            border-color: #f2f2f2;
+            border-style: solid;
+            text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+            border-width: 1px;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+            font-family: sans-serif;
+            display: inline-block;
+            transition: box-shadow 0.3s ease, transform 0.15s ease;
+            box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
         }
     </style>
 </head>
@@ -42,8 +146,34 @@
                 <p class="subtitle">Rethinking the user experience of slideshows in programming classes</p>
                 <div>
                     <p class="xsmall">An interactive demo of the <a href="https://github.com/lucademenego99/icp-bundle"
-                                target="_blank">Interactive Code
-                                Playgrounds</a> project</p>
+                            target="_blank">Interactive Code
+                            Playgrounds</a> project</p>
+                    <div class="row mt2" style="gap: min(0.6vw, 1.2vh); align-items: center">
+                        <p class="xsmall bold">Recommended browser:</p>
+                        <a href="https://www.google.com/intl/it_it/chrome/" target="_blank" style="display: flex;">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                style="width: min(1.5vw, 3vh); height: min(1.5vw, 3vh);" viewBox="0 0 190.5 190.5"
+                                xmlns:v="https://vecta.io/nano">
+                                <g transform="translate(90.669 -507.469)">
+                                    <path
+                                        d="M4.583 650.342c26.304 0 47.627-21.324 47.627-47.628s-21.323-47.628-47.627-47.628-47.627 21.324-47.627 47.628 21.323 47.628 47.627 47.628z"
+                                        fill="#fff" clip-path="none" mask="none" />
+                                    <path
+                                        d="M-36.664 626.539l-41.24-71.43c-8.362 14.479-12.765 30.904-12.765 47.625s4.401 33.146 12.762 47.625 20.387 26.503 34.868 34.86 30.908 12.755 47.628 12.75l41.24-71.43v-.011c-4.177 7.244-10.188 13.26-17.428 17.443a47.62 47.62 0 0 1-47.632.007 47.62 47.62 0 0 1-17.433-17.437z"
+                                        fill="#229342" clip-path="none" mask="none" />
+                                    <path
+                                        d="M45.826 626.536l-41.239 71.43c16.72.003 33.146-4.398 47.626-12.757s26.504-20.384 34.863-34.865a95.24 95.24 0 0 0 12.755-47.627c-.003-16.72-4.408-33.145-12.772-47.623H4.58l-.01.007a47.62 47.62 0 0 1 23.819 6.372c7.243 4.179 13.257 10.19 17.439 17.431a47.62 47.62 0 0 1-.001 47.633z"
+                                        fill="#fbc116" clip-path="none" mask="none" />
+                                    <path
+                                        d="M4.583 640.43c20.824 0 37.705-16.881 37.705-37.706s-16.881-37.705-37.705-37.705-37.705 16.881-37.705 37.705 16.881 37.706 37.705 37.706z"
+                                        fill="#1a73e8" clip-path="none" mask="none" />
+                                    <path
+                                        d="M4.583 555.097h82.479c-8.358-14.481-20.381-26.507-34.861-34.868a95.23 95.23 0 0 0-47.625-12.76c-16.72.001-33.145 4.404-47.623 12.767a95.23 95.23 0 0 0-34.856 34.872l41.24 71.43.011.006a47.62 47.62 0 0 1-.015-47.633c4.179-7.242 10.193-13.256 17.434-17.436s15.456-6.381 23.818-6.379z"
+                                        fill="#e33b2e" clip-path="none" mask="none" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -84,7 +214,8 @@
                             <p>Go down to analyse some of the issues this creates, or go right to continue.</p>
                         </div>
 
-                        <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
+                        <img src="assets/codeSample.png"
+                            style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                     </div>
                 </section>
                 <section>
@@ -106,7 +237,8 @@
                                     Look at those compression artifacts!</li>
                             </ul>
                         </div>
-                        <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
+                        <img src="assets/codeSample.png"
+                            style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                     </div>
                 </section>
             </section>
@@ -123,7 +255,8 @@
                         </div>
                     </div>
 
-                    <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
+                    <img src="assets/codeSample.png"
+                        style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                 </div>
             </section>
 
@@ -182,13 +315,13 @@
                     <!-- col class: second column of the row defined before -->
                     <!-- Note: the editor takes the size of the parent, so it must be specified -->
                     <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col fragment" data-fragment-index="2" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
+                    <div class="col fragment" data-fragment-index="2"
+                        style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
                         <!-- Normal editor, set the language and the code inside it -->
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <python-editor contenteditable="true" theme="dark"
-                            code="print('Hello, world!')" />
+                        <python-editor contenteditable="true" theme="dark" code="print('Hello, world!')" />
                     </div>
             </section>
 
@@ -222,8 +355,7 @@
                         </ul>
                     </div>
                     <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
-                        <python-editor contenteditable="true" type="vertical"
-                            code="print('Hello, world!')" />
+                        <python-editor contenteditable="true" type="vertical" code="print('Hello, world!')" />
                     </div>
             </section>
 

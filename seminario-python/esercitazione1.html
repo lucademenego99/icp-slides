@@ -148,6 +148,31 @@
         </div>
 
         <p class="xsmall mt2" id="print-version-text"><a href="?print-pdf">Clicca qui</a> per la versione stampabile</p>
+        <div class="row" style="gap: min(0.6vw, 1.2vh); align-items: center">
+          <p class="xsmall bold">Browser consigliato:</p>
+          <a href="https://www.google.com/intl/it_it/chrome/" target="_blank" style="display: flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width: min(1.5vw, 3vh); height: min(1.5vw, 3vh);"
+              viewBox="0 0 190.5 190.5" xmlns:v="https://vecta.io/nano">
+              <g transform="translate(90.669 -507.469)">
+                <path
+                  d="M4.583 650.342c26.304 0 47.627-21.324 47.627-47.628s-21.323-47.628-47.627-47.628-47.627 21.324-47.627 47.628 21.323 47.628 47.627 47.628z"
+                  fill="#fff" clip-path="none" mask="none" />
+                <path
+                  d="M-36.664 626.539l-41.24-71.43c-8.362 14.479-12.765 30.904-12.765 47.625s4.401 33.146 12.762 47.625 20.387 26.503 34.868 34.86 30.908 12.755 47.628 12.75l41.24-71.43v-.011c-4.177 7.244-10.188 13.26-17.428 17.443a47.62 47.62 0 0 1-47.632.007 47.62 47.62 0 0 1-17.433-17.437z"
+                  fill="#229342" clip-path="none" mask="none" />
+                <path
+                  d="M45.826 626.536l-41.239 71.43c16.72.003 33.146-4.398 47.626-12.757s26.504-20.384 34.863-34.865a95.24 95.24 0 0 0 12.755-47.627c-.003-16.72-4.408-33.145-12.772-47.623H4.58l-.01.007a47.62 47.62 0 0 1 23.819 6.372c7.243 4.179 13.257 10.19 17.439 17.431a47.62 47.62 0 0 1-.001 47.633z"
+                  fill="#fbc116" clip-path="none" mask="none" />
+                <path
+                  d="M4.583 640.43c20.824 0 37.705-16.881 37.705-37.706s-16.881-37.705-37.705-37.705-37.705 16.881-37.705 37.705 16.881 37.706 37.705 37.706z"
+                  fill="#1a73e8" clip-path="none" mask="none" />
+                <path
+                  d="M4.583 555.097h82.479c-8.358-14.481-20.381-26.507-34.861-34.868a95.23 95.23 0 0 0-47.625-12.76c-16.72.001-33.145 4.404-47.623 12.767a95.23 95.23 0 0 0-34.856 34.872l41.24 71.43.011.006a47.62 47.62 0 0 1-.015-47.633c4.179-7.242 10.193-13.256 17.434-17.436s15.456-6.381 23.818-6.379z"
+                  fill="#e33b2e" clip-path="none" mask="none" />
+              </g>
+            </svg>
+          </a>
+        </div>
       </section>
 
       <section>
@@ -543,12 +568,20 @@ print(b)'></python-editor>
         <h3 class="title">Challenge 1</h3>
         <div class="row" style="gap: min(1vw, 2vh); width: min(95vw, 190vh)">
           <div class="col">
-            <p>Skinner possiede un prato di area quadrata con lato <span class="code">d=100</span> metri che viene accudito ogni settimana dal giardiniere Willy. Un giorno Skinner decide di rendere più elaborato il giardino, e chiede a Willy di tagliare solo alcune zone. Ma Willy non è molto forte in geometria, quindi per aiutarlo Skinner inventa un sensore in grado di rilevare la posizione e dire se il tagliaerba va azionato.</p>
+            <p>Skinner possiede un prato di area quadrata con lato <span class="code">d=100</span> metri che viene
+              accudito ogni settimana dal giardiniere Willy. Un giorno Skinner decide di rendere più elaborato il
+              giardino, e chiede a Willy di tagliare solo alcune zone. Ma Willy non è molto forte in geometria, quindi
+              per aiutarlo Skinner inventa un sensore in grado di rilevare la posizione e dire se il tagliaerba va
+              azionato.</p>
             <div style="text-align: left;">
-              <p><strong>Compito:</strong> scrivi un'espressione che, date due coordinate <span class="code">x</span> e <span class="code">y</span>, produca <span class="code">True</span> quando il tagliaerba è nella zona verde chiaro, <span class="code">False</span> altrimenti.</p>
+              <p><strong>Compito:</strong> scrivi un'espressione che, date due coordinate <span class="code">x</span> e
+                <span class="code">y</span>, produca <span class="code">True</span> quando il tagliaerba è nella zona
+                verde chiaro, <span class="code">False</span> altrimenti.
+              </p>
               <p><strong>Nota:</strong> l'origine è in basso a sinistra</p>
             </div>
-            <img style="max-width: 100%; object-fit: contain; max-height: min(15vw, 28vh)" src="assets/tagliaerba-1.png" alt="Immagine del prato">
+            <img style="max-width: 100%; object-fit: contain; max-height: min(15vw, 28vh)" src="assets/tagliaerba-1.png"
+              alt="Immagine del prato">
           </div>
           <div class="col med-code">
             <python-editor contenteditable="true" code='d = 100
@@ -819,7 +852,8 @@ b = "mondo"
             </p>
             <p><strong>Nota:</strong> esiste un modo migliore di usare l'operatore <span class="code">[ ]</span></p>
             <p class="fragment mt2"><strong>Consiglio:</strong> Usa l'operatore <span class="code">slice</span> (es.
-              <span class="code">a[1:3]</span>)!</p>
+              <span class="code">a[1:3]</span>)!
+            </p>
           </div>
           <div class="col med-code">
             <python-editor contenteditable="true" code='#    0123456789
@@ -958,10 +992,13 @@ a = "mercantile"
         <h3 class="title">Challenge 2</h3>
         <div class="row" style="gap: min(1vw, 2vh); width: min(95vw, 190vh)">
           <div class="col">
-            <p>Sei riuscito a mettere le mani su un tesoro di dati personali di ignari utenti; ora devi solo capire che dati sono e come catalogarli. Tra i tanti hai trovato una serie di stringhe che sembrano dei numeri di telefono. Ogni numero dovrebbe essere così composto:</p>
+            <p>Sei riuscito a mettere le mani su un tesoro di dati personali di ignari utenti; ora devi solo capire che
+              dati sono e come catalogarli. Tra i tanti hai trovato una serie di stringhe che sembrano dei numeri di
+              telefono. Ogni numero dovrebbe essere così composto:</p>
             <pre><code>+[prefisso nazionale 39][10 numeri]</code></pre>
             <p>Per esempio, un numero valido è <span class="code">+393983472673</span></p>
-            <p><strong>Compito:</strong> scrivi del codice che stampi <span class="code">True</span> se la stringa è un numero telefonico valido, <span class="code">False</span> altrimenti</p>
+            <p><strong>Compito:</strong> scrivi del codice che stampi <span class="code">True</span> se la stringa è un
+              numero telefonico valido, <span class="code">False</span> altrimenti</p>
           </div>
           <div class="col med-code">
             <python-editor contenteditable="true" code="telefono = '+392574856985'    # True
@@ -982,13 +1019,14 @@ a = "mercantile"
         <h3 class="title">Challenge 3</h3>
         <div class="row" style="gap: min(1vw, 2vh); width: min(95vw, 190vh)">
           <div class="col">
-            <p>Ci è stato inviato un testo illegale, immorale e che fa pure ingrassare. Per tutelare la pubblica salute dovrai censurarlo. Ogni occorrenza delle due parole malefiche va sostituita con una censura.</p>
+            <p>Ci è stato inviato un testo illegale, immorale e che fa pure ingrassare. Per tutelare la pubblica salute
+              dovrai censurarlo. Ogni occorrenza delle due parole malefiche va sostituita con una censura.</p>
             <p>Oltre a questo, alla fine dovrai rendere conto di quante parole hai censurato. Di seguito un esempio:</p>
             <pre><code class="python xsmall">testo= "Grazie all'uso di Cera Splendent tutto brilla!"
 parola_malefica = "splendent"
 censura = "******"
 </code></pre>
-          <pre><code class="text xsmall">testo finale: "Grazie all'uso di Cera ****** tutto brilla!"
+            <pre><code class="text xsmall">testo finale: "Grazie all'uso di Cera ****** tutto brilla!"
 
 [Censurata 1 parola]</code></pre>
           </div>
@@ -1083,7 +1121,8 @@ print([[l2,l2,[l3,l1]],l3])"></python-editor>
         <div class="row" style="gap: min(1vw, 2vh)">
           <div class="col">
             <p><span class="code">list</span> può anche servire per convertire una qualsiasi sequenza in una
-              <em>nuova</em> stringa</p>
+              <em>nuova</em> stringa
+            </p>
           </div>
           <div class="col small-code">
             <python-editor contenteditable="true" code='caratteri = list("treno")
@@ -1103,7 +1142,8 @@ print(caratteri)'></python-editor>
             <p class="mt">Esempio: data la stringa <span class="code">GuLp</span>, il tuo codice dovrebbe stampare:</p>
             <p><span class="code">[['g', 'u', 'l', 'p'], ['G', 'U', 'L', 'P']]</span></p>
             <p class="fragment mt2"><strong>Consiglio:</strong> ricorda i metodi <span class="code">.lower()</span> e
-              <span class="code">.upper()</span> delle stringhe</p>
+              <span class="code">.upper()</span> delle stringhe
+            </p>
           </div>
           <div class="col med-code">
             <python-editor contenteditable="true" code="s = 'GuLp'
@@ -1184,7 +1224,8 @@ print(caratteri)'></python-editor>
             <p><span class="code">voti</span> è una lista contenente i tuoi voti. Complimenti!</p>
             <p>Riesci a calcolare la tua media?</p>
             <p>Dovresti ottenere <span class="code">28.833333333333332</span></p>
-            <p class="fragment mt2"><strong>Consiglio:</strong> utilizza i metodi <span class="code">sum</span> e <span class="code">len</span></p>
+            <p class="fragment mt2"><strong>Consiglio:</strong> utilizza i metodi <span class="code">sum</span> e <span
+                class="code">len</span></p>
           </div>
           <div class="col med-code">
             <python-editor contenteditable="true" code='voti = [28, 30, 29, 26, 30, 30]
@@ -1285,7 +1326,9 @@ print(caratteri)'></python-editor>
         <h3 class="title">Challenge 4</h3>
         <div class="row" style="width: min(95vw, 190vh); gap: min(1vw, 2vh)">
           <div class="col">
-            <p>Data una <span class="code">frase</span> che contiene esattamente 3 parole e ha sempre come parola centrale un numero <span class="code">n</span>, scrivi del codice the stampa i primi <span class="code">n</span> caratteri della terza parola</p>
+            <p>Data una <span class="code">frase</span> che contiene esattamente 3 parole e ha sempre come parola
+              centrale un numero <span class="code">n</span>, scrivi del codice the stampa i primi <span
+                class="code">n</span> caratteri della terza parola</p>
             <div style="text-align: left;">
               <p><strong>Esempio:</strong> data</p>
               <pre><code class="python">frase = "Prendi 4 lettere"</code></pre>
@@ -1309,7 +1352,8 @@ print(caratteri)'></python-editor>
         <h3 class="title">Challenge 5</h3>
         <div class="row" style="width: min(95vw, 190vh); gap: min(1vw, 2vh)">
           <div class="col">
-            <p>Data una <span class="code">parola</span> crea una lista che contenga la parola seguita da sé stessa rovesciata</p>
+            <p>Data una <span class="code">parola</span> crea una lista che contenga la parola seguita da sé stessa
+              rovesciata</p>
             <p><strong>Nota:</strong> l'ultima lettera NON deve essere duplicata</p>
             <div style="text-align: left;">
               <p><strong>Esempio:</strong> data</p>
@@ -1518,7 +1562,8 @@ y = (('a', 'b'), ('c'), ('d', 'e')) </code></pre>
             <p><span class="code">z</span> dovrà essere</p>
             <p><span class="code">('a', 'b', 'c', 'c', 'd', 'e', 'd', 'e')</span></p>
             <p><strong>Nota:</strong> <span class="code">x</span> e <span class="code">y</span> avranno sempre lunghezza
-              <span class="code">3</span></p>
+              <span class="code">3</span>
+            </p>
           </div>
           <div class="col med-code">
             <python-editor contenteditable="true" code="x = (2,4,3)
@@ -1622,7 +1667,8 @@ tupla[3] = 666"></python-editor>
         <div class="row">
           <div class="col">
             <p>I dizionari sono <em>contenitori mutabili</em> che ci permettono di associare voci dette
-              <strong>chiavi</strong> a dei <strong>valori</strong></p>
+              <strong>chiavi</strong> a dei <strong>valori</strong>
+            </p>
             <p>Le chiavi sono immutabili, non hanno ordine e non ci possono essere duplicati</p>
             <p>I valori possono essere duplicati</p>
           </div>
@@ -1722,7 +1768,8 @@ print(type(x))"></python-editor>
             <div style="text-align: left;">
               <p><strong>Modifica</strong> il dizionario officina:</p>
               <ol>
-                <li>poni il valore della chiave <span class="code">'bulloni'</span> uguale al valore della chiave <span class="code">'tenaglie'</span></li>
+                <li>poni il valore della chiave <span class="code">'bulloni'</span> uguale al valore della chiave <span
+                    class="code">'tenaglie'</span></li>
                 <li>incrementa il valore della chiave <span class="code">'ruote'</span> di 1</li>
                 <li>elimina le <span class="code">'tenaglie'</span>: sono finite!</li>
               </ol>

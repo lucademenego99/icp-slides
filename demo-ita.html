@@ -20,8 +20,92 @@
     <script src="https://lucademenego99.github.io/icp-bundle/base/full.iife.js"></script>
 
     <style>
-        li {
-            padding-bottom: 2vmin;
+        pre code {
+            padding: min(1vw, 2vh) !important;
+        }
+
+        .code {
+            padding: 0 min(0.5vw, 1vh);
+            background-color: rgb(215, 237, 255);
+            font-family: monospace;
+        }
+
+        .code-without-pre {
+            padding: min(2vw, 4vh);
+            color: white;
+            background-color: #272822;
+        }
+
+        code .code {
+            background-color: #d9ddd0;
+            color: black;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .ok {
+            color: green;
+        }
+
+        .warn {
+            color: orange;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .row {
+            width: min(80vw, 160vh);
+        }
+
+        .mt {
+            margin-top: min(1vw, 2vh) !important;
+        }
+
+        .ml {
+            margin-left: min(1vw, 2vh) !important;
+        }
+
+        .mt2 {
+            margin-top: min(3vw, 6vh) !important;
+        }
+
+        .ml2 {
+            margin-left: min(3vw, 6vh) !important;
+        }
+
+        .alpha-list {
+            list-style-type: lower-alpha !important;
+        }
+
+        .key__button {
+            box-sizing: border-box;
+            line-height: min(2vw, 4vh);
+            font-size: min(1.4vw, 2.8vh);
+            text-align: center;
+            color: #555;
+            cursor: pointer;
+            margin: 0 min(0.5vw, 1vh);
+            min-width: min(2.3vw, 4.6vh);
+            height: min(2.3vw, 4.6vh);
+            padding: 0 min(0.5vw, 1vh);
+            border-color: #f2f2f2;
+            border-style: solid;
+            text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+            border-width: 1px;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+            font-family: sans-serif;
+            display: inline-block;
+            transition: box-shadow 0.3s ease, transform 0.15s ease;
+            box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
         }
     </style>
 </head>
@@ -39,11 +123,38 @@
                 <h3 class="title">Interactive Code Playgrounds</h3>
 
                 <!-- subtitle class: custom style for subtitles -->
-                <p class="subtitle">Ripensare l'esperienza utente delle presentazioni nelle lezioni di programmazione</p>
+                <p class="subtitle">Ripensare l'esperienza utente delle presentazioni nelle lezioni di programmazione
+                </p>
                 <div>
-                    <p class="xsmall">Demo interattiva del progetto <a href="https://github.com/lucademenego99/icp-bundle"
-                                target="_blank">Interactive Code
-                                Playgrounds</a></p>
+                    <p class="xsmall">Demo interattiva del progetto <a
+                            href="https://github.com/lucademenego99/icp-bundle" target="_blank">Interactive Code
+                            Playgrounds</a></p>
+                    <div class="row mt2" style="gap: min(0.6vw, 1.2vh); align-items: center">
+                        <p class="xsmall bold">Browser consigliato:</p>
+                        <a href="https://www.google.com/intl/it_it/chrome/" target="_blank" style="display: flex;">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                style="width: min(1.5vw, 3vh); height: min(1.5vw, 3vh);" viewBox="0 0 190.5 190.5"
+                                xmlns:v="https://vecta.io/nano">
+                                <g transform="translate(90.669 -507.469)">
+                                    <path
+                                        d="M4.583 650.342c26.304 0 47.627-21.324 47.627-47.628s-21.323-47.628-47.627-47.628-47.627 21.324-47.627 47.628 21.323 47.628 47.627 47.628z"
+                                        fill="#fff" clip-path="none" mask="none" />
+                                    <path
+                                        d="M-36.664 626.539l-41.24-71.43c-8.362 14.479-12.765 30.904-12.765 47.625s4.401 33.146 12.762 47.625 20.387 26.503 34.868 34.86 30.908 12.755 47.628 12.75l41.24-71.43v-.011c-4.177 7.244-10.188 13.26-17.428 17.443a47.62 47.62 0 0 1-47.632.007 47.62 47.62 0 0 1-17.433-17.437z"
+                                        fill="#229342" clip-path="none" mask="none" />
+                                    <path
+                                        d="M45.826 626.536l-41.239 71.43c16.72.003 33.146-4.398 47.626-12.757s26.504-20.384 34.863-34.865a95.24 95.24 0 0 0 12.755-47.627c-.003-16.72-4.408-33.145-12.772-47.623H4.58l-.01.007a47.62 47.62 0 0 1 23.819 6.372c7.243 4.179 13.257 10.19 17.439 17.431a47.62 47.62 0 0 1-.001 47.633z"
+                                        fill="#fbc116" clip-path="none" mask="none" />
+                                    <path
+                                        d="M4.583 640.43c20.824 0 37.705-16.881 37.705-37.706s-16.881-37.705-37.705-37.705-37.705 16.881-37.705 37.705 16.881 37.706 37.705 37.706z"
+                                        fill="#1a73e8" clip-path="none" mask="none" />
+                                    <path
+                                        d="M4.583 555.097h82.479c-8.358-14.481-20.381-26.507-34.861-34.868a95.23 95.23 0 0 0-47.625-12.76c-16.72.001-33.145 4.404-47.623 12.767a95.23 95.23 0 0 0-34.856 34.872l41.24 71.43.011.006a47.62 47.62 0 0 1-.015-47.633c4.179-7.242 10.193-13.256 17.434-17.436s15.456-6.381 23.818-6.379z"
+                                        fill="#e33b2e" clip-path="none" mask="none" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -78,10 +189,12 @@
                     <div class="row">
                         <div class="col">
                             <p>Una tipica slide in una lezione di programmazione somiglia a questa.</p>
-                            <p>Vai giù per analizzare alcuni problemi che queste slide creano, o vai a destra per continuare.</p>
+                            <p>Vai giù per analizzare alcuni problemi che queste slide creano, o vai a destra per
+                                continuare.</p>
                         </div>
 
-                        <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
+                        <img src="assets/codeSample.png"
+                            style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                     </div>
                 </section>
                 <section>
@@ -90,17 +203,23 @@
                             <ul style="list-style-type: none;">
                                 <li>Il codice sulla destra è un'immagine.</li>
                                 <li class="fragment">Non puoi selezionare il testo da essa.</li>
-                                <li class="fragment">Anche se lo potessi fare, se è in una slide in PDF, molto spesso non viene selezionato correttamente.</li>
-                                <li class="fragment">Se provi a copiare ed incollare il testo, il risultato potrebbe essere, francamente, spazzatura.</li>
-                                <li class="fragment">Come insegnante, se devi cambiare qualcosa devi ricreare l'immagine.</li>
+                                <li class="fragment">Anche se lo potessi fare, se è in una slide in PDF, molto spesso
+                                    non viene selezionato correttamente.</li>
+                                <li class="fragment">Se provi a copiare ed incollare il testo, il risultato potrebbe
+                                    essere, francamente, spazzatura.</li>
+                                <li class="fragment">Come insegnante, se devi cambiare qualcosa devi ricreare
+                                    l'immagine.</li>
                                 <li class="fragment">A peggiorare le cose, c'è anche un problema di <span
                                         class="emph">accessibilità</span>: <br />
-                                    un'immagine è difficilmente utilizzabile per utenti che utilizzano screen reader.</li>
-                                <li class="fragment">Per finire, a volte le immagini non vengono renderizzate correttamente. 
+                                    un'immagine è difficilmente utilizzabile per utenti che utilizzano screen reader.
+                                </li>
+                                <li class="fragment">Per finire, a volte le immagini non vengono renderizzate
+                                    correttamente.
                                     Guarda questi artefatti di compressione!</li>
                             </ul>
                         </div>
-                        <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
+                        <img src="assets/codeSample.png"
+                            style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                     </div>
                 </section>
             </section>
@@ -110,14 +229,16 @@
                     <div class="col">
                         <ul style="list-style-type: none;">
                             <li>Ma il più grande problema è questo:</li>
-                            <li class="fragment">Stai studiando, e sei curioso di sapere cosa fa questo frammento di codice?</li>
+                            <li class="fragment">Stai studiando, e sei curioso di sapere cosa fa questo frammento di
+                                codice?</li>
                         </ul>
                         <div class="fragment">
                             <h4>Tough <span class="fragment">luck.</span></h4>
                         </div>
                     </div>
 
-                    <img src="assets/codeSample.png" style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
+                    <img src="assets/codeSample.png"
+                        style="max-width: 50%; object-fit: contain; max-height: 80vh; margin: min(1vw, 2vh);" />
                 </div>
             </section>
 
@@ -129,9 +250,9 @@
                 </section>
                 <section>
                     <p>
-                    Bene, c'è del codice interessante in quella slide!<br />
-                    Diciamo che vuoi eseguire del codice Python...
-                </p>
+                        Bene, c'è del codice interessante in quella slide!<br />
+                        Diciamo che vuoi eseguire del codice Python...
+                    </p>
                 </section>
                 <section>
                     <p>Dovrai solo...</p>
@@ -152,37 +273,43 @@
 
             <section>
                 <!-- row class: custom class to set up a two-columns layout - you need to use row + two columns -->
-                <div class="row" style="width: 100%">
+                <div class="row" style="width: 95%">
                     <!-- col class: first column of the row defined before -->
                     <div class="col" style="text-align: left;">
-                        <div class="fragment semi-fade-out" style="font-size: 0.7em;" data-fragment-index="1">E se il codice potesse somigliare somigliare...</div>
+                        <div class="fragment semi-fade-out" style="font-size: 0.7em;" data-fragment-index="1">E se il
+                            codice potesse somigliare somigliare...</div>
                         <div class="fragment" style="font-size: 1em" data-fragment-index="2">
                             <h4>a questo?</h4>
                         </div>
                         <p class="fragment" data-fragment-index="4">Forza, prova ad eseguire il codice.
                         </p>
-                        <p class="fragment" data-fragment-index="5">Hai visto cosa è successo nella sezione "Output"?</p>
-                        <p class="fragment" data-fragment-index="6">Il codice è stato eseguito <span class="emph">direttamente nella slide</span>!</p>
-                        <p class="fragment" data-fragment-index="7">Inoltre, puoi modificare il codice direttamente dall'editor!</p>
-                        <p class="fragment" data-fragment-index="8">Perché non provi a modificarlo, eseguire nuovamente il codice e vedere cosa accade?</p>
+                        <p class="fragment" data-fragment-index="5">Hai visto cosa è successo nella sezione "Output"?
+                        </p>
+                        <p class="fragment" data-fragment-index="6">Il codice è stato eseguito <span
+                                class="emph">direttamente nella slide</span>!</p>
+                        <p class="fragment" data-fragment-index="7">Inoltre, puoi modificare il codice direttamente
+                            dall'editor!</p>
+                        <p class="fragment" data-fragment-index="8">Perché non provi a modificarlo, eseguire nuovamente
+                            il codice e vedere cosa accade?</p>
                         <p class="fragment" data-fragment-index="9">Continua quando hai finito di giocarci...</p>
                     </div>
                     <!-- col class: second column of the row defined before -->
                     <!-- Note: the editor takes the size of the parent, so it must be specified -->
                     <!--    in this case the parent is 100% width, 60vh height -->
-                    <div class="col fragment" data-fragment-index="2" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
+                    <div class="col fragment" data-fragment-index="2"
+                        style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
                         <!-- Normal editor, set the language and the code inside it -->
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <python-editor contenteditable="true" theme="dark"
-                            code="print('Hello, world!')" />
+                        <python-editor contenteditable="true" theme="dark" code="print('Hello, world!')" />
                     </div>
             </section>
 
             <section>
                 <p class="big">
-                    Hai appena visto quello che chiamiamo un <span class="emph">Interactive Code Playground</span> (o ICP).<br />
+                    Hai appena visto quello che chiamiamo un <span class="emph">Interactive Code Playground</span> (o
+                    ICP).<br />
                     E c'è altro che possono fare...
                 </p>
             </section>
@@ -190,7 +317,8 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p>Puoi rendere modificabili solo alcune parti di codice. Potrebbe risultare utile per eventuali esercizi guidati!</p>
+                        <p>Puoi rendere modificabili solo alcune parti di codice. Potrebbe risultare utile per eventuali
+                            esercizi guidati!</p>
                     </div>
                     <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
                         <python-editor contenteditable="true" type="vertical" theme="dark"
@@ -201,7 +329,8 @@
             <section>
                 <div class="row" style="width: 100%">
                     <div class="col">
-                        <p style="margin-bottom: min(1vw, 2vh)">Cliccando sulle impostazioni, puoi trovare dei pulsanti per:</p>
+                        <p style="margin-bottom: min(1vw, 2vh)">Cliccando sulle impostazioni, puoi trovare dei pulsanti
+                            per:</p>
                         <ul>
                             <li>copiare il codice</li>
                             <li>annullare tutte le tue modifiche</li>
@@ -209,8 +338,7 @@
                         </ul>
                     </div>
                     <div class="col" style="height: min(30vw, 60vh); margin: min(1vw, 2vh)">
-                        <python-editor contenteditable="true" type="vertical"
-                            code="print('Hello, world!')" />
+                        <python-editor contenteditable="true" type="vertical" code="print('Hello, world!')" />
                     </div>
             </section>
 
@@ -237,7 +365,8 @@
             </section>
 
             <section>
-                <p>Speriamo che questi ICP possano rendere l'apprendimento della programmazione più *creativa*, e basata su *fast tinkering*.</p>
+                <p>Speriamo che questi ICP possano rendere l'apprendimento della programmazione più *creativa*, e basata
+                    su *fast tinkering*.</p>
                 <p class="fragment">Grazie per aver seguito questa demo.</p>
             </section>
         </div>

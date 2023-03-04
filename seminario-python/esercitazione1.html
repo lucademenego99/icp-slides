@@ -611,6 +611,48 @@ x,y = 0,  0      # True
       </section>
 
       <section>
+        <h3 class="title">Challenge</h3>
+        <div class="row" style="gap: min(1vw, 2vh); width: min(95vw, 190vh)">
+          <div class="col">
+            <p>Vengon tirate delle bocce, con l'obiettivo di avvicinarsi il più possibile al boccino rosso.</p>
+            <ol>
+              <li>Scrivi del codice che mostra <span class="code">True</span> se una data boccia è dentro la fascia
+                scura, <span class="code">False</span> altrimenti</li>
+              <li>Scrivi del codice che mostra <span class="code">True</span> se una data boccia è dentro il cerchio,
+                <span class="code">False</span> altrimenti
+              </li>
+              <ul>
+                <li><strong>Suggerimento:</strong> dovrai calcolare la <a target="_blank"
+                    href="https://www.youmath.it/formulari/formulari-di-geometria-analitica/426-distanza-tra-due-punti-nel-piano.html#:~:text=La%20distanza%20tra%20due%20punti,delle%20ordinate%20dei%20due%20punti.">distanza
+                    dal boccino</a>, con <span class="code">math.sqrt(numero)</span></li>
+              </ul>
+            </ol>
+            <img style="max-width: 100%; object-fit: contain; max-height: min(19vw, 38vh)" src="assets/bocce.png"
+              alt="Immagine del campo da gioco, contenente le misure">
+          </div>
+          <div class="col med-code">
+            <python-editor contenteditable="true" code='import math
+
+h = 30
+w = 20
+r = 5
+
+
+x=17; y=25   # a   fascia: False   cerchio: False
+#x=19; y=36  # b   fascia: True    cerchio: False
+#x=8;  y=36  # c   fascia: True    cerchio: True
+#x=16; y=32  # d   fascia: True    cerchio: False
+#x=7;  y=41  # e   fascia: False   cerchio: False
+#x=12;y=33   # f   fascia: True    cerchio: True
+
+# La tua soluzione
+
+'></python-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h3 class="title">Sezione 2</h3>
         <p class="subtitle">- Stringhe -</p>
       </section>
@@ -1824,7 +1866,20 @@ print(type(x))"></python-editor>
       <section>
         <h3 class="title">Esercizio 2</h3>
         <div class="row">
-          <p>Stampa una lista con tutte le cose che possiedi nella tua <span class="code">officina</span></p>
+          <div class="col">
+            <p>Stampa una lista con tutte le cose che possiedi nella tua <span class="code">officina</span></p>
+            <p><strong>Esempio:</strong> data</p>
+            <pre><code class="python">officina = {
+  'ruote':6,
+  'bulloni':1,
+  'tenaglie':3,
+  'cacciaviti':2,
+  'martelli':1
+}</code></pre>
+            <p>Dovrai stampare:</p>
+            <pre><code class="python">['ruote', 'bulloni', 'tenaglie',
+'cacciaviti', 'martelli']</code></pre>
+          </div>
           <div class="small-code">
             <python-editor contenteditable="true" code="officina = {
   'ruote':6,

@@ -916,6 +916,650 @@ class B extends A {
 }'></java-editor>
         </div>
       </section>
+
+      <section>
+        <h3 class="title">Static and dynamic binding</h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li class="fragment">C++ offers the programmer complex mechanisms for deciding whether to use <span class="error">dynamic binding</span> (type decided at <em>runtime</em>) or <span class="error">static binding</span> (type decided at <em>compile time</em>).</li>
+            <li class="fragment">In Java, decisions <span class="error bold">are always made at runtime</span></li>
+            <ul>
+              <li class="fragment">... except when it is possible to decide <em>automatically</em> at compile time, namely for:</li>
+              <ul>
+                <li class="fragment">constructors</li>
+                <li class="fragment"><span class="code">private</span>, <span class="code">static</span> and <span class="code">final</span> methods</li>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Classes and methods <span class="code">final</span></h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li class="fragment">It is possible to prevent the creation of subclasses of a certain class by defining the class <span class="code">final</span></li>
+            <li class="fragment">Example:<br><pre><code class="java">final class C { ... }
+class C1 extends C {} // ERROR</code></pre></li>
+            <li class="fragment">Similarly, it is possible to prevent overriding of a method by defining it as <span class="code">final</span></li>
+            <li class="fragment">Example:<br><pre><code class="java">class C { final void f() { ... } }
+class C1 extends C {
+  void f() { ... } // ERROR
+}</code></pre></li>
+          </ul>
+        </div>
+        <p class="mt bold fragment" style="background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)">Useful when you want to prevent changing the behaviour of all or part of the class.</p>
+      </section>
+
+      <section>
+        <h3 class="title">Warning...</h3>
+        <p>As you can see, this leads to a <span class="error bold">compile-time error</span></p>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Test {   
+  public static void main(String a[]) {
+    Test c = new Derived();
+    c.f1();
+  }   
+  final void f1() {
+    System.out.println("f1 in superclass");
+  }
+}
+class Derived extends Test {  
+  public void f1() {
+    System.out.println("f1 in subclass");
+  }
+} '></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Warning...</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>What if we replace <span class="code">final</span> with <span class="code">private</span>?</li>
+              <li class="mt2 fragment"><span class="code">private</span> methods cannot be overridden (like <span class="code">finals</span>), but are completely "invisible" to subclasses</li>
+              <li class="fragment"><span class="code">f1()</span> in <span class="code">Derived</span> is a new method (no overriding)</li>
+            </ul>
+          </div>
+          <div class="col med-code">
+            <java-editor contenteditable="true" code='public class Test {   
+  public static void main(String a[]) {
+    Test c = new Derived();
+    c.f1();
+  }   
+  private void f1() {
+    System.out.println("f1 in superclass");
+  }
+}
+class Derived extends Test {  
+  public void f1() {
+    System.out.println("f1 in subclass");
+  }
+} '></java-editor>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">A Polymorphic Stack...</h3>
+        <div class="row" style="width: min(60vw, 120vh)">
+          <pre><code class="java">package myDataStructures;
+public abstract class DataVector {
+  int size;
+  int defaultGrowthSize;
+  int marker;
+  Object content[];
+  final int initialSize = 3;
+  public DataVector() {
+      size = initialSize;
+      defaultGrowthSize = initialSize;
+      marker = 0;
+      Object content = new Object[size];
+  }
+  // ... Next slide
+</code></pre>
+        </div>
+      </section>
+      <section>
+        <h3 class="title">A Polymorphic Stack...</h3>
+        <div class="row" style="width: min(60vw, 120vh)">
+          <p>With <span class="code">final</span> we are enabling static binding</p>
+          <pre><code class="java">final public void push(Object k) {
+  if(marker == size) 
+    grow(defaultGrowthSize);
+  content[marker] = k;
+  marker++;
+}
+abstract public Object pop();</code></pre>
+        </div>
+        <div class="row" style="width: min(60vw, 120vh)">
+          <p class="mt"><span class="code">pop()</span> is then implemented in the <span class="code">Stack</span> class:</p>
+          <pre><code class="java">public Object pop() {
+  assert(marker>0):"empty Stack";
+  return content[--marker];
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">A polymorphic stack...</h3>
+        <p class="mt">Finally the <span class="code">private</span> <span class="code">grow</span> method is defined</p>
+        <div class="row" style="width: min(60vw, 120vh)">
+          <pre><code class="java">private void grow() {
+  size += defaultGrowthSize;
+  Object temp[] = new Object[size];
+  for (int k=0; k&lt;marker; k++)
+      temp[k] = content[k];
+    content = temp;
+}</code></pre>
+      </section>
+
+      <section>
+        <h3 class="title">A polymorphic stack...</h3>
+        <p class="mt">Now what would happen if we executed this <span class="code">main</span>?</p>
+        <div class="row" style="width: min(60vw, 120vh)">
+          <pre><code class="java">public static void main(String args[]) {
+  int dim = 10;
+  Stack s = new Stack(dim);
+  for(int k=0; k&lt;dim; k++){
+    s.push(k);
+  }
+  for (int k=0; k&lt;3*dim; k++) {
+    System.out.println(s.pop());
+  }
+}</code></pre>
+        </div>
+        <p class="mt bold fragment" style="background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)"><span style="color: yellow; font-family: monospace">k</span> is an <span style="color: yellow; font-family: monospace">int</span>! I can't replace it with an <span style="color: yellow; font-family: monospace">Object</span>...</p>
+      </section>
+
+      <section>
+        <h3 class="title">Wrapper classes</h3>
+        <div class="row">
+          <div class="col" style="flex: 10">
+            <p class="fragment bold big">Primitive types:</p>
+            <ul>
+              <li><span class="code">byte</span></li>
+              <li><span class="code">short</span></li>
+              <li><span class="code">int</span></li>
+              <li><span class="code">long</span></li>
+              <li><span class="code">float</span></li>
+              <li><span class="code">double</span></li>
+              <li><span class="code">char</span></li>
+              <li><span class="code">boolean</span></li>
+            </ul>
+          </div>
+          <div class="col" style="flex: 1;">
+            <svg width="100" height="100" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </div>
+          <div class="col" style="flex: 10">
+            <p class="fragment bold big">Wrapper classes:</p>
+            <ul>
+              <li><span class="code">Byte</span></li>
+              <li><span class="code">Short</span></li>
+              <li><span class="code">Integer</span></li>
+              <li><span class="code">Long</span></li>
+              <li><span class="code">Float</span></li>
+              <li><span class="code">Double</span></li>
+              <li><span class="code">Char</span></li>
+              <li><span class="code">Boolean</span></li>
+            </ul>
+          </div>
+        </div>
+        <p>They are used to generate <span class="code">objects</span> containing <span class="underline">within them</span> a primitive data type:</p>
+        <img src="assets/wrapper-classes.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing two examples of wrapper class">
+      </section>
+
+      <section>
+        <h3 class="title">A polymorphic stack...</h3>
+        <div class="row" style="width: min(90vw, 180vh)">
+          <div class="col">
+            <ul>
+              <li>Would this work then?</li>
+              <li class="fragment error bold" data-fragment-index="0">I cannot put an <span class="code">Object</span> in an <span class="code">integer</span>...</li>
+              <li class="fragment" data-fragment-index="1">We need a casting!</li>
+              <li class="fragment" data-fragment-index="2">Or we can directly use the method <span class="code">toString()</span> of <span class="code">Integer</span>, which prints its <span class="code">int</span> internal value</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="r-stack">
+              <pre class="fragment fade-out" data-fragment-index="0"><code class="java" data-line-numbers="5,9-10">public static void main(String args[]) {
+  int dim = 10;
+  Stack s = new Stack(dim);
+  for(int k=0; k&lt;dim; k++){
+    Integer o = new Integer(k);
+    s.push(o);
+  }
+  for (int k=0; k&lt;3*dim; k++) {
+    Integer i = s.pop(); 
+    int w = i.intValue();
+    System.out.println(w);
+  }
+}</code></pre>
+              <pre class="fragment fade-in-then-out" data-fragment-index="0"><code class="java" data-line-numbers="9">public static void main(String args[]) {
+  int dim = 10;
+  Stack s = new Stack(dim);
+  for(int k=0; k&lt;dim; k++){
+    Integer o = new Integer(k);
+    s.push(o);
+  }
+  for (int k=0; k&lt;3*dim; k++) {
+    Integer i = s.pop(); 
+    int w = i.intValue();
+    System.out.println(w);
+  }
+}</code></pre>
+              <pre class="fragment fade-in-then-out" data-fragment-index="1"><code class="java" data-line-numbers="9">public static void main(String args[]) {
+  int dim = 10;
+  Stack s = new Stack(dim);
+  for(int k=0; k&lt;dim; k++){
+    Integer o = new Integer(k);
+    s.push(o);
+  }
+  for (int k=0; k&lt;3*dim; k++) {
+    Integer i = (Integer) s.pop(); 
+    int w = i.intValue();
+    System.out.println(w);
+  }
+}</code></pre>
+              <pre class="fragment fade-in" data-fragment-index="2"><code class="java" data-line-numbers="9">public static void main(String args[]) {
+  int dim = 10;
+  Stack s = new Stack(dim);
+  for(int k=0; k&lt;dim; k++){
+    Integer o = new Integer(k);
+    s.push(o);
+  }
+  for (int k=0; k&lt;3*dim; k++) {
+    System.out.println(s.pop());
+  }
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">A polymorphic stack...</h3>
+        <div class="row" style="width: min(90vw, 180vh)">
+          <div class="col">
+            <ul>
+              <li>This is actually allowed, starting with Java 5...</li>
+            </ul>
+          </div>
+          <div class="col">
+            <pre><code class="java" data-line-numbers="5">public static void main(String args[]) {
+  int dim = 10;
+  Stack s = new Stack(dim);
+  for(int k=0; k&lt;dim; k++){
+    s.push(k);
+  }
+  for (int k=0; k&lt;3*dim; k++) {
+    System.out.println(s.pop());
+  }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">A polymorphic stack...</h3>
+        <p>Let's try it out!</p>
+        <div class="med-code mt">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String args[]) {
+    int dim = 10;
+    Stack s = new Stack(dim);
+    for(int k=0; k&lt;dim; k++){
+      s.push(k);
+    }
+    for (int k=0; k&lt;3*dim; k++) {
+      System.out.println(s.pop());
+    }
+  }
+}
+abstract class DataVector {
+  int size;
+  int defaultGrowthSize;
+  int marker;
+  Object content[];
+  final int initialSize = 3;
+
+  public DataVector(int growthSize) {
+      size = initialSize;
+      defaultGrowthSize = growthSize;
+      marker = 0;
+      content = new Object[size];
+  }
+
+  final public void push(Object k) {
+    if(marker == size) 
+      grow();
+    content[marker] = k;
+    marker++;
+  }
+
+  abstract public Object pop();
+
+  private void grow(){
+    size += defaultGrowthSize;
+    Object temp[] = new Object[size];
+    for (int k=0; k&lt;marker; k++)
+        temp[k] = content[k];
+      content = temp;
+  }
+}
+
+class Stack extends DataVector {
+  public Stack(int dim) {
+    super(dim);
+  }
+
+  public Object pop() {
+    assert(marker&gt;0):"empty Stack";
+    return content[--marker];
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Automatic conversions</h3>
+        <div class="row">
+          <div class="col">
+            <p>Insertion of an int (<span class="code">k</span>) into a collection of Object (<span class="code">s</span>):</p>
+          </div>
+          <div class="col">
+            <pre><code>s.push(k);</code></pre>
+          </div>
+        </div>
+        <div class="row mt" style="width: min(50vw, 100vh)">
+          <ul>
+            <li class="fragment"  data-fragment-index="1">In general, it requires a type conversion (<em>casting</em>) from <span class="code">int</span> to <span class="code">Integer</span> (wrapper)</li>
+            <li class="fragment"  data-fragment-index="2">In fact, from Java 5 <span class="error">automatic conversions</span> are supplied</li>
+            <ul>
+              <li class="fragment"  data-fragment-index="3">from base type to corresponding wrapper class (<span class="error">auto-boxing</span>)</li>
+              <li class="fragment"  data-fragment-index="4">... and vice versa (<span class="error">auto-unboxing</span>).</li>
+            </ul>
+            <li class="fragment"  data-fragment-index="5">The conversions are made by the compiler</li>
+            <ul>
+              <li class="fragment"  data-fragment-index="6">very useful, they simplify the code</li>
+            </ul>
+          </ul>
+        </div>
+        <div style="width: min(40vw, 80vh)">
+            <p class="mt bold fragment" data-fragment-index="7" style="background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)"><span style="color: yellow; font-family: monospace">Warning</span>: not all conversions are included!</p>
+            <pre class="fragment" data-fragment-index="7"><code class="java">int x = stack.pop();</code></pre>
+            <p class="mt bold fragment" data-fragment-index="8" style="background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)">What is missing here?</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Forced conversions between reference types</h3>
+        <p class="subtitle xbig" style="margin: 0;">Casting</p>
+        <div class="row mt" style="width: min(60vw, 120vh)">
+          <ul>
+            <li>You can force a conversion from a reference type <span class="code">T</span> to a <span class="error">subtype</span> <span class="code">T1</span> as long as...</li>
+            <ul>
+              <li>... the <span class="error">dynamic</span> type of the converted object is a subtype of <span class="code">T1</span><br><pre class="fragment" data-fragment-index="0" style="width: min(60vw, 120vh)"><code class="java">Object o = new Person();
+Person a = o;           // ERROR, Object is not a subtype of Person
+Person a = (Person) o;  // CORRECT (casting)</code></pre></li>
+            </ul>
+            <li class="fragment mt2" data-fragment-index="1">The implicit conversion allowed by polymorphism is called an <span class="error">upcast(ing)</span>.</li>
+            <li class="fragment" data-fragment-index="1">The explicit conversion is called a <span class="error">downcast(ing)</span>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Example</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Test {
+  public static void main(String[] args) {
+    A a;
+    B b = new B();
+    a = b;        // OK - IMPLICIT UPCAST
+    a.f1();       // OK - IMPLICIT UPCAST
+    a.f2();       // ERROR 
+    ((B) a).f2(); // OK - EXPLICIT DOWNCAST
+  }
+}
+class A {
+  void f1() {
+    System.out.println("A.f1()");
+  }
+}
+class B extends A {
+  void f2() {
+    System.out.println("B.f2()");
+  }
+}
+class C extends B {
+  void f3() {
+    System.out.println("C.f3()");
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Example</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>What if we had <span class="code">((C) a).f3()</span>?</li>
+              <li class="fragment error bold">Runtime error: java.lang.ClassCastException</li>
+            </ul>
+          </div>
+          <div class="col">
+            <pre><code class="java">A a;
+B b = new B();
+a = b;
+((C) a).f3();   // ??</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Example</h3>
+        <p>What if we had <span class="code">B b = new C()</span>?</p>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Test {
+  public static void main(String[] args) {
+    A a;
+    B b = new C();
+    a = b;
+    a.f1();
+    a.f2();
+    ((B) a).f2();
+    ((C) a).f3();
+  }
+}
+class A {
+  void f1() {
+    System.out.println("A.f1()");
+  }
+}
+class B extends A {
+  void f2() {
+    System.out.println("B.f2()");
+  }
+}
+class C extends B {
+  void f3() {
+    System.out.println("C.f3()");
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Type determination: instanceof</h3>
+        <div class="row">
+          <ul>
+            <li>You can determine the dynamic type of an object with the operator <span class="code">instanceof</span></li>
+            <ul>
+              <li>useful to avoid runtime type errors due to downcasting</li>
+            </ul>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col" style="flex: 2">
+            <pre><code class="java">public static void main(String a[]){
+  Point p; 
+  // read k
+  if (k==1) p = new Point(2,2);
+  else p = new NamedPoint(3,3,”A”);
+  // p.getName();  // ERROR - what type is p?
+  if (p instanceof NamedPoint)
+      ((NamedPoint) p).getName();
+}</code></pre>
+          </div>
+          <div class="col">
+            <img src="assets/point-named-point.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing the relationship between Point and NamedPoint">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Full code</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    Point p;
+    int k = 1;  // Change this to decide which type of point to create
+
+    if (k == 1) {
+      p = new Point(2, 2);
+    } else {
+      p = new NamedPoint(3, 3, "A");
+    }
+
+    // p.getName(); // ERROR - what type is p?
+    if (p instanceof NamedPoint) {
+      System.out.println("The point is named! Its name is: ");
+      ((NamedPoint) p).getName();
+    } else {
+      System.out.println("The point is not named!");
+    }
+  }
+}
+
+class NamedPoint extends Point {
+  String name;
+  public NamedPoint(int x,int y,String name) {
+    super(x,y); // always first instruction!
+    this.name = name;
+  }
+  public String toString(){ //Overriding (from Point)
+    return name + super.toString();
+  }
+  public void getName(){
+    System.out.println(name);
+  }
+}
+
+class Point {
+  public int x = 0;
+  public int y = 0;
+  Point(int x,int y){
+    this.x = x;
+    this.y = y;
+  }
+  public String toString(){ //Overriding (from Object)
+    return "(" + x + "," + y + ")";
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Still on polymorphic stack...</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    int dim=10;
+    Stack s = new Stack(dim);
+    // insert values
+    for(int k=0; k<dim; k++) {
+      Object o;
+      if (Math.random()<0.5)
+        o = new Integer(k);
+      else
+        o = new Float(k*Math.PI);
+      s.push(o);
+    }
+    for(int k=0; k<dim; k++) {
+      Object o = s.pop();
+      if (o instanceof Integer) {
+        Integer i = (Integer) o;
+        int w = i.intValue();
+        System.out.println("an int:" + w);
+      } else if (o instanceof Float) {
+        Float i = (Float) o;
+        float w = i.floatValue();
+        System.out.println("a float:" + w);
+      } else {
+        System.out.println("Unknown class!");
+      }
+    }
+  }
+}
+
+abstract class DataVector {
+  int size;
+  int defaultGrowthSize;
+  int marker;
+  Object content[];
+  final int initialSize = 3;
+
+  public DataVector(int growthSize) {
+      size = initialSize;
+      defaultGrowthSize = growthSize;
+      marker = 0;
+      content = new Object[size];
+  }
+
+  final public void push(Object k) {
+    if(marker == size) 
+      grow();
+    content[marker] = k;
+    marker++;
+  }
+
+  abstract public Object pop();
+
+  private void grow(){
+    size += defaultGrowthSize;
+    Object temp[] = new Object[size];
+    for (int k=0; k&lt;marker; k++)
+        temp[k] = content[k];
+      content = temp;
+  }
+}
+
+class Stack extends DataVector {
+  public Stack(int dim) {
+    super(dim);
+  }
+
+  public Object pop() {
+    assert(marker&gt;0):"empty Stack";
+    return content[--marker];
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Simple inheritance problems</h3>
+        <img src="assets/inheritance-problems.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing a typical inheritance problem">
+      </section>
     </div>
   </div>
 

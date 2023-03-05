@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polymorphism</title>
+
+  <!-- Main Reveal Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+
+  <!-- Blood Reveal Theme Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Highlight.js Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai.min.css">
+
+  <!-- Custom stylesheet to make reveal work with our playgrounds -->
+  <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+
+  <!-- Bundle containing the code playground web components -->
+  <script src="https://lucademenego99.github.io/icp-bundle/base/java.iife.js"></script>
+
+  <style>
+    pre code {
+      padding: min(1vw, 2vh) !important;
+    }
+
+    .code-without-pre {
+      padding: min(2vw, 4vh);
+      color: white;
+      background-color: #272822;
+    }
+
+    .code {
+      padding: 0 min(1vw, 2vh);
+      background-color: rgb(215, 237, 255);
+      font-family: monospace;
+    }
+
+    code .code {
+      background-color: #d9ddd0;
+      color: black;
+    }
+
+    .code-2 {
+      padding: 0 min(0.8vw, 1.5vh);
+      background-color: rgb(234, 246, 255);
+      font-family: monospace;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .ok {
+      color: green;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .warning {
+      color: rgb(218, 141, 0);
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .row {
+      width: min(80vw, 160vh);
+      gap: min(1.5vw, 2.8vh);
+    }
+
+    .big {
+      font-size: min(2vw, 4vh) !important;
+    }
+
+    .xbig {
+      font-size: min(2.5vw, 5vh) !important;
+    }
+
+    .xxsmall {
+      font-size: min(0.9vw, 1.8vh);
+    }
+
+    .mt {
+      margin-top: min(1vw, 2vh) !important;
+    }
+
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+
+    .mt2 {
+      margin-top: min(3vw, 6vh) !important;
+    }
+
+    .mb {
+      margin-bottom: min(1vw, 2vh) !important;
+    }
+
+    .mb2 {
+      margin-bottom: min(3vw, 6vh) !important;
+    }
+
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
+
+    .ml2 {
+      margin-left: min(3vw, 6vh) !important;
+    }
+
+    li {
+      margin-bottom: min(1vw, 1.8vh) !important;
+    }
+
+    .key__button {
+      box-sizing: border-box;
+      line-height: min(2vw, 4vh);
+      font-size: min(1.4vw, 2.8vh);
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      margin: 0 min(0.5vw, 1vh);
+      min-width: min(2.3vw, 4.6vh);
+      height: min(2.3vw, 4.6vh);
+      padding: 0 min(0.5vw, 1vh);
+      border-color: #f2f2f2;
+      border-style: solid;
+      text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+      border-width: 1px;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+      font-family: sans-serif;
+      display: inline-block;
+      transition: box-shadow 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+    }
+  </style>
+</head>
+
+<!-- For more information on reveal.js: https://revealjs.com/ -->
+
+<body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
+  <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+    data-background-transition="fade">
+    <div class="slides">
+
+      <!-- Each <section> is a slide -->
+      <section>
+        <!-- title class: custom style for titles -->
+        <h3 class="title">Polymorphism</h3>
+
+        <p class="subtitle mt">Maurizio Marchese</p>
+        <p>Dipartimento di Ingegneria e Scienza dell'Informazione (DISI)</p>
+        <p>Università degli Studi di Trento</p>
+        <a style="font-size: min(1.3vw, 2.6vh);" href="mailto:maurizio.marchese@unitn.it">maurizio.marchese@unitn.it</a>
+      </section>
+
+      <section>
+        <h3>About these slides</h3>
+        <p class="mt2" style="color:rgb(134, 134, 134)">Shortcuts</p>
+        <div style="text-align: left" class="mb">
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>F</span> for
+            fullscreen</p>
+          <p style="line-height: 2vw; font-size: 1.7vw; color:rgb(134, 134, 134)"><span class='key__button'>CTRL</span>
+            + <span class='key__button'>ENTER</span> to execute code</p>
+        </div>
+
+        <p class="xsmall mt2" id="print-version-text">Printable version available <a href="?print-pdf">here</a></p>
+        <div class="row" style="gap: min(0.6vw, 1.2vh); align-items: center">
+          <p class="xsmall bold">Recommended browser:</p>
+          <a href="https://www.google.com/intl/it_it/chrome/" target="_blank" style="display: flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width: min(1.5vw, 3vh); height: min(1.5vw, 3vh);"
+              viewBox="0 0 190.5 190.5" xmlns:v="https://vecta.io/nano">
+              <g transform="translate(90.669 -507.469)">
+                <path
+                  d="M4.583 650.342c26.304 0 47.627-21.324 47.627-47.628s-21.323-47.628-47.627-47.628-47.627 21.324-47.627 47.628 21.323 47.628 47.627 47.628z"
+                  fill="#fff" clip-path="none" mask="none" />
+                <path
+                  d="M-36.664 626.539l-41.24-71.43c-8.362 14.479-12.765 30.904-12.765 47.625s4.401 33.146 12.762 47.625 20.387 26.503 34.868 34.86 30.908 12.755 47.628 12.75l41.24-71.43v-.011c-4.177 7.244-10.188 13.26-17.428 17.443a47.62 47.62 0 0 1-47.632.007 47.62 47.62 0 0 1-17.433-17.437z"
+                  fill="#229342" clip-path="none" mask="none" />
+                <path
+                  d="M45.826 626.536l-41.239 71.43c16.72.003 33.146-4.398 47.626-12.757s26.504-20.384 34.863-34.865a95.24 95.24 0 0 0 12.755-47.627c-.003-16.72-4.408-33.145-12.772-47.623H4.58l-.01.007a47.62 47.62 0 0 1 23.819 6.372c7.243 4.179 13.257 10.19 17.439 17.431a47.62 47.62 0 0 1-.001 47.633z"
+                  fill="#fbc116" clip-path="none" mask="none" />
+                <path
+                  d="M4.583 640.43c20.824 0 37.705-16.881 37.705-37.706s-16.881-37.705-37.705-37.705-37.705 16.881-37.705 37.705 16.881 37.706 37.705 37.706z"
+                  fill="#1a73e8" clip-path="none" mask="none" />
+                <path
+                  d="M4.583 555.097h82.479c-8.358-14.481-20.381-26.507-34.861-34.868a95.23 95.23 0 0 0-47.625-12.76c-16.72.001-33.145 4.404-47.623 12.767a95.23 95.23 0 0 0-34.856 34.872l41.24 71.43.011.006a47.62 47.62 0 0 1-.015-47.633c4.179-7.242 10.193-13.256 17.434-17.436s15.456-6.381 23.818-6.379z"
+                  fill="#e33b2e" clip-path="none" mask="none" />
+              </g>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Polymorphism</h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li class="fragment">Polymorphism (in general): the ability to assume different forms</li>
+            <li class="fragment">Polymorphism (in programming languages): the ability of a syntactic element to refer to elements of different types
+            </li>
+            <li class="fragment"><span class="error bold">Liskov's substitution principle</span>: if <span class="code">X</span> is a subtype of <span class="code">T</span>, then variables of type <span class="code">T</span> in a program can be substituted for variables of type <span class="code">X</span> without altering any desirable properties of the program</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Polymorphism in Java</h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li class="fragment">A variable of <span class="underline">reference type</span> <span class="code">T</span> may refer to any object whose type is <span class="code">T</span> <span class="error">or its subtype</span>.</li>
+            <li class="fragment">Similarly, a formal parameter of <span class="underline">reference type</span> <span class="code">T</span> may refer to actual parameters whose type is <span class="code">T</span> or <span class="error">one of its subtypes</span>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Polymorphism in Java: examples</h3>
+        <div class="row">
+          <div class="col" style="flex: 2">
+            <pre><code class="java">Point p = new Point(1,2);
+p.move(3,4);
+p = new NamedPoint(5, 7, "A");
+p.move(3,4);</code></pre>
+          </div>
+          <div class="col">
+            <img src="assets/point-named-point.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing the relationship between Point and NamedPoint">
+          </div>
+        </div>
+        <p class="mt2 big">Whenever there is a <span class="code">Point</span> I can put a <span class="code">NamedPoint</span>...</p>
+      </section>
+
+      <section>
+        <h3 class="title">Complete code</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    Point p = new Point(1,2);
+    p.move(3,4);
+    p = new NamedPoint(5, 7, "A");
+    p.move(3,4);
+    System.out.println(p);
+  }
+}
+
+class NamedPoint extends Point {
+  String name;
+  public NamedPoint(int x, int y, String name) {
+    super(x,y);
+    this.name = name;
+  }
+  public String toString() {
+    return name + " (" + x + "," + y + ")";
+  }
+}
+
+class Point {
+  public int x = 0;
+  public int y = 0;
+  Point(int x,int y){
+    this.x = x;
+    this.y = y;
+  }
+  public void move(int dx, int dy) {
+    x += dx;
+    y += dy;
+  }
+  public String toString() {
+    return "(" + x + "," + y + ")";
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Polymorphism in Java: examples</h3>
+        <div class="row">
+          <div class="col" style="flex: 2">
+            <pre><code class="java">public class Line {
+  Point p1, p2;
+  Line(Point p1, Point p2) { ... }
+}</code></pre>
+            <pre><code class="java">Point p1 = new Point(1,2);
+NamedPoint p2 = new NamedPoint(5, 7, "A");
+Line l = new Line(p1, p2);</code></pre>
+          </div>
+          <div class="col">
+            <img src="assets/point-named-point.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing the relationship between Point and NamedPoint">
+          </div>
+        </div>
+        <p class="mt2 big">Whenever there is a <span class="code">Point</span> I can put a <span class="code">NamedPoint</span>...</p>
+      </section>
+
+      <section>
+        <h3 class="title">Complete code</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    Point p1 = new Point(1,2);
+    NamedPoint p2 = new NamedPoint(5, 7, "A");
+    Line l = new Line(p1, p2);
+    System.out.println(l);
+  }
+}
+
+class Line {
+  Point p1, p2;
+  Line(Point p1, Point p2) {
+    this.p1 = p1;
+    this.p2 = p2;
+  }
+  public String toString() {
+    return "Line from " + p1 + " to " + p2;
+  }
+}
+
+class NamedPoint extends Point {
+  String name;
+  public NamedPoint(int x, int y, String name) {
+    super(x,y);
+    this.name = name;
+  }
+  public String toString() {
+    return name + " (" + x + "," + y + ")";
+  }
+}
+
+class Point {
+  public int x = 0;
+  public int y = 0;
+  Point(int x,int y){
+    this.x = x;
+    this.y = y;
+  }
+  public void move(int dx, int dy) {
+    x += dx;
+    y += dy;
+  }
+  public String toString() {
+    return "(" + x + "," + y + ")";
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Polymorphism in Java: examples</h3>
+        <div class="row">
+          <pre><code class="java">class Car {...}
+class ElectricCar extends Car {...}
+class Parking {
+  private Car buf[];
+  private int nAuto;
+  public Parking(int dim) { buf = new Car[dim]; }
+  public void park(Car a) { buf[nAuto++] = a; }
+}
+...
+ElectricCar b = new ElectricCar();
+Car a = new Car();
+Parking p = new Parking(100);
+p.park(a);
+p.park(b);</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">What is the purpose of this?</h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li>Inheritance and polymorphism are fundamental in object-orientation</li>
+            <li>Together, they make it possible to:</li>
+            <ul>
+              <li>keep the definition of a class "<span class="error">open</span>" to subsequent extensions (specialisations), without having to modify the code that uses it;</li>
+              <li>choose the most appropriate "<span class="error">view</span>" to manage an object (general vs. specific) each time.</li>
+            </ul>
+            <li>Strong positive impact on readability and maintainability of the code!</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">On the fly decisions...</h3>
+        <div class="row">
+          <div class="col" style="flex: 2">
+            <pre><code class="java">public static void main(String a[]){
+  DataVector p;
+  // read k
+  if (k==1) p = new Stack();
+  else p = new Queue();
+  p.push(1);
+  p.push(2);
+  p.pop();
+}</code></pre>
+          </div>
+          <div class="col">
+            <img src="assets/datavector.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Image representing the relationship between Stack, Queue and DataVector">
+          </div>
+        </div>
+        <div class="mt2 fragment">
+          <ul>
+            <li>The type of <span class="code">p</span> is decided at <span class="error">runtime</span>!
+            </li>
+            <li>The link between an object and its type is <span class="error">dynamic</span> (<em>dynamic binding, late binding, </em> or <em>lazy evaluation</em>)</li> 
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Dynamic binding: example</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    Person p = new Student("John");
+    p.whoAreYou();
+  }
+}
+class Person {
+  private String name;
+  public Person(String name) { this.name = name; } 
+  public void whoAreYou() { 
+    System.out.println("Hi, my name is " + name);
+  }
+}
+class Student extends Person {
+  public Student(String name) { super(name); }
+  public void whoAreYou() {
+    super.whoAreYou(); 
+    System.out.println(" and I am a student");
+  }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Static type and dynamic type</h3>
+        <div class="row" style="width: min(50vw, 100vh)">
+          <ul>
+            <li class="fragment">In the presence of polymorphism, a distinction is made between the <span class="error">static type</span> (declared at <em>compilation time</em>) and the <span class="error">dynamic type</span> (assumed at <em>runtime</em>) of a formal variable or parameter.</li>
+            <ul>
+              <li class="fragment">The substitution rule forces the dynamic type to be a subtype of the static type.</li>
+              <li class="fragment">In Java, in an invocation <span class="code">x.f(x1, ..., xn)</span>, the implementation chosen for the method <span class="code">f</span> depends also on the dynamic type of <span class="code">x</span> and not only on its static type</li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Rule for dynamic binding</h3>
+        <div style="width: min(50vw, 100vh)">
+          <ul>
+            <li class="fragment">Let's assume to have:<br>
+            <pre><code class="java">C o = ...;
+o.m(...);</code></pre>
+              the method chosen depends on the dynamic type of <span class="code">o</span>, and is decided (at <em>runtime</em>) using the following logic:</li>
+            <ul>
+              <li class="fragment">We search inside the class <span class="code">C</span> (static type of <span class="code">o</span>) for the method <span class="code">m</span> with the signature that is closest to the invocation.</li>
+              <ul>
+                <li class="fragment">The signatures to consider are those fixed at <em>compile time</em>, i.e. looking at the <em>static type</em> of the current parameters</li>
+              </ul>
+              <li class="fragment">We look at the dynamic type <span class="code">D</span> of <span class="code">o</span>; if it is a subtype of <span class="code">C</span>, we have to check if it redefines (overrides) <span class="code">m</span>. If yes, we use <span class="code">D</span>'s implementaion, otherwise <span class="code">C</span>'s.</li>
+            </ul>
+          </ul>
+          <p class="bold fragment" style="background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)">The static type determines which methods can be invoked; the dynamic type determines which (re)definitions to perform.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Which methods are visible?</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li class="fragment">Inheritance, overriding, overloading and polymorphism determine the methods visible from a given reference</li>
+              <li class="fragment">With the hierarchy on the right and the instructions below...</li>
+            </ul>
+          </div>
+          <div class="col">
+            <svg style="max-width: min(40vw, 80vh); max-height: min(20vw, 40vh);" viewBox="33.728 22.401 254.302 173.911" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+              <defs>
+                <style bx:fonts="Space Mono">@import url(https://fonts.googleapis.com/css2?family=Space+Mono%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400%3B1%2C700&amp;display=swap);</style>
+              </defs>
+              <g class="fragment">
+                <rect x="33.728" y="39.053" width="73.373" height="50.295" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);"/>
+                <rect x="33.728" y="125.74" width="73.373" height="50.295" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);"/>
+                <text style="font-family: Arial, sans-serif; font-size: 16.6px; font-weight: 700; white-space: pre;" x="64.497" y="70.414">C</text>
+                <text style="font-family: Arial, sans-serif; font-size: 16.6px; font-weight: 700; white-space: pre;" x="63.235" y="157.101">D</text>
+                <line style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" x1="69.231" y1="126.035" x2="69.23" y2="109.467"/>
+                <path d="M 69.23 91.124 L 78.698 110.059 L 59.763 110.059 L 69.23 91.124 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" bx:shape="triangle 59.763 91.124 18.935 18.935 0.5 0 1@b4934d82"/>
+              </g>
+              <text class="fragment" style="fill: rgb(141, 0, 0); font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" x="121.302" y="55.622">m()</text>
+              <text class="fragment" style="fill: rgb(141, 0, 0); font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" x="118.727" y="83.136">m(int x)</text>
+              <g class="fragment" transform="matrix(1, 0, 0, 1, -62.721889, -0.591716)">
+                <text style="fill: rgb(141, 0, 0); font-family: 'Space Mono'; font-size: 16.6px; white-space: pre;" transform="matrix(1.853333, 0, 0, 2.884255, -321.6091, -70.277176)" x="340.828" y="50.888">}</text>
+                <text style="fill: rgb(141, 0, 0); font-family: Arial, sans-serif; font-size: 11px; white-space: pre;" transform="matrix(-0.000001, -1, 1, -0.000001, 274.87558, 432.864105)" x="342.604" y="60.947">overloading</text>
+              </g>
+              <text class="fragment" style="fill: rgb(141, 0, 0); font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" x="119.356" y="136.982">m()</text>
+              <g class="fragment">
+                <text style="fill: rgb(141, 0, 0); font-family: Arial, sans-serif; font-size: 22px; white-space: pre;" x="298.225" y="180.473" transform="matrix(1.290153, 0, 0, 4.439843, -227.359222, -686.114441)">]</text>
+                <text style="fill: rgb(141, 0, 0); font-family: Arial, sans-serif; font-size: 11px; white-space: pre;" transform="matrix(-0.000001, -1, 1, -0.000001, 161.242691, 456.250519)" x="342.604" y="60.947">overriding</text>
+              </g>
+              <g class="fragment">
+                <text style="fill: rgba(106, 106, 106, 0.75); font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" x="119.864" y="161.242">m(int x)</text>
+                <polyline style="fill: rgba(255, 255, 255, 0); stroke-width: 2px; stroke: rgba(87, 87, 87, 0.66); stroke-dasharray: 6;" points="207.101 77.515 240.237 77.515 240.237 155.622 227.22 156.212"/>
+                <path d="M 166.526 129.367 L 175.402 147.71 L 157.65 147.71 L 166.526 129.367 Z" style="stroke-width: 0px; stroke: rgba(0, 0, 0, 0.86); fill: rgba(71, 71, 71, 0.41);" transform="matrix(0, -1, 1, 0, 80.099792, 322.147217)" bx:shape="triangle 157.65 129.367 17.752 18.343 0.5 0 1@4a9f39e1"/>
+                <text style="fill: rgb(141, 0, 0); font-family: Arial, sans-serif; font-size: 11px; white-space: pre;" transform="matrix(-0.000001, -1, 1, -0.000001, 192.011948, 485.244598)" x="342.604" y="60.947">inheritance</text>
+              </g>
+              <text class="fragment" style="fill: rgb(141, 0, 0); font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" x="120.456" y="183.728">m(String s)</text>
+              <g class="fragment" transform="matrix(1, 0, 0, 1, -44.833973, 99.507301)">
+                <text style="fill: rgb(141, 0, 0); font-family: 'Space Mono'; font-size: 16.6px; white-space: pre;" transform="matrix(1.853333, 0, 0, 3.410889, -324.567688, -97.356049)" x="340.828" y="50.888">}</text>
+                <text style="fill: rgb(141, 0, 0); font-family: Arial, sans-serif; font-size: 11px; white-space: pre;" transform="matrix(-0.000001, -1, 1, -0.000001, 269.55014, 426.94696)" x="342.604" y="60.947">overloading</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <svg style="max-width: min(70vw, 140vh); max-height: min(15vw, 30vh);" viewBox="12.735 30.422 276.255 78.484" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+          <defs>
+            <style bx:fonts="Red Hat Mono">@import url(https://fonts.googleapis.com/css2?family=Red+Hat+Mono%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700&amp;display=swap);</style>
+          </defs>
+          <text class="fragment" style="fill: rgb(22, 17, 114); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" x="23.077" y="53.255" transform="matrix(0.679012, 0, 0, 0.663401, 4.677118, 13.081939)">C c = new C();</text>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 97.19558, 13.430019)" x="23.077" y="53.255">c.m();</text>
+          <path class="fragment" d="M 140.89 41.207 L 136.89 37.207 L 138.29 35.807 L 140.89 38.407 L 147.49 31.807 L 148.89 33.207 L 140.89 41.207 Z" fill="#0FA958"/>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 145.788071, 13.430019)" x="23.077" y="53.255">c.m(5);</text>
+          <path class="fragment" d="M 196.352 41.806 L 192.352 37.806 L 193.752 36.406 L 196.352 39.006 L 202.952 32.406 L 204.352 33.806 L 196.352 41.806 Z" fill="#0FA958"/>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 198.396759, 13.130229)" x="23.077" y="53.255">c.m("hello");</text>
+          <path class="fragment" d="M 288.737 31.949 C 288.816 31.867 288.879 31.77 288.923 31.663 C 288.967 31.555 288.989 31.44 288.99 31.322 C 288.991 31.206 288.971 31.089 288.929 30.981 C 288.888 30.873 288.825 30.775 288.748 30.692 C 288.67 30.609 288.577 30.543 288.476 30.499 C 288.374 30.455 288.266 30.433 288.155 30.434 C 288.045 30.435 287.937 30.459 287.835 30.505 C 287.734 30.551 287.642 30.618 287.566 30.702 L 284.246 34.233 L 280.926 30.702 C 280.851 30.615 280.759 30.546 280.658 30.498 C 280.556 30.45 280.446 30.424 280.335 30.422 C 280.224 30.42 280.113 30.441 280.01 30.486 C 279.907 30.53 279.813 30.596 279.735 30.679 C 279.656 30.764 279.594 30.863 279.553 30.973 C 279.51 31.082 279.49 31.2 279.492 31.318 C 279.495 31.437 279.519 31.553 279.563 31.661 C 279.609 31.77 279.674 31.867 279.756 31.948 L 283.073 35.479 L 279.753 39.009 C 279.607 39.176 279.527 39.398 279.531 39.626 C 279.535 39.854 279.622 40.072 279.774 40.233 C 279.926 40.395 280.13 40.487 280.345 40.491 C 280.56 40.495 280.767 40.411 280.925 40.255 L 284.246 36.724 L 287.565 40.256 C 287.722 40.412 287.93 40.496 288.144 40.492 C 288.36 40.488 288.564 40.396 288.716 40.235 C 288.868 40.073 288.955 39.855 288.958 39.627 C 288.963 39.399 288.883 39.177 288.736 39.01 L 285.419 35.479 L 288.737 31.949 Z" fill="#F24E1E" style=""/>
+          <text class="fragment" style="fill: rgb(22, 17, 114); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" x="23.077" y="53.255" transform="matrix(0.679012, 0, 0, 0.663401, -2.93435, 36.214077)">C cd = new D();</text>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 90.626678, 35.914288)" x="23.077" y="53.255">cd.m();</text>
+          <path class="fragment" d="M 141.191 64.29 L 137.191 60.29 L 138.591 58.89 L 141.191 61.49 L 147.791 54.89 L 149.191 56.29 L 141.191 64.29 Z" fill="#0FA958"/>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 139.0383, 35.914288)" x="23.077" y="53.255">cd.m(5);</text>
+          <path class="fragment" d="M 194.253 64.29 L 190.253 60.29 L 191.653 58.89 L 194.253 61.49 L 200.853 54.89 L 202.253 56.29 L 194.253 64.29 Z" fill="#0FA958"/>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 191.783875, 35.314709)" x="23.077" y="53.255">cd.m("hello");</text>
+          <path class="fragment" d="M 288.288 56.382 C 288.367 56.3 288.43 56.203 288.474 56.096 C 288.518 55.988 288.54 55.873 288.541 55.755 C 288.542 55.639 288.522 55.522 288.48 55.414 C 288.439 55.306 288.376 55.208 288.299 55.125 C 288.221 55.042 288.128 54.976 288.027 54.932 C 287.925 54.888 287.817 54.866 287.706 54.867 C 287.596 54.868 287.488 54.892 287.386 54.938 C 287.285 54.984 287.193 55.051 287.117 55.135 L 283.797 58.666 L 280.477 55.135 C 280.402 55.048 280.31 54.979 280.209 54.931 C 280.107 54.883 279.997 54.857 279.886 54.855 C 279.775 54.853 279.664 54.874 279.561 54.919 C 279.458 54.963 279.364 55.029 279.286 55.112 C 279.207 55.197 279.145 55.296 279.104 55.406 C 279.061 55.515 279.041 55.633 279.043 55.751 C 279.046 55.87 279.07 55.986 279.114 56.094 C 279.16 56.203 279.225 56.3 279.307 56.381 L 282.624 59.912 L 279.304 63.442 C 279.158 63.609 279.078 63.831 279.082 64.059 C 279.086 64.287 279.173 64.505 279.325 64.666 C 279.477 64.828 279.681 64.92 279.896 64.924 C 280.111 64.928 280.318 64.844 280.476 64.688 L 283.797 61.157 L 287.116 64.689 C 287.273 64.845 287.481 64.929 287.695 64.925 C 287.911 64.921 288.115 64.829 288.267 64.668 C 288.419 64.506 288.506 64.288 288.509 64.06 C 288.514 63.832 288.434 63.61 288.287 63.443 L 284.97 59.912 L 288.288 56.382 Z" fill="#F24E1E" style=""/>
+          <text class="fragment" style="fill: rgb(22, 17, 114); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" x="23.077" y="53.255" transform="matrix(0.679012, 0, 0, 0.663401, 1.909227, 58.404842)">D d = new D();</text>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 95.470261, 58.105053)" x="23.077" y="53.255">d.m();</text>
+          <path class="fragment" d="M 141.538 86.481 L 137.538 82.481 L 138.938 81.081 L 141.538 83.681 L 148.138 77.081 L 149.538 78.481 L 141.538 86.481 Z" fill="#0FA958"/>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 143.881882, 58.105053)" x="23.077" y="53.255">d.m(5);</text>
+          <path class="fragment" d="M 194.6 85.881 L 190.6 81.881 L 192 80.481 L 194.6 83.081 L 201.2 76.481 L 202.6 77.881 L 194.6 85.881 Z" fill="#0FA958"/>
+          <text class="fragment" style="fill: rgb(113, 21, 21); font-family: 'Red Hat Mono'; font-size: 14px; font-weight: 600; white-space: pre;" transform="matrix(0.679012, 0, 0, 0.663401, 196.627457, 57.505474)" x="23.077" y="53.255">d.m("hello");</text>
+          <path class="fragment" d="M 280.293 86.175 L 276.293 82.175 L 277.693 80.775 L 280.293 83.375 L 286.893 76.775 L 288.293 78.175 L 280.293 86.175 Z" fill="#0FA958"/>
+          <g class="fragment">
+            <rect x="104.817" y="60.49" width="42.57" height="38.073" style="fill: rgba(255, 255, 255, 0); stroke: rgb(152, 16, 16); stroke-dasharray: 3;"/>
+            <text style="fill: rgb(115, 19, 19); font-family: Arial, sans-serif; font-size: 8px; white-space: pre;" x="107.216" y="106.957">overridden</text>
+          </g>
+          <g class="fragment" transform="matrix(1, 0, 0, 1, 47.966686, 0.149969)">
+            <rect x="104.817" y="60.49" width="42.57" height="38.073" style="fill: rgba(255, 255, 255, 0); stroke: rgb(152, 16, 16); stroke-dasharray: 3;"/>
+            <text style="fill: rgb(115, 19, 19); font-family: Arial, sans-serif; font-size: 8px; white-space: pre;" x="109.614" y="106.957">inherited</text>
+          </g>
+        </svg>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise</h3>
+        <svg style="max-width: min(70vw, 140vh); max-height: min(30vw, 60vh);" viewBox="19.762 14.958 296.274 178.924" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+          <defs>
+            <style bx:fonts="Space Mono">@import url(https://fonts.googleapis.com/css2?family=Space+Mono%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400%3B1%2C700&amp;display=swap);</style>
+          </defs>
+          <g class="fragment" transform="matrix(0.633514, 0, 0, 0.627589, -0.927298, 0.133122)" style="">
+            <rect x="33.728" y="39.053" width="73.373" height="50.295" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);"/>
+            <rect x="33.728" y="125.74" width="73.373" height="50.295" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);"/>
+            <text style="font-family: Arial, sans-serif; font-size: 16.6px; font-weight: 700; white-space: pre;" x="64.497" y="70.414">A</text>
+            <text style="font-family: Arial, sans-serif; font-size: 16.6px; font-weight: 700; white-space: pre;" x="63.235" y="157.101">B</text>
+            <line style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" x1="69.231" y1="126.035" x2="69.23" y2="109.467"/>
+            <path d="M 69.23 91.124 L 78.698 110.059 L 59.763 110.059 L 69.23 91.124 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" bx:shape="triangle 59.763 91.124 18.935 18.935 0.5 0 1@b4934d82"/>
+            <line style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" x1="67.97" y1="211.762" x2="67.969" y2="195.194"/>
+            <path d="M 67.97 176.851 L 77.437 195.786 L 58.502 195.786 L 67.97 176.851 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" bx:shape="triangle 58.502 176.851 18.935 18.935 0.5 0 1@68a85f75"/>
+            <rect x="32.658" y="211.738" width="73.373" height="50.295" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);"/>
+            <text style="font-family: Arial, sans-serif; font-size: 16.6px; font-weight: 700; white-space: pre;" x="61.516" y="243.338">C</text>
+          </g>
+          <g class="fragment">
+            <text style="fill: rgb(141, 0, 0); font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" x="108.014" y="47.436" transform="matrix(0.633514, 0, 0, 0.627589, 7.490931, 5.270481)">m()</text>
+            <text style="fill: rgb(141, 0, 0); font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" x="108.014" y="47.436" transform="matrix(0.633514, 0, 0, 0.627589, 6.378971, 57.143333)">m()</text>
+          </g>
+          <g class="fragment" transform="matrix(0.6983, 0, 0, 0.627589, -257.55426, -17.003944)" style="">
+            <text style="fill: rgb(141, 0, 0); font-family: Arial, sans-serif; font-size: 11px; white-space: pre;" transform="matrix(-0.000001, -1, 1, -0.000002, 506.006744, 486.92392)" x="342.604" y="60.947">overriding</text>
+            <text style="fill: rgb(141, 0, 0); font-family: Arial, sans-serif; font-size: 22px; white-space: pre;" x="298.225" y="180.473" transform="matrix(1.290153, 0, 0, 4.439843, 133.686432, -657.882629)">]</text>
+          </g>
+          <g class="fragment" transform="matrix(0.6983, 0, 0, 0.627589, -10.37386, 38.473675)" style="">
+            <text style="fill: rgba(106, 106, 106, 0.75); font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" x="119.864" y="161.242" transform="matrix(1, 0, 0, 1, 0.000001, 0.000005)">m()</text>
+            <polyline style="fill: rgba(255, 255, 255, 0); stroke-width: 2px; stroke: rgba(87, 87, 87, 0.66); stroke-dasharray: 6;" points="201.225 71.326 201.277 -12.734 459.027 -14.123 458.611 155.159 219.316 156.212"/>
+            <path d="M 166.526 129.367 L 175.402 147.71 L 157.65 147.71 L 166.526 129.367 Z" style="stroke-width: 0px; stroke: rgba(0, 0, 0, 0.86); fill: rgba(71, 71, 71, 0.41);" transform="matrix(0, -1, 1, 0, 73.444572, 322.147217)" bx:shape="triangle 157.65 129.367 17.752 18.343 0.5 0 1@4a9f39e1"/>
+            <text style="fill: rgb(141, 0, 0); font-family: Arial, sans-serif; font-size: 11px; white-space: pre;" transform="matrix(-0.000001, -1, 1, -0.000001, 181.613159, 494.500916)" x="342.604" y="60.947">inheritance</text>
+          </g>
+          <text class="fragment" style="font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" transform="matrix(0.633514, 0, 0, 0.627589, 114.429626, -3.218456)"><tspan x="108.014" y="47.436">A pa = new C();</tspan><tspan x="108.01399993896484" dy="1.3em">​</tspan><tspan>pa.m()  // ??</tspan></text>
+          <g class="fragment">
+            <rect x="158.607" y="60" width="157.429" height="29.046" style="stroke: rgb(0, 0, 0); fill: rgb(232, 178, 14);"/>
+            <text style="font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" transform="matrix(0.633514, 0, 0, 0.627589, 99.032616, 47.69297)" x="108.01399993896484" y="47.43600082397461">m() in B == m() in C</text>
+          </g>
+          <text class="fragment" style="font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" transform="matrix(0.633514, 0, 0, 0.627589, 115.298302, 103.461052)" x="108.01399993896484" y="47.43600082397461">C pc = new C();<tspan x="108.01399993896484" dy="1.3em">​</tspan>pc.m()  // ??</text>
+          <g class="fragment" transform="matrix(1, 0, 0, 1, -3.707944, 104.836121)">
+            <rect x="158.607" y="60" width="157.429" height="29.046" style="stroke: rgb(0, 0, 0); fill: rgb(232, 178, 14);"/>
+            <text style="font-family: 'Space Mono'; font-size: 16.6px; font-weight: 700; letter-spacing: 1px; white-space: pre;" transform="matrix(0.633514, 0, 0, 0.627589, 97.752602, 48.972984)" x="108.01399993896484" y="47.43600082397461">m() in C == m() in B</text>
+          </g>
+        </svg>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise: what is the output?</h3>
+        <div class="row">
+          <div class="col">
+            <pre><code class="java xsmall">public class A {
+  public void print(A p) {
+    System.out.println("A");
+  }
+}
+public class B extends A { 
+  public void print(B p) { 
+    System.out.println("B"); 
+  } 
+  public void print(A p) {
+    System.out.println("A-B"); 
+  } 
+}
+public class C extends A { 
+  public void print(C p) { 
+    System.out.println("C");
+  }
+  public void print(A p) { 
+    System.out.println("A-C"); 
+  } 
+}</code></pre>
+          </div>
+          <div class="col">
+              <p class="xbig bold">Main:</p>
+              <pre><code class="java">A a1, a2; 
+B b1; 
+C c1; 
+a1 = new B(); 
+b1 = new B(); 
+c1 = new C(); 
+a2 = new C(); 
+b1.print(b1);  
+a1.print(b1); 
+b1.print(c1); 
+c1.print(c1); 
+c1.print(a1); 
+a2.print(c1);</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Try it yourself!</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    A a1, a2;
+    B b1;
+    C c1;
+    a1 = new B();
+    b1 = new B();
+    c1 = new C();
+    a2 = new C();
+    b1.print(b1);
+    a1.print(b1);
+    b1.print(c1);
+    c1.print(c1);
+    c1.print(a1);
+    a2.print(c1);
+  }
+}
+class A {
+  public void print(A p) {
+    System.out.println("A");
+  }
+}
+class B extends A { 
+  public void print(B p) { 
+    System.out.println("B"); 
+  } 
+  public void print(A p) {
+    System.out.println("A-B"); 
+  } 
+}
+class C extends A { 
+  public void print(C p) { 
+    System.out.println("C");
+  }
+  public void print(A p) { 
+    System.out.println("A-C"); 
+  } 
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Why so?</h3>
+        <div class="row">
+          <div class="col">
+            <div class="r-stack">
+              <code class="code-without-pre fragment fade-out" data-fragment-index="0"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br><span class="code">b1.print(b1); // B</span><br>a1.print(b1); // A-B<br>b1.print(c1); // A-B<br>c1.print(c1); // C<br>c1.print(a1); // A-C<br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="0"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br><span class="code">a1.print(b1); // A-B</span><br>b1.print(c1); // A-B<br>c1.print(c1); // C<br>c1.print(a1); // A-C<br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="1"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br>a1.print(b1); // A-B<br><span class="code">b1.print(c1); // A-B</span><br>c1.print(c1); // C<br>c1.print(a1); // A-C<br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="2"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br>a1.print(b1); // A-B<br>b1.print(c1); // A-B<br><span class="code">c1.print(c1); // C</span><br>c1.print(a1); // A-C<br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="3"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br>a1.print(b1); // A-B<br>b1.print(c1); // A-B<br>c1.print(c1); // C<br><span class="code">c1.print(a1); // A-C</span><br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in" data-fragment-index="4"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br>a1.print(b1); // A-B<br>b1.print(c1); // A-B<br>c1.print(c1); // C<br>c1.print(a1); // A-C<br><span class="code">a2.print(c1); // A-C</span></code>
+            </div>
+          </div>
+          <div class="col">
+            <ol>
+              <li class="fragment semi-fade-out" data-fragment-index="0">dynamic type = static type: no choice</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="0">dynamic type ≠ static type: use the redefinition of the method in <span class="code">A</span> with <span class="code">B</span></li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="1">dynamic type = static type: the parameters have different types but it is irrelevant, only the static type of <span class="code">c1</span> matters</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="2">dynamic type = static type: no choice</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="3">dynamic type = static type: the parameters have different types but it is irrelevant, only the static type of <span class="code">a1</span> matters</li>
+              <li class="fragment fade-in" data-fragment-index="4">dynamic type ≠ static type: use the redefinition of the method in <span class="code">A</span> with <span class="code">C</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise: what is the output?</h3>
+        <p class="error bold">Notice the difference: here C extends B!</p>
+        <div class="row">
+          <div class="col">
+            <pre><code class="java xsmall">public class A {
+  public void print(A p) {
+    System.out.println("A");
+  }
+}
+public class B extends A { 
+  public void print(B p) { 
+    System.out.println("B"); 
+  } 
+  public void print(A p) {
+    System.out.println("A-B"); 
+  } 
+}
+public class C extends B { 
+  public void print(C p) { 
+    System.out.println("C");
+  }
+  public void print(A p) { 
+    System.out.println("A-C"); 
+  } 
+}</code></pre>
+          </div>
+          <div class="col">
+              <p class="xbig bold">Main:</p>
+              <pre><code class="java">A a1, a2; 
+B b1; 
+C c1; 
+a1 = new B(); 
+b1 = new B(); 
+c1 = new C(); 
+a2 = new C(); 
+b1.print(b1);  
+a1.print(b1); 
+b1.print(c1); 
+c1.print(c1); 
+c1.print(a1); 
+a2.print(c1);</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Try it yourself!</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    A a1, a2;
+    B b1;
+    C c1;
+    a1 = new B();
+    b1 = new B();
+    c1 = new C();
+    a2 = new C();
+    b1.print(b1);
+    a1.print(b1);
+    b1.print(c1);
+    c1.print(c1);
+    c1.print(a1);
+    a2.print(c1);
+  }
+}
+class A {
+  public void print(A p) {
+    System.out.println("A");
+  }
+}
+class B extends A { 
+  public void print(B p) { 
+    System.out.println("B"); 
+  } 
+  public void print(A p) {
+    System.out.println("A-B"); 
+  } 
+}
+class C extends B { 
+  public void print(C p) { 
+    System.out.println("C");
+  }
+  public void print(A p) { 
+    System.out.println("A-C"); 
+  } 
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Why so?</h3>
+        <div class="row">
+          <div class="col">
+            <div class="r-stack">
+              <code class="code-without-pre fragment fade-out" data-fragment-index="0"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br><span class="code">b1.print(b1); // B</span><br>a1.print(b1); // A-B<br>b1.print(c1); // B<br>c1.print(c1); // C<br>c1.print(a1); // A-C<br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="0"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br><span class="code">a1.print(b1); // A-B</span><br>b1.print(c1); // B<br>c1.print(c1); // C<br>c1.print(a1); // A-C<br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="1"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br>a1.print(b1); // A-B<br><span class="code">b1.print(c1); // B</span><br>c1.print(c1); // C<br>c1.print(a1); // A-C<br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="2"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br>a1.print(b1); // A-B<br>b1.print(c1); // B<br><span class="code">c1.print(c1); // C</span><br>c1.print(a1); // A-C<br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in-then-out" data-fragment-index="3"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br>a1.print(b1); // A-B<br>b1.print(c1); // B<br>c1.print(c1); // C<br><span class="code">c1.print(a1); // A-C</span><br>a2.print(c1); // A-C</code>
+              <code class="code-without-pre fragment fade-in" data-fragment-index="4"
+                style="text-align: left;">A a1, a2;<br>B b1;<br>C c1;<br>a1 = new B();<br>b1 = new B();<br>c1 = new C();<br>a2 = new C();<br>b1.print(b1); // B<br>a1.print(b1); // A-B<br>b1.print(c1); // B<br>c1.print(c1); // C<br>c1.print(a1); // A-C<br><span class="code">a2.print(c1); // A-C</span></code>
+            </div>
+          </div>
+          <div class="col">
+            <ol>
+              <li class="fragment semi-fade-out" data-fragment-index="0">dynamic type = static type: no choice</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="0">dynamic type ≠ static type: use the redefinition of the method in <span class="code">A</span> with <span class="code">B</span></li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="1">dynamic type = static type: the parameters have different types but it is irrelevant, only the static type of <span class="code">c1</span> matters; the most specific method is the one that <span class="code">B</span> accepts</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="2">dynamic type = static type: no choice</li>
+              <li class="fragment fade-in-then-semi-out" data-fragment-index="3">dynamic type = static type: the parameters have different types but it is irrelevant, only the static type of <span class="code">a1</span> matters; <span class="code">print(B)</span> in <span class="code">B</span> cannot be used</li>
+              <li class="fragment fade-in" data-fragment-index="4">dynamic type ≠ static type: use the redefinition of the method in <span class="code">A</span> with <span class="code">C</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Exercise: what is the output?</h3>
+        <div class="row">
+          <div class="col">
+            <pre><code class="java xsmall">class A { 
+  private int val; 
+  public A(int v) { val = v; } 
+  public int value() { return val; } 
+  public int sum(A o) { return value() + o.value(); } 
+}
+
+class B extends A { 
+  B(int v) { super(v); } 
+  public int sum(A o) { 
+    return value() + o.value() + 2;
+  } 
+  public int sum(B o) {
+    return value() + o.value() + 1;
+  }
+}</code></pre>
+          </div>
+          <div class="col">
+              <p class="xbig bold">Main:</p>
+              <pre><code class="java">A a1, a2; 
+B b; 
+a1 = new A(4); 
+a2 = new B(5); 
+b = new B(6); 
+System.out.println(a1.sum(a2));     
+System.out.println(a2.sum(b)); 
+System.out.println(b.sum(a1));  
+System.out.println(b.sum(b));</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Try it yourself!</h3>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    A a1, a2; 
+    B b; 
+    a1 = new A(4); 
+    a2 = new B(5); 
+    b = new B(6); 
+    System.out.println(a1.sum(a2));     
+    System.out.println(a2.sum(b)); 
+    System.out.println(b.sum(a1));  
+    System.out.println(b.sum(b));
+  }
+}
+class A { 
+  private int val; 
+  public A(int v) { val = v; } 
+  public int value() { return val; } 
+  public int sum(A o) { return value() + o.value(); } 
+}
+
+class B extends A { 
+  B(int v) { super(v); } 
+  public int sum(A o) { 
+    return value() + o.value() + 2;
+  } 
+  public int sum(B o) {
+    return value() + o.value() + 1;
+  }
+}'></java-editor>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Import the main reveal script -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+
+  <!-- Initialize reveal -->
+  <script>
+    Reveal.initialize({
+      plugins: [RevealHighlight],
+      // Display an help overlay when ? is pressed
+      help: false,
+      // Display controls in the bottom right corner
+      controls: true,
+      // Display a presentation progress bar
+      progress: true,
+      // Push each slide change to the browser history
+      history: true,
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+      // Enable the slide overview mode
+      overview: true,
+      // Enable the slide number counter
+      slideNumber: 'c/t',
+      // Set the width of the slides
+      width: "90%",
+      // Set the height of the slides
+      height: "90%",
+      // Vertical centering of slides
+      center: true,
+      // Loop the presentation
+      loop: false,
+      // Enables touch navigation on devices with touch input
+      touch: true,
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+      // Select a theme
+      theme: 'white',
+      // Select the type of slides transition
+      transition: 'fade',
+      // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+      disableLayout: true
+    });
+  </script>
+
+  <!-- If the user asks for the pdf version, set section height to auto -->
+  <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+  <script>
+    if (window.location.href.indexOf('?print-pdf') > -1) {
+      // Create a new css element setting the height of .section to none
+      var css = document.createElement("style");
+      // Modify section height to fix the layout
+      // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+      // Hide the slide context (the slide number)
+      css.innerHTML = "body {width: unset !important;} section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;} html.print-pdf .reveal .slides section {display: flex !important; left: 0 !important;}";
+      // Append the css to the head
+      document.head.appendChild(css);
+
+      const printVersionText = document.getElementById('print-version-text');
+      printVersionText.innerHTML = `<a href="?">Click here</a> to go back to the slides`;
+    }
+  </script>
+</body>
+
+</html>

@@ -380,7 +380,7 @@ p.park(b);</code></pre>
             <li>Inheritance and polymorphism are fundamental in object-orientation</li>
             <li>Together, they make it possible to:</li>
             <ul>
-              <li>keep the definition of a class "<span class="error">open</span>" to subsequent extensions (specialisations), without having to modify the code that uses it;</li>
+              <li>keep the definition of a class "<span class="error">open</span>" to subsequent extensions (specializations), without having to modify the code that uses it;</li>
               <li>choose the most appropriate "<span class="error">view</span>" to manage an object (general vs. specific) each time.</li>
             </ul>
             <li>Strong positive impact on readability and maintainability of the code!</li>
@@ -1558,7 +1558,306 @@ class Stack extends DataVector {
       <section>
         <h3 class="title">Simple inheritance problems</h3>
         <img src="assets/inheritance-problems.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
-              alt="Image representing a typical inheritance problem">
+              alt="A typical inheritance problem">
+      </section>
+
+      <section>
+        <h3 class="title">Multiple inheritance: issues</h3>
+        <div class="row">
+          <ul>
+            <li>In languages that support multiple inheritance (e.g., C++) it is possible to inherit two or more methods with the same signature from multiple superclasses...</li>
+            <li>... which creates a conflict between different <span class="error">implementations</span></li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img src="assets/mult-inheritance-1.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Multiple inheritance problem 1">
+          </div>
+          <div class="col">
+            <img src="assets/mult-inheritance-1.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Multiple inheritance problem 1">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Java Approach: interface</h3>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Distinguish between:</li>
+              <ul>
+                <li>a simple hierarchy of inheritance (implementation)</li>
+                <li>a multiple hierarchy of specialization (types)</li>
+              </ul>
+              <li>... introducing the construct of <span class="code">interface</span></li>
+              <li>It allows to separate the use of inheritance in order to reuse code and the use in order to describe a hierarchy of types</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/interface.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Java approach: interfaces">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Interfaces</h3>
+        <div class="row">
+          <ul>
+            <li class="fragment" data-fragment-index="0">An interface is a collection of method signatures.</li>
+            <ul>
+              <li class="fragment" data-fragment-index="1">It can be viewed as a class with no attributes, whose methods are all public and abstract</li>
+            </ul>
+            <li class="fragment" data-fragment-index="2">Syntax:<br><pre><code class="java">interface &lt;name&gt; {
+  &lt;methods list : signatures only, no coding&gt;
+}</code></pre></li>
+            <p style="text-align: center; background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)" class="fragment bold" data-fragment-index="6">
+              Since Java 8 it is possible to have "default methods" with a body... not considered here
+            </p>
+            <li class="fragment" data-fragment-index="3">An interface can also contain constants; however, in general this practice is not recommended</li>
+            <li class="fragment" data-fragment-index="4">Sometimes you use the name alone (no methods) to "tag" classes with special properties (<em>tagging interfaces</em>).</li>
+            <ul>
+              <li class="fragment" data-fragment-index="5">E.g. <span class="code">Cloneable</span>, <span class="code">Serializable</span>, <span class="code">Remote</span>, ...</li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Interfaces and inheritance</h3>
+        <div class="row" style="width: min(70vw, 140vh)">
+          <ul>
+            <li>An interface can inherit from <span class="error bold">one or more</span> interfaces:<br>
+            <pre><code class="java">interface &lt;Iname&gt; extends &lt;Iname_1&gt;,...,&lt;Iname_n&gt; { ... }</code></pre></li>
+            <ul>
+              <li>The inheritance hierarchy between interfaces defines a hierarchy of types</li>
+            </ul>
+            <li>A class can implement <span class="error bold">one or more interfaces</span></li>
+            <ul>
+              <li>if the class is not abstract, it must provide an implementation for all methods present in the interfaces it implements; vice versa, the class is abstract<br>
+              <pre><code class="java">class &lt;Iname&gt; implements &lt;Iname_1&gt;,...,&lt;Iname_n&gt; { ... }</code></pre></li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Example</h3>
+        <div class="row">
+          <div class="col" style="flex: 2">
+            <pre><code class="java">package myDataStructures;
+
+public interface DataAccess {
+  public int pop();
+  public void push(int z);
+}
+
+public abstract class DataVector
+    implements DataAccess { ... }
+
+public class Stack extends DataVector { ... }
+
+public class Queue extends DataVector { ... }
+
+public class Set implements DataAccess { ... }</code></pre>
+          </div>
+          <div class="col">
+            <img src="assets/interfaces-example-1.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
+              alt="Interface example showing the relationship between the elements defined in the code on this slide">
+          </div>
+        </div>
+        <div style="width: min(60vw, 120vh)">
+          <p style="text-align: center; background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)" class="fragment bold">
+            A class defines that an object <span style="color: yellow">is</span> something; an interface represents the services (<span style="color: yellow">behaviours</span>) that the class must provide, without giving their implementation
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Example</h3>
+        <p>TODO</p>
+      </section>
+      
+      <section>
+        <h3 class="title">Polymorphism and Interfaces</h3>
+        <div class="row">
+          <ul>
+            <li class="fragment" data-fragment-index="0">An interface can be used to define the type of a variable</li>
+            <li class="fragment" data-fragment-index="1">The rules of polymorphism apply: this variable can refer to any object that implements the interface:</li>
+          </ul>
+        </div>
+        <div class="row fragment" data-fragment-index="1" style="width: min(50vw, 100vh)">
+          <div class="col">
+            <ul>
+              <li class="ok bold">This is correct:</li>
+            </ul>
+          </div>
+          <div class="col" style="flex: 2">
+            <pre><code class="java">DataAccess o = new Stack();
+o.push(5);</code></pre>
+          </div>
+        </div>
+        <div class="mt2 row fragment" data-fragment-index="2" style="width: min(50vw, 100vh)">
+          <div class="col">
+            <ul>
+              <li class="error bold">But an interface cannot be used to create an object!</li>
+            </ul>
+          </div>
+          <div class="col" style="flex: 2;">
+            <code class="code-without-pre">DataAccess o = new <span class="error bold">DataAccess</span>();</code>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Example</h3>
+        <img src="assets/interfaces-example-2.png" style="max-width: 100%; object-fit: contain; max-height: min(7vw, 15vh)"
+              alt="Interface example showing the relationship between some animals">
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Main {
+  public static void main(String[] args) {
+    Animal g = new Cat();		// ok
+    AquaticAnimal t = new Trout();		// ok
+    Duck a = new Duck();		// ok
+    AquaticAnimal c = new AquaticAnimal(); 	// error
+    Birds l = g;	 // errato
+    Birds v = a;	 // ok
+    AquaticAnimal q = a;	 // ok
+    g.fly();	// errato
+    v.fly(); 	// ok
+    t.swim();  // ok
+    a.swim();  // ok
+  }
+}
+
+interface Birds {
+  public void fly();
+}
+
+interface AquaticAnimal {
+  public void swim();
+}
+
+interface AcquaticBird extends AquaticAnimal {
+  public void fly();
+}
+
+abstract class Animal {
+  public abstract void eat();
+}
+
+class Cat extends Animal {
+  public void eat() { System.out.println("Cat eating..."); }
+}
+
+class Duck extends Animal implements Birds, AquaticAnimal {
+  public void eat() { System.out.println("Duck eating..."); }
+  public void fly() { System.out.println("Duck flying..."); }
+  public void swim() { System.out.println("Duck swimming..."); }
+}
+
+class Trout extends Animal implements AquaticAnimal {
+  public void eat() {  System.out.println("Trout eating..."); }
+  public void swim() {  System.out.println("Trout swimming..."); }
+}'></java-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Inheritance, polymorphism and arrays</h3>
+        <div class="row">
+          <ul>
+            <li>If <span class="code">X</span> is a superclass of <span class="code">Y</span>, then the array <span class="code">X[]</span> is "super-array" of the array <span class="code">Y[]</span></li>
+            <ul>
+              <li>the same is true for multidimensional arrays</li>
+            </ul>
+            <li><span class="error bold">This choice is not type safe</span><br>
+            <pre class="fragment"><code class="java">void f(X[] ax) {
+  ax[0] = new X();
+}
+...
+f(new Y[10]);</code></pre></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Information hiding in Java</h3>
+        <div class="row">
+          <ul>
+            <li>The visibility of attributes and methods of a <span class="code">C</span> class can be:</li>
+            <ul>
+              <li><span class="code">public</span></li>
+              <ul>
+                <li>visible to all</li>
+                <li>are inherited</li>
+              </ul>
+              <li><span class="code">protected</span></li>
+              <ul>
+                <li>visible to the classes declared in the <span class="code">C</span> package</li>
+                <li>visible to <span class="code">C</span> subclasses, even if defined in another package</li>
+              </ul>
+              <li><span class="code">"package"</span> (no modifier specified)</li>
+              <ul>
+                <li>visible only to classes declared in the <span class="code">C</span> package</li>
+              </ul>
+              <li><span class="code">private</span></li>
+              <ul>
+                <li>visible only within the class in which they are defined</li>
+                <li>not visible in subclasses</li>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Visibility modifiers</h3>
+        <div class="row mt2">
+          <table>
+            <tr>
+              <th></th>
+              <th colspan="4" style="background-color: #c7c7c7; text-align: center;">Visibility</th>
+            </tr>
+            <tr>
+              <th style="text-align: center;">Modifier</th>
+              <th style="background-color: #ebebeb;">class</th>
+              <th style="background-color: #ebebeb;">package</th>
+              <th style="background-color: #ebebeb;">subclass</th>
+              <th style="background-color: #ebebeb;">world</th>
+            </tr>
+            <tr>
+              <td style="text-align: center"><span class="code">private</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="error bold">N</span></td>
+              <td style="text-align: center"><span class="error bold">N</span></td>
+              <td style="text-align: center"><span class="error bold">N</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><span class="code">"package"</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="error bold">N</span></td>
+              <td style="text-align: center"><span class="error bold">N</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><span class="code">protected</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="error bold">N</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><span class="code">public</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+              <td style="text-align: center"><span class="ok bold">Y</span></td>
+            </tr>
+          </table>
+        </div>
       </section>
     </div>
   </div>

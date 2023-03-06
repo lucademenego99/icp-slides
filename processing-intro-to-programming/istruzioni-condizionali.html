@@ -895,7 +895,11 @@ void draw() {
         <div class="row">
           <div class="col">
             <p style="margin: 0;">Disegna 2 palle che si muovono in due direzioni opposte. Quando si incontrano al
-              centro, devono fermarsi.</p>
+              centro:</p>
+            <ol>
+              <li type="a">devono fermarsi</li>
+              <li type="a">devono tornare indietro, con direzioni opposte</li>
+            </ol>
           </div>
           <div class="col">
             <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh);"
@@ -923,6 +927,7 @@ void draw() {
         <h3 class="title">Esercizio 6 (E309)</h3>
         <p>Scrivi un programma che mostra un cerchio dopo 1 secondo. Poi il cerchio disappare per 1 secondo, e poi
           riappare ancora dopo 1 secondo.</p>
+        <p><strong>Nota</strong>: senza usare <span class="code">frameRate()</span></p>
         <p><strong>Consiglio</strong>: la funzione <span class="code">draw()</span> è chiamata 60 volte per secondo.</p>
         <div class="med-code-long">
           <processing-editor id="E309" save="true" downloadable="true" contenteditable="true" type="vertical"
@@ -1185,7 +1190,7 @@ void draw() {
         </div>
       </section>
 
-      <section>
+      <!-- <section>
         <h3 class="title">Esercizio 4 (E313)</h3>
         <p>L'esercizio dell'orologio a cui avevamo lavorato qualche lezione fa mostrava un'ora a caso in uno solo dei 4
           quadranti.</p>
@@ -1200,7 +1205,7 @@ void draw() {
   
 }"></processing-editor>
         </div>
-      </section>
+      </section> -->
 
       <section>
         <h3 class="title">Due ultimi commenti... (P308)</h3>

@@ -226,7 +226,7 @@
         <h3 class="title">Polymorphism in Java: examples</h3>
         <div class="row">
           <div class="col" style="flex: 2">
-            <pre><code class="java">Point p = new Point(1,2);
+            <pre><code class="java" data-line-numbers="">Point p = new Point(1,2);
 p.move(3,4);
 p = new NamedPoint(5, 7, "A");
 p.move(3,4);</code></pre>
@@ -285,11 +285,11 @@ class Point {
         <h3 class="title">Polymorphism in Java: examples</h3>
         <div class="row">
           <div class="col" style="flex: 2">
-            <pre><code class="java">public class Line {
+            <pre><code class="java" data-line-numbers="">public class Line {
   Point p1, p2;
   Line(Point p1, Point p2) { ... }
 }</code></pre>
-            <pre><code class="java">Point p1 = new Point(1,2);
+            <pre><code class="java" data-line-numbers="">Point p1 = new Point(1,2);
 NamedPoint p2 = new NamedPoint(5, 7, "A");
 Line l = new Line(p1, p2);</code></pre>
           </div>
@@ -356,7 +356,7 @@ class Point {
       <section>
         <h3 class="title">Polymorphism in Java: examples</h3>
         <div class="row">
-          <pre><code class="java">class Car {...}
+          <pre><code class="java" data-line-numbers="">class Car {...}
 class ElectricCar extends Car {...}
 class Parking {
   private Car buf[];
@@ -392,7 +392,7 @@ p.park(b);</code></pre>
         <h3 class="title">On the fly decisions...</h3>
         <div class="row">
           <div class="col" style="flex: 2">
-            <pre><code class="java">public static void main(String a[]){
+            <pre><code class="java" data-line-numbers="">public static void main(String a[]){
   DataVector p;
   // read k
   if (k==1) p = new Stack();
@@ -609,7 +609,7 @@ o.m(...);</code></pre>
         <h3 class="title">Exercise: what is the output?</h3>
         <div class="row">
           <div class="col">
-            <pre><code class="java xsmall">public class A {
+            <pre><code class="java xsmall" >public class A {
   public void print(A p) {
     System.out.println("A");
   }
@@ -633,7 +633,7 @@ public class C extends A {
           </div>
           <div class="col">
               <p class="xbig bold">Main:</p>
-              <pre><code class="java">A a1, a2; 
+              <pre><code class="java" data-line-numbers="">A a1, a2; 
 B b1; 
 C c1; 
 a1 = new B(); 
@@ -755,7 +755,7 @@ public class C extends B {
           </div>
           <div class="col">
               <p class="xbig bold">Main:</p>
-              <pre><code class="java">A a1, a2; 
+              <pre><code class="java" data-line-numbers="">A a1, a2; 
 B b1; 
 C c1; 
 a1 = new B(); 
@@ -871,7 +871,7 @@ class B extends A {
           </div>
           <div class="col">
               <p class="xbig bold">Main:</p>
-              <pre><code class="java">A a1, a2; 
+              <pre><code class="java" data-line-numbers="">A a1, a2; 
 B b; 
 a1 = new A(4); 
 a2 = new B(5); 
@@ -1006,7 +1006,7 @@ class Derived extends Test {
       <section>
         <h3 class="title">A Polymorphic Stack...</h3>
         <div class="row" style="width: min(60vw, 120vh)">
-          <pre><code class="java">package myDataStructures;
+          <pre><code class="java" data-line-numbers="">package myDataStructures;
 public abstract class DataVector {
   int size;
   int defaultGrowthSize;
@@ -1027,7 +1027,7 @@ public abstract class DataVector {
         <h3 class="title">A Polymorphic Stack...</h3>
         <div class="row" style="width: min(60vw, 120vh)">
           <p>With <span class="code">final</span> we are enabling static binding</p>
-          <pre><code class="java">final public void push(Object k) {
+          <pre><code class="java" data-line-numbers="">final public void push(Object k) {
   if(marker == size) 
     grow(defaultGrowthSize);
   content[marker] = k;
@@ -1035,10 +1035,10 @@ public abstract class DataVector {
 }
 abstract public Object pop();</code></pre>
         </div>
-        <div class="row" style="width: min(60vw, 120vh)">
+        <div class="row" style="width: min(60vw, 120vh); background-color: rgb(255, 241, 214); padding: 0 min(1vw, 2vh); border: 1px solid red; border-radius: min(1vw, 2vh)">
           <p class="mt"><span class="code">pop()</span> is then implemented in the <span class="code">Stack</span> class:</p>
-          <pre><code class="java">public Object pop() {
-  assert(marker>0):"empty Stack";
+          <pre><code class="java" data-line-numbers="">public Object pop() {
+  assert(marker&gt;0):"empty Stack";
   return content[--marker];
 }</code></pre>
         </div>
@@ -1048,7 +1048,7 @@ abstract public Object pop();</code></pre>
         <h3 class="title">A polymorphic stack...</h3>
         <p class="mt">Finally the <span class="code">private</span> <span class="code">grow</span> method is defined</p>
         <div class="row" style="width: min(60vw, 120vh)">
-          <pre><code class="java">private void grow() {
+          <pre><code class="java" data-line-numbers="">private void grow() {
   size += defaultGrowthSize;
   Object temp[] = new Object[size];
   for (int k=0; k&lt;marker; k++)
@@ -1061,7 +1061,7 @@ abstract public Object pop();</code></pre>
         <h3 class="title">A polymorphic stack...</h3>
         <p class="mt">Now what would happen if we executed this <span class="code">main</span>?</p>
         <div class="row" style="width: min(60vw, 120vh)">
-          <pre><code class="java">public static void main(String args[]) {
+          <pre><code class="java" data-line-numbers="">public static void main(String args[]) {
   int dim = 10;
   Stack s = new Stack(dim);
   for(int k=0; k&lt;dim; k++){
@@ -1415,7 +1415,7 @@ class C extends B {
         </div>
         <div class="row">
           <div class="col" style="flex: 2">
-            <pre><code class="java">public static void main(String a[]){
+            <pre><code class="java" data-line-numbers="">public static void main(String a[]){
   Point p; 
   // read k
   if (k==1) p = new Point(2,2);
@@ -1654,7 +1654,7 @@ class Stack extends DataVector {
         <h3 class="title">Example</h3>
         <div class="row">
           <div class="col" style="flex: 2">
-            <pre><code class="java">package myDataStructures;
+            <pre><code class="java" data-line-numbers="">package myDataStructures;
 
 public interface DataAccess {
   public int pop();

@@ -262,7 +262,7 @@
         <div class="row">
           <div class="col">
             <p class="ok bold big">Queue</p>
-            <pre><code class="java">int pop() {
+            <pre><code class="java" data-line-numbers="">int pop() {
   assert(marker&gt;0):"No data!";
   int retval = content[0];
   for(int k=1; k&lt;marker; k++)
@@ -273,7 +273,7 @@
           </div>
           <div class="col">
             <p class="error bold big">Stack</p>
-            <pre><code class="java">int pop() {
+            <pre><code class="java" data-line-numbers="">int pop() {
   assert(marker&gt;0):"No data!";
   return content[--marker];
 }</code></pre>
@@ -432,7 +432,7 @@ class Stack {
         <div class="mt">
           <p>A subclass can add new attributes and methods, but also...</p>
           <p>... <span class="error">redefine the methods of its superclass</span></p>
-          <pre><code class="java">class ElectricCar extends Car {
+          <pre><code class="java" data-line-numbers="">class ElectricCar extends Car {
   boolean chargedBattery;
 
   void recharge() {
@@ -454,7 +454,7 @@ class Stack {
             notation:</p>
           <pre><code class="java">super.&lt;method name&gt;(&lt;parameters list&gt;)</code></pre>
           <p class="mt2"><strong>Example:</strong></p>
-          <pre><code class="java">class ElectricCar extends Car {
+          <pre><code class="java" data-line-numbers="">class ElectricCar extends Car {
   ...
   void start() {
     if(chargedBattery) super.start();
@@ -887,7 +887,7 @@ class B extends A {
   super(size);
 }</code></pre>
           <p>then the following code will work:</p>
-          <pre><code class="java">public static void main(String args[]) {
+          <pre><code class="java" data-line-numbers="">public static void main(String args[]) {
   int dim = 5;
   Queue s = new Queue(dim);
   for(int k=0; k&lt;2*dim; k++)
@@ -1039,7 +1039,7 @@ class Circle extends Shape {
         <h3 class="title">Stack, Queue and Abstract Classes</h3>
         <div class="row">
           <div class="col" style="flex: 2;">
-            <pre><code class="java">abstract public class DataVector {
+            <pre><code class="java" data-line-numbers="">abstract public class DataVector {
   int size;
   int defaultGrowthSize;
   int marker;

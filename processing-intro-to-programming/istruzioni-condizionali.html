@@ -1176,9 +1176,20 @@ void draw() {
 
       <section>
         <h3 class="title">Esercizio 3 (E312)</h3>
-        <p>Scrivi un programma che disegna una bandiera scandinava a caso.</p>
-        <p>Utilizza la funzione <span class="code">random()</span> ed il costrutto <span class="code">if ... else
-            ...</span></p>
+        <div class="row">
+          <div class="col">
+            <p>Utilizza la funzione <span class="code">random()</span></p>
+            <p>Scrivi un programma che:</p>
+          </div>
+          <div class="col">
+            <ol>
+              <li type="a">scegli a caso una fra 2 bandiere (usa <span class="code">if</span>)</li>
+              <li type="a">scegli a caso una fra 3 bandiere (usa <span class="code">if</span>)</li>
+              <li type="a">scegli a caso una fra 2 bandiere (usa <span class="code">if</span>-<span class="code">else</span>)</li>
+              <li type="a">scegli a caso una fra 3 bandiere (usa <span class="code">if</span>-<span class="code">else</span>)</li>
+            </ol>
+          </div>
+        </div>
         <div class="med-code-long">
           <processing-editor id="E312" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code="void setup() {
@@ -1475,7 +1486,7 @@ void draw() {
         </div>
       </section>
 
-      <section>
+      <!-- <section>
         <h3 class="title">Esercizio 4 (E320)</h3>
         <p>Certe cose sono legali solo dopo una certa età, ad esempio i minori di 18 anni non possono comprare
           sigarette.</p>
@@ -1487,7 +1498,7 @@ void draw() {
             theme="white" code='// Il tuo codice...
 '></processing-editor>
         </div>
-      </section>
+      </section> -->
 
       <section>
         <h3 class="title">Operatori logici</h3>
@@ -1529,6 +1540,38 @@ println((y == 6) && !(x > 5));'></processing-editor>
       </section>
 
       <section>
+        <h3 class="title">Esercizio (E320)</h3>
+        <div class="row">
+          <div class="col">
+            <p>Rifai l'esercizio E315 utilizzando gli operatori logici</p>
+          </div>
+          <div class="col">
+            <ol>
+              <li>usa 1 pallina</li>
+              <li>usa 2 palline</li>
+              <li>usa 2 palline, ma se si scontrano vanno in direzioni opposte</li>
+            </ol>
+          </div>
+        </div>
+        <div class="med-code-long">
+          <processing-editor id="E320" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code='// Le tue variabili
+
+void setup() {
+  size(450, 300);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
         <h3 class="title">Esercizio 1 (E321)</h3>
         <div class="row">
           <div class="col">
@@ -1555,7 +1598,7 @@ println((y == 6) && !(x > 5));'></processing-editor>
         <h3 class="title">Esercizio 2 (E322)</h3>
         <div class="row">
           <div class="col">
-            <p>Combina gli esercizi <a href="#/43">del biliardo</a> e <a href="#/37">delle due palle</a>: due palle
+            <p>Combina gli esercizi <a href="#/45">del biliardo</a> e <a href="#/54">delle due palle</a>: due palle
               iniziano in una posizione random del biliardo.</p>
             <p>Ogni volta che una palla tocca l'altra palla o il bordo del canvas, la sua direzione ed il suo colore
               cambiano.</p>

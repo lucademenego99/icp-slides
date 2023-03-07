@@ -194,7 +194,7 @@
 
       <section>
         <h3 class="title">Stack and Queue</h3>
-        <p>They are very similar... what's the difference about the code?</p>
+        <p class="fragment bold" style="text-align: center; background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)">They are very similar... what's the difference about the code?</p>
         <div class="row">
           <div class="col">
             <img src="assets/stack.png" style="max-width: 100%; object-fit: contain; max-height: min(30vw, 60vh)"
@@ -279,7 +279,7 @@
 }</code></pre>
           </div>
         </div>
-        <p class="big bold mt">The rest of the code is identical! Can we avoid rewriting it?</p>
+        <p class="bold mt fragment" style="text-align: center; background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)">The rest of the code is identical! Can we avoid rewriting it?</p>
       </section>
 
       <section>
@@ -578,9 +578,9 @@ class Point {
         <h3 class="title">Subclassing & overriding</h3>
         <div class="row" style="width: min(90vw, 180vh)">
           <div class="col" style="text-align: left;">
-            <p>The <span class="code">toString()</span> function can also use the parent implementation!</p>
+            <p>The <span class="code">toString()</span> function can also use the parent implementation</p>
             <p class="fragment mt2" data-fragment-index="0">Check the difference between <strong>this
-                solution...</strong> <span class="fragment bold ok" data-fragment-index="1"> and this one!</span></p>
+                solution...</strong> <span class="fragment bold ok" data-fragment-index="1"> and this one</span></p>
           </div>
           <div class="col" style="flex: 2;">
             <div class="r-stack">
@@ -619,7 +619,7 @@ class Point {
 
       <section>
         <h3 class="title">Subclassing & overriding</h3>
-        <p>As you can see by executing the code, the result is still the same!</p>
+        <p>As you can see by executing the code, the result is still the same</p>
         <div class="med-code mt">
           <java-editor contenteditable="true" code='public class NamedPoint extends Point {
   String name;
@@ -667,7 +667,17 @@ class Point {
         <div class="row mt2">
           <div class="col">
             <p class="bold big">Class with overloading:</p>
-            <pre><code class="java">class C {
+            <div class="r-stack">
+              <pre class="fragment fade-out" data-fragment-index="2"><code class="java">class C {
+  int f() { ... }
+
+  int f(int x) { ... }
+
+
+  void f(int x) { ... }
+
+}</code></pre>
+              <pre class="fragment fade-in" data-fragment-index="2"><code class="java">class C {
   int f() { ... }
 
   int f(int x) { ... }
@@ -676,17 +686,30 @@ class Point {
   void f(int x) { ... }
   // error
 }</code></pre>
+            </div>
           </div>
-          <div class="col">
+          <div class="col fragment" data-fragment-index="0">
             <p class="bold big">Main:</p>
-            <pre><code class="java">C ref = new C();
+            <div class="r-stack">
+              <pre class="fragment fade-out" data-fragment-index="1"><code class="java">C ref = new C();
+
+ref.f();
+
+
+ref.f(5);
+
+
+</code></pre>
+              <pre class="fragment fade-in" data-fragment-index="1"><code class="java">C ref = new C();
 
 ref.f();
 // distinguishable
 
 ref.f(5);
 // ???
-            </code></pre>
+
+</code></pre>
+            </div>
           </div>
         </div>
       </section>
@@ -697,6 +720,14 @@ ref.f(5);
         <p><span class="error bold">Try to remove it!</span> Does it work now?</p>
         <div class="med-code">
           <java-editor contenteditable="true" code='public class C {
+  public static void main(String a[]){
+    C ref = new C();
+
+    ref.f();  // Distinguishable
+
+    ref.f(5); // ???
+  }
+
   int f() { 
     System.out.println("Base f()");
     return 0;
@@ -713,16 +744,6 @@ ref.f(5);
     System.out.println("Overloaded f() number 2");
     return;
   }
-
-  public static void main(String a[]){
-    C ref = new C();
-
-    ref.f();
-    // distinguishable
-
-    ref.f(5);
-    // ???
-  }
 }'></java-editor>
         </div>
       </section>
@@ -731,12 +752,12 @@ ref.f(5);
         <h3 class="title">Overloading vs. overriding</h3>
         <div class="row mt2" style="width: min(50vw, 100vh)">
           <ul>
-            <li><span class="error bold">Overloading</span>: functions with the same name and different signatures can
+            <li class="fragment" data-fragment-index="0"><span class="error bold">Overloading</span>: functions with the same name and different signatures can
               co-exist, e.g.<br>
-              <pre><code class="java">move(int dx, int dy) { ... }</code></pre>
-              <pre><code class="java">move(int dx, int dy, int dz) { ... }</code></pre>
+              <pre class="fragment" data-fragment-index="1"><code class="java">move(int dx, int dy) { ... }</code></pre>
+              <pre class="fragment" data-fragment-index="1"><code class="java">move(int dx, int dy, int dz) { ... }</code></pre>
             </li>
-            <li><span class="error bold">Overriding</span>: redefinition of a function in a subclass (while keeping the
+            <li class="fragment" data-fragment-index="2"><span class="error bold">Overriding</span>: redefinition of a function in a subclass (while keeping the
               signature defined in the superclass <span class="error">unchanged</span>); e.g. <span
                 class="code">pop()</span> in <span class="code">Queue</span> and <span class="code">Stack</span></li>
           </ul>
@@ -757,17 +778,17 @@ ref.f(5);
         <h3 class="title">Inheritance and constructors</h3>
         <div class="row" style="width: min(50vw, 100vh)">
           <ul>
-            <li>Constructors are <span class="error bold">not</span> inherited</li>
-            <li>Within a constructor, it is possible to call the constructor of the superclass by means of the
+            <li class="fragment">Constructors are <span class="error bold">not</span> inherited</li>
+            <li class="fragment">Within a constructor, it is possible to call the constructor of the superclass by means of the
               notation:<br>
               <pre><code class="java">super(&lt;current parameter list&gt;)</code></pre>
               as the <span class="error bold">first instruction</span> of the constructor
             </li>
-            <li>If the programmer does not specify a constructor, the compiler automatically inserts an invocation to
+            <li class="fragment">If the programmer does not specify a constructor, the compiler automatically inserts an invocation to
               the <span class="underline">default (parameterless) constructor of the superclass</span>.</li>
             <ul>
-              <li>If this does not exist, a compilation error occurs</li>
-              <li><span class="code">Object</span> defines a default constructor...</li>
+              <li class="fragment">If this does not exist, a compilation error occurs</li>
+              <li class="fragment"><span class="code">Object</span> defines a default constructor...</li>
             </ul>
           </ul>
         </div>
@@ -775,7 +796,7 @@ ref.f(5);
 
       <section>
         <h3 class="title">Default constructors - ex1</h3>
-        <p>This example <span class="error bold">does not compile</span>: the superclass does not have a default
+        <p class="fragment">This example <span class="error bold">does not compile</span>: the superclass does not have a default
           constructor</p>
         <div class="med-code mt">
           <java-editor contenteditable="true" code='public class A {
@@ -785,7 +806,7 @@ ref.f(5);
     this.x = x;
     this.y = y;
   }
-  public static void main(String[] args) {}
+  public static void main(String[] args) { System.out.println("OK!"); }
 }
 class B extends A {}
 '></java-editor>
@@ -794,7 +815,7 @@ class B extends A {}
 
       <section>
         <h3 class="title">Default constructors - ex2</h3>
-        <p style="width: min(50vw, 100vh)">This example <span class="ok bold">compiles</span>: the superclass has a
+        <p class="fragment" style="width: min(50vw, 100vh)">This example <span class="ok bold">compiles</span>: the superclass has a
           default
           constructor, which is automatically invoked during B creation</p>
         <div class="med-code mt">
@@ -809,7 +830,7 @@ class B extends A {}
     x = 0;
     y = 0;
   }
-  public static void main(String[] args) {}
+  public static void main(String[] args) { System.out.println("OK!"); }
 }
 class B extends A {}
 '></java-editor>
@@ -818,7 +839,7 @@ class B extends A {}
 
       <section>
         <h3 class="title">Default constructors - ex3</h3>
-        <p style="width: min(50vw, 100vh)">This example <span class="ok bold">compiles</span>: the subclass explicitly
+        <p class="fragment" style="width: min(50vw, 100vh)">This example <span class="ok bold">compiles</span>: the subclass explicitly
           calls the constructor with the parameters of the superclass</p>
         <div class="med-code mt">
           <java-editor contenteditable="true" code='public class A {
@@ -828,7 +849,7 @@ class B extends A {}
     this.x = x;
     this.y = y;
   }
-  public static void main(String[] args) {}
+  public static void main(String[] args) { System.out.println("OK!"); }
 }
 class B extends A {
   B(int x, int y) {
@@ -845,7 +866,7 @@ class B extends A {
           <p>Let's go back to our initial problem. With the previous implementation at <a href="#/6">slide 7</a> we got
             the following
             error:</p>
-          <pre><code class="text error small">Constructor Stack in class Stack cannot be applied to given types;
+          <pre><code class="text error small bold">Constructor Stack in class Stack cannot be applied to given types;
   required: int
   found: no arguments
   reason: actual and formal argument lists differ in length</code></pre>
@@ -942,13 +963,13 @@ class Stack {
         <h3 class="title">Abstract classes and methods</h3>
         <div class="row" style="width: min(50vw, 100vh)">
           <ul>
-            <li>An <span class="error bold">abstract method</span> is a method for which no implementation is specified.
+            <li class="fragment">An <span class="error bold">abstract method</span> is a method for which no implementation is specified.
             </li>
-            <li>An <span class="error bold">abstract class</span> is an abstract class if it contains at least one
+            <li class="fragment">An <span class="error bold">abstract class</span> is an abstract class if it contains at least one
               abstract method.</li>
-            <li>Abstract classes and methods are defined as such by the <span class="code">abstract</span> keyword.</li>
-            <li>Abstract classes are very useful for introducing high-level abstractions.</li>
-            <li>You cannot create instances of an abstract class: you have to define a subclass for it, which implements
+            <li class="fragment">Abstract classes and methods are defined as such by the <span class="code">abstract</span> keyword.</li>
+            <li class="fragment">Abstract classes are very useful for introducing high-level abstractions.</li>
+            <li class="fragment">You cannot create instances of an abstract class: you have to define a subclass for it, which implements
               its abstract methods.</li>
           </ul>
         </div>

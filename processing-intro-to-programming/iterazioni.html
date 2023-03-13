@@ -277,7 +277,7 @@ for (init; test; update) {
       </section>
 
       <section>
-        <h3 class="title">Qual è l'output... (E401)</h3>
+        <h3 class="title">Qual è l'output... (P401)</h3>
         <p>Quale credi sia l'output del seguente pezzo di codice? Quante volte viene eseguito il ciclo?</p>
         <p>Esegui per verificare!</p>
 
@@ -289,7 +289,7 @@ for (init; test; update) {
       </section>
 
       <section>
-        <h3 class="title">Qual è l'output... (E402)</h3>
+        <h3 class="title">Qual è l'output... (P402)</h3>
         <p>Quale credi sia l'output del seguente pezzo di codice? Quante volte viene eseguito il ciclo?</p>
         <p>Esegui per verificare!</p>
 
@@ -301,7 +301,7 @@ for (init; test; update) {
       </section>
 
       <section>
-        <h3 class="title">Qual è l'output... (E403)</h3>
+        <h3 class="title">Qual è l'output... (P403)</h3>
         <p>Quale credi sia l'output del seguente pezzo di codice? Quante volte viene eseguito il ciclo?</p>
         <p>Esegui per verificare!</p>
 
@@ -313,7 +313,7 @@ for (init; test; update) {
       </section>
 
       <section>
-        <h3 class="title">Qual è l'output... (E404)</h3>
+        <h3 class="title">Qual è l'output... (EP04)</h3>
         <p>Quale credi sia l'output del seguente pezzo di codice? Quante volte viene eseguito il ciclo?</p>
         <p>Esegui per verificare!</p>
 
@@ -325,14 +325,37 @@ for (init; test; update) {
       </section>
 
       <section>
-        <h3 class="title">Qual è l'output... (E405)</h3>
+        <h3 class="title">Qual è l'output... (P405)</h3>
         <p>Quale credi sia l'output del seguente pezzo di codice? Quante volte viene eseguito il ciclo?</p>
-        <p>Esegui per verificare!</p>
+        <p>Esegui per verificare! (copialo ed incollalo sul programma Processing)</p>
 
-        <div class="med-code-long mt">
-          <processing-editor contenteditable="true" type="vertical" theme="white" code='for (int i= 1; i < 3; i--){
+        <div class="row" style="width: min(50vw, 100vh)">
+          <pre><code>for (int i= 1; i < 3; i--){
   println(i);
-}'></processing-editor>
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 1 (E401)</h3>
+        <div class="row">
+          <div class="col">
+            <p>Scrivi un programma che, usando il ciclo <span class="code">for</span>, stampi:</p>
+          </div>
+          <div class="col">
+            <ol>
+              <li>tutti i numeri da <span class="code">a</span> a <span class="code">b</span></li>
+              <li>tutti i numeri pari da <span class="code">a</span> a <span class="code">b</span></li>
+              <li>tutti i numeri divisibili per <span class="code">2</span> e <span class="code">3</span> compresi tra <span class="code">a</span> e <span class="code">b</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor id="E401" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code='int a = 10;
+int b = 21;
+// Il tuo codice
+'></processing-editor>
         </div>
       </section>
 
@@ -345,11 +368,6 @@ for (init; test; update) {
           <ul>
             <li><span class="ok bold">Quando può essere utile un ciclo infinito? Proponi un esempio...</span></li>
           </ul>
-          <li class="mt">Non confondere un ciclo con un <span class="code">draw():</span></li>
-          <ul>
-            <li><span class="code">draw()</span> può essere usato per dare l'impressione di movimento</li>
-            <li><span class="code">for</span> disegnerà tutto <em>il prima possibile</em></li>
-          </ul>
           <li class="mt">E' possibile dichiarare il <em>counter</em> prima del ciclo</li>
           <li><span class="code">println()</span> può essere utile se il ciclo non si comporta come previsto (vedi slide
             su Debugger)</li>
@@ -359,8 +377,15 @@ for (init; test; update) {
       </section>
 
       <section>
-        <h3 class="title">Compara i due snippet</h3>
-        <p>Quale credi sia la differenza?</p>
+        <h3 class="title">Differenza tra draw() e for</h3>
+        <ul>
+          <li class="mt">Non confondere un ciclo con un <span class="code">draw():</span></li>
+          <ul>
+            <li><span class="code">draw()</span> può essere usato per dare l'impressione di movimento</li>
+            <li><span class="code">for</span> disegnerà tutto <em>il prima possibile</em></li>
+          </ul>
+        </ul>
+        <p class="mt2 bold">Compara i due snippet. <span class="ok">Quale credi sia la differenza?</span></p>
         <div class="row">
           <div class="col">
             <pre><code class="hljs javascript">void setup() {
@@ -385,22 +410,22 @@ void draw() {
 
       <section>
         <h3 class="title">Primo snippet - for (P401)</h3>
-        <p>La variabile <span class="code">i</span> è il counter che controlla il ciclo, utilizzata per disegnare le
-          linee.</p>
-        <div class="med-code-long mt">
-          <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
+        <div class="row" style="gap: min(1vw, 2vh); width: min(90vw, 180vh)">
+          <div class=" col">
+            <p>La variabile <span class="code">i</span> è il counter che controlla il ciclo, utilizzata per disegnare le
+              linee.</p>
+            <div class="small-code  mt">
+              <processing-editor contenteditable="true" type="vertical" theme="white" code='void setup() {
   size(300, 300);
   for (int i = 1; i < 50; i++) {
     line(i*10,i*10,i*10+10,i*10);
   }
 }'></processing-editor>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Secondo snippet - draw (P402)</h3>
-        <p>La variabile <span class="code">i</span> è utilizzata per disegnare le linee, un frame alla volta.</p>
-        <div class="med-code-long mt">
+            </div>
+          </div>
+          <div class="col">
+            <p>La variabile <span class="code">i</span> è utilizzata per disegnare le linee, un frame alla volta.</p>
+        <div class="small-code  mt">
           <processing-editor contenteditable="true" type="vertical" theme="white" code='int i = 0;
 void setup() {
   size(300, 300);
@@ -410,16 +435,19 @@ void draw() {
   i++;
 }'></processing-editor>
         </div>
+          </div>
+        </div>
+        
       </section>
 
       <section>
-        <h3 class="title">Esercizio 1 (E405)</h3>
+        <h3 class="title">Esercizio 1 (E402)</h3>
         <p>Scrivi un programma che disegna 10 forme (usa <span class="code">for</span>) in posizioni random del canvas.
         </p>
         <p>Le figure dispari (prima, terza, ...) sono rettangoli, quelle pari (seconda, quarta, ...) sono cerchi.</p>
 
         <div class="med-code-long mt">
-          <processing-editor id="E405" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E402" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='void setup() {
   size(300, 300);
   // Il tuo codice
@@ -429,11 +457,11 @@ void draw() {
       </section>
 
       <section>
-        <h3 class="title">Esercizio 2 (E406)</h3>
+        <h3 class="title">Esercizio 2 (E403)</h3>
         <p>Scrivi un programma che disegna una linea orizzontale, una verticale ed una diagonale, usando <span
             class="code">for</span> e la funzione <span class="code">point()</span></p>
         <div class="med-code-long mt">
-          <processing-editor id="E406" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E403" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='void setup() {
   size(300, 300);
   // Il tuo codice
@@ -443,20 +471,7 @@ void draw() {
       </section>
 
       <section>
-        <h3 class="title">Esercizio 3 (E407)</h3>
-        <p>Scrivi un programma che stampa tutti i numeri pari tra <span class="code">a</span> e <span
-            class="code">b</span>. Usa il ciclo <span class="code">for</span></p>
-        <div class="med-code-long mt">
-          <processing-editor id="E407" save="true" downloadable="true" contenteditable="true" type="vertical"
-            theme="white" code='int a = 10;
-int b = 21;
-// Il tuo codice
-'></processing-editor>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 4 (E408)</h3>
+        <h3 class="title">Esercizio 3 (E404)</h3>
         <div class="row">
           <div class="col">
             <p>Scrivi un programma che disegna un pattern a zebra</p>
@@ -468,7 +483,7 @@ int b = 21;
           </div>
         </div>
         <div class="med-code-long mt">
-          <processing-editor id="E408" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E404" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='void setup() {
   size(300, 300);
   // Il tuo codice
@@ -478,7 +493,7 @@ int b = 21;
       </section>
 
       <section>
-        <h3 class="title">Esercizio 5 (E409)</h3>
+        <h3 class="title">Esercizio 4 (E405)</h3>
         <div class="row">
           <div class="col">
             <p>Scrivi un programma che disegna 10 cerchi concentrici</p>
@@ -490,7 +505,7 @@ int b = 21;
           </div>
         </div>
         <div class="med-code-long mt">
-          <processing-editor id="E409" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E405" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='void setup() {
   size(300, 300);
   // Il tuo codice
@@ -500,7 +515,52 @@ int b = 21;
       </section>
 
       <section>
-        <h3 class="title">Esercizio 6 (E410)</h3>
+        <h3 class="title">Cicli for - dettagli</h3>
+        <p>Supponiamo di aver bisogno di una riga di cerchi ed un'altra di rettangoli</p>
+        <p>Posso usare due volte il ciclo <span class="code">for</span> nello stesso programma per disegnare due cose diverse:</p>
+        <div class="med-code-long">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='size(200,200);
+for (int i = 20 ; i < 180; i=i+30) {
+  ellipse( i, 100, 20,20);
+}
+
+for (int j = 10 ; j < 180; j=j+30) {
+  rect( j, 140, 20,20);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Cicli for - dettagli</h3>
+        <p>Supponiamo di aver bisogno di una riga di cerchi ed un'altra di rettangoli</p>
+        <p>Posso usare la stessa variabile (in questo caso <span class="code">i</span>) per controllare due cicli for diversi:</p>
+        <div class="med-code-long">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='size(200,200);  
+for (int i = 20 ; i < 180; i=i+30) {
+  ellipse( i, 100, 20,20);
+}
+
+for (int i = 10 ; i < 180; i=i+30) {
+  rect( i, 140, 20,20);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Cicli for - dettagli</h3>
+        <p>Supponiamo di aver bisogno di una riga di cerchi ed un'altra di rettangoli</p>
+        <p>Posso eseguire due diverse azioni nello stesso ciclo <span class="code">for</span></p>
+        <div class="med-code-long">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='size(200,200);
+for (int i = 20 ; i < 180; i=i+30) {
+  ellipse( i, 100, 20,20);
+  rect( i-10, 140, 20,20);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 5 (E406)</h3>
         <div class="row">
           <div class="col">
             <p>Scrivi un programma che disegna una rete a triangoli</p>
@@ -512,7 +572,7 @@ int b = 21;
           </div>
         </div>
         <div class="med-code-long mt">
-          <processing-editor id="E410" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E406" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='void setup() {
   size(300, 300);
   // Il tuo codice
@@ -522,10 +582,20 @@ int b = 21;
       </section>
 
       <section>
-        <h3 class="title">Esercizio 7 (E411)</h3>
-        <p>Scrivi un programma che disegna una griglia</p>
+        <h3 class="title">Esercizio 6 (E407)</h3>
+        <div class="row">
+          <div class="col">
+            <p>Scrivi un programma che disegna una griglia:</p>
+          </div>
+          <div class="col">
+            <ol>
+              <li type="a">con 2 <span class="code">for</span></li>
+              <li type="a">con 1 <span class="code">for</span></li>
+            </ol>
+          </div>
+        </div>
         <div class="med-code-long mt">
-          <processing-editor id="E411" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E407" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='void setup() {
   size(300, 300);
   // Il tuo codice
@@ -535,7 +605,7 @@ int b = 21;
       </section>
 
       <section>
-        <h3 class="title">Esercizio 8 (E412)</h3>
+        <h3 class="title">Esercizio 7 (E408)</h3>
         <div class="row">
           <div class="col" style="text-align: left;">
             <p>Riproduci la seguente animazione</p>
@@ -549,7 +619,7 @@ int b = 21;
         </div>
 
         <div class="med-code-long mt">
-          <processing-editor id="E412" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E408" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='void setup() {
   size(300, 300);
   // Il tuo codice
@@ -561,7 +631,7 @@ int b = 21;
       <section>
         <div class="r-stack">
           <div class="fragment fade-out" data-fragment-index="0">
-            <h3 class="title"><span class="error">COURSE ASSIGNMENT 3</span></h3>
+            <h3 class="title"><span class="error">COURSE ASSIGNMENT 3 (23/03/2023)</span></h3>
             <p>Progetta 3 texture pattern differenti. Usa cicli o cicli annidati (prossima lezione).</p>
             <p>Un disegno deve usare il <span class="code">for</span>, uno il <span class="code">while</span> ed uno il
               <span class="code">do while</span>.
@@ -714,6 +784,54 @@ while(test) {
       </section>
 
       <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a= 1;
+  while (a <= 5) {
+  println(a);
+  a++;
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a= 1;
+  while (a > 5) {
+  println(a);
+  a++;
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a= 1;
+  while (a < 5) {
+  println(a);
+  a=a+3;
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Qual è l'output...</h3>
+        <p>Quale credi sia l'output del seguente pezzo di codice? Esegui per verificare!</p>
+        <div class="med-code-long mt">
+          <processing-editor contenteditable="true" type="vertical" theme="white" code='int a= 10;
+  while (a < 5) {
+  println(a);
+  a=a-1;
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
         <h3 class="title">Prova tu!</h3>
         <p class="fragment">Non possiamo sapere a priori quando questo ciclo si fermerà...</p>
         <div class="med-code-long mt">
@@ -727,12 +845,13 @@ while (i != 1) {
 
       <section>
         <h3 class="title">Prova tu!</h3>
-        <p class="fragment error bold">Questo ciclo non si fermerà mai!</p>
-        <div class="med-code-long mt">
-          <processing-editor contenteditable="true" type="vertical" theme="white" code='int i = 9;
+        <p class="bold">(Copia ed incolla nel programma Processing)</p>
+        <p class="fragment error bold">Questo ciclo non si fermerà mai! Perché?</p>
+        <div class="row mt" style="width: min(50vw, 100vh)">
+          <pre><code>int i = 9;
 while (i != 1) {
   println(i);
-}'></processing-editor>
+}</code></pre>
         </div>
       </section>
 
@@ -765,11 +884,11 @@ while (i != 1) {
       </section>
 
       <section>
-        <h3 class="title">Esercizio 1 (E402-while)</h3>
+        <h3 class="title">Esercizio 1 (E409)</h3>
         <p>Prova a riscrivere questo programma utilizzando il <span class="code">while</span> al posto del <span
             class="code">for</span></p>
         <div class="med-code-long mt">
-          <processing-editor id="E402-while" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E409" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='for (int i= 0; i <= 5; i++){
   println(i);
 }'></processing-editor>
@@ -777,11 +896,11 @@ while (i != 1) {
       </section>
 
       <section>
-        <h3 class="title">Esercizio 2 (E406-while)</h3>
-        <p>Prova a riscrivere questo programma utilizzando il <span class="code">while</span> al posto del <span
+        <h3 class="title">Esercizio 2 (E410)</h3>
+        <p>Prova a riscrivere <a href="#/17">questo programma</a> utilizzando il <span class="code">while</span> al posto del <span
             class="code">for</span></p>
         <div class="med-code-long mt">
-          <processing-editor id="E406-while" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E410" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='// Linea orizzontale
 for (int i=0;i<100;i++) {  
   point(i, 10); 
@@ -800,11 +919,11 @@ for (int i=0;i<100;i++) {
       </section>
 
       <section>
-        <h3 class="title">Esercizio 3 (E407-while)</h3>
-        <p>Prova a riscrivere questo programma utilizzando il <span class="code">while</span> al posto del <span
+        <h3 class="title">Esercizio 3 (E411)</h3>
+        <p>Prova a riscrivere <a href="#/12">questo programma</a> utilizzando il <span class="code">while</span> al posto del <span
             class="code">for</span></p>
         <div class="med-code-long mt">
-          <processing-editor id="E407-while" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E411" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='int a = 10;
 int b = 21;
 
@@ -817,11 +936,11 @@ for (int i = a; i <= b; i++) {
       </section>
 
       <section>
-        <h3 class="title">Esercizio 4 (E409-while)</h3>
+        <h3 class="title">Esercizio 4 (E412)</h3>
         <p>Prova a riscrivere questo programma utilizzando il <span class="code">while</span> al posto del <span
             class="code">for</span></p>
         <div class="med-code-long mt">
-          <processing-editor id="E409-while" save="true" downloadable="true" contenteditable="true" type="vertical"
+          <processing-editor id="E412" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='size (300,300);
 
 // Disegna 10 cerchi concentrici

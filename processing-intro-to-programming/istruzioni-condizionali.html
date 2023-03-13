@@ -1549,7 +1549,6 @@ println((y == 6) && !(x > 5));'></processing-editor>
             <ol>
               <li>usa 1 pallina</li>
               <li>usa 2 palline</li>
-              <li>usa 2 palline, ma se si scontrano vanno in direzioni opposte</li>
             </ol>
           </div>
         </div>
@@ -1651,9 +1650,15 @@ void draw() {
 
       <section>
         <h3 class="title">Esercizio 4 (E324)</h3>
-        <div class="row">
+        <div class="row" style="gap: min(1vw, 2vh)">
           <div class="col">
             <p>Crea un biliardo con una buca. Quando la palla raggiunge la buca, deve disapparire.</p>
+          </div>
+          <div class="col">
+            <ol>
+              <li type="a">la buca deve apparire nell'angolo in basso a destra</li>
+              <li type="a">la buca deve apparire in una posizione random</li>
+            </ol>
           </div>
           <div class="col">
             <img style="max-width: 100%; object-fit: contain; max-height: min(7vw, 12vh);"
@@ -1663,6 +1668,31 @@ void draw() {
         </div>
         <div class="med-code-long">
           <processing-editor id="E324" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code='// Le tue variabili
+
+void setup() {
+  size(450, 300);
+
+  // Il tuo codice...
+  
+}
+
+void draw() {
+  // Il tuo codice...
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 5 (E325)</h3>
+        <div class="row" style="gap: min(1vw, 2vh)">
+          <div class="col">
+            <p>Aggiungi all'esercizio precedente una palla che all'inizio è ferma. Quando l'altra palla si scontra con la palla ferma, anche quest'ultima palla inizia a muoversi</p>
+          </div>
+        </div>
+        <div class="med-code-long">
+          <processing-editor id="E325" save="true" downloadable="true" contenteditable="true" type="vertical"
             theme="white" code='// Le tue variabili
 
 void setup() {

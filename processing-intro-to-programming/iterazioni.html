@@ -313,7 +313,7 @@ for (init; test; update) {
       </section>
 
       <section>
-        <h3 class="title">Qual è l'output... (EP04)</h3>
+        <h3 class="title">Qual è l'output... (P404)</h3>
         <p>Quale credi sia l'output del seguente pezzo di codice? Quante volte viene eseguito il ciclo?</p>
         <p>Esegui per verificare!</p>
 
@@ -605,7 +605,29 @@ for (int i = 20 ; i < 180; i=i+30) {
       </section>
 
       <section>
-        <h3 class="title">Esercizio 7 (E408)</h3>
+        <h3 class="title">Esercizio 7</h3>
+        <div class="row">
+          <div class="col" style="text-align: left;">
+            <p>Riproduci la seguente animazione:</p>
+          </div>
+          <div class="col">
+            <!-- <img src="iterations-assets/cerchi-anim.gif" alt="Animazione da riprodurre"
+              style="max-width: 100%; object-fit: contain; max-height: min(6vw, 10vh)"> -->
+          </div>
+        </div>
+
+        <div class="med-code-long mt">
+          <processing-editor id="E408" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code='void setup() {
+  size(300, 300);
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 8 (E408)</h3>
         <div class="row">
           <div class="col" style="text-align: left;">
             <p>Riproduci la seguente animazione</p>
@@ -937,7 +959,7 @@ for (int i = a; i <= b; i++) {
 
       <section>
         <h3 class="title">Esercizio 4 (E412)</h3>
-        <p>Prova a riscrivere questo programma utilizzando il <span class="code">while</span> al posto del <span
+        <p>Prova a riscrivere <a href="#/19">questo programma</a> utilizzando il <span class="code">while</span> al posto del <span
             class="code">for</span></p>
         <div class="med-code-long mt">
           <processing-editor id="E412" save="true" downloadable="true" contenteditable="true" type="vertical"
@@ -946,6 +968,60 @@ for (int i = a; i <= b; i++) {
 // Disegna 10 cerchi concentrici
 for (int raggio = 100; raggio>40; raggio=raggio-6 ){
   ellipse(100,100,raggio,raggio);
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 5 (E415)</h3>
+        <div class="row">
+          <div class="col">
+            <p>Disegna linee verticali fino alla fine del canvas. Usa <span class="code">while</span></p>
+          </div>
+          <div class="col">
+            <img src="iterations-assets/vertical-lines.png"
+              style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)"
+              alt="Canvas con linee verticali, che dimostra come fare l'esercizio">
+          </div>
+        </div>
+        <div class="med-code-long mt">
+          <processing-editor id="E415" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code='void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  // Il tuo codice
+  
+}'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 6 (E417)</h3>
+        <p>Scrivi un programma che stampa tutti i numeri tra <span class="code">a</span> e <span class="code">b</span>.
+          Usa il ciclo <span class="code">while</span></p>
+        <div class="med-code-long mt">
+          <processing-editor id="E417" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code='int a = 10;
+int b = 21;
+// Il tuo codice
+'></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 7 (E418)</h3>
+        <p>Disegna un cerchio dopo un delay di 5 secondi usando il <span class="code">while</span>.</p>
+        <p><strong>Nota:</strong> non usare <span class="code">draw()</span>, le funzioni <span
+            class="code">second()</span>, <span class="code">minute()</span> e <span class="code">hour()</span> possono
+          essere usate per leggere l'ora attuale</p>
+        <div class="med-code-long mt">
+          <processing-editor id="E418" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code='void setup() {
+  size(400, 400);
+  // Il tuo codice
+  
 }'></processing-editor>
         </div>
       </section>
@@ -1156,27 +1232,34 @@ print(i + ",");'></processing-editor>
       </section>
 
       <section>
-        <h3 class="title">Esercizio 1 (E415)</h3>
-        <div class="row">
-          <div class="col">
-            <p>Disegna linee verticali fino alla fine del canvas. Usa <span class="code">while</span></p>
-          </div>
-          <div class="col">
-            <img src="iterations-assets/vertical-lines.png"
-              style="max-width: 100%; object-fit: contain; max-height: min(7vw, 13vh)"
-              alt="Canvas con linee verticali, che dimostra come fare l'esercizio">
-          </div>
-        </div>
-        <div class="med-code-long mt">
-          <processing-editor id="E415" save="true" downloadable="true" contenteditable="true" type="vertical"
-            theme="white" code='void setup() {
-  size(400, 400);
+        <h3 class="title">Esercizio 1 (E440)</h3>
+        <p>Rifai <a href="#/42">questo esercizio</a> utilizzando il do-while</p>
+        <div class="med-code-long">
+          <processing-editor id="E440" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code="int y = 0;
+void setup() {
+  size(300,400);
 }
 
-void draw() {
+void draw(){
   // Il tuo codice
   
-}'></processing-editor>
+}"></processing-editor>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Esercizio 2 (E441)</h3>
+        <p>Scrivi un programma che stampa tutti i numeri tra <span class="code">a</span> e <span class="code">b</span>.
+          Usa il ciclo <span class="code">do while</span></p>
+        <p><span class="code">a</span> e <span class="code">b</span> sono scelti a caso. Continua a generare <span class="code">b</span> fino a che non risulta maggiore di <span class="code">a</span></p>
+        <div class="med-code-long mt">
+          <processing-editor id="E441" save="true" downloadable="true" contenteditable="true" type="vertical"
+            theme="white" code='// int a = (int)random(10, 20)
+
+// Il tuo codice
+
+'></processing-editor>
         </div>
       </section>
 
@@ -1194,36 +1277,7 @@ void draw() {
       </section>
 
       <section>
-        <h3 class="title">Esercizio 3 (E417)</h3>
-        <p>Scrivi un programma che stampa tutti i numeri tra <span class="code">a</span> e <span class="code">b</span>.
-          Usa il ciclo <span class="code">while</span></p>
-        <div class="med-code-long mt">
-          <processing-editor id="E417" save="true" downloadable="true" contenteditable="true" type="vertical"
-            theme="white" code='int a = 10;
-int b = 21;
-// Il tuo codice
-'></processing-editor>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 4 (E418)</h3>
-        <p>Disegna un cerchio dopo un delay di 5 secondi usando il <span class="code">while</span>.</p>
-        <p><strong>Nota:</strong> non usare <span class="code">draw()</span>, le funzioni <span
-            class="code">second()</span>, <span class="code">minute()</span> e <span class="code">hour()</span> possono
-          essere usate per leggere l'ora attuale</p>
-        <div class="med-code-long mt">
-          <processing-editor id="E418" save="true" downloadable="true" contenteditable="true" type="vertical"
-            theme="white" code='void setup() {
-  size(400, 400);
-  // Il tuo codice
-  
-}'></processing-editor>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="title">Esercizio 5 (E419)</h3>
+        <h3 class="title">Esercizio 3 (E419)</h3>
         <div class="row">
           <div class="col">
             <p>Scrivi un programma che estragga numeri a caso finché il numero non è divisibile per:</p>

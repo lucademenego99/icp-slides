@@ -225,48 +225,48 @@
         <h3 class="title">Remember how we implemented the Stack?</h3>
         <div class="big-code">
           <java-editor contenteditable="true" code='public class Stack {
-    int size;
-    int defaultGrowthSize;
-    int marker;
-    int content[];
-    
-    Stack(int initialSize) {
-        size = initialSize;
-        defaultGrowthSize = initialSize;
-        marker = 0;
-        content = new int[initialSize];
+  int size;
+  int defaultGrowthSize;
+  int marker;
+  int content[];
+  
+  Stack(int initialSize) {
+    size = initialSize;
+    defaultGrowthSize = initialSize;
+    marker = 0;
+    content = new int[initialSize];
+  }
+  
+  void push(int k) {
+    if (marker == size) {
+      grow();
     }
-    
-    void push(int k) {
-        if (marker == size) {
-            grow();
-        }
-        content[marker] = k;
-        marker++;
+    content[marker] = k;
+    marker++;
+  }
+  
+  private void grow() {
+    size += defaultGrowthSize;
+    int temp[] = new int[size];
+    System.arraycopy(content, 0, temp, 0, marker);
+    this.content = temp;
+  }
+  
+  int pop() {
+    assert(marker>0):"Pop method from an empty stack!";
+    return content[--marker];
+  }
+  
+  
+  public static void main(String[] args) {
+    Stack s = new Stack(5);
+    for (int k = 0; k < 10; k++) {
+      s.push(k);
     }
-    
-    private void grow() {
-        size += defaultGrowthSize;
-        int temp[] = new int[size];
-        System.arraycopy(content, 0, temp, 0, marker);
-        this.content = temp;
+    for (int k = 0; k < 12; k++) {
+      System.out.println(s.pop());
     }
-    
-    int pop() {
-        assert(marker>0):"Pop method from an empty stack!";
-        return content[--marker];
-    }
-    
-    
-    public static void main(String[] args) {
-        Stack s = new Stack(5);
-        for (int k = 0; k < 10; k++) {
-            s.push(k);
-        }
-        for (int k = 0; k < 12; k++) {
-            System.out.println(s.pop());
-        }
-    }
+  }
 }'></java-editor>
         </div>
       </section>
@@ -327,58 +327,57 @@
         <p>We will see later how to fix this last issue</p>
         <div class="med-code">
           <java-editor contenteditable="true" code='public class Queue extends Stack {
-    int pop() {
-        assert(marker>0):"No data!";
-        int retval=content[0];
-        for (int k=1; k<marker; k++ )
-          content[k-1]=content[k];
-        marker--;
-        return retval;
+  int pop() {
+    assert(marker>0):"No data!";
+    int retval=content[0];
+    for (int k=1; k<marker; k++ )
+      content[k-1]=content[k];
+    marker--;
+    return retval;
   }
   public static void main(String[] args) {
-      Queue s = new Queue(5);
-      for (int k = 0; k < 10; k++) {
-          s.push(k);
-      }
-      for (int k = 0; k < 10; k++) {
-          System.out.println(s.pop());
-          
-      }
+    Queue s = new Queue(5);
+    for (int k = 0; k < 10; k++) {
+      s.push(k);
+    }
+    for (int k = 0; k < 10; k++) {
+      System.out.println(s.pop());
+    }
   }
 }
 
 class Stack {
-    int size;
-    int defaultGrowthSize;
-    int marker;
-    int content[];
-    
-    Stack(int initialSize) {
-        size = initialSize;
-        defaultGrowthSize = initialSize;
-        marker = 0;
-        content = new int[initialSize];
+  int size;
+  int defaultGrowthSize;
+  int marker;
+  int content[];
+  
+  Stack(int initialSize) {
+    size = initialSize;
+    defaultGrowthSize = initialSize;
+    marker = 0;
+    content = new int[initialSize];
+  }
+  
+  void push(int k) {
+    if (marker == size) {
+      grow();
     }
-    
-    void push(int k) {
-        if (marker == size) {
-            grow();
-        }
-        content[marker] = k;
-        marker++;
-    }
-    
-    private void grow() {
-        size += defaultGrowthSize;
-        int temp[] = new int[size];
-        System.arraycopy(content, 0, temp, 0, marker);
-        this.content = temp;
-    }
-    
-    int pop() {
-        assert(marker>0):"Pop method from an empty stack!";
-        return content[--marker];
-    }
+    content[marker] = k;
+    marker++;
+  }
+  
+  private void grow() {
+    size += defaultGrowthSize;
+    int temp[] = new int[size];
+    System.arraycopy(content, 0, temp, 0, marker);
+    this.content = temp;
+  }
+  
+  int pop() {
+    assert(marker>0):"Pop method from an empty stack!";
+    return content[--marker];
+  }
 }'></java-editor>
         </div>
       </section>
@@ -915,16 +914,16 @@ class B extends A {
         <h3 class="title">Turn a Stack into a Queue</h3>
         <div class="big-code">
           <java-editor contenteditable="true" code='public class Queue extends Stack {
-    Queue(int size) {
-      super(size);
-    }
-    int pop() {
-        assert(marker>0):"No data!";
-        int retval=content[0];
-        for (int k=1; k<marker; k++ )
-          content[k-1]=content[k];
-        marker--;
-        return retval;
+  Queue(int size) {
+    super(size);
+  }
+  int pop() {
+    assert(marker>0):"No data!";
+    int retval=content[0];
+    for (int k=1; k<marker; k++ )
+      content[k-1]=content[k];
+    marker--;
+    return retval;
   }
   public static void main(String args[]) {
     int dim = 5;
@@ -937,37 +936,37 @@ class B extends A {
 }
 
 class Stack {
-    int size;
-    int defaultGrowthSize;
-    int marker;
-    int content[];
-    
-    Stack(int initialSize) {
-        size = initialSize;
-        defaultGrowthSize = initialSize;
-        marker = 0;
-        content = new int[initialSize];
+  int size;
+  int defaultGrowthSize;
+  int marker;
+  int content[];
+  
+  Stack(int initialSize) {
+    size = initialSize;
+    defaultGrowthSize = initialSize;
+    marker = 0;
+    content = new int[initialSize];
+  }
+  
+  void push(int k) {
+    if (marker == size) {
+      grow();
     }
-    
-    void push(int k) {
-        if (marker == size) {
-            grow();
-        }
-        content[marker] = k;
-        marker++;
-    }
-    
-    private void grow() {
-        size += defaultGrowthSize;
-        int temp[] = new int[size];
-        System.arraycopy(content, 0, temp, 0, marker);
-        this.content = temp;
-    }
-    
-    int pop() {
-        assert(marker>0):"Pop method from an empty stack!";
-        return content[--marker];
-    }
+    content[marker] = k;
+    marker++;
+  }
+  
+  private void grow() {
+    size += defaultGrowthSize;
+    int temp[] = new int[size];
+    System.arraycopy(content, 0, temp, 0, marker);
+    this.content = temp;
+  }
+  
+  int pop() {
+    assert(marker>0):"Pop method from an empty stack!";
+    return content[--marker];
+  }
 }'></java-editor>
         </div>
       </section>

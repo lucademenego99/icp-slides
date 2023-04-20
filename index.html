@@ -321,7 +321,17 @@
                         <!--    to create editable parts, just use <EDITABLE>...</EDITABLE> -->
                         <!--    for more info: https://github.com/lucademenego99/icp-bundle -->
                         <!-- Note: for reveal.js to work we need to set content editable to true -->
-                        <python-editor contenteditable="true" theme="dark" code="print('Hello, world!')" />
+                        <python-editor contenteditable="true" theme="dark" code="elements = [39,12,18,85,72,10,2,18]
+
+print('Unsorted list is\n', elements)
+
+# Sort the list (with bubblesort)
+for n in range(len(elements)-1, 0, -1):
+  for i in range(n):
+    if elements[i] > elements[i+1]:
+      elements[i], elements[i+1] = elements[i+1], elements[i]
+
+print('\nSorted list is\n', elements)" />
                     </div>
             </section>
 
@@ -368,7 +378,11 @@
                             <li>Typescript</li>
                             <li>Python</li>
                             <li>Java</li>
+                            <li>C/C++</li>
                             <li>SQL</li>
+                            <li>Standard-ML</li>
+                            <li>p5.js</li>
+                            <li>Processing</li>
                         </ul>
                         <p>On the right, for instance, you can execute some Java code!</p>
                     </div>

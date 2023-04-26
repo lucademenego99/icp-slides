@@ -462,7 +462,7 @@ class Student extends Person {
             <ul>
               <li>Let's assume to have:<br>
               <pre><code class="java">C o = ...;
-  o.m(...);</code></pre>
+o.m(...);</code></pre>
                 the method chosen depends on the dynamic type of <span class="code">o</span>, and is decided (at <em>runtime</em>) using the following logic:</li>
               <ul>
                 <li>We search inside the class <span class="code">C</span> (static type of <span class="code">o</span>) for the method <span class="code">m</span> with the signature that is closest to the invocation.</li>
@@ -1144,7 +1144,7 @@ abstract public Object pop();</code></pre>
               <li class="fragment" data-fragment-index="2">Or we can directly use the method <span class="code">toString()</span> of <span class="code">Integer</span>, which prints its <span class="code">int</span> internal value</li>
             </ul>
           </div>
-          <div class="col">
+          <div class="col" style="width: min(55vw, 110vh); flex: unset;">
             <div class="r-stack">
               <pre class="fragment fade-out" data-fragment-index="0"><code class="java" data-line-numbers="5,9-10">public static void main(String args[]) {
   int dim = 10;
@@ -1209,7 +1209,7 @@ abstract public Object pop();</code></pre>
               <li>This is actually allowed, starting with Java 5...</li>
             </ul>
           </div>
-          <div class="col">
+          <div class="col" style="width: min(55vw, 110vh); flex: unset;">
             <pre><code class="java" data-line-numbers="5-6">public static void main(String args[]) {
   int dim = 10;
   Stack s = new Stack(dim);
@@ -1320,11 +1320,11 @@ class Stack extends DataVector {
       <section>
         <h3 class="title">Forced conversions between reference types</h3>
         <p class="subtitle xbig" style="margin: 0;">Casting</p>
-        <div class="row mt" style="width: min(60vw, 120vh)">
+        <div class="row mt" style="width: min(70vw, 140vh)">
           <ul>
             <li>You can force a conversion from a reference type <span class="code">T</span> to a <span class="error">subtype</span> <span class="code">T1</span> as long as...</li>
             <ul>
-              <li>... the <span class="error">dynamic</span> type of the converted object is a subtype of <span class="code">T1</span><br><pre class="fragment" data-fragment-index="0" style="width: min(60vw, 120vh)"><code class="java">Object o = new Person();
+              <li>... the <span class="error">dynamic</span> type of the converted object is a subtype of <span class="code">T1</span><br><pre class="fragment" data-fragment-index="0" style="width: min(65vw, 130vh)"><code class="java">Object o = new Person();
 Person a = o;           // ERROR, Object is not a subtype of Person
 Person a = (Person) o;  // CORRECT (casting)</code></pre></li>
             </ul>

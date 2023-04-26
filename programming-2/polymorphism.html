@@ -457,21 +457,38 @@ class Student extends Person {
 
       <section>
         <h3 class="title">Rule for dynamic binding</h3>
-        <div style="width: min(50vw, 100vh)">
-          <ul>
-            <li class="fragment">Let's assume to have:<br>
-            <pre><code class="java">C o = ...;
-o.m(...);</code></pre>
-              the method chosen depends on the dynamic type of <span class="code">o</span>, and is decided (at <em>runtime</em>) using the following logic:</li>
+        <div style="width: min(80vw, 160vh); gap: min(5vw, 10vh)" class="row">
+          <div class="col">
             <ul>
-              <li class="fragment">We search inside the class <span class="code">C</span> (static type of <span class="code">o</span>) for the method <span class="code">m</span> with the signature that is closest to the invocation.</li>
+              <li>Let's assume to have:<br>
+              <pre><code class="java">C o = ...;
+  o.m(...);</code></pre>
+                the method chosen depends on the dynamic type of <span class="code">o</span>, and is decided (at <em>runtime</em>) using the following logic:</li>
               <ul>
-                <li class="fragment">The signatures to consider are those fixed at <em>compile time</em>, i.e. looking at the <em>static type</em> of the current parameters</li>
+                <li>We search inside the class <span class="code">C</span> (static type of <span class="code">o</span>) for the method <span class="code">m</span> with the signature that is closest to the invocation.</li>
+                <ul>
+                  <li>The signatures to consider are those fixed at <em>compile time</em>, i.e. looking at the <em>static type</em> of the current parameters</li>
+                </ul>
+                <li>We look at the dynamic type <span class="code">D</span> of <span class="code">o</span>; if it is a subtype of <span class="code">C</span>, we have to check if it redefines (overrides) <span class="code">m</span>. If yes, we use <span class="code">D</span>'s implementaion, otherwise <span class="code">C</span>'s.</li>
               </ul>
-              <li class="fragment">We look at the dynamic type <span class="code">D</span> of <span class="code">o</span>; if it is a subtype of <span class="code">C</span>, we have to check if it redefines (overrides) <span class="code">m</span>. If yes, we use <span class="code">D</span>'s implementaion, otherwise <span class="code">C</span>'s.</li>
             </ul>
-          </ul>
-          <p class="bold fragment" style="background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)">The static type determines which methods can be invoked; the dynamic type determines which (re)definitions to perform.</p>
+            <p class="bold fragment" style="background-color: rgb(32, 41, 163); color: white; border-radius: 10px; padding: min(1vw, 2vh)">The static type determines which methods can be invoked; the dynamic type determines which (re)definitions to perform.</p>
+          </div>
+          <div class="col" data-fragment-index="" style="width: min(15vw, 30vh); flex: unset; height: min(25vw, 50vh)">
+            <svg style="height: 100%" viewBox="33.728 22.401 254.302 173.911" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+              <defs>
+                <style bx:fonts="Space Mono">@import url(https://fonts.googleapis.com/css2?family=Space+Mono%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400%3B1%2C700&amp;display=swap);</style>
+              </defs>
+              <g>
+                <rect x="33.728" y="39.053" width="73.373" height="50.295" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);"/>
+                <rect x="33.728" y="125.74" width="73.373" height="50.295" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);"/>
+                <text style="font-family: Arial, sans-serif; font-size: 16.6px; font-weight: 700; white-space: pre;" x="64.497" y="70.414">C</text>
+                <text style="font-family: Arial, sans-serif; font-size: 16.6px; font-weight: 700; white-space: pre;" x="63.235" y="157.101">D</text>
+                <line style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" x1="69.231" y1="126.035" x2="69.23" y2="109.467"/>
+                <path d="M 69.23 91.124 L 78.698 110.059 L 59.763 110.059 L 69.23 91.124 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" bx:shape="triangle 59.763 91.124 18.935 18.935 0.5 0 1@b4934d82"/>
+              </g>
+            </svg>
+          </div>
         </div>
       </section>
 
@@ -957,18 +974,18 @@ class C1 extends C {
         <h3 class="title">Warning...</h3>
         <p>As you can see, this leads to a <span class="error bold">compile-time error</span></p>
         <div class="med-code">
-          <java-editor contenteditable="true" code='public class Test {   
+          <java-editor contenteditable="true" code='public class Person {   
   public static void main(String a[]) {
-    Test c = new Derived();
-    c.f1();
+    Person p = new Student();
+    p.whoAmI();
   }   
-  final void f1() {
-    System.out.println("f1 in superclass");
+  final void whoAmI() {
+    System.out.println("I&#39;m a person");
   }
 }
-class Derived extends Test {  
-  public void f1() {
-    System.out.println("f1 in subclass");
+class Student extends Person {  
+  public void whoAmI() {
+    System.out.println("I&#39;m a student");
   }
 } '></java-editor>
         </div>
@@ -985,18 +1002,18 @@ class Derived extends Test {
             </ul>
           </div>
           <div class="col med-code">
-            <java-editor contenteditable="true" code='public class Test {   
+            <java-editor contenteditable="true" code='public class Person {   
   public static void main(String a[]) {
-    Test c = new Derived();
-    c.f1();
+    Person p = new Student();
+    p.whoAmI();
   }   
-  private void f1() {
-    System.out.println("f1 in superclass");
+  private void whoAmI() {
+    System.out.println("I&#39;m a person");
   }
 }
-class Derived extends Test {  
-  public void f1() {
-    System.out.println("f1 in subclass");
+class Student extends Person {  
+  public void whoAmI() {
+    System.out.println("I&#39;m a student");
   }
 } '></java-editor>
           </div>
@@ -1079,7 +1096,7 @@ abstract public Object pop();</code></pre>
         <h3 class="title">Wrapper classes</h3>
         <div class="row">
           <div class="col" style="flex: 10">
-            <p class="fragment bold big">Primitive types:</p>
+            <p class="bold big">Primitive types:</p>
             <ul>
               <li><span class="code">byte</span></li>
               <li><span class="code">short</span></li>
@@ -1098,7 +1115,7 @@ abstract public Object pop();</code></pre>
             </svg>
           </div>
           <div class="col" style="flex: 10">
-            <p class="fragment bold big">Wrapper classes:</p>
+            <p class="bold big">Wrapper classes:</p>
             <ul>
               <li><span class="code">Byte</span></li>
               <li><span class="code">Short</span></li>

@@ -297,6 +297,44 @@ class C {
 }'></java-editor>
         </div>
       </section>
+
+      <section>
+        <h3 class="title">Exercise 5: what is the output?</h3>
+        <p class="subtitle">Think about it before checking the solution...</p>
+        <div class="med-code">
+          <java-editor contenteditable="true" code='public class Test {
+  public static void main(String[] args) {
+    B b1 = new B(new A());
+    b1.m(7);
+    B b2 = new B(new A());
+    b2.m(4);
+    System.out.println(b2);
+  }
+}
+
+class A {
+  static int x = 8;
+  void m(int x) {
+    this.x += x;
+  }
+
+  public String toString() { return "x="+x; }
+}
+
+class B {
+  A a = null;
+  B(A a) {
+    this.a = a;
+  }
+  void m(int x) {
+    a.m(x);
+  }
+  public String toString() {
+    return a.toString();
+  }
+}'></java-editor>
+        </div>
+      </section>
     </div>
   </div>
 

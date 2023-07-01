@@ -2,168 +2,169 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Code Playgrounds</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Code Playgrounds</title>
 
-    <!-- Main Reveal Stylesheet -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+  <!-- Main Reveal Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
 
-    <!-- Blood Reveal Theme Stylesheet -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/blood.css" id="theme">
+  <!-- Blood Reveal Theme Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" id="theme">
 
-    <!-- Custom stylesheet to make reveal work with our playgrounds -->
-    <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
+  <!-- Custom stylesheet to make reveal work with our playgrounds -->
+  <link rel="stylesheet" href="https://lucademenego99.github.io/icp-bundle/base/custom-style.css">
 
-    <!-- Bundle containing the code playground web components -->
-    <script src="https://lucademenego99.github.io/icp-bundle/base/full.iife.js"></script>
+  <!-- Bundle containing the code playground web components -->
+  <script src="https://lucademenego99.github.io/icp-bundle/base/cpp.iife.js"></script>
 
-    <style>
-        pre code {
-            padding: min(1vw, 2vh) !important;
-        }
+  <style>
+    pre code {
+      padding: min(1vw, 2vh) !important;
+    }
 
-        .code {
-            padding: 0 min(1vw, 2vh);
-            background-color: rgb(215, 237, 255);
-            font-family: monospace;
-        }
+    .code {
+      padding: 0 min(1vw, 2vh);
+      background-color: rgb(215, 237, 255);
+      font-family: monospace;
+    }
 
-        .code-2 {
-            padding: 0 min(0.8vw, 1.5vh);
-            background-color: rgb(234, 246, 255);
-            font-family: monospace;
-        }
+    .code-2 {
+      padding: 0 min(0.8vw, 1.5vh);
+      background-color: rgb(234, 246, 255);
+      font-family: monospace;
+    }
 
-        .error {
-            color: red;
-        }
+    .error {
+      color: red;
+    }
 
-        .ok {
-            color: green;
-        }
+    .ok {
+      color: green;
+    }
 
-        .underline {
-            text-decoration: underline;
-        }
+    .underline {
+      text-decoration: underline;
+    }
 
-        .warning {
-            color: rgb(218, 141, 0);
-        }
+    .warning {
+      color: rgb(218, 141, 0);
+    }
 
-        .bold {
-            font-weight: bold;
-        }
+    .bold {
+      font-weight: bold;
+    }
 
-        .row {
-            width: min(80vw, 160vh);
-            gap: min(1.5vw, 2.8vh);
-        }
+    .row {
+      width: min(80vw, 160vh);
+      gap: min(1.5vw, 2.8vh);
+    }
 
-        .big {
-            font-size: min(2vw, 4vh) !important;
-        }
+    .big {
+      font-size: min(2vw, 4vh) !important;
+    }
 
-        .xbig {
-            font-size: min(2.5vw, 5vh) !important;
-        }
+    .xbig {
+      font-size: min(2.5vw, 5vh) !important;
+    }
 
-        .xxsmall {
-            font-size: min(0.9vw, 1.8vh);
-        }
+    .xxsmall {
+      font-size: min(0.9vw, 1.8vh);
+    }
 
-        .mt {
-            margin-top: min(1vw, 2vh) !important;
-        }
+    .mt {
+      margin-top: min(1vw, 2vh) !important;
+    }
 
-        .ml {
-            margin-left: min(1vw, 2vh) !important;
-        }
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
 
-        .mt2 {
-            margin-top: min(3vw, 6vh) !important;
-        }
+    .mt2 {
+      margin-top: min(3vw, 6vh) !important;
+    }
 
-        .mb {
-            margin-bottom: min(1vw, 2vh) !important;
-        }
+    .mb {
+      margin-bottom: min(1vw, 2vh) !important;
+    }
 
-        .mb2 {
-            margin-bottom: min(3vw, 6vh) !important;
-        }
+    .mb2 {
+      margin-bottom: min(3vw, 6vh) !important;
+    }
 
-        .ml {
-            margin-left: min(1vw, 2vh) !important;
-        }
+    .ml {
+      margin-left: min(1vw, 2vh) !important;
+    }
 
-        .ml2 {
-            margin-left: min(3vw, 6vh) !important;
-        }
+    .ml2 {
+      margin-left: min(3vw, 6vh) !important;
+    }
 
-        li {
-            margin-bottom: min(1vw, 1.8vh) !important;
-        }
+    li {
+      margin-bottom: min(1vw, 1.8vh) !important;
+    }
 
-        .key__button {
-            box-sizing: border-box;
-            line-height: min(2vw, 4vh);
-            font-size: min(1.4vw, 2.8vh);
-            text-align: center;
-            color: #555;
-            cursor: pointer;
-            margin: 0 min(0.5vw, 1vh);
-            min-width: min(2.3vw, 4.6vh);
-            height: min(2.3vw, 4.6vh);
-            padding: 0 min(0.5vw, 1vh);
-            border-color: #f2f2f2;
-            border-style: solid;
-            text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
-            border-width: 1px;
-            border-radius: 10px;
-            background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
-            font-family: sans-serif;
-            display: inline-block;
-            transition: box-shadow 0.3s ease, transform 0.15s ease;
-            box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
-        }
-    </style>
+    .key__button {
+      box-sizing: border-box;
+      line-height: min(2vw, 4vh);
+      font-size: min(1.4vw, 2.8vh);
+      text-align: center;
+      color: #555;
+      cursor: pointer;
+      margin: 0 min(0.5vw, 1vh);
+      min-width: min(2.3vw, 4.6vh);
+      height: min(2.3vw, 4.6vh);
+      padding: 0 min(0.5vw, 1vh);
+      border-color: #f2f2f2;
+      border-style: solid;
+      text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+      border-width: 1px;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+      font-family: sans-serif;
+      display: inline-block;
+      transition: box-shadow 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+    }
+  </style>
 </head>
 
 <!-- For more information on reveal.js: https://revealjs.com/ -->
 
 <body class="h-screen full-page-demo reveal-viewport" data-page="icp" style="transition: transform 0.8s ease 0s;">
-    <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
-        data-background-transition="fade">
-        <div class="slides">
+  <div class="reveal slide focused has-horizontal-slides ready" role="application" data-transition-speed="default"
+    data-background-transition="fade">
+    <div class="slides">
 
-            <!-- Each <section> is a slide -->
-            <section>
-                <!-- title class: custom style for titles -->
-                <h3 class="title">Interactive Code Playgrounds</h3>
+      <!-- Each <section> is a slide -->
+      <section>
+        <!-- title class: custom style for titles -->
+        <h3 class="title">Interactive Code Playgrounds</h3>
 
-                <!-- subtitle class: custom style for subtitles -->
-                <p class="subtitle">Clang tests</p>
-            </section>
+        <!-- subtitle class: custom style for subtitles -->
+        <p class="subtitle">Clang tests</p>
+      </section>
 
-            <section>
-                <h3 class="title">T1</h3>
-                <div class="med-code">
-                    <cpp-editor contenteditable="true" theme="dark" id='test' code='#include <iostream>
-using namespace std;
-
+      <section>
+        <h3 class="title">C example - factorial</h3>
+        <div class="row">
+          <div class="col" style="flex: 2;">
+            <ul>
+              <li>Factorial of <span class="code">n</span> is the product of all positive descending
+                integers</li>
+              <li>Factorial of <span class="code">n</span> is denoted by <span class="code">n!</span></li>
+              <li>Examples:</li>
+              <ul>
+                <li><span class="code">5! = 5*4*3*2*1 = 120</span></li>
+                <li><span class="code">3! = 3*2*1 = 6</span></li>
+              </ul>
+            </ul>
+          </div>
+          <div class="col med-code" style="flex: 3;">
+            <cpp-editor contenteditable="true" id='clang-test-1' code='#include <stdio.h>
 int main() {
-  cout << "Hello World!" << endl;
-  return 0;
-}' />
-                </div>
-            </section>
-            <section>
-                <h3 class="title">T2</h3>
-                <div class="med-code">
-                    <cpp-editor contenteditable="true" theme="dark" id='test' code='#include <stdio.h>
-int main() {
-  int n = 10;
+  int n = 5;
   int i;
   unsigned long long fact = 1;
 
@@ -179,66 +180,117 @@ int main() {
 
   return 0;
 }' />
-                </div>
-            </section>
+          </div>
         </div>
+      </section>
+
+      <section>
+        <h3 class="title">C++ example - factorial</h3>
+        <div class="row">
+          <div class="col" style="flex: 2;">
+            <ul>
+              <li>Factorial of <span class="code">n</span> is the product of all positive descending
+                integers</li>
+              <li>Factorial of <span class="code">n</span> is denoted by <span class="code">n!</span></li>
+              <li>Examples:</li>
+              <ul>
+                <li><span class="code">5! = 5*4*3*2*1 = 120</span></li>
+                <li><span class="code">3! = 3*2*1 = 6</span></li>
+              </ul>
+            </ul>
+          </div>
+          <div class="col med-code" style="flex: 3;">
+            <cpp-editor contenteditable="true" id='clang-test-2' code='#include <iostream>
+using namespace std;
+
+int main() {
+  int n = 5;
+  long fact = 1.0;
+
+  if (n < 0)
+    cout << "Error! Factorial of a negative number doesn&lsquo;t exist.";
+  else {
+    for(int i = 1; i <= n; ++i) {
+      fact *= i;
+    }
+    cout << "Factorial of " << n << " = " << fact;    
+  }
+  return 0;
+}' />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="title">Emtpy editor for tests</h3>
+          <div class="big-code">
+            <cpp-editor contenteditable="true" id='empty-ed-for-tests' downloadable="true" save="true" code='// Includes...
+
+
+// Main function
+int main() {
+  return 0;
+}' />
+          </div>
+      </section>
     </div>
+  </div>
 
-    <!-- Import the main reveal script -->
-    <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js">
-    </script>
+  <!-- Import the main reveal script -->
+  <script src=" https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js">
+  </script>
 
-    <!-- Initialize reveal -->
-    <script>
-        Reveal.initialize({
-            // Display an help overlay when ? is pressed
-            help: false,
-            // Display controls in the bottom right corner
-            controls: true,
-            // Display a presentation progress bar
-            progress: true,
-            // Push each slide change to the browser history
-            history: true,
-            // Enable keyboard shortcuts for navigation
-            keyboard: true,
-            // Enable the slide overview mode
-            overview: true,
-            // Vertical centering of slides
-            center: true,
-            // Loop the presentation
-            loop: false,
-            // Enables touch navigation on devices with touch input
-            touch: true,
-            // Apply a 3D roll to links on hover
-            rollingLinks: true,
-            // Transition style for full page slide backgrounds
-            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
-            // Select a theme
-            theme: 'blood',
-            // Select the type of slides transition
-            transition: 'fade',
-            // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
-            disableLayout: true
-        });
-    </script>
+  <!-- Initialize reveal -->
+  <script>
+    Reveal.initialize({
+      // Display an help overlay when ? is pressed
+      help: false,
+      // Display controls in the bottom right corner
+      controls: true,
+      // Display a presentation progress bar
+      progress: true,
+      // Push each slide change to the browser history
+      history: true,
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+      // Enable the slide overview mode
+      overview: true,
+      // Vertical centering of slides
+      center: true,
+      // Loop the presentation
+      loop: false,
+      // Enables touch navigation on devices with touch input
+      touch: true,
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+      // Select a theme
+      theme: 'blood',
+      // Select the type of slides transition
+      transition: 'fade',
+      // IMPORTANT: disable the default layout (centering and scaling) to make the code editors work correctly
+      disableLayout: true
+    });
+  </script>
 
-    <!-- If the user asks for the pdf version, set section height to auto -->
-    <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
-    <script>
-        if (window.location.href.indexOf('?print-pdf') > -1) {
-            // Create a new css element setting the height of .section to none
-            var css = document.createElement("style");
-            // Modify section height to fix the layout
-            // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
-            // Hide the slide context (the slide number)
-            css.innerHTML = "body {width: unset !important;} section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;} html.print-pdf .reveal .slides section {display: flex !important; left: 0 !important;}";
-            // Append the css to the head
-            document.head.appendChild(css);
+  <!-- If the user asks for the pdf version, set section height to auto -->
+  <!-- Otherwise reveal.js breaks if the section height is set to 100% -->
+  <script>
+    if (window.location.href.indexOf('?print-pdf') > -1) {
+      // Create a new css element setting the height of .section to none
+      var css = document.createElement("style");
+      // Modify section height to fix the layout
+      // Modify .reveal .slides>section.stack pointer events, otherwise the code editors won't work
+      // Hide the slide context (the slide number)
+      css.innerHTML = "body {width: unset !important;} section { height: auto !important; } .reveal .slides>section.stack {pointer-events: all !important;} .slide-context {display: none;} html.print-pdf .reveal .slides section {display: flex !important; left: 0 !important;}";
+      // Append the css to the head
+      document.head.appendChild(css);
 
-            const printVersionText = document.getElementById('print-version-text');
-            printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
-        }
-    </script>
+      const printVersionText = document.getElementById('print-version-text');
+      printVersionText.innerHTML = `<a href="?">Clicca qui</a> per tornare alle slide`;
+    }
+  </script>
 </body>
 
 </html>
